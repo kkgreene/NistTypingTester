@@ -43,5 +43,10 @@
     return self;
 }
 
+-(BOOL)writeEventToLog:(NSFileHandle *)fileHandle
+{
+    return NO;
+}
+
 
 @end

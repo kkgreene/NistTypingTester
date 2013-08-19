@@ -31,4 +31,8 @@
 
 -(void)addEvent:(ttEvent*)event;
 
+-(BOOL)initializeLogFiles;
+-(void)closeLogFiles;
+-(void) writeString:(NSString*)string toLogFile:(NSFileHandle*)logFile;
+
 @end

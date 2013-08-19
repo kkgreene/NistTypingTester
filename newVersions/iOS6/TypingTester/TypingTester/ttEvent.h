@@ -22,6 +22,6 @@
 -(id) initWithEventType:(Event)event andPhase:(Phase)phase andSubPhase:(SubPhase)subPhase;
 -(id) initWithEventType:(Event)event andPhase:(Phase)phase andSubPhase:(SubPhase)subPhase andTime:(NSDate*)date;
 
-
+-(BOOL)writeEventToLog:(NSFileHandle*)fileHandle;
 
 @end
