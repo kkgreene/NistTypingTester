@@ -23,6 +23,8 @@
     NSError* error;
     if (overwrite == YES)
     {
+        // TODO :: Add error checking
+        [fileManager removeItemAtPath:destination error:&error];
         [fileManager copyItemAtPath:source toPath:destination error:&error];
     }
     else

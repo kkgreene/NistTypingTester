@@ -31,7 +31,7 @@ static ttInputData *instance = nil;
     if(self)
     {
         _entities = [[NSMutableArray alloc]init];
-        _testPhrases = [[NSMutableArray alloc]init];
+        _proficiencyItems = [[NSMutableArray alloc]init];
         _filters = [[NSMutableArray alloc]init];
     }
     return self;
@@ -39,12 +39,24 @@ static ttInputData *instance = nil;
 
 -(void)loadDataFile:(NSString *)filepath
 {
+    // allocate new arrays so we clean out the old data if there is any
+    // when we load
+    _entities = [[NSMutableArray alloc]init];
+    _proficiencyItems = [[NSMutableArray alloc]init];
+    _filters = [[NSMutableArray alloc]init];
+    // build the path to the inputstrings file and load it
     NSString* documentsDirectory = [ttUtilities documentsDirectory];
     NSString *inputFile = [documentsDirectory stringByAppendingPathComponent:@"inputStrings.xml"];
     NSURL *url = [NSURL fileURLWithPath:inputFile];
     NSXMLParser *parser = [[NSXMLParser alloc]initWithContentsOfURL:url];
     parser.delegate = self;
     [parser parse];
+}
+
+#pragma -mark ttXmlParserDelegate functions
+-(void) finishedChild:(NSString*)s;
+{
+    self.child = nil;
 }
 
 #pragma -mark NSXMLParserDelegate functions
@@ -56,15 +68,26 @@ static ttInputData *instance = nil;
         [self.filters addObject:newFilter];
         [newFilter parseElementAttributes:attributeDict];
         [newFilter startElementNamed:elementName withParentParser:self];
+        self.child = newFilter;
         parser.delegate = newFilter;
     }
     else if ([elementName isEqualToString:@"proficiencyInput"])
     {
-
+        ttProficiencyItem* newItem = [[ttProficiencyItem alloc]init];
+        [self.proficiencyItems addObject:newItem];
+        [newItem parseElementAttributes:attributeDict];
+        [newItem startElementNamed:elementName withParentParser:self];
+        self.child = newItem;
+        parser.delegate = newItem;
     }
     else if ([elementName isEqualToString:@"memorizationInput"])
     {
-        
+        ttTestEntity *newEntity = [[ttTestEntity alloc]init];
+        [self.entities addObject:newEntity];
+        [newEntity parseElementAttributes:attributeDict];
+        [newEntity startElementNamed:elementName withParentParser:self];
+        self.child = newEntity;
+        parser.delegate = newEntity;
     }
 }
 

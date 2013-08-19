@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ttXmlParserDelegate.h"
 
-@interface ttProficiencyItem : NSObject
+@interface ttProficiencyItem : ttXmlParserDelegate
 
 @property (nonatomic, copy) NSString *phrase;
 @property (nonatomic, assign) int groupId;

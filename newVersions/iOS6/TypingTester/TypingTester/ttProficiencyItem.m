@@ -16,8 +16,26 @@
     if (self)
     {
         _groupId = -1;
+        _itemId = -1;
     }
     return self;
 }
+
+#pragma -mark ttXmlParserDelegate functions
+
+-(void)parseElementAttributes:(NSDictionary *)attributeDictionary
+{
+    NSNumber *groupId = [attributeDictionary objectForKey:@"groupId"];
+    NSNumber *itemId = [attributeDictionary objectForKey:@"itemId"];
+    _itemId = itemId.intValue;
+    _groupId = groupId.intValue;
+}
+
+
+-(void) finishedChild:(NSString*)s;
+{
+    self.child = nil;
+}
+
 
 @end

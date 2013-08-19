@@ -12,7 +12,7 @@
 @interface ttInputData : ttXmlParserDelegate
 
 @property (atomic, strong) NSMutableArray *filters;
-@property (atomic, strong) NSMutableArray *testPhrases;
+@property (atomic, strong) NSMutableArray *proficiencyItems;
 @property (atomic, strong) NSMutableArray *entities;
 
 

@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ttXmlParserDelegate.h"
 
-@interface ttTestEntity : NSObject
+@interface ttTestEntity : ttXmlParserDelegate
 
 @property (nonatomic, copy) NSString *entityString;
 @property (nonatomic, assign) int groupId;
+@property (nonatomic, assign) int inputId;
+@property (nonatomic, copy) NSDate *date;
 @property (nonatomic, strong) NSMutableArray *filterValues;
 
 @end

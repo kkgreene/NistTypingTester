@@ -20,6 +20,12 @@
     return self;
 }
 
+#pragma -mark ttXmlParserDelegate functions
+
+-(void) finishedChild:(NSString*)s;
+{
+    self.child = nil;
+}
 -(void)parseElementAttributes:(NSDictionary *)attributeDictionary
 {
     self.filterId = [attributeDictionary objectForKey:@"filterId"];
