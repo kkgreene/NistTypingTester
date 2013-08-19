@@ -17,6 +17,9 @@
 @property (nonatomic, weak) IBOutlet UILabel *phraseLabel2;
 @property (nonatomic, weak) IBOutlet UITextField *entryField;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
+@property (nonatomic, weak) IBOutlet UIProgressView *progressBar;
+
+
 @property (nonatomic, strong) ttSession *session;
 
 

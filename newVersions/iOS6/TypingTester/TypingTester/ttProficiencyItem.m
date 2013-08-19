@@ -37,5 +37,10 @@
     self.child = nil;
 }
 
+-(NSString*)description
+{
+    return [NSString stringWithFormat:@"ItemId:%i GroupId:%i Value:%@", self.itemId, self.groupId, self.text];
+}
+
 
 @end

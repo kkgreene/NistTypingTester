@@ -53,6 +53,64 @@ static ttInputData *instance = nil;
     [parser parse];
 }
 
+
+-(NSArray*) getPhrasesForGroupId:(int)groupId
+{
+    NSMutableArray *results = [[NSMutableArray alloc]init];
+    for(int i = 0; i < self.proficiencyItems.count; i++)
+    {
+        ttProficiencyItem *item = [self.proficiencyItems objectAtIndex:i];
+        if (item.groupId == groupId)
+        {
+            [results addObject:item];
+        }
+    }
+    return [[NSArray alloc]initWithArray:results];
+}
+
+-(NSArray*) getPhrasesForGroupId:(int)groupId inRandomOrder:(BOOL)random
+{
+    // return getPhrasesFroGroupId: withSeed:(int)time(null)
+    return [self getPhrasesForGroupId:groupId withRandomSeedValue:time(NULL)];
+}
+
+-(NSArray*) getPhrasesForGroupId:(int)groupId withRandomSeedValue:(int)seed
+{
+    NSMutableArray *base = [[NSMutableArray alloc]initWithArray:[self getPhrasesForGroupId:groupId]];
+    NSMutableArray *results = [[NSMutableArray alloc]init];
+    // seed the random number
+    while(base.count > 0)
+    {
+        unsigned int value = [self randomWithMinValue:0 andMaxValue:base.count];
+        [results addObject:[base objectAtIndex:value]];
+        [base removeObjectAtIndex:value];
+    }
+    return [[NSArray alloc]initWithArray:results];
+}
+
+/* Would like a semi-open interval [min, max) */
+-(unsigned int) randomWithMinValue:(unsigned int)min andMaxValue:(unsigned int) max
+{
+    int base_random = random(); /* in [0, RAND_MAX] */
+    if (RAND_MAX == base_random) return [self randomWithMinValue:min andMaxValue:max];
+    /* now guaranteed to be in [0, RAND_MAX) */
+    int range       = max - min,
+    remainder   = RAND_MAX % range,
+    bucket      = RAND_MAX / range;
+    /* There are range buckets, plus one smaller interval
+     within remainder of RAND_MAX */
+    if (base_random < RAND_MAX - remainder)
+    {
+        return min + base_random/bucket;
+    }
+    else
+    {
+        return [self randomWithMinValue:min andMaxValue:max];
+    }
+}
+
+
+
 #pragma -mark ttXmlParserDelegate functions
 -(void) finishedChild:(NSString*)s;
 {

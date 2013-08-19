@@ -22,6 +22,8 @@
 -(void) clearData;
 
 -(NSArray*) getPhrasesForGroupId:(int)groupId;
+-(NSArray*) getPhrasesForGroupId:(int)groupId inRandomOrder:(BOOL)random;
+-(NSArray*) getPhrasesForGroupId:(int)groupId withRandomSeedValue:(int)seed;
 
 
 @end

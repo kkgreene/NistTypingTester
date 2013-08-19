@@ -9,7 +9,11 @@
         <filterItem filterId="14char">14 Character</filterItem>
     </filters>
     <proficiencyInputs>
-        <proficiencyInput inputId="1" groupId="1">The quick brown fox jumped over the lazy dogs.</proficiencyInput>
+        <proficiencyInput itemId="1" groupId="1">The quick brown fox jumped over the lazy dogs.</proficiencyInput>
+        <proficiencyInput itemId="2" groupId="1">asdf</proficiencyInput>
+        <proficiencyInput itemId="3" groupId="1">ETAOIN SHRDLU</proficiencyInput>
+        <proficiencyInput itemId="4" groupId="1">Now is the time for all good men to come to the aid of the party.</proficiencyInput>
+        <proficiencyInput itemId="5" groupId="1">Passersby were amazed by the unusually large amounts of blood</proficiencyInput>
     </proficiencyInputs>
     <memorizationInputs>
         <memorizationInput inputId="1" date="2013-08-12" groupId="1">

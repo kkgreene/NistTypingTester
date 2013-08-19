@@ -233,8 +233,6 @@ static ttSettings *instance = nil;
 
 -(bool) FirstRun
 {
-    // TODO :: REMOVE FROM PRODUCTION, THIS COPIES NEW DATA FILES EVERY RUN
-    return YES;
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs boolForKey:ttcFirstRunKey];
 }

@@ -116,6 +116,7 @@
 -(void)SettingViewControllerDidCancel:(ttSettingsViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [inputData loadDataFile:nil];
 }
 
 -(void)SettingsViewControllerDidSave:(ttSettingsViewController *)controller

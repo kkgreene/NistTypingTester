@@ -15,6 +15,8 @@
 {
     NSFileHandle *rawFileHandle;
     NSFileHandle *summaryFileHandle;
+    NSDate *sessionStart;
+    NSDate *sessionEnd;
 }
 
 -(id) init
@@ -49,14 +51,16 @@
 
 -(void) sessionDidFinish
 {
-    NSString *startString = [NSString stringWithFormat:@"Session Finished:%@", [NSDate date]];
+    sessionEnd = [NSDate date];
+    NSString *startString = [NSString stringWithFormat:@"Session Finished:%@", sessionEnd];
     [self writeString:startString toLogFile:summaryFileHandle];
     return;
 }
 
 -(void) sessionDidStart
 {
-    NSString *startString = [NSString stringWithFormat:@"Session Started:%@", [NSDate date]];
+    sessionStart = [NSDate date];
+    NSString *startString = [NSString stringWithFormat:@"Session Started:%@", sessionStart];
     [self writeString:startString toLogFile:summaryFileHandle];
     return;
 
@@ -83,6 +87,7 @@
 
 -(void) writeString:(NSString*)string toLogFile:(NSFileHandle*)logFile;
 {
+    // will throw exception if it can't log to the log file
     @try
     {
         [logFile writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
