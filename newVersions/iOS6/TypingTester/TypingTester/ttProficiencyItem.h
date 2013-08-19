@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ttTestPhrase : NSObject
+@interface ttProficiencyItem : NSObject
 
 @property (nonatomic, copy) NSString *phrase;
 @property (nonatomic, assign) int groupId;
+@property (nonatomic, assign) int itemId;
 
 
 @end

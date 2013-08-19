@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Matthew Kerr. All rights reserved.
 //
 
-#import "ttTestPhrase.h"
+#import "ttProficiencyItem.h"
 
-@implementation ttTestPhrase
+@implementation ttProficiencyItem
 
 -(id) init
 {

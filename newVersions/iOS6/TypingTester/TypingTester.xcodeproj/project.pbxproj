@@ -23,7 +23,7 @@
 		AD047FC517A9910A00657D08 /* ttParticipant.m in Sources */ = {isa = PBXBuildFile; fileRef = AD047FC417A9910A00657D08 /* ttParticipant.m */; };
 		AD1EEABA17B40103008D98BC /* ttSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EEAB917B40103008D98BC /* ttSettings.m */; };
 		AD1EEABD17B40DF5008D98BC /* ttConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EEABC17B40DF5008D98BC /* ttConstants.m */; };
-		AD4073FC17BBCBB3006E31CF /* ttTestPhrase.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4073FB17BBCBB3006E31CF /* ttTestPhrase.m */; };
+		AD4073FC17BBCBB3006E31CF /* ttProficiencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4073FB17BBCBB3006E31CF /* ttProficiencyItem.m */; };
 		AD4073FF17BBCBC2006E31CF /* ttTestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4073FE17BBCBC2006E31CF /* ttTestEntity.m */; };
 		AD6BC6B317B54AAF0067764F /* welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = AD6BC6B217B54AAF0067764F /* welcome.html */; };
 		AD6E13D317B92FD50034DA27 /* instructionsIphone.html in Resources */ = {isa = PBXBuildFile; fileRef = AD6E13D217B92FD50034DA27 /* instructionsIphone.html */; };
@@ -37,6 +37,9 @@
 		ADAD327D17BA7D3A00A2DE58 /* ttSession.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD327C17BA7D3A00A2DE58 /* ttSession.m */; };
 		ADB91FEE17C2519500DCE303 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB91FEC17C2519500DCE303 /* 19-gear.png */; };
 		ADB91FEF17C2519500DCE303 /* 19-gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB91FED17C2519500DCE303 /* 19-gear@2x.png */; };
+		ADB91FF217C2724000DCE303 /* ttXmlParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB91FF117C2724000DCE303 /* ttXmlParserDelegate.m */; };
+		ADB91FF517C275B000DCE303 /* ttInputData.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB91FF417C275B000DCE303 /* ttInputData.m */; };
+		ADB91FF817C2861700DCE303 /* ttFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB91FF717C2861600DCE303 /* ttFilter.m */; };
 		ADBA94DF17AAE92000BB226D /* ttReadyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA94DE17AAE92000BB226D /* ttReadyViewController.m */; };
 		ADBA94E217AAE93400BB226D /* ttTypingProficiencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA94E117AAE93400BB226D /* ttTypingProficiencyViewController.m */; };
 		ADC3259A17B2B91B00EF8127 /* ttUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC3259917B2B91B00EF8127 /* ttUtilities.m */; };
@@ -68,8 +71,8 @@
 		AD1EEAB917B40103008D98BC /* ttSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttSettings.m; sourceTree = "<group>"; };
 		AD1EEABB17B40DF5008D98BC /* ttConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttConstants.h; sourceTree = "<group>"; };
 		AD1EEABC17B40DF5008D98BC /* ttConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttConstants.m; sourceTree = "<group>"; };
-		AD4073FA17BBCBB3006E31CF /* ttTestPhrase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttTestPhrase.h; sourceTree = "<group>"; };
-		AD4073FB17BBCBB3006E31CF /* ttTestPhrase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttTestPhrase.m; sourceTree = "<group>"; };
+		AD4073FA17BBCBB3006E31CF /* ttProficiencyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttProficiencyItem.h; sourceTree = "<group>"; };
+		AD4073FB17BBCBB3006E31CF /* ttProficiencyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttProficiencyItem.m; sourceTree = "<group>"; };
 		AD4073FD17BBCBC2006E31CF /* ttTestEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttTestEntity.h; sourceTree = "<group>"; };
 		AD4073FE17BBCBC2006E31CF /* ttTestEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttTestEntity.m; sourceTree = "<group>"; };
 		AD6BC6B217B54AAF0067764F /* welcome.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = welcome.html; sourceTree = "<group>"; };
@@ -89,6 +92,12 @@
 		ADAD327C17BA7D3A00A2DE58 /* ttSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttSession.m; sourceTree = "<group>"; };
 		ADB91FEC17C2519500DCE303 /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
 		ADB91FED17C2519500DCE303 /* 19-gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear@2x.png"; sourceTree = "<group>"; };
+		ADB91FF017C2724000DCE303 /* ttXmlParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttXmlParserDelegate.h; sourceTree = "<group>"; };
+		ADB91FF117C2724000DCE303 /* ttXmlParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttXmlParserDelegate.m; sourceTree = "<group>"; };
+		ADB91FF317C275B000DCE303 /* ttInputData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttInputData.h; sourceTree = "<group>"; };
+		ADB91FF417C275B000DCE303 /* ttInputData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttInputData.m; sourceTree = "<group>"; };
+		ADB91FF617C2861600DCE303 /* ttFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttFilter.h; sourceTree = "<group>"; };
+		ADB91FF717C2861600DCE303 /* ttFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttFilter.m; sourceTree = "<group>"; };
 		ADBA94DD17AAE92000BB226D /* ttReadyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttReadyViewController.h; sourceTree = "<group>"; };
 		ADBA94DE17AAE92000BB226D /* ttReadyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttReadyViewController.m; sourceTree = "<group>"; };
 		ADBA94E017AAE93400BB226D /* ttTypingProficiencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttTypingProficiencyViewController.h; sourceTree = "<group>"; };
@@ -228,8 +237,8 @@
 				AD1EEABC17B40DF5008D98BC /* ttConstants.m */,
 				ADAD327B17BA7D3A00A2DE58 /* ttSession.h */,
 				ADAD327C17BA7D3A00A2DE58 /* ttSession.m */,
-				AD4073FA17BBCBB3006E31CF /* ttTestPhrase.h */,
-				AD4073FB17BBCBB3006E31CF /* ttTestPhrase.m */,
+				AD4073FA17BBCBB3006E31CF /* ttProficiencyItem.h */,
+				AD4073FB17BBCBB3006E31CF /* ttProficiencyItem.m */,
 				AD4073FD17BBCBC2006E31CF /* ttTestEntity.h */,
 				AD4073FE17BBCBC2006E31CF /* ttTestEntity.m */,
 				AD7B0B6B17BD1FC300F49391 /* ttEvent.h */,
@@ -238,6 +247,12 @@
 				AD7B0B6F17BD288E00F49391 /* ttEventTouch.m */,
 				AD7B0B7117BD2A6300F49391 /* ttEventInput.h */,
 				AD7B0B7217BD2A6400F49391 /* ttEventInput.m */,
+				ADB91FF017C2724000DCE303 /* ttXmlParserDelegate.h */,
+				ADB91FF117C2724000DCE303 /* ttXmlParserDelegate.m */,
+				ADB91FF317C275B000DCE303 /* ttInputData.h */,
+				ADB91FF417C275B000DCE303 /* ttInputData.m */,
+				ADB91FF617C2861600DCE303 /* ttFilter.h */,
+				ADB91FF717C2861600DCE303 /* ttFilter.m */,
 			);
 			name = dataModel;
 			sourceTree = "<group>";
@@ -336,11 +351,14 @@
 				AD1EEABD17B40DF5008D98BC /* ttConstants.m in Sources */,
 				AD6E13DC17B94BE50034DA27 /* ttSettingsDetailViewController.m in Sources */,
 				ADAD327D17BA7D3A00A2DE58 /* ttSession.m in Sources */,
-				AD4073FC17BBCBB3006E31CF /* ttTestPhrase.m in Sources */,
+				AD4073FC17BBCBB3006E31CF /* ttProficiencyItem.m in Sources */,
 				AD4073FF17BBCBC2006E31CF /* ttTestEntity.m in Sources */,
 				AD7B0B6D17BD1FC300F49391 /* ttEvent.m in Sources */,
 				AD7B0B7017BD288E00F49391 /* ttEventTouch.m in Sources */,
 				AD7B0B7317BD2A6400F49391 /* ttEventInput.m in Sources */,
+				ADB91FF217C2724000DCE303 /* ttXmlParserDelegate.m in Sources */,
+				ADB91FF517C275B000DCE303 /* ttInputData.m in Sources */,
+				ADB91FF817C2861700DCE303 /* ttFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

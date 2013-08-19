@@ -29,12 +29,15 @@
     {
         self.participant = [[ttParticipant alloc]initWithParticipantNumber:participantId];
         self.events = [[NSMutableArray alloc]init];
+        [self initializeLogFiles];
+        [self sessionDidStart];
     }
     return self;
 }
 
 -(void)dealloc
 {
+    [self sessionDidFinish];
     [self closeLogFiles];
 }
 

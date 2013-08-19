@@ -10,6 +10,7 @@
 #import "ttParticipant.h"
 #import "ttReadyViewController.h"
 #import "ttSettings.h"
+#import "ttInputData.h"
 
 
 @interface ttViewController ()
@@ -20,6 +21,7 @@
 {
     ttSettings* settings;
     ttParticipant *participant;
+    ttInputData *inputData;
 }
 
 -(id) initWithCoder:(NSCoder *)aDecoder
@@ -28,6 +30,8 @@
     if (self)
     {
         settings = [ttSettings Instance];
+        inputData = [ttInputData Instance];
+        [inputData loadDataFile:nil];
     }
     return self;
 }
@@ -117,6 +121,7 @@
 -(void)SettingsViewControllerDidSave:(ttSettingsViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [inputData loadDataFile:nil];
 }
 
 @end
