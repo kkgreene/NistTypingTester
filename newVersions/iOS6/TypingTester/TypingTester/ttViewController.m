@@ -1,0 +1,122 @@
+//
+//  ttViewController.m
+//  TypingTester
+//
+//  Created by Matthew Kerr on 7/31/13.
+//  Copyright (c) 2013 Matthew Kerr. All rights reserved.
+//
+
+#import "ttViewController.h"
+#import "ttParticipant.h"
+#import "ttReadyViewController.h"
+#import "ttSettings.h"
+
+
+@interface ttViewController ()
+
+@end
+
+@implementation ttViewController
+{
+    ttSettings* settings;
+    ttParticipant *participant;
+}
+
+-(id) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        settings = [ttSettings Instance];
+    }
+    return self;
+}
+
+-(NSUInteger) supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAllButUpsideDown;
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.participantNumber becomeFirstResponder];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Settings"])
+    {
+        ttSettingsViewController *controller = segue.destinationViewController;
+        controller.delegate = self;
+    }
+    else if ([segue.identifier isEqualToString:@"ReadyScreen"])
+    {
+        ttReadyViewController *controller = segue.destinationViewController;
+        controller.participantNumber = self.participantNumber.text;
+    }
+    
+}
+
+#pragma mark private methods
+
+-(void) configureInterfaceForParticipantNumber:(NSString*)number
+{
+    if ([self isValidParticipantNumber:number])
+    {
+        self.startButton.enabled = YES;
+        self.invalidImage.hidden = YES;
+        self.invalidString.hidden = YES;
+    }
+    else
+    {
+        self.startButton.enabled = NO;
+        self.invalidImage.hidden = NO;
+        self.invalidString.hidden = NO;
+    }
+
+}
+
+-(BOOL) isValidParticipantNumber:(NSString*)participantNumber
+{
+    BOOL isValid = NO;
+    if (participantNumber.length > 0) isValid = YES;
+    return isValid;
+}
+
+#pragma mark Actions
+
+-(IBAction)backgroundTouch
+{
+    [self.participantNumber resignFirstResponder];
+}
+
+#pragma mark TextFieldDelegate Methods
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    NSLog(@"textFieldShouldReturn");
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(BOOL) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    [self configureInterfaceForParticipantNumber:newString];
+    return YES;
+}
+
+#pragma mark SettingsViewControllerDelegate methods
+
+-(void)SettingViewControllerDidCancel:(ttSettingsViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)SettingsViewControllerDidSave:(ttSettingsViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+@end

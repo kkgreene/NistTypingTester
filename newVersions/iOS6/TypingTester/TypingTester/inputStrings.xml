@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputBundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/Users/mattkerr/Google%20Drive/development/nistTypingStudy/Documents/mockups/dataFormat/typingInputFile.xsd">
+    <filters>
+        <filterItem filterId="6char">6 Character</filterItem>
+        <filterItem filterId="8char">8 Character</filterItem>
+        <filterItem filterId="10char">10 Character</filterItem>
+        <filterItem filterId="12char">12 Character</filterItem>
+        <filterItem filterId="14char">14 Character</filterItem>
+    </filters>
+    <proficiencyGroups>
+        <proficiencyGroup groupId="1">
+            <string>The quick brown fox jumped over the lazy dogs.</string>
+            <string>Happy Happy Joy Joy</string>
+        </proficiencyGroup>
+    </proficiencyGroups>
+    <memorizationInputs>
+        <memorizationInput inputId="1" date="2013-08-12" groupId="1">
+            <value>ABCD12</value>
+            <filter>6char</filter>
+        </memorizationInput>
+        <memorizationInput inputId="2" date="2013-08-12"  groupId="1">
+            <value>ABCD1234</value>
+            <filter>8char</filter>
+        </memorizationInput>
+        <memorizationInput inputId="3" date="2013-08-12"  groupId="1">
+            <value>ABCD123456</value>
+            <filter>10char</filter>
+        </memorizationInput>
+        <memorizationInput inputId="4" date="2013-08-12"  groupId="1">
+            <value>ABCD12345678</value>
+            <filter>12char</filter>
+        </memorizationInput>
+        <memorizationInput inputId="5" date="2013-08-12"  groupId="1">
+            <value>ABCD1234567890</value>
+            <filter>14char</filter>
+        </memorizationInput>
+        <memorizationInput inputId="6" date="2013-08-12"  groupId="1">
+            <value>DCBA12</value>
+            <filter>6char</filter>
+        </memorizationInput>
+        <memorizationInput inputId="7" date="2013-08-12"  groupId="1">
+            <value>DCBA1234</value>
+            <filter>8char</filter>
+        </memorizationInput>
+        <memorizationInput inputId="8" date="2013-08-12"  groupId="1">
+            <value>DCBA123456</value>
+            <filter>10char</filter>
+        </memorizationInput>
+        <memorizationInput inputId="9" date="2013-08-12"  groupId="1">
+            <value>DCBA12345678</value>
+            <filter>12char</filter>
+        </memorizationInput>
+        <memorizationInput inputId="10" date="2013-08-12"  groupId="1">
+            <value>DCBA1234567890</value>
+            <filter>14char</filter>
+        </memorizationInput>
+    </memorizationInputs>
+</inputBundle>
