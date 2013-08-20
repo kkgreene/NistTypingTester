@@ -15,6 +15,7 @@
 #import "ttInputData.h"
 #import "ttSettings.h"
 #import "ttProficiencyItem.h"
+#import "ttInstructionsViewController.h"
 
 @interface ttTypingProficiencyViewController ()
 
@@ -85,15 +86,17 @@
     else
     {
         // prepare for next screen
-        [self performSegueWithIdentifier:@"Memorize" sender:self];
+        [self performSegueWithIdentifier:@"Instructions" sender:self];
     }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"Memorize"])
+    // pass the session pointer on ...
+    if ([segue.identifier isEqualToString:@"Instructions"])
     {
-        
+        ttInstructionsViewController *controller = [segue destinationViewController];
+        controller.session = self.session;
     }
 }
 

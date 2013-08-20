@@ -23,6 +23,7 @@ FOUNDATION_EXPORT NSString *const ttcUseRandomStringSelectionSeedKey;
 FOUNDATION_EXPORT NSString *const ttcSelectedFiltersKey;
 FOUNDATION_EXPORT NSString *const ttcSelectedGroupKey;
 FOUNDATION_EXPORT NSString *const ttcFirstRunKey;
+FOUNDATION_EXPORT NSString *const ttcEnableHideButtonOnPracticeScreenKey;
 
 FOUNDATION_EXPORT const int ttcStringsForTestDefaultValue;
 FOUNDATION_EXPORT const int ttcEntriesPerTestDefaultValue;
@@ -37,6 +38,7 @@ FOUNDATION_EXPORT const bool ttcRandomStringOrderDefaultValue;
 FOUNDATION_EXPORT const bool ttcRandomStringSelectionDefaultValue;
 FOUNDATION_EXPORT const bool ttcUseRandomStringOrderSeedDefaultValue;
 FOUNDATION_EXPORT const bool ttcUseRandomStringSelectionSeedDefaultValue;
+FOUNDATION_EXPORT const bool ttcEnableHideButtonOnPracticeScreenValue;
 
 FOUNDATION_EXPORT NSString *const ttcQuitStringDefaultValue;
 

@@ -21,6 +21,7 @@ NSString *const ttcUseRandomStringSelectionSeedKey = @"UseRandomStringSelectionS
 NSString *const ttcSelectedFiltersKey = @"SelectedFilters";
 NSString *const ttcSelectedGroupKey = @"SelectedGroup";
 NSString *const ttcFirstRunKey = @"FirstRun";
+NSString *const ttcEnableHideButtonOnPracticeScreenKey = @"EnableHideButtonOnPracticeScreen";
 
 const int ttcStringsForTestDefaultValue = 10;
 const int ttcEntriesPerTestDefaultValue = 10;
@@ -35,6 +36,7 @@ const bool ttcRandomStringOrderDefaultValue = YES;
 const bool ttcRandomStringSelectionDefaultValue = YES;
 const bool ttcUseRandomStringOrderSeedDefaultValue = YES;
 const bool ttcUseRandomStringSelectionSeedDefaultValue = YES;
+const bool ttcEnableHideButtonOnPracticeScreenValue = NO;
 
 NSString *const ttcQuitStringDefaultValue = @"I QUIT";
 

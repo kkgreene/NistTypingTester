@@ -29,6 +29,7 @@
 @property (nonatomic, assign) int SelectedGroup;
 @property (nonatomic, strong) NSArray *SelectedFilters;
 @property (nonatomic, assign) bool FirstRun;
+@property (nonatomic, assign) bool EnableHideButtonOnPracticeScreen;
 
 +(ttSettings*) Instance;
 

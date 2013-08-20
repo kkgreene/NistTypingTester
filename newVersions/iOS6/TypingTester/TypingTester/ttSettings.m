@@ -47,7 +47,7 @@ static ttSettings *instance = nil;
     [prefs setInteger:ttcEntriesPerTestDefaultValue forKey:ttcEntriesPerTestKey];
     [prefs setInteger:ttcForcedPracticeRoundsDefaultValue forKey:ttcForcedPracticeRoundsKey];
     [prefs setBool:ttcShowQuitButtonDefaultValue forKey:ttcShowQuitButtonKey];
-    [prefs setBool:ttcShowSkipButtonDefaultValue forKey:ttcShowQuitButtonKey];
+    [prefs setBool:ttcShowSkipButtonDefaultValue forKey:ttcShowSkipButtonKey];
     [prefs setBool:ttcRandomStringOrderDefaultValue forKey:ttcRandomStringOrderKey];
     [prefs setBool:ttcRandomStringSelectionDefaultValue forKey:ttcRandomStringSelectionKey];
     [prefs setObject:ttcQuitStringDefaultValue forKey:ttcQuitStringKey];
@@ -58,6 +58,7 @@ static ttSettings *instance = nil;
     [prefs setInteger:ttcSelectedGroupValue forKey:ttcSelectedGroupKey];
     [prefs setObject:[[NSArray alloc]init] forKey:ttcSelectedFiltersKey];
     [prefs setBool:YES forKey:ttcFirstRunKey];
+    [prefs setBool:ttcEnableHideButtonOnPracticeScreenValue forKey:ttcEnableHideButtonOnPracticeScreenKey];
 }
 
 #pragma mark Custom setter/getter pairs
@@ -241,6 +242,18 @@ static ttSettings *instance = nil;
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setBool:FirstRun forKey:ttcFirstRunKey];
+}
+
+-(bool) EnableHideButtonOnPracticeScreen
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    return [prefs boolForKey:ttcEnableHideButtonOnPracticeScreenKey];
+}
+
+-(void) setEnableHideButtonOnPracticeScreen:(bool)EnableHideButtonOnPracticeScreen
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setBool:EnableHideButtonOnPracticeScreen forKey:ttcEnableHideButtonOnPracticeScreenKey];
 }
 
 
