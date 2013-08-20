@@ -41,6 +41,7 @@
 		AD20940717C3B94B00B56CB7 /* 765-arrow-left-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD20940317C3B94B00B56CB7 /* 765-arrow-left-white@2x.png */; };
 		AD20940817C3B94B00B56CB7 /* 766-arrow-right-white.png in Resources */ = {isa = PBXBuildFile; fileRef = AD20940417C3B94B00B56CB7 /* 766-arrow-right-white.png */; };
 		AD20940917C3B94B00B56CB7 /* 766-arrow-right-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD20940517C3B94B00B56CB7 /* 766-arrow-right-white@2x.png */; };
+		AD20940C17C3D34500B56CB7 /* ttThankYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD20940B17C3D34400B56CB7 /* ttThankYouViewController.m */; };
 		AD4073FC17BBCBB3006E31CF /* ttProficiencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4073FB17BBCBB3006E31CF /* ttProficiencyItem.m */; };
 		AD4073FF17BBCBC2006E31CF /* ttTestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4073FE17BBCBC2006E31CF /* ttTestEntity.m */; };
 		AD6BC6B317B54AAF0067764F /* welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = AD6BC6B217B54AAF0067764F /* welcome.html */; };
@@ -110,6 +111,8 @@
 		AD20940317C3B94B00B56CB7 /* 765-arrow-left-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "765-arrow-left-white@2x.png"; sourceTree = "<group>"; };
 		AD20940417C3B94B00B56CB7 /* 766-arrow-right-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "766-arrow-right-white.png"; sourceTree = "<group>"; };
 		AD20940517C3B94B00B56CB7 /* 766-arrow-right-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "766-arrow-right-white@2x.png"; sourceTree = "<group>"; };
+		AD20940A17C3D34400B56CB7 /* ttThankYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttThankYouViewController.h; sourceTree = "<group>"; };
+		AD20940B17C3D34400B56CB7 /* ttThankYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttThankYouViewController.m; sourceTree = "<group>"; };
 		AD4073FA17BBCBB3006E31CF /* ttProficiencyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttProficiencyItem.h; sourceTree = "<group>"; };
 		AD4073FB17BBCBB3006E31CF /* ttProficiencyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttProficiencyItem.m; sourceTree = "<group>"; };
 		AD4073FD17BBCBC2006E31CF /* ttTestEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttTestEntity.h; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 				AD2093E517C3A2A500B56CB7 /* ttInstructionsViewController.m */,
 				AD2093F717C3AD5500B56CB7 /* ttPracticeViewController.h */,
 				AD2093F817C3AD5500B56CB7 /* ttPracticeViewController.m */,
+				AD20940A17C3D34400B56CB7 /* ttThankYouViewController.h */,
+				AD20940B17C3D34400B56CB7 /* ttThankYouViewController.m */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				C9E0977A17C3150F004DBD9F /* ttMemorizeViewController.m in Sources */,
 				AD2093E617C3A2A500B56CB7 /* ttInstructionsViewController.m in Sources */,
 				AD2093F917C3AD5500B56CB7 /* ttPracticeViewController.m in Sources */,
+				AD20940C17C3D34500B56CB7 /* ttThankYouViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

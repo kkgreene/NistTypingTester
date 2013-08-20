@@ -61,6 +61,7 @@ typedef enum
     Verify,
     Entry,
     Recall,
+    ThankYou,
 } Phase;
 
 typedef enum
