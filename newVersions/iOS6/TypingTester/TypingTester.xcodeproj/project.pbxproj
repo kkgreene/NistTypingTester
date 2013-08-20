@@ -43,6 +43,7 @@
 		ADBA94DF17AAE92000BB226D /* ttReadyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA94DE17AAE92000BB226D /* ttReadyViewController.m */; };
 		ADBA94E217AAE93400BB226D /* ttTypingProficiencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA94E117AAE93400BB226D /* ttTypingProficiencyViewController.m */; };
 		ADC3259A17B2B91B00EF8127 /* ttUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC3259917B2B91B00EF8127 /* ttUtilities.m */; };
+		C9E0977A17C3150F004DBD9F /* ttMemorizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E0977917C3150F004DBD9F /* ttMemorizeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,8 @@
 		ADBA94E117AAE93400BB226D /* ttTypingProficiencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttTypingProficiencyViewController.m; sourceTree = "<group>"; };
 		ADC3259817B2B91B00EF8127 /* ttUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttUtilities.h; sourceTree = "<group>"; };
 		ADC3259917B2B91B00EF8127 /* ttUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttUtilities.m; sourceTree = "<group>"; };
+		C9E0977817C3150F004DBD9F /* ttMemorizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttMemorizeViewController.h; sourceTree = "<group>"; };
+		C9E0977917C3150F004DBD9F /* ttMemorizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttMemorizeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +213,8 @@
 				AD04768417A964B600657D08 /* ttViewController.m */,
 				AD6E13DA17B94BE50034DA27 /* ttSettingsDetailViewController.h */,
 				AD6E13DB17B94BE50034DA27 /* ttSettingsDetailViewController.m */,
+				C9E0977817C3150F004DBD9F /* ttMemorizeViewController.h */,
+				C9E0977917C3150F004DBD9F /* ttMemorizeViewController.m */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				ADB91FF217C2724000DCE303 /* ttXmlParserDelegate.m in Sources */,
 				ADB91FF517C275B000DCE303 /* ttInputData.m in Sources */,
 				ADB91FF817C2861700DCE303 /* ttFilter.m in Sources */,
+				C9E0977A17C3150F004DBD9F /* ttMemorizeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

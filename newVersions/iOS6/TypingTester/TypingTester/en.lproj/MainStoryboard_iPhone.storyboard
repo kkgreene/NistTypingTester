@@ -278,11 +278,123 @@
                         <outlet property="phraseLabel1" destination="naP-ps-fJd" id="umj-vk-PIx"/>
                         <outlet property="progressBar" destination="Wa3-EA-in3" id="1Fv-qZ-off"/>
                         <outlet property="progressLabel" destination="vDt-aN-WLS" id="IlZ-2N-w3b"/>
+                        <segue destination="WZw-fl-GDW" kind="modal" identifier="Memorize" modalTransitionStyle="crossDissolve" id="J2f-QV-0RU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9QC-JH-B11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1920" y="300"/>
+            <point key="canvasLocation" x="1930" y="262"/>
+        </scene>
+        <!--Tt Memorize View Controller-->
+        <scene sceneID="5JC-kE-KLO">
+            <objects>
+                <viewController id="WZw-fl-GDW" customClass="ttMemorizeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jfk-Et-mgd">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="mgW-NV-Qwr">
+                                <items>
+                                    <navigationItem title="Memorize" id="2nZ-8E-t5L">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="US8-4e-NmU"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Entity X of Y" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSA-Ff-jJi">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B57-FB-fJm"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NK-oY-JFw">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="tdE-E1-wIm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yS7-pG-apN">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="147" id="EMJ-IH-gMQ"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please memorize the string in bold" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRE-iR-POW">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="font at the top of the screen.  You may" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mN1-0O-a6B">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="use the text area to practice if needed." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqe-XB-sjK">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Press the 'Done' button in the upper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOo-z2-aj3">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="right corner of the screen when you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cws-hy-UKt">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="have memorized the string." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfH-k1-BRg">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9NK-oY-JFw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0LG-Cf-LQw"/>
+                            <constraint firstItem="yS7-pG-apN" firstAttribute="centerX" secondItem="eRE-iR-POW" secondAttribute="centerX" type="default" id="1Si-Ts-JsK"/>
+                            <constraint firstItem="9NK-oY-JFw" firstAttribute="leading" secondItem="jfk-Et-mgd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1wB-fy-HS9"/>
+                            <constraint firstItem="cws-hy-UKt" firstAttribute="centerX" secondItem="uqe-XB-sjK" secondAttribute="centerX" type="default" id="6Ua-Jt-Sv7"/>
+                            <constraint firstAttribute="trailing" secondItem="B57-FB-fJm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="78V-yp-YtX"/>
+                            <constraint firstItem="mgW-NV-Qwr" firstAttribute="top" secondItem="jfk-Et-mgd" secondAttribute="top" type="default" id="CE8-gh-fAn"/>
+                            <constraint firstItem="gOo-z2-aj3" firstAttribute="centerX" secondItem="mN1-0O-a6B" secondAttribute="centerX" type="default" id="EhJ-79-MNi"/>
+                            <constraint firstItem="9NK-oY-JFw" firstAttribute="top" secondItem="B57-FB-fJm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="K9u-m0-zXy"/>
+                            <constraint firstItem="mN1-0O-a6B" firstAttribute="trailing" secondItem="yS7-pG-apN" secondAttribute="trailing" type="default" id="MmB-J1-hw8"/>
+                            <constraint firstItem="uqe-XB-sjK" firstAttribute="centerX" secondItem="eRE-iR-POW" secondAttribute="centerX" type="default" id="Rf5-3e-1TW"/>
+                            <constraint firstItem="gOo-z2-aj3" firstAttribute="top" secondItem="uqe-XB-sjK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RgN-RA-Hx4"/>
+                            <constraint firstItem="QfH-k1-BRg" firstAttribute="top" secondItem="cws-hy-UKt" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="SvU-3d-9cX"/>
+                            <constraint firstItem="B57-FB-fJm" firstAttribute="top" secondItem="jfk-Et-mgd" secondAttribute="top" constant="75" id="UEl-IV-Qb9"/>
+                            <constraint firstItem="mgW-NV-Qwr" firstAttribute="leading" secondItem="jfk-Et-mgd" secondAttribute="leading" type="default" id="UoR-mF-ZEE"/>
+                            <constraint firstItem="uqe-XB-sjK" firstAttribute="top" secondItem="mN1-0O-a6B" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Wju-cn-kJJ"/>
+                            <constraint firstItem="rSA-Ff-jJi" firstAttribute="centerX" secondItem="B57-FB-fJm" secondAttribute="centerX" type="default" id="aog-O5-iYR"/>
+                            <constraint firstItem="rSA-Ff-jJi" firstAttribute="top" secondItem="jfk-Et-mgd" secondAttribute="top" constant="51" id="dyk-eT-WlE"/>
+                            <constraint firstAttribute="bottom" secondItem="QfH-k1-BRg" secondAttribute="bottom" constant="56" id="n9Z-wh-Ex7"/>
+                            <constraint firstItem="mgW-NV-Qwr" firstAttribute="trailing" secondItem="jfk-Et-mgd" secondAttribute="trailing" type="default" id="nJG-0l-7P3"/>
+                            <constraint firstItem="cws-hy-UKt" firstAttribute="trailing" secondItem="gOo-z2-aj3" secondAttribute="trailing" type="default" id="oJC-t7-F8Z"/>
+                            <constraint firstItem="mN1-0O-a6B" firstAttribute="top" secondItem="eRE-iR-POW" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oZD-0j-d9s"/>
+                            <constraint firstItem="QfH-k1-BRg" firstAttribute="centerX" secondItem="cws-hy-UKt" secondAttribute="centerX" type="default" id="pey-GL-Toh"/>
+                            <constraint firstItem="yS7-pG-apN" firstAttribute="leading" secondItem="jfk-Et-mgd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rXc-qF-SR0"/>
+                            <constraint firstItem="yS7-pG-apN" firstAttribute="top" secondItem="jfk-Et-mgd" secondAttribute="top" constant="127" id="uVY-qp-Z4z"/>
+                            <constraint firstItem="B57-FB-fJm" firstAttribute="leading" secondItem="jfk-Et-mgd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="utM-po-2da"/>
+                            <constraint firstItem="cws-hy-UKt" firstAttribute="top" secondItem="gOo-z2-aj3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zkg-h3-Zh3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="US8-4e-NmU" id="aCn-sC-9KK"/>
+                        <outlet property="passwordLabel" destination="9NK-oY-JFw" id="XY1-fy-N64"/>
+                        <outlet property="progressDisplay" destination="B57-FB-fJm" id="ena-w4-7BU"/>
+                        <outlet property="progressLabel" destination="rSA-Ff-jJi" id="Hxs-EP-7ve"/>
+                        <outlet property="workArea" destination="yS7-pG-apN" id="hon-Cx-cGA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5uc-2c-UCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2423" y="262"/>
         </scene>
         <!--Tt Settings View Controller - Settings-->
         <scene sceneID="6bV-F8-nnZ">
@@ -753,6 +865,72 @@
         <image name="19-gear.png" width="26" height="26"/>
         <image name="433-x.png" width="18" height="18"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ttMemorizeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttMemorizeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="progressDisplay" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="progressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="workArea" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="ttReadyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttReadyViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="outlet" name="participantNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="readyTextArea" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ttSettingsDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttSettingsDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="groupId" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numberOfEntities" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numberOfForcedPracticeRounds" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numberOfProficiencyPhrases" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numberOfRepetitions" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="randomStringOrder" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="randomStringOrderSeedValue" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="randomStringSelection" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="randomStringSelectionSeedValue" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ttSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="save:"/>
+            </relationships>
+        </class>
+        <class className="ttTypingProficiencyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttTypingProficiencyViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButtonPressed"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phraseLabel1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="phraseLabel2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="progressLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ttViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTouch"/>
+                <relationship kind="outlet" name="invalidImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="invalidString" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="participantNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

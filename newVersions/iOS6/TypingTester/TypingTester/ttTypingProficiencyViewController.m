@@ -61,7 +61,14 @@
     self.phraseLabel1.text = item.text;
     self.progressLabel.text = [NSString stringWithFormat:@"Entry %i of %i", currentString+1, inputStrings.count];
     self.progressBar.progress = (currentString + 0.0F)/(inputStrings.count+0.0F);
-    self.entryField.text = @"";
+    if (self.entryField.text.length > 0)
+    {
+        self.doneButton.enabled = YES;
+    }
+    else
+    {
+        self.doneButton.enabled = NO;
+    }
 }
 
 #pragma mark - IBActions
@@ -72,11 +79,21 @@
     currentString++;
     if (currentString < inputStrings.count)
     {
+        self.entryField.text = @"";
         [self configureUI];
     }
     else
     {
         // prepare for next screen
+        [self performSegueWithIdentifier:@"Memorize" sender:self];
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Memorize"])
+    {
+        
     }
 }
 
@@ -105,11 +122,11 @@
     [self.session addEvent:inputEvent];
     if (newString.length > 0)
     {
-        self.doneButton.enabled = true;
+        self.doneButton.enabled = YES;
     }
     else
     {
-        self.doneButton.enabled = false;
+        self.doneButton.enabled = NO;
     }
     NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
     return YES;
