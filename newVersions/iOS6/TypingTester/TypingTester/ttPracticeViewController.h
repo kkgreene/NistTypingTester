@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ttSession.h"
 
-@interface ttPracticeViewController : UIViewController
+@interface ttPracticeViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *sessionProgressLabel;
 @property (nonatomic, weak) IBOutlet UILabel *entitiyProgressLabel;

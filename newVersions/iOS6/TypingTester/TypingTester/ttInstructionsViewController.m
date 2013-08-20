@@ -9,6 +9,7 @@
 #import "ttInstructionsViewController.h"
 #import "ttUtilities.h"
 #import "ttMemorizeViewController.h"
+#import "ttEventTouch.h"
 
 @interface ttInstructionsViewController ()
 
@@ -50,6 +51,16 @@
         ttMemorizeViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
+}
+
+#pragma -mark touch events
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch * touch = [touches anyObject];
+    CGPoint pos = [touch locationInView: [UIApplication sharedApplication].keyWindow];
+    ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
+    NSLog(@"Touch on Practice View: %.3f, %.3f", pos.x, pos.y);
+    [self.session addEvent:touchEvent];
 }
 
 @end

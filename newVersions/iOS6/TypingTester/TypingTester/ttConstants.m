@@ -36,7 +36,7 @@ const bool ttcRandomStringOrderDefaultValue = YES;
 const bool ttcRandomStringSelectionDefaultValue = YES;
 const bool ttcUseRandomStringOrderSeedDefaultValue = YES;
 const bool ttcUseRandomStringSelectionSeedDefaultValue = YES;
-const bool ttcEnableHideButtonOnPracticeScreenValue = NO;
+const bool ttcEnableHideButtonOnPracticeScreenValue = YES;
 
 NSString *const ttcQuitStringDefaultValue = @"I QUIT";
 

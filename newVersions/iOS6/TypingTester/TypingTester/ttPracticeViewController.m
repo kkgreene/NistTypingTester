@@ -8,6 +8,8 @@
 
 #import "ttPracticeViewController.h"
 #import "ttSettings.h"
+#import "ttEventTouch.h"
+#import "ttEventInput.h"
 
 @interface ttPracticeViewController ()
 
@@ -89,7 +91,45 @@
 }
 
 #pragma -mark touch events
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch * touch = [touches anyObject];
+    CGPoint pos = [touch locationInView: [UIApplication sharedApplication].keyWindow];
+    ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
+    NSLog(@"Touch on Practice View: %.3f, %.3f", pos.x, pos.y);
+    [self.session addEvent:touchEvent];
+    [self.entryField resignFirstResponder];
+}
 
 #pragma -mark UITextFieldDelegate methods
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:UnknownPhase];
+    inputEvent.location = range.location;
+    inputEvent.length = range.length;
+    inputEvent.enteredCharacters = string;
+    inputEvent.currentValue = newString;
+    [self.session addEvent:inputEvent];
+    if (newString.length > 0)
+    {
+        self.doneButton.enabled = YES;
+    }
+    else
+    {
+        self.doneButton.enabled = NO;
+    }
+    NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
+    return YES;
+}
+
+// hides the keyboard when the user returns
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 
 @end

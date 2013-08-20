@@ -7,6 +7,8 @@
 //
 
 #import "ttMemorizeViewController.h"
+#import "ttEventTouch.h"
+#import "ttEventInput.h"
 
 @interface ttMemorizeViewController ()
 
@@ -45,5 +47,16 @@
 //{
 //    UITextRange *selectedText = [textView selectedTextRange];
 //}
+
+#pragma -mark touch events
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch * touch = [touches anyObject];
+    CGPoint pos = [touch locationInView: [UIApplication sharedApplication].keyWindow];
+    ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
+    NSLog(@"Touch on Practice View: %.3f, %.3f", pos.x, pos.y);
+    [self.session addEvent:touchEvent];
+    [self.workArea resignFirstResponder];
+}
 
 @end

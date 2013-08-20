@@ -107,7 +107,7 @@
     UITouch * touch = [touches anyObject];
     CGPoint pos = [touch locationInView: [UIApplication sharedApplication].keyWindow];
     ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
-    NSLog(@"Position of touch: %.3f, %.3f", pos.x, pos.y);
+    NSLog(@"Touch on Proficiency View: %.3f, %.3f", pos.x, pos.y);
     [self.session addEvent:touchEvent];
     [self.entryField resignFirstResponder];
 }
