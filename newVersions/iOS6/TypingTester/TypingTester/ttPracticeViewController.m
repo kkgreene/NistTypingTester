@@ -56,8 +56,8 @@
     if (self.entryField.text.length > 0) self.doneButton.enabled = YES;
     else self.doneButton.enabled = NO;
     // configure optional button visibility
-    self.visibilityButton.hidden = settings.EnableHideButtonOnPracticeScreen;
-    self.skipButton.hidden = settings.ShowSkipButton;
+    self.visibilityButton.hidden = !settings.EnableHideButtonOnPracticeScreen;
+    self.skipButton.hidden = !settings.ShowSkipButton;
     // configure the initial display of the text
     [self configureEntityDisplay];
 }
