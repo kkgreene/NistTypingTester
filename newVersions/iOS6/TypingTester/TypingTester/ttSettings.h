@@ -30,6 +30,8 @@
 @property (nonatomic, strong) NSArray *SelectedFilters;
 @property (nonatomic, assign) bool FirstRun;
 @property (nonatomic, assign) bool EnableHideButtonOnPracticeScreen;
+@property (nonatomic, assign) int proficiencyGroup;
+
 
 +(ttSettings*) Instance;
 

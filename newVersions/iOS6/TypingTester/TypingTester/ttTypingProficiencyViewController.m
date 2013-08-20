@@ -45,8 +45,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.     
-    inputStrings = [inputData getPhrasesForGroupId:1];
-    //NSLog(@"%@", inputStrings);
+    inputStrings = [inputData getPhrasesForGroupId:[settings proficiencyGroup]];
+    
     [self configureUI];
 }
 

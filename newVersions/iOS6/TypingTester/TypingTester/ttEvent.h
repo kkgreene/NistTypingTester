@@ -16,6 +16,7 @@
 @property (nonatomic, assign) Phase phase;
 @property (nonatomic, assign) SubPhase subPhase;
 @property (nonatomic, copy) NSDate *time;
+@property (nonatomic, copy) NSString* notes;
 
 -(id)initWithEventType:(Event)event;
 -(id) initWithEventType:(Event)event andPhase:(Phase)phase;

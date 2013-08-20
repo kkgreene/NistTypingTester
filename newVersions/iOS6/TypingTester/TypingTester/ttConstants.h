@@ -24,6 +24,7 @@ FOUNDATION_EXPORT NSString *const ttcSelectedFiltersKey;
 FOUNDATION_EXPORT NSString *const ttcSelectedGroupKey;
 FOUNDATION_EXPORT NSString *const ttcFirstRunKey;
 FOUNDATION_EXPORT NSString *const ttcEnableHideButtonOnPracticeScreenKey;
+FOUNDATION_EXPORT NSString *const ttcProficiencyGroupKey;
 
 FOUNDATION_EXPORT const int ttcStringsForTestDefaultValue;
 FOUNDATION_EXPORT const int ttcEntriesPerTestDefaultValue;
@@ -31,6 +32,7 @@ FOUNDATION_EXPORT const int ttcForcedPracticeRoundsDefaultValue;
 FOUNDATION_EXPORT const int ttcStringOrderSeedDefaultValue;
 FOUNDATION_EXPORT const int ttcStringSelectionSeedDefaultValue;
 FOUNDATION_EXPORT const int ttcSelectedGroupValue;
+FOUNDATION_EXPORT const int ttcProficiencyGroupValue;
 
 FOUNDATION_EXPORT const bool ttcShowQuitButtonDefaultValue;
 FOUNDATION_EXPORT const bool ttcShowSkipButtonDefaultValue;
@@ -66,4 +68,5 @@ typedef enum
     UnknownSubPhase = -1,
     FreePractice,
     ForcedPractice,
+    EntityChange
 }SubPhase;

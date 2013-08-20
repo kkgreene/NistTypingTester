@@ -54,7 +54,7 @@
     UITouch * touch = [touches anyObject];
     CGPoint pos = [touch locationInView: [UIApplication sharedApplication].keyWindow];
     ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
-    NSLog(@"Touch on Practice View: %.3f, %.3f", pos.x, pos.y);
+    NSLog(@"Touch on Memorize View: %.3f, %.3f", pos.x, pos.y);
     [self.session addEvent:touchEvent];
     [self.workArea resignFirstResponder];
 }

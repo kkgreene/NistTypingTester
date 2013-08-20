@@ -22,6 +22,7 @@ NSString *const ttcSelectedFiltersKey = @"SelectedFilters";
 NSString *const ttcSelectedGroupKey = @"SelectedGroup";
 NSString *const ttcFirstRunKey = @"FirstRun";
 NSString *const ttcEnableHideButtonOnPracticeScreenKey = @"EnableHideButtonOnPracticeScreen";
+NSString *const ttcProficiencyGroupKey = @"ProficiencyGroup";
 
 const int ttcStringsForTestDefaultValue = 10;
 const int ttcEntriesPerTestDefaultValue = 10;
@@ -29,6 +30,7 @@ const int ttcForcedPracticeRoundsDefaultValue = 3;
 const int ttcStringOrderSeedDefaultValue = -1;
 const int ttcStringSelectionSeedDefaultValue = -1;
 const int ttcSelectedGroupValue = -1;
+const int ttcProficiencyGroupValue = 1;
 
 const bool ttcShowQuitButtonDefaultValue = NO;
 const bool ttcShowSkipButtonDefaultValue = NO;

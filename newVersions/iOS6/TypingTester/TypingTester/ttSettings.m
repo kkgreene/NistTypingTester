@@ -59,6 +59,7 @@ static ttSettings *instance = nil;
     [prefs setObject:[[NSArray alloc]init] forKey:ttcSelectedFiltersKey];
     [prefs setBool:YES forKey:ttcFirstRunKey];
     [prefs setBool:ttcEnableHideButtonOnPracticeScreenValue forKey:ttcEnableHideButtonOnPracticeScreenKey];
+    [prefs setInteger:ttcProficiencyGroupValue forKey:ttcProficiencyGroupKey];
 }
 
 #pragma mark Custom setter/getter pairs
@@ -256,6 +257,18 @@ static ttSettings *instance = nil;
     [prefs setBool:EnableHideButtonOnPracticeScreen forKey:ttcEnableHideButtonOnPracticeScreenKey];
 }
 
+
+-(int) proficiencyGroup
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    return [prefs integerForKey:ttcProficiencyGroupKey];
+}
+
+-(void) setProficiencyGroup:(int)proficiencyGroup
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setInteger:ttcProficiencyGroupValue forKey:ttcProficiencyGroupKey];
+}
 
 #pragma mark setup functions
 
