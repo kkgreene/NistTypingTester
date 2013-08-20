@@ -11,7 +11,6 @@
 
 @interface ttProficiencyItem : ttXmlParserDelegate
 
-@property (nonatomic, copy) NSString *phrase;
 @property (nonatomic, assign) int groupId;
 @property (nonatomic, assign) int itemId;
 

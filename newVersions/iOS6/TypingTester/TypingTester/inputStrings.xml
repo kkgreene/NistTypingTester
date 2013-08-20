@@ -10,49 +10,49 @@
     </filters>
     <proficiencyInputs>
         <proficiencyInput itemId="1" groupId="1">The quick brown fox jumped over the lazy dogs.</proficiencyInput>
-        <proficiencyInput itemId="2" groupId="1">asdf</proficiencyInput>
-        <proficiencyInput itemId="3" groupId="1">ETAOIN SHRDLU</proficiencyInput>
-        <proficiencyInput itemId="4" groupId="1">Now is the time for all good men to come to the aid of the party.</proficiencyInput>
+        <proficiencyInput itemId="4" groupId="1">asdf</proficiencyInput>
+        <proficiencyInput itemId="2" groupId="1">ETAOIN SHRDLU</proficiencyInput>
+        <proficiencyInput itemId="3" groupId="1">Now is the time for all good men to come to the aid of the party.</proficiencyInput>
         <proficiencyInput itemId="5" groupId="1">Passersby were amazed by the unusually large amounts of blood</proficiencyInput>
     </proficiencyInputs>
     <memorizationInputs>
-        <memorizationInput inputId="1" date="2013-08-12" groupId="1">
+        <memorizationInput itemId="1" date="2013-08-12" groupId="1">
             <value>ABCD12</value>
             <filter>6char</filter>
         </memorizationInput>
-        <memorizationInput inputId="2" date="2013-08-12"  groupId="1">
+        <memorizationInput itemId="3" date="2013-08-12"  groupId="1">
             <value>ABCD1234</value>
             <filter>8char</filter>
         </memorizationInput>
-        <memorizationInput inputId="3" date="2013-08-12"  groupId="1">
+        <memorizationInput itemId="2" date="2013-08-12"  groupId="1">
             <value>ABCD123456</value>
             <filter>10char</filter>
         </memorizationInput>
-        <memorizationInput inputId="4" date="2013-08-12"  groupId="1">
+        <memorizationInput itemId="4" date="2013-08-12"  groupId="1">
             <value>ABCD12345678</value>
             <filter>12char</filter>
         </memorizationInput>
-        <memorizationInput inputId="5" date="2013-08-12"  groupId="1">
+        <memorizationInput itemId="5" date="2013-08-12"  groupId="1">
             <value>ABCD1234567890</value>
             <filter>14char</filter>
         </memorizationInput>
-        <memorizationInput inputId="6" date="2013-08-12"  groupId="1">
+        <memorizationInput itemId="6" date="2013-08-12"  groupId="1">
             <value>DCBA12</value>
             <filter>6char</filter>
         </memorizationInput>
-        <memorizationInput inputId="7" date="2013-08-12"  groupId="1">
+        <memorizationInput itemId="7" date="2013-08-12"  groupId="1">
             <value>DCBA1234</value>
             <filter>8char</filter>
         </memorizationInput>
-        <memorizationInput inputId="8" date="2013-08-12"  groupId="1">
+        <memorizationInput itemId="8" date="2013-08-12"  groupId="1">
             <value>DCBA123456</value>
             <filter>10char</filter>
         </memorizationInput>
-        <memorizationInput inputId="9" date="2013-08-12"  groupId="1">
+        <memorizationInput itemId="9" date="2013-08-12"  groupId="1">
             <value>DCBA12345678</value>
             <filter>12char</filter>
         </memorizationInput>
-        <memorizationInput inputId="10" date="2013-08-12"  groupId="1">
+        <memorizationInput itemId="10" date="2013-08-12"  groupId="1">
             <value>DCBA1234567890</value>
             <filter>14char</filter>
         </memorizationInput>

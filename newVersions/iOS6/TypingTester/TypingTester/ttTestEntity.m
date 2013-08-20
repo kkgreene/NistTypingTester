@@ -16,7 +16,7 @@
     if (self)
     {
         _groupId = -1;
-        _inputId = -1;
+        _itemId = -1;
         _filterValues = [[NSMutableArray alloc]init];
         _date = [NSDate dateWithTimeIntervalSince1970:0];
     }
@@ -44,7 +44,7 @@
     NSNumber *groupId = [attributeDictionary objectForKey:@"groupId"];
     NSNumber *itemId = [attributeDictionary objectForKey:@"itemId"];
     NSDate *date = [attributeDictionary objectForKey:@"date"];
-    _inputId = itemId.intValue;
+    _itemId = itemId.intValue;
     _groupId = groupId.intValue;
     _date = date;
 }

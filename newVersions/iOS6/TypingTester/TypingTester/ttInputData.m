@@ -13,6 +13,12 @@
 #import "ttTestEntity.h"
 
 @implementation ttInputData
+{
+    NSMutableArray *filterBuilder;
+    NSMutableArray *proficiencyBuilder;
+    NSMutableArray *entityBuilder;
+
+}
 
 static ttInputData *instance = nil;
 
@@ -30,20 +36,17 @@ static ttInputData *instance = nil;
     self = [super init];
     if(self)
     {
-        _entities = [[NSMutableArray alloc]init];
-        _proficiencyItems = [[NSMutableArray alloc]init];
-        _filters = [[NSMutableArray alloc]init];
+
     }
     return self;
 }
 
 -(void)loadDataFile:(NSString *)filepath
 {
-    // allocate new arrays so we clean out the old data if there is any
-    // when we load
-    _entities = [[NSMutableArray alloc]init];
-    _proficiencyItems = [[NSMutableArray alloc]init];
-    _filters = [[NSMutableArray alloc]init];
+    // allocate arrays to use when building the lists
+    filterBuilder = [[NSMutableArray alloc]init];
+    proficiencyBuilder = [[NSMutableArray alloc]init];
+    entityBuilder = [[NSMutableArray alloc]init];
     // build the path to the inputstrings file and load it
     NSString* documentsDirectory = [ttUtilities documentsDirectory];
     NSString *inputFile = [documentsDirectory stringByAppendingPathComponent:@"inputStrings.xml"];
@@ -51,6 +54,16 @@ static ttInputData *instance = nil;
     NSXMLParser *parser = [[NSXMLParser alloc]initWithContentsOfURL:url];
     parser.delegate = self;
     [parser parse];
+    // sort the arrays
+    NSSortDescriptor *itemIdDescriptor = [[NSSortDescriptor alloc] initWithKey:@"itemId" ascending:YES];
+    NSArray *sortDescriptors = @[itemIdDescriptor];
+    self.entities = [entityBuilder sortedArrayUsingDescriptors:sortDescriptors];
+    self.proficiencyItems = [proficiencyBuilder sortedArrayUsingDescriptors:sortDescriptors];
+    self.filters = [[NSArray alloc]initWithArray:filterBuilder];
+    // set the builder arrays to nil
+    filterBuilder = nil;
+    proficiencyBuilder = nil;
+    entityBuilder = nil;
 }
 
 
@@ -109,8 +122,6 @@ static ttInputData *instance = nil;
     }
 }
 
-
-
 #pragma -mark ttXmlParserDelegate functions
 -(void) finishedChild:(NSString*)s;
 {
@@ -123,7 +134,7 @@ static ttInputData *instance = nil;
     if ([elementName isEqualToString:@"filterItem"])
     {
         ttFilter *newFilter = [[ttFilter alloc]init];
-        [self.filters addObject:newFilter];
+        [filterBuilder addObject:newFilter];
         [newFilter parseElementAttributes:attributeDict];
         [newFilter startElementNamed:elementName withParentParser:self];
         self.child = newFilter;
@@ -132,7 +143,7 @@ static ttInputData *instance = nil;
     else if ([elementName isEqualToString:@"proficiencyInput"])
     {
         ttProficiencyItem* newItem = [[ttProficiencyItem alloc]init];
-        [self.proficiencyItems addObject:newItem];
+        [proficiencyBuilder addObject:newItem];
         [newItem parseElementAttributes:attributeDict];
         [newItem startElementNamed:elementName withParentParser:self];
         self.child = newItem;
@@ -141,7 +152,7 @@ static ttInputData *instance = nil;
     else if ([elementName isEqualToString:@"memorizationInput"])
     {
         ttTestEntity *newEntity = [[ttTestEntity alloc]init];
-        [self.entities addObject:newEntity];
+        [entityBuilder addObject:newEntity];
         [newEntity parseElementAttributes:attributeDict];
         [newEntity startElementNamed:elementName withParentParser:self];
         self.child = newEntity;

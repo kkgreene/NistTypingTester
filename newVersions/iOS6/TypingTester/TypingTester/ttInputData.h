@@ -11,9 +11,9 @@
 
 @interface ttInputData : ttXmlParserDelegate
 
-@property (atomic, strong) NSMutableArray *filters;
-@property (atomic, strong) NSMutableArray *proficiencyItems;
-@property (atomic, strong) NSMutableArray *entities;
+@property (atomic, strong) NSArray *filters;
+@property (atomic, strong) NSArray *proficiencyItems;
+@property (atomic, strong) NSArray *entities;
 
 
 +(ttInputData*) Instance;
