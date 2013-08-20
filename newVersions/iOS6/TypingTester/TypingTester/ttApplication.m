@@ -12,7 +12,7 @@
 
 -(void)sendEvent:(UIEvent *)event
 {
-    NSLog(@"UIApplication send event");
+    NSLog(@"UIApplication send event:%@", event.description);
     [super sendEvent:event];
 }
 
