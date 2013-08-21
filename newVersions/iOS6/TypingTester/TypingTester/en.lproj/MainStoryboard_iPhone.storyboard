@@ -614,10 +614,10 @@
             </objects>
             <point key="canvasLocation" x="2874" y="1194"/>
         </scene>
-        <!--View Controller-->
+        <!--Tt Verify View Controller-->
         <scene sceneID="Sj4-Mc-zek">
             <objects>
-                <viewController id="K8h-Oe-RAA" sceneMemberID="viewController">
+                <viewController id="K8h-Oe-RAA" customClass="ttVerifyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iuK-Ob-cYE">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -719,10 +719,10 @@
             </objects>
             <point key="canvasLocation" x="2890" y="2108"/>
         </scene>
-        <!--View Controller-->
+        <!--Tt Entry View Controller-->
         <scene sceneID="quC-9h-iOo">
             <objects>
-                <viewController id="ZNU-h0-iZz" sceneMemberID="viewController">
+                <viewController id="ZNU-h0-iZz" customClass="ttEntryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="laY-Eb-6uQ">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -815,10 +815,10 @@
             </objects>
             <point key="canvasLocation" x="3438" y="2108"/>
         </scene>
-        <!--View Controller-->
+        <!--Tt Recall View Controller-->
         <scene sceneID="Y53-Wp-th6">
             <objects>
-                <viewController id="Im5-cC-YRZ" sceneMemberID="viewController">
+                <viewController id="Im5-cC-YRZ" customClass="ttRecallViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h6n-gw-fP6">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1466,6 +1466,9 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="ttEntryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttEntryViewController.h"/>
+        </class>
         <class className="ttInstructionsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ttInstructionsViewController.h"/>
             <relationships>
@@ -1508,6 +1511,9 @@
                 <relationship kind="outlet" name="readyTextArea" candidateClass="UIWebView"/>
             </relationships>
         </class>
+        <class className="ttRecallViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttRecallViewController.h"/>
+        </class>
         <class className="ttSettingsDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ttSettingsDetailViewController.h"/>
             <relationships>
@@ -1548,6 +1554,9 @@
                 <relationship kind="outlet" name="progressLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="ttVerifyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttVerifyViewController.h"/>
+        </class>
         <class className="ttViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ttViewController.h"/>
             <relationships>
@@ -1566,6 +1575,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="pJv-oy-ZtS"/>
-        <segue reference="XT7-r5-x1r"/>
+        <segue reference="BGn-G2-t8v"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -63,6 +63,9 @@
 		ADBA94DF17AAE92000BB226D /* ttReadyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA94DE17AAE92000BB226D /* ttReadyViewController.m */; };
 		ADBA94E217AAE93400BB226D /* ttTypingProficiencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA94E117AAE93400BB226D /* ttTypingProficiencyViewController.m */; };
 		ADC3259A17B2B91B00EF8127 /* ttUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC3259917B2B91B00EF8127 /* ttUtilities.m */; };
+		C95BBBE617C50D5500F02F5F /* ttVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBE517C50D5500F02F5F /* ttVerifyViewController.m */; };
+		C95BBBE917C50D6C00F02F5F /* ttEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBE817C50D6C00F02F5F /* ttEntryViewController.m */; };
+		C95BBBEC17C50DB100F02F5F /* ttRecallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBEB17C50DB100F02F5F /* ttRecallViewController.m */; };
 		C9E0977A17C3150F004DBD9F /* ttMemorizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E0977917C3150F004DBD9F /* ttMemorizeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +152,12 @@
 		ADBA94E117AAE93400BB226D /* ttTypingProficiencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttTypingProficiencyViewController.m; sourceTree = "<group>"; };
 		ADC3259817B2B91B00EF8127 /* ttUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttUtilities.h; sourceTree = "<group>"; };
 		ADC3259917B2B91B00EF8127 /* ttUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttUtilities.m; sourceTree = "<group>"; };
+		C95BBBE417C50D5500F02F5F /* ttVerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttVerifyViewController.h; sourceTree = "<group>"; };
+		C95BBBE517C50D5500F02F5F /* ttVerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttVerifyViewController.m; sourceTree = "<group>"; };
+		C95BBBE717C50D6C00F02F5F /* ttEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttEntryViewController.h; sourceTree = "<group>"; };
+		C95BBBE817C50D6C00F02F5F /* ttEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttEntryViewController.m; sourceTree = "<group>"; };
+		C95BBBEA17C50DB100F02F5F /* ttRecallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttRecallViewController.h; sourceTree = "<group>"; };
+		C95BBBEB17C50DB100F02F5F /* ttRecallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttRecallViewController.m; sourceTree = "<group>"; };
 		C9E0977817C3150F004DBD9F /* ttMemorizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttMemorizeViewController.h; sourceTree = "<group>"; };
 		C9E0977917C3150F004DBD9F /* ttMemorizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttMemorizeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,11 +216,11 @@
 				AD04768B17A9663C00657D08 /* images */,
 				AD04767417A964B600657D08 /* ttAppDelegate.h */,
 				AD04767517A964B600657D08 /* ttAppDelegate.m */,
+				AD20940D17C3FBCD00B56CB7 /* ttApplication.h */,
+				AD20940E17C3FBCD00B56CB7 /* ttApplication.m */,
 				AD04766C17A964B600657D08 /* Supporting Files */,
 				ADC3259817B2B91B00EF8127 /* ttUtilities.h */,
 				ADC3259917B2B91B00EF8127 /* ttUtilities.m */,
-				AD20940D17C3FBCD00B56CB7 /* ttApplication.h */,
-				AD20940E17C3FBCD00B56CB7 /* ttApplication.m */,
 			);
 			path = TypingTester;
 			sourceTree = "<group>";
@@ -283,6 +292,12 @@
 				AD2093F817C3AD5500B56CB7 /* ttPracticeViewController.m */,
 				AD20940A17C3D34400B56CB7 /* ttThankYouViewController.h */,
 				AD20940B17C3D34400B56CB7 /* ttThankYouViewController.m */,
+				C95BBBE417C50D5500F02F5F /* ttVerifyViewController.h */,
+				C95BBBE517C50D5500F02F5F /* ttVerifyViewController.m */,
+				C95BBBE717C50D6C00F02F5F /* ttEntryViewController.h */,
+				C95BBBE817C50D6C00F02F5F /* ttEntryViewController.m */,
+				C95BBBEA17C50DB100F02F5F /* ttRecallViewController.h */,
+				C95BBBEB17C50DB100F02F5F /* ttRecallViewController.m */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -453,6 +468,9 @@
 				AD2093F917C3AD5500B56CB7 /* ttPracticeViewController.m in Sources */,
 				AD20940C17C3D34500B56CB7 /* ttThankYouViewController.m in Sources */,
 				AD20940F17C3FBCD00B56CB7 /* ttApplication.m in Sources */,
+				C95BBBE617C50D5500F02F5F /* ttVerifyViewController.m in Sources */,
+				C95BBBE917C50D6C00F02F5F /* ttEntryViewController.m in Sources */,
+				C95BBBEC17C50DB100F02F5F /* ttRecallViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
