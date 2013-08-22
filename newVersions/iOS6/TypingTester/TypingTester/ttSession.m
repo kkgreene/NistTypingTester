@@ -45,6 +45,7 @@
 
 -(void) addEvent:(ttEvent *)event
 {
+    event.interval = [event.time timeIntervalSinceDate:sessionStart];
     [self.events addObject:event];
     [self writeString:[NSString stringWithFormat:@"%@\n", event.description] toLogFile:rawFileHandle];
     return;
