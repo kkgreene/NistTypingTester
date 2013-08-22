@@ -167,5 +167,10 @@
     [self.session addEvent:textFieldEntered];
 }
 
+-(void) textFieldDidEndEditing:(UITextField *)textField
+{
+    ttEvent *textFieldLeft= [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Proficiency];
+    textFieldLeft.notes = [NSString stringWithFormat:@"TextField No Longer Active"]; 
+}
 
 @end

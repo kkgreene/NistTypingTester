@@ -64,6 +64,9 @@
     sessionStart = [NSDate date];
     NSString *startString = [NSString stringWithFormat:@"Session Started:%@", sessionStart];
     [self writeString:startString toLogFile:summaryFileHandle];
+    // TODO :: Write summary session information
+    [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Participant Id:%@", self.participant.participantNumber]];
+    
     return;
 
 }
@@ -77,6 +80,8 @@
     NSString *summaryLogFile = [[ttUtilities documentsDirectory] stringByAppendingPathComponent:summaryFileName];
     rawFileHandle = [self createLogfile:rawLogFile];
     summaryFileHandle = [self createLogfile:summaryLogFile];
+    // write the raw log file header
+    [self writeString:@"Time,Time Since Session Start,Event,Phase,SubPhase,Notes,X,Y,Location,Length,Characters,Current Value\n" toLogFile:rawFileHandle];
     if (rawFileHandle == nil || summaryFileHandle == nil) return NO;
     return YES;
 }
@@ -97,6 +102,40 @@
     @catch (NSException *e)
     {
         NSLog(@"Error writing data to the log file");
+    }
+}
+
+-(void) writeLineToRawLogFile:(NSString*)string
+{
+    // TODO :: ADD Better error handling
+    @try
+    {
+        [rawFileHandle writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
+
+    }
+    @catch (NSException *exception)
+    {
+        NSLog(@"Error writing data to the log file");
+    }
+    @finally
+    {
+    }
+}
+
+-(void) writeLineToSummaryLogFile:(NSString*)string
+{
+    // TODO :: ADD Better error handling
+    @try
+    {
+        [summaryFileHandle writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    @catch (NSException *exception)
+    {
+        NSLog(@"Error writing data to the log file");
+    }
+    @finally
+    {
+        
     }
 }
 

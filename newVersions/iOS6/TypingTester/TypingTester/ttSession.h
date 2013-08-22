@@ -34,5 +34,7 @@
 -(BOOL)initializeLogFiles;
 -(void)closeLogFiles;
 -(void) writeString:(NSString*)string toLogFile:(NSFileHandle*)logFile;
+-(void) writeLineToRawLogFile:(NSString*)string;
+-(void) writeLineToSummaryLogFile:(NSString*)string;
 
 @end

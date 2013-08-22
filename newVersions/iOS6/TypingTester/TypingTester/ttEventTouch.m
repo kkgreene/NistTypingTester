@@ -38,7 +38,8 @@
 
 -(NSString*)description
 {
-    return [NSString stringWithFormat:@"%@,%f,%f", [super description], self.point.x,self.point.y];
+    return [NSString stringWithFormat:@"%@,%f,%i,%i,%i,%@,%f,%f,-1,-1,,", self.time, self.interval, self.event,
+            self.phase, self.subPhase, self.notes, self.point.x, self.point.y];
 }
 
 @end

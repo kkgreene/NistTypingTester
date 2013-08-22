@@ -37,11 +37,8 @@
 
 -(NSString*) description
 {
-    return [NSString stringWithFormat:@"%@,0,0,%i,%i,%@,%@", [super description],
-                                                             self.location,
-                                                             self.length,
-                                                             self.enteredCharacters,
-                                                             self.currentValue];
+    return [NSString stringWithFormat:@"%@,%f,%i,%i,%i,%@,-1,-1,%i,%i,%@,%@", self.time, self.interval, self.event,
+            self.phase, self.subPhase, self.notes, self.location, self.length, self.enteredCharacters, self.currentValue];
 }
 
 @end

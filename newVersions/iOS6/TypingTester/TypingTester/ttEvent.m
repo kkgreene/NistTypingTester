@@ -50,7 +50,7 @@
 
 -(NSString*) description
 {
-    return [NSString stringWithFormat:@"%@,%f,%i,%i,%i,%@", self.time, self.interval, self.event, self.phase, self.subPhase, self.notes];
+    return [NSString stringWithFormat:@"%@,%f,%i,%i,%i,%@,-1,-1,-1,-1,,", self.time, self.interval, self.event, self.phase, self.subPhase, self.notes];
 }
 
 
