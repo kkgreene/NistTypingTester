@@ -48,8 +48,13 @@ typedef enum
 {
     UnknownEvent = -1,
     Input,
-    PhaseChange,
-    Touch
+    PhaseBegin,
+    PhaseEnd,
+    Touch,
+    SubPhaseChange,
+    ProficiencyStringShown,
+    EntityDisplayed,
+    ControlActivated
 } Event;
 
 typedef enum

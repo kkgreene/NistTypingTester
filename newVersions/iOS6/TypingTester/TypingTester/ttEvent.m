@@ -48,5 +48,10 @@
     return NO;
 }
 
+-(NSString*) description
+{
+    return [NSString stringWithFormat:@"%@,%i,%i,%i,%@", self.time, self.event, self.phase, self.subPhase, self.notes];
+}
+
 
 @end

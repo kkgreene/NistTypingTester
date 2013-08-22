@@ -44,9 +44,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.     
+	// Do any additional setup after loading the view.
+    // indicate that the typing proficiency phase has been entered
+    ttEvent *event = [[ttEvent alloc]initWithEventType:PhaseBegin andPhase:Proficiency];
+    event.notes = @"Typing Proficiency Phase Started";
+    [self.session addEvent:event];
     inputStrings = [inputData getPhrasesForGroupId:[settings proficiencyGroup]];
-    
     [self configureUI];
 }
 
@@ -70,6 +73,10 @@
     {
         self.doneButton.enabled = NO;
     }
+    // add the event indicating that a proficiency string was displayed
+    ttEvent *event = [[ttEvent alloc]initWithEventType:ProficiencyStringShown andPhase:Proficiency];
+    event.notes = [NSString stringWithFormat:@"%i/%i String:%@", currentString+1,inputStrings.count,item.text];
+    [self.session addEvent:event];
 }
 
 #pragma mark - IBActions
@@ -77,6 +84,9 @@
 -(IBAction)doneButtonPressed
 {
     NSLog(@"Done button pressed");
+    // create an event indicating that the button was pressed
+    ttEvent *donePressed = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Proficiency];
+    donePressed.notes = [NSString stringWithFormat:@"Done button pressed"];
     currentString++;
     if (currentString < inputStrings.count)
     {
@@ -87,6 +97,9 @@
     {
         // prepare for next screen
         [self performSegueWithIdentifier:@"Instructions" sender:self];
+        // proficiency phase ended event
+        ttEvent *event = [[ttEvent alloc]initWithEventType:PhaseEnd andPhase:Proficiency];
+        event.notes = [NSString stringWithFormat:@"Typing Proficiency Phase Ended"];
     }
 }
 
@@ -104,11 +117,15 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    // get the touch coordinates
     UITouch * touch = [touches anyObject];
     CGPoint pos = [touch locationInView: [UIApplication sharedApplication].keyWindow];
-    ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
     NSLog(@"Touch on Proficiency View: %.3f, %.3f", pos.x, pos.y);
+    // add the touch event to the log
+    ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
+    touchEvent.notes = [NSString stringWithFormat:@"Touch on Proficiency View: %.3f, %.3f", pos.x, pos.y];
     [self.session addEvent:touchEvent];
+    // resign first responder to hide the keyboard
     [self.entryField resignFirstResponder];
 }
 
@@ -143,6 +160,12 @@
     return YES;
 }
 
+-(void) textFieldDidBeginEditing:(UITextField *)textField
+{
+    ttEvent *textFieldEntered = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Proficiency];
+    textFieldEntered.notes =[NSString stringWithFormat:@"TextField Became Active"];
+    [self.session addEvent:textFieldEntered];
+}
 
 
 @end

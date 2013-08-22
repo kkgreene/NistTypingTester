@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    ttEvent* event = [[ttEvent alloc]initWithEventType:PhaseChange andPhase:ThankYou];
+    ttEvent* event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:ThankYou];
     [self.session addEvent:event];
 	// Do any additional setup after loading the view.
     NSString *htmlFile = [[ttUtilities documentsDirectory] stringByAppendingPathComponent:@"thankYou.html"];

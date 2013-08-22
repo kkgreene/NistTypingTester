@@ -13,7 +13,21 @@
 -(void)sendEvent:(UIEvent *)event
 {
     NSLog(@"UIApplication send event:%@", event.description);
+    UITouch* lastTouch;
+    
+    // Check to see if this was  a touch event
+    for(UITouch* touch in event.allTouches)
+    {
+        lastTouch = touch;
+    }
+    if(lastTouch != nil)
+    {
+        NSLog(@"Touch event detected by UIApplication:%@", lastTouch);
+        // figure out the cooridinates of the touch
+        // determine if a special key was pressed
+    }
     [super sendEvent:event];
 }
+
 
 @end

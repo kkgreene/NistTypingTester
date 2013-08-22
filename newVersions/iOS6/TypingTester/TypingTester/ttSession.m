@@ -46,6 +46,7 @@
 -(void) addEvent:(ttEvent *)event
 {
     [self.events addObject:event];
+    [self writeString:[NSString stringWithFormat:@"%@\n", event.description] toLogFile:rawFileHandle];
     return;
 }
 
