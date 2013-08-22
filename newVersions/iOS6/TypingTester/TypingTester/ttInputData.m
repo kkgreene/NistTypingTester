@@ -134,7 +134,7 @@ static ttInputData *instance = nil;
             WithoutFilters:(NSArray*)excludeFilters
             withSeed:(unsigned int)seed
 {
-    return [self randomizeArray:[self getEntitesWithGroupId:groupId EarlierThan:date WithFilters:includeFilters WithoutFilters:excludeFilters] withRandomSeedValue:seed];
+    return [self randomizeArray:[self getEntitiesWithGroupId:groupId EarlierThan:date WithFilters:includeFilters WithoutFilters:excludeFilters] withRandomSeedValue:seed];
 }
 
 -(NSArray*) getEntitiesWithGroupId:(int)groupId
@@ -145,11 +145,11 @@ static ttInputData *instance = nil;
 {
     if (random == YES)
     {
-        return [self randomizeArray:[self getEntitesWithGroupId:groupId EarlierThan:date WithFilters:includeFilters WithoutFilters:excludeFilters]];
+        return [self randomizeArray:[self getEntitiesWithGroupId:groupId EarlierThan:date WithFilters:includeFilters WithoutFilters:excludeFilters]];
     }
     else
     {
-        return [self getEntitesWithGroupId:groupId EarlierThan:date WithFilters:includeFilters WithoutFilters:excludeFilters];
+        return [self getEntitiesWithGroupId:groupId EarlierThan:date WithFilters:includeFilters WithoutFilters:excludeFilters];
     }
 }
 

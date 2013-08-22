@@ -24,9 +24,9 @@
 @implementation ttTypingProficiencyViewController
 {
     ttSettings *settings;
-    ttInputData *inputData;
-    NSArray *inputStrings;
-    unsigned int currentString;
+    //ttInputData *inputData;
+    //NSArray *inputStrings;
+    //unsigned int currentString;
 }
 
 -(id) initWithCoder:(NSCoder *)aDecoder
@@ -35,8 +35,9 @@
     if (self)
     {
         settings = [ttSettings Instance];
-        inputData = [ttInputData Instance];
-        currentString = 0;
+        [self.session enteredProficiencyPhase];
+        //inputData = [ttInputData Instance];
+        //currentString = 0;
     }
     return self;
 }
@@ -49,22 +50,19 @@
     ttEvent *event = [[ttEvent alloc]initWithEventType:PhaseBegin andPhase:Proficiency];
     event.notes = @"Typing Proficiency Phase Started";
     [self.session addEvent:event];
-    inputStrings = [inputData getPhrasesForGroupId:[settings proficiencyGroup]];
+    //inputStrings = [inputData getPhrasesForGroupId:[settings proficiencyGroup]];
     [self configureUI];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void) configureUI
 {
-    ttProficiencyItem *item = [inputStrings objectAtIndex:currentString];
+    int currentString = self.session.currentProficiencyString;
+    int totalStrings = self.session.proficiencyStrings.count;
+    ttProficiencyItem *item = [self.session.proficiencyStrings objectAtIndex:currentString];
+    //ttProficiencyItem *item = [inputStrings objectAtIndex:currentString];
     self.phraseLabel1.text = item.text;
-    self.progressLabel.text = [NSString stringWithFormat:@"Entry %i of %i", currentString+1, inputStrings.count];
-    self.progressBar.progress = (currentString + 0.0F)/(inputStrings.count+0.0F);
+    self.progressLabel.text = [NSString stringWithFormat:@"Entry %i of %i", currentString+1, totalStrings];
+    self.progressBar.progress = (currentString + 0.0F)/(totalStrings+0.0F);
     if (self.entryField.text.length > 0)
     {
         self.doneButton.enabled = YES;
@@ -75,7 +73,7 @@
     }
     // add the event indicating that a proficiency string was displayed
     ttEvent *event = [[ttEvent alloc]initWithEventType:ProficiencyStringShown andPhase:Proficiency];
-    event.notes = [NSString stringWithFormat:@"%i/%i String:%@", currentString+1,inputStrings.count,item.text];
+    event.notes = [NSString stringWithFormat:@"%i/%i String:%@", currentString+1,totalStrings,item.text];
     [self.session addEvent:event];
 }
 
@@ -87,8 +85,8 @@
     // create an event indicating that the button was pressed
     ttEvent *donePressed = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Proficiency];
     donePressed.notes = [NSString stringWithFormat:@"Done button pressed"];
-    currentString++;
-    if (currentString < inputStrings.count)
+    self.session.currentProficiencyString++;
+    if (self.session.currentProficiencyString < self.session.proficiencyStrings.count)
     {
         self.entryField.text = @"";
         [self configureUI];

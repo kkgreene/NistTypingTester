@@ -39,7 +39,7 @@
         settings = [ttSettings Instance];
         // TODO :: Make this work with settings...
         self.proficiencyStrings = [[ttInputData Instance]getPhrasesForGroupId:settings.proficiencyGroup];
-        self.entities = [[ttInputData Instance]getEntites];
+        self.entities = [[ttInputData Instance]getEntities];
     }
     return self;
 }
@@ -48,22 +48,6 @@
 {
     [self sessionDidFinish];
     [self closeLogFiles];
-}
-
--(void) addEvent:(ttEvent *)event
-{
-    event.interval = [event.time timeIntervalSinceDate:sessionStart];
-    [self.events addObject:event];
-    [self writeLineToRawLogFile:[event description]];
-    return;
-}
-
--(void) sessionDidFinish
-{
-    sessionEnd = [NSDate date];
-    NSString *startString = [NSString stringWithFormat:@"Session Finished:%@", sessionEnd];
-    [self writeLineToSummaryLogFile:startString];
-    return;
 }
 
 -(void) sessionDidStart
@@ -76,7 +60,29 @@
     return;
 }
 
+-(void)enteredProficiencyPhase
+{
+    self.proficiencyStrings = [[ttInputData Instance]getPhrasesForGroupId:settings.proficiencyGroup];
+    self.currentProficiencyString = 0;
+}
+
+-(void) sessionDidFinish
+{
+    sessionEnd = [NSDate date];
+    NSString *startString = [NSString stringWithFormat:@"Session Finished:%@", sessionEnd];
+    [self writeLineToSummaryLogFile:startString];
+    return;
+}
+
 #pragma -mark Log Functions
+
+-(void) addEvent:(ttEvent *)event
+{
+    event.interval = [event.time timeIntervalSinceDate:sessionStart];
+    [self.events addObject:event];
+    [self writeLineToRawLogFile:[event description]];
+    return;
+}
 -(BOOL)initializeLogFiles
 {
     NSString *rawFileName = [NSString stringWithFormat:@"%@-raw.txt",self.participant.participantNumber];
