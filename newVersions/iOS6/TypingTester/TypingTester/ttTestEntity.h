@@ -17,4 +17,7 @@
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, strong) NSMutableArray *filterValues;
 
+-(BOOL)hasFilterValue:(NSString*)value;
+-(BOOL)IsFromBefore:(NSDate*)date;
+
 @end

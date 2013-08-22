@@ -81,25 +81,153 @@ static ttInputData *instance = nil;
     return [[NSArray alloc]initWithArray:results];
 }
 
--(NSArray*) getPhrasesForGroupId:(int)groupId inRandomOrder:(BOOL)random
+-(NSArray*) getPhrasesForGroupIdInRandomOrder:(int)groupId
 {
-    // return getPhrasesFroGroupId: withSeed:(int)time(null)
-    return [self getPhrasesForGroupId:groupId withRandomSeedValue:time(NULL)];
+    return [self randomizeArray:[self getPhrasesForGroupId:groupId]];
 }
 
--(NSArray*) getPhrasesForGroupId:(int)groupId withRandomSeedValue:(int)seed
+-(NSArray*) getPhrasesForGroupId:(int)groupId withRandomSeedValue:(unsigned int)seed
 {
-    NSMutableArray *base = [[NSMutableArray alloc]initWithArray:[self getPhrasesForGroupId:groupId]];
-    NSMutableArray *results = [[NSMutableArray alloc]init];
-    // seed the random number
+    return [self randomizeArray:[self getPhrasesForGroupId:groupId] withRandomSeedValue:seed];
+}
+
+-(NSArray*) randomizeArray:(NSArray*)input
+{
+    return [self randomizeArray:input withRandomSeedValue:time(NULL)];
+}
+
+-(NSArray*) randomizeArray:(NSArray*)input withRandomSeedValue:(unsigned int)seed
+{
+    NSMutableArray *base = [[NSMutableArray alloc]initWithArray:input];
+    NSMutableArray *result = [[NSMutableArray alloc]initWithCapacity:base.count];
+    // seed the PRNG
+    srandom(seed);
+    // randomize the array
     while(base.count > 0)
     {
         unsigned int value = [self randomWithMinValue:0 andMaxValue:base.count];
-        [results addObject:[base objectAtIndex:value]];
+        [result addObject:[base objectAtIndex:value]];
         [base removeObjectAtIndex:value];
+    }
+    
+    return [[NSArray alloc]initWithArray:result];
+}
+
+-(NSArray*) getEntities
+{
+    return [NSArray arrayWithArray:self.entities];
+}
+
+-(NSArray*) getEntitiesInRandomOrder
+{
+    return [self randomizeArray:self.entities];
+}
+
+-(NSArray*) getEntitiesInRandomOrderWithSeedValue:(unsigned int)seed
+{
+    return [self randomizeArray:self.entities withRandomSeedValue:seed];
+}
+
+-(NSArray*) getEntitiesWithGroupId:(int)groupId
+            EarlierThan:(NSDate*)date
+            WithFilters:(NSArray*)includeFilters
+            WithoutFilters:(NSArray*)excludeFilters
+            withSeed:(unsigned int)seed
+{
+    return [self randomizeArray:[self getEntitesWithGroupId:groupId EarlierThan:date WithFilters:includeFilters WithoutFilters:excludeFilters] withRandomSeedValue:seed];
+}
+
+-(NSArray*) getEntitiesWithGroupId:(int)groupId
+            EarlierThan:(NSDate*)date
+            WithFilters:(NSArray*)includeFilters
+            WithoutFilters:(NSArray*)excludeFilters
+            inRandomOrder:(BOOL)random
+{
+    if (random == YES)
+    {
+        return [self randomizeArray:[self getEntitesWithGroupId:groupId EarlierThan:date WithFilters:includeFilters WithoutFilters:excludeFilters]];
+    }
+    else
+    {
+        return [self getEntitesWithGroupId:groupId EarlierThan:date WithFilters:includeFilters WithoutFilters:excludeFilters];
+    }
+}
+
+-(NSArray*) getEntitiesWithGroupId:(int)groupId
+            EarlierThan:(NSDate*)date
+            WithFilters:(NSArray*)includeFilters
+            WithoutFilters:(NSArray*)excludeFilters
+{
+    NSMutableArray *results = [[NSMutableArray alloc]init];
+    for (int i = 0; i < self.entities.count; i++)
+    {
+        ttTestEntity* entity = [self.entities objectAtIndex:i];
+        BOOL addEntity = YES;
+        // if there was a group id specified and it doesn't match exclude the item
+        if (groupId >= 1 && entity.groupId != groupId)
+        {
+            if (entity.groupId != groupId)
+            {
+               addEntity = NO; 
+            }
+        }
+        // if the date is not equal to the default date
+        if(date != nil)
+        {
+            // if the entity date is after the specified date exclude it
+            if (![entity IsFromBefore:date])
+            {
+                addEntity = NO;
+            }
+        }
+        // include filters specified
+        if (includeFilters != nil)
+        {
+            BOOL filterFound = NO;
+            // foreach include filter
+            for (int j = 0; j < includeFilters.count; j++)
+            {
+                NSString *currentFilter = [includeFilters objectAtIndex:j];
+                if ([entity hasFilterValue:currentFilter])
+                {
+                    filterFound = YES;
+                    break;
+                }
+            }
+            if (filterFound != YES)
+            {
+                addEntity = NO;
+            }
+        }
+        // exclude filters specified
+        if (excludeFilters != nil)
+        {
+            BOOL filterFound = NO;
+            // foreach include filter
+            for (int j = 0; j < includeFilters.count; j++)
+            {
+                NSString *currentFilter = [includeFilters objectAtIndex:j];
+                if ([entity hasFilterValue:currentFilter])
+                {
+                    filterFound = YES;
+                    break;
+                }
+            }
+            if (filterFound == YES)
+            {
+                addEntity = NO;
+            }
+        }
+        
+        // if addEntity is still true it passed all the filters so add it
+        if (addEntity == YES)
+        {
+            [results addObject:entity];
+        }
     }
     return [[NSArray alloc]initWithArray:results];
 }
+
 
 /* Would like a semi-open interval [min, max) */
 -(unsigned int) randomWithMinValue:(unsigned int)min andMaxValue:(unsigned int) max

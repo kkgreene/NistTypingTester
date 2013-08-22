@@ -24,16 +24,28 @@
 @property (nonatomic, strong) ttParticipant *participant;
 @property (nonatomic, strong) NSMutableArray* events;
 
+@property (nonatomic, assign) int currentProficiencyString;
+@property (nonatomic, assign) int currentEntity;
+@property (nonatomic, assign) int currentEntryForEntity;
+@property (nonatomic, strong) NSArray *proficiencyStrings;
+@property (nonatomic, strong) NSArray *entities;
+@property (nonatomic, assign) int CurrentPracticeRoundForEntity;
+
+
 -(id)initWithParticipantId:(NSString*)participantId;
 
 -(void)sessionDidStart;
 -(void)sessionDidFinish;
 
+-(void)enteredProficiencyPhase;
+-(void)enteredMemorizePhase;
+-(void)startedPracticePhase;
+
+
 -(void)addEvent:(ttEvent*)event;
 
 -(BOOL)initializeLogFiles;
 -(void)closeLogFiles;
--(void) writeString:(NSString*)string toLogFile:(NSFileHandle*)logFile;
 -(void) writeLineToRawLogFile:(NSString*)string;
 -(void) writeLineToSummaryLogFile:(NSString*)string;
 

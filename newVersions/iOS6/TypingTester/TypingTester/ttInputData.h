@@ -24,6 +24,20 @@
 -(NSArray*) getPhrasesForGroupId:(int)groupId;
 -(NSArray*) getPhrasesForGroupId:(int)groupId inRandomOrder:(BOOL)random;
 -(NSArray*) getPhrasesForGroupId:(int)groupId withRandomSeedValue:(int)seed;
-
-
+-(NSArray*) getEntities;
+-(NSArray*) getEntitiesInRandomOrder;
+-(NSArray*) getEntitiesWithGroupId:(int)groupId
+                      EarlierThan:(NSDate*)date
+                      WithFilters:(NSArray*)includeFilters
+                   WithoutFilters:(NSArray*)excludeFilters
+                         withSeed:(unsigned int)seed;
+-(NSArray*) getEntitiesWithGroupId:(int)groupId
+                      EarlierThan:(NSDate*)date
+                      WithFilters:(NSArray*)includeFilters
+                   WithoutFilters:(NSArray*)excludeFilters
+                    inRandomOrder:(BOOL)random;
+-(NSArray*) getEntitiesWithGroupId:(int)groupId
+                      EarlierThan:(NSDate*)date
+                      WithFilters:(NSArray*)includeFilters
+                   WithoutFilters:(NSArray*)excludeFilters;
 @end

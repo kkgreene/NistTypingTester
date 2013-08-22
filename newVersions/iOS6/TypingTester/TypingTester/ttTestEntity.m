@@ -23,6 +23,22 @@
     return self;
 }
 
+-(BOOL)hasFilterValue:(NSString*)value
+{
+    for (int i = 0; i < self.filterValues.count; i++)
+    {
+        if ([value isEqualToString:[self.filterValues objectAtIndex:i]]) return YES;
+    }
+    return NO;
+}
+
+-(BOOL)IsFromBefore:(NSDate*)date
+{
+    if ([date timeIntervalSinceDate:self.date] > 0) return YES;
+    return NO;
+}
+
+
 #pragma -mark ttXmlParserDelegate functions
 
 -(void) finishedChild:(NSString*)s;

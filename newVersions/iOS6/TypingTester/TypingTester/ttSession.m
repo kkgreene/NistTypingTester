@@ -10,6 +10,8 @@
 #import "ttParticipant.h"
 #import "ttEvent.h"
 #import "ttUtilities.h"
+#import "ttSettings.h"
+#import "ttInputData.h"
 
 @implementation ttSession
 {
@@ -17,6 +19,7 @@
     NSFileHandle *summaryFileHandle;
     NSDate *sessionStart;
     NSDate *sessionEnd;
+    ttSettings *settings;
 }
 
 -(id) init
@@ -33,6 +36,10 @@
         self.events = [[NSMutableArray alloc]init];
         [self initializeLogFiles];
         [self sessionDidStart];
+        settings = [ttSettings Instance];
+        // TODO :: Make this work with settings...
+        self.proficiencyStrings = [[ttInputData Instance]getPhrasesForGroupId:settings.proficiencyGroup];
+        self.entities = [[ttInputData Instance]getEntites];
     }
     return self;
 }
@@ -47,7 +54,7 @@
 {
     event.interval = [event.time timeIntervalSinceDate:sessionStart];
     [self.events addObject:event];
-    [self writeString:[NSString stringWithFormat:@"%@\n", event.description] toLogFile:rawFileHandle];
+    [self writeLineToRawLogFile:[event description]];
     return;
 }
 
@@ -55,7 +62,7 @@
 {
     sessionEnd = [NSDate date];
     NSString *startString = [NSString stringWithFormat:@"Session Finished:%@", sessionEnd];
-    [self writeString:startString toLogFile:summaryFileHandle];
+    [self writeLineToSummaryLogFile:startString];
     return;
 }
 
@@ -63,12 +70,10 @@
 {
     sessionStart = [NSDate date];
     NSString *startString = [NSString stringWithFormat:@"Session Started:%@", sessionStart];
-    [self writeString:startString toLogFile:summaryFileHandle];
+    [self writeLineToSummaryLogFile:startString];
     // TODO :: Write summary session information
     [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Participant Id:%@", self.participant.participantNumber]];
-    
     return;
-
 }
 
 #pragma -mark Log Functions
@@ -81,7 +86,7 @@
     rawFileHandle = [self createLogfile:rawLogFile];
     summaryFileHandle = [self createLogfile:summaryLogFile];
     // write the raw log file header
-    [self writeString:@"Time,Time Since Session Start,Event,Phase,SubPhase,Notes,X,Y,Location,Length,Characters,Current Value\n" toLogFile:rawFileHandle];
+    [self writeLineToRawLogFile:@"Time,Time Since Session Start,Event,Phase,SubPhase,Notes,X,Y,Location,Length,Characters,Current Value"];
     if (rawFileHandle == nil || summaryFileHandle == nil) return NO;
     return YES;
 }
@@ -92,26 +97,13 @@
     [summaryFileHandle closeFile];
 }
 
--(void) writeString:(NSString*)string toLogFile:(NSFileHandle*)logFile;
-{
-    // will throw exception if it can't log to the log file
-    @try
-    {
-        [logFile writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
-    }
-    @catch (NSException *e)
-    {
-        NSLog(@"Error writing data to the log file");
-    }
-}
-
 -(void) writeLineToRawLogFile:(NSString*)string
 {
+    NSString *lineToWrite = [NSString stringWithFormat:@"%@\n",string];
     // TODO :: ADD Better error handling
     @try
     {
-        [rawFileHandle writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
-
+        [rawFileHandle writeData:[lineToWrite dataUsingEncoding:NSUTF8StringEncoding]];
     }
     @catch (NSException *exception)
     {
@@ -124,10 +116,11 @@
 
 -(void) writeLineToSummaryLogFile:(NSString*)string
 {
+    NSString *lineToWrite = [NSString stringWithFormat:@"%@\n",string];
     // TODO :: ADD Better error handling
     @try
     {
-        [summaryFileHandle writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
+        [summaryFileHandle writeData:[lineToWrite dataUsingEncoding:NSUTF8StringEncoding]];
     }
     @catch (NSException *exception)
     {
