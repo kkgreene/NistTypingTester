@@ -7,6 +7,8 @@
 //
 
 #import "ttPracticeViewController.h"
+#import "ttMemorizeViewController.h"
+#import "ttVerifyViewController.h"
 #import "ttSettings.h"
 #import "ttEventTouch.h"
 #import "ttEventInput.h"
@@ -69,6 +71,20 @@
     // set up the entity text to display
     if (maskEntityDisplay == YES) self.entity.text = maskedString;
     else self.entity.text = currentString;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"BackToMemorize"])
+    {
+        ttMemorizeViewController* controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
+    else if ([segue.identifier isEqualToString:@"Verify"])
+    {
+        ttVerifyViewController* controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
 }
 
 #pragma -mark IBActions

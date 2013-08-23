@@ -31,6 +31,8 @@
 @property (nonatomic, strong) NSArray *entities;
 @property (nonatomic, assign) int CurrentPracticeRoundForEntity;
 
+@property (nonatomic, copy) NSString* workAreaContents;
+
 
 -(id)initWithParticipantId:(NSString*)participantId;
 

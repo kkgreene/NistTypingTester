@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class ttSession;
+
 @interface ttVerifyViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *progressLabel;
@@ -15,6 +17,8 @@
 @property (nonatomic, weak) IBOutlet UITextField *entryField;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *backButton;
+
+@property (nonatomic, weak) ttSession *session;
 
 -(IBAction)done;
 -(IBAction)back;
