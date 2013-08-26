@@ -34,12 +34,6 @@
     return self;
 }
 
--(NSString*) dataFilePath
-{
-    NSString* filename = [NSString stringWithFormat:@"%@-session.raw", self.participantNumber];
-    return [[ttUtilities documentsDirectory] stringByAppendingPathComponent:filename];
-}
-
 
 
 @end

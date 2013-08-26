@@ -36,7 +36,6 @@
 +(ttSettings*) Instance;
 
 -(void) resetToDefaults;
--(NSDictionary*) getDefaults;
 
 +(void) copyInitialFiles;
 +(void) resetInitialFiles;

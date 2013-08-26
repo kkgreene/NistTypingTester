@@ -16,8 +16,24 @@
 @implementation ttSettingsViewController
 {
     ttSettings* settings;
-    int _numberOfEntities;
-    int _numberOfEntriesPerEntitiy;
+
+    int StringsPerSession;
+    int EntriesPerString;
+    int ForcedPracticeRounds;
+    bool ShowQuitButton;
+    bool ShowSkipButton;
+    bool RandomStringOrder;
+    bool RandomStringSelection;
+    int StringOrderKey;
+    int StringSelectionKey;
+    bool UseRandomStringOrderSeedKey;
+    bool UseRandomStringSelectionSeedKey;
+    NSString *QuitString;
+    int SelectedGroup;
+    NSArray *SelectedFilters;
+    bool FirstRun;
+    bool EnableHideButtonOnPracticeScreen;
+    int proficiencyGroup;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -27,7 +43,6 @@
     {
         settings = [ttSettings Instance];
     }
-    
     return self;
 }
 
@@ -35,15 +50,28 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _numberOfEntities = settings.StringsPerSession;
-    _numberOfEntriesPerEntitiy = settings.EntriesPerString;
-    
+    StringsPerSession = settings.StringsPerSession;
+    EntriesPerString = settings.EntriesPerString;
+    ForcedPracticeRounds = settings.ForcedPracticeRounds;
+    ShowQuitButton = settings.ShowQuitButton;
+    ShowSkipButton = settings.ShowSkipButton;
+    RandomStringOrder = settings.RandomStringOrder;
+    RandomStringSelection = settings.RandomStringSelection;
+    StringOrderKey = settings.StringOrderKey;
+    StringSelectionKey = settings.StringSelectionKey;
+    UseRandomStringOrderSeedKey = settings.UseRandomStringOrderSeedKey;
+    UseRandomStringSelectionSeedKey = settings.UseRandomStringSelectionSeedKey;
+    QuitString = [settings.QuitString copy];
+    SelectedGroup = settings.SelectedGroup;
+    SelectedFilters = [NSArray arrayWithArray:settings.SelectedFilters];
+    EnableHideButtonOnPracticeScreen = settings.EnableHideButtonOnPracticeScreen;
+    proficiencyGroup = settings.proficiencyGroup;
+    [self configureUI];
 }
 
-- (void)didReceiveMemoryWarning
+-(void)configureUI
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 #pragma mark IBActions
@@ -56,7 +84,22 @@
 -(IBAction)save:(id)sender
 {
     // TODO::Add code to save the settings
-    settings.StringsPerSession = _numberOfEntities;
+    settings.StringsPerSession = StringsPerSession;
+    settings.EntriesPerString = EntriesPerString;
+    settings.ForcedPracticeRounds = ForcedPracticeRounds;
+    settings.ShowQuitButton = ShowQuitButton;
+    settings.ShowSkipButton = ShowSkipButton;
+    settings.RandomStringOrder = RandomStringOrder;
+    settings.RandomStringSelection = RandomStringSelection;
+    settings.StringOrderKey = StringOrderKey;
+    settings.StringSelectionKey = StringSelectionKey;
+    settings.UseRandomStringOrderSeedKey = UseRandomStringOrderSeedKey;
+    settings.UseRandomStringSelectionSeedKey = UseRandomStringSelectionSeedKey;
+    settings.QuitString = QuitString;
+    settings.SelectedGroup = SelectedGroup;
+    settings.SelectedFilters = SelectedFilters;
+    settings.EnableHideButtonOnPracticeScreen = EnableHideButtonOnPracticeScreen;
+    settings.proficiencyGroup = proficiencyGroup;
     [self.delegate SettingsViewControllerDidSave:self];
 }
 
@@ -71,9 +114,54 @@
 
 #pragma mark - Settings Detail View Controller Delegate
 
+-(void)settingsDetailViewControllerDidResetToDefault
+{
+    [self.delegate SettingsViewControllerDidSave:self];
+}
+
 -(void)settingsDetailViewControllerDidChangeNumberOfEntities:(int)numberOfEntities
 {
-    _numberOfEntities = numberOfEntities;
+    StringsPerSession = numberOfEntities;
+}
+
+-(void)settingsDetailViewControllerDidChangeNumberofRepetitions:(int)numberOfRepetitions
+{
+    EntriesPerString = numberOfRepetitions;
+}
+
+-(void)settingsDetailViewControllerDidChangeNumberOfForcedPracticeRounds:(int)numberOfRounds
+{
+    ForcedPracticeRounds = numberOfRounds;
+}
+
+-(void)settingsDetailViewControllerDidChangeRandomStringOrderSetting:(BOOL)randomStringOrder
+{
+    RandomStringOrder = randomStringOrder;
+}
+
+-(void)settingsDetailViewControllerDidChangeRandomStringSelectionSetting:(BOOL)randomStringSelection
+{
+    RandomStringSelection = randomStringSelection;
+}
+
+-(void)settingsDetailViewControllerDidChangeRandomStringOrderSeedValue:(int)seedValue
+{
+    StringOrderKey = seedValue;
+}
+
+-(void)settingsDetailViewControllerDidChangeRandomStringSelectionSeedValue:(int)seedValue
+{
+    StringSelectionKey = seedValue;
+}
+
+-(void)settingsDetailViewControllerDidChangeSelectedFilters:(NSArray*)selectedFilters
+{
+    SelectedFilters = [NSArray arrayWithArray:selectedFilters];
+}
+
+-(void)settingsDetailViewControllerDidChangeSelectedGroupId:(int)selectedGroup
+{
+    SelectedGroup = selectedGroup;
 }
 
 

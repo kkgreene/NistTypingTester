@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class ttSettingsDetailViewController;
+
 @protocol SettingsDetailViewControllerDelegate <NSObject>
 
+
+-(void)settingsDetailViewControllerDidResetToDefault;
 -(void)settingsDetailViewControllerDidChangeNumberOfEntities:(int)numberOfEntities;
 -(void)settingsDetailViewControllerDidChangeNumberofRepetitions:(int)numberOfRepetitions;
--(void)settingsDetailViewControllerDidChangeNumberOfProficiencyPhrases:(int)numberOfPhrases;
 -(void)settingsDetailViewControllerDidChangeNumberOfForcedPracticeRounds:(int)numberOfRounds;
 -(void)settingsDetailViewControllerDidChangeRandomStringOrderSetting:(BOOL)randomStringOrder;
 -(void)settingsDetailViewControllerDidChangeRandomStringSelectionSetting:(BOOL)randomStringSelection;
