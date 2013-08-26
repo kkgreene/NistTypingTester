@@ -52,6 +52,7 @@
     entityNumber = self.session.currentEntity;
     numberOfRequiredPractices = settings.ForcedPracticeRounds;
     [self configureUI];
+    [self.session enteredSubPhase:ForcedPractice withNote:@"Entering Forced Practice Phase"];
 }
 
 - (void)didReceiveMemoryWarning

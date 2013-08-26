@@ -24,7 +24,9 @@
 @property (nonatomic, weak) IBOutlet UIImageView *correctIndicator;
 @property (nonatomic, weak) IBOutlet UILabel *correctTextLable;
 
+
 @property (nonatomic, weak) ttSession *session;
+
 
 -(IBAction)visibilityButtonPressed;
 -(IBAction)skipButtonPressed;

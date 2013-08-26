@@ -369,6 +369,9 @@
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WZw-fl-GDW" id="MmA-sV-TzO"/>
+                                </connections>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please memorize the string in bold" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRE-iR-POW">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1673,7 +1676,6 @@
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="phraseLabel1" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="phraseLabel2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="progressLabel" candidateClass="UILabel"/>
             </relationships>
@@ -1711,7 +1713,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1tr-Kl-y5m"/>
-        <segue reference="zal-n7-ZfW"/>
+        <segue reference="XT7-r5-x1r"/>
+        <segue reference="xtU-2Z-szz"/>
     </inferredMetricsTieBreakers>
 </document>

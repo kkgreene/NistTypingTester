@@ -42,8 +42,10 @@
     // set a border on the work area text field
     self.workArea.layer.borderWidth = 1.0f;
     self.workArea.layer.borderColor = [[UIColor grayColor]CGColor];
-    NSLog(@"View Did load");
     [self configureUI];
+    // log phase entry
+    [self.session enteredPhase:Memorize withNote:@"Entering Memorize Phase"];
+    [self.session enteredSubPhase:FreePractice withNote:@"Entering Free Practice"];
 }
 
 -(void) configureUI
@@ -63,20 +65,24 @@
     {
         ttPracticeViewController* controller = segue.destinationViewController;
         controller.session = self.session;
-        self.session.workAreaContents = self.workArea.text;
+        self.session.workAreaContents = self.workArea.text; // store the work area contents
     }
 }
 
 #pragma -mark UITextViewDelegate methods
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
+    NSString *newString = [textView.text stringByReplacingCharactersInRange:range withString:text];
+    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Memorize];
+    inputEvent.location = range.location;
+    inputEvent.length = range.length;
+    inputEvent.enteredCharacters = text;
+    inputEvent.currentValue = newString;
+    [self.session addEvent:inputEvent];
+    NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, text);
     return YES;
 }
 
-//-(void)textViewDidChangeSelection:(UITextView *)textView
-//{
-//    UITextRange *selectedText = [textView selectedTextRange];
-//}
 
 #pragma -mark touch events
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

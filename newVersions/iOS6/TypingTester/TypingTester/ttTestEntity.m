@@ -38,6 +38,10 @@
     return NO;
 }
 
+-(NSString*)description
+{
+    return [NSString stringWithFormat:@"%@", self.entityString];
+}
 
 #pragma -mark ttXmlParserDelegate functions
 

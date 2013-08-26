@@ -24,9 +24,6 @@
 @implementation ttTypingProficiencyViewController
 {
     ttSettings *settings;
-    //ttInputData *inputData;
-    //NSArray *inputStrings;
-    //unsigned int currentString;
 }
 
 -(id) initWithCoder:(NSCoder *)aDecoder
@@ -36,8 +33,6 @@
     {
         settings = [ttSettings Instance];
         [self.session enteredProficiencyPhase];
-        //inputData = [ttInputData Instance];
-        //currentString = 0;
     }
     return self;
 }
@@ -47,10 +42,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     // indicate that the typing proficiency phase has been entered
-    ttEvent *event = [[ttEvent alloc]initWithEventType:PhaseBegin andPhase:Proficiency];
-    event.notes = @"Typing Proficiency Phase Started";
-    [self.session addEvent:event];
-    //inputStrings = [inputData getPhrasesForGroupId:[settings proficiencyGroup]];
+    [self.session enteredPhase:Proficiency withNote:@"Starting Typing Proficiency Phase"];
     [self configureUI];
 }
 
@@ -59,7 +51,6 @@
     int currentString = self.session.currentProficiencyString;
     int totalStrings = self.session.proficiencyStrings.count;
     ttProficiencyItem *item = [self.session.proficiencyStrings objectAtIndex:currentString];
-    //ttProficiencyItem *item = [inputStrings objectAtIndex:currentString];
     self.phraseLabel1.text = item.text;
     self.progressLabel.text = [NSString stringWithFormat:@"Entry %i of %i", currentString+1, totalStrings];
     self.progressBar.progress = (currentString + 0.0F)/(totalStrings+0.0F);
@@ -95,9 +86,6 @@
     {
         // prepare for next screen
         [self performSegueWithIdentifier:@"Instructions" sender:self];
-        // proficiency phase ended event
-        ttEvent *event = [[ttEvent alloc]initWithEventType:PhaseEnd andPhase:Proficiency];
-        event.notes = [NSString stringWithFormat:@"Typing Proficiency Phase Ended"];
     }
 }
 
@@ -106,6 +94,8 @@
     // pass the session pointer on ...
     if ([segue.identifier isEqualToString:@"Instructions"])
     {
+        // proficiency phase ended event
+        [self.session leftPhase:Proficiency withNote:@"Ending Typing Proficiency Phase"];
         ttInstructionsViewController *controller = [segue destinationViewController];
         controller.session = self.session;
     }
@@ -132,7 +122,7 @@
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:UnknownPhase];
+    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Proficiency];
     inputEvent.location = range.location;
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = string;

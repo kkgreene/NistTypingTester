@@ -36,6 +36,8 @@
     NSURL *baseURL = [NSURL fileURLWithPath:htmlFile];
     NSData *htmlData = [NSData dataWithContentsOfFile:htmlFile];
     [self.webView loadData:htmlData MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:baseURL];
+    // add event that we entered the instructions
+    [self.session enteredPhase:Introduction withNote:@"Entering Introduction Phase"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,6 +48,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    [self.session leftPhase:Introduction withNote:@"Leaving Introduction Phase"];
     if ([segue.identifier isEqualToString:@"Memorize"])
     {
         ttMemorizeViewController *controller = segue.destinationViewController;

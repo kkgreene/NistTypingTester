@@ -63,7 +63,6 @@ typedef enum
     Proficiency,
     Introduction,
     Memorize,
-    Verify,
     Entry,
     Recall,
     ThankYou,
@@ -74,5 +73,6 @@ typedef enum
     UnknownSubPhase = -1,
     FreePractice,
     ForcedPractice,
+    Verify,
     EntityChange
 }SubPhase;

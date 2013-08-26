@@ -30,6 +30,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.session enteredPhase:Recall withNote:@"Entered Recall Phase"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,13 +49,14 @@
     else if ([segue.identifier isEqualToString:@"ThankYou"])
     {
         // end the session
+        [self.session leftPhase:Recall withNote:@"Leaving Recall Phase"];
         [self.session sessionDidFinish];
     }
 }
 
 -(IBAction)done
 {
-    
+
 }
 
 @end

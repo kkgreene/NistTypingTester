@@ -37,6 +37,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self configureUI];
+    [self.session enteredSubPhase:Verify withNote:@"Entered Verify Phase"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +55,7 @@
     }
     else if ([segue.identifier isEqualToString:@"Entry"])
     {
+        [self.session leftPhase:Memorize withNote:@"Leaving Memorize Phase"];
         ttEntryViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }

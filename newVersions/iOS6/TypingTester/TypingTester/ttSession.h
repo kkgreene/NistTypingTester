@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ttConstants.h"
 
 @class ttParticipant;
 @class ttSession;
@@ -39,10 +40,11 @@
 -(void)sessionDidStart;
 -(void)sessionDidFinish;
 
--(void)enteredProficiencyPhase;
--(void)enteredMemorizePhase;
--(void)startedPracticePhase;
+-(void)enteredPhase:(Phase)phase withNote:(NSString*)note;
+-(void)leftPhase:(Phase)phase withNote:(NSString*)note;
+-(void)enteredSubPhase:(SubPhase)subphase withNote:(NSString*)note;
 
+-(void)enteredProficiencyPhase;
 
 -(void)addEvent:(ttEvent*)event;
 

@@ -21,11 +21,12 @@
 
 @implementation ttEntryViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+    
     }
     return self;
 }
@@ -34,6 +35,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.session enteredPhase:Entry withNote:@"Started Entry Phase"];
     [self configureUI];
 }
 
@@ -41,6 +43,7 @@
 {
     if([segue.identifier isEqualToString:@"Recall"])
     {
+        [self.session leftPhase:Entry withNote:@"Leaving Entry Phase"];
         ttRecallViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
