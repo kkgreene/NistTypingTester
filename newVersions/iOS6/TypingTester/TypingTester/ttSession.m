@@ -74,6 +74,12 @@
     return;
 }
 
+-(void) moveToNextEntity
+{
+    self.currentEntity++;
+    self.CurrentPracticeRoundForEntity = 0;
+}
+
 #pragma -mark Log Functions
 
 -(void) addEvent:(ttEvent *)event

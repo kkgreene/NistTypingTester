@@ -51,4 +51,6 @@
 -(void) writeLineToRawLogFile:(NSString*)string;
 -(void) writeLineToSummaryLogFile:(NSString*)string;
 
+-(void) moveToNextEntity;
+
 @end

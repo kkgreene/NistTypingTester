@@ -12,6 +12,7 @@
 #import "ttSettings.h"
 #import "ttEventTouch.h"
 #import "ttEventInput.h"
+#import "ttTestEntity.h"
 
 @interface ttPracticeViewController ()
 
@@ -23,6 +24,10 @@
     NSString *maskedString;
     BOOL maskEntityDisplay;
     ttSettings *settings;
+    int practiceStringNumber;
+    int totalEntities;
+    int entityNumber;
+    int numberOfRequiredPractices;
 }
 
 
@@ -31,10 +36,10 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        currentString = @"Password1234";
         maskEntityDisplay = NO;
-        maskedString = @"************";
+        maskedString = @"*";
         settings = [ttSettings Instance];
+        numberOfRequiredPractices = 1;
     }
     return self;
 }
@@ -43,6 +48,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    totalEntities = self.session.entities.count;
+    entityNumber = self.session.currentEntity;
+    numberOfRequiredPractices = settings.ForcedPracticeRounds;
     [self configureUI];
 }
 
@@ -56,14 +64,26 @@
 
 -(void)configureUI
 {
+    // display the string
+    ttTestEntity *e = [self.session.entities objectAtIndex:entityNumber];
+    currentString = e.entityString;
+    // configure the display of the text
+    [self configureEntityDisplay];
     // enable/disable the done button
     if (self.entryField.text.length > 0) self.doneButton.enabled = YES;
     else self.doneButton.enabled = NO;
     // configure optional button visibility
     self.visibilityButton.hidden = !settings.EnableHideButtonOnPracticeScreen;
     self.skipButton.hidden = !settings.ShowSkipButton;
-    // configure the initial display of the text
-    [self configureEntityDisplay];
+    // update the progress labels
+    practiceStringNumber = self.session.CurrentPracticeRoundForEntity;
+    self.sessionProgressBar.progress = (float)entityNumber+1/(float)totalEntities+1;
+    self.entityProgressBar.progress = (float)(practiceStringNumber)/(float)numberOfRequiredPractices;
+    self.sessionProgressLabel.text = [NSString stringWithFormat:@"Entity %i of %i",entityNumber+1,totalEntities];
+    self.entitiyProgressLabel.text = [NSString stringWithFormat:@"Round %i of %i", practiceStringNumber+1, numberOfRequiredPractices];
+    // hiode the incorrect labels
+    self.correctIndicator.hidden = YES;
+    self.correctTextLable.hidden = YES;
 }
 
 -(void)configureEntityDisplay
@@ -103,7 +123,25 @@
 
 -(IBAction)doneButtonPressed
 {
-
+    // check to see if the entered string matches the target string
+    if([currentString isEqualToString:self.entryField.text])
+    {
+        self.session.CurrentPracticeRoundForEntity++;
+        if (self.session.CurrentPracticeRoundForEntity < settings.ForcedPracticeRounds)
+        {
+            self.entryField.text = @"";
+            [self configureUI];
+        }
+        else // they have succesfully practiced X times
+        {
+            [self performSegueWithIdentifier:@"Verify" sender:self];
+        }
+    }
+    else    // entry does not match practice string
+    {
+        self.correctIndicator.hidden = NO;
+        self.correctTextLable.hidden = NO;
+    }
 }
 
 #pragma -mark touch events
@@ -137,6 +175,9 @@
         self.doneButton.enabled = NO;
     }
     NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
+    // hids the incorrect icon and label
+    self.correctTextLable.hidden = YES;
+    self.correctIndicator.hidden = YES;
     return YES;
 }
 

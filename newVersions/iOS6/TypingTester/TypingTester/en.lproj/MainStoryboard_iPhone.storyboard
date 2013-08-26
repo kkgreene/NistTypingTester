@@ -559,44 +559,61 @@
                                     <action selector="skipButtonPressed" destination="deW-OK-kEn" eventType="touchUpInside" id="qsp-YR-aC5"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="433-x.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Py-Q3-jMf">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="0w0-s0-FP3"/>
+                                    <constraint firstAttribute="height" constant="28" id="TxN-4a-Yw1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Incorrect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9z-dd-2nG">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gMh-fb-3RU" firstAttribute="centerX" secondItem="Vnx-Ga-UZ6" secondAttribute="centerX" type="default" id="0sl-cT-gd7"/>
                             <constraint firstItem="OQV-3y-nu6" firstAttribute="centerX" secondItem="ytz-um-9hD" secondAttribute="centerX" type="default" id="6py-dD-cph"/>
                             <constraint firstItem="h7j-fS-t3K" firstAttribute="top" secondItem="AXo-ih-LAs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="93M-Lc-LRT"/>
-                            <constraint firstItem="AlP-oJ-nSX" firstAttribute="top" secondItem="dyf-5q-xeL" secondAttribute="top" constant="232" id="9n9-8r-S8W"/>
+                            <constraint firstItem="AlP-oJ-nSX" firstAttribute="top" secondItem="V9z-dd-2nG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="AJ2-OR-3e3"/>
                             <constraint firstAttribute="bottom" secondItem="UXC-nO-CnE" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="AcO-ka-rCQ"/>
                             <constraint firstItem="AlP-oJ-nSX" firstAttribute="centerX" secondItem="gMh-fb-3RU" secondAttribute="centerX" type="default" id="D4j-ad-VYf"/>
+                            <constraint firstItem="V9z-dd-2nG" firstAttribute="centerX" secondItem="3Py-Q3-jMf" secondAttribute="centerX" type="default" id="Fie-a3-2Px"/>
                             <constraint firstItem="qW8-Kl-XqM" firstAttribute="top" secondItem="dyf-5q-xeL" secondAttribute="top" constant="55" id="KHy-au-jLB"/>
                             <constraint firstItem="FAo-Vg-wq1" firstAttribute="top" secondItem="rYF-Dt-I1K" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="MRS-5I-S9s"/>
                             <constraint firstItem="gMh-fb-3RU" firstAttribute="top" secondItem="h7j-fS-t3K" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ngb-bw-Ex5"/>
                             <constraint firstItem="OQV-3y-nu6" firstAttribute="top" secondItem="ytz-um-9hD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ObO-XZ-eII"/>
                             <constraint firstItem="Vnx-Ga-UZ6" firstAttribute="top" secondItem="dyf-5q-xeL" secondAttribute="top" type="default" id="P1A-HF-7RV"/>
                             <constraint firstItem="FAo-Vg-wq1" firstAttribute="leading" secondItem="rYF-Dt-I1K" secondAttribute="leading" type="default" id="ShL-aA-GqX"/>
-                            <constraint firstItem="rYF-Dt-I1K" firstAttribute="leading" secondItem="dyf-5q-xeL" secondAttribute="leading" constant="13" id="VRa-Tb-kT7"/>
+                            <constraint firstItem="gRk-0e-CQR" firstAttribute="leading" secondItem="UXC-nO-CnE" secondAttribute="leading" type="default" id="U4R-4g-U0s"/>
                             <constraint firstItem="AXo-ih-LAs" firstAttribute="centerX" secondItem="gRk-0e-CQR" secondAttribute="centerX" type="default" id="VlI-Cp-R03"/>
                             <constraint firstItem="qW8-Kl-XqM" firstAttribute="leading" secondItem="dyf-5q-xeL" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Z4g-9i-9Fb"/>
+                            <constraint firstItem="AlP-oJ-nSX" firstAttribute="centerX" secondItem="Vnx-Ga-UZ6" secondAttribute="centerX" type="default" id="Z9G-GQ-opb"/>
                             <constraint firstItem="a1y-Eu-ovm" firstAttribute="trailing" secondItem="OQV-3y-nu6" secondAttribute="trailing" type="default" id="a5w-cF-XVW"/>
                             <constraint firstItem="rYF-Dt-I1K" firstAttribute="leading" secondItem="z3a-AY-gUS" secondAttribute="leading" type="default" id="bnz-d5-bIg"/>
+                            <constraint firstItem="3Py-Q3-jMf" firstAttribute="centerX" secondItem="rYF-Dt-I1K" secondAttribute="centerX" type="default" id="e1z-Cu-w1e"/>
                             <constraint firstAttribute="bottom" secondItem="a1y-Eu-ovm" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="eAl-9D-vkN"/>
                             <constraint firstItem="AXo-ih-LAs" firstAttribute="top" secondItem="gRk-0e-CQR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="eaC-Sj-Ukl"/>
                             <constraint firstItem="FAo-Vg-wq1" firstAttribute="leading" secondItem="gRk-0e-CQR" secondAttribute="leading" type="default" id="eoH-Hx-CYE"/>
                             <constraint firstItem="rYF-Dt-I1K" firstAttribute="top" secondItem="dyf-5q-xeL" secondAttribute="top" constant="110" id="iRf-wJ-iEh"/>
                             <constraint firstAttribute="trailing" secondItem="ytz-um-9hD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="j8S-ba-Qgj"/>
+                            <constraint firstItem="h7j-fS-t3K" firstAttribute="leading" secondItem="dyf-5q-xeL" secondAttribute="leading" constant="7" id="jfw-qH-meT"/>
                             <constraint firstItem="Vnx-Ga-UZ6" firstAttribute="trailing" secondItem="dyf-5q-xeL" secondAttribute="trailing" type="default" id="kKh-Wt-Rfc"/>
                             <constraint firstItem="ytz-um-9hD" firstAttribute="baseline" secondItem="qW8-Kl-XqM" secondAttribute="baseline" type="default" id="kjf-4h-uNG"/>
                             <constraint firstItem="AXo-ih-LAs" firstAttribute="centerX" secondItem="h7j-fS-t3K" secondAttribute="centerX" type="default" id="nE4-w3-YqF"/>
+                            <constraint firstItem="3Py-Q3-jMf" firstAttribute="top" secondItem="dyf-5q-xeL" secondAttribute="top" constant="185" id="tns-0U-XfR"/>
                             <constraint firstItem="Vnx-Ga-UZ6" firstAttribute="leading" secondItem="dyf-5q-xeL" secondAttribute="leading" type="default" id="w3p-ls-PVg"/>
                             <constraint firstItem="gRk-0e-CQR" firstAttribute="top" secondItem="AlP-oJ-nSX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wXN-b0-6G1"/>
                             <constraint firstItem="FAo-Vg-wq1" firstAttribute="trailing" secondItem="h7j-fS-t3K" secondAttribute="trailing" type="default" id="whY-5S-vJC"/>
                             <constraint firstItem="z3a-AY-gUS" firstAttribute="top" secondItem="qW8-Kl-XqM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xxj-aR-abo"/>
-                            <constraint firstItem="UXC-nO-CnE" firstAttribute="leading" secondItem="FAo-Vg-wq1" secondAttribute="leading" type="default" id="yCH-75-HfR"/>
+                            <constraint firstItem="V9z-dd-2nG" firstAttribute="top" secondItem="dyf-5q-xeL" secondAttribute="top" constant="209" id="yPf-A0-xfc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Scj-AL-FD4"/>
                     <connections>
                         <outlet property="backButton" destination="t9n-VE-Wcm" id="DrB-yD-auR"/>
+                        <outlet property="correctIndicator" destination="3Py-Q3-jMf" id="twd-3E-qLh"/>
+                        <outlet property="correctTextLable" destination="V9z-dd-2nG" id="kd0-RF-h43"/>
                         <outlet property="doneButton" destination="tQC-uw-kvX" id="m2e-5t-ovn"/>
                         <outlet property="entitiyProgressLabel" destination="ytz-um-9hD" id="ypv-iF-Ew1"/>
                         <outlet property="entity" destination="rYF-Dt-I1K" id="TCo-Al-86s"/>
@@ -626,10 +643,14 @@
                                     <navigationItem title="Verify" id="0Ca-Hr-8hb">
                                         <barButtonItem key="leftBarButtonItem" image="765-arrow-left-white.png" id="BbF-ey-dsl">
                                             <connections>
-                                                <segue destination="deW-OK-kEn" kind="modal" identifier="BackToPractice" modalTransitionStyle="crossDissolve" id="BGn-G2-t8v"/>
+                                                <action selector="back" destination="K8h-Oe-RAA" id="m2H-HU-7T0"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="766-arrow-right-white.png" id="KwA-cH-aYs"/>
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="766-arrow-right-white.png" id="KwA-cH-aYs">
+                                            <connections>
+                                                <action selector="done" destination="K8h-Oe-RAA" id="K2p-ro-lFR"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -650,18 +671,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="deW-OK-kEn" id="irG-g4-A0y"/>
+                                    <outlet property="delegate" destination="K8h-Oe-RAA" id="T63-JG-ieg"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Correct" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icK-X5-eTO">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Incorrect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icK-X5-eTO">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="429-checkmark2.png" translatesAutoresizingMaskIntoConstraints="NO" id="RHg-ez-krw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="433-x.png" translatesAutoresizingMaskIntoConstraints="NO" id="RHg-ez-krw">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="1vo-g8-Bry"/>
-                                    <constraint firstAttribute="height" constant="40" id="KYl-M0-u4E"/>
+                                    <constraint firstAttribute="width" constant="26" id="Fdj-nC-NyZ"/>
+                                    <constraint firstAttribute="height" constant="26" id="Gox-yN-Rej"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please enter the string you have" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgG-01-wZD">
@@ -691,32 +712,38 @@
                             <constraint firstItem="N6l-6A-WNe" firstAttribute="leading" secondItem="iuK-Ob-cYE" secondAttribute="leading" constant="15" id="44B-E0-68c"/>
                             <constraint firstItem="cqz-fP-YOu" firstAttribute="top" secondItem="lgG-01-wZD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="4fN-Bi-PSC"/>
                             <constraint firstItem="dGB-r1-AuF" firstAttribute="top" secondItem="cqz-fP-YOu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="4gD-vC-fEA"/>
+                            <constraint firstItem="icK-X5-eTO" firstAttribute="leading" secondItem="iuK-Ob-cYE" secondAttribute="leading" constant="125" id="AwF-54-HpO"/>
                             <constraint firstItem="cqz-fP-YOu" firstAttribute="centerX" secondItem="lgG-01-wZD" secondAttribute="centerX" type="default" id="Cwu-4L-Dp6"/>
                             <constraint firstItem="N6l-6A-WNe" firstAttribute="top" secondItem="DBF-VC-mYq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="D5z-kx-W54"/>
-                            <constraint firstItem="RHg-ez-krw" firstAttribute="centerX" secondItem="icK-X5-eTO" secondAttribute="centerX" type="default" id="DzN-sM-jC2"/>
+                            <constraint firstItem="RHg-ez-krw" firstAttribute="centerX" secondItem="lgG-01-wZD" secondAttribute="centerX" type="default" id="ELo-hz-dlt"/>
+                            <constraint firstItem="jbo-0S-7h4" firstAttribute="centerX" secondItem="bl3-NQ-KOd" secondAttribute="centerX" type="default" id="GwN-pO-BDX"/>
                             <constraint firstItem="DBF-VC-mYq" firstAttribute="top" secondItem="iuK-Ob-cYE" secondAttribute="top" constant="54" id="LN5-yA-nkT"/>
                             <constraint firstItem="jbo-0S-7h4" firstAttribute="top" secondItem="iuK-Ob-cYE" secondAttribute="top" constant="130" id="LSm-yI-0sa"/>
                             <constraint firstItem="lgG-01-wZD" firstAttribute="top" secondItem="iuK-Ob-cYE" secondAttribute="top" constant="252" id="MLI-W1-htm"/>
                             <constraint firstItem="DBF-VC-mYq" firstAttribute="leading" secondItem="iuK-Ob-cYE" secondAttribute="leading" constant="22" id="NlI-s0-tho"/>
                             <constraint firstItem="yDt-hL-gQh" firstAttribute="top" secondItem="dGB-r1-AuF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UsZ-kQ-c0I"/>
-                            <constraint firstItem="jbo-0S-7h4" firstAttribute="centerX" secondItem="bl3-NQ-KOd" secondAttribute="centerX" type="default" id="VXj-Wl-RMv"/>
-                            <constraint firstItem="RHg-ez-krw" firstAttribute="centerX" secondItem="jbo-0S-7h4" secondAttribute="centerX" type="default" id="Zdm-jx-rv3"/>
+                            <constraint firstItem="icK-X5-eTO" firstAttribute="top" secondItem="iuK-Ob-cYE" secondAttribute="top" constant="197" id="bVl-7a-5Zh"/>
                             <constraint firstItem="bl3-NQ-KOd" firstAttribute="trailing" secondItem="iuK-Ob-cYE" secondAttribute="trailing" type="default" id="dsP-Ih-DJ6"/>
-                            <constraint firstItem="lgG-01-wZD" firstAttribute="centerX" secondItem="icK-X5-eTO" secondAttribute="centerX" type="default" id="e0F-qK-vN0"/>
+                            <constraint firstItem="RHg-ez-krw" firstAttribute="centerX" secondItem="jbo-0S-7h4" secondAttribute="centerX" type="default" id="fgR-vt-FLd"/>
                             <constraint firstItem="bl3-NQ-KOd" firstAttribute="top" secondItem="iuK-Ob-cYE" secondAttribute="top" type="default" id="jaa-1q-qSZ"/>
                             <constraint firstItem="bl3-NQ-KOd" firstAttribute="leading" secondItem="iuK-Ob-cYE" secondAttribute="leading" type="default" id="kXe-qO-CzK"/>
-                            <constraint firstItem="icK-X5-eTO" firstAttribute="top" secondItem="iuK-Ob-cYE" secondAttribute="top" constant="211" id="nB5-Wi-fxe"/>
                             <constraint firstItem="dGB-r1-AuF" firstAttribute="leading" secondItem="cqz-fP-YOu" secondAttribute="leading" type="default" id="sVk-he-VYA"/>
                             <constraint firstItem="RHg-ez-krw" firstAttribute="top" secondItem="jbo-0S-7h4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="y0P-s4-3zm"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="entryField" destination="jbo-0S-7h4" id="Jkf-Xq-xmh"/>
+                        <outlet property="incorrectImage" destination="RHg-ez-krw" id="iaz-8O-Rvi"/>
+                        <outlet property="incorrectText" destination="icK-X5-eTO" id="2AL-1C-3q5"/>
+                        <outlet property="sessionProgressBar" destination="N6l-6A-WNe" id="RmZ-tp-MXw"/>
+                        <outlet property="sessionProgressLabel" destination="DBF-VC-mYq" id="Op7-JP-PL3"/>
                         <segue destination="ZNU-h0-iZz" kind="modal" identifier="Entry" modalTransitionStyle="crossDissolve" id="rgE-Di-oLL"/>
+                        <segue destination="deW-OK-kEn" kind="modal" identifier="BackToPractice" id="zal-n7-ZfW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMC-0K-eTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2890" y="2108"/>
+            <point key="canvasLocation" x="2906" y="2108"/>
         </scene>
         <!--Tt Entry View Controller-->
         <scene sceneID="quC-9h-iOo">
@@ -1455,7 +1482,6 @@
     <resources>
         <image name="19-gear.png" width="26" height="26"/>
         <image name="336-skip.png" width="31" height="13"/>
-        <image name="429-checkmark2.png" width="28" height="28"/>
         <image name="433-x.png" width="18" height="18"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="765-arrow-left-white.png" width="14" height="28"/>
@@ -1500,6 +1526,8 @@
                 <relationship kind="action" name="skipButtonPressed"/>
                 <relationship kind="action" name="visibilityButtonPressed"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="correctIndicator" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="correctTextLable" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="entitiyProgressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="entity" candidateClass="UILabel"/>
@@ -1574,8 +1602,10 @@
                 <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="progressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="incorrectImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="incorrectText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sessionProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="sessionProgressLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="ttViewController" superclassName="UIViewController">
@@ -1595,7 +1625,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XT7-r5-x1r"/>
         <segue reference="xtU-2Z-szz"/>
+        <segue reference="zal-n7-ZfW"/>
     </inferredMetricsTieBreakers>
 </document>

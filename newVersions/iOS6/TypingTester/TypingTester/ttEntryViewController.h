@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class ttSession;
+
 @interface ttEntryViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *sessionProgressLabel;
@@ -16,6 +18,8 @@
 @property (nonatomic, weak) IBOutlet UIProgressView *entityProgressBar;
 @property (nonatomic, weak) IBOutlet UITextField *entryField;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
+
+@property (nonatomic, weak) ttSession *session;
 
 -(IBAction)done;
 

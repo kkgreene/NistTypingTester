@@ -7,6 +7,13 @@
 //
 
 #import "ttVerifyViewController.h"
+#import "ttSession.h"
+#import "ttSettings.h"
+#import "ttEventInput.h"
+#import "ttEvent.h"
+#import "ttEventTouch.h"
+#import "ttEntryViewController.h"
+#import "ttPracticeViewController.h"
 
 @interface ttVerifyViewController ()
 
@@ -34,5 +41,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"BackToPractice"])
+    {
+        ttPracticeViewController *controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
+    else if ([segue.identifier isEqualToString:@"Entry"])
+    {
+        ttEntryViewController *controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
+}
+
 
 @end

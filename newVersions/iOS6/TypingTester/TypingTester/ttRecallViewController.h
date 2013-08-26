@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class ttSession;
+
 @interface ttRecallViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *donButton;
+
+@property (nonatomic, weak) ttSession* session;
 
 -(IBAction)done;
 
