@@ -732,6 +732,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="BbF-ey-dsl" id="RS1-5n-TdZ"/>
+                        <outlet property="doneButton" destination="KwA-cH-aYs" id="YRZ-fE-sYH"/>
                         <outlet property="entryField" destination="jbo-0S-7h4" id="Jkf-Xq-xmh"/>
                         <outlet property="incorrectImage" destination="RHg-ez-krw" id="iaz-8O-Rvi"/>
                         <outlet property="incorrectText" destination="icK-X5-eTO" id="2AL-1C-3q5"/>

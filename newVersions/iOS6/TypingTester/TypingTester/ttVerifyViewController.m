@@ -14,6 +14,7 @@
 #import "ttEventTouch.h"
 #import "ttEntryViewController.h"
 #import "ttPracticeViewController.h"
+#import "ttTestEntity.h"
 
 @interface ttVerifyViewController ()
 
@@ -21,11 +22,12 @@
 
 @implementation ttVerifyViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+    
     }
     return self;
 }
@@ -34,6 +36,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self configureUI];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,5 +59,63 @@
     }
 }
 
+#pragma -mark IBActions
+-(IBAction)back
+{
+    [self performSegueWithIdentifier:@"BackToPractice" sender:self];
+}
+
+-(IBAction)done
+{
+    ttTestEntity *currentEntity = [self.session.entities objectAtIndex:self.session.currentEntity];
+    if ([self.entryField.text isEqualToString:currentEntity.entityString])
+    {
+        [self performSegueWithIdentifier:@"Entry" sender:self];
+    }
+    else
+    {
+        self.incorrectText.hidden = NO;
+        self.incorrectImage.hidden = NO;
+    }
+}
+
+#pragma -mark UI configuration
+-(void)configureUI
+{
+    int currentEntity = self.session.currentEntity;
+    int totalEntities = self.session.entities.count;
+    self.sessionProgressBar.progress = (float)(currentEntity+1)/(float)totalEntities;
+    self.sessionProgressLabel.text = [NSString stringWithFormat:@"Entity %i of %i", currentEntity+1, totalEntities];
+    // hide the incorrect icon and label
+    self.incorrectImage.hidden = YES;
+    self.incorrectText.hidden = YES;
+}
+
+#pragma -mark UITextFieldDelegate methods
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:UnknownPhase];
+    inputEvent.location = range.location;
+    inputEvent.length = range.length;
+    inputEvent.enteredCharacters = string;
+    inputEvent.currentValue = newString;
+    [self.session addEvent:inputEvent];
+    if (newString.length > 0)
+    {
+        self.doneButton.enabled = YES;
+    }
+    else
+    {
+        self.doneButton.enabled = NO;
+    }
+    NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
+    // hids the incorrect icon and label
+    self.incorrectImage.hidden = YES;
+    self.incorrectText.hidden = YES;
+    return YES;
+
+}
 
 @end
