@@ -84,8 +84,10 @@
 {
     int currentEntity = self.session.currentEntity;
     int totalEntities = self.session.entities.count;
-    self.sessionProgressBar.progress = (float)(currentEntity+1)/(float)totalEntities;
+    self.sessionProgressBar.progress = (float)(currentEntity)/(float)totalEntities;
     self.sessionProgressLabel.text = [NSString stringWithFormat:@"Entity %i of %i", currentEntity+1, totalEntities];
+    self.entityProgressBar.progress = 0;
+    self.entityProgressLabel.text = [NSString stringWithFormat:@"Entry 1 of 1"];
     // hide the incorrect icon and label
     self.incorrectImage.hidden = YES;
     self.incorrectText.hidden = YES;

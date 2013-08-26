@@ -77,7 +77,7 @@
     self.skipButton.hidden = !settings.ShowSkipButton;
     // update the progress labels
     practiceStringNumber = self.session.CurrentPracticeRoundForEntity;
-    self.sessionProgressBar.progress = (float)(entityNumber+1)/(float)(totalEntities+1);
+    self.sessionProgressBar.progress = (float)(entityNumber)/(float)(totalEntities);
     self.entityProgressBar.progress = (float)(practiceStringNumber)/(float)numberOfRequiredPractices;
     self.sessionProgressLabel.text = [NSString stringWithFormat:@"Entity %i of %i",entityNumber+1,totalEntities];
     self.entitiyProgressLabel.text = [NSString stringWithFormat:@"Round %i of %i", practiceStringNumber+1, numberOfRequiredPractices];

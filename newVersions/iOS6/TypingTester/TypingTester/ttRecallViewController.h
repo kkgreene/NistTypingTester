@@ -14,7 +14,7 @@
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *donButton;
 
-@property (nonatomic, weak) ttSession* session;
+@property (nonatomic, weak) ttSession *session;
 
 -(IBAction)done;
 

@@ -78,6 +78,7 @@
 {
     self.currentEntity++;
     self.CurrentPracticeRoundForEntity = 0;
+    self.currentEntryForEntity = 0;
 }
 
 #pragma -mark Log Functions

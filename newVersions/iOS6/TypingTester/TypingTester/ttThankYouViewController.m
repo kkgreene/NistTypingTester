@@ -47,7 +47,15 @@
 
 -(IBAction)done
 {
-    
+    [self performSegueWithIdentifier:@"BackToStart" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"BackToStart"])
+    {
+        // Add any clean up here...
+    }
 }
 
 @end

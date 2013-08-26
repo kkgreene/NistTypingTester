@@ -19,6 +19,8 @@
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *backButton;
 @property (nonatomic, weak) IBOutlet UIImageView *incorrectImage;
 @property (nonatomic, weak) IBOutlet UILabel* incorrectText;
+@property (nonatomic, weak) IBOutlet UILabel* entityProgressLabel;
+@property (nonatomic, weak) IBOutlet UIProgressView *entityProgressBar;
 
 @property (nonatomic, weak) ttSession *session;
 

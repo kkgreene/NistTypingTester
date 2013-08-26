@@ -43,6 +43,7 @@
 		AD20940917C3B94B00B56CB7 /* 766-arrow-right-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD20940517C3B94B00B56CB7 /* 766-arrow-right-white@2x.png */; };
 		AD20940C17C3D34500B56CB7 /* ttThankYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD20940B17C3D34400B56CB7 /* ttThankYouViewController.m */; };
 		AD20940F17C3FBCD00B56CB7 /* ttApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = AD20940E17C3FBCD00B56CB7 /* ttApplication.m */; };
+		AD3A463617CBB440007256F4 /* ttRecallTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3A463517CBB440007256F4 /* ttRecallTableViewController.m */; };
 		AD4073FC17BBCBB3006E31CF /* ttProficiencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4073FB17BBCBB3006E31CF /* ttProficiencyItem.m */; };
 		AD4073FF17BBCBC2006E31CF /* ttTestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4073FE17BBCBC2006E31CF /* ttTestEntity.m */; };
 		AD6BC6B317B54AAF0067764F /* welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = AD6BC6B217B54AAF0067764F /* welcome.html */; };
@@ -119,6 +120,8 @@
 		AD20940B17C3D34400B56CB7 /* ttThankYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttThankYouViewController.m; sourceTree = "<group>"; };
 		AD20940D17C3FBCD00B56CB7 /* ttApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttApplication.h; sourceTree = "<group>"; };
 		AD20940E17C3FBCD00B56CB7 /* ttApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttApplication.m; sourceTree = "<group>"; };
+		AD3A463417CBB43F007256F4 /* ttRecallTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttRecallTableViewController.h; sourceTree = "<group>"; };
+		AD3A463517CBB440007256F4 /* ttRecallTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttRecallTableViewController.m; sourceTree = "<group>"; };
 		AD4073FA17BBCBB3006E31CF /* ttProficiencyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttProficiencyItem.h; sourceTree = "<group>"; };
 		AD4073FB17BBCBB3006E31CF /* ttProficiencyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttProficiencyItem.m; sourceTree = "<group>"; };
 		AD4073FD17BBCBC2006E31CF /* ttTestEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttTestEntity.h; sourceTree = "<group>"; };
@@ -276,28 +279,30 @@
 			children = (
 				AD04769217A96F5A00657D08 /* ttSettingsViewController.h */,
 				AD04769317A96F5A00657D08 /* ttSettingsViewController.m */,
+				AD6E13DA17B94BE50034DA27 /* ttSettingsDetailViewController.h */,
+				AD6E13DB17B94BE50034DA27 /* ttSettingsDetailViewController.m */,
+				AD04768317A964B600657D08 /* ttViewController.h */,
+				AD04768417A964B600657D08 /* ttViewController.m */,
 				ADBA94DD17AAE92000BB226D /* ttReadyViewController.h */,
 				ADBA94DE17AAE92000BB226D /* ttReadyViewController.m */,
 				ADBA94E017AAE93400BB226D /* ttTypingProficiencyViewController.h */,
 				ADBA94E117AAE93400BB226D /* ttTypingProficiencyViewController.m */,
-				AD04768317A964B600657D08 /* ttViewController.h */,
-				AD04768417A964B600657D08 /* ttViewController.m */,
-				AD6E13DA17B94BE50034DA27 /* ttSettingsDetailViewController.h */,
-				AD6E13DB17B94BE50034DA27 /* ttSettingsDetailViewController.m */,
-				C9E0977817C3150F004DBD9F /* ttMemorizeViewController.h */,
-				C9E0977917C3150F004DBD9F /* ttMemorizeViewController.m */,
 				AD2093E417C3A2A500B56CB7 /* ttInstructionsViewController.h */,
 				AD2093E517C3A2A500B56CB7 /* ttInstructionsViewController.m */,
+				C9E0977817C3150F004DBD9F /* ttMemorizeViewController.h */,
+				C9E0977917C3150F004DBD9F /* ttMemorizeViewController.m */,
 				AD2093F717C3AD5500B56CB7 /* ttPracticeViewController.h */,
 				AD2093F817C3AD5500B56CB7 /* ttPracticeViewController.m */,
-				AD20940A17C3D34400B56CB7 /* ttThankYouViewController.h */,
-				AD20940B17C3D34400B56CB7 /* ttThankYouViewController.m */,
 				C95BBBE417C50D5500F02F5F /* ttVerifyViewController.h */,
 				C95BBBE517C50D5500F02F5F /* ttVerifyViewController.m */,
 				C95BBBE717C50D6C00F02F5F /* ttEntryViewController.h */,
 				C95BBBE817C50D6C00F02F5F /* ttEntryViewController.m */,
 				C95BBBEA17C50DB100F02F5F /* ttRecallViewController.h */,
 				C95BBBEB17C50DB100F02F5F /* ttRecallViewController.m */,
+				AD3A463417CBB43F007256F4 /* ttRecallTableViewController.h */,
+				AD3A463517CBB440007256F4 /* ttRecallTableViewController.m */,
+				AD20940A17C3D34400B56CB7 /* ttThankYouViewController.h */,
+				AD20940B17C3D34400B56CB7 /* ttThankYouViewController.m */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				C95BBBE617C50D5500F02F5F /* ttVerifyViewController.m in Sources */,
 				C95BBBE917C50D6C00F02F5F /* ttEntryViewController.m in Sources */,
 				C95BBBEC17C50DB100F02F5F /* ttRecallViewController.m in Sources */,
+				AD3A463617CBB440007256F4 /* ttRecallTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

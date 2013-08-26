@@ -7,6 +7,8 @@
 //
 
 #import "ttRecallViewController.h"
+#import "ttRecallTableViewController.h"
+#import "ttSession.h"
 
 @interface ttRecallViewController ()
 
@@ -14,11 +16,12 @@
 
 @implementation ttRecallViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(id) initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        
     }
     return self;
 }
@@ -33,6 +36,25 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"RecallTableView"])
+    {
+        ttRecallTableViewController *controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
+    else if ([segue.identifier isEqualToString:@"ThankYou"])
+    {
+        // end the session
+        [self.session sessionDidFinish];
+    }
+}
+
+-(IBAction)done
+{
+    
 }
 
 @end

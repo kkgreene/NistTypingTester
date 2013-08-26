@@ -705,6 +705,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Entry A of B" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecp-hm-TeH">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eMb-RH-pP6">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="CyB-fF-TCI"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -716,6 +726,8 @@
                             <constraint firstItem="cqz-fP-YOu" firstAttribute="centerX" secondItem="lgG-01-wZD" secondAttribute="centerX" type="default" id="Cwu-4L-Dp6"/>
                             <constraint firstItem="N6l-6A-WNe" firstAttribute="top" secondItem="DBF-VC-mYq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="D5z-kx-W54"/>
                             <constraint firstItem="RHg-ez-krw" firstAttribute="centerX" secondItem="lgG-01-wZD" secondAttribute="centerX" type="default" id="ELo-hz-dlt"/>
+                            <constraint firstItem="eMb-RH-pP6" firstAttribute="trailing" secondItem="dGB-r1-AuF" secondAttribute="trailing" type="default" id="EWq-6f-PH5"/>
+                            <constraint firstItem="eMb-RH-pP6" firstAttribute="top" secondItem="ecp-hm-TeH" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="FCz-GH-fzs"/>
                             <constraint firstItem="jbo-0S-7h4" firstAttribute="centerX" secondItem="bl3-NQ-KOd" secondAttribute="centerX" type="default" id="GwN-pO-BDX"/>
                             <constraint firstItem="DBF-VC-mYq" firstAttribute="top" secondItem="iuK-Ob-cYE" secondAttribute="top" constant="54" id="LN5-yA-nkT"/>
                             <constraint firstItem="jbo-0S-7h4" firstAttribute="top" secondItem="iuK-Ob-cYE" secondAttribute="top" constant="130" id="LSm-yI-0sa"/>
@@ -727,13 +739,17 @@
                             <constraint firstItem="RHg-ez-krw" firstAttribute="centerX" secondItem="jbo-0S-7h4" secondAttribute="centerX" type="default" id="fgR-vt-FLd"/>
                             <constraint firstItem="bl3-NQ-KOd" firstAttribute="top" secondItem="iuK-Ob-cYE" secondAttribute="top" type="default" id="jaa-1q-qSZ"/>
                             <constraint firstItem="bl3-NQ-KOd" firstAttribute="leading" secondItem="iuK-Ob-cYE" secondAttribute="leading" type="default" id="kXe-qO-CzK"/>
+                            <constraint firstItem="ecp-hm-TeH" firstAttribute="baseline" secondItem="DBF-VC-mYq" secondAttribute="baseline" type="default" id="pgQ-Rs-Aj8"/>
                             <constraint firstItem="dGB-r1-AuF" firstAttribute="leading" secondItem="cqz-fP-YOu" secondAttribute="leading" type="default" id="sVk-he-VYA"/>
+                            <constraint firstAttribute="trailing" secondItem="ecp-hm-TeH" secondAttribute="trailing" constant="21" id="x1v-bt-Le6"/>
                             <constraint firstItem="RHg-ez-krw" firstAttribute="top" secondItem="jbo-0S-7h4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="y0P-s4-3zm"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="BbF-ey-dsl" id="RS1-5n-TdZ"/>
                         <outlet property="doneButton" destination="KwA-cH-aYs" id="YRZ-fE-sYH"/>
+                        <outlet property="entityProgressBar" destination="eMb-RH-pP6" id="mtd-98-1gT"/>
+                        <outlet property="entityProgressLabel" destination="ecp-hm-TeH" id="boJ-9N-IV5"/>
                         <outlet property="entryField" destination="jbo-0S-7h4" id="Jkf-Xq-xmh"/>
                         <outlet property="incorrectImage" destination="RHg-ez-krw" id="iaz-8O-Rvi"/>
                         <outlet property="incorrectText" destination="icK-X5-eTO" id="2AL-1C-3q5"/>
@@ -758,7 +774,11 @@
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="lxN-aU-UjK">
                                 <items>
                                     <navigationItem title="Entry" id="mkn-eT-zfF">
-                                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="766-arrow-right-white.png" id="YPJ-zF-Krx"/>
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="766-arrow-right-white.png" id="YPJ-zF-Krx">
+                                            <connections>
+                                                <action selector="done" destination="ZNU-h0-iZz" id="aS9-i0-OdO"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -782,12 +802,15 @@
                                     <constraint firstAttribute="width" constant="100" id="73q-R2-tTX"/>
                                 </constraints>
                             </progressView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rcS-MQ-IWX">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rcS-MQ-IWX">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="291" id="3a3-AI-4qE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZNU-h0-iZz" id="bz4-r3-OXd"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please enter the string you have" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWI-eh-BZr">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -836,7 +859,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="YPJ-zF-Krx" id="yxD-pr-kCE"/>
+                        <outlet property="entityProgressBar" destination="5oj-m2-8UH" id="ZUR-hS-7Pm"/>
+                        <outlet property="entityProgressLabel" destination="dHF-DB-xIB" id="Z7z-77-O3h"/>
+                        <outlet property="entryField" destination="rcS-MQ-IWX" id="f6w-3S-MBf"/>
+                        <outlet property="sessionProgressBar" destination="3J1-eM-VWj" id="Bvn-EZ-mPl"/>
+                        <outlet property="sessionProgressLabel" destination="cR2-sT-g5i" id="Ok2-xv-P1J"/>
                         <segue destination="Im5-cC-YRZ" kind="modal" identifier="Recall" modalTransitionStyle="crossDissolve" id="qlx-Cz-jfL"/>
+                        <segue destination="WZw-fl-GDW" kind="modal" identifier="MemorizeNextEntity" id="1tr-Kl-y5m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jt-ub-mbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -873,25 +903,30 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Md-yJ-equ">
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
+                                    <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="780-2D-DSb">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="396" id="JAF-Kg-5vx"/>
+                                            <constraint firstAttribute="width" constant="320" id="mVF-0J-BJV"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="J52-iw-eNL" kind="embed" identifier="RecallTableView" id="YPW-HW-Fzu"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="LhN-YO-0Wy" firstAttribute="leading" secondItem="b3z-o8-WXk" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="33X-J5-Hbb"/>
-                                    <constraint firstAttribute="bottom" secondItem="5Md-yJ-equ" secondAttribute="bottom" constant="355" id="5u0-hY-ie1"/>
                                     <constraint firstItem="7TV-u5-2wm" firstAttribute="leading" secondItem="b3z-o8-WXk" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6sK-A3-fjM"/>
+                                    <constraint firstItem="780-2D-DSb" firstAttribute="trailing" secondItem="b3z-o8-WXk" secondAttribute="trailing" type="default" id="9pP-ik-XRp"/>
                                     <constraint firstItem="u9r-zV-Tya" firstAttribute="leading" secondItem="b3z-o8-WXk" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ClA-hB-Xxx"/>
+                                    <constraint firstItem="780-2D-DSb" firstAttribute="top" secondItem="s5b-Ws-rPS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="DVf-IB-L6q"/>
                                     <constraint firstItem="s5b-Ws-rPS" firstAttribute="leading" secondItem="b3z-o8-WXk" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Dsc-Th-BGc"/>
+                                    <constraint firstItem="780-2D-DSb" firstAttribute="centerX" secondItem="LhN-YO-0Wy" secondAttribute="centerX" type="default" id="MwQ-Py-RRx"/>
                                     <constraint firstItem="LhN-YO-0Wy" firstAttribute="top" secondItem="b3z-o8-WXk" secondAttribute="top" constant="20" symbolic="YES" type="default" id="O5T-FW-A2P"/>
                                     <constraint firstItem="u9r-zV-Tya" firstAttribute="top" secondItem="b3z-o8-WXk" secondAttribute="top" constant="39" id="URA-p2-Xwv"/>
                                     <constraint firstItem="7TV-u5-2wm" firstAttribute="top" secondItem="b3z-o8-WXk" secondAttribute="top" constant="59" id="V0h-nL-k3e"/>
-                                    <constraint firstAttribute="trailing" secondItem="LhN-YO-0Wy" secondAttribute="trailing" constant="15" id="XJP-eC-fh9"/>
-                                    <constraint firstItem="5Md-yJ-equ" firstAttribute="top" secondItem="b3z-o8-WXk" secondAttribute="top" constant="119" id="Y5V-1x-Z0T"/>
                                     <constraint firstItem="s5b-Ws-rPS" firstAttribute="top" secondItem="b3z-o8-WXk" secondAttribute="top" constant="79" id="aYH-bx-TLG"/>
-                                    <constraint firstItem="5Md-yJ-equ" firstAttribute="leading" secondItem="b3z-o8-WXk" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="brI-3h-TRH"/>
-                                    <constraint firstItem="LhN-YO-0Wy" firstAttribute="trailing" secondItem="5Md-yJ-equ" secondAttribute="trailing" type="default" id="vGF-yP-qf2"/>
+                                    <constraint firstItem="780-2D-DSb" firstAttribute="bottom" secondItem="b3z-o8-WXk" secondAttribute="bottom" type="default" id="cLt-vN-SzI"/>
                                 </constraints>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="u2O-Yj-4tz">
@@ -921,6 +956,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sqj-ay-Xtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3925" y="2108"/>
+        </scene>
+        <!--Tt Recall Table View Controller-->
+        <scene sceneID="eQn-6D-p32">
+            <objects>
+                <tableViewController id="J52-iw-eNL" customClass="ttRecallTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LAj-iN-6J6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecallCell" id="O9d-fi-QBT">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter String" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwH-Bj-6tZ">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="J52-iw-eNL" id="6Ek-W8-k1p"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fwH-Bj-6tZ" secondAttribute="trailing" constant="20" type="default" id="WrZ-rx-p1b"/>
+                                    <constraint firstItem="fwH-Bj-6tZ" firstAttribute="leading" secondItem="O9d-fi-QBT" secondAttribute="leading" constant="20" type="default" id="exz-b2-lbo"/>
+                                    <constraint firstItem="fwH-Bj-6tZ" firstAttribute="centerY" secondItem="O9d-fi-QBT" secondAttribute="centerY" type="default" id="nmM-ts-sFI"/>
+                                </constraints>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="J52-iw-eNL" id="iQn-7n-ged"/>
+                            <outlet property="delegate" destination="J52-iw-eNL" id="QI1-bp-hQf"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F1r-nR-fly" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3959" y="2809"/>
         </scene>
         <!--Tt Thank You View Controller-->
         <scene sceneID="h9w-Cc-TDO">
@@ -960,6 +1038,7 @@
                     </view>
                     <connections>
                         <outlet property="webView" destination="RnI-uU-xaE" id="dyf-h3-I9A"/>
+                        <segue destination="2" kind="modal" identifier="BackToStart" id="ElD-II-aS9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXE-JS-GoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1549,6 +1628,9 @@
                 <relationship kind="outlet" name="readyTextArea" candidateClass="UIWebView"/>
             </relationships>
         </class>
+        <class className="ttRecallTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttRecallTableViewController.h"/>
+        </class>
         <class className="ttRecallViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ttRecallViewController.h"/>
             <relationships>
@@ -1603,6 +1685,8 @@
                 <relationship kind="action" name="done"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="entityProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="entityProgressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="incorrectImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="incorrectText" candidateClass="UILabel"/>
@@ -1627,7 +1711,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xtU-2Z-szz"/>
+        <segue reference="1tr-Kl-y5m"/>
         <segue reference="zal-n7-ZfW"/>
     </inferredMetricsTieBreakers>
 </document>
