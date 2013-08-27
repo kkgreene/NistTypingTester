@@ -14,14 +14,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    if ([ttSettings Instance].firstRun == YES)
+    ttSettings *settings = [ttSettings Instance];
+    [settings registerDefaults];
+    if (settings.firstRun == YES)
     {
-        [ttSettings resetInitialFiles];
-        [[ttSettings Instance] resetToDefaults];
-        [ttSettings Instance].firstRun = NO;
-    }
-    else
-    {
+        settings.firstRun = NO;
         [ttSettings copyInitialFiles];
     }
     return YES;

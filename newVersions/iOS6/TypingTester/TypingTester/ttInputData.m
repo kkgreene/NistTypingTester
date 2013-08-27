@@ -91,11 +91,6 @@ static ttInputData *instance = nil;
     return [[NSArray alloc]initWithArray:results];
 }
 
--(NSArray*) randomizeArray:(NSArray*)input
-{
-    return [self randomizeArray:input withRandomSeedValue:time(NULL)];
-}
-
 -(NSArray*) randomizeArray:(NSArray*)input withRandomSeedValue:(unsigned int)seed
 {
     NSMutableArray *base = [[NSMutableArray alloc]initWithArray:input];

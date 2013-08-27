@@ -54,6 +54,31 @@ static ttSettings *instance = nil;
 
 #pragma mark DefaultValuesSection
 
+-(void) registerDefaults
+{
+    NSMutableDictionary *defaults = [[NSMutableDictionary alloc]init];
+    [defaults setValue:[NSNumber numberWithBool:YES] forKey:ttcFirstRunKey];
+    [defaults setValue:[NSNumber numberWithInt:ttcStringsForTestDefaultValue] forKey:ttcStringsForTestKey];
+    [defaults setValue:[NSNumber numberWithInt:ttcEntriesPerTestDefaultValue] forKey:ttcEntriesPerTestKey];
+    [defaults setValue:[NSNumber numberWithInt:ttcForcedPracticeRoundsDefaultValue] forKey:ttcForcedPracticeRoundsKey];
+    [defaults setValue:[NSNumber numberWithBool:ttcShowQuitButtonDefaultValue] forKey:ttcShowQuitButtonKey];
+    [defaults setValue:[NSNumber numberWithBool:ttcShowSkipButtonDefaultValue] forKey:ttcShowSkipButtonKey];
+    [defaults setValue:[NSNumber numberWithBool:ttcRandomStringOrderDefaultValue] forKey:ttcRandomStringOrderKey];
+    [defaults setValue:[NSNumber numberWithBool:ttcRandomStringSelectionDefaultValue] forKey:ttcRandomStringSelectionKey];
+    [defaults setValue:ttcQuitStringDefaultValue forKey:ttcQuitStringKey];
+    [defaults setValue:[NSNumber numberWithInt:ttcStringOrderSeedDefaultValue] forKey:ttcStringOrderSeedKey];
+    [defaults setValue:[NSNumber numberWithInt:ttcStringSelectionSeedDefaultValue] forKey:ttcStringSelectionSeedKey];
+    [defaults setValue:[NSNumber numberWithBool:ttcUseRandomStringOrderSeedDefaultValue] forKey:ttcUseRandomStringOrderSeedKey];
+    [defaults setValue:[NSNumber numberWithBool:ttcUseRandomStringSelectionSeedDefaultValue] forKey:ttcUseRandomStringSelectionSeedKey];
+    [defaults setValue:[NSNumber numberWithInt:ttcSelectedGroupValue] forKey:ttcSelectedGroupKey];
+    [defaults setValue:[[NSArray alloc]init] forKey:ttcSelectedFiltersKey];
+    [defaults setValue:[NSNumber numberWithBool:ttcEnableHideButtonOnPracticeScreenValue] forKey:ttcEnableHideButtonOnPracticeScreenKey];
+    [defaults setValue:[NSNumber numberWithInt:ttcProficiencyGroupValue] forKey:ttcProficiencyGroupKey];
+    
+    
+    [[NSUserDefaults standardUserDefaults]registerDefaults:defaults];
+}
+
 // resets the default values, will not erase any custom settings (yet)
 -(void) resetToDefaults
 {
@@ -190,7 +215,7 @@ static ttSettings *instance = nil;
 -(bool) useRandomStringOrderSeed
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    return [prefs boolForKey:ttcStringOrderSeedKey];
+    return [prefs boolForKey:ttcUseRandomStringOrderSeedKey];
 }
 
 -(void) setUseRandomStringOrderSeed:(bool)UseRandomStringOrderSeedKey
@@ -202,7 +227,7 @@ static ttSettings *instance = nil;
 -(bool) useRandomStringSelectionSeed
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    return [prefs boolForKey:ttcStringSelectionSeedKey];
+    return [prefs boolForKey:ttcUseRandomStringSelectionSeedKey];
 }
 
 -(void)setUseRandomStringSelectionSeed:(bool)UseRandomStringSelectionSeedKey

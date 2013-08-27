@@ -27,18 +27,18 @@ NSString *const ttcProficiencyGroupKey = @"ProficiencyGroup";
 const int ttcStringsForTestDefaultValue = 10;
 const int ttcEntriesPerTestDefaultValue = 10;
 const int ttcForcedPracticeRoundsDefaultValue = 3;
-const int ttcStringOrderSeedDefaultValue = -1;
-const int ttcStringSelectionSeedDefaultValue = -1;
-const int ttcSelectedGroupValue = -1;
+const int ttcStringOrderSeedDefaultValue = 1;
+const int ttcStringSelectionSeedDefaultValue = 1;
+const int ttcSelectedGroupValue = 1;
 const int ttcProficiencyGroupValue = 1;
 
 const bool ttcShowQuitButtonDefaultValue = NO;
 const bool ttcShowSkipButtonDefaultValue = NO;
-const bool ttcRandomStringOrderDefaultValue = YES;
-const bool ttcRandomStringSelectionDefaultValue = YES;
-const bool ttcUseRandomStringOrderSeedDefaultValue = YES;
-const bool ttcUseRandomStringSelectionSeedDefaultValue = YES;
-const bool ttcEnableHideButtonOnPracticeScreenValue = YES;
+const bool ttcRandomStringOrderDefaultValue = NO;
+const bool ttcRandomStringSelectionDefaultValue = NO;
+const bool ttcUseRandomStringOrderSeedDefaultValue = NO;
+const bool ttcUseRandomStringSelectionSeedDefaultValue = NO;
+const bool ttcEnableHideButtonOnPracticeScreenValue = NO;
 
 NSString *const ttcQuitStringDefaultValue = @"I QUIT";
 

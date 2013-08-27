@@ -40,6 +40,7 @@
 
 +(ttSettings*) Instance;
 
+-(void) registerDefaults;
 -(void) resetToDefaults;
 
 +(void) copyInitialFiles;
