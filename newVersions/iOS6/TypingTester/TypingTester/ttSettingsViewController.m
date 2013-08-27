@@ -17,23 +17,24 @@
 {
     ttSettings* settings;
 
-    int StringsPerSession;
-    int EntriesPerString;
-    int ForcedPracticeRounds;
-    bool ShowQuitButton;
-    bool ShowSkipButton;
-    bool RandomStringOrder;
-    bool RandomStringSelection;
-    int StringOrderKey;
-    int StringSelectionKey;
-    bool UseRandomStringOrderSeedKey;
-    bool UseRandomStringSelectionSeedKey;
-    NSString *QuitString;
-    int SelectedGroup;
-    NSArray *SelectedFilters;
-    bool FirstRun;
-    bool EnableHideButtonOnPracticeScreen;
-    int proficiencyGroup;
+    int stringsPerSession;
+    int entriesPerString;
+    int forcedPracticeRounds;
+    bool showQuitButton;
+    bool showSkipButton;
+    bool randomStringOrder;
+    bool randomStringSelection;
+    int stringOrderKey;
+    int stringSelectionKey;
+    bool useRandomStringOrderSeed;
+    bool useRandomStringSelectionSeed;
+    NSString *quitString;
+    bool useGroupId;
+    int selectedGroup;
+    NSArray *selectedFilters;
+    bool firstRun;
+    bool enableHideButtonOnPracticeScreen;
+    bool enableSkipButton;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -50,22 +51,22 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    StringsPerSession = settings.StringsPerSession;
-    EntriesPerString = settings.EntriesPerString;
-    ForcedPracticeRounds = settings.ForcedPracticeRounds;
-    ShowQuitButton = settings.ShowQuitButton;
-    ShowSkipButton = settings.ShowSkipButton;
-    RandomStringOrder = settings.RandomStringOrder;
-    RandomStringSelection = settings.RandomStringSelection;
-    StringOrderKey = settings.StringOrderKey;
-    StringSelectionKey = settings.StringSelectionKey;
-    UseRandomStringOrderSeedKey = settings.UseRandomStringOrderSeedKey;
-    UseRandomStringSelectionSeedKey = settings.UseRandomStringSelectionSeedKey;
-    QuitString = [settings.QuitString copy];
-    SelectedGroup = settings.SelectedGroup;
-    SelectedFilters = [NSArray arrayWithArray:settings.SelectedFilters];
-    EnableHideButtonOnPracticeScreen = settings.EnableHideButtonOnPracticeScreen;
-    proficiencyGroup = settings.proficiencyGroup;
+    stringsPerSession = settings.entitiesPerSession;
+    entriesPerString = settings.entriesPerEntitiy;
+    forcedPracticeRounds = settings.forcedPracticeRounds;
+    showQuitButton = settings.showQuitButton;
+    showSkipButton = settings.showSkipButton;
+    randomStringOrder = settings.randomStringOrder;
+    randomStringSelection = settings.randomStringSelection;
+    stringOrderKey = settings.stringOrderSeed;
+    stringSelectionKey = settings.stringSelectionSeed;
+    useRandomStringOrderSeed = settings.useRandomStringOrderSeed;
+    useRandomStringSelectionSeed = settings.useRandomStringSelectionSeed;
+    quitString = [settings.quitString copy];
+    useGroupId = settings.useGroupId;
+    selectedGroup = settings.selectedGroup;
+    selectedFilters = [NSArray arrayWithArray:settings.selectedFilters];
+    enableHideButtonOnPracticeScreen = settings.enableHideButtonOnPracticeScreen;
     [self configureUI];
 }
 
@@ -84,22 +85,22 @@
 -(IBAction)save:(id)sender
 {
     // TODO::Add code to save the settings
-    settings.StringsPerSession = StringsPerSession;
-    settings.EntriesPerString = EntriesPerString;
-    settings.ForcedPracticeRounds = ForcedPracticeRounds;
-    settings.ShowQuitButton = ShowQuitButton;
-    settings.ShowSkipButton = ShowSkipButton;
-    settings.RandomStringOrder = RandomStringOrder;
-    settings.RandomStringSelection = RandomStringSelection;
-    settings.StringOrderKey = StringOrderKey;
-    settings.StringSelectionKey = StringSelectionKey;
-    settings.UseRandomStringOrderSeedKey = UseRandomStringOrderSeedKey;
-    settings.UseRandomStringSelectionSeedKey = UseRandomStringSelectionSeedKey;
-    settings.QuitString = QuitString;
-    settings.SelectedGroup = SelectedGroup;
-    settings.SelectedFilters = SelectedFilters;
-    settings.EnableHideButtonOnPracticeScreen = EnableHideButtonOnPracticeScreen;
-    settings.proficiencyGroup = proficiencyGroup;
+    settings.entitiesPerSession = stringsPerSession;
+    settings.entriesPerEntitiy = entriesPerString;
+    settings.forcedPracticeRounds = forcedPracticeRounds;
+    settings.showQuitButton = showQuitButton;
+    settings.showSkipButton = showSkipButton;
+    settings.randomStringOrder = randomStringOrder;
+    settings.randomStringSelection = randomStringSelection;
+    settings.stringOrderSeed = stringOrderKey;
+    settings.stringSelectionSeed = stringSelectionKey;
+    settings.useRandomStringOrderSeed = useRandomStringOrderSeed;
+    settings.useRandomStringSelectionSeed = useRandomStringSelectionSeed;
+    settings.quitString = quitString;
+    settings.useGroupId = useGroupId;
+    settings.selectedGroup = selectedGroup;
+    settings.selectedFilters = selectedFilters;
+    settings.enableHideButtonOnPracticeScreen = enableHideButtonOnPracticeScreen;
     [self.delegate SettingsViewControllerDidSave:self];
 }
 
@@ -119,50 +120,76 @@
     [self.delegate SettingsViewControllerDidSave:self];
 }
 
--(void)settingsDetailViewControllerDidChangeNumberOfEntities:(int)numberOfEntities
+-(void)settingsDetailViewController:(ttSettingsDetailViewController*)controller didChangeNumberOfEntries:(int)value
 {
-    StringsPerSession = numberOfEntities;
+    stringsPerSession = value;
 }
 
--(void)settingsDetailViewControllerDidChangeNumberofRepetitions:(int)numberOfRepetitions
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeNumberOfRepetitions:(int)value
 {
-    EntriesPerString = numberOfRepetitions;
+    entriesPerString = value;
 }
 
--(void)settingsDetailViewControllerDidChangeNumberOfForcedPracticeRounds:(int)numberOfRounds
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeNumberOfForcedPracticeRounds:(int)value
 {
-    ForcedPracticeRounds = numberOfRounds;
+    forcedPracticeRounds = value;
 }
 
--(void)settingsDetailViewControllerDidChangeRandomStringOrderSetting:(BOOL)randomStringOrder
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeRandomStringOrder:(BOOL)value
 {
-    RandomStringOrder = randomStringOrder;
+    randomStringOrder = value;
 }
 
--(void)settingsDetailViewControllerDidChangeRandomStringSelectionSetting:(BOOL)randomStringSelection
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeUseOrderSeed:(BOOL)value
 {
-    RandomStringSelection = randomStringSelection;
+    useRandomStringOrderSeed = value;
 }
 
--(void)settingsDetailViewControllerDidChangeRandomStringOrderSeedValue:(int)seedValue
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeOrderSeedValue:(int)value
 {
-    StringOrderKey = seedValue;
+    stringOrderKey = value;
 }
 
--(void)settingsDetailViewControllerDidChangeRandomStringSelectionSeedValue:(int)seedValue
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeRandomStringSelection:(BOOL)value
 {
-    StringSelectionKey = seedValue;
+    randomStringSelection = value;
 }
 
--(void)settingsDetailViewControllerDidChangeSelectedFilters:(NSArray*)selectedFilters
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeUseSelectionSeed:(BOOL)value
 {
-    SelectedFilters = [NSArray arrayWithArray:selectedFilters];
+    useRandomStringSelectionSeed = value;
 }
 
--(void)settingsDetailViewControllerDidChangeSelectedGroupId:(int)selectedGroup
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeSelectionSeedValue:(int)value
 {
-    SelectedGroup = selectedGroup;
+    stringSelectionKey = value;
 }
+
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeUseGroupId:(BOOL)value
+{
+    useGroupId = value;
+}
+
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeGroupId:(int)value
+{
+    selectedGroup = value;
+}
+
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeQuitString:(NSString*)value
+{
+    quitString = value;
+}
+
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeEnableHideOnPracticeScreen:(BOOL)value
+{
+    enableHideButtonOnPracticeScreen = value;
+}
+
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeEnableSkipButton:(BOOL)value
+{
+    enableSkipButton = value;
+}
+
 
 
 @end

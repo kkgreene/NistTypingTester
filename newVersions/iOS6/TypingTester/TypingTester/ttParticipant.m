@@ -7,14 +7,11 @@
 //
 
 #import "ttParticipant.h"
-#import "ttUtilities.h"
 
 @implementation ttParticipant
-{
-    
-}
 
--(id) init
+
+-(id)init
 {
     self = [super init];
     if(self)
@@ -24,7 +21,7 @@
     return self;
 }
 
--(id) initWithParticipantNumber:(NSString*)participantNumber
+-(id)initWithParticipantNumber:(NSString*)participantNumber;
 {
     self = [super init];
     if (self)

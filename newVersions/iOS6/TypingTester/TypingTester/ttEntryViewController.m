@@ -62,7 +62,7 @@
     int totalEntites = self.session.entities.count;
     int currentEntity = self.session.currentEntity;
     int currentEntry = self.session.currentEntryForEntity;
-    int totalEntries = [[ttSettings Instance]EntriesPerString];
+    int totalEntries = [[ttSettings Instance]entriesPerEntitiy];
     self.sessionProgressBar.progress = (float)(currentEntity)/(float)(totalEntites);
     self.sessionProgressLabel.text = [NSString stringWithFormat:@"Entity %i of %i",currentEntity+1, totalEntites];
     self.entityProgressBar.progress = (float)currentEntry/(float)totalEntries;
@@ -74,7 +74,7 @@
 {
     self.session.currentEntryForEntity++;
     int currentEntry = self.session.currentEntryForEntity;
-    int totalEntriesRequired = [[ttSettings Instance]EntriesPerString];
+    int totalEntriesRequired = [[ttSettings Instance]entriesPerEntitiy];
     // have we entered the string X # of times?
     if (currentEntry < totalEntriesRequired)
     {

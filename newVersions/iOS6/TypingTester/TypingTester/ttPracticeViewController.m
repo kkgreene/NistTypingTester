@@ -50,7 +50,7 @@
 	// Do any additional setup after loading the view.
     totalEntities = self.session.entities.count;
     entityNumber = self.session.currentEntity;
-    numberOfRequiredPractices = settings.ForcedPracticeRounds;
+    numberOfRequiredPractices = settings.forcedPracticeRounds;
     [self configureUI];
     [self.session enteredSubPhase:ForcedPractice withNote:@"Entering Forced Practice Phase"];
 }
@@ -74,14 +74,25 @@
     if (self.entryField.text.length > 0) self.doneButton.enabled = YES;
     else self.doneButton.enabled = NO;
     // configure optional button visibility
-    self.visibilityButton.hidden = !settings.EnableHideButtonOnPracticeScreen;
-    self.skipButton.hidden = !settings.ShowSkipButton;
+    self.visibilityButton.hidden = !settings.enableHideButtonOnPracticeScreen;
+    self.skipButton.hidden = !settings.showSkipButton;
     // update the progress labels
     practiceStringNumber = self.session.CurrentPracticeRoundForEntity;
     self.sessionProgressBar.progress = (float)(entityNumber)/(float)(totalEntities);
-    self.entityProgressBar.progress = (float)(practiceStringNumber)/(float)numberOfRequiredPractices;
     self.sessionProgressLabel.text = [NSString stringWithFormat:@"Entity %i of %i",entityNumber+1,totalEntities];
-    self.entitiyProgressLabel.text = [NSString stringWithFormat:@"Round %i of %i", practiceStringNumber+1, numberOfRequiredPractices];
+    
+    if (self.session.CurrentPracticeRoundForEntity < settings.forcedPracticeRounds)
+    {
+        self.entityProgressBar.progress = (float)(practiceStringNumber)/(float)numberOfRequiredPractices;
+        self.entitiyProgressLabel.text = [NSString stringWithFormat:@"Round %i of %i", practiceStringNumber+1, numberOfRequiredPractices];
+    }
+    else
+    {
+        self.entityProgressBar.progress = 1.0;
+        self.entitiyProgressLabel.text = [NSString stringWithFormat:@"Complete"];
+    }
+    
+    
     // hiode the incorrect labels
     self.correctIndicator.hidden = YES;
     self.correctTextLable.hidden = YES;
@@ -108,6 +119,12 @@
     }
 }
 
+-(void) askGoToVerify
+{
+    UIAlertView *proceed = [[UIAlertView alloc]initWithTitle:@"Finish Practicing" message:@"Are you ready to proceed to the next step?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    [proceed show];
+}
+
 #pragma -mark IBActions
 
 -(IBAction)visibilityButtonPressed
@@ -128,15 +145,12 @@
     if([currentString isEqualToString:self.entryField.text])
     {
         self.session.CurrentPracticeRoundForEntity++;
-        if (self.session.CurrentPracticeRoundForEntity < settings.ForcedPracticeRounds)
+        if (self.session.CurrentPracticeRoundForEntity >= settings.forcedPracticeRounds)
         {
-            self.entryField.text = @"";
-            [self configureUI];
+            [self askGoToVerify];
         }
-        else // they have succesfully practiced X times
-        {
-            [self performSegueWithIdentifier:@"Verify" sender:self];
-        }
+        self.entryField.text = @"";
+        [self configureUI];
     }
     else    // entry does not match practice string
     {
@@ -187,6 +201,16 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+#pragma mark - Alert View Delegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title= [alertView buttonTitleAtIndex:buttonIndex];
+    if ([title isEqualToString:@"Yes"])
+    {
+        [self performSegueWithIdentifier:@"Verify" sender:self];
+    }
 }
 
 

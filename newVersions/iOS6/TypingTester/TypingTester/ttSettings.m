@@ -64,31 +64,31 @@ static ttSettings *instance = nil;
 
 #pragma mark Custom setter/getter pairs
 
--(int) StringsPerSession
+-(int) entitiesPerSession
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcStringsForTestKey];
 }
 
--(void) setStringsPerSession:(int)StringsPerSession
+-(void) setEntitiesPerSession:(int)StringsPerSession
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:StringsPerSession forKey:ttcStringsForTestKey];
 }
 
--(int) EntriesPerString
+-(int) entriesPerEntitiy
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcEntriesPerTestKey];
 }
 
--(void) setEntriesPerString:(int)EntriesPerString
+-(void) setEntriesPerEntitiy:(int)EntriesPerString
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:EntriesPerString forKey:ttcEntriesPerTestKey];
 }
 
--(int) ForcedPracticeRounds
+-(int) forcedPracticeRounds
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcForcedPracticeRoundsKey];
@@ -100,7 +100,7 @@ static ttSettings *instance = nil;
     [prefs setInteger:ForcedPracticeRounds forKey:ttcForcedPracticeRoundsKey];
 }
 
--(bool) ShowQuitButton
+-(bool) showQuitButton
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs boolForKey:ttcShowQuitButtonKey];
@@ -112,7 +112,7 @@ static ttSettings *instance = nil;
     [prefs setBool:ShowQuitButton forKey:ttcShowQuitButtonKey];
 }
 
--(bool) ShowSkipButton
+-(bool) showSkipButton
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs boolForKey:ttcShowSkipButtonKey];
@@ -124,7 +124,7 @@ static ttSettings *instance = nil;
     [prefs setBool:ShowSkipButton forKey:ttcShowSkipButtonKey];
 }
 
--(bool) RandomStringOrder
+-(bool) randomStringOrder
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs boolForKey:ttcRandomStringOrderKey];
@@ -136,7 +136,7 @@ static ttSettings *instance = nil;
     [prefs setBool:RandomStringOrder forKey:ttcRandomStringOrderKey];
 }
 
--(bool) RandomStringSelection
+-(bool) randomStringSelection
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs boolForKey:ttcRandomStringSelectionKey];
@@ -154,7 +154,7 @@ static ttSettings *instance = nil;
     return [prefs integerForKey:ttcStringOrderSeedKey];
 }
 
--(void) setStringOrderKey:(int)StringOrderKey
+-(void) setStringOrderSeed:(int)StringOrderKey
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:StringOrderKey forKey:ttcStringOrderSeedKey];
@@ -166,37 +166,37 @@ static ttSettings *instance = nil;
     return [prefs integerForKey:ttcStringSelectionSeedKey];
 }
 
--(void) setStringSelectionKey:(int)StringSelectionKey
+-(void) setStringSelectionSeed:(int)StringSelectionKey
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:StringSelectionKey forKey:ttcStringSelectionSeedKey];
 }
 
--(bool) UseRandomStringOrderSeedKey
+-(bool) useRandomStringOrderSeed
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs boolForKey:ttcStringOrderSeedKey];
 }
 
--(void) setUseRandomStringOrderSeedKey:(bool)UseRandomStringOrderSeedKey
+-(void) setUseRandomStringOrderSeed:(bool)UseRandomStringOrderSeedKey
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setBool:UseRandomStringOrderSeedKey forKey:ttcUseRandomStringOrderSeedKey];
 }
 
--(bool) UseRandomStringSelectionSeedKey
+-(bool) useRandomStringSelectionSeed
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs boolForKey:ttcStringSelectionSeedKey];
 }
 
--(void)setUseRandomStringSelectionSeedKey:(bool)UseRandomStringSelectionSeedKey
+-(void)setUseRandomStringSelectionSeed:(bool)UseRandomStringSelectionSeedKey
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setBool:UseRandomStringSelectionSeedKey forKey:ttcUseRandomStringSelectionSeedKey];
 }
 
--(NSString*) QuitString
+-(NSString*) quitString
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs stringForKey:ttcQuitStringKey];
@@ -209,7 +209,7 @@ static ttSettings *instance = nil;
     [prefs setObject:QuitString forKey:ttcQuitStringKey];
 }
 
--(NSArray*) SelectedFilters
+-(NSArray*) selectedFilters
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs stringArrayForKey:ttcSelectedFiltersKey];
@@ -221,7 +221,7 @@ static ttSettings *instance = nil;
     [prefs setObject:SelectedFilters forKey:ttcSelectedFiltersKey];
 }
 
--(int) SelectedGroup
+-(int) selectedGroup
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcSelectedGroupKey];
@@ -233,7 +233,7 @@ static ttSettings *instance = nil;
     [prefs setInteger:SelectedGroup forKey:ttcSelectedGroupKey];
 }
 
--(bool) FirstRun
+-(bool) firstRun
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs boolForKey:ttcFirstRunKey];
@@ -245,7 +245,7 @@ static ttSettings *instance = nil;
     [prefs setBool:FirstRun forKey:ttcFirstRunKey];
 }
 
--(bool) EnableHideButtonOnPracticeScreen
+-(bool) enableHideButtonOnPracticeScreen
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs boolForKey:ttcEnableHideButtonOnPracticeScreenKey];

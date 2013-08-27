@@ -14,23 +14,27 @@
     
 }
 
-@property (nonatomic, assign) int StringsPerSession;
-@property (nonatomic, assign) int EntriesPerString;
-@property (nonatomic, assign) int ForcedPracticeRounds;
-@property (nonatomic, assign) bool ShowQuitButton;
-@property (nonatomic, assign) bool ShowSkipButton;
-@property (nonatomic, assign) bool RandomStringOrder;
-@property (nonatomic, assign) bool RandomStringSelection;
-@property (nonatomic, assign) int StringOrderKey;
-@property (nonatomic, assign) int StringSelectionKey;
-@property (nonatomic, assign) bool UseRandomStringOrderSeedKey;
-@property (nonatomic, assign) bool UseRandomStringSelectionSeedKey;
-@property (nonatomic, copy) NSString *QuitString;
-@property (nonatomic, assign) int SelectedGroup;
-@property (nonatomic, strong) NSArray *SelectedFilters;
-@property (nonatomic, assign) bool FirstRun;
-@property (nonatomic, assign) bool EnableHideButtonOnPracticeScreen;
-@property (nonatomic, assign) int proficiencyGroup;
+@property (nonatomic, assign) int entitiesPerSession;
+@property (nonatomic, assign) int entriesPerEntitiy;
+@property (nonatomic, assign) int forcedPracticeRounds;
+@property (nonatomic, assign) bool showQuitButton;
+@property (nonatomic, assign) bool showSkipButton;
+@property (nonatomic, assign) bool randomStringOrder;
+@property (nonatomic, assign) bool randomStringSelection;
+@property (nonatomic, assign) int stringOrderSeed;
+@property (nonatomic, assign) int stringSelectionSeed;
+@property (nonatomic, assign) bool useRandomStringOrderSeed;
+@property (nonatomic, assign) bool useRandomStringSelectionSeed;
+@property (nonatomic, copy) NSString *quitString;
+@property (nonatomic, assign) bool useGroupId;
+@property (nonatomic, assign) int selectedGroup;
+@property (nonatomic, copy) NSArray *selectedFilters;
+@property (nonatomic, copy) NSArray *excludedFilters;
+@property (nonatomic, assign) bool firstRun;
+@property (nonatomic, assign) bool enableHideButtonOnPracticeScreen;
+@property (nonatomic, assign) bool enableSkipButton;
+@property (nonatomic, assign) bool enableQuitButton;
+@property (nonatomic, assign) int  proficiencyGroup;
 
 
 +(ttSettings*) Instance;

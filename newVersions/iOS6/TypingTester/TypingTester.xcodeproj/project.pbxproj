@@ -210,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				AD4073F917BBCB63006E31CF /* dataModel */,
-				AD6E13DD17B969E90034DA27 /* validationDelegates */,
 				AD04768017A964B600657D08 /* MainStoryboard_iPad.storyboard */,
 				AD04767D17A964B600657D08 /* MainStoryboard_iPhone.storyboard */,
 				AD04769517A9856B00657D08 /* resources */,
@@ -348,13 +347,6 @@
 				ADB91FF717C2861600DCE303 /* ttFilter.m */,
 			);
 			name = dataModel;
-			sourceTree = "<group>";
-		};
-		AD6E13DD17B969E90034DA27 /* validationDelegates */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = validationDelegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

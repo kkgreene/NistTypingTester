@@ -16,8 +16,6 @@
 @implementation ttSettingsDetailViewController
 {
     ttSettings* settings;
-    BOOL resetSettingsMode;
-    BOOL resetFileMode;
 }
 
 -(id) initWithCoder:(NSCoder *)aDecoder
@@ -26,8 +24,6 @@
     if (self)
     {
         settings = [ttSettings Instance];
-        resetFileMode = NO;
-        resetSettingsMode = NO;
     }
     return self;
 }
@@ -35,46 +31,58 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureSettingsDisplay];
     // allow single tap outside a text field to hide the keypad
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     gestureRecognizer.cancelsTouchesInView = NO;
     [self.tableView addGestureRecognizer:gestureRecognizer];
+    //set up the display values
+    [self configureSettingsDisplay];
 }
 
 # pragma mark - Private functions
 -(void) configureSettingsDisplay
 {
-    self.numberOfEntities.text = [NSString stringWithFormat:@"%i",  settings.StringsPerSession];
-    self.numberOfRepetitions.text = [NSString stringWithFormat:@"%d", settings.EntriesPerString];
-    self.numberOfForcedPracticeRounds.text = [NSString stringWithFormat:@"%i", settings.ForcedPracticeRounds];
-
+    self.numberOfEntities.text = [NSString stringWithFormat:@"%i",  settings.entitiesPerSession];
+    self.numberOfRepetitions.text = [NSString stringWithFormat:@"%i", settings.entriesPerEntitiy];
+    self.numberOfForcedPracticeRounds.text = [NSString stringWithFormat:@"%i", settings.forcedPracticeRounds];
+    self.randomStringOrder.on = settings.randomStringOrder;
+    self.useOrderSeed.on = settings.useRandomStringOrderSeed;
+    self.randomStringOrderSeedValue.text = [NSString stringWithFormat:@"%i", settings.stringOrderSeed];
+    self.randomStringSelection.on =settings.randomStringSelection;
+    self.useSelectionSeed.on = settings.useRandomStringSelectionSeed;
+    self.randomStringSelectionSeedValue.text = [NSString stringWithFormat:@"%i", settings.stringSelectionSeed];
+    self.useGroupId.on = settings.useGroupId;
+    self.groupId.text = [NSString stringWithFormat:@"%i", settings.selectedGroup];
+    self.quitString.text = [settings.quitString copy];
+    self.enableHideOnPracticeScreen.on = settings.enableHideButtonOnPracticeScreen;
+    self.enableSkipButton.on = settings.enableSkipButton;
+    // toggle the enabled value for some text fields
+    self.randomStringSelectionSeedValue.enabled = (self.randomStringSelection.on && self.useSelectionSeed.on);
+    self.randomStringOrderSeedValue.enabled = (self.randomStringOrder.on && self.useOrderSeed.on);
+    self.groupId.enabled = self.useGroupId.on;
 }
 
 - (void) hideKeyboard
 {
     [self.numberOfEntities resignFirstResponder];
     [self.numberOfForcedPracticeRounds resignFirstResponder];
-    [self.numberOfProficiencyPhrases resignFirstResponder];
     [self.numberOfRepetitions resignFirstResponder];
     [self.randomStringOrderSeedValue resignFirstResponder];
     [self.randomStringSelectionSeedValue resignFirstResponder];
+    [self.groupId resignFirstResponder];
+    [self.quitString resignFirstResponder];
 }
 
 -(void) confirmSettingsReset
 {
-    resetSettingsMode = YES;
     UIAlertView *warning = [[UIAlertView alloc]initWithTitle:@"Reset all settings" message:@"Are you sure you want to reset the settings?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Reset", nil];
     [warning show];
-    resetSettingsMode = NO;
 }
 
 -(void) confirmFileReset
 {
-    resetFileMode = YES;
     UIAlertView *warning = [[UIAlertView alloc]initWithTitle:@"Revert to original data files" message:@"Are you sure you want to replace the existing data files with the default ones?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Revert", nil];
     [warning show];
-    resetFileMode = NO;
 }
 
 -(BOOL) isStringNumeric:(NSString*)value
@@ -97,7 +105,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 3) // we selected a reset action
+    if (indexPath.section == 4) // we selected a reset action
     {
         switch(indexPath.row)
         {
@@ -115,7 +123,7 @@
 
 -(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 3) return YES;
+    if(indexPath.section == 4) return YES;
     return NO;
 }
 
@@ -126,39 +134,116 @@
     if ([title isEqualToString:@"Reset"])
     {
         [settings resetToDefaults];
+        [self.delegate settingsDetailViewControllerDidResetToDefault];
     }
     else if ([title isEqualToString:@"Revert"])
     {
         [ttSettings resetInitialFiles];
+        [self.delegate settingsDetailViewControllerDidResetToDefault];
     }
 }
 
-#pragma mark - UITextField Delegate
 
--(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+- (IBAction)numberOfEntitiesChanged:(id)sender
 {
-    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    switch (textField.tag)
+    if ([self isStringNumeric:self.numberOfEntities.text])
     {
-        case 1000:
-            if ([self isStringNumeric:newString] == NO)
-            {
-                self.numberOfEntities.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:.5];
-                return NO;
-            }
-            else
-            {
-                self.numberOfEntities.backgroundColor = [UIColor clearColor];
-                [self.delegate settingsDetailViewControllerDidChangeNumberOfEntities:[newString integerValue]];
-                return YES;
-            }
-            break;
-            
-        default:
-            break;
+        [self.delegate settingsDetailViewController:self didChangeNumberOfEntries:[self.numberOfEntities.text intValue]];
     }
-    return YES;
+    else
+    {
+        
+    }
+}
+
+- (IBAction)numberOfRepetitionsChanged:(id)sender
+{
+    if ([self isStringNumeric:self.numberOfRepetitions.text])
+    {
+        [self.delegate settingsDetailViewController:self didChangeNumberOfRepetitions:[self.numberOfRepetitions.text intValue]];
+    }
+}
+
+- (IBAction)numberOfForcedPracticeRoundsChanged:(id)sender
+{
+    if([self isStringNumeric:self.numberOfForcedPracticeRounds.text])
+    {
+        [self.delegate settingsDetailViewController:self didChangeNumberOfForcedPracticeRounds:[self.numberOfForcedPracticeRounds.text intValue]];
+    }
 }
 
 
+- (IBAction)randomStringOrderChanged:(id)sender
+{
+    [self.delegate settingsDetailViewController:self didChangeRandomStringOrder:self.randomStringOrder.on];
+    self.useOrderSeed.enabled = self.randomStringOrder.on;
+    self.randomStringOrderSeedValue.enabled = (self.useOrderSeed.on && self.randomStringOrder.on);
+}
+
+- (IBAction)useOrderSeedChanged:(id)sender
+{
+    [self.delegate settingsDetailViewController:self didChangeUseOrderSeed:self.useOrderSeed.on];
+    self.randomStringOrderSeedValue.enabled = self.useOrderSeed.on;
+}
+
+- (IBAction)orderSeedValueChanged:(id)sender
+{
+    if([self isStringNumeric:self.randomStringOrderSeedValue.text])
+    {
+        [self.delegate settingsDetailViewController:self didChangeOrderSeedValue:[self.randomStringOrderSeedValue.text intValue]];
+    }
+}
+
+- (IBAction)useRandomStringSelectionChanged:(id)sender
+{
+    [self.delegate settingsDetailViewController:self didChangeRandomStringSelection:self.randomStringSelection.on];
+    self.useSelectionSeed.enabled = self.randomStringSelection.on;
+    self.randomStringSelectionSeedValue.enabled = (self.useSelectionSeed.on && self.randomStringSelection.on);
+}
+
+- (IBAction)useSelectionSeedChanged:(id)sender
+{
+    [self.delegate settingsDetailViewController:self didChangeUseSelectionSeed:self.useSelectionSeed.on];
+    self.randomStringSelectionSeedValue.enabled = (self.useSelectionSeed.on && self.randomStringSelection.on);
+}
+
+- (IBAction)selectionSeedValueChanged:(id)sender
+{
+    if ([self isStringNumeric:self.randomStringSelectionSeedValue.text])
+    {
+        [self.delegate settingsDetailViewController:self didChangeUseSelectionSeed:[self.randomStringSelectionSeedValue.text intValue]];
+    }
+}
+
+- (IBAction)useGroupIdValueChanged:(id)sender
+{
+    [self.delegate settingsDetailViewController:self didChangeUseGroupId:self.useGroupId.on];
+    self.groupId.enabled = self.useGroupId.on;
+}
+
+- (IBAction)groupIdValueChanged:(id)sender
+{
+    if ([self isStringNumeric:self.groupId.text])
+    {
+        [self.delegate settingsDetailViewController:self didChangeGroupId:[self.groupId.text intValue]];
+    }
+}
+
+- (IBAction)quitStringChanged:(id)sender
+{
+    if (![self.quitString.text isEqualToString:@""])
+    {
+        [self.delegate settingsDetailViewController:self didChangeQuitString:[self.quitString.text copy]];
+    }
+}
+
+- (IBAction)enableHideOnPracticeScreenChanged:(id)sender
+{
+    [self.delegate settingsDetailViewController:self didChangeEnableHideOnPracticeScreen:self.enableHideOnPracticeScreen.on];
+}
+
+- (IBAction)enableSkipButtonChanged:(id)sender
+{
+    [self.delegate settingsDetailViewController:self didChangeEnableSkipButton:self.enableSkipButton.on];
+}
 @end
