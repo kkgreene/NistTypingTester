@@ -22,7 +22,7 @@
     }
     if(lastTouch != nil)
     {
-        NSLog(@"Touch event detected by UIApplication:%@", lastTouch);
+        NSLog(@"Touch event detected by UIApplication");
         // figure out the cooridinates of the touch
         // determine if a special key was pressed
     }
