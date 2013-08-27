@@ -760,6 +760,7 @@
                         <outlet property="sessionProgressLabel" destination="DBF-VC-mYq" id="Op7-JP-PL3"/>
                         <segue destination="ZNU-h0-iZz" kind="modal" identifier="Entry" modalTransitionStyle="crossDissolve" id="rgE-Di-oLL"/>
                         <segue destination="deW-OK-kEn" kind="modal" identifier="BackToPractice" id="zal-n7-ZfW"/>
+                        <segue destination="Im5-cC-YRZ" kind="modal" identifier="SkipToRecall" id="esj-5w-h8l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMC-0K-eTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -874,7 +875,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jt-ub-mbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3438" y="2108"/>
+            <point key="canvasLocation" x="3594" y="2140"/>
         </scene>
         <!--Tt Recall View Controller-->
         <scene sceneID="Y53-Wp-th6">
@@ -958,7 +959,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sqj-ay-Xtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3925" y="2108"/>
+            <point key="canvasLocation" x="4085" y="3212"/>
         </scene>
         <!--Tt Recall Table View Controller-->
         <scene sceneID="eQn-6D-p32">
@@ -1001,7 +1002,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1r-nR-fly" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3959" y="2809"/>
+            <point key="canvasLocation" x="4667" y="3581"/>
         </scene>
         <!--Tt Thank You View Controller-->
         <scene sceneID="h9w-Cc-TDO">
@@ -1046,7 +1047,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXE-JS-GoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4379" y="2108"/>
+            <point key="canvasLocation" x="4643" y="2848"/>
         </scene>
         <!--Tt Settings View Controller - Settings-->
         <scene sceneID="6bV-F8-nnZ">
@@ -1628,13 +1629,169 @@
         <image name="765-arrow-left-white.png" width="14" height="28"/>
         <image name="766-arrow-right-white.png" width="14" height="28"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ttEntryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttEntryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="entityProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="entityProgressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sessionProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="sessionProgressLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ttInstructionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttInstructionsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ttMemorizeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttMemorizeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="progressDisplay" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="progressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="workArea" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="ttPracticeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttPracticeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButtonPressed"/>
+                <relationship kind="action" name="skipButtonPressed"/>
+                <relationship kind="action" name="visibilityButtonPressed"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="correctIndicator" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="correctTextLable" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="entitiyProgressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="entity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="entityProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sessionProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="sessionProgressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="skipButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="visibilityButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="ttReadyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttReadyViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="outlet" name="participantNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="readyTextArea" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ttRecallTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttRecallTableViewController.h"/>
+        </class>
+        <class className="ttRecallViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttRecallViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done"/>
+                <relationship kind="outlet" name="donButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="ttSettingsDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttSettingsDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="enableHideOnPracticeScreenChanged:"/>
+                <relationship kind="action" name="enableSkipButtonChanged:"/>
+                <relationship kind="action" name="groupIdValueChanged:"/>
+                <relationship kind="action" name="numberOfEntitiesChanged:"/>
+                <relationship kind="action" name="numberOfForcedPracticeRoundsChanged:"/>
+                <relationship kind="action" name="numberOfRepetitionsChanged:"/>
+                <relationship kind="action" name="orderSeedValueChanged:"/>
+                <relationship kind="action" name="quitStringChanged:"/>
+                <relationship kind="action" name="randomStringOrderChanged:"/>
+                <relationship kind="action" name="selectionSeedValueChanged:"/>
+                <relationship kind="action" name="useGroupIdValueChanged:"/>
+                <relationship kind="action" name="useOrderSeedChanged:"/>
+                <relationship kind="action" name="useRandomStringSelectionChanged:"/>
+                <relationship kind="action" name="useSelectionSeedChanged:"/>
+                <relationship kind="outlet" name="enableHideOnPracticeScreen" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="enableSkipButton" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="groupId" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numberOfEntities" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numberOfForcedPracticeRounds" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numberOfRepetitions" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="quitString" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="randomStringOrder" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="randomStringOrderSeedValue" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="randomStringSelection" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="randomStringSelectionSeedValue" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="useGroupId" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="useOrderSeed" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="useSelectionSeed" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="ttSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="save:"/>
+            </relationships>
+        </class>
+        <class className="ttThankYouViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttThankYouViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ttTypingProficiencyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttTypingProficiencyViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButtonPressed"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phraseLabel1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="progressLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ttVerifyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttVerifyViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back"/>
+                <relationship kind="action" name="done"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="entityProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="entityProgressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="incorrectImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="incorrectText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sessionProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="sessionProgressLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ttViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTouch"/>
+                <relationship kind="outlet" name="invalidImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="invalidString" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="participantNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XT7-r5-x1r"/>
-        <segue reference="xtU-2Z-szz"/>
+        <segue reference="esj-5w-h8l"/>
+        <segue reference="zal-n7-ZfW"/>
+        <segue reference="1tr-Kl-y5m"/>
     </inferredMetricsTieBreakers>
 </document>

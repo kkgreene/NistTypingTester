@@ -15,6 +15,7 @@
 #import "ttEntryViewController.h"
 #import "ttPracticeViewController.h"
 #import "ttTestEntity.h"
+#import "ttRecallViewController.h"
 
 @interface ttVerifyViewController ()
 
@@ -59,6 +60,11 @@
         ttEntryViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
+    else if ([segue.identifier isEqualToString:@"SkipToRecall"])
+    {
+        ttRecallViewController *controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
 }
 
 #pragma -mark IBActions
@@ -73,6 +79,10 @@
     if ([self.entryField.text isEqualToString:currentEntity.entityString])
     {
         [self performSegueWithIdentifier:@"Entry" sender:self];
+    }
+    else if ([self.entryField.text isEqualToString:[ttSettings Instance].quitString])
+    {
+        [self performSegueWithIdentifier:@"SkipToRecall" sender:self];
     }
     else
     {
