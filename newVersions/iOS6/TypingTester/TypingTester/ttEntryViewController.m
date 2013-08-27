@@ -72,6 +72,13 @@
 #pragma mark - IBAction
 -(IBAction)done
 {
+    // check for quit string entered
+    if ([self.entryField.text isEqualToString:[ttSettings Instance].quitString])
+    {
+        // if so go to recall
+        [self performSegueWithIdentifier:@"Recall" sender:self];
+        return;
+    }
     self.session.currentEntryForEntity++;
     int currentEntry = self.session.currentEntryForEntity;
     int totalEntriesRequired = [[ttSettings Instance]entriesPerEntitiy];
