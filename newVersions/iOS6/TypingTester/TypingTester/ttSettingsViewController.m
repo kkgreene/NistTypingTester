@@ -16,6 +16,8 @@
 @implementation ttSettingsViewController
 {
     ttSettings* settings;
+    
+    ttSettingsDetailViewController* child;
 
     int stringsPerSession;
     int entriesPerString;
@@ -84,6 +86,8 @@
 
 -(IBAction)save:(id)sender
 {
+    // TODO :: See if there is a better way to do this...
+    [child hideKeyboard];
     // TODO::Add code to save the settings
     settings.entitiesPerSession = stringsPerSession;
     settings.entriesPerEntitiy = entriesPerString;
@@ -108,8 +112,8 @@
 {
     if ([segue.identifier isEqualToString:@"SettingDetails"])
     {
-        ttSettingsDetailViewController *controller = segue.destinationViewController;
-        controller.delegate = self;
+        child = segue.destinationViewController;
+        child.delegate = self;
     }
 }
 

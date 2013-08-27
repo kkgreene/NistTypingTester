@@ -60,9 +60,10 @@
 - (IBAction)selectionSeedValueChanged:(id)sender;
 - (IBAction)useGroupIdValueChanged:(id)sender;
 - (IBAction)groupIdValueChanged:(id)sender;
-
 - (IBAction)quitStringChanged:(id)sender;
 - (IBAction)enableHideOnPracticeScreenChanged:(id)sender;
 - (IBAction)enableSkipButtonChanged:(id)sender;
+
+- (void) hideKeyboard;
 
 @end
