@@ -191,7 +191,7 @@ static ttSettings *instance = nil;
     [prefs setBool:RandomStringSelection forKey:ttcRandomStringSelectionKey];
 }
 
--(int) StringOrderSeedKey
+-(int) stringOrderSeed
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcStringOrderSeedKey];
@@ -203,7 +203,7 @@ static ttSettings *instance = nil;
     [prefs setInteger:StringOrderKey forKey:ttcStringOrderSeedKey];
 }
 
--(int) StringSelectionSeedKey
+-(int) stringSelectionSeed
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcStringSelectionSeedKey];

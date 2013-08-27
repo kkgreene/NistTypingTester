@@ -78,6 +78,14 @@
     [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Participant Id:%@", self.participant.participantNumber]];
     phaseStartTime = [NSDate date];
     [self writeLineToSummaryLogFile:[settings getSettings]];
+    // write out strings
+    [self writeLineToSummaryLogFile:@"Entities for session:"];
+    for(int i = 0; i < self.entities.count; i++)
+    {
+        ttTestEntity *entity = [self.entities objectAtIndex:i];
+        [self writeLineToSummaryLogFile:entity.entityString];
+    }
+    [self writeLineToSummaryLogFile:@"End entity list"];
     return;
 }
 
