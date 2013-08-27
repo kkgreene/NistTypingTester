@@ -29,5 +29,16 @@
     [super sendEvent:event];
 }
 
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSLog(@"Keyboard was shown");
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasHidden:(NSNotification*)aNotification
+{
+    NSLog(@"Keyboard was hidden");
+}
 
 @end
