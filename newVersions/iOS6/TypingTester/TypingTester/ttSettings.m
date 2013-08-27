@@ -36,6 +36,21 @@ static ttSettings *instance = nil;
     return self;
 }
 
+-(NSString*)getSettings
+{
+    NSMutableString *string = [[NSMutableString alloc]init];
+    [string appendFormat:@"Settings:\n"];
+    [string appendFormat:@"Entities:%i\n", self.entitiesPerSession];
+    [string appendFormat:@"Entries Per Entity:%i\n", self.entriesPerEntitiy];
+    [string appendFormat:@"Forced Practice Rounds:%i\n", self.forcedPracticeRounds];
+    [string appendFormat:@"Random String Order:%@\n", (self.randomStringOrder ? @"Yes":@"No")];
+    [string appendFormat:@"Specified Seed:%@\n", (self.useRandomStringOrderSeed ? @"Yes":@"No")];
+    [string appendFormat:@"String Order Seed:%i\n", self.effectiveOrderSeed];
+    [string appendFormat:@"Specified Group Id:%@\n", (self.useGroupId ? @"Yes":@"No")];
+    [string appendFormat:@"Group Id:%i\n", self.selectedGroup];
+    return string;
+}
+
 
 #pragma mark DefaultValuesSection
 

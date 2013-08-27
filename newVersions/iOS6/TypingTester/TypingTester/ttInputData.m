@@ -11,6 +11,7 @@
 #import "ttFilter.h"
 #import "ttProficiencyItem.h"
 #import "ttTestEntity.h"
+#import "ttSettings.h"
 
 @implementation ttInputData
 {
@@ -18,6 +19,7 @@
     NSMutableArray *proficiencyBuilder;
     NSMutableArray *entityBuilder;
 
+    ttSettings *settings;
 }
 
 static ttInputData *instance = nil;
@@ -36,10 +38,18 @@ static ttInputData *instance = nil;
     self = [super init];
     if(self)
     {
-
+        settings = [ttSettings Instance];
     }
     return self;
 }
+
+-(void)clearData
+{
+    filterBuilder = [[NSMutableArray alloc]init];
+    proficiencyBuilder = [[NSMutableArray alloc]init];
+    entityBuilder = [[NSMutableArray alloc]init];
+}
+
 
 -(void)loadDataFile:(NSString *)filepath
 {
@@ -81,16 +91,6 @@ static ttInputData *instance = nil;
     return [[NSArray alloc]initWithArray:results];
 }
 
--(NSArray*) getPhrasesForGroupIdInRandomOrder:(int)groupId
-{
-    return [self randomizeArray:[self getPhrasesForGroupId:groupId]];
-}
-
--(NSArray*) getPhrasesForGroupId:(int)groupId withRandomSeedValue:(unsigned int)seed
-{
-    return [self randomizeArray:[self getPhrasesForGroupId:groupId] withRandomSeedValue:seed];
-}
-
 -(NSArray*) randomizeArray:(NSArray*)input
 {
     return [self randomizeArray:input withRandomSeedValue:time(NULL)];
@@ -115,119 +115,46 @@ static ttInputData *instance = nil;
 
 -(NSArray*) getEntities
 {
-    return [NSArray arrayWithArray:self.entities];
-}
-
--(NSArray*) getEntitiesInRandomOrder
-{
-    return [self randomizeArray:self.entities];
-}
-
--(NSArray*) getEntitiesInRandomOrderWithSeedValue:(unsigned int)seed
-{
-    return [self randomizeArray:self.entities withRandomSeedValue:seed];
-}
-
--(NSArray*) getEntitiesWithGroupId:(int)groupId
-            EarlierThan:(NSDate*)date
-            WithFilters:(NSArray*)includeFilters
-            WithoutFilters:(NSArray*)excludeFilters
-            withSeed:(unsigned int)seed
-{
-    return [self randomizeArray:[self getEntitiesWithGroupId:groupId EarlierThan:date WithFilters:includeFilters WithoutFilters:excludeFilters] withRandomSeedValue:seed];
-}
-
--(NSArray*) getEntitiesWithGroupId:(int)groupId
-            EarlierThan:(NSDate*)date
-            WithFilters:(NSArray*)includeFilters
-            WithoutFilters:(NSArray*)excludeFilters
-            inRandomOrder:(BOOL)random
-{
-    if (random == YES)
+    NSMutableArray *results = [[NSMutableArray alloc]initWithCapacity:settings.entitiesPerSession];
+    NSMutableArray *filtered = [[NSMutableArray alloc]init];
+    
+    // step through the array and apply the filters
+    for (int current = 0; current < self.entities.count; current++)
     {
-        return [self randomizeArray:[self getEntitiesWithGroupId:groupId EarlierThan:date WithFilters:includeFilters WithoutFilters:excludeFilters]];
+        ttTestEntity *entity = [self.entities objectAtIndex:current];
+        if ([self doesEntityPassFilters:entity]) [filtered addObject:entity];
     }
-    else
+    
+    for(int i = 0; i < settings.entitiesPerSession; i++)
     {
-        return [self getEntitiesWithGroupId:groupId EarlierThan:date WithFilters:includeFilters WithoutFilters:excludeFilters];
+        [results addObject:[filtered objectAtIndex:i]];
     }
+    
+    if(settings.randomStringOrder == YES)
+    {
+        if(settings.useRandomStringOrderSeed == YES)
+        {
+            settings.effectiveOrderSeed = settings.stringOrderSeed;
+        }
+        else
+        {
+            settings.effectiveOrderSeed = time(NULL);
+        }
+        return [self randomizeArray:results withRandomSeedValue:settings.effectiveOrderSeed];
+    }
+    else return [NSArray arrayWithArray:results];
 }
 
--(NSArray*) getEntitiesWithGroupId:(int)groupId
-            EarlierThan:(NSDate*)date
-            WithFilters:(NSArray*)includeFilters
-            WithoutFilters:(NSArray*)excludeFilters
+
+-(BOOL)doesEntityPassFilters:(ttTestEntity*)entity
 {
-    NSMutableArray *results = [[NSMutableArray alloc]init];
-    for (int i = 0; i < self.entities.count; i++)
-    {
-        ttTestEntity* entity = [self.entities objectAtIndex:i];
-        BOOL addEntity = YES;
-        // if there was a group id specified and it doesn't match exclude the item
-        if (groupId >= 1 && entity.groupId != groupId)
-        {
-            if (entity.groupId != groupId)
-            {
-               addEntity = NO; 
-            }
-        }
-        // if the date is not equal to the default date
-        if(date != nil)
-        {
-            // if the entity date is after the specified date exclude it
-            if (![entity IsFromBefore:date])
-            {
-                addEntity = NO;
-            }
-        }
-        // include filters specified
-        if (includeFilters != nil)
-        {
-            BOOL filterFound = NO;
-            // foreach include filter
-            for (int j = 0; j < includeFilters.count; j++)
-            {
-                NSString *currentFilter = [includeFilters objectAtIndex:j];
-                if ([entity hasFilterValue:currentFilter])
-                {
-                    filterFound = YES;
-                    break;
-                }
-            }
-            if (filterFound != YES)
-            {
-                addEntity = NO;
-            }
-        }
-        // exclude filters specified
-        if (excludeFilters != nil)
-        {
-            BOOL filterFound = NO;
-            // foreach include filter
-            for (int j = 0; j < includeFilters.count; j++)
-            {
-                NSString *currentFilter = [includeFilters objectAtIndex:j];
-                if ([entity hasFilterValue:currentFilter])
-                {
-                    filterFound = YES;
-                    break;
-                }
-            }
-            if (filterFound == YES)
-            {
-                addEntity = NO;
-            }
-        }
-        
-        // if addEntity is still true it passed all the filters so add it
-        if (addEntity == YES)
-        {
-            [results addObject:entity];
-        }
-    }
-    return [[NSArray alloc]initWithArray:results];
+    BOOL filtersMet = YES;
+    
+    if (settings.useGroupId == YES && entity.groupId != settings.selectedGroup) filtersMet = NO;
+    // TODO :: add date filtering
+    // TODO :: add additional filtering
+    return filtersMet;
 }
-
 
 /* Would like a semi-open interval [min, max) */
 -(unsigned int) randomWithMinValue:(unsigned int)min andMaxValue:(unsigned int) max

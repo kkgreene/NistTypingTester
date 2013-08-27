@@ -45,11 +45,10 @@
         {
             // TODO :: Add error handling
         }
-        [self sessionDidStart];
         settings = [ttSettings Instance];
-        // TODO :: Make this work with settings...
-        self.proficiencyStrings = [[ttInputData Instance]getPhrasesForGroupId:settings.proficiencyGroup];
-        self.entities = [[ttInputData Instance]getEntities];
+        [self loadProficiencyGroups];
+        [self loadEntities];
+        [self sessionDidStart];
     }
     return self;
 }
@@ -57,6 +56,16 @@
 -(void)dealloc
 {
     [self sessionDidFinish];
+}
+
+-(void) loadEntities
+{
+    self.entities = [[ttInputData Instance]getEntities];
+}
+
+-(void) loadProficiencyGroups
+{
+     self.proficiencyStrings = [[ttInputData Instance]getPhrasesForGroupId:settings.proficiencyGroup];
 }
 
 #pragma mark - Lifecycle Events
@@ -68,6 +77,7 @@
     // TODO :: Write summary session information
     [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Participant Id:%@", self.participant.participantNumber]];
     phaseStartTime = [NSDate date];
+    [self writeLineToSummaryLogFile:[settings getSettings]];
     return;
 }
 
