@@ -120,6 +120,20 @@ static ttInputData *instance = nil;
         if ([self doesEntityPassFilters:entity]) [filtered addObject:entity];
     }
     
+    // Are we randomly selecting from the available strings?
+    if (settings.randomStringSelection == YES)
+    {
+        if (settings.useRandomStringSelectionSeed)
+        {
+            settings.effectiveSelectionSeed = settings.stringSelectionSeed;
+        }
+        else
+        {
+            settings.effectiveSelectionSeed = time(NULL);
+        }
+        filtered = [NSArray arrayWithArray:[self randomizeArray:filtered withRandomSeedValue:settings.effectiveSelectionSeed]];
+    }
+    
     for(int i = 0; i < settings.entitiesPerSession; i++)
     {
         [results addObject:[filtered objectAtIndex:i]];
