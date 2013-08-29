@@ -52,7 +52,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Start" id="Cyc-P3-5qR">
                                             <connections>
-                                                <segue destination="MBG-KK-BYe" kind="modal" identifier="ReadyScreen" id="3ca-YW-MOl"/>
+                                                <segue destination="MBG-KK-BYe" kind="modal" identifier="ReadyScreen" modalTransitionStyle="crossDissolve" id="3ca-YW-MOl"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -607,7 +607,7 @@
                         <outlet property="sessionProgressLabel" destination="qW8-Kl-XqM" id="F96-bZ-bhW"/>
                         <outlet property="skipButton" destination="a1y-Eu-ovm" id="gQY-cy-KUp"/>
                         <outlet property="visibilityButton" destination="UXC-nO-CnE" id="sZQ-lW-bXQ"/>
-                        <segue destination="K8h-Oe-RAA" kind="modal" identifier="Verify" id="HRy-nd-Ya3"/>
+                        <segue destination="K8h-Oe-RAA" kind="modal" identifier="Verify" modalTransitionStyle="crossDissolve" id="HRy-nd-Ya3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwZ-th-ogl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -735,8 +735,8 @@
                         <outlet property="sessionProgressBar" destination="N6l-6A-WNe" id="RmZ-tp-MXw"/>
                         <outlet property="sessionProgressLabel" destination="DBF-VC-mYq" id="Op7-JP-PL3"/>
                         <segue destination="ZNU-h0-iZz" kind="modal" identifier="Entry" modalTransitionStyle="crossDissolve" id="rgE-Di-oLL"/>
-                        <segue destination="deW-OK-kEn" kind="modal" identifier="BackToPractice" id="zal-n7-ZfW"/>
-                        <segue destination="Im5-cC-YRZ" kind="modal" identifier="SkipToRecall" id="esj-5w-h8l"/>
+                        <segue destination="deW-OK-kEn" kind="modal" identifier="BackToPractice" modalTransitionStyle="crossDissolve" id="zal-n7-ZfW"/>
+                        <segue destination="Im5-cC-YRZ" kind="modal" identifier="SkipToRecall" modalTransitionStyle="crossDissolve" id="esj-5w-h8l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMC-0K-eTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -841,7 +841,7 @@
                         <outlet property="sessionProgressBar" destination="3J1-eM-VWj" id="Bvn-EZ-mPl"/>
                         <outlet property="sessionProgressLabel" destination="cR2-sT-g5i" id="Ok2-xv-P1J"/>
                         <segue destination="Im5-cC-YRZ" kind="modal" identifier="Recall" modalTransitionStyle="crossDissolve" id="qlx-Cz-jfL"/>
-                        <segue destination="WZw-fl-GDW" kind="modal" identifier="MemorizeNextEntity" id="1tr-Kl-y5m"/>
+                        <segue destination="WZw-fl-GDW" kind="modal" identifier="MemorizeNextEntity" modalTransitionStyle="crossDissolve" id="1tr-Kl-y5m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jt-ub-mbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -938,18 +938,21 @@
             <objects>
                 <tableViewController id="J52-iw-eNL" customClass="ttRecallTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LAj-iN-6J6">
-                        <rect key="frame" x="0.0" y="20" width="320" height="396"/>
+                        <rect key="frame" x="0.0" y="0.0" width="286" height="348"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecallCell" id="O9d-fi-QBT">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="286" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="286" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter String" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwH-Bj-6tZ">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="280" id="6mR-VX-BFA"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             <connections>
@@ -960,7 +963,6 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="fwH-Bj-6tZ" secondAttribute="trailing" constant="20" type="default" id="WrZ-rx-p1b"/>
                                     <constraint firstItem="fwH-Bj-6tZ" firstAttribute="leading" secondItem="O9d-fi-QBT" secondAttribute="leading" constant="20" type="default" id="exz-b2-lbo"/>
                                     <constraint firstItem="fwH-Bj-6tZ" firstAttribute="centerY" secondItem="O9d-fi-QBT" secondAttribute="centerY" type="default" id="nmM-ts-sFI"/>
                                 </constraints>
@@ -1014,7 +1016,7 @@
                     </view>
                     <connections>
                         <outlet property="webView" destination="RnI-uU-xaE" id="dyf-h3-I9A"/>
-                        <segue destination="2" kind="modal" identifier="BackToStart" id="ElD-II-aS9"/>
+                        <segue destination="2" kind="modal" identifier="BackToStart" modalTransitionStyle="crossDissolve" id="ElD-II-aS9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXE-JS-GoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1762,7 +1764,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qlx-Cz-jfL"/>
+        <segue reference="esj-5w-h8l"/>
         <segue reference="zal-n7-ZfW"/>
         <segue reference="1tr-Kl-y5m"/>
     </inferredMetricsTieBreakers>

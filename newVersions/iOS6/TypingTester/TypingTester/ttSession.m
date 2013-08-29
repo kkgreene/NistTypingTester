@@ -96,7 +96,7 @@
         event.notes = note;
         [self addEvent:event];
         
-        NSString *line = [NSString stringWithFormat:@"Started Phase:%i", phase];
+        NSString *line = [NSString stringWithFormat:@"Started Phase:%@", ttcPhaseStringArray[phase]];
         [self writeLineToSummaryLogFile:line];
         
         self.currentPhase = phase;
@@ -112,7 +112,7 @@
     self.currentPhase = UnknownPhase;
     self.currentSubPhase = UnknownSubPhase;
     NSDate *now = [NSDate date];
-    NSString *line = [NSString stringWithFormat:@"Time in phase:%f", [now timeIntervalSinceDate:phaseStartTime]];
+    NSString *line = [NSString stringWithFormat:@"Leaving Phase %@, overall time in phase:%f", ttcPhaseStringArray[phase], [now timeIntervalSinceDate:phaseStartTime]];
     [self writeLineToSummaryLogFile:line];
 }
 
@@ -140,7 +140,6 @@
     NSString *startString = [NSString stringWithFormat:@"Session Finished:%@", sessionEnd];
     [self writeLineToSummaryLogFile:startString];
     [self closeLogFiles];
-    
     return;
 }
 
