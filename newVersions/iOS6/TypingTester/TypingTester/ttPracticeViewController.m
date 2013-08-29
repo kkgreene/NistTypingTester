@@ -90,6 +90,7 @@
     {
         self.entityProgressBar.progress = 1.0;
         self.entitiyProgressLabel.text = [NSString stringWithFormat:@"Complete"];
+        self.doneButton.enabled = YES;
     }
     
     
@@ -156,6 +157,10 @@
     {
         self.correctIndicator.hidden = NO;
         self.correctTextLable.hidden = NO;
+        if (self.session.CurrentPracticeRoundForEntity >= settings.forcedPracticeRounds)
+        {
+            [self askGoToVerify];
+        }
     }
 }
 
@@ -181,7 +186,7 @@
     inputEvent.enteredCharacters = string;
     inputEvent.currentValue = newString;
     [self.session addEvent:inputEvent];
-    if (newString.length > 0)
+    if (newString.length > 0 || self.session.CurrentPracticeRoundForEntity >= settings.forcedPracticeRounds)
     {
         self.doneButton.enabled = YES;
     }
