@@ -60,10 +60,11 @@
     [self.session enteredSubPhase:ForcedPractice withNote:@"Entering Forced Practice SubPhase"];
 }
 
--(void)viewDidDisappear:(BOOL)animated
+-(void)viewWillDisappear:(BOOL)animated
 {
-    [super viewDidDisappear:animated];
+    [super viewWillDisappear:animated];
 }
+
 
 #pragma -mark UI Configuration
 

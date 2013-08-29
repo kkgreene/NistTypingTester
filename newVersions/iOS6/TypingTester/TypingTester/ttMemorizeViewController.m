@@ -53,9 +53,9 @@
     [self.session enteredSubPhase:FreePractice withNote:@"Entering Free Practice"];
 }
 
--(void)viewDidDisappear:(BOOL)animated
+-(void)viewWillDisappear:(BOOL)animated
 {
-    [super viewDidDisappear:animated];
+    [super viewWillDisappear:animated];
 }
 
 -(void) configureUI

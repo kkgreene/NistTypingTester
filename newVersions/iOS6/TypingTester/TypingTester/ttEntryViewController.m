@@ -44,9 +44,9 @@
     [self.session enteredPhase:Entry withNote:@"Started Entry Phase"];
 }
 
--(void)viewDidDisappear:(BOOL)animated
+-(void)viewWillDisappear:(BOOL)animated
 {
-    [super viewDidDisappear:animated];
+    [super viewWillDisappear:animated];
     [self.session leftPhase:Entry withNote:@"Leaving Entry Phase"];
 }
 

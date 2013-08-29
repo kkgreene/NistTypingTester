@@ -39,9 +39,9 @@
     [self.session enteredPhase:Recall withNote:@"Entered Recall Phase"];
 }
 
--(void)viewDidDisappear:(BOOL)animated
+-(void)viewWillDisappear:(BOOL)animated
 {
-    [super viewDidDisappear:animated];
+    [super viewWillDisappear:animated];
     [self.session leftPhase:Recall withNote:@"Leaving Recall Phase"];
     // end the session
     [self.session sessionDidFinish];

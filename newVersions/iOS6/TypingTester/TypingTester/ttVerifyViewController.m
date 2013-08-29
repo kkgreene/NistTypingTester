@@ -46,9 +46,9 @@
     [self.session enteredSubPhase:Verify withNote:@"Entered Verify Phase"];
 }
 
--(void) viewDidDisappear:(BOOL)animated
+-(void) viewWillDisappear:(BOOL)animated
 {
-    [super viewDidDisappear:animated];
+    [super viewWillDisappear:animated];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -46,9 +46,9 @@
     [self.session enteredPhase:Introduction withNote:@"Entering Introduction Phase"];
 }
 
--(void)viewDidDisappear:(BOOL)animated
+-(void) viewWillDisappear:(BOOL)animated
 {
-    [super viewDidDisappear:animated];
+    [super viewWillDisappear:animated];
     [self.session leftPhase:Introduction withNote:@"Leaving Introduction Phase"];
 }
 

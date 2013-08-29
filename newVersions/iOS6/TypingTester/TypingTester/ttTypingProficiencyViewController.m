@@ -98,11 +98,15 @@
     }
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.session leftPhase:Proficiency withNote:@"Typing Proficiency Phase Left"];
+}
+
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    // proficiency phase ended event
-    [self.session leftPhase:Proficiency withNote:@"Typing Proficiency Phase Left"];
 }
 
 -(void)viewDidAppear:(BOOL)animated
