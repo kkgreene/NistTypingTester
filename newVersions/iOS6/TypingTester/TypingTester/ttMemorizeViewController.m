@@ -43,9 +43,19 @@
     self.workArea.layer.borderWidth = 1.0f;
     self.workArea.layer.borderColor = [[UIColor grayColor]CGColor];
     [self configureUI];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     // log phase entry
     [self.session enteredPhase:Memorize withNote:@"Entering Memorize Phase"];
     [self.session enteredSubPhase:FreePractice withNote:@"Entering Free Practice"];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
 }
 
 -(void) configureUI

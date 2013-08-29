@@ -38,13 +38,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self configureUI];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     [self.session enteredSubPhase:Verify withNote:@"Entered Verify Phase"];
 }
 
-- (void)didReceiveMemoryWarning
+-(void) viewDidDisappear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidDisappear:animated];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

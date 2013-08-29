@@ -35,15 +35,25 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self.session enteredPhase:Entry withNote:@"Started Entry Phase"];
     [self configureUI];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.session enteredPhase:Entry withNote:@"Started Entry Phase"];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.session leftPhase:Entry withNote:@"Leaving Entry Phase"];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"Recall"])
     {
-        [self.session leftPhase:Entry withNote:@"Leaving Entry Phase"];
         ttRecallViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }

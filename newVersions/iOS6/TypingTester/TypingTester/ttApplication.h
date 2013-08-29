@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class ttSession;
+
 @interface ttApplication : UIApplication
+
+@property (atomic, weak) ttSession *session;
 
 @end

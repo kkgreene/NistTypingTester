@@ -47,9 +47,15 @@ FOUNDATION_EXPORT NSString *const ttcQuitStringDefaultValue;
 FOUNDATION_EXPORT const CGRect ttcHitboxShiftKeyIos6Portrait;
 FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKeyIos6Portrait;
 
+FOUNDATION_EXPORT NSString *const ttcPhaseStringArray[];
+FOUNDATION_EXPORT NSString *const ttcSubPhaseStringArray[];
+FOUNDATION_EXPORT NSString *const ttcEventTypeStringArray[];
+FOUNDATION_EXPORT NSString *const ttcSpecialKeyStringArray[];
+FOUNDATION_EXPORT NSString *const ttcKeyboardModeStringArray[];
+
 typedef enum
 {
-    UnknownEvent = -1,
+    UnknownEvent,
     Input,
     PhaseBegin,
     PhaseEnd,
@@ -57,12 +63,16 @@ typedef enum
     SubPhaseChange,
     ProficiencyStringShown,
     EntityDisplayed,
-    ControlActivated
+    ControlActivated,
+    SpecialKeyPressed,
+    OrientationChange,
+    KeyboardShown,
+    KeyboardHidden
 } Event;
 
 typedef enum
 {
-    UnknownPhase = -1,
+    UnknownPhase,
     Proficiency,
     Introduction,
     Memorize,
@@ -73,7 +83,7 @@ typedef enum
 
 typedef enum
 {
-    UnknownSubPhase = -1,
+    UnknownSubPhase,
     FreePractice,
     ForcedPractice,
     Verify,

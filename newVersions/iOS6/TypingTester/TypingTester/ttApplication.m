@@ -8,6 +8,9 @@
 
 #import "ttApplication.h"
 #import "ttConstants.h"
+#import "ttEvent.h"
+#import "ttSession.h"
+#import "ttEventTouch.h"
 
 @implementation ttApplication
 {
@@ -34,15 +37,22 @@
         // was the keyboard visible during the touch?
         if (keyboardVisible)
         {
+            ttEvent *event;
             switch([self getKeyPressedAtPoint:touchPoint])
             {
                 case SpecialKeyShift:
                     // log event
+                    event = [[ttEvent alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+                    event.notes = [NSString stringWithFormat:@"Shift Key Pressed at %3f,%3f", touchPoint.x, touchPoint.y];
+                    [self.session addEvent:event];
                     NSLog(@"Shift Key Pressed at %3f, %3f", touchPoint.x, touchPoint.y);
                     break;
                 
                 case SpecialKeyKeyboardChange:
                     // log event
+                    event = [[ttEvent alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+                    event.notes = [NSString stringWithFormat:@"Keyboard Change Key Pressed at %3f,%3f", touchPoint.x, touchPoint.y];
+                    [self.session addEvent:event];
                     NSLog(@"Keyboard Change Key Pressed at %3f,%3f", touchPoint.x, touchPoint.y);
                     break;
                 
@@ -62,12 +72,14 @@
 
 -(SpecialKey)getKeyPressedAtPoint:(CGPoint)point
 {
+    CGRect shiftKeyHitbox;
+    CGRect switchKeyHitbox;
     // this will try to figure out if a special key is pressed based on coordinates
     // determine the current version of iOS in order to get hitboxes
     // determine the current orientation to get hitboxes
     // see if the point is in one of the hitboxes
-    CGRect shiftKeyHitbox = ttcHitboxShiftKeyIos6Portrait;
-    CGRect switchKeyHitbox = ttcHitboxSwitchKeyIos6Portrait;
+    shiftKeyHitbox = ttcHitboxShiftKeyIos6Portrait;
+    switchKeyHitbox = ttcHitboxSwitchKeyIos6Portrait;
     
     if (CGRectContainsPoint(shiftKeyHitbox, point)) return SpecialKeyShift;
     if (CGRectContainsPoint(switchKeyHitbox, point)) return SpecialKeyKeyboardChange;

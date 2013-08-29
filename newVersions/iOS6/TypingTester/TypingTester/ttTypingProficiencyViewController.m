@@ -41,8 +41,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    // indicate that the typing proficiency phase has been entered
-    [self.session enteredPhase:Proficiency withNote:@"Starting Typing Proficiency Phase"];
     [self configureUI];
 }
 
@@ -94,11 +92,24 @@
     // pass the session pointer on ...
     if ([segue.identifier isEqualToString:@"Instructions"])
     {
-        // proficiency phase ended event
-        [self.session leftPhase:Proficiency withNote:@"Ending Typing Proficiency Phase"];
+        
         ttInstructionsViewController *controller = [segue destinationViewController];
         controller.session = self.session;
     }
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    // proficiency phase ended event
+    [self.session leftPhase:Proficiency withNote:@"Typing Proficiency Phase Left"];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    // indicate that the typing proficiency phase has been entered
+    [self.session enteredPhase:Proficiency withNote:@"Typing Proficiency Phase Entered"];
 }
 
 #pragma mark - Touch Tracking

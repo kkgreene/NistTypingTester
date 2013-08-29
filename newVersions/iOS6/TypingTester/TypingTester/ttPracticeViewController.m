@@ -52,13 +52,17 @@
     entityNumber = self.session.currentEntity;
     numberOfRequiredPractices = settings.forcedPracticeRounds;
     [self configureUI];
-    [self.session enteredSubPhase:ForcedPractice withNote:@"Entering Forced Practice Phase"];
 }
 
-- (void)didReceiveMemoryWarning
+-(void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidAppear:animated];
+    [self.session enteredSubPhase:ForcedPractice withNote:@"Entering Forced Practice SubPhase"];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
 }
 
 #pragma -mark UI Configuration

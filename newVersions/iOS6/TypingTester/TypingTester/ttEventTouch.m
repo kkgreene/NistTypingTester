@@ -38,8 +38,11 @@
 
 -(NSString*)description
 {
-    return [NSString stringWithFormat:@"%@,%f,%i,%i,%i,%@,%f,%f,-1,-1,,", self.time, self.interval, self.event,
-            self.phase, self.subPhase, self.notes, self.point.x, self.point.y];
+    NSString *eventType = ttcEventTypeStringArray[self.event];
+    NSString *phase = ttcPhaseStringArray[self.phase];
+    NSString *subphase = ttcSubPhaseStringArray[self.subPhase];
+    return [NSString stringWithFormat:@"%@,%f,%@,%@,%@,%@,%f,%f,-1,-1,,", self.time, self.interval, eventType,
+            phase, subphase, self.notes, self.point.x, self.point.y];
 }
 
 @end

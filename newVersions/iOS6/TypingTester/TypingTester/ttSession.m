@@ -18,11 +18,8 @@
 {
     NSFileHandle *rawFileHandle;
     NSFileHandle *summaryFileHandle;
-    NSDate *sessionStart;
     NSDate *sessionEnd;
     ttSettings *settings;
-    Phase currentPhase;
-    SubPhase currentSubPhase;
     NSDate *sessionStartTime;
     NSDate *phaseStartTime;
 }
@@ -37,8 +34,8 @@
     self = [super init];
     if (self)
     {
-        currentPhase = UnknownPhase;
-        currentSubPhase = UnknownSubPhase;
+        self.currentPhase = UnknownPhase;
+        self.currentSubPhase = UnknownSubPhase;
         self.participant = [[ttParticipant alloc]initWithParticipantNumber:participantId];
         self.events = [[NSMutableArray alloc]init];
         if ([self initializeLogFiles] == NO)
@@ -49,6 +46,7 @@
         [self loadProficiencyGroups];
         [self loadEntities];
         [self sessionDidStart];
+        [[UIApplication sharedApplication] setValue:self forKey:@"session"];
     }
     return self;
 }
@@ -92,7 +90,7 @@
 -(void)enteredPhase:(Phase)phase withNote:(NSString*)note
 {
     // only log if we are not in current phase
-    if (phase != currentPhase)
+    if (phase != self.currentPhase)
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:PhaseBegin andPhase:phase];
         event.notes = note;
@@ -101,7 +99,7 @@
         NSString *line = [NSString stringWithFormat:@"Started Phase:%i", phase];
         [self writeLineToSummaryLogFile:line];
         
-        currentPhase = phase;
+        self.currentPhase = phase;
         phaseStartTime = [NSDate date];
     }
 }
@@ -111,8 +109,8 @@
     ttEvent *event = [[ttEvent alloc]initWithEventType:PhaseEnd andPhase:phase];
     event.notes = note;
     [self addEvent:event];
-    currentPhase = UnknownPhase;
-    currentSubPhase = UnknownSubPhase;
+    self.currentPhase = UnknownPhase;
+    self.currentSubPhase = UnknownSubPhase;
     NSDate *now = [NSDate date];
     NSString *line = [NSString stringWithFormat:@"Time in phase:%f", [now timeIntervalSinceDate:phaseStartTime]];
     [self writeLineToSummaryLogFile:line];
@@ -120,12 +118,12 @@
 
 -(void)enteredSubPhase:(SubPhase)subphase withNote:(NSString*)note
 {
-    if (subphase != currentSubPhase)
+    if (subphase != self.currentSubPhase)
     {
-        ttEvent *event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:currentPhase andSubPhase:subphase];
+        ttEvent *event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:self.currentPhase andSubPhase:subphase];
         event.notes = note;
         [self addEvent:event];
-        currentSubPhase = subphase;
+        self.currentSubPhase = subphase;
     }
 }
 
@@ -138,9 +136,11 @@
 -(void) sessionDidFinish
 {
     sessionEnd = [NSDate date];
+    [[UIApplication sharedApplication] setValue:nil forKey:@"session"];
     NSString *startString = [NSString stringWithFormat:@"Session Finished:%@", sessionEnd];
     [self writeLineToSummaryLogFile:startString];
     [self closeLogFiles];
+    
     return;
 }
 
@@ -159,7 +159,7 @@
 
 -(void) addEvent:(ttEvent *)event
 {
-    event.interval = [event.time timeIntervalSinceDate:sessionStart];
+    event.interval = [event.time timeIntervalSinceDate:sessionStartTime];
     [self.events addObject:event];
     [self writeLineToRawLogFile:[event description]];
     return;

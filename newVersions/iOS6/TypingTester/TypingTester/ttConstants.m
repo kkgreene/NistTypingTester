@@ -43,6 +43,16 @@ const bool ttcEnableHideButtonOnPracticeScreenValue = NO;
 NSString *const ttcQuitStringDefaultValue = @"I QUIT";
 
 
+NSString *const ttcPhaseStringArray[] = {@"Unknown Phase", @"Proficiency Phase", @"Introduction Phase", @"Memorize Phase",
+                                         @"Entry Phase", @"Recall Phase", @"Thank You Phase"};
+NSString *const ttcSubPhaseStringArray[] = {@"Unknown SubPhase", @"Free Practice", @"Forced Practice", @"Verify", @"Entity Change"};
+NSString *const ttcEventTypeStringArray[] = {@"UnknownEvent", @"Input", @"PhaseBegin", @"PhaseEnd", @"Touch", @"SubPhaseChange",
+                                             @"ProficiencyStringShown", @"EntityDisplayed", @"ControlActivated", @"SpecialKeyPressed",
+                                             @"OrientationChange", @"KeyboardShown", @"KeyboardHidden" };
+NSString *const ttcSpecialKeyStringArray[] = {@"Unknown Key", @"Shift Key", @"Keyboard Change Key"};
+NSString *const ttcKeyboardModeStringArray[] = {@"Alphabetic", @"Numeric", @"Symbol", @"Unknown"};
+
+
 // hitbox for special key detection
 CGRect const ttcHitboxShiftKeyIos6Portrait = { {2,375}, {49,49} };
 CGRect const ttcHitboxSwitchKeyIos6Portrait = { {2,425}, {79,49} };

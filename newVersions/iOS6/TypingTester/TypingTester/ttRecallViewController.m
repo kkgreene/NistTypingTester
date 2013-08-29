@@ -30,13 +30,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     [self.session enteredPhase:Recall withNote:@"Entered Recall Phase"];
 }
 
-- (void)didReceiveMemoryWarning
+-(void)viewDidDisappear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidDisappear:animated];
+    [self.session leftPhase:Recall withNote:@"Leaving Recall Phase"];
+    // end the session
+    [self.session sessionDidFinish];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -48,9 +56,7 @@
     }
     else if ([segue.identifier isEqualToString:@"ThankYou"])
     {
-        // end the session
-        [self.session leftPhase:Recall withNote:@"Leaving Recall Phase"];
-        [self.session sessionDidFinish];
+        
     }
 }
 

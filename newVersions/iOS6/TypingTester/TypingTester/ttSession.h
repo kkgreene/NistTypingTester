@@ -33,6 +33,8 @@
 @property (nonatomic, assign) int CurrentPracticeRoundForEntity;
 
 @property (nonatomic, copy) NSString* workAreaContents;
+@property (nonatomic, assign) Phase currentPhase;
+@property (nonatomic, assign) SubPhase currentSubPhase;
 
 
 -(id)initWithParticipantId:(NSString*)participantId;
