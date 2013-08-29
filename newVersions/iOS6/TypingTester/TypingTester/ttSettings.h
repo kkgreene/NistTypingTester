@@ -50,4 +50,7 @@
 
 -(NSString*)getSettings;
 
+
+
+
 @end

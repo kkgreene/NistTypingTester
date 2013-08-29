@@ -8,6 +8,7 @@
 
 #import "ttAppDelegate.h"
 #import "ttSettings.h"
+#import "ttConstants.h"
 
 @implementation ttAppDelegate
 

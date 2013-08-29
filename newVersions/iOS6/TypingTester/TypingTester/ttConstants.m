@@ -42,3 +42,7 @@ const bool ttcEnableHideButtonOnPracticeScreenValue = NO;
 
 NSString *const ttcQuitStringDefaultValue = @"I QUIT";
 
+
+// hitbox for special key detection
+CGRect const ttcHitboxShiftKeyIos6Portrait = { {2,375}, {49,49} };
+CGRect const ttcHitboxSwitchKeyIos6Portrait = { {2,425}, {79,49} };

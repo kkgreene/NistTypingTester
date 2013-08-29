@@ -44,6 +44,9 @@ FOUNDATION_EXPORT const bool ttcEnableHideButtonOnPracticeScreenValue;
 
 FOUNDATION_EXPORT NSString *const ttcQuitStringDefaultValue;
 
+FOUNDATION_EXPORT const CGRect ttcHitboxShiftKeyIos6Portrait;
+FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKeyIos6Portrait;
+
 typedef enum
 {
     UnknownEvent = -1,
@@ -76,3 +79,18 @@ typedef enum
     Verify,
     EntityChange
 }SubPhase;
+
+typedef enum
+{
+    SpecialKeyUnknown,
+    SpecialKeyShift,
+    SpecialKeyKeyboardChange
+} SpecialKey;
+
+typedef enum
+{
+    Alphabetic,
+    Numeric,
+    Symbol,
+    UnknownMode
+} KeyboardMode;
