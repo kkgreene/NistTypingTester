@@ -21,6 +21,8 @@
 		AD04768517A964B600657D08 /* ttViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD04768417A964B600657D08 /* ttViewController.m */; };
 		AD04769417A96F5A00657D08 /* ttSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD04769317A96F5A00657D08 /* ttSettingsViewController.m */; };
 		AD047FC517A9910A00657D08 /* ttParticipant.m in Sources */ = {isa = PBXBuildFile; fileRef = AD047FC417A9910A00657D08 /* ttParticipant.m */; };
+		AD06B40917CFD60600C4348C /* 19-gear-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = AD06B40717CFD60500C4348C /* 19-gear-grey.png */; };
+		AD06B40A17CFD60600C4348C /* 19-gear-grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD06B40817CFD60600C4348C /* 19-gear-grey@2x.png */; };
 		AD1EEABA17B40103008D98BC /* ttSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EEAB917B40103008D98BC /* ttSettings.m */; };
 		AD1EEABD17B40DF5008D98BC /* ttConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EEABC17B40DF5008D98BC /* ttConstants.m */; };
 		AD2093E617C3A2A500B56CB7 /* ttInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2093E517C3A2A500B56CB7 /* ttInstructionsViewController.m */; };
@@ -92,6 +94,8 @@
 		AD04769317A96F5A00657D08 /* ttSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttSettingsViewController.m; sourceTree = "<group>"; };
 		AD047FC317A9910A00657D08 /* ttParticipant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttParticipant.h; sourceTree = "<group>"; };
 		AD047FC417A9910A00657D08 /* ttParticipant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttParticipant.m; sourceTree = "<group>"; };
+		AD06B40717CFD60500C4348C /* 19-gear-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear-grey.png"; sourceTree = "<group>"; };
+		AD06B40817CFD60600C4348C /* 19-gear-grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear-grey@2x.png"; sourceTree = "<group>"; };
 		AD1EEAB817B40103008D98BC /* ttSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttSettings.h; sourceTree = "<group>"; };
 		AD1EEAB917B40103008D98BC /* ttSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttSettings.m; sourceTree = "<group>"; };
 		AD1EEABB17B40DF5008D98BC /* ttConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttConstants.h; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 		AD04768B17A9663C00657D08 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				AD06B40717CFD60500C4348C /* 19-gear-grey.png */,
+				AD06B40817CFD60600C4348C /* 19-gear-grey@2x.png */,
 				AD20940217C3B94B00B56CB7 /* 765-arrow-left-white.png */,
 				AD20940317C3B94B00B56CB7 /* 765-arrow-left-white@2x.png */,
 				AD20940417C3B94B00B56CB7 /* 766-arrow-right-white.png */,
@@ -430,6 +436,8 @@
 				AD20940717C3B94B00B56CB7 /* 765-arrow-left-white@2x.png in Resources */,
 				AD20940817C3B94B00B56CB7 /* 766-arrow-right-white.png in Resources */,
 				AD20940917C3B94B00B56CB7 /* 766-arrow-right-white@2x.png in Resources */,
+				AD06B40917CFD60600C4348C /* 19-gear-grey.png in Resources */,
+				AD06B40A17CFD60600C4348C /* 19-gear-grey@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,49 +22,90 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-R8-Sna">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="IfH-AP-YC0"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Begin">
+                                <state key="normal" title="Begin" image="766-arrow-right.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Tss-kM-xCY" kind="modal" id="kcK-0W-HjX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csl-8f-MK2">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="108" id="310-TB-CaG"/>
+                                    <constraint firstAttribute="width" constant="97" id="BFA-e8-aia"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Settings" image="19-gear.png">
+                                <state key="normal" title="Settings" image="19-gear-grey.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="gGj-MP-sSo" kind="modal" id="VfI-5o-YOq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="csl-8f-MK2" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1Xm-ov-qQz"/>
                             <constraint firstItem="i2G-3q-gZq" firstAttribute="centerX" secondItem="l2Q-oV-v4J" secondAttribute="centerX" type="default" id="6eK-mV-Zpu"/>
                             <constraint firstItem="l2Q-oV-v4J" firstAttribute="top" secondItem="i2G-3q-gZq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7LQ-2D-DAm"/>
-                            <constraint firstItem="kTK-R8-Sna" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="342" id="L08-0z-Rrh"/>
-                            <constraint firstItem="kTK-R8-Sna" firstAttribute="top" secondItem="l2Q-oV-v4J" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="LBr-uu-b5S"/>
-                            <constraint firstItem="csl-8f-MK2" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="cMP-6I-RVf"/>
-                            <constraint firstItem="l2Q-oV-v4J" firstAttribute="centerY" secondItem="5" secondAttribute="centerY" type="default" id="g0Y-oG-GXh"/>
+                            <constraint firstItem="kTK-R8-Sna" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="283" id="KHU-3t-G5r"/>
+                            <constraint firstItem="csl-8f-MK2" firstAttribute="leading" secondItem="kTK-R8-Sna" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="abN-FJ-GfH"/>
+                            <constraint firstItem="csl-8f-MK2" firstAttribute="baseline" secondItem="kTK-R8-Sna" secondAttribute="baseline" type="default" id="fA5-3F-dsP"/>
                             <constraint firstAttribute="trailing" secondItem="l2Q-oV-v4J" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nCk-ie-5fv"/>
+                            <constraint firstItem="l2Q-oV-v4J" firstAttribute="centerY" secondItem="5" secondAttribute="centerY" type="default" id="oid-FS-R6g"/>
                             <constraint firstItem="l2Q-oV-v4J" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="uPW-qK-UhY"/>
+                            <constraint firstItem="kTK-R8-Sna" firstAttribute="top" secondItem="l2Q-oV-v4J" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vEG-JV-AY5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="participantNumber" destination="l2Q-oV-v4J" id="10S-QV-6Qz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="6as-Mj-HOk">
+            <objects>
+                <viewController id="gGj-MP-sSo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8uk-4R-ocO">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KuM-k0-jVO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1151" y="-1013"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wbD-Z9-yJ4">
+            <objects>
+                <viewController id="Tss-kM-xCY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a0I-v1-CAW">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eBs-z2-aLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1141" y="147"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="19-gear.png" width="26" height="26"/>
+        <image name="19-gear-grey.png" width="26" height="26"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
