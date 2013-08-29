@@ -186,7 +186,7 @@
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="The quick brown fox jumped over the lazy dogs" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="281" translatesAutoresizingMaskIntoConstraints="NO" id="naP-ps-fJd">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="69" id="aVy-pO-gGs"/>
+                                    <constraint firstAttribute="height" constant="55" id="bw2-zV-Nwv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -231,7 +231,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="naP-ps-fJd" firstAttribute="centerX" secondItem="Wa3-EA-in3" secondAttribute="centerX" type="default" id="44E-Uq-Pow"/>
+                            <constraint firstItem="q16-M2-MrU" firstAttribute="trailing" secondItem="naP-ps-fJd" secondAttribute="trailing" type="default" id="4oa-HE-3HG"/>
                             <constraint firstItem="gbn-5N-a8M" firstAttribute="centerX" secondItem="5t9-He-Ate" secondAttribute="centerX" type="default" id="59c-Bz-mYj"/>
                             <constraint firstItem="vDt-aN-WLS" firstAttribute="centerX" secondItem="Wa3-EA-in3" secondAttribute="centerX" type="default" id="5JP-kJ-V7f"/>
                             <constraint firstItem="Z9D-yy-5XD" firstAttribute="centerX" secondItem="vDt-aN-WLS" secondAttribute="centerX" type="default" id="7zy-qC-nZS"/>
@@ -241,20 +241,20 @@
                             <constraint firstItem="vDt-aN-WLS" firstAttribute="top" secondItem="Z9D-yy-5XD" secondAttribute="bottom" constant="2" type="user" id="CjC-0n-nzk"/>
                             <constraint firstItem="5t9-He-Ate" firstAttribute="leading" secondItem="wMt-d3-zzd" secondAttribute="leading" type="default" id="Dqr-TU-B9a"/>
                             <constraint firstItem="Wa3-EA-in3" firstAttribute="leading" secondItem="7BD-IR-KRQ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="E7R-lr-KXa"/>
-                            <constraint firstAttribute="trailing" secondItem="q16-M2-MrU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="FyY-QX-idT"/>
-                            <constraint firstItem="q16-M2-MrU" firstAttribute="leading" secondItem="7BD-IR-KRQ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Jbg-TG-bML"/>
+                            <constraint firstItem="naP-ps-fJd" firstAttribute="centerX" secondItem="Wa3-EA-in3" secondAttribute="centerX" type="default" id="InR-NY-08D"/>
                             <constraint firstItem="Wa3-EA-in3" firstAttribute="top" secondItem="vDt-aN-WLS" secondAttribute="bottom" constant="5" type="user" id="N8I-6j-KFD"/>
-                            <constraint firstItem="q16-M2-MrU" firstAttribute="top" secondItem="naP-ps-fJd" secondAttribute="bottom" constant="3" type="user" id="QCr-oT-G33"/>
+                            <constraint firstItem="q16-M2-MrU" firstAttribute="centerX" secondItem="Dbe-om-Ah3" secondAttribute="centerX" type="default" id="NPd-WV-GIN"/>
+                            <constraint firstItem="q16-M2-MrU" firstAttribute="top" secondItem="naP-ps-fJd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="SwF-aR-iPh"/>
                             <constraint firstItem="naP-ps-fJd" firstAttribute="leading" secondItem="7BD-IR-KRQ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ujo-bE-gGQ"/>
                             <constraint firstItem="xrN-Cz-Lgd" firstAttribute="top" secondItem="Dbe-om-Ah3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VHS-lF-3DZ"/>
-                            <constraint firstItem="Dbe-om-Ah3" firstAttribute="centerX" secondItem="q16-M2-MrU" secondAttribute="centerX" type="default" id="YIy-Rh-j6l"/>
                             <constraint firstItem="Z9D-yy-5XD" firstAttribute="top" secondItem="7BD-IR-KRQ" secondAttribute="top" type="user" id="aXJ-dS-Ny2"/>
                             <constraint firstItem="ii1-E0-oY1" firstAttribute="centerX" secondItem="wMt-d3-zzd" secondAttribute="centerX" type="default" id="bwW-gt-jWW"/>
-                            <constraint firstItem="Dbe-om-Ah3" firstAttribute="top" secondItem="7BD-IR-KRQ" secondAttribute="top" constant="229" id="gHl-vL-iLb"/>
+                            <constraint firstItem="Dbe-om-Ah3" firstAttribute="top" secondItem="7BD-IR-KRQ" secondAttribute="top" constant="191" id="gbs-Ki-KBj"/>
                             <constraint firstItem="5t9-He-Ate" firstAttribute="top" secondItem="ii1-E0-oY1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hMv-s4-Vnd"/>
                             <constraint firstAttribute="trailing" secondItem="Wa3-EA-in3" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="iRC-9F-8Bk"/>
                             <constraint firstItem="ii1-E0-oY1" firstAttribute="top" secondItem="wMt-d3-zzd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="r05-Qx-b1U"/>
                             <constraint firstItem="wMt-d3-zzd" firstAttribute="top" secondItem="xrN-Cz-Lgd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rRf-1B-MEG"/>
+                            <constraint firstItem="Dbe-om-Ah3" firstAttribute="centerX" secondItem="naP-ps-fJd" secondAttribute="centerX" type="default" id="urR-SG-pAZ"/>
                             <constraint firstItem="xrN-Cz-Lgd" firstAttribute="leading" secondItem="wMt-d3-zzd" secondAttribute="leading" type="default" id="vQH-AP-8BI"/>
                             <constraint firstItem="Z9D-yy-5XD" firstAttribute="leading" secondItem="7BD-IR-KRQ" secondAttribute="leading" type="user" id="wPP-yI-Q4G"/>
                         </constraints>
