@@ -1133,7 +1133,7 @@
                                     <segue destination="RH5-gu-dim" kind="modal" identifier="BackToMemorize" id="NoB-kO-LYm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewg-XE-Pbx">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewg-XE-Pbx">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="PWV-uE-MXm"/>
                                 </constraints>
@@ -1283,7 +1283,7 @@
                                     <action selector="back" destination="KXG-VE-QnH" eventType="touchUpInside" id="JDI-6f-Je5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95m-kL-KGn">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95m-kL-KGn">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="a4j-me-CfJ"/>
                                 </constraints>
