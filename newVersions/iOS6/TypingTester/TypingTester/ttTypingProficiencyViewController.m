@@ -55,10 +55,12 @@
     if (self.entryField.text.length > 0)
     {
         self.doneButton.enabled = YES;
+        self.doneButton_iPad.enabled = YES;
     }
     else
     {
         self.doneButton.enabled = NO;
+        self.doneButton_iPad.enabled = NO;
     }
     // add the event indicating that a proficiency string was displayed
     ttEvent *event = [[ttEvent alloc]initWithEventType:ProficiencyStringShown andPhase:Proficiency];
@@ -146,10 +148,12 @@
     if (newString.length > 0)
     {
         self.doneButton.enabled = YES;
+        self.doneButton_iPad.enabled = YES;
     }
     else
     {
         self.doneButton.enabled = NO;
+        self.doneButton_iPad.enabled = NO;
     }
     NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
     return YES;

@@ -18,7 +18,9 @@
 @property (nonatomic, weak) IBOutlet UILabel *entity;
 @property (nonatomic, weak) IBOutlet UITextField *entryField;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
+@property (nonatomic, weak) IBOutlet UIButton *doneButton_iPad;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *backButton;
+@property (nonatomic, weak) IBOutlet UIButton *backButton_iPad;
 @property (nonatomic, weak) IBOutlet UIButton *visibilityButton;
 @property (nonatomic, weak) IBOutlet UIButton *skipButton;
 @property (nonatomic, weak) IBOutlet UIImageView *correctIndicator;

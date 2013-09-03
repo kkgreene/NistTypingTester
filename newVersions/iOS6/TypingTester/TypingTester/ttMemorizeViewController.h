@@ -13,6 +13,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *passwordLabel;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
+@property (nonatomic, weak) IBOutlet UIButton *doneButton_iPad;
 @property (nonatomic, weak) IBOutlet UIProgressView *progressDisplay;
 @property (nonatomic, weak) IBOutlet UILabel *progressLabel;
 @property (nonatomic, weak) IBOutlet UITextView *workArea;

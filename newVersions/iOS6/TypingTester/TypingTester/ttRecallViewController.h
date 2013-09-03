@@ -13,6 +13,7 @@
 @interface ttRecallViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *donButton;
+@property (nonatomic, weak) IBOutlet UIButton *doneButton_iPad;
 
 @property (nonatomic, weak) ttSession *session;
 

@@ -123,10 +123,12 @@
     if (newString.length > 0)
     {
         self.doneButton.enabled = YES;
+        self.doneButton_iPad.enabled = YES;
     }
     else
     {
         self.doneButton.enabled = NO;
+        self.doneButton_iPad.enabled = NO;
     }
     NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
     // hids the incorrect icon and label

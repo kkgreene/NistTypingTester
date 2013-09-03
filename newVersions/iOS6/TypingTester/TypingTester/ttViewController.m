@@ -69,12 +69,14 @@
     if ([self isValidParticipantNumber:number])
     {
         self.startButton.enabled = YES;
+        self.startButton_iPad.enabled = YES;
         self.invalidImage.hidden = YES;
         self.invalidString.hidden = YES;
     }
     else
     {
         self.startButton.enabled = NO;
+        self.startButton_iPad.enabled = NO;
         self.invalidImage.hidden = NO;
         self.invalidString.hidden = NO;
     }
@@ -99,7 +101,6 @@
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
 {
-    NSLog(@"textFieldShouldReturn");
     [textField resignFirstResponder];
     return YES;
 }

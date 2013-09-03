@@ -14,6 +14,7 @@
 //@property (nonatomic, weak) IBOutlet UIButton *backgroundButton;
 @property (nonatomic, weak) IBOutlet UITextField *participantNumber;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *startButton;
+@property (nonatomic, weak) IBOutlet UIButton *startButton_iPad;
 @property (nonatomic, weak) IBOutlet UIImageView *invalidImage;
 @property (nonatomic, weak) IBOutlet UILabel *invalidString;
 

@@ -184,7 +184,7 @@
                                     <outlet property="delegate" destination="BJH-fS-opR" id="JCM-zk-xNn"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="The quick brown fox jumped over the lazy dogs" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="281" translatesAutoresizingMaskIntoConstraints="NO" id="naP-ps-fJd">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="The quick brown fox jumped over the lazy dogs" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="naP-ps-fJd">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="bw2-zV-Nwv"/>
                                 </constraints>
@@ -231,7 +231,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="q16-M2-MrU" firstAttribute="trailing" secondItem="naP-ps-fJd" secondAttribute="trailing" type="default" id="4oa-HE-3HG"/>
                             <constraint firstItem="gbn-5N-a8M" firstAttribute="centerX" secondItem="5t9-He-Ate" secondAttribute="centerX" type="default" id="59c-Bz-mYj"/>
                             <constraint firstItem="vDt-aN-WLS" firstAttribute="centerX" secondItem="Wa3-EA-in3" secondAttribute="centerX" type="default" id="5JP-kJ-V7f"/>
                             <constraint firstItem="Z9D-yy-5XD" firstAttribute="centerX" secondItem="vDt-aN-WLS" secondAttribute="centerX" type="default" id="7zy-qC-nZS"/>
@@ -249,14 +248,15 @@
                             <constraint firstItem="xrN-Cz-Lgd" firstAttribute="top" secondItem="Dbe-om-Ah3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VHS-lF-3DZ"/>
                             <constraint firstItem="Z9D-yy-5XD" firstAttribute="top" secondItem="7BD-IR-KRQ" secondAttribute="top" type="user" id="aXJ-dS-Ny2"/>
                             <constraint firstItem="ii1-E0-oY1" firstAttribute="centerX" secondItem="wMt-d3-zzd" secondAttribute="centerX" type="default" id="bwW-gt-jWW"/>
+                            <constraint firstItem="q16-M2-MrU" firstAttribute="leading" secondItem="7BD-IR-KRQ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="eZx-gk-MrE"/>
                             <constraint firstItem="Dbe-om-Ah3" firstAttribute="top" secondItem="7BD-IR-KRQ" secondAttribute="top" constant="191" id="gbs-Ki-KBj"/>
                             <constraint firstItem="5t9-He-Ate" firstAttribute="top" secondItem="ii1-E0-oY1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hMv-s4-Vnd"/>
-                            <constraint firstAttribute="trailing" secondItem="Wa3-EA-in3" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="iRC-9F-8Bk"/>
+                            <constraint firstAttribute="trailing" secondItem="q16-M2-MrU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="jHd-Dt-X14"/>
                             <constraint firstItem="ii1-E0-oY1" firstAttribute="top" secondItem="wMt-d3-zzd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="r05-Qx-b1U"/>
                             <constraint firstItem="wMt-d3-zzd" firstAttribute="top" secondItem="xrN-Cz-Lgd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rRf-1B-MEG"/>
-                            <constraint firstItem="Dbe-om-Ah3" firstAttribute="centerX" secondItem="naP-ps-fJd" secondAttribute="centerX" type="default" id="urR-SG-pAZ"/>
                             <constraint firstItem="xrN-Cz-Lgd" firstAttribute="leading" secondItem="wMt-d3-zzd" secondAttribute="leading" type="default" id="vQH-AP-8BI"/>
                             <constraint firstItem="Z9D-yy-5XD" firstAttribute="leading" secondItem="7BD-IR-KRQ" secondAttribute="leading" type="user" id="wPP-yI-Q4G"/>
+                            <constraint firstAttribute="trailing" secondItem="naP-ps-fJd" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="x8B-SH-byC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4xF-1t-LjS"/>
@@ -881,7 +881,7 @@
                                     <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="780-2D-DSb">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="348" id="vDB-gq-d7f"/>
+                                            <constraint firstAttribute="height" constant="348" id="0Ey-1A-ysw"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="J52-iw-eNL" kind="embed" identifier="RecallTableView" id="YPW-HW-Fzu"/>
@@ -889,12 +889,11 @@
                                     </containerView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="780-2D-DSb" secondAttribute="centerX" type="user" id="2mp-Qh-fyb"/>
                                     <constraint firstAttribute="centerX" secondItem="s5b-Ws-rPS" secondAttribute="centerX" type="user" id="AVy-Jg-dtI"/>
                                     <constraint firstItem="780-2D-DSb" firstAttribute="leading" secondItem="b3z-o8-WXk" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="I7s-Ch-aIl"/>
                                     <constraint firstAttribute="centerX" secondItem="7TV-u5-2wm" secondAttribute="centerX" type="user" id="Jdt-gG-Lgg"/>
                                     <constraint firstItem="7TV-u5-2wm" firstAttribute="top" secondItem="u9r-zV-Tya" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="LeH-Tg-YQl"/>
-                                    <constraint firstItem="780-2D-DSb" firstAttribute="top" secondItem="s5b-Ws-rPS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Q4w-KU-AFr"/>
+                                    <constraint firstItem="780-2D-DSb" firstAttribute="top" secondItem="s5b-Ws-rPS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PGE-yy-Ndl"/>
                                     <constraint firstAttribute="bottom" secondItem="780-2D-DSb" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="RJQ-lm-9DJ"/>
                                     <constraint firstAttribute="centerX" secondItem="LhN-YO-0Wy" secondAttribute="centerX" type="user" id="RjZ-UO-qOD"/>
                                     <constraint firstAttribute="trailing" secondItem="780-2D-DSb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="YBb-NV-he7"/>
@@ -903,6 +902,7 @@
                                     <constraint firstAttribute="centerX" secondItem="u9r-zV-Tya" secondAttribute="centerX" type="user" id="qij-yf-GIa"/>
                                     <constraint firstItem="u9r-zV-Tya" firstAttribute="top" secondItem="LhN-YO-0Wy" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="uww-yN-tpH"/>
                                     <constraint firstAttribute="centerX" secondItem="LhN-YO-0Wy" secondAttribute="centerX" type="user" id="w3h-vJ-bGN"/>
+                                    <constraint firstItem="780-2D-DSb" firstAttribute="centerX" secondItem="s5b-Ws-rPS" secondAttribute="centerX" type="default" id="wei-U5-8tL"/>
                                 </constraints>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="u2O-Yj-4tz">
@@ -950,9 +950,6 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter String" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwH-Bj-6tZ">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="280" id="6mR-VX-BFA"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             <connections>
@@ -963,7 +960,8 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="fwH-Bj-6tZ" firstAttribute="leading" secondItem="O9d-fi-QBT" secondAttribute="leading" constant="20" type="default" id="exz-b2-lbo"/>
+                                    <constraint firstItem="fwH-Bj-6tZ" firstAttribute="leading" secondItem="O9d-fi-QBT" secondAttribute="leading" constant="20" type="default" id="4R9-3Y-MhR"/>
+                                    <constraint firstAttribute="trailing" secondItem="fwH-Bj-6tZ" secondAttribute="trailing" constant="20" type="default" id="fBx-q5-bYV"/>
                                     <constraint firstItem="fwH-Bj-6tZ" firstAttribute="centerY" secondItem="O9d-fi-QBT" secondAttribute="centerY" type="default" id="nmM-ts-sFI"/>
                                 </constraints>
                             </tableViewCell>
@@ -1612,6 +1610,7 @@
             <relationships>
                 <relationship kind="action" name="done"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton_iPad" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="entityProgressBar" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="entityProgressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
@@ -1629,6 +1628,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ttMemorizeViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton_iPad" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="progressDisplay" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="progressLabel" candidateClass="UILabel"/>
@@ -1642,9 +1642,11 @@
                 <relationship kind="action" name="skipButtonPressed"/>
                 <relationship kind="action" name="visibilityButtonPressed"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="backButton_iPad" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="correctIndicator" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="correctTextLable" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton_iPad" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="entitiyProgressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="entity" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="entityProgressBar" candidateClass="UIProgressView"/>
@@ -1671,6 +1673,7 @@
             <relationships>
                 <relationship kind="action" name="done"/>
                 <relationship kind="outlet" name="donButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton_iPad" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="ttSettingsDetailViewController" superclassName="UITableViewController">
@@ -1725,6 +1728,7 @@
             <relationships>
                 <relationship kind="action" name="doneButtonPressed"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton_iPad" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="phraseLabel1" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
@@ -1737,7 +1741,9 @@
                 <relationship kind="action" name="back"/>
                 <relationship kind="action" name="done"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="backButton_iPad" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton_iPad" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="entityProgressBar" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="entityProgressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
@@ -1755,6 +1761,7 @@
                 <relationship kind="outlet" name="invalidString" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="participantNumber" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="startButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="startButton_iPad" candidateClass="UIButton"/>
             </relationships>
         </class>
     </classes>
@@ -1764,8 +1771,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="esj-5w-h8l"/>
-        <segue reference="zal-n7-ZfW"/>
         <segue reference="1tr-Kl-y5m"/>
+        <segue reference="zal-n7-ZfW"/>
+        <segue reference="qlx-Cz-jfL"/>
     </inferredMetricsTieBreakers>
 </document>

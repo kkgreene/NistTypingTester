@@ -98,6 +98,7 @@
         // no so we need to enter it again
         self.entryField.text = @"";
         self.doneButton.enabled = NO;
+        self.doneButton_iPad.enabled = NO;
         [self configureUI];
     }
     else
@@ -133,10 +134,12 @@
     if (newString.length > 0)
     {
         self.doneButton.enabled = YES;
+        self.doneButton_iPad.enabled = YES;
     }
     else
     {
         self.doneButton.enabled = NO;
+        self.doneButton_iPad.enabled = NO;
     }
     NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
     return YES;

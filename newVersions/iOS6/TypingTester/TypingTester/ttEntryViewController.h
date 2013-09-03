@@ -18,6 +18,7 @@
 @property (nonatomic, weak) IBOutlet UIProgressView *entityProgressBar;
 @property (nonatomic, weak) IBOutlet UITextField *entryField;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
+@property (nonatomic, weak) IBOutlet UIButton *doneButton_iPad;
 
 @property (nonatomic, weak) ttSession *session;
 

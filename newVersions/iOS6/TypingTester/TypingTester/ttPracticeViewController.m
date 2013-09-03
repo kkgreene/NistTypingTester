@@ -76,8 +76,16 @@
     // configure the display of the text
     [self configureEntityDisplay];
     // enable/disable the done button
-    if (self.entryField.text.length > 0) self.doneButton.enabled = YES;
-    else self.doneButton.enabled = NO;
+    if (self.entryField.text.length > 0)
+    {
+        self.doneButton.enabled = YES;
+        self.doneButton_iPad.enabled = YES;
+    }
+    else
+    {
+        self.doneButton.enabled = NO;
+        self.doneButton_iPad.enabled = YES;
+    }
     // configure optional button visibility
     self.visibilityButton.hidden = !settings.enableHideButtonOnPracticeScreen;
     self.skipButton.hidden = !settings.showSkipButton;
@@ -96,6 +104,7 @@
         self.entityProgressBar.progress = 1.0;
         self.entitiyProgressLabel.text = [NSString stringWithFormat:@"Complete"];
         self.doneButton.enabled = YES;
+        self.doneButton_iPad.enabled = YES;
     }
     
     
@@ -194,10 +203,12 @@
     if (newString.length > 0 || self.session.CurrentPracticeRoundForEntity >= settings.forcedPracticeRounds)
     {
         self.doneButton.enabled = YES;
+        self.doneButton_iPad.enabled = YES;
     }
     else
     {
         self.doneButton.enabled = NO;
+        self.doneButton_iPad.enabled = NO;
     }
     NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
     // hids the incorrect icon and label
