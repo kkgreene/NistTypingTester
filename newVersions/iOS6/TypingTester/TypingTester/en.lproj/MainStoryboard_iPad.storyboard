@@ -12,7 +12,10 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjw-l3-3AJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjw-l3-3AJ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1006" id="0C6-yK-24N"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,27 +44,29 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="cBu-eb-wqH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <state key="normal" image="766-arrow-right.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted">
+                                <state key="selected" image="766-arrow-right-selected.png"/>
+                                <state key="highlighted" image="766-arrow-right-selected.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="Tss-kM-xCY" kind="modal" identifier="ReadyScreen" id="kcK-0W-HjX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csl-8f-MK2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csl-8f-MK2">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="vJ8-mR-bF3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="19-gear-grey.png">
+                                <state key="normal" image="740-gear.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" image="740-gear-selected.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -72,7 +77,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Zjw-l3-3AJ" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="2IH-VF-whg"/>
                             <constraint firstItem="kTK-R8-Sna" firstAttribute="top" secondItem="l2Q-oV-v4J" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="AOp-hq-4Io"/>
                             <constraint firstItem="i2G-3q-gZq" firstAttribute="centerX" secondItem="l2Q-oV-v4J" secondAttribute="centerX" type="default" id="BMM-II-LAH"/>
                             <constraint firstItem="Zjw-l3-3AJ" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="CeK-9l-MMm"/>
@@ -81,7 +85,6 @@
                             <constraint firstItem="i2G-3q-gZq" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="XG2-hZ-RgD"/>
                             <constraint firstItem="kTK-R8-Sna" firstAttribute="centerX" secondItem="l2Q-oV-v4J" secondAttribute="centerX" type="default" id="aJW-UY-s3n"/>
                             <constraint firstItem="csl-8f-MK2" firstAttribute="baseline" secondItem="kTK-R8-Sna" secondAttribute="baseline" type="default" id="fA5-3F-dsP"/>
-                            <constraint firstItem="csl-8f-MK2" firstAttribute="top" secondItem="l2Q-oV-v4J" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="k5m-0I-IuE"/>
                             <constraint firstAttribute="trailing" secondItem="l2Q-oV-v4J" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nCk-ie-5fv"/>
                             <constraint firstItem="l2Q-oV-v4J" firstAttribute="top" secondItem="i2G-3q-gZq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oIp-xc-qpm"/>
                             <constraint firstItem="Zjw-l3-3AJ" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="p75-uC-diB"/>
@@ -747,7 +750,6 @@
                         <constraints>
                             <constraint firstItem="9vd-QH-9PD" firstAttribute="centerX" secondItem="kgS-g7-989" secondAttribute="centerX" type="default" id="0wC-yc-7Hw"/>
                             <constraint firstItem="kgS-g7-989" firstAttribute="top" secondItem="pNc-Dz-o4I" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ENc-Yd-uIP"/>
-                            <constraint firstItem="HtZ-FG-p6C" firstAttribute="baseline" secondItem="H9X-c8-U9y" secondAttribute="baseline" type="default" id="GSm-FK-CFM"/>
                             <constraint firstAttribute="bottom" secondItem="HtZ-FG-p6C" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Ia3-Ps-Txs"/>
                             <constraint firstItem="H9X-c8-U9y" firstAttribute="top" secondItem="9vd-QH-9PD" secondAttribute="bottom" constant="12" type="user" id="Kbj-Kg-NqT"/>
                             <constraint firstAttribute="trailing" secondItem="HtZ-FG-p6C" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="N9X-0V-FDP"/>
@@ -831,6 +833,7 @@
                             <constraint firstItem="ftN-gL-K09" firstAttribute="top" secondItem="nJV-Xw-AuN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5Dm-el-A8x"/>
                             <constraint firstItem="nJV-Xw-AuN" firstAttribute="top" secondItem="43a-lU-uTq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5fJ-PL-qxx"/>
                             <constraint firstItem="lHT-CE-GVP" firstAttribute="top" secondItem="nzA-Ka-TPp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6Jv-7g-kyE"/>
+                            <constraint firstItem="43a-lU-uTq" firstAttribute="centerX" secondItem="0ZA-6Q-gmT" secondAttribute="centerX" type="default" id="7im-IX-mRO"/>
                             <constraint firstItem="9fZ-x9-BX5" firstAttribute="top" secondItem="ftN-gL-K09" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8eB-AD-60C"/>
                             <constraint firstItem="9fZ-x9-BX5" firstAttribute="centerX" secondItem="6nf-wE-Ehp" secondAttribute="centerX" type="default" id="AO8-E8-vdy"/>
                             <constraint firstItem="ftN-gL-K09" firstAttribute="leading" secondItem="0ZA-6Q-gmT" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="EDE-tB-BZO"/>
@@ -838,9 +841,8 @@
                             <constraint firstItem="nJV-Xw-AuN" firstAttribute="centerX" secondItem="43a-lU-uTq" secondAttribute="centerX" type="default" id="KF1-rh-Oot"/>
                             <constraint firstItem="lHT-CE-GVP" firstAttribute="centerX" secondItem="43a-lU-uTq" secondAttribute="centerX" type="default" id="M15-pZ-fAk"/>
                             <constraint firstItem="9fZ-x9-BX5" firstAttribute="trailing" secondItem="lHT-CE-GVP" secondAttribute="trailing" type="default" id="ONU-xh-kTH"/>
-                            <constraint firstAttribute="trailing" secondItem="ftN-gL-K09" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Qud-UK-7ie"/>
-                            <constraint firstAttribute="trailing" secondItem="43a-lU-uTq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="UaJ-Mr-wex"/>
                             <constraint firstItem="43a-lU-uTq" firstAttribute="top" secondItem="lHT-CE-GVP" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Zgo-BR-NX5"/>
+                            <constraint firstItem="43a-lU-uTq" firstAttribute="trailing" secondItem="ftN-gL-K09" secondAttribute="trailing" type="default" id="gs0-iy-bRz"/>
                             <constraint firstItem="nzA-Ka-TPp" firstAttribute="top" secondItem="0ZA-6Q-gmT" secondAttribute="top" constant="20" symbolic="YES" type="default" id="npf-oG-JnD"/>
                             <constraint firstItem="6nf-wE-Ehp" firstAttribute="top" secondItem="9fZ-x9-BX5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oUc-hM-F6t"/>
                             <constraint firstItem="4lC-nu-eUE" firstAttribute="top" secondItem="6nf-wE-Ehp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oaa-j2-Msl"/>
@@ -1581,7 +1583,7 @@
             <objects>
                 <tableViewController id="tAy-5z-gMJ" customClass="ttRecallTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eFe-lu-sak">
-                        <rect key="frame" x="0.0" y="0.0" width="676" height="826"/>
+                        <rect key="frame" x="0.0" y="20" width="676" height="826"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1618,11 +1620,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="19-gear-grey.png" width="26" height="26"/>
         <image name="336-skip.png" width="31" height="13"/>
         <image name="433-x.png" width="18" height="18"/>
+        <image name="740-gear-selected.png" width="28" height="28"/>
+        <image name="740-gear.png" width="28" height="28"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="765-arrow-left.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
         <image name="766-arrow-right.png" width="14" height="28"/>
     </resources>
     <classes>

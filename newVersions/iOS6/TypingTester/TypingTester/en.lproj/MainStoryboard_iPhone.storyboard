@@ -45,12 +45,12 @@
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="nbZ-ft-KBL">
                                 <items>
                                     <navigationItem title="Participant Id" id="HCH-Ok-6Hr">
-                                        <barButtonItem key="leftBarButtonItem" image="19-gear.png" id="uCQ-8c-CAf">
+                                        <barButtonItem key="leftBarButtonItem" image="740-gear-white.png" id="uCQ-8c-CAf">
                                             <connections>
                                                 <segue destination="N55-AX-2ai" kind="modal" identifier="Settings" modalTransitionStyle="flipHorizontal" id="4x1-7S-Wgc"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Start" id="Cyc-P3-5qR">
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="766-arrow-right-white.png" id="Cyc-P3-5qR">
                                             <connections>
                                                 <segue destination="MBG-KK-BYe" kind="modal" identifier="ReadyScreen" modalTransitionStyle="crossDissolve" id="3ca-YW-MOl"/>
                                             </connections>
@@ -938,7 +938,7 @@
             <objects>
                 <tableViewController id="J52-iw-eNL" customClass="ttRecallTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LAj-iN-6J6">
-                        <rect key="frame" x="0.0" y="0.0" width="286" height="348"/>
+                        <rect key="frame" x="0.0" y="20" width="286" height="348"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1594,9 +1594,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="19-gear.png" width="26" height="26"/>
         <image name="336-skip.png" width="31" height="13"/>
         <image name="433-x.png" width="18" height="18"/>
+        <image name="740-gear-white.png" width="28" height="28"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="765-arrow-left-white.png" width="14" height="28"/>
         <image name="766-arrow-right-white.png" width="14" height="28"/>
