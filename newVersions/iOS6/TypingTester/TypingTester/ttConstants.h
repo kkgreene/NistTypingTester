@@ -46,6 +46,31 @@ FOUNDATION_EXPORT NSString *const ttcQuitStringDefaultValue;
 
 FOUNDATION_EXPORT const CGRect ttcHitboxShiftKeyIos6Portrait;
 FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKeyIos6Portrait;
+FOUNDATION_EXPORT const CGRect ttcHitboxShiftKeyIos6Landscape;
+FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKeyIos6Landscape;
+FOUNDATION_EXPORT const CGRect ttcHitboxShiftKeyIos7Portrait;
+FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKeyIos7Portrait;
+FOUNDATION_EXPORT const CGRect ttcHitboxShiftKeyIos7Landscape;
+FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKeyIos7Landscape;
+
+FOUNDATION_EXPORT const CGRect ttcHitboxShiftKeyIos6Portrait_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxShiftKey2Ios6Portrait_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKeyIos6Portrait_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKey2Ios6Portrait_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxShiftKeyIos6Landscape_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxShiftKey2Ios6Landscape_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKeyIos6Landscape_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKey2Ios6Landscape_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxShiftKeyIos7Portrait_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxShiftKey2Ios7Portrait_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKeyIos7Portrait_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKey2Ios7Portrait_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxShiftKeyIos7Landscape_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxShiftKey2Ios7Landscape_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKeyIos7Landscape_iPad;
+FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKey2Ios7Landscape_iPad;
+
+FOUNDATION_EXPORT const CGRect ttcHitBoxNull;
 
 FOUNDATION_EXPORT NSString *const ttcPhaseStringArray[];
 FOUNDATION_EXPORT NSString *const ttcSubPhaseStringArray[];

@@ -313,6 +313,7 @@ static ttSettings *instance = nil;
     [prefs setInteger:ttcProficiencyGroupValue forKey:ttcProficiencyGroupKey];
 }
 
+
 #pragma mark setup functions
 
 +(void) copyInitialFiles
