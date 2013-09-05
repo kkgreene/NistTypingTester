@@ -98,12 +98,6 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DpQ-T9-uoi">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="384" id="V7N-Pk-6zv"/>
-                                </constraints>
-                            </webView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Participant number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHl-Nv-Yue">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -114,6 +108,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DpQ-T9-uoi">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="n3s-P1-dVH">
                                 <items>
                                     <navigationItem title="Ready" id="2ED-g1-Dnf">
@@ -133,16 +130,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DpQ-T9-uoi" firstAttribute="top" secondItem="irW-WG-TKc" secondAttribute="top" constant="39" id="6mo-q2-aWo"/>
-                            <constraint firstItem="DpQ-T9-uoi" firstAttribute="leading" secondItem="irW-WG-TKc" secondAttribute="leading" type="default" id="Fhc-rf-HZ9"/>
+                            <constraint firstItem="DpQ-T9-uoi" firstAttribute="top" secondItem="n3s-P1-dVH" secondAttribute="bottom" constant="20" type="user" id="BZE-EG-xsd"/>
+                            <constraint firstItem="sHl-Nv-Yue" firstAttribute="top" secondItem="DpQ-T9-uoi" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="DzZ-us-KtP"/>
+                            <constraint firstItem="DpQ-T9-uoi" firstAttribute="leading" secondItem="irW-WG-TKc" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="EEX-g2-fTy"/>
+                            <constraint firstItem="DpQ-T9-uoi" firstAttribute="centerX" secondItem="sHl-Nv-Yue" secondAttribute="centerX" type="default" id="GOV-AM-Grj"/>
                             <constraint firstItem="ZDR-Gm-GCg" firstAttribute="centerX" secondItem="sHl-Nv-Yue" secondAttribute="centerX" type="default" id="M0j-X2-mzQ"/>
-                            <constraint firstAttribute="bottom" secondItem="sHl-Nv-Yue" secondAttribute="bottom" constant="78" id="Y1c-HX-8Gd"/>
+                            <constraint firstAttribute="trailing" secondItem="DpQ-T9-uoi" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="OCR-tU-GfT"/>
+                            <constraint firstAttribute="bottom" secondItem="ZDR-Gm-GCg" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="R0f-EV-jbc"/>
                             <constraint firstItem="n3s-P1-dVH" firstAttribute="trailing" secondItem="irW-WG-TKc" secondAttribute="trailing" type="default" id="bXl-vA-icI"/>
-                            <constraint firstItem="n3s-P1-dVH" firstAttribute="top" secondItem="irW-WG-TKc" secondAttribute="top" type="default" id="ceD-uH-LlQ"/>
-                            <constraint firstItem="DpQ-T9-uoi" firstAttribute="trailing" secondItem="irW-WG-TKc" secondAttribute="trailing" type="default" id="d3L-4W-exD"/>
-                            <constraint firstItem="DpQ-T9-uoi" firstAttribute="centerX" secondItem="sHl-Nv-Yue" secondAttribute="centerX" type="default" id="qPh-XN-Huf"/>
+                            <constraint firstItem="ZDR-Gm-GCg" firstAttribute="top" secondItem="sHl-Nv-Yue" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="bc1-3o-ggg"/>
+                            <constraint firstItem="n3s-P1-dVH" firstAttribute="top" secondItem="irW-WG-TKc" secondAttribute="top" type="user" id="ceD-uH-LlQ"/>
                             <constraint firstItem="n3s-P1-dVH" firstAttribute="leading" secondItem="irW-WG-TKc" secondAttribute="leading" type="default" id="r9o-gK-FWu"/>
-                            <constraint firstAttribute="bottom" secondItem="ZDR-Gm-GCg" secondAttribute="bottom" constant="44" id="wun-Tc-pBh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ready" id="RQP-zj-Clu">
@@ -295,18 +293,18 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsN-I3-ol5">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="481" id="xHx-Yh-Tbj"/>
+                                    <constraint firstAttribute="height" constant="453" type="user" id="8E9-Ar-uAl"/>
                                 </constraints>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FsN-I3-ol5" firstAttribute="trailing" secondItem="yIN-6e-MAE" secondAttribute="trailing" type="default" id="1FU-un-sCY"/>
-                            <constraint firstItem="FsN-I3-ol5" firstAttribute="leading" secondItem="yIN-6e-MAE" secondAttribute="leading" type="default" id="FB1-mA-lID"/>
                             <constraint firstItem="P1E-sp-CdR" firstAttribute="leading" secondItem="yIN-6e-MAE" secondAttribute="leading" type="default" id="FeU-lz-qcd"/>
-                            <constraint firstItem="FsN-I3-ol5" firstAttribute="top" secondItem="yIN-6e-MAE" secondAttribute="top" constant="55" id="KbW-zf-ESW"/>
                             <constraint firstItem="P1E-sp-CdR" firstAttribute="trailing" secondItem="yIN-6e-MAE" secondAttribute="trailing" type="default" id="U0q-pq-fC2"/>
-                            <constraint firstItem="P1E-sp-CdR" firstAttribute="top" secondItem="yIN-6e-MAE" secondAttribute="top" type="default" id="xNG-tO-8Ok"/>
+                            <constraint firstItem="FsN-I3-ol5" firstAttribute="leading" secondItem="yIN-6e-MAE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Wc6-ev-S6h"/>
+                            <constraint firstItem="P1E-sp-CdR" firstAttribute="top" secondItem="yIN-6e-MAE" secondAttribute="top" type="default" id="Zq3-Vz-kn3"/>
+                            <constraint firstItem="FsN-I3-ol5" firstAttribute="top" secondItem="P1E-sp-CdR" secondAttribute="bottom" constant="20" type="user" id="drw-Nr-iqv"/>
+                            <constraint firstAttribute="trailing" secondItem="FsN-I3-ol5" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kBC-Rg-ld1"/>
                         </constraints>
                     </view>
                     <connections>
@@ -999,19 +997,17 @@
                             </navigationBar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnI-uU-xaE">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="486" id="vwF-VX-GMd"/>
-                                </constraints>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3Zr-ab-Wnf" firstAttribute="top" secondItem="i4q-4S-KfI" secondAttribute="top" type="default" id="8uA-b7-t4m"/>
+                            <constraint firstAttribute="trailing" secondItem="RnI-uU-xaE" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0hn-bf-yIx"/>
+                            <constraint firstItem="RnI-uU-xaE" firstAttribute="leading" secondItem="i4q-4S-KfI" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="16f-bf-nHv"/>
+                            <constraint firstItem="3Zr-ab-Wnf" firstAttribute="top" secondItem="i4q-4S-KfI" secondAttribute="top" type="user" id="8uA-b7-t4m"/>
                             <constraint firstItem="3Zr-ab-Wnf" firstAttribute="trailing" secondItem="i4q-4S-KfI" secondAttribute="trailing" type="default" id="Azn-u6-sSW"/>
+                            <constraint firstItem="RnI-uU-xaE" firstAttribute="top" secondItem="3Zr-ab-Wnf" secondAttribute="bottom" constant="20" type="user" id="K8B-34-ypJ"/>
                             <constraint firstItem="3Zr-ab-Wnf" firstAttribute="leading" secondItem="i4q-4S-KfI" secondAttribute="leading" type="default" id="SQA-Ks-l6f"/>
-                            <constraint firstItem="RnI-uU-xaE" firstAttribute="leading" secondItem="i4q-4S-KfI" secondAttribute="leading" type="default" id="fXS-dB-hUc"/>
-                            <constraint firstItem="RnI-uU-xaE" firstAttribute="trailing" secondItem="i4q-4S-KfI" secondAttribute="trailing" type="default" id="lHl-vx-l8T"/>
-                            <constraint firstItem="RnI-uU-xaE" firstAttribute="top" secondItem="i4q-4S-KfI" secondAttribute="top" constant="52" id="tyE-AW-sK7"/>
+                            <constraint firstAttribute="bottom" secondItem="RnI-uU-xaE" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="vaS-dc-6iY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1777,6 +1773,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="qlx-Cz-jfL"/>
         <segue reference="zal-n7-ZfW"/>
-        <segue reference="xtU-2Z-szz"/>
+        <segue reference="pJv-oy-ZtS"/>
     </inferredMetricsTieBreakers>
 </document>
