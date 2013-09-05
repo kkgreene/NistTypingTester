@@ -146,6 +146,7 @@
 {
     // toggle visibility of the entity field
     maskEntityDisplay = !maskEntityDisplay;
+    self.visibilityButton.selected = maskEntityDisplay;
     [self configureEntityDisplay];
 }
 
