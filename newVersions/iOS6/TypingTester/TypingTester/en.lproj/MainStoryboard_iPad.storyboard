@@ -55,7 +55,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Tss-kM-xCY" kind="modal" identifier="ReadyScreen" id="kcK-0W-HjX"/>
+                                    <segue destination="Tss-kM-xCY" kind="modal" identifier="ReadyScreen" modalTransitionStyle="crossDissolve" id="kcK-0W-HjX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csl-8f-MK2">
@@ -73,7 +73,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gGj-MP-sSo" kind="modal" identifier="Settings" id="VfI-5o-YOq"/>
+                                    <segue destination="gGj-MP-sSo" kind="modal" identifier="Settings" modalTransitionStyle="flipHorizontal" id="VfI-5o-YOq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -732,7 +732,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="OAu-sL-wnb" kind="modal" identifier="TypingProficiency" id="WlX-XL-JKb"/>
+                                    <segue destination="OAu-sL-wnb" kind="modal" identifier="TypingProficiency" modalTransitionStyle="crossDissolve" id="WlX-XL-JKb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Participant Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgS-g7-989">
@@ -863,7 +863,7 @@
                         <outlet property="phraseLabel1" destination="nJV-Xw-AuN" id="KJE-rb-PXE"/>
                         <outlet property="progressBar" destination="43a-lU-uTq" id="bTN-tx-Tlu"/>
                         <outlet property="progressLabel" destination="lHT-CE-GVP" id="mmB-iX-Vdk"/>
-                        <segue destination="tvl-pp-lDd" kind="modal" identifier="Instructions" id="581-ba-eUq"/>
+                        <segue destination="tvl-pp-lDd" kind="modal" identifier="Instructions" modalTransitionStyle="crossDissolve" id="581-ba-eUq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9o7-Tk-Ygd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -900,7 +900,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="RH5-gu-dim" kind="modal" identifier="Memorize" id="yEP-gY-KIJ"/>
+                                    <segue destination="RH5-gu-dim" kind="modal" identifier="Memorize" modalTransitionStyle="crossDissolve" id="yEP-gY-KIJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -977,7 +977,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="nvh-9X-XZg" kind="modal" identifier="Practice" id="04K-r5-l5Q"/>
+                                    <segue destination="nvh-9X-XZg" kind="modal" identifier="Practice" modalTransitionStyle="crossDissolve" id="04K-r5-l5Q"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please memorize the string in bold at the top of the screen.  You may use the text area" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3L-fd-afE">
@@ -1144,7 +1144,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="RH5-gu-dim" kind="modal" identifier="BackToMemorize" id="NoB-kO-LYm"/>
+                                    <segue destination="RH5-gu-dim" kind="modal" identifier="BackToMemorize" modalTransitionStyle="crossDissolve" id="NoB-kO-LYm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewg-XE-Pbx">
@@ -1214,7 +1214,7 @@
                         <outlet property="sessionProgressLabel" destination="Id4-IE-5Yc" id="5cs-XK-bGu"/>
                         <outlet property="skipButton" destination="L8s-LW-ZPi" id="n7Z-pV-YJ2"/>
                         <outlet property="visibilityButton" destination="jkU-oO-TBd" id="asr-AD-xV2"/>
-                        <segue destination="KXG-VE-QnH" kind="modal" identifier="Verify" id="dxL-9g-cS0"/>
+                        <segue destination="KXG-VE-QnH" kind="modal" identifier="Verify" modalTransitionStyle="crossDissolve" id="dxL-9g-cS0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGr-Fu-Oi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1357,9 +1357,9 @@
                         <outlet property="incorrectText" destination="7Dk-d5-Vjk" id="CIN-wX-ZhJ"/>
                         <outlet property="sessionProgressBar" destination="IZp-F2-7d1" id="JcI-LT-f0V"/>
                         <outlet property="sessionProgressLabel" destination="EcP-Kp-h3k" id="aCN-fL-N06"/>
-                        <segue destination="nvh-9X-XZg" kind="modal" identifier="BackToPractice" id="qRJ-FI-xZJ"/>
-                        <segue destination="eqt-5t-k8q" kind="modal" identifier="Entry" id="Git-re-EtZ"/>
-                        <segue destination="uqW-Go-H4F" kind="modal" identifier="SkipToRecall" id="k1v-bL-JN8"/>
+                        <segue destination="nvh-9X-XZg" kind="modal" identifier="BackToPractice" modalTransitionStyle="crossDissolve" id="qRJ-FI-xZJ"/>
+                        <segue destination="eqt-5t-k8q" kind="modal" identifier="Entry" modalTransitionStyle="crossDissolve" id="Git-re-EtZ"/>
+                        <segue destination="uqW-Go-H4F" kind="modal" identifier="SkipToRecall" modalTransitionStyle="crossDissolve" id="k1v-bL-JN8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZB-ff-zdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1465,8 +1465,8 @@
                         <outlet property="entryField" destination="2Om-wc-oXC" id="yTB-pc-8D9"/>
                         <outlet property="sessionProgressBar" destination="Xx8-2b-oxH" id="jsS-TP-Z9d"/>
                         <outlet property="sessionProgressLabel" destination="M9c-FT-K1B" id="EGg-LE-PqC"/>
-                        <segue destination="RH5-gu-dim" kind="modal" identifier="MemorizeNextEntity" id="Mr0-dF-HyJ"/>
-                        <segue destination="uqW-Go-H4F" kind="modal" identifier="Recall" id="WfD-p6-NZe"/>
+                        <segue destination="RH5-gu-dim" kind="modal" identifier="MemorizeNextEntity" modalTransitionStyle="crossDissolve" id="Mr0-dF-HyJ"/>
+                        <segue destination="uqW-Go-H4F" kind="modal" identifier="Recall" modalTransitionStyle="crossDissolve" id="WfD-p6-NZe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBS-P9-cgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1511,7 +1511,7 @@
                                 </state>
                                 <connections>
                                     <action selector="done" destination="uqW-Go-H4F" eventType="touchUpInside" id="Hd4-fR-4z7"/>
-                                    <segue destination="e0C-UY-9yp" kind="modal" identifier="ThankYou" id="GXy-Fg-Mgs"/>
+                                    <segue destination="e0C-UY-9yp" kind="modal" identifier="ThankYou" modalTransitionStyle="crossDissolve" id="GXy-Fg-Mgs"/>
                                 </connections>
                             </button>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3Q-Tv-Em5">
@@ -1589,7 +1589,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="2" kind="modal" identifier="BackToStart" id="rrr-4K-3v8"/>
+                        <segue destination="2" kind="modal" identifier="BackToStart" modalTransitionStyle="crossDissolve" id="rrr-4K-3v8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XmG-lm-ZUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1649,6 +1649,170 @@
         <image name="766-arrow-right-selected.png" width="14" height="28"/>
         <image name="766-arrow-right.png" width="14" height="28"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ttEntryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttEntryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton_iPad" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="entityProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="entityProgressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sessionProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="sessionProgressLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ttInstructionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttInstructionsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ttMemorizeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttMemorizeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton_iPad" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="progressDisplay" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="progressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="workArea" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="ttPracticeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttPracticeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButtonPressed"/>
+                <relationship kind="action" name="skipButtonPressed"/>
+                <relationship kind="action" name="visibilityButtonPressed"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="backButton_iPad" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="correctIndicator" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="correctTextLable" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton_iPad" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="entitiyProgressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="entity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="entityProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sessionProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="sessionProgressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="skipButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="visibilityButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="ttReadyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttReadyViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="outlet" name="participantNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="readyTextArea" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ttRecallTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttRecallTableViewController.h"/>
+        </class>
+        <class className="ttRecallViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttRecallViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done"/>
+                <relationship kind="outlet" name="donButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton_iPad" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="ttSettingsDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttSettingsDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="enableHideOnPracticeScreenChanged:"/>
+                <relationship kind="action" name="enableSkipButtonChanged:"/>
+                <relationship kind="action" name="groupIdValueChanged:"/>
+                <relationship kind="action" name="numberOfEntitiesChanged:"/>
+                <relationship kind="action" name="numberOfForcedPracticeRoundsChanged:"/>
+                <relationship kind="action" name="numberOfRepetitionsChanged:"/>
+                <relationship kind="action" name="orderSeedValueChanged:"/>
+                <relationship kind="action" name="quitStringChanged:"/>
+                <relationship kind="action" name="randomStringOrderChanged:"/>
+                <relationship kind="action" name="selectionSeedValueChanged:"/>
+                <relationship kind="action" name="useGroupIdValueChanged:"/>
+                <relationship kind="action" name="useOrderSeedChanged:"/>
+                <relationship kind="action" name="useRandomStringSelectionChanged:"/>
+                <relationship kind="action" name="useSelectionSeedChanged:"/>
+                <relationship kind="outlet" name="enableHideOnPracticeScreen" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="enableSkipButton" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="groupId" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numberOfEntities" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numberOfForcedPracticeRounds" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numberOfRepetitions" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="quitString" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="randomStringOrder" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="randomStringOrderSeedValue" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="randomStringSelection" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="randomStringSelectionSeedValue" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="useGroupId" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="useOrderSeed" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="useSelectionSeed" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="ttSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="save:"/>
+            </relationships>
+        </class>
+        <class className="ttThankYouViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttThankYouViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ttTypingProficiencyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttTypingProficiencyViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButtonPressed"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton_iPad" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phraseLabel1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="progressLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ttVerifyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttVerifyViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back"/>
+                <relationship kind="action" name="done"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="backButton_iPad" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton_iPad" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="entityProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="entityProgressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="entryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="incorrectImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="incorrectText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sessionProgressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="sessionProgressLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ttViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ttViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTouch"/>
+                <relationship kind="outlet" name="invalidImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="invalidString" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="participantNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="startButton_iPad" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

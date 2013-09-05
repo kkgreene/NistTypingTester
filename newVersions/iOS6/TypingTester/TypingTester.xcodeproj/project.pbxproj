@@ -104,6 +104,8 @@
 		ADE0928117D8C51F0041B472 /* 875-skull-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADE0925B17D8C51F0041B472 /* 875-skull-white@2x.png */; };
 		ADE0928217D8C51F0041B472 /* 875-skull.png in Resources */ = {isa = PBXBuildFile; fileRef = ADE0925C17D8C51F0041B472 /* 875-skull.png */; };
 		ADE0928317D8C51F0041B472 /* 875-skull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADE0925D17D8C51F0041B472 /* 875-skull@2x.png */; };
+		ADE0928617D904D40041B472 /* Pattern - Cloth.png in Resources */ = {isa = PBXBuildFile; fileRef = ADE0928417D904D40041B472 /* Pattern - Cloth.png */; };
+		ADE0928717D904D40041B472 /* Pattern - Cloth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADE0928517D904D40041B472 /* Pattern - Cloth@2x.png */; };
 		C95BBBE617C50D5500F02F5F /* ttVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBE517C50D5500F02F5F /* ttVerifyViewController.m */; };
 		C95BBBE917C50D6C00F02F5F /* ttEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBE817C50D6C00F02F5F /* ttEntryViewController.m */; };
 		C95BBBEC17C50DB100F02F5F /* ttRecallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBEB17C50DB100F02F5F /* ttRecallViewController.m */; };
@@ -235,6 +237,8 @@
 		ADE0925B17D8C51F0041B472 /* 875-skull-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "875-skull-white@2x.png"; sourceTree = "<group>"; };
 		ADE0925C17D8C51F0041B472 /* 875-skull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "875-skull.png"; sourceTree = "<group>"; };
 		ADE0925D17D8C51F0041B472 /* 875-skull@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "875-skull@2x.png"; sourceTree = "<group>"; };
+		ADE0928417D904D40041B472 /* Pattern - Cloth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pattern - Cloth.png"; sourceTree = "<group>"; };
+		ADE0928517D904D40041B472 /* Pattern - Cloth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pattern - Cloth@2x.png"; sourceTree = "<group>"; };
 		C95BBBE417C50D5500F02F5F /* ttVerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttVerifyViewController.h; sourceTree = "<group>"; };
 		C95BBBE517C50D5500F02F5F /* ttVerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttVerifyViewController.m; sourceTree = "<group>"; };
 		C95BBBE717C50D6C00F02F5F /* ttEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttEntryViewController.h; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 		AD04768B17A9663C00657D08 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				ADE0928417D904D40041B472 /* Pattern - Cloth.png */,
+				ADE0928517D904D40041B472 /* Pattern - Cloth@2x.png */,
 				ADE0923817D8C51F0041B472 /* 740-gear-selected-white.png */,
 				ADE0923917D8C51F0041B472 /* 740-gear-selected-white@2x.png */,
 				ADE0923A17D8C51F0041B472 /* 740-gear-selected.png */,
@@ -590,6 +596,8 @@
 				ADE0928117D8C51F0041B472 /* 875-skull-white@2x.png in Resources */,
 				ADE0928217D8C51F0041B472 /* 875-skull.png in Resources */,
 				ADE0928317D8C51F0041B472 /* 875-skull@2x.png in Resources */,
+				ADE0928617D904D40041B472 /* Pattern - Cloth.png in Resources */,
+				ADE0928717D904D40041B472 /* Pattern - Cloth@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
