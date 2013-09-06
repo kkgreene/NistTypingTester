@@ -49,8 +49,8 @@
 		AD4073FC17BBCBB3006E31CF /* ttProficiencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4073FB17BBCBB3006E31CF /* ttProficiencyItem.m */; };
 		AD4073FF17BBCBC2006E31CF /* ttTestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4073FE17BBCBC2006E31CF /* ttTestEntity.m */; };
 		AD6BC6B317B54AAF0067764F /* welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = AD6BC6B217B54AAF0067764F /* welcome.html */; };
-		AD6E13D317B92FD50034DA27 /* instructionsIphone.html in Resources */ = {isa = PBXBuildFile; fileRef = AD6E13D217B92FD50034DA27 /* instructionsIphone.html */; };
-		AD6E13D517B92FE30034DA27 /* instructionsIpad.html in Resources */ = {isa = PBXBuildFile; fileRef = AD6E13D417B92FE30034DA27 /* instructionsIpad.html */; };
+		AD6E13D317B92FD50034DA27 /* instructions.html in Resources */ = {isa = PBXBuildFile; fileRef = AD6E13D217B92FD50034DA27 /* instructions.html */; };
+		AD6E13D517B92FE30034DA27 /* instructions-iPad.html in Resources */ = {isa = PBXBuildFile; fileRef = AD6E13D417B92FE30034DA27 /* instructions-iPad.html */; };
 		AD6E13D717B92FF40034DA27 /* thankYou.html in Resources */ = {isa = PBXBuildFile; fileRef = AD6E13D617B92FF40034DA27 /* thankYou.html */; };
 		AD6E13D917B930030034DA27 /* inputStrings.xml in Resources */ = {isa = PBXBuildFile; fileRef = AD6E13D817B930030034DA27 /* inputStrings.xml */; };
 		AD6E13DC17B94BE50034DA27 /* ttSettingsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E13DB17B94BE50034DA27 /* ttSettingsDetailViewController.m */; };
@@ -106,6 +106,7 @@
 		ADE0928317D8C51F0041B472 /* 875-skull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADE0925D17D8C51F0041B472 /* 875-skull@2x.png */; };
 		ADE0928617D904D40041B472 /* Pattern - Cloth.png in Resources */ = {isa = PBXBuildFile; fileRef = ADE0928417D904D40041B472 /* Pattern - Cloth.png */; };
 		ADE0928717D904D40041B472 /* Pattern - Cloth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADE0928517D904D40041B472 /* Pattern - Cloth@2x.png */; };
+		ADE6E08617DA0FEE00FE9A9C /* ttLocalHtmlFile.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE6E08517DA0FEE00FE9A9C /* ttLocalHtmlFile.m */; };
 		C95BBBE617C50D5500F02F5F /* ttVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBE517C50D5500F02F5F /* ttVerifyViewController.m */; };
 		C95BBBE917C50D6C00F02F5F /* ttEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBE817C50D6C00F02F5F /* ttEntryViewController.m */; };
 		C95BBBEC17C50DB100F02F5F /* ttRecallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBEB17C50DB100F02F5F /* ttRecallViewController.m */; };
@@ -171,8 +172,8 @@
 		AD4073FD17BBCBC2006E31CF /* ttTestEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttTestEntity.h; sourceTree = "<group>"; };
 		AD4073FE17BBCBC2006E31CF /* ttTestEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttTestEntity.m; sourceTree = "<group>"; };
 		AD6BC6B217B54AAF0067764F /* welcome.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = welcome.html; sourceTree = "<group>"; };
-		AD6E13D217B92FD50034DA27 /* instructionsIphone.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = instructionsIphone.html; sourceTree = "<group>"; };
-		AD6E13D417B92FE30034DA27 /* instructionsIpad.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = instructionsIpad.html; sourceTree = "<group>"; };
+		AD6E13D217B92FD50034DA27 /* instructions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = instructions.html; sourceTree = "<group>"; };
+		AD6E13D417B92FE30034DA27 /* instructions-iPad.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "instructions-iPad.html"; sourceTree = "<group>"; };
 		AD6E13D617B92FF40034DA27 /* thankYou.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = thankYou.html; sourceTree = "<group>"; };
 		AD6E13D817B930030034DA27 /* inputStrings.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = inputStrings.xml; sourceTree = "<group>"; };
 		AD6E13DA17B94BE50034DA27 /* ttSettingsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttSettingsDetailViewController.h; sourceTree = "<group>"; };
@@ -239,6 +240,8 @@
 		ADE0925D17D8C51F0041B472 /* 875-skull@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "875-skull@2x.png"; sourceTree = "<group>"; };
 		ADE0928417D904D40041B472 /* Pattern - Cloth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pattern - Cloth.png"; sourceTree = "<group>"; };
 		ADE0928517D904D40041B472 /* Pattern - Cloth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pattern - Cloth@2x.png"; sourceTree = "<group>"; };
+		ADE6E08417DA0FEE00FE9A9C /* ttLocalHtmlFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttLocalHtmlFile.h; sourceTree = "<group>"; };
+		ADE6E08517DA0FEE00FE9A9C /* ttLocalHtmlFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttLocalHtmlFile.m; sourceTree = "<group>"; };
 		C95BBBE417C50D5500F02F5F /* ttVerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttVerifyViewController.h; sourceTree = "<group>"; };
 		C95BBBE517C50D5500F02F5F /* ttVerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttVerifyViewController.m; sourceTree = "<group>"; };
 		C95BBBE717C50D6C00F02F5F /* ttEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttEntryViewController.h; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 				AD04766C17A964B600657D08 /* Supporting Files */,
 				ADC3259817B2B91B00EF8127 /* ttUtilities.h */,
 				ADC3259917B2B91B00EF8127 /* ttUtilities.m */,
+				ADE6E08417DA0FEE00FE9A9C /* ttLocalHtmlFile.h */,
+				ADE6E08517DA0FEE00FE9A9C /* ttLocalHtmlFile.m */,
 			);
 			path = TypingTester;
 			sourceTree = "<group>";
@@ -436,8 +441,8 @@
 			isa = PBXGroup;
 			children = (
 				AD6BC6B217B54AAF0067764F /* welcome.html */,
-				AD6E13D217B92FD50034DA27 /* instructionsIphone.html */,
-				AD6E13D417B92FE30034DA27 /* instructionsIpad.html */,
+				AD6E13D217B92FD50034DA27 /* instructions.html */,
+				AD6E13D417B92FE30034DA27 /* instructions-iPad.html */,
 				AD6E13D617B92FF40034DA27 /* thankYou.html */,
 				AD6E13D817B930030034DA27 /* inputStrings.xml */,
 			);
@@ -534,8 +539,8 @@
 				AD04767F17A964B600657D08 /* MainStoryboard_iPhone.storyboard in Resources */,
 				AD04768217A964B600657D08 /* MainStoryboard_iPad.storyboard in Resources */,
 				AD6BC6B317B54AAF0067764F /* welcome.html in Resources */,
-				AD6E13D317B92FD50034DA27 /* instructionsIphone.html in Resources */,
-				AD6E13D517B92FE30034DA27 /* instructionsIpad.html in Resources */,
+				AD6E13D317B92FD50034DA27 /* instructions.html in Resources */,
+				AD6E13D517B92FE30034DA27 /* instructions-iPad.html in Resources */,
 				AD6E13D717B92FF40034DA27 /* thankYou.html in Resources */,
 				AD6E13D917B930030034DA27 /* inputStrings.xml in Resources */,
 				ADB91FEE17C2519500DCE303 /* 19-gear.png in Resources */,
@@ -637,6 +642,7 @@
 				C95BBBE917C50D6C00F02F5F /* ttEntryViewController.m in Sources */,
 				C95BBBEC17C50DB100F02F5F /* ttRecallViewController.m in Sources */,
 				AD3A463617CBB440007256F4 /* ttRecallTableViewController.m in Sources */,
+				ADE6E08617DA0FEE00FE9A9C /* ttLocalHtmlFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

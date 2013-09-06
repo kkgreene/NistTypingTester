@@ -10,6 +10,7 @@
 #import "ttUtilities.h"
 #import "ttMemorizeViewController.h"
 #import "ttEventTouch.h"
+#import "ttLocalHtmlFile.h"
 
 @interface ttInstructionsViewController ()
 
@@ -38,11 +39,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    NSString *htmlFile = [[ttUtilities documentsDirectory] stringByAppendingPathComponent:@"instructionsIphone.html"];
-    NSURL *baseURL = [NSURL fileURLWithPath:htmlFile];
-    NSData *htmlData = [NSData dataWithContentsOfFile:htmlFile];
-    [self.webView loadData:htmlData MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:baseURL];
-    
+    ttLocalHtmlFile *file = [[ttLocalHtmlFile alloc]initWithFilenameBase:@"instructions"];
+    [self.webView loadData:file.data MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:file.url];
 }
 
 -(void)viewDidAppear:(BOOL)animated

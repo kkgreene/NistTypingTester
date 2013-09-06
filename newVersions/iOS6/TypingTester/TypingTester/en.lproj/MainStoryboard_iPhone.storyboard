@@ -1671,6 +1671,7 @@
         <class className="ttRecallViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ttRecallViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backgroundButtonPressed"/>
                 <relationship kind="action" name="done"/>
                 <relationship kind="outlet" name="donButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="doneButton_iPad" candidateClass="UIButton"/>
@@ -1712,6 +1713,7 @@
         <class className="ttSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ttSettingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backgroundButtonPressed:"/>
                 <relationship kind="action" name="cancel:"/>
                 <relationship kind="action" name="save:"/>
             </relationships>

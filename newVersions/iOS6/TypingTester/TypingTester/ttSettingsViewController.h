@@ -25,5 +25,6 @@
 
 -(IBAction)cancel:(id)sender;
 -(IBAction)save:(id)sender;
+-(IBAction)backgroundButtonPressed:(id)sender;
 
 @end

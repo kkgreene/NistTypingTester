@@ -19,11 +19,12 @@
 
 @implementation ttRecallTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+-(id) initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+    
     }
     return self;
 }
@@ -32,17 +33,22 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // allow single tap outside a text field to hide the keypad
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    gestureRecognizer.cancelsTouchesInView = NO;
+    [self.tableView addGestureRecognizer:gestureRecognizer];
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) hideKeyboard
+{
+    [self.view endEditing:YES];
 }
 
 #pragma mark - Table view data source
@@ -93,6 +99,12 @@
     inputEvent.currentValue = newString;
     [self.session addEvent:inputEvent];
     NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
+    return YES;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
     return YES;
 }
 

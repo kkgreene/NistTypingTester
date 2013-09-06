@@ -85,6 +85,11 @@
 
 #pragma mark IBActions
 
+-(IBAction)backgroundButtonPressed:(id)sender
+{
+    [child hideKeyboard];
+}
+
 -(IBAction)cancel:(id)sender
 {
     [self.delegate SettingViewControllerDidCancel:self];

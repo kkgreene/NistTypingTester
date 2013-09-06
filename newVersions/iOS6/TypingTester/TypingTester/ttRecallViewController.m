@@ -15,6 +15,9 @@
 @end
 
 @implementation ttRecallViewController
+{
+    ttRecallTableViewController *child;
+}
 
 -(id) initWithCoder:(NSCoder *)aDecoder
 {
@@ -57,8 +60,8 @@
 {
     if ([segue.identifier isEqualToString:@"RecallTableView"])
     {
-        ttRecallTableViewController *controller = segue.destinationViewController;
-        controller.session = self.session;
+        child = segue.destinationViewController;
+        child.session = self.session;
     }
     else if ([segue.identifier isEqualToString:@"ThankYou"])
     {
@@ -69,6 +72,11 @@
 -(IBAction)done
 {
 
+}
+
+-(IBAction)backgroundButtonPressed
+{
+    [child hideKeyboard];
 }
 
 @end

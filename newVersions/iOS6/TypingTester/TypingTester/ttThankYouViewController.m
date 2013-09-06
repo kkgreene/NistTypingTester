@@ -10,6 +10,7 @@
 #import "ttUtilities.h"
 #import "ttSession.h"
 #import "ttEvent.h"
+#import "ttLocalHtmlFile.h"
 
 @interface ttThankYouViewController ()
 
@@ -33,10 +34,8 @@
     ttEvent* event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:ThankYou];
     [self.session addEvent:event];
 	// Do any additional setup after loading the view.
-    NSString *htmlFile = [[ttUtilities documentsDirectory] stringByAppendingPathComponent:@"thankYou.html"];
-    NSURL *baseURL = [NSURL fileURLWithPath:htmlFile];
-    NSData *htmlData = [NSData dataWithContentsOfFile:htmlFile];
-    [self.webView loadData:htmlData MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:baseURL];
+    ttLocalHtmlFile *file = [[ttLocalHtmlFile alloc]initWithFilenameBase:@"thankYou"];
+    [self.webView loadData:file.data MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:file.url];
 }
 
 -(void)viewWillAppear:(BOOL)animated

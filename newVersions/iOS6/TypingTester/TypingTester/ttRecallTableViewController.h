@@ -14,4 +14,6 @@
 
 @property (nonatomic, weak) ttSession *session;
 
+-(void)hideKeyboard;
+
 @end

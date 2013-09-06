@@ -64,13 +64,14 @@
 
 - (void) hideKeyboard
 {
-    [self.numberOfEntities resignFirstResponder];
-    [self.numberOfForcedPracticeRounds resignFirstResponder];
-    [self.numberOfRepetitions resignFirstResponder];
-    [self.randomStringOrderSeedValue resignFirstResponder];
-    [self.randomStringSelectionSeedValue resignFirstResponder];
-    [self.groupId resignFirstResponder];
-    [self.quitString resignFirstResponder];
+    [self.view endEditing:YES];
+    //[self.numberOfEntities resignFirstResponder];
+    //[self.numberOfForcedPracticeRounds resignFirstResponder];
+    //[self.numberOfRepetitions resignFirstResponder];
+    //[self.randomStringOrderSeedValue resignFirstResponder];
+    //[self.randomStringSelectionSeedValue resignFirstResponder];
+    //[self.groupId resignFirstResponder];
+    //[self.quitString resignFirstResponder];
 }
 
 -(void) confirmSettingsReset

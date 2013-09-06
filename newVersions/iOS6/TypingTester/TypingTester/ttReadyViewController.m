@@ -10,6 +10,7 @@
 #import "ttUtilities.h"
 #import "ttTypingProficiencyViewController.h"
 #import "ttSession.h"
+#import "ttLocalHtmlFile.h"
 
 @interface ttReadyViewController ()
 
@@ -41,10 +42,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.participantNumberLabel.text = self.participantNumber;
-    NSString *htmlFile = [[ttUtilities documentsDirectory] stringByAppendingPathComponent:@"welcome.html"];
-    NSURL *baseURL = [NSURL fileURLWithPath:htmlFile];
-    NSData *htmlData = [NSData dataWithContentsOfFile:htmlFile];
-    [self.readyTextArea loadData:htmlData MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:baseURL];
+    ttLocalHtmlFile *file = [[ttLocalHtmlFile alloc]initWithFilenameBase:@"welcome"];
+    [self.readyTextArea loadData:file.data MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:file.url];
 }
 
 - (void)didReceiveMemoryWarning

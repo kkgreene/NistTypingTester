@@ -319,8 +319,8 @@ static ttSettings *instance = nil;
 +(void) copyInitialFiles
 {
     [self copyToDocumentsResourceFileNamed:@"welcome" ofType:@"html" toFileName:@"welcome.html" shouldOverwrite:NO];
-    [self copyToDocumentsResourceFileNamed:@"instructionsIphone" ofType:@"html" toFileName:@"instructionsIphone.html" shouldOverwrite:NO];
-    [self copyToDocumentsResourceFileNamed:@"instructionsIpad" ofType:@"html" toFileName:@"instructionsIpad.html" shouldOverwrite:NO];
+    [self copyToDocumentsResourceFileNamed:@"instructionsIphone" ofType:@"html" toFileName:@"instructions.html" shouldOverwrite:NO];
+    [self copyToDocumentsResourceFileNamed:@"instructionsIpad" ofType:@"html" toFileName:@"instructions-iPad.html" shouldOverwrite:NO];
     [self copyToDocumentsResourceFileNamed:@"thankYou" ofType:@"html" toFileName:@"thankYou.html" shouldOverwrite:NO];
     [self copyToDocumentsResourceFileNamed:@"inputStrings" ofType:@"xml" toFileName:@"inputStrings.xml" shouldOverwrite:NO];
 }
@@ -336,8 +336,8 @@ static ttSettings *instance = nil;
 +(void) resetInitialFiles
 {
     [self copyToDocumentsResourceFileNamed:@"welcome" ofType:@"html" toFileName:@"welcome.html" shouldOverwrite:YES];
-    [self copyToDocumentsResourceFileNamed:@"instructionsIphone" ofType:@"html" toFileName:@"instructionsIphone.html" shouldOverwrite:YES];
-    [self copyToDocumentsResourceFileNamed:@"instructionsIpad" ofType:@"html" toFileName:@"instructionsIpad.html" shouldOverwrite:YES];
+    [self copyToDocumentsResourceFileNamed:@"instructionsIphone" ofType:@"html" toFileName:@"instructions.html" shouldOverwrite:YES];
+    [self copyToDocumentsResourceFileNamed:@"instructionsIpad" ofType:@"html" toFileName:@"instructions-iPad.html" shouldOverwrite:YES];
     [self copyToDocumentsResourceFileNamed:@"thankYou" ofType:@"html" toFileName:@"thankYou.html" shouldOverwrite:YES];
     [self copyToDocumentsResourceFileNamed:@"inputStrings" ofType:@"xml" toFileName:@"inputStrings.xml" shouldOverwrite:YES];
 }
