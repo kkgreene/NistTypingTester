@@ -46,9 +46,9 @@ NSString *const ttcQuitStringDefaultValue = @"I QUIT";
 NSString *const ttcPhaseStringArray[] = {@"Unknown Phase", @"Proficiency Phase", @"Introduction Phase", @"Memorize Phase",
                                          @"Entry Phase", @"Recall Phase", @"Thank You Phase"};
 NSString *const ttcSubPhaseStringArray[] = {@"Unknown SubPhase", @"Free Practice", @"Forced Practice", @"Verify", @"Entity Change"};
-NSString *const ttcEventTypeStringArray[] = {@"UnknownEvent", @"Input", @"PhaseBegin", @"PhaseEnd", @"Touch", @"SubPhaseChange",
-                                             @"ProficiencyStringShown", @"EntityDisplayed", @"ControlActivated", @"SpecialKeyPressed",
-                                             @"OrientationChange", @"KeyboardShown", @"KeyboardHidden" };
+NSString *const ttcEventTypeStringArray[] = {@"Unknown Event", @"Input", @"Phase Begin", @"Phase End", @"Touch", @"Sub Phase Change",
+                                             @"Proficiency String Shown", @"Entity Displayed", @"Control Activated", @"Special Key Pressed",
+                                             @"Orientation Change", @"Keyboard Shown", @"Keyboard Hidden", @"Keyboard Touch" };
 NSString *const ttcSpecialKeyStringArray[] = {@"Unknown Key", @"Shift Key", @"Keyboard Change Key"};
 NSString *const ttcKeyboardModeStringArray[] = {@"Alphabetic", @"Numeric", @"Symbol", @"Unknown"};
 

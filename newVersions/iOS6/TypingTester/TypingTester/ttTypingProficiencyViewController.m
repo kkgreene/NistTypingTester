@@ -78,7 +78,7 @@
 
 -(IBAction)doneButtonPressed
 {
-    NSLog(@"Done button pressed");
+    [self.view endEditing:YES];
     // create an event indicating that the button was pressed
     ttEvent *donePressed = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Proficiency];
     donePressed.notes = [NSString stringWithFormat:@"Done button pressed"];
@@ -93,6 +93,11 @@
         // prepare for next screen
         [self performSegueWithIdentifier:@"Instructions" sender:self];
     }
+}
+
+-(IBAction)backgroundButtonPressed
+{
+    [self.view endEditing:YES];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -131,13 +136,13 @@
     // get the touch coordinates
     UITouch * touch = [touches anyObject];
     CGPoint pos = [touch locationInView: [UIApplication sharedApplication].keyWindow];
-    NSLog(@"Touch on Proficiency View: %.3f, %.3f", pos.x, pos.y);
+    //NSLog(@"Touch on Proficiency View: %.3f, %.3f", pos.x, pos.y);
     // add the touch event to the log
     ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
     touchEvent.notes = [NSString stringWithFormat:@"Touch on Proficiency View: %.3f, %.3f", pos.x, pos.y];
     [self.session addEvent:touchEvent];
     // resign first responder to hide the keyboard
-    [self.entryField resignFirstResponder];
+    //[self.entryField resignFirstResponder];
 }
 
 #pragma mark - UI Text Field Delegate
@@ -168,7 +173,6 @@
 // hides the keyboard when the user returns
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
 {
-    NSLog(@"textFieldShouldReturn");
     [textField resignFirstResponder];
     return YES;
 }
@@ -183,7 +187,8 @@
 -(void) textFieldDidEndEditing:(UITextField *)textField
 {
     ttEvent *textFieldLeft= [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Proficiency];
-    textFieldLeft.notes = [NSString stringWithFormat:@"TextField No Longer Active"]; 
+    textFieldLeft.notes = [NSString stringWithFormat:@"TextField No Longer Active"];
+    [self.session addEvent:textFieldLeft];
 }
 
 @end

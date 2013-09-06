@@ -159,7 +159,7 @@
 -(void) addEvent:(ttEvent *)event
 {
     event.interval = [event.time timeIntervalSinceDate:sessionStartTime];
-    [self.events addObject:event];
+    //[self.events addObject:event];
     [self writeLineToRawLogFile:[event description]];
     return;
 }
@@ -192,6 +192,7 @@
     @try
     {
         [rawFileHandle writeData:[lineToWrite dataUsingEncoding:NSUTF8StringEncoding]];
+        NSLog(@"RL:%@", lineToWrite);
     }
     @catch (NSException *exception)
     {
@@ -209,6 +210,7 @@
     @try
     {
         [summaryFileHandle writeData:[lineToWrite dataUsingEncoding:NSUTF8StringEncoding]];
+        NSLog(@"SL:%@", lineToWrite);
     }
     @catch (NSException *exception)
     {

@@ -92,7 +92,8 @@ typedef enum
     SpecialKeyPressed,
     OrientationChange,
     KeyboardShown,
-    KeyboardHidden
+    KeyboardHidden,
+    KeyboardTouch
 } Event;
 
 typedef enum

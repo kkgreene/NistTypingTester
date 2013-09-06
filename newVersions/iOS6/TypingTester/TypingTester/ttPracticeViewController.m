@@ -163,6 +163,7 @@
 
 -(IBAction)doneButtonPressed
 {
+    [self.view endEditing:YES];
     // check to see if the entered string matches the target string
     if([currentString isEqualToString:self.entryField.text])
     {
@@ -183,6 +184,11 @@
             [self askGoToVerify];
         }
     }
+}
+
+-(IBAction)backgroundButtonPressed
+{
+    [self.view endEditing:YES];
 }
 
 #pragma -mark touch events

@@ -34,5 +34,7 @@
 -(IBAction)skipButtonPressed;
 -(IBAction)doneButtonPressed;
 
+-(IBAction)backgroundButtonPressed;
+
 
 @end

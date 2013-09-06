@@ -85,6 +85,7 @@
 
 -(IBAction)done
 {
+    [self.view endEditing:YES];
     ttTestEntity *currentEntity = [self.session.entities objectAtIndex:self.session.currentEntity];
     if ([self.entryField.text isEqualToString:currentEntity.entityString])
     {
@@ -99,6 +100,11 @@
         self.incorrectText.hidden = NO;
         self.incorrectImage.hidden = NO;
     }
+}
+
+-(IBAction)backgroundButtonPressed
+{
+    [self.view endEditing:YES];
 }
 
 #pragma -mark UI configuration
@@ -141,7 +147,12 @@
     self.incorrectImage.hidden = YES;
     self.incorrectText.hidden = YES;
     return YES;
+}
 
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

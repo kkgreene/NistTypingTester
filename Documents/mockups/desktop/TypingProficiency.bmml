@@ -1,8 +1,39 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="820" measuredH="462" mockupW="655" mockupH="414">
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1072" measuredH="778" mockupW="1024" mockupH="768">
   <controls>
-    <control controlID="7" controlTypeID="__group__" x="165" y="48" w="655" h="414" measuredW="655" measuredH="414" zOrder="0" locked="false" isInGroup="-1">
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="421" y="183" w="-1" h="-1" measuredW="288" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Please%20enter%20the%20text%20below%20in%20the%20provided%20area%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="306" y="219" w="-1" h="-1" measuredW="519" measuredH="32" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>The%20quick%20brown%20fox%20jumped%20over%20the%20lazy%20dogs.</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::TextInput" x="306" y="266" w="519" h="-1" measuredW="79" measuredH="26" zOrder="4" locked="false" isInGroup="-1"/>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::ProgressBar" x="75" y="127" w="981" h="10" measuredW="100" measuredH="20" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <indeterminate>false</indeterminate>
+        <scrollBarValue>19</scrollBarValue>
+      </controlProperties>
+    </control>
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::Label" x="524" y="106" w="-1" h="-1" measuredW="72" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Entry%20%23%20of%20%23</text>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::Button" x="561" y="307" w="-1" h="-1" measuredW="50" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Instructions%26bm%3BInstructions.bmml%26bm%3BInstructions.bmml%26bm%3BInstructions.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22513%2C297%2C563%2C324%22%20href%3D%22Instructions.bmml%22%20alt%3D%22Instructions%22%20id%3D%2222%22/%3E</map>
+        <state>disabled</state>
+        <text>Next</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="__group__" x="48" y="10" w="1024" h="768" measuredW="1024" measuredH="768" zOrder="0" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
-        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="655" h="414" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="7">
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="1024" h="768" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="23">
           <controlProperties>
             <close>true</close>
             <dragger>true</dragger>
@@ -12,62 +43,26 @@
             <topheight>26</topheight>
           </controlProperties>
         </control>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::MenuBar" x="0" y="25" w="655" h="30" measuredW="105" measuredH="29" zOrder="1" locked="false" isInGroup="7">
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::MenuBar" x="0" y="22" w="1024" h="31" measuredW="105" measuredH="29" zOrder="1" locked="false" isInGroup="23">
           <controlProperties>
             <text>File%2C%20%20Help</text>
           </controlProperties>
         </control>
-        <control controlID="2" controlTypeID="__group__" x="0" y="55" w="655" h="32" measuredW="655" measuredH="32" zOrder="2" locked="false" isInGroup="7">
+        <control controlID="2" controlTypeID="__group__" x="0" y="53" w="1024" h="35" measuredW="1024" measuredH="35" zOrder="2" locked="false" isInGroup="23">
           <groupChildrenDescriptors>
-            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="655" h="32" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="2"/>
-            <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="30" y="7" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="2">
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="1024" h="35" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="2"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="46" y="8" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="2">
               <controlProperties>
                 <borderStyle>none</borderStyle>
-                <href>Settings%26bm%3BSettings.bmml%26bm%3BSettings.bmml%26bm%3BSettings.bmml</href>
                 <icon>GearIcon%7Cxsmall</icon>
-                <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2230%2C62%2C46%2C78%22%20href%3D%22Settings.bmml%22%20alt%3D%22Settings%22%20id%3D%221%22/%3E</map>
               </controlProperties>
             </control>
-            <control controlID="2" controlTypeID="com.balsamiq.mockups::Icon" x="9" y="7" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="2" locked="false" isInGroup="2">
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Icon" x="14" y="8" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="2" locked="false" isInGroup="2">
               <controlProperties>
                 <icon>ContactIcon%7Cxsmall</icon>
               </controlProperties>
             </control>
           </groupChildrenDescriptors>
-        </control>
-      </groupChildrenDescriptors>
-    </control>
-    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="348" y="141" w="-1" h="-1" measuredW="288" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Please%20enter%20the%20text%20below%20in%20the%20provided%20area%3A</text>
-      </controlProperties>
-    </control>
-    <control controlID="12" controlTypeID="com.balsamiq.mockups::TextArea" x="178" y="164" w="633" h="120" measuredW="200" measuredH="140" zOrder="2" locked="false" isInGroup="-1">
-      <controlProperties>
-        <state>disabled</state>
-        <text>Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Aenean%20rhoncus%20id%20justo%20vel%20consectetur.%20Nunc%20elementum%2C%20velit%20in%20interdum%20porttitor%2C%20dolor%20orci%20tristique%20ligula%2C%20non%20placerat%20odio%20enim%20at%20enim.%20Sed%20dolor%20ligula%2C%20consectetur%20eu%20venenatis%20sit%20amet%2C%20dictum%20in%20mauris.%20Aenean%20vehicula%20placerat%20dolor%2C%20et%20rhoncus%20nulla%20fermentum%20et.%20Proin%20auctor%20et%20tellus%20at%20lobortis.%20Nullam%20sed%20tempor%20lacus.%20Mauris%20quis%20lacus%20dui.%20Proin%20iaculis%20justo%20euismod%20massa%20tincidunt%2C%20quis%20semper%20justo%20eleifend.%20Donec%20in%20interdum%20dui.%20Sed%20dapibus%20ligula%20est%2C%20quis%20congue%20enim%20rutrum%20et.%20Suspendisse%20potenti.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Ut%20vel%20dui%20dictum%2C%20tincidunt%20arcu%20et%2C%20varius%20lacus.%20Pellentesque%20habitant%20morbi%20tristique%20senectus%20et%20netus%20et%20malesuada%20fames%20ac%20turpis%20egestas.</text>
-      </controlProperties>
-    </control>
-    <control controlID="13" controlTypeID="com.balsamiq.mockups::TextArea" x="178" y="286" w="633" h="120" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="-1">
-      <controlProperties>
-        <state>focused</state>
-      </controlProperties>
-    </control>
-    <control controlID="16" controlTypeID="__group__" x="430" y="410" w="129" h="27" measuredW="129" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
-      <groupChildrenDescriptors>
-        <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="0" y="0" w="-1" h="-1" measuredW="48" measuredH="27" zOrder="0" locked="false" isInGroup="16">
-          <controlProperties>
-            <href>StartScreen%26bm%3BStartScreen.bmml%26bm%3BStartScreen.bmml%26bm%3BStartScreen.bmml</href>
-            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22265%2C362%2C313%2C389%22%20href%3D%22StartScreen.bmml%22%20alt%3D%22StartScreen%22%20id%3D%220%22/%3E</map>
-            <text>Quit</text>
-          </controlProperties>
-        </control>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="76" y="0" w="-1" h="-1" measuredW="53" measuredH="27" zOrder="1" locked="false" isInGroup="16">
-          <controlProperties>
-            <href>Instructions%26bm%3BInstructions.bmml%26bm%3BInstructions.bmml%26bm%3BInstructions.bmml</href>
-            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22341%2C362%2C394%2C389%22%20href%3D%22Instructions.bmml%22%20alt%3D%22Instructions%22%20id%3D%221%22/%3E</map>
-            <text>Done</text>
-          </controlProperties>
         </control>
       </groupChildrenDescriptors>
     </control>

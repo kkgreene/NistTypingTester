@@ -85,6 +85,11 @@
     }
 }
 
+-(IBAction)backgroundButtonPressed
+{
+    [self.view endEditing:YES];
+}
+
 #pragma -mark UITextViewDelegate methods
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {

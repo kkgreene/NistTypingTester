@@ -28,5 +28,6 @@
 
 -(IBAction)done;
 -(IBAction)back;
+-(IBAction)backgroundButtonPressed;
 
 @end

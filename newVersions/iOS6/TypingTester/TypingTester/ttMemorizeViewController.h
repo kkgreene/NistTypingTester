@@ -20,4 +20,6 @@
 
 @property (nonatomic, weak) ttSession *session;
 
+-(IBAction)backgroundButtonPressed;
+
 @end

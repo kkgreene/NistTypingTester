@@ -88,6 +88,7 @@
 #pragma mark - IBAction
 -(IBAction)done
 {
+    [self.view endEditing:YES];
     // check for quit string entered
     if ([self.entryField.text isEqualToString:[ttSettings Instance].quitString])
     {
@@ -127,6 +128,11 @@
     }
 }
 
+-(IBAction)backgroundButtonPressed
+{
+    [self.view endEditing:YES];
+}
+
 #pragma mark - UITextFieldDelegate methods
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
@@ -148,6 +154,12 @@
         self.doneButton_iPad.enabled = NO;
     }
     NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
+    return YES;
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
     return YES;
 }
 

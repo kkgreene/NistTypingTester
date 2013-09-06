@@ -24,5 +24,6 @@
 
 
 -(IBAction) doneButtonPressed;
+-(IBAction)backgroundButtonPressed;
 
 @end
