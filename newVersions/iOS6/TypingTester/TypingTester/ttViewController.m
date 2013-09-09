@@ -36,11 +36,6 @@
     return self;
 }
 
--(NSUInteger) supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskAllButUpsideDown;
-}
-
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -61,6 +56,19 @@
         controller.participantNumber = self.participantNumber.text;
     }
     
+}
+
+-(NSUInteger)supportedInterfaceOrientations
+{
+    switch(UI_USER_INTERFACE_IDIOM())
+    {
+        case UIUserInterfaceIdiomPad:
+            return UIInterfaceOrientationMaskAll;
+            
+        case UIUserInterfaceIdiomPhone:
+            return UIInterfaceOrientationMaskAllButUpsideDown;
+    }
+    return UIInterfaceOrientationMaskAll;
 }
 
 #pragma mark private methods

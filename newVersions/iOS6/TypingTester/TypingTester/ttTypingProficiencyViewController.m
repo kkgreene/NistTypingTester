@@ -129,6 +129,19 @@
     [self.session enteredPhase:Proficiency withNote:@"Typing Proficiency Phase Entered"];
 }
 
+-(NSUInteger)supportedInterfaceOrientations
+{
+    switch(UI_USER_INTERFACE_IDIOM())
+    {
+        case UIUserInterfaceIdiomPad:
+            return UIInterfaceOrientationMaskAll;
+            
+        case UIUserInterfaceIdiomPhone:
+            return UIInterfaceOrientationMaskAllButUpsideDown;
+    }
+    return UIInterfaceOrientationMaskAll;
+}
+
 #pragma mark - Touch Tracking
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

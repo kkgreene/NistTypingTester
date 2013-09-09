@@ -44,6 +44,19 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
 }
 
+-(NSUInteger)supportedInterfaceOrientations
+{
+    switch(UI_USER_INTERFACE_IDIOM())
+    {
+        case UIUserInterfaceIdiomPad:
+            return UIInterfaceOrientationMaskAll;
+            
+        case UIUserInterfaceIdiomPhone:
+            return UIInterfaceOrientationMaskAllButUpsideDown;
+    }
+    return UIInterfaceOrientationMaskAll;
+}
+
 
 -(IBAction)done
 {

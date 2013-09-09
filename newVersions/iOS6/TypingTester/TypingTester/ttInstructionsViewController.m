@@ -56,10 +56,17 @@
     [self.session leftPhase:Introduction withNote:@"Leaving Introduction Phase"];
 }
 
-- (void)didReceiveMemoryWarning
+-(NSUInteger)supportedInterfaceOrientations
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    switch(UI_USER_INTERFACE_IDIOM())
+    {
+        case UIUserInterfaceIdiomPad:
+            return UIInterfaceOrientationMaskAll;
+            
+        case UIUserInterfaceIdiomPhone:
+            return UIInterfaceOrientationMaskAllButUpsideDown;
+    }
+    return UIInterfaceOrientationMaskAll;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
