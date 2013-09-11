@@ -110,11 +110,17 @@
     ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Memorize];
     inputEvent.location = range.location;
     inputEvent.length = range.length;
-    inputEvent.enteredCharacters = text;
-    inputEvent.currentValue = newString;
+    inputEvent.enteredCharacters = [self EscapeString:text];
+    inputEvent.currentValue = [self EscapeString:newString];
     [self.session addEvent:inputEvent];
     NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, text);
     return YES;
+}
+
+-(NSString*)EscapeString:(NSString*)input
+{
+    NSString *ret = [input stringByReplacingOccurrencesOfString:@"\n" withString:@"{CR/LF}"];
+    return ret;
 }
 
 

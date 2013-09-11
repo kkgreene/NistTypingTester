@@ -24,6 +24,7 @@
 @implementation ttTypingProficiencyViewController
 {
     ttSettings *settings;
+    ttProficiencyItem *item;
 }
 
 -(id) initWithCoder:(NSCoder *)aDecoder
@@ -54,7 +55,7 @@
 {
     int currentString = self.session.currentProficiencyString;
     int totalStrings = self.session.proficiencyStrings.count;
-    ttProficiencyItem *item = [self.session.proficiencyStrings objectAtIndex:currentString];
+    item = [self.session.proficiencyStrings objectAtIndex:currentString];
     self.phraseLabel1.text = item.text;
     self.progressLabel.text = [NSString stringWithFormat:@"Entry %i of %i", currentString+1, totalStrings];
     self.progressBar.progress = (currentString + 0.0F)/(totalStrings+0.0F);
@@ -79,9 +80,23 @@
 -(IBAction)doneButtonPressed
 {
     [self.view endEditing:YES];
+    self.entryField.keyboardType = UIKeyboardTypeDefault;
     // create an event indicating that the button was pressed
     ttEvent *donePressed = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Proficiency];
     donePressed.notes = [NSString stringWithFormat:@"Done button pressed"];
+    [self.session addEvent:donePressed];
+    ttEvent *valueCompare;
+    if ([item.text isEqualToString:self.entryField.text])
+    {
+        valueCompare = [[ttEvent alloc]initWithEventType:CorrectValueEntered andPhase:Proficiency];
+    }
+    else
+    {
+        valueCompare = [[ttEvent alloc]initWithEventType:IncorrectValueEntered andPhase:Proficiency];
+    }
+    valueCompare.Notes = [NSString stringWithFormat:@"Text Entered: %@", self.entryField.text];
+    [self.session addEvent:valueCompare];
+    
     self.session.currentProficiencyString++;
     if (self.session.currentProficiencyString < self.session.proficiencyStrings.count)
     {
@@ -149,10 +164,10 @@
     // get the touch coordinates
     UITouch * touch = [touches anyObject];
     CGPoint pos = [touch locationInView: [UIApplication sharedApplication].keyWindow];
-    //NSLog(@"Touch on Proficiency View: %.3f, %.3f", pos.x, pos.y);
     // add the touch event to the log
     ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
-    touchEvent.notes = [NSString stringWithFormat:@"Touch on Proficiency View: %.3f, %.3f", pos.x, pos.y];
+    touchEvent.notes = [NSString stringWithFormat:@"Touch on Proficiency View: %.0f:%.0f", pos.x, pos.y];
+    touchEvent.targetString = item.text;
     [self.session addEvent:touchEvent];
     // resign first responder to hide the keyboard
     //[self.entryField resignFirstResponder];
@@ -168,6 +183,7 @@
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = string;
     inputEvent.currentValue = newString;
+    inputEvent.targetString = item.text;
     [self.session addEvent:inputEvent];
     if (newString.length > 0)
     {
@@ -179,7 +195,7 @@
         self.doneButton.enabled = NO;
         self.doneButton_iPad.enabled = NO;
     }
-    NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
+    //NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
     return YES;
 }
 

@@ -53,7 +53,7 @@
     NSString *eventType = ttcEventTypeStringArray[self.event];
     NSString *phase = ttcPhaseStringArray[self.phase];
     NSString *subphase = ttcSubPhaseStringArray[self.subPhase];
-    return [NSString stringWithFormat:@"%@,%f,%@,%@,%@,%@,-1,-1,-1,-1,,", self.time, self.interval, eventType, phase, subphase, self.notes];
+    return [NSString stringWithFormat:@"%@,%f,%@,%@,%@,%@,-1,-1,-1,-1,,%@", self.time, self.interval/1000, eventType, phase, subphase, self.targetString, self.notes];
 }
 
 

@@ -40,8 +40,8 @@
     NSString *eventType = ttcEventTypeStringArray[self.event];
     NSString *phase = ttcPhaseStringArray[self.phase];
     NSString *subphase = ttcSubPhaseStringArray[self.subPhase];
-    return [NSString stringWithFormat:@"%@,%f,%@,%@,%@,%@,-1,-1,%i,%i,%@,%@", self.time, self.interval, eventType,
-            phase, subphase, self.notes, self.location, self.length, self.enteredCharacters, self.currentValue];
+    return [NSString stringWithFormat:@"%@,%f,%@,%@,%@,%@,-1,-1,%i,%i,%@,%@,%@", self.time, self.interval/1000, eventType,
+            phase, subphase, self.targetString, self.location, self.length, self.enteredCharacters, self.currentValue,self.notes];
 }
 
 @end
