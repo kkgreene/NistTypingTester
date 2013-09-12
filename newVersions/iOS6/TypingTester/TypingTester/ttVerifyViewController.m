@@ -22,6 +22,9 @@
 @end
 
 @implementation ttVerifyViewController
+{
+    ttTestEntity *entity;
+}
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -102,14 +105,24 @@
     ttTestEntity *currentEntity = [self.session.entities objectAtIndex:self.session.currentEntity];
     if ([self.entryField.text isEqualToString:currentEntity.entityString])
     {
+        ttEvent *event = [[ttEvent alloc]initWithEventType:CorrectValueEntered andPhase:Memorize andSubPhase:Verify];
+        event.targetString = entity.entityString;
+        [self.session addEvent:event];
         [self performSegueWithIdentifier:@"Entry" sender:self];
     }
     else if ([self.entryField.text isEqualToString:[ttSettings Instance].quitString])
     {
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
+        event.targetString = entity.entityString;
+        event.notes = @"Quit phrase entered";
+        [self.session addEvent:event];
         [self performSegueWithIdentifier:@"SkipToRecall" sender:self];
     }
     else
     {
+        ttEvent *event = [[ttEvent alloc]initWithEventType:IncorrectValueEntered andPhase:Memorize andSubPhase:Verify];
+        event.targetString = entity.entityString;
+        [self.session addEvent:event];
         self.incorrectText.hidden = NO;
         self.incorrectImage.hidden = NO;
     }
@@ -123,6 +136,7 @@
 #pragma -mark UI configuration
 -(void)configureUI
 {
+    entity = [self.session.entities objectAtIndex:self.session.currentEntity];
     int currentEntity = self.session.currentEntity;
     int totalEntities = self.session.entities.count;
     self.sessionProgressBar.progress = (float)(currentEntity)/(float)totalEntities;
@@ -144,6 +158,7 @@
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = string;
     inputEvent.currentValue = newString;
+    inputEvent.targetString = entity.entityString;
     [self.session addEvent:inputEvent];
     if (newString.length > 0)
     {
@@ -155,8 +170,8 @@
         self.doneButton.enabled = NO;
         self.doneButton_iPad.enabled = NO;
     }
-    NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
-    // hids the incorrect icon and label
+    //NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
+    // hides the incorrect icon and label
     self.incorrectImage.hidden = YES;
     self.incorrectText.hidden = YES;
     return YES;

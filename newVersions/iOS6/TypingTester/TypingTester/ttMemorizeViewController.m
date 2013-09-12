@@ -113,7 +113,7 @@
     inputEvent.enteredCharacters = [self EscapeString:text];
     inputEvent.currentValue = [self EscapeString:newString];
     [self.session addEvent:inputEvent];
-    NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, text);
+    //NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, text);
     return YES;
 }
 

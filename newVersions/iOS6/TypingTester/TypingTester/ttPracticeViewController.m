@@ -28,6 +28,7 @@
     int totalEntities;
     int entityNumber;
     int numberOfRequiredPractices;
+    ttTestEntity *e;
 }
 
 
@@ -90,7 +91,7 @@
 -(void)configureUI
 {
     // display the string
-    ttTestEntity *e = [self.session.entities objectAtIndex:entityNumber];
+    e = [self.session.entities objectAtIndex:entityNumber];
     currentString = e.entityString;
     // configure the display of the text
     [self configureEntityDisplay];
@@ -126,8 +127,7 @@
         self.doneButton_iPad.enabled = YES;
     }
     
-    
-    // hiode the incorrect labels
+    // hide the incorrect labels
     self.correctIndicator.hidden = YES;
     self.correctTextLable.hidden = YES;
 }
@@ -180,6 +180,10 @@
     // check to see if the entered string matches the target string
     if([currentString isEqualToString:self.entryField.text])
     {
+        ttEvent *event = [[ttEvent alloc]initWithEventType:CorrectValueEntered andPhase:Memorize andSubPhase:ForcedPractice];
+        event.targetString = e.text;
+        event.notes = [NSString stringWithFormat:@"Pratice Round: %i", self.session.CurrentPracticeRoundForEntity];
+        [self.session addEvent:event];
         self.session.CurrentPracticeRoundForEntity++;
         if (self.session.CurrentPracticeRoundForEntity >= settings.forcedPracticeRounds)
         {
@@ -190,6 +194,9 @@
     }
     else    // entry does not match practice string
     {
+        ttEvent *event = [[ttEvent alloc]initWithEventType:IncorrectValueEntered andPhase:Memorize andSubPhase:ForcedPractice];
+        event.targetString = e.text;
+        event.notes = [NSString stringWithFormat:@"Pratice Round: %i", self.session.CurrentPracticeRoundForEntity];
         self.correctIndicator.hidden = NO;
         self.correctTextLable.hidden = NO;
         if (self.session.CurrentPracticeRoundForEntity >= settings.forcedPracticeRounds)
@@ -256,7 +263,16 @@
     NSString *title= [alertView buttonTitleAtIndex:buttonIndex];
     if ([title isEqualToString:@"Yes"])
     {
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
+        event.notes = @"User elected to proceed to verify subphase.";
+        [self.session addEvent:event];
         [self performSegueWithIdentifier:@"Verify" sender:self];
+    }
+    else
+    {
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
+        event.notes = @"User elected to stay in practice subphase.";
+        [self.session addEvent:event];
     }
 }
 
