@@ -92,6 +92,7 @@
     // only log if we are not in current phase
     if (phase != self.currentPhase)
     {
+        self.currentSubPhase = NoSubPhase;
         ttEvent *event = [[ttEvent alloc]initWithEventType:PhaseBegin andPhase:phase];
         event.notes = note;
         [self addEvent:event];
@@ -110,7 +111,7 @@
     event.notes = note;
     [self addEvent:event];
     self.currentPhase = UnknownPhase;
-    self.currentSubPhase = UnknownSubPhase;
+    self.currentSubPhase = NoSubPhase;
     NSDate *now = [NSDate date];
     NSString *line = [NSString stringWithFormat:@"Leaving Phase %@, overall time in phase:%f : %@", ttcPhaseStringArray[phase], [now timeIntervalSinceDate:phaseStartTime], note];
     [self writeLineToSummaryLogFile:line];

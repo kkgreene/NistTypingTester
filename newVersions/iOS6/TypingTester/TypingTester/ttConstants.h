@@ -106,7 +106,7 @@ typedef enum
     Memorize,
     Entry,
     Recall,
-    ThankYou,
+    ThankYou
 } Phase;
 
 typedef enum
@@ -115,7 +115,8 @@ typedef enum
     FreePractice,
     ForcedPractice,
     Verify,
-    EntityChange
+    EntityChange,
+    NoSubPhase
 }SubPhase;
 
 typedef enum

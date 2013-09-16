@@ -75,6 +75,7 @@
     }
     else if ([segue.identifier isEqualToString:@"SkipToRecall"])
     {
+        [self.session leftPhase:Memorize withNote:@"Leaving Memorize Phase, skipping to recall phase"];
         ttRecallViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
