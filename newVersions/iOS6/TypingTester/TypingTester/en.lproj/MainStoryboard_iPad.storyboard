@@ -66,7 +66,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="vJ8-mR-bF3"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="740-gear.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1745,6 +1744,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="bf3-VD-hHG"/>
         <segue reference="qRJ-FI-xZJ"/>
-        <segue reference="Mr0-dF-HyJ"/>
+        <segue reference="yEP-gY-KIJ"/>
     </inferredMetricsTieBreakers>
 </document>

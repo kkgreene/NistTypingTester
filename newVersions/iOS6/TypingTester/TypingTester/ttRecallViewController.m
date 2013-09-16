@@ -9,6 +9,7 @@
 #import "ttRecallViewController.h"
 #import "ttRecallTableViewController.h"
 #import "ttSession.h"
+#import "ttSettings.h"
 
 @interface ttRecallViewController ()
 
@@ -17,6 +18,7 @@
 @implementation ttRecallViewController
 {
     ttRecallTableViewController *child;
+    ttSettings *settings;
 }
 
 -(id) initWithCoder:(NSCoder *)aDecoder
@@ -24,7 +26,7 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        
+        settings = [ttSettings Instance];
     }
     return self;
 }
@@ -39,7 +41,10 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
+    if (settings.showBackgroundPattern)
+    {
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated

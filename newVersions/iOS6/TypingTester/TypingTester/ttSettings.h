@@ -39,6 +39,8 @@
 @property (nonatomic, assign) unsigned int effectiveOrderSeed;
 @property (nonatomic, assign) unsigned int effectiveSelectionSeed;
 
+@property (nonatomic, assign) bool showBackgroundPattern;
+
 
 +(ttSettings*) Instance;
 

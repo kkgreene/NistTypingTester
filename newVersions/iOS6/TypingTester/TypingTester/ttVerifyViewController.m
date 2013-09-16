@@ -16,6 +16,7 @@
 #import "ttPracticeViewController.h"
 #import "ttTestEntity.h"
 #import "ttRecallViewController.h"
+#import "ttSettings.h"
 
 @interface ttVerifyViewController ()
 
@@ -24,6 +25,7 @@
 @implementation ttVerifyViewController
 {
     ttTestEntity *entity;
+    ttSettings *settings;
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
@@ -31,7 +33,7 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-    
+        settings = [ttSettings Instance];
     }
     return self;
 }
@@ -46,7 +48,10 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
+    if (settings.showBackgroundPattern)
+    {
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
