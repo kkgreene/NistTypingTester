@@ -1104,6 +1104,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="uqW-Go-H4F" kind="modal" identifier="SkipToRecall" modalTransitionStyle="crossDissolve" id="bf3-VD-hHG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Practice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G00-Mt-OHl">
                                 <rect key="frame" x="353" y="20" width="63" height="21"/>
@@ -1740,7 +1743,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="WfD-p6-NZe"/>
+        <segue reference="bf3-VD-hHG"/>
         <segue reference="qRJ-FI-xZJ"/>
         <segue reference="Mr0-dF-HyJ"/>
     </inferredMetricsTieBreakers>

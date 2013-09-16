@@ -13,6 +13,7 @@
 #import "ttEventTouch.h"
 #import "ttEventInput.h"
 #import "ttTestEntity.h"
+#import "ttRecallViewController.h"
 
 @interface ttPracticeViewController ()
 
@@ -151,6 +152,11 @@
         ttVerifyViewController* controller = segue.destinationViewController;
         controller.session = self.session;
     }
+    else if ([segue.identifier isEqualToString:@"SkipToRecall"])
+    {
+        ttRecallViewController* controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
 }
 
 -(void) askGoToVerify
@@ -181,7 +187,6 @@
     if([currentString isEqualToString:self.entryField.text])
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:CorrectValueEntered andPhase:Memorize andSubPhase:ForcedPractice];
-        event.targetString = e.text;
         event.notes = [NSString stringWithFormat:@"Pratice Round: %i", self.session.CurrentPracticeRoundForEntity];
         event.targetString = e.entityString;
         [self.session addEvent:event];
@@ -193,10 +198,17 @@
         self.entryField.text = @"";
         [self configureUI];
     }
+    else if ([self.entryField.text isEqualToString:settings.quitString])
+    {
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
+        event.targetString = e.entityString;
+        event.notes = @"User entered quit string, transitioning to recall phase.";
+        [self.session addEvent:event];
+        [self performSegueWithIdentifier:@"SkipToRecall" sender:self];
+    }
     else    // entry does not match practice string
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:IncorrectValueEntered andPhase:Memorize andSubPhase:ForcedPractice];
-        event.targetString = e.text;
         event.notes = [NSString stringWithFormat:@"Pratice Round: %i", self.session.CurrentPracticeRoundForEntity];
         event.targetString = e.entityString;
         self.correctIndicator.hidden = NO;
