@@ -107,11 +107,12 @@
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     NSString *newString = [textView.text stringByReplacingCharactersInRange:range withString:text];
-    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Memorize];
+    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Memorize andSubPhase:FreePractice];
     inputEvent.location = range.location;
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = [self EscapeString:text];
     inputEvent.currentValue = [self EscapeString:newString];
+    inputEvent.targetString = entity.entityString;
     [self.session addEvent:inputEvent];
     //NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, text);
     return YES;
@@ -130,7 +131,7 @@
     UITouch * touch = [touches anyObject];
     CGPoint pos = [touch locationInView: [UIApplication sharedApplication].keyWindow];
     ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
-    NSLog(@"Touch on Memorize View: %.3f, %.3f", pos.x, pos.y);
+    NSLog(@"Touch on Memorize View: %.0f, %.0f", pos.x, pos.y);
     [self.session addEvent:touchEvent];
     [self.workArea resignFirstResponder];
 }

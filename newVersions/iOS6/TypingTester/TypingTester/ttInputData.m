@@ -131,7 +131,7 @@ static ttInputData *instance = nil;
         {
             settings.effectiveSelectionSeed = time(NULL);
         }
-        filtered = [NSArray arrayWithArray:[self randomizeArray:filtered withRandomSeedValue:settings.effectiveSelectionSeed]];
+        filtered = [NSMutableArray arrayWithArray:[self randomizeArray:filtered withRandomSeedValue:settings.effectiveSelectionSeed]];
     }
     
     for(int i = 0; i < settings.entitiesPerSession; i++)

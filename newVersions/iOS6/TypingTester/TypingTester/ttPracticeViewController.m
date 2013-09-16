@@ -183,6 +183,7 @@
         ttEvent *event = [[ttEvent alloc]initWithEventType:CorrectValueEntered andPhase:Memorize andSubPhase:ForcedPractice];
         event.targetString = e.text;
         event.notes = [NSString stringWithFormat:@"Pratice Round: %i", self.session.CurrentPracticeRoundForEntity];
+        event.targetString = e.entityString;
         [self.session addEvent:event];
         self.session.CurrentPracticeRoundForEntity++;
         if (self.session.CurrentPracticeRoundForEntity >= settings.forcedPracticeRounds)
@@ -197,6 +198,7 @@
         ttEvent *event = [[ttEvent alloc]initWithEventType:IncorrectValueEntered andPhase:Memorize andSubPhase:ForcedPractice];
         event.targetString = e.text;
         event.notes = [NSString stringWithFormat:@"Pratice Round: %i", self.session.CurrentPracticeRoundForEntity];
+        event.targetString = e.entityString;
         self.correctIndicator.hidden = NO;
         self.correctTextLable.hidden = NO;
         if (self.session.CurrentPracticeRoundForEntity >= settings.forcedPracticeRounds)
@@ -217,7 +219,7 @@
     UITouch * touch = [touches anyObject];
     CGPoint pos = [touch locationInView: [UIApplication sharedApplication].keyWindow];
     ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
-    NSLog(@"Touch on Practice View: %.3f, %.3f", pos.x, pos.y);
+    //NSLog(@"Touch on Practice View: %.3f, %.3f", pos.x, pos.y);
     [self.session addEvent:touchEvent];
     [self.entryField resignFirstResponder];
 }
@@ -227,11 +229,12 @@
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:UnknownPhase];
+    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Memorize andSubPhase:ForcedPractice];
     inputEvent.location = range.location;
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = string;
     inputEvent.currentValue = newString;
+    inputEvent.targetString = e.entityString;
     [self.session addEvent:inputEvent];
     if (newString.length > 0 || self.session.CurrentPracticeRoundForEntity >= settings.forcedPracticeRounds)
     {
@@ -243,7 +246,7 @@
         self.doneButton.enabled = NO;
         self.doneButton_iPad.enabled = NO;
     }
-    NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
+    //NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
     // hids the incorrect icon and label
     self.correctTextLable.hidden = YES;
     self.correctIndicator.hidden = YES;

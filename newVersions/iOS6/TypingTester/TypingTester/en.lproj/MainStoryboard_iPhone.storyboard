@@ -545,15 +545,15 @@
                                     <action selector="skipButtonPressed" destination="deW-OK-kEn" eventType="touchUpInside" id="qsp-YR-aC5"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" image="433-x.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Py-Q3-jMf">
-                                <rect key="frame" x="90" y="160" width="28" height="28"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="433-x.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Py-Q3-jMf">
+                                <rect key="frame" x="95" y="160" width="28" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="28" id="0w0-s0-FP3"/>
                                     <constraint firstAttribute="height" constant="28" id="TxN-4a-Yw1"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Incorrect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9z-dd-2nG">
-                                <rect key="frame" x="126" y="170" width="68" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Incorrect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9z-dd-2nG">
+                                <rect key="frame" x="131" y="163" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -579,11 +579,11 @@
                             <constraint firstItem="EtQ-qa-4Ct" firstAttribute="leading" secondItem="dyf-5q-xeL" secondAttribute="leading" constant="5" id="crg-p1-htj"/>
                             <constraint firstAttribute="bottom" secondItem="a1y-Eu-ovm" secondAttribute="bottom" constant="20" symbolic="YES" id="eAl-9D-vkN"/>
                             <constraint firstItem="EtQ-qa-4Ct" firstAttribute="bottom" secondItem="dyf-5q-xeL" secondAttribute="bottom" id="i24-2J-LLm"/>
-                            <constraint firstItem="V9z-dd-2nG" firstAttribute="top" secondItem="dyf-5q-xeL" secondAttribute="top" constant="170" id="iqX-Az-T0G"/>
                             <constraint firstAttribute="trailing" secondItem="ytz-um-9hD" secondAttribute="trailing" constant="20" symbolic="YES" id="j8S-ba-Qgj"/>
                             <constraint firstItem="ytz-um-9hD" firstAttribute="baseline" secondItem="qW8-Kl-XqM" secondAttribute="baseline" id="kjf-4h-uNG"/>
                             <constraint firstItem="Vnx-Ga-UZ6" firstAttribute="trailing" secondItem="dyf-5q-xeL" secondAttribute="trailing" id="l06-XD-7Ap"/>
                             <constraint firstAttribute="trailing" secondItem="rYF-Dt-I1K" secondAttribute="trailing" constant="20" symbolic="YES" id="m85-Jn-bHp"/>
+                            <constraint firstItem="V9z-dd-2nG" firstAttribute="centerX" secondItem="FAo-Vg-wq1" secondAttribute="centerX" constant="5" id="n2w-h0-TTw"/>
                             <constraint firstItem="z3a-AY-gUS" firstAttribute="trailing" secondItem="qW8-Kl-XqM" secondAttribute="trailing" id="t82-80-NUO"/>
                             <constraint firstItem="Vnx-Ga-UZ6" firstAttribute="leading" secondItem="dyf-5q-xeL" secondAttribute="leading" id="w3p-ls-PVg"/>
                             <constraint firstItem="z3a-AY-gUS" firstAttribute="top" secondItem="qW8-Kl-XqM" secondAttribute="bottom" constant="8" symbolic="YES" id="xxj-aR-abo"/>
@@ -1642,25 +1642,12 @@
     </scenes>
     <resources>
         <image name="433-x.png" width="18" height="18"/>
-        <image name="433-x.png" width="18" height="18"/>
         <image name="740-gear-white.png" width="28" height="28"/>
-        <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="759-refresh-2-selected.png" width="28" height="28"/>
-        <image name="759-refresh-2-selected.png" width="28" height="28"/>
         <image name="759-refresh-2.png" width="28" height="28"/>
         <image name="765-arrow-left-white.png" width="14" height="28"/>
-        <image name="765-arrow-left-white.png" width="14" height="28"/>
-        <image name="765-arrow-left-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
         <image name="766-arrow-right-white.png" width="14" height="28"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1671,6 +1658,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="qlx-Cz-jfL"/>
         <segue reference="zal-n7-ZfW"/>
-        <segue reference="1tr-Kl-y5m"/>
+        <segue reference="xtU-2Z-szz"/>
     </inferredMetricsTieBreakers>
 </document>

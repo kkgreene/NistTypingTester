@@ -112,6 +112,7 @@
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Entry];
         event.notes = @"Quit string entered";
+        event.targetString = entity.entityString;
         [self.session addEvent:event];
         // if so go to recall
         [self performSegueWithIdentifier:@"Recall" sender:self];
@@ -173,7 +174,7 @@
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:UnknownPhase];
+    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Entry andSubPhase:NoSubPhase];
     inputEvent.location = range.location;
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = string;

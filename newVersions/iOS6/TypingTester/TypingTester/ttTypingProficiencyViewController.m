@@ -72,6 +72,7 @@
     // add the event indicating that a proficiency string was displayed
     ttEvent *event = [[ttEvent alloc]initWithEventType:ProficiencyStringShown andPhase:Proficiency];
     event.notes = [NSString stringWithFormat:@"%i/%i String:%@", currentString+1,totalStrings,item.text];
+    event.targetString = item.text;
     [self.session addEvent:event];
 }
 
@@ -95,6 +96,7 @@
         valueCompare = [[ttEvent alloc]initWithEventType:IncorrectValueEntered andPhase:Proficiency];
     }
     valueCompare.Notes = [NSString stringWithFormat:@"Text Entered: %@", self.entryField.text];
+    valueCompare.targetString = item.text;
     [self.session addEvent:valueCompare];
     
     self.session.currentProficiencyString++;
@@ -178,7 +180,7 @@
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Proficiency];
+    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Proficiency andSubPhase:NoSubPhase];
     inputEvent.location = range.location;
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = string;

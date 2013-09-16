@@ -175,7 +175,7 @@
     rawFileHandle = [self createLogfile:rawLogFile];
     summaryFileHandle = [self createLogfile:summaryLogFile];
     // write the raw log file header
-    [self writeLineToRawLogFile:@"Time,Time Since Session Start,Event,Phase,SubPhase,Notes,X,Y,Location,Length,Characters,Current Value"];
+    [self writeLineToRawLogFile:@"Time\tTime Since Session Start\tEvent\tPhase\tSubPhase\tTarget String\tX\tY\tLocation\tLength\tCharacters\tCurrent Value\tNotes"];
     if (rawFileHandle == nil || summaryFileHandle == nil) return NO;
     return YES;
 }

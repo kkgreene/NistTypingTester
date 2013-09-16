@@ -115,8 +115,6 @@
 		ADECABC417DE0C930069A5FD /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = ADECABC317DE0C930069A5FD /* Default-Portrait@2x~ipad.png */; };
 		ADECABC617DE0C9F0069A5FD /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = ADECABC517DE0C9F0069A5FD /* Default-Landscape@2x~ipad.png */; };
 		ADECABC817DE0CE10069A5FD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADECABC717DE0CE10069A5FD /* Default-568h@2x.png */; };
-		ADECABCA17DE0D1D0069A5FD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADECABC917DE0D1D0069A5FD /* Default@2x.png */; };
-		ADECABCC17DE0D390069A5FD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ADECABCB17DE0D390069A5FD /* Default.png */; };
 		C95BBBE617C50D5500F02F5F /* ttVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBE517C50D5500F02F5F /* ttVerifyViewController.m */; };
 		C95BBBE917C50D6C00F02F5F /* ttEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBE817C50D6C00F02F5F /* ttEntryViewController.m */; };
 		C95BBBEC17C50DB100F02F5F /* ttRecallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBEB17C50DB100F02F5F /* ttRecallViewController.m */; };
@@ -643,8 +641,6 @@
 				ADECABC417DE0C930069A5FD /* Default-Portrait@2x~ipad.png in Resources */,
 				ADECABC617DE0C9F0069A5FD /* Default-Landscape@2x~ipad.png in Resources */,
 				ADECABC817DE0CE10069A5FD /* Default-568h@2x.png in Resources */,
-				ADECABCA17DE0D1D0069A5FD /* Default@2x.png in Resources */,
-				ADECABCC17DE0D390069A5FD /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

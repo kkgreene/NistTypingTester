@@ -48,16 +48,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-R8-Sna">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-R8-Sna">
                                 <rect key="frame" x="340" y="87" width="88" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="cBu-eb-wqH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="766-arrow-right.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="766-arrow-right.png"/>
                                 <state key="selected" image="766-arrow-right-selected.png"/>
                                 <state key="highlighted" image="766-arrow-right-selected.png"/>
                                 <connections>
@@ -141,32 +138,22 @@
                                     <segue destination="Z3q-gA-D19" kind="embed" identifier="SettingDetails" id="v9O-kJ-Loe"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dos-F3-HzS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dos-F3-HzS">
                                 <rect key="frame" x="20" y="974" width="73" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="73" id="0Fp-C7-xIq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancel:" destination="gGj-MP-sSo" eventType="touchUpInside" id="V8S-br-pLa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqX-4M-4fz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqX-4M-4fz">
                                 <rect key="frame" x="675" y="974" width="73" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="73" id="ZPn-5z-yFq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="save:" destination="gGj-MP-sSo" eventType="touchUpInside" id="6Rr-5j-lQI"/>
                                 </connections>
@@ -747,31 +734,23 @@
                                 <rect key="frame" x="20" y="49" width="728" height="857"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9X-c8-U9y">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9X-c8-U9y">
                                 <rect key="frame" x="20" y="976" width="88" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="PZc-Di-xvF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="765-arrow-left.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="765-arrow-left.png"/>
                                 <state key="highlighted" image="765-arrow-left-selected.png"/>
                                 <connections>
                                     <action selector="cancel:" destination="Tss-kM-xCY" eventType="touchUpInside" id="FMl-v0-UcR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtZ-FG-p6C">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtZ-FG-p6C">
                                 <rect key="frame" x="660" y="976" width="88" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="BMR-oS-F2b"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="766-arrow-right.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="766-arrow-right.png"/>
                                 <state key="highlighted" image="766-arrow-right-selected.png"/>
                                 <connections>
                                     <segue destination="OAu-sL-wnb" kind="modal" identifier="TypingProficiency" modalTransitionStyle="crossDissolve" id="WlX-XL-JKb"/>
@@ -890,13 +869,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fZ-x9-BX5">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fZ-x9-BX5">
                                 <rect key="frame" x="340" y="155" width="89" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="766-arrow-right.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="766-arrow-right.png"/>
                                 <state key="highlighted" image="766-arrow-right-selected.png"/>
                                 <connections>
                                     <action selector="doneButtonPressed" destination="OAu-sL-wnb" eventType="touchUpInside" id="RtH-GH-dV0"/>
@@ -965,16 +940,12 @@
                                 <rect key="frame" x="20" y="49" width="728" height="919"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4j1-F5-C37">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4j1-F5-C37">
                                 <rect key="frame" x="340" y="976" width="88" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="NI6-wn-7o1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="766-arrow-right.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="766-arrow-right.png"/>
                                 <state key="highlighted" image="766-arrow-right-selected.png"/>
                                 <connections>
                                     <segue destination="RH5-gu-dim" kind="modal" identifier="Memorize" modalTransitionStyle="crossDissolve" id="yEP-gY-KIJ"/>
@@ -1064,16 +1035,12 @@
                                     <outlet property="delegate" destination="RH5-gu-dim" id="jxA-Pe-duH"/>
                                 </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCh-a3-5O7">
-                                <rect key="frame" x="340" y="330" width="88" height="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCh-a3-5O7">
+                                <rect key="frame" x="340" y="330" width="88" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="oOc-Em-3K2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="766-arrow-right.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="766-arrow-right.png"/>
                                 <state key="highlighted" image="766-arrow-right-selected.png"/>
                                 <connections>
                                     <segue destination="nvh-9X-XZg" kind="modal" identifier="Practice" modalTransitionStyle="crossDissolve" id="04K-r5-l5Q"/>
@@ -1225,30 +1192,22 @@
                                     <action selector="skipButtonPressed" destination="nvh-9X-XZg" eventType="touchUpInside" id="ouU-lJ-UYr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="863-6b-j4X">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="863-6b-j4X">
                                 <rect key="frame" x="20" y="161" width="88" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="qaT-Pw-jR7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="765-arrow-left-selected.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="765-arrow-left-selected.png"/>
                                 <connections>
                                     <segue destination="RH5-gu-dim" kind="modal" identifier="BackToMemorize" modalTransitionStyle="crossDissolve" id="NoB-kO-LYm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewg-XE-Pbx">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewg-XE-Pbx">
                                 <rect key="frame" x="660" y="155" width="88" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="PWV-uE-MXm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="766-arrow-right-selected.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="766-arrow-right-selected.png"/>
                                 <connections>
                                     <action selector="doneButtonPressed" destination="nvh-9X-XZg" eventType="touchUpInside" id="6bi-Zc-A1B"/>
                                 </connections>
@@ -1387,31 +1346,23 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="322-B2-tpd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="322-B2-tpd">
                                 <rect key="frame" x="20" y="132" width="88" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="oKl-G5-rDH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="765-arrow-left.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="765-arrow-left.png"/>
                                 <state key="highlighted" image="765-arrow-left-selected.png"/>
                                 <connections>
                                     <action selector="back" destination="KXG-VE-QnH" eventType="touchUpInside" id="JDI-6f-Je5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95m-kL-KGn">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95m-kL-KGn">
                                 <rect key="frame" x="660" y="126" width="88" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="a4j-me-CfJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="766-arrow-right-selected.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="766-arrow-right-selected.png"/>
                                 <connections>
                                     <action selector="done" destination="KXG-VE-QnH" eventType="touchUpInside" id="qaz-05-qC8"/>
                                 </connections>
@@ -1530,16 +1481,12 @@
                                     <outlet property="delegate" destination="eqt-5t-k8q" id="Ryc-Ac-eLh"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOK-x1-0JE">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOK-x1-0JE">
                                 <rect key="frame" x="340" y="126" width="88" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="b9p-sa-FPo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="766-arrow-right.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="766-arrow-right.png"/>
                                 <state key="highlighted" image="766-arrow-right-selected.png"/>
                                 <connections>
                                     <action selector="done" destination="eqt-5t-k8q" eventType="touchUpInside" id="cxo-1k-zPF"/>
@@ -1630,16 +1577,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fht-hY-e5K">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fht-hY-e5K">
                                 <rect key="frame" x="340" y="976" width="88" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="hx3-pf-MgF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="766-arrow-right.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="766-arrow-right.png"/>
                                 <state key="highlighted" image="766-arrow-right-selected.png"/>
                                 <connections>
                                     <action selector="done" destination="uqW-Go-H4F" eventType="touchUpInside" id="Hd4-fR-4z7"/>
@@ -1697,16 +1640,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSm-43-pej">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSm-43-pej">
                                 <rect key="frame" x="340" y="976" width="88" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="Ft6-aW-uGA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="766-arrow-right.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="766-arrow-right.png"/>
                                 <state key="highlighted" image="766-arrow-right-selected.png"/>
                                 <connections>
                                     <action selector="done" destination="e0C-UY-9yp" eventType="touchUpInside" id="uwE-Wh-dz5"/>
@@ -1785,14 +1724,36 @@
     </scenes>
     <resources>
         <image name="433-x.png" width="18" height="18"/>
+        <image name="433-x.png" width="18" height="18"/>
+        <image name="740-gear-selected.png" width="28" height="28"/>
         <image name="740-gear-selected.png" width="28" height="28"/>
         <image name="740-gear.png" width="28" height="28"/>
         <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="759-refresh-2.png" width="28" height="28"/>
         <image name="765-arrow-left-selected.png" width="14" height="28"/>
+        <image name="765-arrow-left-selected.png" width="14" height="28"/>
+        <image name="765-arrow-left-selected.png" width="14" height="28"/>
+        <image name="765-arrow-left.png" width="14" height="28"/>
         <image name="765-arrow-left.png" width="14" height="28"/>
         <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
         <image name="766-arrow-right.png" width="14" height="28"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1801,8 +1762,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="k1v-bL-JN8"/>
-        <segue reference="04K-r5-l5Q"/>
-        <segue reference="NoB-kO-LYm"/>
+        <segue reference="WfD-p6-NZe"/>
+        <segue reference="qRJ-FI-xZJ"/>
+        <segue reference="Mr0-dF-HyJ"/>
     </inferredMetricsTieBreakers>
 </document>
