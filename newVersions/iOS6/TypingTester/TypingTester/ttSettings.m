@@ -252,18 +252,6 @@ static ttSettings *instance = nil;
     [prefs setObject:QuitString forKey:ttcQuitStringKey];
 }
 
--(NSArray*) selectedFilters
-{
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    return [prefs stringArrayForKey:ttcSelectedFiltersKey];
-}
-
--(void) setSelectedFilters:(NSArray *)SelectedFilters
-{
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setObject:SelectedFilters forKey:ttcSelectedFiltersKey];
-}
-
 -(int) selectedGroup
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];

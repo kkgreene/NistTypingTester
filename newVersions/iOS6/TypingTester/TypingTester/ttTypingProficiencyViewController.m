@@ -125,7 +125,6 @@
     // pass the session pointer on ...
     if ([segue.identifier isEqualToString:@"Instructions"])
     {
-        
         ttInstructionsViewController *controller = [segue destinationViewController];
         controller.session = self.session;
     }
@@ -213,14 +212,14 @@
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField
 {
-    ttEvent *textFieldEntered = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Proficiency];
+    ttEvent *textFieldEntered = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Proficiency andSubPhase:NoSubPhase];
     textFieldEntered.notes =[NSString stringWithFormat:@"TextField Became Active"];
     [self.session addEvent:textFieldEntered];
 }
 
 -(void) textFieldDidEndEditing:(UITextField *)textField
 {
-    ttEvent *textFieldLeft= [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Proficiency];
+    ttEvent *textFieldLeft= [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Proficiency andSubPhase:NoSubPhase];
     textFieldLeft.notes = [NSString stringWithFormat:@"TextField No Longer Active"];
     [self.session addEvent:textFieldLeft];
 }

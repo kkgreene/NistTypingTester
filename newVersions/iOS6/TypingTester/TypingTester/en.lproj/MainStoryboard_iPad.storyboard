@@ -799,7 +799,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBs-z2-aLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141" y="147"/>
+            <point key="canvasLocation" x="1093" y="395"/>
         </scene>
         <!--Tt Typing Proficiency View Controller-->
         <scene sceneID="sjA-Am-Jw9">
@@ -915,7 +915,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9o7-Tk-Ygd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2102" y="147"/>
+            <point key="canvasLocation" x="1114" y="1751"/>
         </scene>
         <!--Tt Instructions View Controller-->
         <scene sceneID="rFY-0S-o04">
@@ -969,7 +969,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdn-dL-9h5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3050" y="147"/>
+            <point key="canvasLocation" x="1114" y="2995"/>
         </scene>
         <!--Tt Memorize View Controller-->
         <scene sceneID="rWu-gq-j4F">
@@ -1079,7 +1079,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0JX-hI-IJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3940" y="152"/>
+            <point key="canvasLocation" x="2540" y="336"/>
         </scene>
         <!--Tt Practice View Controller-->
         <scene sceneID="agF-h6-8fj">
@@ -1103,9 +1103,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="uqW-Go-H4F" kind="modal" identifier="SkipToRecall" modalTransitionStyle="crossDissolve" id="bf3-VD-hHG"/>
-                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Practice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G00-Mt-OHl">
                                 <rect key="frame" x="353" y="20" width="63" height="21"/>
@@ -1265,11 +1262,12 @@
                         <outlet property="skipButton" destination="L8s-LW-ZPi" id="n7Z-pV-YJ2"/>
                         <outlet property="visibilityButton" destination="jkU-oO-TBd" id="asr-AD-xV2"/>
                         <segue destination="KXG-VE-QnH" kind="modal" identifier="Verify" modalTransitionStyle="crossDissolve" id="dxL-9g-cS0"/>
+                        <segue destination="uqW-Go-H4F" kind="modal" identifier="SkipToRecall" modalTransitionStyle="crossDissolve" id="J9Y-oA-Wu7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGr-Fu-Oi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3956" y="1418"/>
+            <point key="canvasLocation" x="2564" y="1793"/>
         </scene>
         <!--Tt Verify View Controller-->
         <scene sceneID="ofM-VP-vpy">
@@ -1417,7 +1415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZB-ff-zdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3976" y="2636"/>
+            <point key="canvasLocation" x="2564" y="3148"/>
         </scene>
         <!--Tt Entry View Controller-->
         <scene sceneID="jiC-Zp-KIm">
@@ -1532,7 +1530,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBS-P9-cgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5196" y="2652"/>
+            <point key="canvasLocation" x="4216" y="3132"/>
         </scene>
         <!--Tt Recall View Controller-->
         <scene sceneID="GMD-HL-Kve">
@@ -1622,7 +1620,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZoH-o1-RcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6194" y="4080"/>
+            <point key="canvasLocation" x="4893" y="1063"/>
         </scene>
         <!--Tt Thank You View Controller-->
         <scene sceneID="jQj-FF-vsI">
@@ -1677,7 +1675,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XmG-lm-ZUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7276" y="3610"/>
+            <point key="canvasLocation" x="5916" y="-382"/>
         </scene>
         <!--Tt Recall Table View Controller-->
         <scene sceneID="rbI-Sj-6Nq">
@@ -1696,7 +1694,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="682" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter String" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXX-Kp-D4V">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter String" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXX-Kp-D4V" customClass="ttTextFieldWithName">
                                             <rect key="frame" x="20" y="7" width="636" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="636" id="w99-4l-8of"/>
@@ -1721,7 +1719,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTp-Gb-rNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7276" y="5020"/>
+            <point key="canvasLocation" x="5864" y="2036"/>
         </scene>
     </scenes>
     <resources>
@@ -1742,8 +1740,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="bf3-VD-hHG"/>
-        <segue reference="qRJ-FI-xZJ"/>
-        <segue reference="yEP-gY-KIJ"/>
+        <segue reference="k1v-bL-JN8"/>
+        <segue reference="04K-r5-l5Q"/>
+        <segue reference="NoB-kO-LYm"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -76,7 +76,6 @@
     quitString = [settings.quitString copy];
     useGroupId = settings.useGroupId;
     selectedGroup = settings.selectedGroup;
-    selectedFilters = [NSArray arrayWithArray:settings.selectedFilters];
     enableHideButtonOnPracticeScreen = settings.enableHideButtonOnPracticeScreen;
     [self configureUI];
 }
@@ -130,7 +129,6 @@
     settings.quitString = quitString;
     settings.useGroupId = useGroupId;
     settings.selectedGroup = selectedGroup;
-    settings.selectedFilters = selectedFilters;
     settings.enableHideButtonOnPracticeScreen = enableHideButtonOnPracticeScreen;
     [self.delegate SettingsViewControllerDidSave:self];
 }

@@ -44,6 +44,7 @@
 		AD20940917C3B94B00B56CB7 /* 766-arrow-right-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD20940517C3B94B00B56CB7 /* 766-arrow-right-white@2x.png */; };
 		AD20940C17C3D34500B56CB7 /* ttThankYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD20940B17C3D34400B56CB7 /* ttThankYouViewController.m */; };
 		AD20940F17C3FBCD00B56CB7 /* ttApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = AD20940E17C3FBCD00B56CB7 /* ttApplication.m */; };
+		AD2537C017E7906500C1B0EE /* ttTextFieldWithName.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2537BF17E7906500C1B0EE /* ttTextFieldWithName.m */; };
 		AD3A463617CBB440007256F4 /* ttRecallTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3A463517CBB440007256F4 /* ttRecallTableViewController.m */; };
 		AD4073FC17BBCBB3006E31CF /* ttProficiencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4073FB17BBCBB3006E31CF /* ttProficiencyItem.m */; };
 		AD4073FF17BBCBC2006E31CF /* ttTestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4073FE17BBCBC2006E31CF /* ttTestEntity.m */; };
@@ -173,6 +174,8 @@
 		AD20940B17C3D34400B56CB7 /* ttThankYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttThankYouViewController.m; sourceTree = "<group>"; };
 		AD20940D17C3FBCD00B56CB7 /* ttApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttApplication.h; sourceTree = "<group>"; };
 		AD20940E17C3FBCD00B56CB7 /* ttApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttApplication.m; sourceTree = "<group>"; };
+		AD2537BE17E7906500C1B0EE /* ttTextFieldWithName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttTextFieldWithName.h; sourceTree = "<group>"; };
+		AD2537BF17E7906500C1B0EE /* ttTextFieldWithName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttTextFieldWithName.m; sourceTree = "<group>"; };
 		AD3A463417CBB43F007256F4 /* ttRecallTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttRecallTableViewController.h; sourceTree = "<group>"; };
 		AD3A463517CBB440007256F4 /* ttRecallTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttRecallTableViewController.m; sourceTree = "<group>"; };
 		AD4073FA17BBCBB3006E31CF /* ttProficiencyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttProficiencyItem.h; sourceTree = "<group>"; };
@@ -326,6 +329,7 @@
 		AD04766B17A964B600657D08 /* TypingTester */ = {
 			isa = PBXGroup;
 			children = (
+				AD2537BD17E7904500C1B0EE /* controls */,
 				AD4073F917BBCB63006E31CF /* dataModel */,
 				AD04768017A964B600657D08 /* MainStoryboard_iPad.storyboard */,
 				AD04767D17A964B600657D08 /* MainStoryboard_iPhone.storyboard */,
@@ -477,6 +481,15 @@
 				AD6E13D817B930030034DA27 /* inputStrings.xml */,
 			);
 			name = resources;
+			sourceTree = "<group>";
+		};
+		AD2537BD17E7904500C1B0EE /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				AD2537BE17E7906500C1B0EE /* ttTextFieldWithName.h */,
+				AD2537BF17E7906500C1B0EE /* ttTextFieldWithName.m */,
+			);
+			name = controls;
 			sourceTree = "<group>";
 		};
 		AD4073F917BBCB63006E31CF /* dataModel */ = {
@@ -677,6 +690,7 @@
 				AD20940C17C3D34500B56CB7 /* ttThankYouViewController.m in Sources */,
 				AD20940F17C3FBCD00B56CB7 /* ttApplication.m in Sources */,
 				C95BBBE617C50D5500F02F5F /* ttVerifyViewController.m in Sources */,
+				AD2537C017E7906500C1B0EE /* ttTextFieldWithName.m in Sources */,
 				C95BBBE917C50D6C00F02F5F /* ttEntryViewController.m in Sources */,
 				C95BBBEC17C50DB100F02F5F /* ttRecallViewController.m in Sources */,
 				AD3A463617CBB440007256F4 /* ttRecallTableViewController.m in Sources */,

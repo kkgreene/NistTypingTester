@@ -189,4 +189,19 @@
     return YES;
 }
 
+
+-(void) textFieldDidBeginEditing:(UITextField *)textField
+{
+    ttEvent *textFieldEntered = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
+    textFieldEntered.notes =[NSString stringWithFormat:@"TextField Became Active"];
+    [self.session addEvent:textFieldEntered];
+}
+
+-(void) textFieldDidEndEditing:(UITextField *)textField
+{
+    ttEvent *textFieldLeft= [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
+    textFieldLeft.notes = [NSString stringWithFormat:@"TextField No Longer Active"];
+    [self.session addEvent:textFieldLeft];
+}
+
 @end

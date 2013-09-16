@@ -12,19 +12,22 @@
 #import "ttEvent.h"
 #import "ttEventInput.h"
 #import "ttEventTouch.h"
+#import "ttTextFieldWithName.h"
 
 @interface ttRecallTableViewController ()
 
 @end
 
 @implementation ttRecallTableViewController
+{
+
+}
 
 -(id) initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-    
     }
     return self;
 }
@@ -75,7 +78,8 @@
     static NSString *CellIdentifier = @"RecallCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     // Configure the cell...
-    UITextField *field = (UITextField*)[cell viewWithTag:1000];
+    ttTextFieldWithName *field = (ttTextFieldWithName*)[cell viewWithTag:1000];
+    field.name = [NSString stringWithFormat:@"Field %i", indexPath.row];
     field.delegate = self;
     return cell;
 }
@@ -83,16 +87,6 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
 #pragma mark - UITextFieldDelegate
 
@@ -104,8 +98,9 @@
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = string;
     inputEvent.currentValue = newString;
+    ttTextFieldWithName *field = (ttTextFieldWithName*)textField;
+    inputEvent.notes = [NSString stringWithFormat:@"Text entered in %@", [field name]];
     [self.session addEvent:inputEvent];
-    NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
     return YES;
 }
 
@@ -113,6 +108,23 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+
+-(void) textFieldDidBeginEditing:(UITextField *)textField
+{
+    ttTextFieldWithName *field = (ttTextFieldWithName*)textField;
+    ttEvent *textFieldEntered = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Recall andSubPhase:NoSubPhase];
+    textFieldEntered.notes =[NSString stringWithFormat:@"TextField Became Active : %@", [field name]];
+    [self.session addEvent:textFieldEntered];
+}
+
+-(void) textFieldDidEndEditing:(UITextField *)textField
+{
+    ttTextFieldWithName *field = (ttTextFieldWithName*)textField;
+    ttEvent *textFieldLeft= [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Recall andSubPhase:NoSubPhase];
+    textFieldLeft.notes = [NSString stringWithFormat:@"TextField No Longer Active : %@", [field name]];
+    [self.session addEvent:textFieldLeft];
 }
 
 

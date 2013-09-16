@@ -28,8 +28,6 @@
 @property (nonatomic, copy) NSString *quitString;
 @property (nonatomic, assign) bool useGroupId;
 @property (nonatomic, assign) int selectedGroup;
-@property (nonatomic, copy) NSArray *selectedFilters;
-@property (nonatomic, copy) NSArray *excludedFilters;
 @property (nonatomic, assign) bool firstRun;
 @property (nonatomic, assign) bool enableHideButtonOnPracticeScreen;
 @property (nonatomic, assign) bool enableSkipButton;
