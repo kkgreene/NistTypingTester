@@ -19,6 +19,7 @@
 @property (nonatomic, copy) NSString *notes;
 @property (nonatomic, assign) NSTimeInterval interval;
 @property (nonatomic, copy) NSString *targetString;
+@property (nonatomic, copy) NSString *participantNumber;
 
 -(id)initWithEventType:(Event)event;
 -(id)initWithEventType:(Event)event andPhase:(Phase)phase;

@@ -160,6 +160,7 @@
 -(void) addEvent:(ttEvent *)event
 {
     event.interval = [event.time timeIntervalSinceDate:sessionStartTime];
+    event.participantNumber = self.participant.participantNumber;
     //[self.events addObject:event];
     [self writeLineToRawLogFile:[event description]];
     return;
@@ -175,7 +176,7 @@
     rawFileHandle = [self createLogfile:rawLogFile];
     summaryFileHandle = [self createLogfile:summaryLogFile];
     // write the raw log file header
-    [self writeLineToRawLogFile:@"Time\tTime Since Session Start\tEvent\tPhase\tSubPhase\tTarget String\tX\tY\tLocation\tLength\tCharacters\tCurrent Value\tNotes"];
+    [self writeLineToRawLogFile:@"Time\tTime Since Session Start\tParticpant Id\tEvent\tPhase\tSubPhase\tTarget String\tX\tY\tLocation\tLength\tCharacters\tCurrent Value\tNotes"];
     if (rawFileHandle == nil || summaryFileHandle == nil) return NO;
     return YES;
 }
