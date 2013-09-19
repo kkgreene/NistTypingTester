@@ -77,6 +77,7 @@ static ttSettings *instance = nil;
     [defaults setValue:[[NSArray alloc]init] forKey:ttcSelectedFiltersKey];
     [defaults setValue:[NSNumber numberWithBool:ttcEnableHideButtonOnPracticeScreenValue] forKey:ttcEnableHideButtonOnPracticeScreenKey];
     [defaults setValue:[NSNumber numberWithInt:ttcProficiencyGroupValue] forKey:ttcProficiencyGroupKey];
+    [defaults setValue:ttcSkipStringDefaultValue forKey:ttcSkipStringKey];
     
     
     [[NSUserDefaults standardUserDefaults]registerDefaults:defaults];
@@ -103,6 +104,7 @@ static ttSettings *instance = nil;
     [prefs setBool:YES forKey:ttcFirstRunKey];
     [prefs setBool:ttcEnableHideButtonOnPracticeScreenValue forKey:ttcEnableHideButtonOnPracticeScreenKey];
     [prefs setInteger:ttcProficiencyGroupValue forKey:ttcProficiencyGroupKey];
+    [prefs setValue:ttcSkipStringDefaultValue forKey:ttcSkipStringKey];
 }
 
 #pragma mark Custom setter/getter pairs
@@ -301,14 +303,26 @@ static ttSettings *instance = nil;
     [prefs setInteger:ttcProficiencyGroupValue forKey:ttcProficiencyGroupKey];
 }
 
+-(NSString*) skipString
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    return [prefs stringForKey:ttcSkipStringKey];
+}
+
+-(void) setSkipString:(NSString *)skipString
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:skipString forKey:ttcSkipStringKey];
+}
+
 
 #pragma mark setup functions
 
 +(void) copyInitialFiles
 {
     [self copyToDocumentsResourceFileNamed:@"welcome" ofType:@"html" toFileName:@"welcome.html" shouldOverwrite:NO];
-    [self copyToDocumentsResourceFileNamed:@"instructionsIphone" ofType:@"html" toFileName:@"instructions.html" shouldOverwrite:NO];
-    [self copyToDocumentsResourceFileNamed:@"instructionsIpad" ofType:@"html" toFileName:@"instructions-iPad.html" shouldOverwrite:NO];
+    [self copyToDocumentsResourceFileNamed:@"instructions" ofType:@"html" toFileName:@"instructions.html" shouldOverwrite:NO];
+    [self copyToDocumentsResourceFileNamed:@"instructions-iPad" ofType:@"html" toFileName:@"instructions-iPad.html" shouldOverwrite:NO];
     [self copyToDocumentsResourceFileNamed:@"thankYou" ofType:@"html" toFileName:@"thankYou.html" shouldOverwrite:NO];
     [self copyToDocumentsResourceFileNamed:@"inputStrings" ofType:@"xml" toFileName:@"inputStrings.xml" shouldOverwrite:NO];
 }
@@ -324,8 +338,8 @@ static ttSettings *instance = nil;
 +(void) resetInitialFiles
 {
     [self copyToDocumentsResourceFileNamed:@"welcome" ofType:@"html" toFileName:@"welcome.html" shouldOverwrite:YES];
-    [self copyToDocumentsResourceFileNamed:@"instructionsIphone" ofType:@"html" toFileName:@"instructions.html" shouldOverwrite:YES];
-    [self copyToDocumentsResourceFileNamed:@"instructionsIpad" ofType:@"html" toFileName:@"instructions-iPad.html" shouldOverwrite:YES];
+    [self copyToDocumentsResourceFileNamed:@"instructions" ofType:@"html" toFileName:@"instructions.html" shouldOverwrite:YES];
+    [self copyToDocumentsResourceFileNamed:@"instructions-iPad" ofType:@"html" toFileName:@"instructions-iPad.html" shouldOverwrite:YES];
     [self copyToDocumentsResourceFileNamed:@"thankYou" ofType:@"html" toFileName:@"thankYou.html" shouldOverwrite:YES];
     [self copyToDocumentsResourceFileNamed:@"inputStrings" ofType:@"xml" toFileName:@"inputStrings.xml" shouldOverwrite:YES];
 }

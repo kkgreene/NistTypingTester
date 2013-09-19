@@ -25,6 +25,7 @@ FOUNDATION_EXPORT NSString *const ttcSelectedGroupKey;
 FOUNDATION_EXPORT NSString *const ttcFirstRunKey;
 FOUNDATION_EXPORT NSString *const ttcEnableHideButtonOnPracticeScreenKey;
 FOUNDATION_EXPORT NSString *const ttcProficiencyGroupKey;
+FOUNDATION_EXPORT NSString *const ttcSkipStringKey;
 
 FOUNDATION_EXPORT const int ttcStringsForTestDefaultValue;
 FOUNDATION_EXPORT const int ttcEntriesPerTestDefaultValue;
@@ -43,6 +44,7 @@ FOUNDATION_EXPORT const bool ttcUseRandomStringSelectionSeedDefaultValue;
 FOUNDATION_EXPORT const bool ttcEnableHideButtonOnPracticeScreenValue;
 
 FOUNDATION_EXPORT NSString *const ttcQuitStringDefaultValue;
+FOUNDATION_EXPORT NSString *const ttcSkipStringDefaultValue;
 
 FOUNDATION_EXPORT const CGRect ttcHitboxShiftKeyIos6Portrait;
 FOUNDATION_EXPORT const CGRect ttcHitboxSwitchKeyIos6Portrait;

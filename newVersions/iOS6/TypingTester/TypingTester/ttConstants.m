@@ -23,6 +23,7 @@ NSString *const ttcSelectedGroupKey = @"SelectedGroup";
 NSString *const ttcFirstRunKey = @"FirstRun";
 NSString *const ttcEnableHideButtonOnPracticeScreenKey = @"EnableHideButtonOnPracticeScreen";
 NSString *const ttcProficiencyGroupKey = @"ProficiencyGroup";
+NSString *const ttcSkipStringKey =@"SkipString";
 
 const int ttcStringsForTestDefaultValue = 10;
 const int ttcEntriesPerTestDefaultValue = 10;
@@ -41,6 +42,7 @@ const bool ttcUseRandomStringSelectionSeedDefaultValue = NO;
 const bool ttcEnableHideButtonOnPracticeScreenValue = NO;
 
 NSString *const ttcQuitStringDefaultValue = @"I QUIT";
+NSString *const ttcSkipStringDefaultValue = @"SKIP THIS";
 
 
 NSString *const ttcPhaseStringArray[] = {@"Unknown Phase", @"Proficiency Phase", @"Introduction Phase", @"Memorize Phase",
