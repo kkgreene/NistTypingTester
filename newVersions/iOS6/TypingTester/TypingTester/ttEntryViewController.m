@@ -113,12 +113,22 @@
     // check for quit string entered
     if ([self.entryField.text isEqualToString:[ttSettings Instance].quitString])
     {
-        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Entry];
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Entry andSubPhase:NoSubPhase];
         event.notes = @"Quit string entered";
         event.targetString = entity.entityString;
         [self.session addEvent:event];
         // if so go to recall
         [self performSegueWithIdentifier:@"Recall" sender:self];
+        return;
+    }
+    else if ([self.entryField.text isEqualToString:[ttSettings Instance].skipString])
+    {
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Entry andSubPhase:NoSubPhase];
+        event.notes = @"Skip string entered";
+        event.targetString = entity.entityString;
+        [self.session addEvent:event];
+        // if so go to recall
+        [self performSegueWithIdentifier:@"MemorizeNextEntity" sender:self];
         return;
     }
     // check for correct/incorrect entry

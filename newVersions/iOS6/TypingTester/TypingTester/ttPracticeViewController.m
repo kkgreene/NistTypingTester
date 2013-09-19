@@ -208,6 +208,17 @@
         [self.session addEvent:event];
         [self performSegueWithIdentifier:@"SkipToRecall" sender:self];
     }
+    else if ([self.entryField.text isEqualToString:settings.skipString])
+    {
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
+        event.targetString = e.entityString;
+        event.notes = @"User entered skip string, transitioning to next entity.";
+        [self.session addEvent:event];
+        // move to the next entity
+        [self.session nextEntity];
+        // back to memorize
+        [self performSegueWithIdentifier:@"BackToMemorize" sender:self];
+    }
     else    // entry does not match practice string
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:IncorrectValueEntered andPhase:Memorize andSubPhase:ForcedPractice];

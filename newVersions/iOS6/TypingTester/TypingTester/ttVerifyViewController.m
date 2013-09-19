@@ -15,6 +15,7 @@
 #import "ttTestEntity.h"
 #import "ttRecallViewController.h"
 #import "ttSettings.h"
+#import "ttMemorizeViewController.h"
 
 @interface ttVerifyViewController ()
 
@@ -82,6 +83,12 @@
         ttRecallViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
+    else if ([segue.identifier isEqualToString:@"BackToMemorize"])
+    {
+        [self.session nextEntity];
+        ttMemorizeViewController *controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
 }
 
 -(NSUInteger)supportedInterfaceOrientations
@@ -122,6 +129,14 @@
         event.notes = @"Quit phrase entered";
         [self.session addEvent:event];
         [self performSegueWithIdentifier:@"SkipToRecall" sender:self];
+    }
+    else if ([self.entryField.text isEqualToString:[ttSettings Instance].skipString])
+    {
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
+        event.targetString = entity.entityString;
+        event.notes = @"Skip phrase entered";
+        [self.session addEvent:event];
+        [self performSegueWithIdentifier:@"BackToMemorize" sender:self];
     }
     else
     {
