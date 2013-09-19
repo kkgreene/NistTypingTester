@@ -47,6 +47,7 @@
 -(void)enteredSubPhase:(SubPhase)subphase withNote:(NSString*)note;
 
 -(void)enteredProficiencyPhase;
+-(void)nextEntity;
 
 -(void)addEvent:(ttEvent*)event;
 
@@ -54,7 +55,5 @@
 -(void)closeLogFiles;
 -(void) writeLineToRawLogFile:(NSString*)string;
 -(void) writeLineToSummaryLogFile:(NSString*)string;
-
--(void) moveToNextEntity;
 
 @end

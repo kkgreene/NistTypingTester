@@ -9,9 +9,7 @@
 #import "ttVerifyViewController.h"
 #import "ttSession.h"
 #import "ttSettings.h"
-#import "ttEventInput.h"
 #import "ttEvent.h"
-#import "ttEventTouch.h"
 #import "ttEntryViewController.h"
 #import "ttPracticeViewController.h"
 #import "ttTestEntity.h"
@@ -113,6 +111,7 @@
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:CorrectValueEntered andPhase:Memorize andSubPhase:Verify];
         event.targetString = entity.entityString;
+        event.currentValue = self.entryField.text;
         [self.session addEvent:event];
         [self performSegueWithIdentifier:@"Entry" sender:self];
     }
@@ -128,6 +127,7 @@
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:IncorrectValueEntered andPhase:Memorize andSubPhase:Verify];
         event.targetString = entity.entityString;
+        event.currentValue = self.entryField.text;
         [self.session addEvent:event];
         self.incorrectText.hidden = NO;
         self.incorrectImage.hidden = NO;
@@ -159,7 +159,7 @@
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Memorize andSubPhase:Verify];
+    ttEvent *inputEvent = [[ttEvent alloc] initWithEventType:Input andPhase:Memorize andSubPhase:Verify];
     inputEvent.location = range.location;
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = string;

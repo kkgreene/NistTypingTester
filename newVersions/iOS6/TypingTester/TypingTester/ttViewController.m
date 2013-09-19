@@ -31,7 +31,6 @@
     {
         settings = [ttSettings Instance];
         inputData = [ttInputData Instance];
-        [inputData loadDataFile:nil];
     }
     return self;
 }
@@ -44,6 +43,12 @@
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
     }
     [self.participantNumber becomeFirstResponder];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [inputData loadDataFile:nil];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

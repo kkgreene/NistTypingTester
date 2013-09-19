@@ -10,8 +10,6 @@
 #import "ttMemorizeViewController.h"
 #import "ttVerifyViewController.h"
 #import "ttSettings.h"
-#import "ttEventTouch.h"
-#import "ttEventInput.h"
 #import "ttTestEntity.h"
 #import "ttRecallViewController.h"
 
@@ -192,6 +190,7 @@
         ttEvent *event = [[ttEvent alloc]initWithEventType:CorrectValueEntered andPhase:Memorize andSubPhase:ForcedPractice];
         event.notes = [NSString stringWithFormat:@"Pratice Round: %i", self.session.CurrentPracticeRoundForEntity];
         event.targetString = e.entityString;
+        event.currentValue = self.entryField.text;
         [self.session addEvent:event];
         self.session.CurrentPracticeRoundForEntity++;
         if (self.session.CurrentPracticeRoundForEntity >= settings.forcedPracticeRounds)
@@ -214,6 +213,7 @@
         ttEvent *event = [[ttEvent alloc]initWithEventType:IncorrectValueEntered andPhase:Memorize andSubPhase:ForcedPractice];
         event.notes = [NSString stringWithFormat:@"Pratice Round: %i", self.session.CurrentPracticeRoundForEntity];
         event.targetString = e.entityString;
+        event.currentValue = self.entryField.text;
         self.correctIndicator.hidden = NO;
         self.correctTextLable.hidden = NO;
         if (self.session.CurrentPracticeRoundForEntity >= settings.forcedPracticeRounds)
@@ -229,22 +229,13 @@
 }
 
 #pragma -mark touch events
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch * touch = [touches anyObject];
-    CGPoint pos = [touch locationInView: [UIApplication sharedApplication].keyWindow];
-    ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
-    //NSLog(@"Touch on Practice View: %.3f, %.3f", pos.x, pos.y);
-    [self.session addEvent:touchEvent];
-    [self.entryField resignFirstResponder];
-}
 
 #pragma -mark UITextFieldDelegate methods
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Memorize andSubPhase:ForcedPractice];
+    ttEvent *inputEvent = [[ttEvent alloc] initWithEventType:Input andPhase:Memorize andSubPhase:ForcedPractice];
     inputEvent.location = range.location;
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = string;

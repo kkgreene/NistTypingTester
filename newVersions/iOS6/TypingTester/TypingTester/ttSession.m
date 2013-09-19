@@ -23,6 +23,14 @@
     NSDate *sessionStartTime;
     NSDate *phaseStartTime;
     NSDate *subPhaseStartTime;
+    NSDate *entityStart;
+    NSTimeInterval timeInFreePractice;
+    NSTimeInterval timeInForcedPractice;
+    NSTimeInterval timeInVerify;
+    NSTimeInterval timeOnEntity;
+    int timesInFreePractice;
+    int timesInForcedPractice;
+    int timesInVerify;
 }
 
 -(id) init
@@ -60,14 +68,51 @@
 -(void) loadEntities
 {
     self.entities = [[ttInputData Instance]getEntities];
+    self.currentEntity = -1;
 }
 
 -(void) loadProficiencyGroups
 {
-     self.proficiencyStrings = [[ttInputData Instance]getPhrasesForGroupId:settings.proficiencyGroup];
+    self.proficiencyStrings = [[ttInputData Instance]getPhrasesForGroupId:settings.proficiencyGroup];
+    self.currentProficiencyString = 0;
 }
 
 #pragma mark - Lifecycle Events
+
+-(void) nextEntity
+{
+    //did we have a previous entity started?
+    if (entityStart != nil)
+    {
+        NSTimeInterval totalEntityTime = [[NSDate date] timeIntervalSinceDate:entityStart];
+        [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Total Free Practice: %i views for %f (s)", timesInFreePractice, timeInFreePractice]];
+        [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Total Forced Practice: %i views for %f (s)", timesInForcedPractice, timeInForcedPractice]];
+        [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Total Verify: %i views for %f", timesInVerify, timeInVerify]];
+        [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Finishing Entity: %i at %@ in %f", self.currentEntity, entityStart, totalEntityTime]];
+    }
+    self.currentEntity++;
+    [self startEntity];
+    
+    ttEvent *event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:Entry andSubPhase:EntityChange];
+    ttTestEntity *entity = [self.entities objectAtIndex:self.currentEntity];
+    event.notes = [NSString stringWithFormat:@"Moving to Entity:%@", entity.entityString];
+}
+
+-(void) startEntity
+{
+    entityStart = [NSDate date];
+    timeInForcedPractice = 0;
+    timeInForcedPractice = 0;
+    timeInVerify = 0;
+    timesInForcedPractice = 0;
+    timesInFreePractice = 0;
+    timesInVerify = 0;
+    self.CurrentPracticeRoundForEntity = 0;
+    self.currentEntryForEntity = 0;
+    self.workAreaContents = @"";
+    [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Starting Entity: %i at %@", self.currentEntity, entityStart]];
+}
+
 -(void) sessionDidStart
 {
     sessionStartTime = [NSDate date];
@@ -93,27 +138,26 @@
     // only log if we are not in current phase
     if (phase != self.currentPhase)
     {
-        self.currentSubPhase = NoSubPhase;
-        ttEvent *event = [[ttEvent alloc]initWithEventType:PhaseBegin andPhase:phase];
+        phaseStartTime = [NSDate date];
+        ttEvent *event = [[ttEvent alloc]initWithEventType:PhaseBegin andPhase:phase andSubPhase:NoSubPhase andTime:phaseStartTime];
         event.notes = note;
         [self addEvent:event];
-        
-        NSString *line = [NSString stringWithFormat:@"Started Phase:%@ : %@", ttcPhaseStringArray[phase], note];
+        NSString *line = [NSString stringWithFormat:@"Started Phase:%@ at %@", ttcPhaseStringArray[phase], phaseStartTime];
         [self writeLineToSummaryLogFile:line];
-        
         self.currentPhase = phase;
-        phaseStartTime = [NSDate date];
+        // start a phase in no sub phase
+        [self enteredSubPhase:NoSubPhase withNote:@"Starting new phase"];
     }
 }
 
 -(void)leftPhase:(Phase)phase withNote:(NSString*)note
 {
-    ttEvent *event = [[ttEvent alloc]initWithEventType:PhaseEnd andPhase:phase];
+    NSDate *now = [NSDate date];
+    ttEvent *event = [[ttEvent alloc]initWithEventType:PhaseEnd andPhase:phase andSubPhase:self.currentSubPhase andTime:now];
     event.notes = note;
     [self addEvent:event];
+    [self enteredSubPhase:NoSubPhase withNote:@"Preparing to leave phase"];
     self.currentPhase = UnknownPhase;
-    self.currentSubPhase = NoSubPhase;
-    NSDate *now = [NSDate date];
     NSString *line = [NSString stringWithFormat:@"Leaving Phase %@, overall time in phase:%f : %@", ttcPhaseStringArray[phase], [now timeIntervalSinceDate:phaseStartTime], note];
     [self writeLineToSummaryLogFile:line];
 }
@@ -122,10 +166,49 @@
 {
     if (subphase != self.currentSubPhase)
     {
-        ttEvent *event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:self.currentPhase andSubPhase:subphase];
+        ttEvent *event;
+        NSString *line;
+        NSDate *endTime = [NSDate date];
+        // only log a change when moving from a known subphase to another
+        if (self.currentSubPhase != NoSubPhase && self.currentSubPhase != UnknownSubPhase)
+        {
+            // log event about previous subphase ending
+            event = [[ttEvent alloc] initWithEventType:SubPhaseChange andPhase:self.currentPhase andSubPhase:self.currentSubPhase andTime:endTime];
+            event.notes = [NSString stringWithFormat:@"Time in subphase %@: %f", ttcSubPhaseStringArray[self.currentSubPhase], [endTime timeIntervalSinceDate:subPhaseStartTime]];
+            line = [NSString stringWithFormat:@"Leaving subphase %@, time spent in subphase : %f", ttcSubPhaseStringArray[self.currentSubPhase],[endTime timeIntervalSinceDate:subPhaseStartTime]];
+            [self writeLineToSummaryLogFile:line];
+
+        }
+        // if we are in a repeatable subphase track overall time in subphase.
+        switch(self.currentSubPhase)
+        {
+            case FreePractice:
+                timeInFreePractice += [endTime timeIntervalSinceDate:subPhaseStartTime];
+                timesInFreePractice++;
+                break;
+                
+            case ForcedPractice:
+                timeInForcedPractice += [endTime timeIntervalSinceDate:subPhaseStartTime];
+                timesInForcedPractice++;
+                break;
+                
+            case Verify:
+                timeInVerify += [endTime timeIntervalSinceDate:subPhaseStartTime];
+                timesInVerify++;
+                break;
+                
+            default:
+                break;
+        }
+        
+        // start new subphase
+        subPhaseStartTime = [NSDate date];
+        event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:self.currentPhase andSubPhase:subphase andTime:subPhaseStartTime];
         event.notes = note;
         [self addEvent:event];
         self.currentSubPhase = subphase;
+        line = [NSString stringWithFormat:@"Starting Subphase %@", ttcSubPhaseStringArray[self.currentSubPhase]];
+        [self writeLineToSummaryLogFile:line];
     }
 }
 
@@ -145,24 +228,30 @@
     return;
 }
 
--(void) moveToNextEntity
-{
-    self.currentEntity++;
-    self.CurrentPracticeRoundForEntity = 0;
-    self.currentEntryForEntity = 0;
-    self.workAreaContents = @"";
-    ttEvent *event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:Entry andSubPhase:EntityChange];
-    ttTestEntity *entity = [self.entities objectAtIndex:self.currentEntity];
-    event.notes = [NSString stringWithFormat:@"Moving to Entity:%@", entity.entityString];
-}
 
 #pragma -mark Log Functions
 
 -(void) addEvent:(ttEvent *)event
 {
+    // any special event handling goes here
+    NSString *line;
+    switch (event.event)
+    {
+        case IncorrectValueEntered:
+            line = [NSString stringWithFormat:@"Incorrect string value entered at %@: %@ , expected %@", event.time, event.currentValue, event.targetString];
+            [self writeLineToSummaryLogFile:line];
+            break;
+            
+        case CorrectValueEntered:
+            line = [NSString stringWithFormat:@"Correct string value entered at %@: %@ , expected %@", event.time, event.currentValue, event.targetString];
+            [self writeLineToSummaryLogFile:line];
+            break;
+            
+        default:
+            break;
+    }
     event.interval = [event.time timeIntervalSinceDate:sessionStartTime];
     event.participantNumber = self.participant.participantNumber;
-    //[self.events addObject:event];
     [self writeLineToRawLogFile:[event description]];
     return;
 }

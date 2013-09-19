@@ -8,8 +8,6 @@
 
 #import "ttTypingProficiencyViewController.h"
 #import "ttEvent.h"
-#import "ttEventTouch.h"
-#import "ttEventInput.h"
 #import "ttConstants.h"
 #import "ttSession.h"
 #import "ttInputData.h"
@@ -101,6 +99,7 @@
     }
     valueCompare.Notes = [NSString stringWithFormat:@"Text Entered: %@", self.entryField.text];
     valueCompare.targetString = item.text;
+    valueCompare.currentValue = self.entryField.text;
     [self.session addEvent:valueCompare];
     
     self.session.currentProficiencyString++;
@@ -183,7 +182,7 @@
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Proficiency andSubPhase:NoSubPhase];
+    ttEvent *inputEvent = [[ttEvent alloc] initWithEventType:Input andPhase:Proficiency andSubPhase:NoSubPhase];
     inputEvent.location = range.location;
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = string;

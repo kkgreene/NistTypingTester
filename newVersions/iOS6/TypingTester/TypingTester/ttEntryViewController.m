@@ -10,8 +10,6 @@
 #import "ttSettings.h"
 #import "ttSession.h"
 #import "ttEvent.h"
-#import "ttEventInput.h"
-#import "ttEventTouch.h"
 #import "ttRecallViewController.h"
 #import "ttMemorizeViewController.h"
 #import "ttTestEntity.h"
@@ -74,7 +72,7 @@
     }
     else if ([segue.identifier isEqualToString:@"MemorizeNextEntity"])
     {
-        [self.session moveToNextEntity];
+        [self.session nextEntity];
         ttMemorizeViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
@@ -128,6 +126,7 @@
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:CorrectValueEntered andPhase:Entry];
         event.targetString = entity.entityString;
+        event.currentValue = self.entryField.text;
         event.notes = [NSString stringWithFormat:@"Entry:%i for Entity:%i", self.session.currentEntity, self.session.currentEntryForEntity];
         [self.session addEvent:event];
     }
@@ -135,6 +134,7 @@
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:IncorrectValueEntered andPhase:Entry];
         event.targetString = entity.entityString;
+        event.currentValue = self.entryField.text;
         event.notes = [NSString stringWithFormat:@"Entry:%i for Entity:%i", self.session.currentEntity, self.session.currentEntryForEntity];
         [self.session addEvent:event];
     }
@@ -179,7 +179,7 @@
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Entry andSubPhase:NoSubPhase];
+    ttEvent *inputEvent = [[ttEvent alloc] initWithEventType:Input andPhase:Entry andSubPhase:NoSubPhase];
     inputEvent.location = range.location;
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = string;

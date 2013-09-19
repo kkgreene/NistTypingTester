@@ -10,8 +10,6 @@
 #import "ttSettings.h"
 #import "ttSession.h"
 #import "ttEvent.h"
-#import "ttEventInput.h"
-#import "ttEventTouch.h"
 #import "ttTextFieldWithName.h"
 
 @interface ttRecallTableViewController ()
@@ -93,7 +91,7 @@
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Recall andSubPhase:NoSubPhase];
+    ttEvent *inputEvent = [[ttEvent alloc] initWithEventType:Input andPhase:Recall andSubPhase:NoSubPhase];
     inputEvent.location = range.location;
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = string;

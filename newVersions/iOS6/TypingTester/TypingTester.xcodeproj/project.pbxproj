@@ -55,8 +55,6 @@
 		AD6E13D917B930030034DA27 /* inputStrings.xml in Resources */ = {isa = PBXBuildFile; fileRef = AD6E13D817B930030034DA27 /* inputStrings.xml */; };
 		AD6E13DC17B94BE50034DA27 /* ttSettingsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E13DB17B94BE50034DA27 /* ttSettingsDetailViewController.m */; };
 		AD7B0B6D17BD1FC300F49391 /* ttEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7B0B6C17BD1FC300F49391 /* ttEvent.m */; };
-		AD7B0B7017BD288E00F49391 /* ttEventTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7B0B6F17BD288E00F49391 /* ttEventTouch.m */; };
-		AD7B0B7317BD2A6400F49391 /* ttEventInput.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7B0B7217BD2A6400F49391 /* ttEventInput.m */; };
 		ADAD327D17BA7D3A00A2DE58 /* ttSession.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD327C17BA7D3A00A2DE58 /* ttSession.m */; };
 		ADB91FEE17C2519500DCE303 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB91FEC17C2519500DCE303 /* 19-gear.png */; };
 		ADB91FEF17C2519500DCE303 /* 19-gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB91FED17C2519500DCE303 /* 19-gear@2x.png */; };
@@ -191,10 +189,6 @@
 		AD6E13DB17B94BE50034DA27 /* ttSettingsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttSettingsDetailViewController.m; sourceTree = "<group>"; };
 		AD7B0B6B17BD1FC300F49391 /* ttEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttEvent.h; sourceTree = "<group>"; };
 		AD7B0B6C17BD1FC300F49391 /* ttEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttEvent.m; sourceTree = "<group>"; };
-		AD7B0B6E17BD288E00F49391 /* ttEventTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttEventTouch.h; sourceTree = "<group>"; };
-		AD7B0B6F17BD288E00F49391 /* ttEventTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttEventTouch.m; sourceTree = "<group>"; };
-		AD7B0B7117BD2A6300F49391 /* ttEventInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttEventInput.h; sourceTree = "<group>"; };
-		AD7B0B7217BD2A6400F49391 /* ttEventInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttEventInput.m; sourceTree = "<group>"; };
 		ADAD327B17BA7D3A00A2DE58 /* ttSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttSession.h; sourceTree = "<group>"; };
 		ADAD327C17BA7D3A00A2DE58 /* ttSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttSession.m; sourceTree = "<group>"; };
 		ADB91FEC17C2519500DCE303 /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
@@ -509,10 +503,6 @@
 				AD4073FE17BBCBC2006E31CF /* ttTestEntity.m */,
 				AD7B0B6B17BD1FC300F49391 /* ttEvent.h */,
 				AD7B0B6C17BD1FC300F49391 /* ttEvent.m */,
-				AD7B0B6E17BD288E00F49391 /* ttEventTouch.h */,
-				AD7B0B6F17BD288E00F49391 /* ttEventTouch.m */,
-				AD7B0B7117BD2A6300F49391 /* ttEventInput.h */,
-				AD7B0B7217BD2A6400F49391 /* ttEventInput.m */,
 				ADB91FF017C2724000DCE303 /* ttXmlParserDelegate.h */,
 				ADB91FF117C2724000DCE303 /* ttXmlParserDelegate.m */,
 				ADB91FF317C275B000DCE303 /* ttInputData.h */,
@@ -679,8 +669,6 @@
 				AD4073FC17BBCBB3006E31CF /* ttProficiencyItem.m in Sources */,
 				AD4073FF17BBCBC2006E31CF /* ttTestEntity.m in Sources */,
 				AD7B0B6D17BD1FC300F49391 /* ttEvent.m in Sources */,
-				AD7B0B7017BD288E00F49391 /* ttEventTouch.m in Sources */,
-				AD7B0B7317BD2A6400F49391 /* ttEventInput.m in Sources */,
 				ADB91FF217C2724000DCE303 /* ttXmlParserDelegate.m in Sources */,
 				ADB91FF517C275B000DCE303 /* ttInputData.m in Sources */,
 				ADB91FF817C2861700DCE303 /* ttFilter.m in Sources */,

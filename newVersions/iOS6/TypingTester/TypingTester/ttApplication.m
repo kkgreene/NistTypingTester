@@ -10,7 +10,6 @@
 #import "ttConstants.h"
 #import "ttEvent.h"
 #import "ttSession.h"
-#import "ttEventTouch.h"
 
 @implementation ttApplication
 {
@@ -37,12 +36,12 @@
         // was the keyboard visible during the touch?
         if (keyboardVisible)
         {
-            ttEventTouch *event;
+            ttEvent *event;
             switch([self getKeyPressedAtPoint:touchPoint])
             {
                 case SpecialKeyShift:
                     // log event
-                    event = [[ttEventTouch alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+                    event = [[ttEvent alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
                     event.point = touchPoint;
                     event.notes = [NSString stringWithFormat:@"Shift Key Pressed at %.0f:%.0f", touchPoint.x, touchPoint.y];
                     [self.session addEvent:event];
@@ -51,7 +50,7 @@
                 
                 case SpecialKeyKeyboardChange:
                     // log event
-                    event = [[ttEventTouch alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+                    event = [[ttEvent alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
                     event.point = touchPoint;
                     event.notes = [NSString stringWithFormat:@"Keyboard Change Key Pressed at %.0f:%.0f", touchPoint.x, touchPoint.y];
                     [self.session addEvent:event];
@@ -60,7 +59,7 @@
                 
                 case SpecialKeyUnknown:
                 default:
-                    event = [[ttEventTouch alloc]initWithEventType:KeyboardTouch andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+                    event = [[ttEvent alloc]initWithEventType:KeyboardTouch andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
                     event.point = touchPoint;
                     event.notes = [NSString stringWithFormat:@"Touch event at %.0f:%.0f", touchPoint.x, touchPoint.y];
                     [self.session addEvent:event];
@@ -70,8 +69,8 @@
         }
         else
         {
-            ttEventTouch *event;
-            event = [[ttEventTouch alloc]initWithEventType:KeyboardTouch andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+            ttEvent *event;
+            event = [[ttEvent alloc]initWithEventType:KeyboardTouch andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
             event.point = touchPoint;
             event.notes = [NSString stringWithFormat:@"Touch event at %.0f:%.0f", touchPoint.x, touchPoint.y];
             [self.session addEvent:event];

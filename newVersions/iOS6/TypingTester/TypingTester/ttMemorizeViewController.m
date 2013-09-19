@@ -10,8 +10,6 @@
 
 #import "ttMemorizeViewController.h"
 #import "ttPracticeViewController.h"
-#import "ttEventTouch.h"
-#import "ttEventInput.h"
 #import "ttTestEntity.h"
 #import "ttSettings.h"
 
@@ -44,6 +42,8 @@
     // set a border on the work area text field
     self.workArea.layer.borderWidth = 1.0f;
     self.workArea.layer.borderColor = [[UIColor grayColor]CGColor];
+    // check to see if we are on the first entity
+    if (self.session.currentEntity == -1) [self.session nextEntity];
     [self configureUI];
 }
 
@@ -112,7 +112,7 @@
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     NSString *newString = [textView.text stringByReplacingCharactersInRange:range withString:text];
-    ttEventInput *inputEvent = [[ttEventInput alloc] initWithEventType:Input andPhase:Memorize andSubPhase:FreePractice];
+    ttEvent *inputEvent = [[ttEvent alloc] initWithEventType:Input andPhase:Memorize andSubPhase:FreePractice];
     inputEvent.location = range.location;
     inputEvent.length = range.length;
     inputEvent.enteredCharacters = [self EscapeString:text];
@@ -138,14 +138,5 @@
 
 
 #pragma -mark touch events
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch * touch = [touches anyObject];
-    CGPoint pos = [touch locationInView: [UIApplication sharedApplication].keyWindow];
-    ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
-    NSLog(@"Touch on Memorize View: %.0f, %.0f", pos.x, pos.y);
-    [self.session addEvent:touchEvent];
-    [self.workArea resignFirstResponder];
-}
 
 @end
