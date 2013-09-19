@@ -25,6 +25,7 @@
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeUseGroupId:(BOOL)value;
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeGroupId:(int)value;
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeQuitString:(NSString*)value;
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeSkipString:(NSString*)value;
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeEnableHideOnPracticeScreen:(BOOL)value;
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeEnableSkipButton:(BOOL)value;
 
@@ -46,6 +47,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *useGroupId;
 @property (weak, nonatomic) IBOutlet UITextField *groupId;
 @property (strong, nonatomic) IBOutlet UITextField *quitString;
+@property (strong, nonatomic) IBOutlet UITextField *skipString;
 @property (strong, nonatomic) IBOutlet UISwitch *enableHideOnPracticeScreen;
 @property (strong, nonatomic) IBOutlet UISwitch *enableSkipButton;
 
@@ -61,6 +63,7 @@
 - (IBAction)useGroupIdValueChanged:(id)sender;
 - (IBAction)groupIdValueChanged:(id)sender;
 - (IBAction)quitStringChanged:(id)sender;
+- (IBAction)skipStringChanged:(id)sender;
 - (IBAction)enableHideOnPracticeScreenChanged:(id)sender;
 - (IBAction)enableSkipButtonChanged:(id)sender;
 

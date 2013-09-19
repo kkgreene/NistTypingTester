@@ -185,6 +185,15 @@
     inputEvent.enteredCharacters = string;
     inputEvent.currentValue = newString;
     inputEvent.targetString = entity.entityString;
+    // determine if delete event occured
+    if ([string isEqualToString:@""])
+    {
+        inputEvent.notes = @"Delete event detected";
+    }
+    else
+    {
+        inputEvent.notes = [NSString stringWithFormat:@"%@ entered", string];
+    }
     [self.session addEvent:inputEvent];
     if (newString.length > 0)
     {

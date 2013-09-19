@@ -34,6 +34,7 @@
     {
         settings = [ttSettings Instance];
         [self.session enteredProficiencyPhase];
+        
     }
     return self;
 }
@@ -84,7 +85,7 @@
 -(IBAction)doneButtonPressed
 {
     [self.view endEditing:YES];
-    self.entryField.keyboardType = UIKeyboardTypeDefault;
+    //self.entryField.keyboardType = UIKeyboardTypeDefault;
     // create an event indicating that the button was pressed
     ttEvent *donePressed = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Proficiency];
     donePressed.notes = [NSString stringWithFormat:@"Done button pressed"];
@@ -162,7 +163,7 @@
 }
 
 #pragma mark - Touch Tracking
-
+/*
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     // get the touch coordinates
@@ -176,7 +177,7 @@
     // resign first responder to hide the keyboard
     //[self.entryField resignFirstResponder];
 }
-
+*/
 #pragma mark - UI Text Field Delegate
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -188,6 +189,14 @@
     inputEvent.enteredCharacters = string;
     inputEvent.currentValue = newString;
     inputEvent.targetString = item.text;
+    if ([string isEqualToString:@""])
+    {
+        inputEvent.notes = @"Delete event detected";
+    }
+    else
+    {
+        inputEvent.notes = [NSString stringWithFormat:@"%@ entered", string];
+    }
     [self.session addEvent:inputEvent];
     if (newString.length > 0)
     {
@@ -199,7 +208,6 @@
         self.doneButton.enabled = NO;
         self.doneButton_iPad.enabled = NO;
     }
-    //NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, string);
     return YES;
 }
 

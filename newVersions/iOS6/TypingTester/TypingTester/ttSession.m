@@ -22,6 +22,7 @@
     ttSettings *settings;
     NSDate *sessionStartTime;
     NSDate *phaseStartTime;
+    NSDate *subPhaseStartTime;
 }
 
 -(id) init

@@ -99,7 +99,15 @@
     inputEvent.enteredCharacters = string;
     inputEvent.currentValue = newString;
     ttTextFieldWithName *field = (ttTextFieldWithName*)textField;
-    inputEvent.notes = [NSString stringWithFormat:@"Text entered in %@", [field name]];
+    // determine if delete event occured
+    if ([string isEqualToString:@""])
+    {
+        inputEvent.notes = [NSString stringWithFormat:@"Delete event detected in %@", [field name]];
+    }
+    else
+    {
+        inputEvent.notes = [NSString stringWithFormat:@"%@ entered in %@", string, field.name];
+    }
     [self.session addEvent:inputEvent];
     return YES;
 }

@@ -250,7 +250,17 @@
     inputEvent.enteredCharacters = string;
     inputEvent.currentValue = newString;
     inputEvent.targetString = e.entityString;
+    // determine if delete event occured
+    if ([string isEqualToString:@""])
+    {
+        inputEvent.notes = @"Delete event detected";
+    }
+    else
+    {
+        inputEvent.notes = [NSString stringWithFormat:@"%@ entered", string];
+    }
     [self.session addEvent:inputEvent];
+    // determine if we enable the done button
     if (newString.length > 0 || self.session.CurrentPracticeRoundForEntity >= settings.forcedPracticeRounds)
     {
         self.doneButton.enabled = YES;

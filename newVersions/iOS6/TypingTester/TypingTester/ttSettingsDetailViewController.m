@@ -69,6 +69,7 @@
     self.quitString.text = [settings.quitString copy];
     self.enableHideOnPracticeScreen.on = settings.enableHideButtonOnPracticeScreen;
     self.enableSkipButton.on = settings.enableSkipButton;
+    self.skipString.text = [settings.skipString copy];
     // toggle the enabled value for some text fields
     self.randomStringSelectionSeedValue.enabled = (self.randomStringSelection.on && self.useSelectionSeed.on);
     self.randomStringOrderSeedValue.enabled = (self.randomStringOrder.on && self.useOrderSeed.on);
@@ -78,13 +79,6 @@
 - (void) hideKeyboard
 {
     [self.view endEditing:YES];
-    //[self.numberOfEntities resignFirstResponder];
-    //[self.numberOfForcedPracticeRounds resignFirstResponder];
-    //[self.numberOfRepetitions resignFirstResponder];
-    //[self.randomStringOrderSeedValue resignFirstResponder];
-    //[self.randomStringSelectionSeedValue resignFirstResponder];
-    //[self.groupId resignFirstResponder];
-    //[self.quitString resignFirstResponder];
 }
 
 -(void) confirmSettingsReset
@@ -248,6 +242,14 @@
     if (![self.quitString.text isEqualToString:@""])
     {
         [self.delegate settingsDetailViewController:self didChangeQuitString:[self.quitString.text copy]];
+    }
+}
+
+- (IBAction)skipStringChanged:(id)sender
+{
+    if (![self.skipString.text isEqualToString:@""])
+    {
+        [self.delegate settingsDetailViewController:self didChangeSkipString:[self.skipString.text copy]];
     }
 }
 

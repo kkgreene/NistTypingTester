@@ -118,8 +118,15 @@
     inputEvent.enteredCharacters = [self EscapeString:text];
     inputEvent.currentValue = [self EscapeString:newString];
     inputEvent.targetString = entity.entityString;
+    if ([text isEqualToString:@""])
+    {
+        inputEvent.notes = @"Delete event detected";
+    }
+    else
+    {
+        inputEvent.notes = [NSString stringWithFormat:@"%@ entered", [self EscapeString:text]];
+    }
     [self.session addEvent:inputEvent];
-    //NSLog(@"Change Location:%i, Length:%i, withString:%@", range.location, range.length, text);
     return YES;
 }
 

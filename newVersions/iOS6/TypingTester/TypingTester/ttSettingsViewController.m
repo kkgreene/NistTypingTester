@@ -31,6 +31,7 @@
     bool useRandomStringOrderSeed;
     bool useRandomStringSelectionSeed;
     NSString *quitString;
+    NSString *skipString;
     bool useGroupId;
     int selectedGroup;
     NSArray *selectedFilters;
@@ -74,6 +75,7 @@
     useRandomStringOrderSeed = settings.useRandomStringOrderSeed;
     useRandomStringSelectionSeed = settings.useRandomStringSelectionSeed;
     quitString = [settings.quitString copy];
+    skipString = [settings.skipString copy];
     useGroupId = settings.useGroupId;
     selectedGroup = settings.selectedGroup;
     enableHideButtonOnPracticeScreen = settings.enableHideButtonOnPracticeScreen;
@@ -130,6 +132,7 @@
     settings.useGroupId = useGroupId;
     settings.selectedGroup = selectedGroup;
     settings.enableHideButtonOnPracticeScreen = enableHideButtonOnPracticeScreen;
+    settings.skipString = skipString;
     [self.delegate SettingsViewControllerDidSave:self];
 }
 
@@ -207,6 +210,11 @@
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeQuitString:(NSString*)value
 {
     quitString = value;
+}
+
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeSkipString:(NSString*)value
+{
+    skipString = value;
 }
 
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeEnableHideOnPracticeScreen:(BOOL)value
