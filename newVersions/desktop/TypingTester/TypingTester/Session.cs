@@ -53,6 +53,13 @@ namespace TypingTester
         public bool InSession { get; protected set; }
         private DateTime _sessionStart;
         private DateTime _phaseStart;
+        private DateTime _subPhaseStart;
+        private TimeSpan _timeInFreePractice;
+        private TimeSpan _timeInForcedPractice;
+        private TimeSpan _timeInVerify;
+        private int _timesInFreePractice;
+        private int _timesInForcedPractice;
+        private int _timesInVerify;
         private Constants.Phase _currentPhase = Constants.Phase.Unknown;
         private Constants.SubPhase _currentSubPhase = Constants.SubPhase.Unknown;
 
@@ -150,7 +157,12 @@ namespace TypingTester
             this.CurrentProficiencyString = 0;
             this.CurrentSubPhase = Constants.SubPhase.Unknown;
             this.WorkAreaContents = string.Empty;
-
+            this._timeInForcedPractice = TimeSpan.Zero;
+            this._timeInFreePractice = TimeSpan.Zero;
+            this._timeInVerify = TimeSpan.Zero;
+            this._timesInForcedPractice = 0;
+            this._timesInFreePractice = 0;
+            this._timesInVerify = 0;
             this.SetMouseClickLogging(true);
             this.SetKeyDownLogging(true);
 
