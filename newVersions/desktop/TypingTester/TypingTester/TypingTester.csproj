@@ -46,6 +46,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>images\iOSIcon1-144x144.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v12.2, Version=12.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -241,6 +244,7 @@
     <Content Include="images\766-arrow-right-selected.png" />
     <Content Include="images\766-arrow-right.png" />
     <Content Include="images\iOSIcon1-114x114.png" />
+    <Content Include="images\iOSIcon1-144x144.ico" />
     <Content Include="images\iOSIcon1-144x144.png" />
     <Content Include="images\iOSIcon1-57x57.png" />
     <Content Include="images\iOSIcon1-72x72.png" />

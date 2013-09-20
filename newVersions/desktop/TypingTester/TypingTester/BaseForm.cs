@@ -33,8 +33,8 @@ namespace TypingTester
         public BaseForm()
         {
             InitializeComponent();
-            Bitmap bmp = TypingTester.Properties.Resources.icon;
-            this.Icon = Icon.FromHandle(bmp.GetHicon());
+            //Bitmap bmp = TypingTester.Properties.Resources.icon;
+            //this.Icon = Icon.FromHandle(bmp.GetHicon());
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
