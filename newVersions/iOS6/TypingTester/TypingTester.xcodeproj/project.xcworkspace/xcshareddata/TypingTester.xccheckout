@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>66433EAF-BA4C-4066-B424-E7624974C4B2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TypingTester</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>76F14DA0-B625-408C-A5EC-4E10EC17955B</key>
+		<string>https://github.com/mattkerr/NistTypingTester.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>newVersions/iOS6/TypingTester/TypingTester.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>76F14DA0-B625-408C-A5EC-4E10EC17955B</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mattkerr/NistTypingTester.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>76F14DA0-B625-408C-A5EC-4E10EC17955B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>76F14DA0-B625-408C-A5EC-4E10EC17955B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NistTypingTester</string>
+		</dict>
+	</array>
+</dict>
+</plist>
