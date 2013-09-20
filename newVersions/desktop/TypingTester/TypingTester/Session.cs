@@ -188,6 +188,7 @@ namespace TypingTester
             rawLog = new StreamWriter(rawLogFilename, false);
             rawLog.AutoFlush = true;
             summaryLog = new StreamWriter(summaryLogFilename, false);
+            rawLog.WriteLine(TestEvent.LogHeader);
         }
 
         private void closeLogFiles()

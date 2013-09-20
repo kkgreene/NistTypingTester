@@ -18,10 +18,19 @@ namespace TypingTester
         public int X { get; set; }
         public int Y { get; set; }
         public string Key { get; set; }
+        public string CurrentValue { get; set;}
         public bool Alt { get; set; }
         public bool Ctrl { get; set; }
         public bool Shift { get; set; }
         public string TargetString { get; set; }
+
+        public static string LogHeader
+        {
+            get
+            {
+                return "Time\tTime Since Session Start\tParticipant Number\tEvent\tPhase\tSubPhase\tTarget String\X\tY\tKey\tCurrent Value\tNotes";
+            }
+        }
 
         public TestEvent(Constants.Event eventType, Constants.Phase phase, Constants.SubPhase subphase, string notes)
         {
@@ -43,6 +52,8 @@ namespace TypingTester
             return string.Format("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}", this.Time, this.Interval, this.ParticipantNumber,
                 this.EventType, this.Phase, this.SubPhase, this.TargetString, this.X, this.Y, this.Key, this.Notes);
         }
+
+        
 
 
     }

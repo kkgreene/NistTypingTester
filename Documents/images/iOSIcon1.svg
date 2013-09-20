@@ -17,9 +17,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="iOSIcon1.svg"
-   inkscape:export-filename="F:\nistTypingStudy\Documents\images\iOSIcon1-57x57.png"
-   inkscape:export-xdpi="5.0097656"
-   inkscape:export-ydpi="5.0097656">
+   inkscape:export-filename="C:\Users\matt.kerr\development\NistTypingTester\Documents\images\iOSIcon-29x29.png"
+   inkscape:export-xdpi="2.5488281"
+   inkscape:export-ydpi="2.5488281">
   <defs
      id="defs4">
     <linearGradient
@@ -83,7 +83,6 @@
          id="stop5228" />
     </linearGradient>
     <linearGradient
-       inkscape:collect="always"
        id="linearGradient5210"
        osb:paint="gradient">
       <stop
@@ -182,29 +181,26 @@
     <g
        id="g5252"
        transform="matrix(5.3124157,0,0,5.3124157,-1110.2949,-1593.7247)">
-	<polygon
-   id="polygon5254"
-   points="209,300 209,300 401.756,300 401.756,492.756 209,492.756 "
-   clip-rule="evenodd"
-   style="fill:#ffffff;fill-rule:evenodd" />
-
-	<path
-   id="path5256"
-   d="m 268.26,420.537 c 5.71,0 9.883,-5.051 9.883,-10.762 v -37.557 h -9.883 v 35.799 c 0,0.879 -0.879,1.758 -1.757,1.758 0,0 -0.659,0 -0.659,-0.879 l -30.529,-32.505 c -2.636,-2.416 -5.93,-4.173 -9.225,-4.173 h -0.659 c -5.93,0 -10.762,5.052 -10.762,10.762 v 37.557 h 10.762 v -36.678 c 0,0 0,-0.879 0.659,-0.879 0.878,0 0.878,0 1.757,0 l 30.529,33.385 c 1.538,2.416 4.832,3.293 8.126,4.172 h 1.758 l 0,0 z"
-   stroke-miterlimit="2.6131"
-   clip-rule="evenodd"
-   inkscape:connector-curvature="0"
-   style="fill-rule:evenodd;stroke:#000000;stroke-width:0.00085413;stroke-miterlimit:2.61310005" />
-
-	<path
-   id="path5258"
-   d="m 313.724,401.43 h 31.188 c 1.757,0 3.295,1.537 3.295,4.172 0,2.416 -1.538,4.174 -3.295,4.174 h -47.88 c -1.537,0 -2.416,-0.879 -2.416,-2.635 v -34.922 h -9.884 v 34.043 c 0,7.688 5.71,14.275 13.178,14.275 h 47.88 c 7.467,0 13.178,-6.588 13.178,-14.275 v -1.537 c 0,-7.469 -6.589,-13.398 -13.178,-13.398 h -30.529 c -3.295,-0.22 -3.953,-2.196 -4.173,-4.173 v -0.879 c 0,-1.537 1.757,-3.294 4.173,-3.294 h 50.296 v 37.557 h 9.884 V 382.98 h 20.646 v -10.762 h -82.363 c -7.467,0 -13.178,6.589 -13.178,13.397 v 2.416 c 0,7.469 5.711,13.399 13.178,13.399 l 0,0 z"
-   stroke-miterlimit="2.6131"
-   clip-rule="evenodd"
-   inkscape:connector-curvature="0"
-   style="fill-rule:evenodd;stroke:#000000;stroke-width:0.00085413;stroke-miterlimit:2.61310005" />
-
-</g>
+      <polygon
+         id="polygon5254"
+         points="209,300 209,300 401.756,300 401.756,492.756 209,492.756 "
+         clip-rule="evenodd"
+         style="fill:#ffffff;fill-rule:evenodd" />
+      <path
+         id="path5256"
+         d="m 268.26,420.537 c 5.71,0 9.883,-5.051 9.883,-10.762 v -37.557 h -9.883 v 35.799 c 0,0.879 -0.879,1.758 -1.757,1.758 0,0 -0.659,0 -0.659,-0.879 l -30.529,-32.505 c -2.636,-2.416 -5.93,-4.173 -9.225,-4.173 h -0.659 c -5.93,0 -10.762,5.052 -10.762,10.762 v 37.557 h 10.762 v -36.678 c 0,0 0,-0.879 0.659,-0.879 0.878,0 0.878,0 1.757,0 l 30.529,33.385 c 1.538,2.416 4.832,3.293 8.126,4.172 h 1.758 l 0,0 z"
+         stroke-miterlimit="2.6131"
+         clip-rule="evenodd"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:0.00085413;stroke-miterlimit:2.61310005" />
+      <path
+         id="path5258"
+         d="m 313.724,401.43 h 31.188 c 1.757,0 3.295,1.537 3.295,4.172 0,2.416 -1.538,4.174 -3.295,4.174 h -47.88 c -1.537,0 -2.416,-0.879 -2.416,-2.635 v -34.922 h -9.884 v 34.043 c 0,7.688 5.71,14.275 13.178,14.275 h 47.88 c 7.467,0 13.178,-6.588 13.178,-14.275 v -1.537 c 0,-7.469 -6.589,-13.398 -13.178,-13.398 h -30.529 c -3.295,-0.22 -3.953,-2.196 -4.173,-4.173 v -0.879 c 0,-1.537 1.757,-3.294 4.173,-3.294 h 50.296 v 37.557 h 9.884 V 382.98 h 20.646 v -10.762 h -82.363 c -7.467,0 -13.178,6.589 -13.178,13.397 v 2.416 c 0,7.469 5.711,13.399 13.178,13.399 l 0,0 z"
+         stroke-miterlimit="2.6131"
+         clip-rule="evenodd"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:0.00085413;stroke-miterlimit:2.61310005" />
+    </g>
   </g>
   <g
      inkscape:label="Layer 1"
