@@ -97,6 +97,7 @@ namespace TypingTester
             KeysConverter kc = new KeysConverter();
             te.TargetString = this.TargetString;
             te.Key = kc.ConvertToString(e.KeyCode);
+            Session.Instance.AddEvent(te);
         }
 
         protected override void OnKeyUp(KeyEventArgs e)
@@ -109,6 +110,7 @@ namespace TypingTester
             KeysConverter kc = new KeysConverter();
             te.TargetString = this.TargetString;
             te.Key = kc.ConvertToString(e.KeyCode);
+            Session.Instance.AddEvent(te);
         }
 
         protected override void OnKeyPress(KeyPressEventArgs e)
@@ -120,6 +122,7 @@ namespace TypingTester
                                          string.Format("{0}", this.Text));
             te.TargetString = this.TargetString;
             te.Key = e.KeyChar.ToString();
+            Session.Instance.AddEvent(te);
         }
     }
 }

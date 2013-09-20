@@ -50,10 +50,11 @@ namespace TypingTester
             }
         }
 
-        public bool InSession { get; protected set; }
+        public bool InSession { get; private set; }
         private DateTime _sessionStart;
         private DateTime _phaseStart;
         private DateTime _subPhaseStart;
+        private DateTime _entityStart;
         private TimeSpan _timeInFreePractice;
         private TimeSpan _timeInForcedPractice;
         private TimeSpan _timeInVerify;
@@ -72,10 +73,20 @@ namespace TypingTester
 
             set 
             {
+                DateTime phaseEnd = DateTime.Now;
                 if (_currentPhase != value)
                 {
+                    // if memorize phase is ending output the times in various phases
+                    if (_currentPhase == Constants.Phase.Memorize)
+                    {
+                        WriteToSummaryLog(string.Format("Free Practice {0} times for {1}", _timesInFreePractice, _timeInFreePractice));
+                        WriteToSummaryLog(string.Format("Forced Practice {0} times for {1}", _timesInForcedPractice, _timeInForcedPractice));
+                        WriteToSummaryLog(string.Format("Verify {0} times for {1}", _timesInVerify, _timeInVerify));
+                    }
+
+                    TimeSpan ts = phaseEnd - this._phaseStart;
                     this.AddEvent(new TestEvent(Constants.Event.PhaseEnd, _currentPhase, this.CurrentSubPhase, "Phase End"));
-                    // TODO add summary line to summary log
+                    WriteToSummaryLog(string.Format("Ending phase {0}, total time in phase {1}", _currentPhase, ts));
                     this.AddEvent(new TestEvent(Constants.Event.PhaseBegin, value, this.CurrentSubPhase, "Phase Start"));
                 }
                 this._phaseStart = DateTime.Now;
@@ -92,9 +103,36 @@ namespace TypingTester
             }
             set
             {
+                DateTime subphaseEnd = DateTime.Now;
                 if (_currentSubPhase != value)
                 {
+                    TimeSpan ts = subphaseEnd - _subPhaseStart; 
+                    if (_currentSubPhase != Constants.SubPhase.None && _currentSubPhase != Constants.SubPhase.Unknown)
+                    { 
+                        // log phase sub phase ending
+                        WriteToSummaryLog(string.Format("Ending subphase {0}, time in subphase {1}", _currentSubPhase, ts));
+                    }
+                    // handle reoccuring subphase
+                    switch(value)
+                    {
+                        case Constants.SubPhase.ForcedPractice:
+                            _timeInForcedPractice += subphaseEnd - _subPhaseStart;
+                            _timesInForcedPractice++;
+                            break;
+
+                        case Constants.SubPhase.FreePractice:
+                            _timeInFreePractice += subphaseEnd - _subPhaseStart;
+                            _timesInFreePractice++;
+                            break;
+
+                        case Constants.SubPhase.Verify:
+                            _timeInVerify += subphaseEnd - _subPhaseStart;
+                            _timesInVerify++;
+                            break;
+                    }
+                    // Log sub phase starting
                     this.AddEvent(new TestEvent(Constants.Event.SubPhaseChange, this.CurrentPhase, value, "Subphase change"));
+                    _subPhaseStart = DateTime.Now;
                 }
                 this._currentSubPhase = value;
             }
@@ -146,10 +184,10 @@ namespace TypingTester
 
         private void initializeSession(string participant)
         {
+            ParticipantNumber = participant;
             initializeLogFiles();
             this.InSession = true;
             this._sessionStart = DateTime.Now;
-            ParticipantNumber = participant;
             this.CurrentEntity = 0;
             this.CurrentEntryForEntity = 1;
             this.CurrentPhase = Constants.Phase.Unknown;
@@ -165,8 +203,6 @@ namespace TypingTester
             this._timesInVerify = 0;
             this.SetMouseClickLogging(true);
             this.SetKeyDownLogging(true);
-
-            
         }
 
         private void loadData()
@@ -200,6 +236,7 @@ namespace TypingTester
             rawLog = new StreamWriter(rawLogFilename, false);
             rawLog.AutoFlush = true;
             summaryLog = new StreamWriter(summaryLogFilename, false);
+            summaryLog.AutoFlush = true;
             rawLog.WriteLine(TestEvent.LogHeader);
         }
 
@@ -233,6 +270,11 @@ namespace TypingTester
         {
             rawLog.WriteLine(text);
             Console.WriteLine(text);
+        }
+
+        private void WriteToSummaryLog(string text)
+        {
+            summaryLog.WriteLine(text);
         }
 
         #endregion
