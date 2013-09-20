@@ -62,7 +62,6 @@ namespace TypingTester.controls
             Session.Instance.CurrentPhase = Constants.Phase.Proficiency;
             pbProgress.Maximum = 0;
             pbProgress.Maximum = Session.Instance.ProficiencyStrings.Length;
-            lblProficiencyString.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void tbEntry_TextChanged(object sender, EventArgs e)

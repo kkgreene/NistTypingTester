@@ -28,7 +28,7 @@ namespace TypingTester
         {
             get
             {
-                return "Time\tTime Since Session Start\tParticipant Number\tEvent\tPhase\tSubPhase\tTarget String\X\tY\tKey\tCurrent Value\tNotes";
+                return "Time\tTime Since Session Start\tParticipant Number\tEvent\tPhase\tSubPhase\tTarget String\tX\tY\tKey\tCurrent Value\tNotes";
             }
         }
 
