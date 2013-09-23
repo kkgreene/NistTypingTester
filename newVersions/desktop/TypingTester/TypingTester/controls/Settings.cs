@@ -51,6 +51,7 @@ namespace TypingTester.controls
             o.ShowQuitButton = cbQuitButton.Checked;
             o.ShowSkipButton = cbSkipButton.Checked;
             o.save();
+            executeCommand(@"Go To ParticipantNumber");
         }
 
         private void ConfigureUi()

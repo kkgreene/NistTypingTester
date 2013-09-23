@@ -10,6 +10,7 @@
     </filters>
     <proficiencyInputs>
         <proficiencyInput itemId="1" groupId="1">the winner of the race</proficiencyInput>
+      <!--
         <proficiencyInput itemId="2" groupId="1">we better investigate this</proficiencyInput>
         <proficiencyInput itemId="3" groupId="1">my bike has a flat tire</proficiencyInput>
         <proficiencyInput itemId="4" groupId="1">where can my little dog be</proficiencyInput>
@@ -19,6 +20,7 @@
         <proficiencyInput itemId="8" groupId="1">a problem with the engine</proficiencyInput>
         <proficiencyInput itemId="9" groupId="1">the laser printer is jammed</proficiencyInput>
         <proficiencyInput itemId="10" groupId="1">consequences of a wrong turn</proficiencyInput>
+        -->
     </proficiencyInputs>
     <memorizationInputs>
         <memorizationInput itemId="1" date="2013-08-12" groupId="1">

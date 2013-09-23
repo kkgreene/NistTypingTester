@@ -16,6 +16,7 @@ namespace TypingTester.controls
         {
             InitializeComponent();
             addCommand(@"Go To Practice", new commands.CommandGoToScreen(reciever, Constants.Screen.ForcedPractice));
+            addCommand(@"Go To Verify", new commands.CommandGoToScreen(reciever, Constants.Screen.Verify));
             currentString = Session.Instance.EntityStrings[Session.Instance.CurrentEntity];
         }
 
@@ -23,7 +24,14 @@ namespace TypingTester.controls
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, Constants.SubPhase.FreePractice,
                                                     @"Next button pressed"));
-            executeCommand(@"Go To Practice");
+            if (Options.Instance.ForcedPracticeRounds == 0)
+            {
+                executeCommand("Go To Verify");
+            }
+            else
+            {
+                executeCommand(@"Go To Practice");
+            }
         }
 
         private void Memorize_Load(object sender, EventArgs e)

@@ -60,9 +60,11 @@ namespace TypingTester
             {
                 case Constants.Screen.StartScreen:
                     newControl = new ParticipantNumberControl(this);
+                    this.tsbOptions.Enabled = true;
                     break;
 
                 case Constants.Screen.ReadyScreen:
+                    this.tsbOptions.Enabled = false;
                     ParticipantNumberControl c = currentControl as ParticipantNumberControl;
                     participantNumber = c.ParticipantNumber;
                     ReadyScreenControl temp = new ReadyScreenControl(this);
@@ -71,44 +73,54 @@ namespace TypingTester
                     break;
 
                 case Constants.Screen.Proficiency:
+                    this.tsbOptions.Enabled = false;
                     Session.Instance.start(participantNumber);
                     ProficiencyControl pc = new ProficiencyControl(this);
                     newControl = pc;
                     break;
 
                 case Constants.Screen.Instructions:
+                    this.tsbOptions.Enabled = false;
                     newControl = new Instructions(this);
                     break;
 
                 case Constants.Screen.Memorize:
+                    this.tsbOptions.Enabled = false;
                     newControl = new Memorize(this);
                     break;
 
                 case Constants.Screen.ForcedPractice:
+                    this.tsbOptions.Enabled = false;
                     newControl = new ForcedPractice(this);
                     break;
 
                 case Constants.Screen.Verify:
+                    this.tsbOptions.Enabled = false;
                     newControl = new Verify(this);
                     break;
 
                 case Constants.Screen.Entry:
+                    this.tsbOptions.Enabled = false;
                     newControl = new Entry(this);
                     break;
 
                 case Constants.Screen.Recall:
+                    this.tsbOptions.Enabled = false;
                     newControl = new Recall(this);
                     break;
 
                 case Constants.Screen.ThankYou:
+                    this.tsbOptions.Enabled = false;
                     newControl = new Thankyou(this);
                     break;
 
                 case Constants.Screen.Settings:
+                    this.tsbOptions.Enabled = false;
                     newControl = new Settings(this);
                     break;
 
                 default:
+                    this.tsbOptions.Enabled = false;
                     newControl = null;
                     break;
             }

@@ -29,11 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.spnVerification = new System.Windows.Forms.NumericUpDown();
+            this.spnForcedPractice = new System.Windows.Forms.NumericUpDown();
+            this.spnRepetitions = new System.Windows.Forms.NumericUpDown();
+            this.spnNumberOfEntities = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.spnGroupId = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.cbUseGroupFilter = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -48,32 +53,27 @@
             this.cbUseOrderSeed = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.spnOrderSeed = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.spnSelectionSeed = new System.Windows.Forms.NumericUpDown();
             this.cbRandomizeSelection = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbUseSelectionSeed = new System.Windows.Forms.CheckBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.spnNumberOfEntities = new System.Windows.Forms.NumericUpDown();
-            this.spnRepetitions = new System.Windows.Forms.NumericUpDown();
-            this.spnForcedPractice = new System.Windows.Forms.NumericUpDown();
-            this.spnVerification = new System.Windows.Forms.NumericUpDown();
-            this.spnOrderSeed = new System.Windows.Forms.NumericUpDown();
-            this.spnSelectionSeed = new System.Windows.Forms.NumericUpDown();
-            this.spnGroupId = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spnVerification)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spnForcedPractice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spnRepetitions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spnNumberOfEntities)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spnGroupId)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spnNumberOfEntities)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spnRepetitions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spnForcedPractice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spnVerification)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spnOrderSeed)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spnSelectionSeed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spnGroupId)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -92,6 +92,64 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quantities";
+            // 
+            // spnVerification
+            // 
+            this.spnVerification.Location = new System.Drawing.Point(153, 103);
+            this.spnVerification.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spnVerification.Name = "spnVerification";
+            this.spnVerification.Size = new System.Drawing.Size(120, 20);
+            this.spnVerification.TabIndex = 10;
+            this.spnVerification.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // spnForcedPractice
+            // 
+            this.spnForcedPractice.Location = new System.Drawing.Point(153, 73);
+            this.spnForcedPractice.Name = "spnForcedPractice";
+            this.spnForcedPractice.Size = new System.Drawing.Size(120, 20);
+            this.spnForcedPractice.TabIndex = 9;
+            // 
+            // spnRepetitions
+            // 
+            this.spnRepetitions.Location = new System.Drawing.Point(153, 45);
+            this.spnRepetitions.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spnRepetitions.Name = "spnRepetitions";
+            this.spnRepetitions.Size = new System.Drawing.Size(120, 20);
+            this.spnRepetitions.TabIndex = 8;
+            this.spnRepetitions.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // spnNumberOfEntities
+            // 
+            this.spnNumberOfEntities.Location = new System.Drawing.Point(153, 16);
+            this.spnNumberOfEntities.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spnNumberOfEntities.Name = "spnNumberOfEntities";
+            this.spnNumberOfEntities.Size = new System.Drawing.Size(120, 20);
+            this.spnNumberOfEntities.TabIndex = 7;
+            this.spnNumberOfEntities.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label4
             // 
@@ -140,6 +198,13 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filtering";
+            // 
+            // spnGroupId
+            // 
+            this.spnGroupId.Location = new System.Drawing.Point(69, 37);
+            this.spnGroupId.Name = "spnGroupId";
+            this.spnGroupId.Size = new System.Drawing.Size(120, 20);
+            this.spnGroupId.TabIndex = 2;
             // 
             // label5
             // 
@@ -289,6 +354,14 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Entity Order";
             // 
+            // spnOrderSeed
+            // 
+            this.spnOrderSeed.Enabled = false;
+            this.spnOrderSeed.Location = new System.Drawing.Point(80, 60);
+            this.spnOrderSeed.Name = "spnOrderSeed";
+            this.spnOrderSeed.Size = new System.Drawing.Size(120, 20);
+            this.spnOrderSeed.TabIndex = 3;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.spnSelectionSeed);
@@ -301,6 +374,13 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Entity Selection";
+            // 
+            // spnSelectionSeed
+            // 
+            this.spnSelectionSeed.Location = new System.Drawing.Point(80, 60);
+            this.spnSelectionSeed.Name = "spnSelectionSeed";
+            this.spnSelectionSeed.Size = new System.Drawing.Size(120, 20);
+            this.spnSelectionSeed.TabIndex = 3;
             // 
             // cbRandomizeSelection
             // 
@@ -364,76 +444,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // spnNumberOfEntities
-            // 
-            this.spnNumberOfEntities.Location = new System.Drawing.Point(153, 16);
-            this.spnNumberOfEntities.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.spnNumberOfEntities.Name = "spnNumberOfEntities";
-            this.spnNumberOfEntities.Size = new System.Drawing.Size(120, 20);
-            this.spnNumberOfEntities.TabIndex = 7;
-            this.spnNumberOfEntities.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // spnRepetitions
-            // 
-            this.spnRepetitions.Location = new System.Drawing.Point(153, 45);
-            this.spnRepetitions.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.spnRepetitions.Name = "spnRepetitions";
-            this.spnRepetitions.Size = new System.Drawing.Size(120, 20);
-            this.spnRepetitions.TabIndex = 8;
-            this.spnRepetitions.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // spnForcedPractice
-            // 
-            this.spnForcedPractice.Location = new System.Drawing.Point(153, 73);
-            this.spnForcedPractice.Name = "spnForcedPractice";
-            this.spnForcedPractice.Size = new System.Drawing.Size(120, 20);
-            this.spnForcedPractice.TabIndex = 9;
-            // 
-            // spnVerification
-            // 
-            this.spnVerification.Location = new System.Drawing.Point(153, 103);
-            this.spnVerification.Name = "spnVerification";
-            this.spnVerification.Size = new System.Drawing.Size(120, 20);
-            this.spnVerification.TabIndex = 10;
-            // 
-            // spnOrderSeed
-            // 
-            this.spnOrderSeed.Enabled = false;
-            this.spnOrderSeed.Location = new System.Drawing.Point(80, 60);
-            this.spnOrderSeed.Name = "spnOrderSeed";
-            this.spnOrderSeed.Size = new System.Drawing.Size(120, 20);
-            this.spnOrderSeed.TabIndex = 3;
-            // 
-            // spnSelectionSeed
-            // 
-            this.spnSelectionSeed.Location = new System.Drawing.Point(80, 60);
-            this.spnSelectionSeed.Name = "spnSelectionSeed";
-            this.spnSelectionSeed.Size = new System.Drawing.Size(120, 20);
-            this.spnSelectionSeed.TabIndex = 3;
-            // 
-            // spnGroupId
-            // 
-            this.spnGroupId.Location = new System.Drawing.Point(69, 37);
-            this.spnGroupId.Name = "spnGroupId";
-            this.spnGroupId.Size = new System.Drawing.Size(120, 20);
-            this.spnGroupId.TabIndex = 2;
-            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -449,21 +459,21 @@
             this.Load += new System.EventHandler(this.Settings_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spnVerification)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spnForcedPractice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spnRepetitions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spnNumberOfEntities)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spnGroupId)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spnOrderSeed)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spnNumberOfEntities)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spnRepetitions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spnForcedPractice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spnVerification)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spnOrderSeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spnSelectionSeed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spnGroupId)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -18,6 +18,9 @@ namespace TypingTester.controls
             addCommand(@"Go To Practice", new commands.CommandGoToScreen(reciever, Constants.Screen.ForcedPractice));
             addCommand(@"Go To Entry", new commands.CommandGoToScreen(reciever, Constants.Screen.Entry));
             addCommand(@"Go To Recall", new commands.CommandGoToScreen(reciever, Constants.Screen.Recall));
+            addCommand(@"Go To Memorize", new commands.CommandGoToScreen(reciever, Constants.Screen.Memorize));
+            addCommand(@"Skip Entity", new commands.NextEntity(reciever));
+
             currentString = Session.Instance.EntityStrings[Session.Instance.CurrentEntity];
         }
 
@@ -25,14 +28,34 @@ namespace TypingTester.controls
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, Constants.SubPhase.Verify,
                                                     @"Back button pressed"));
-            executeCommand(@"Go To Practice");
+            if (Options.Instance.ForcedPracticeRounds == 0)
+            {
+                executeCommand(@"Go To Memorize");
+            }
+            else
+            {
+                executeCommand(@"Go To Practice");
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, Constants.SubPhase.Verify,
                                                     @"Next button pressed"));
-            if (tbEntry.Text.Equals(currentString))
+            // check from quit and skip strings
+            if (tbEntry.Text == Options.Instance.QuitString)
+            {
+                Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, 
+                                                        Constants.SubPhase.Verify, @"Quit string entered"));
+                executeCommand(@"Go to Recall");
+            }
+            else if (tbEntry.Text == Options.Instance.SkipString)
+            {
+                Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize,
+                                                        Constants.SubPhase.Verify, @"Skip string entered"));
+                executeCommand(@"Skip Entity");
+            }
+            else if (tbEntry.Text.Equals(currentString))
             {
                 TestEvent te = new TestEvent(Constants.Event.CorrectValueEntered, Constants.Phase.Memorize, Constants.SubPhase.Verify,
                                              @"Correct value entered");
