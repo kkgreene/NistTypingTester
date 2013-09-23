@@ -33,8 +33,7 @@ namespace TypingTester
         public BaseForm()
         {
             InitializeComponent();
-            //Bitmap bmp = TypingTester.Properties.Resources.icon;
-            //this.Icon = Icon.FromHandle(bmp.GetHicon());
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,9 +48,8 @@ namespace TypingTester
 
         private void BaseForm_Load(object sender, EventArgs e)
         {
-            //ParticipantNumber n = new ParticipantNumber(this);
-            //n.Dock = DockStyle.Fill;
-            //mainPanel.Controls.Add(n);
+            // load the options file
+            Options.Instance.load();
             GoToScreen(Constants.Screen.StartScreen);
         }
 
@@ -106,6 +104,10 @@ namespace TypingTester
                     newControl = new Thankyou(this);
                     break;
 
+                case Constants.Screen.Settings:
+                    newControl = new Settings(this);
+                    break;
+
                 default:
                     newControl = null;
                     break;
@@ -127,6 +129,11 @@ namespace TypingTester
             {
                 MessageBox.Show("Attempt to add null control to main panel.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void tsbOptions_Click(object sender, EventArgs e)
+        {
+            GoToScreen(Constants.Screen.Settings);
         }
 
        

@@ -122,6 +122,12 @@
     <Compile Include="controls\Recall.Designer.cs">
       <DependentUpon>Recall.cs</DependentUpon>
     </Compile>
+    <Compile Include="controls\Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="controls\Thankyou.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -143,6 +149,7 @@
     <Compile Include="controls\ParticipantNumberControl.Designer.cs">
       <DependentUpon>ParticipantNumberControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="OptionTags.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="controls\ReadyScreenControl.cs">
@@ -182,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controls\Recall.resx">
       <DependentUpon>Recall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controls\Thankyou.resx">
       <DependentUpon>Thankyou.cs</DependentUpon>
@@ -223,6 +233,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="documents\instructions.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="documents\options.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="documents\thankYou.html">
