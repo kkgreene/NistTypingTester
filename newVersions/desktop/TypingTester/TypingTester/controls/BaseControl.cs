@@ -49,6 +49,11 @@ namespace TypingTester.controls
             Session.Instance.CurrentPhase = Constants.Phase.Unknown;
         }
 
+        protected override void OnMouseClick(MouseEventArgs e)
+        {
+            base.OnMouseClick(e);
+        }
+
 
     }
 }

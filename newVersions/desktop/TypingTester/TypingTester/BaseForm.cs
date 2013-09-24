@@ -148,6 +148,5 @@ namespace TypingTester
             GoToScreen(Constants.Screen.Settings);
         }
 
-       
-    }
+     }
 }

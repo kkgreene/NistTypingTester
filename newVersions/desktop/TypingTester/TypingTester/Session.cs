@@ -203,9 +203,6 @@ namespace TypingTester
             this._timesInFreePractice = 0;
             this._timesInVerify = 0;
             this._summaryWritten = false;
-            this.SetMouseClickLogging(true);
-            this.SetKeyDownLogging(true);
-
         }
 
         private void loadData()
@@ -219,7 +216,8 @@ namespace TypingTester
         {
             loadData();
             initializeSession(particpant);
-            //this.EnableHooks();
+            this.EnableHooks();
+            this.SetMouseDownLogging(true);
         }
 
         public void end()
@@ -466,7 +464,14 @@ namespace TypingTester
 
         private void HookManager_MouseDown(object sender, MouseEventArgs e)
         {
-            Log(string.Format("MouseDown \t\t {0}\n", e.Button));
+            if (InSession)
+            {
+                TestEvent te = new TestEvent(Constants.Event.MouseClick, CurrentPhase, CurrentSubPhase, string.Empty);
+                te.X = e.X;
+                te.Y = e.Y;
+                te.Notes = string.Format("{0} button down {1} clicks, Delta {2}", e.Button, e.Clicks, e.Delta);
+                AddEvent(te);
+            }
         }
 
         private void HookManager_MouseDoubleClick(object sender, MouseEventArgs e)

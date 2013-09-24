@@ -127,16 +127,16 @@
   <data name="tsbOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIHSURBVEhLvVbNSgJRGJ0WBZFBrdzUC4it3Igo/ruUegQf
-        wqR99Qi2UmqdWx8myKw3sKisCOqc/K7NzP1m0HHwwMHL93eu39w/ZxkUi8VErVabgD/CCW3ijh8QaLrE
-        DJvijg7Mek+GHlQqla5fsFqtXonbg2w2uy3DcKDoSalU+kShYb1eT4uZ2IBtrAiO6ZuF/E32APZrcMpa
-        YtZhxEwxjL9RsA/7qSZmWC6XH+Bvg+fIeTN21goUzefz+26xuIiaH4HtxQyHWtKKvJHyNiB4xDYqSZGI
-        eu+NRuNQyutAUF9LjshLKRsMfOSOkhiJmHxbyurIZDKbCBz5Ew2x5O8woWNslx2SY9q0WBKC91L6H0hK
-        Ylm34LxFkPvY8pCFuZIlbQ7awkTBETS60GgiLuFgkbwqQRb5b0TDAn1ajsIJz0fNYZEtlPoW6NNyNMYi
-        mMvldrUcjWzp/CgKY2wtRXASgxY4gPizy+lh1EXDcxYavGVmi8aNZbYF28hxmBg4ktLBQJH1bXwCgT1/
-        YlRi8uFHG1qVjvvwLhQKwYc3AtZ3PXG1QfBLSViV08ALGD23nhj47WEiZ+CjsfuJuCf8dhBzgfFiTwwD
-        I8r28puK2UmlUluwW/sUcS/0SdhyjygDbYMTKDIwQi4OxO3Bws/EMKA4TyS/YEvc8QMtSqKt8+uM34s2
-        cS8Ax/kFqVdDY5zeCrMAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIJSURBVEhLvZbLSkJRFIZtUBAV1MhJvYDYyImIIl6HUo/g
+        Q1g0rx6hRkWNc9rDBNnlDSwyK4L6Vq1t57LOQU8Hf/g5m3X7t8t9y8yCarW62mw2h/BLORSbutMHAh2P
+        mGNH3cnBrNd16EO9Xj8JCjYajVN1+1AsFpd1GA+K7iL4TqHrVquVV7NgAdu9IXgvvt+Qn8luYr+AY6ml
+        ZhtOzBVj/EnBc+x7lphjrVa7w9+Dh+SMnF1qRYqWy+UNr1hapOZbZHuZ4bWV9E9eavkwENyWNhpJiUi9
+        13a7vaXlbRB0biUn5LGWjQZ/8r6RmIhMvqdlbRQKhUUCB8FER9p9w4R22C4rQhmLzYoVInirpf9AUpZl
+        3cV5RZD32PJRCstK1rQJdHVHisIBGidodIhblY36YgSFKL9GNUIQn5VjcCjno+UIUVqo9UMQn5VjMRXB
+        Uqm0ZuVYlJZOjqI4ptZSgrMMurCP+JPH6aMsjCSLRs5ZNOSW+V00XsyyLaSNMo4TgwMtHQ2KzG/jCwg8
+        CyYmJZOPP9poVZ4WpXp4VyqV6MObgPldT7LaEPwwEv7LceQFTM9DTwy+Z0zkAD44e5DEPfLdJ+aI8XRP
+        DAcnKu2V/1TNmVwut4Q9tE+Jexafhs32iHKwNriAIn0n5GFf3T5M/UyMA8XlRAoKdtWdPmhRlpZNrjPG
+        I7GpewpkMt9LekMk8FcVKgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
