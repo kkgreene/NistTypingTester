@@ -24,7 +24,14 @@ namespace TypingTester.controls
         private void Recall_Load(object sender, EventArgs e)
         {
             Session.Instance.CurrentPhase = Constants.Phase.Recall;
-            Session.Instance.CurrentSubPhase = Constants.SubPhase.Unknown;
+            Session.Instance.CurrentSubPhase = Constants.SubPhase.None;
+            for (int i = 0; i < Session.Instance.EntityStrings.Length; i++ )
+            {
+                CueTextBox ctb = new CueTextBox(string.Format("Field{0}", i), "Enter string ...", string.Empty);
+                ctb.Width = flowLayoutPanel1.Width - 20;
+                flowLayoutPanel1.Controls.Add(ctb);
+            }
+            
         }
     }
 }

@@ -45,6 +45,19 @@ namespace TypingTester
             set { mId = value; }
         }
 
+        public CueTextBox()
+        {
+            InitializeComponent();
+        }
+
+        public CueTextBox(string id, string cue, string targetString)
+        {
+            InitializeComponent();
+            mId = id;
+            mCue = cue;
+            mTargetString = targetString;
+        }
+
         private void updateCue()
         {
             if (this.IsHandleCreated && mCue != null)
@@ -52,6 +65,7 @@ namespace TypingTester
                 NativeMethods.SendMessageW(this.Handle, NativeMethods.EM_SETCUEBANNER, (IntPtr)1, mCue);
             }
         }
+        
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
