@@ -23,6 +23,8 @@ namespace TypingTester
         private StreamWriter rawLog;
         private StreamWriter summaryLog;
 
+        private bool _summaryWritten = false;
+
         public string ParticipantNumber { get; set; }
         public int CurrentEntity { get; set; }
         public int CurrentProficiencyString { get; set; }
@@ -79,9 +81,7 @@ namespace TypingTester
                     // if memorize phase is ending output the times in various phases
                     if (_currentPhase == Constants.Phase.Memorize)
                     {
-                        WriteToSummaryLog(string.Format("Free Practice {0} times for {1}", _timesInFreePractice, _timeInFreePractice));
-                        WriteToSummaryLog(string.Format("Forced Practice {0} times for {1}", _timesInForcedPractice, _timeInForcedPractice));
-                        WriteToSummaryLog(string.Format("Verify {0} times for {1}", _timesInVerify, _timeInVerify));
+                        summarizeMemorizePhase();
                     }
 
                     TimeSpan ts = phaseEnd - this._phaseStart;
@@ -194,6 +194,7 @@ namespace TypingTester
             this.CurrentPracticeRound = 1;
             this.CurrentProficiencyString = 0;
             this.CurrentSubPhase = Constants.SubPhase.Unknown;
+            this.CurrentVerifyRound = 1;
             this.WorkAreaContents = string.Empty;
             this._timeInForcedPractice = TimeSpan.Zero;
             this._timeInFreePractice = TimeSpan.Zero;
@@ -201,8 +202,10 @@ namespace TypingTester
             this._timesInForcedPractice = 0;
             this._timesInFreePractice = 0;
             this._timesInVerify = 0;
+            this._summaryWritten = false;
             this.SetMouseClickLogging(true);
             this.SetKeyDownLogging(true);
+
         }
 
         private void loadData()
@@ -254,6 +257,31 @@ namespace TypingTester
                 summaryLog.Close();
                 summaryLog = null;
             }
+        }
+
+        public void nextEntity()
+        {
+            if (!_summaryWritten) summarizeMemorizePhase();
+            this.CurrentEntity++;
+            this._timeInForcedPractice = TimeSpan.Zero;
+            this._timeInFreePractice = TimeSpan.Zero;
+            this._timeInVerify = TimeSpan.Zero;
+            this._timesInForcedPractice = 0;
+            this._timesInFreePractice = 0;
+            this._timesInVerify = 0;
+            this.CurrentEntryForEntity = 1;
+            this.CurrentPracticeRound = 1;
+            this.CurrentVerifyRound = 0;
+            this.WorkAreaContents = string.Empty;
+            _summaryWritten = false;
+        }
+
+        public void summarizeMemorizePhase()
+        {
+            WriteToSummaryLog(string.Format("Free Practice {0} times for {1}", _timesInFreePractice, _timeInFreePractice));
+            WriteToSummaryLog(string.Format("Forced Practice {0} times for {1}", _timesInForcedPractice, _timeInForcedPractice));
+            WriteToSummaryLog(string.Format("Verify {0} times for {1}", _timesInVerify, _timeInVerify));
+            this._summaryWritten = true;
         }
 
         #region Logging methods

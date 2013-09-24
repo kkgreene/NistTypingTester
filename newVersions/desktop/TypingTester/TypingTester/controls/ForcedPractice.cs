@@ -32,8 +32,7 @@ namespace TypingTester.controls
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, Constants.SubPhase.ForcedPractice,
                                                     @"Next button pressed"));
-            // did they get the string correct
-            if (tbEntry.Text.Equals(currentString))
+            if (tbEntry.Text.Equals(currentString)) // did they get the string correct
             {
                 TestEvent te = new TestEvent(Constants.Event.CorrectValueEntered, Constants.Phase.Memorize, Constants.SubPhase.ForcedPractice,
                                               "Correct value entered");
@@ -47,7 +46,17 @@ namespace TypingTester.controls
                 TestEvent te = new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, Constants.SubPhase.ForcedPractice,
                                              @"Quit string entered");
                 te.TargetString = currentString;
+                Session.Instance.AddEvent(te);
                 executeCommand(@"Go To Recall");
+                return;
+            }
+            else if (tbEntry.Text.Equals(Options.Instance.SkipString))
+            {
+                TestEvent te = new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, Constants.SubPhase.ForcedPractice,
+                                             @"Skip string entered");
+                te.TargetString = currentString;
+                Session.Instance.AddEvent(te);
+                this.executeCommand(@"Next Entity");
                 return;
             }
             else

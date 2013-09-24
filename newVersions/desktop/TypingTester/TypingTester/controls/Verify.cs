@@ -48,12 +48,14 @@ namespace TypingTester.controls
                 Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, 
                                                         Constants.SubPhase.Verify, @"Quit string entered"));
                 executeCommand(@"Go to Recall");
+                return;
             }
             else if (tbEntry.Text == Options.Instance.SkipString)
             {
                 Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize,
                                                         Constants.SubPhase.Verify, @"Skip string entered"));
                 executeCommand(@"Skip Entity");
+                return;
             }
             else if (tbEntry.Text.Equals(currentString))
             {
@@ -62,6 +64,11 @@ namespace TypingTester.controls
                 te.TargetString = currentString;
                 Session.Instance.AddEvent(te);
                 Session.Instance.CurrentVerifyRound++;
+                if (Session.Instance.CurrentVerifyRound >= Options.Instance.VerifyRounds)
+                {
+                    executeCommand(@"Go To Entry");
+                    return;
+                }
             }
             else
             {
@@ -69,10 +76,6 @@ namespace TypingTester.controls
                 imgIncorrect.Visible = true;
             }
             UpdateUi();
-            if (Session.Instance.CurrentVerifyRound >= Options.Instance.VerifyRounds)
-            {
-                executeCommand(@"Go To Entry");
-            }
         }
 
         private void Verify_Load(object sender, EventArgs e)
@@ -91,7 +94,7 @@ namespace TypingTester.controls
 
         private void UpdateUi()
         {
-            lblEntityProgress.Text = string.Format("Round {0} of {1}", Session.Instance.CurrentVerifyRound + 1, Options.Instance.VerifyRounds);
+            lblEntityProgress.Text = string.Format("Round {0} of {1}", Session.Instance.CurrentVerifyRound, Options.Instance.VerifyRounds);
             pbEntityProgress.Value = Session.Instance.CurrentVerifyRound;
         }
 

@@ -29,7 +29,8 @@ namespace TypingTester.commands
 
         public override void execute()
         {
-            Session.Instance.CurrentEntity++;
+            //Session.Instance.CurrentEntity++;
+            Session.Instance.nextEntity();
             CommandGoToScreen cmd = new CommandGoToScreen(_reciever, Constants.Screen.Memorize);
             cmd.execute();
         }
