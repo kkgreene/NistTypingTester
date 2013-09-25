@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForcedPractice));
             this.lblSessionProgress = new System.Windows.Forms.Label();
             this.lblRound = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,6 +42,9 @@
             this.lblIncorrect = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnHide = new System.Windows.Forms.Button();
+            this.btnQuit = new System.Windows.Forms.Button();
+            this.btnSkip = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgIncorrect)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,9 +134,11 @@
             // imgIncorrect
             // 
             this.imgIncorrect.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imgIncorrect.Location = new System.Drawing.Point(320, 231);
+            this.imgIncorrect.Image = ((System.Drawing.Image)(resources.GetObject("imgIncorrect.Image")));
+            this.imgIncorrect.Location = new System.Drawing.Point(338, 238);
             this.imgIncorrect.Name = "imgIncorrect";
-            this.imgIncorrect.Size = new System.Drawing.Size(54, 53);
+            this.imgIncorrect.Size = new System.Drawing.Size(36, 36);
+            this.imgIncorrect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.imgIncorrect.TabIndex = 8;
             this.imgIncorrect.TabStop = false;
             this.imgIncorrect.Visible = false;
@@ -152,9 +158,13 @@
             // 
             // imageList1
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "751-eye.png");
+            this.imageList1.Images.SetKeyName(1, "751-eye-selected.png");
+            this.imageList1.Images.SetKeyName(2, "759-refresh-2.png");
+            this.imageList1.Images.SetKeyName(3, "759-refresh-2-selected.png");
+            this.imageList1.Images.SetKeyName(4, "717-flag.png");
             // 
             // btnBack
             // 
@@ -167,9 +177,60 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnHide
+            // 
+            this.btnHide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnHide.AutoSize = true;
+            this.btnHide.ImageIndex = 0;
+            this.btnHide.ImageList = this.imageList1;
+            this.btnHide.Location = new System.Drawing.Point(17, 449);
+            this.btnHide.Name = "btnHide";
+            this.btnHide.Size = new System.Drawing.Size(97, 34);
+            this.btnHide.TabIndex = 11;
+            this.btnHide.Text = "Hide String";
+            this.btnHide.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHide.UseVisualStyleBackColor = true;
+            this.btnHide.Visible = false;
+            this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
+            // 
+            // btnQuit
+            // 
+            this.btnQuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnQuit.AutoSize = true;
+            this.btnQuit.ImageIndex = 4;
+            this.btnQuit.ImageList = this.imageList1;
+            this.btnQuit.Location = new System.Drawing.Point(120, 449);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(75, 34);
+            this.btnQuit.TabIndex = 12;
+            this.btnQuit.Text = "Quit";
+            this.btnQuit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Visible = false;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
+            // btnSkip
+            // 
+            this.btnSkip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSkip.AutoSize = true;
+            this.btnSkip.ImageIndex = 2;
+            this.btnSkip.ImageList = this.imageList1;
+            this.btnSkip.Location = new System.Drawing.Point(201, 449);
+            this.btnSkip.Name = "btnSkip";
+            this.btnSkip.Size = new System.Drawing.Size(75, 34);
+            this.btnSkip.TabIndex = 13;
+            this.btnSkip.Text = "Skip";
+            this.btnSkip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSkip.UseVisualStyleBackColor = true;
+            this.btnSkip.Visible = false;
+            this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
+            // 
             // ForcedPractice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Controls.Add(this.btnSkip);
+            this.Controls.Add(this.btnQuit);
+            this.Controls.Add(this.btnHide);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblIncorrect);
             this.Controls.Add(this.imgIncorrect);
@@ -203,5 +264,8 @@
         private System.Windows.Forms.Label lblIncorrect;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnHide;
+        private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.Button btnSkip;
     }
 }

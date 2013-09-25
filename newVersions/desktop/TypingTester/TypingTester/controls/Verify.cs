@@ -117,5 +117,21 @@ namespace TypingTester.controls
                 btnNext.Enabled = false;
             }
         }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize,
+                                                        Constants.SubPhase.Verify, @"Quit button pressed"));
+            executeCommand(@"Go to Recall");
+            return;
+        }
+
+        private void btnSkip_Click(object sender, EventArgs e)
+        {
+            Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize,
+                                                        Constants.SubPhase.Verify, @"Skip button pressed"));
+            executeCommand(@"Skip Entity");
+            return;
+        }
     }
 }

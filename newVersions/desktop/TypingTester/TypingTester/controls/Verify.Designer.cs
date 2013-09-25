@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Verify));
             this.lblSessionProgress = new System.Windows.Forms.Label();
             this.lblEntityProgress = new System.Windows.Forms.Label();
             this.pbSessionProgress = new System.Windows.Forms.ProgressBar();
@@ -38,6 +40,9 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.lblIncorrect = new System.Windows.Forms.Label();
             this.imgIncorrect = new System.Windows.Forms.PictureBox();
+            this.btnQuit = new System.Windows.Forms.Button();
+            this.btnSkip = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.imgIncorrect)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,16 +142,59 @@
             // imgIncorrect
             // 
             this.imgIncorrect.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imgIncorrect.Location = new System.Drawing.Point(320, 184);
+            this.imgIncorrect.Image = ((System.Drawing.Image)(resources.GetObject("imgIncorrect.Image")));
+            this.imgIncorrect.Location = new System.Drawing.Point(338, 183);
             this.imgIncorrect.Name = "imgIncorrect";
-            this.imgIncorrect.Size = new System.Drawing.Size(54, 53);
+            this.imgIncorrect.Size = new System.Drawing.Size(36, 36);
+            this.imgIncorrect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.imgIncorrect.TabIndex = 10;
             this.imgIncorrect.TabStop = false;
             this.imgIncorrect.Visible = false;
             // 
+            // btnQuit
+            // 
+            this.btnQuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnQuit.AutoSize = true;
+            this.btnQuit.ImageIndex = 0;
+            this.btnQuit.ImageList = this.imageList1;
+            this.btnQuit.Location = new System.Drawing.Point(22, 470);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(75, 34);
+            this.btnQuit.TabIndex = 12;
+            this.btnQuit.Text = "Quit";
+            this.btnQuit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Visible = false;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
+            // btnSkip
+            // 
+            this.btnSkip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSkip.AutoSize = true;
+            this.btnSkip.ImageIndex = 1;
+            this.btnSkip.ImageList = this.imageList1;
+            this.btnSkip.Location = new System.Drawing.Point(103, 470);
+            this.btnSkip.Name = "btnSkip";
+            this.btnSkip.Size = new System.Drawing.Size(75, 34);
+            this.btnSkip.TabIndex = 13;
+            this.btnSkip.Text = "Skip";
+            this.btnSkip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSkip.UseVisualStyleBackColor = true;
+            this.btnSkip.Visible = false;
+            this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "717-flag.png");
+            this.imageList1.Images.SetKeyName(1, "759-refresh-2.png");
+            // 
             // Verify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Controls.Add(this.btnSkip);
+            this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.lblIncorrect);
             this.Controls.Add(this.imgIncorrect);
             this.Controls.Add(this.btnBack);
@@ -177,5 +225,8 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblIncorrect;
         private System.Windows.Forms.PictureBox imgIncorrect;
+        private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button btnSkip;
     }
 }

@@ -246,6 +246,8 @@
     </Content>
     <Content Include="images\433-x%402x.png" />
     <Content Include="images\433-x.png" />
+    <Content Include="images\717-flag%402x.png" />
+    <Content Include="images\717-flag.png" />
     <Content Include="images\740-gear-selected.png" />
     <Content Include="images\740-gear.png" />
     <Content Include="images\751-eye-selected.png" />
