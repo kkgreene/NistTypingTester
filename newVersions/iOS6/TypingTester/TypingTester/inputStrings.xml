@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inputBundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="file:/Users/mattkerr/Google%20Drive/development/nistTypingStudy/Documents/mockups/dataFormat/typingInputFile.xsd">
+    xsi:noNamespaceSchemaLocation="file:///C:\Users\matt.kerr\development\NistTypingTester\Documents\mockups\dataFormat\typingInputFile.xsd">
     <filters>
         <filterItem filterId="6char">6 Character</filterItem>
         <filterItem filterId="8char">8 Character</filterItem>
