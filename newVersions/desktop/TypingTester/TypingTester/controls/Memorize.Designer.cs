@@ -30,7 +30,6 @@
         {
             this.lblEntityProgress = new System.Windows.Forms.Label();
             this.pbEntityProgress = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.tbWorkArea = new TypingTester.CueTextBox();
             this.btnNext = new System.Windows.Forms.Button();
@@ -54,17 +53,6 @@
             this.pbEntityProgress.Name = "pbEntityProgress";
             this.pbEntityProgress.Size = new System.Drawing.Size(738, 23);
             this.pbEntityProgress.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(165, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(450, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Please memorize the string below.  You may use the space provided as a work area " +
-    "if needed.";
             // 
             // lblPassword
             // 
@@ -111,7 +99,6 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.tbWorkArea);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pbEntityProgress);
             this.Controls.Add(this.lblEntityProgress);
             this.Name = "Memorize";
@@ -125,7 +112,6 @@
 
         private System.Windows.Forms.Label lblEntityProgress;
         private System.Windows.Forms.ProgressBar pbEntityProgress;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPassword;
         private CueTextBox tbWorkArea;
         private System.Windows.Forms.Button btnNext;

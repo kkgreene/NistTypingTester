@@ -120,6 +120,28 @@ namespace TypingTester
             doc.Save(_filename);
         }
 
-        
+        public string GetSettings()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("Session Settings\n");
+            sb.AppendFormat("Number of entities: {0}\n", this.NumberOfEntities);
+            sb.AppendFormat("Entries per entity: {0}\n", this.RepetitionPerEntity);
+            sb.AppendFormat("Practice rounds : {0}\n", this.ForcedPracticeRounds);
+            sb.AppendFormat("Verification rounds : {0}\n", this.VerifyRounds);
+            sb.AppendFormat("Random Entity Order : {0}\n", this.RandomEntityOrder);
+            sb.AppendFormat("Use Order Seed : {0}\n", this.UseOrderSeed);
+            sb.AppendFormat("Order Seed : {0}\n", this.OrderSeed);
+            sb.AppendFormat("Random Entity Selection : {0}\n", this.RandomEntitySelection);
+            sb.AppendFormat("Use Selection Seed : {0}\n", this.UseSelectionSeed);
+            sb.AppendFormat("Selection Seed : {0}\n", this.SelectionSeed);
+            sb.AppendFormat("Use Group Id : {0}\n", this.UseGroupId);
+            sb.AppendFormat("Group Id : {0}\n", this.GroupId);
+            sb.AppendFormat("Quit String : {0}\n", this.QuitString);
+            sb.AppendFormat("Skip String : {0}\n", this.SkipString);
+            sb.AppendFormat("Show Quit Button : {0}\n", this.ShowQuitButton);
+            sb.AppendFormat("Show Skip Button : {0}\n", this.ShowSkipButton);
+            sb.AppendFormat("Show Hide Button : {0}\n", this.ShowHideButtonOnPractice);
+            return sb.ToString();
+        }
     }
 }

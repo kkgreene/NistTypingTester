@@ -231,6 +231,7 @@
   <ItemGroup>
     <Content Include="documents\inputStrings.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="documents\instructions.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

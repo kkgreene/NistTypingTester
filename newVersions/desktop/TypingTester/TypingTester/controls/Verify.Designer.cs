@@ -41,8 +41,8 @@
             this.lblIncorrect = new System.Windows.Forms.Label();
             this.imgIncorrect = new System.Windows.Forms.PictureBox();
             this.btnQuit = new System.Windows.Forms.Button();
-            this.btnSkip = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnSkip = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgIncorrect)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,11 +84,12 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(246, 92);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(366, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(288, 13);
+            this.label3.Size = new System.Drawing.Size(49, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Please enter the string you memorized in the text box below.";
+            this.label3.Text = "Verify";
             // 
             // tbEntry
             // 
@@ -167,6 +168,13 @@
             this.btnQuit.Visible = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "717-flag.png");
+            this.imageList1.Images.SetKeyName(1, "759-refresh-2.png");
+            // 
             // btnSkip
             // 
             this.btnSkip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -182,13 +190,6 @@
             this.btnSkip.UseVisualStyleBackColor = true;
             this.btnSkip.Visible = false;
             this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "717-flag.png");
-            this.imageList1.Images.SetKeyName(1, "759-refresh-2.png");
             // 
             // Verify
             // 

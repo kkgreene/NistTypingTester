@@ -28,24 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNext = new System.Windows.Forms.Button();
             this.lblProficiencyString = new System.Windows.Forms.Label();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.tbEntry = new TypingTester.CueTextBox();
             this.pbProgress = new System.Windows.Forms.ProgressBar();
             this.lblProgress = new System.Windows.Forms.Label();
-            this.tbEntry = new TypingTester.CueTextBox();
             this.SuspendLayout();
-            // 
-            // btnNext
-            // 
-            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnNext.Enabled = false;
-            this.btnNext.Location = new System.Drawing.Point(353, 185);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 5;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // lblProficiencyString
             // 
@@ -60,6 +48,31 @@
             this.lblProficiencyString.TabIndex = 3;
             this.lblProficiencyString.Text = "The quick brown fox jumped over the lazy dogs.";
             this.lblProficiencyString.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnNext.Enabled = false;
+            this.btnNext.Location = new System.Drawing.Point(353, 185);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.TabIndex = 2;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // tbEntry
+            // 
+            this.tbEntry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEntry.Cue = "Enter text here ...";
+            this.tbEntry.Id = "ProficiencyBox";
+            this.tbEntry.Location = new System.Drawing.Point(27, 147);
+            this.tbEntry.Name = "tbEntry";
+            this.tbEntry.Size = new System.Drawing.Size(726, 20);
+            this.tbEntry.TabIndex = 1;
+            this.tbEntry.TargetString = "";
+            this.tbEntry.TextChanged += new System.EventHandler(this.tbEntry_TextChanged);
             // 
             // pbProgress
             // 
@@ -79,19 +92,6 @@
             this.lblProgress.Size = new System.Drawing.Size(63, 13);
             this.lblProgress.TabIndex = 0;
             this.lblProgress.Text = "Entry # of #";
-            // 
-            // tbEntry
-            // 
-            this.tbEntry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEntry.Cue = "Enter text here ...";
-            this.tbEntry.Id = "ProficiencyBox";
-            this.tbEntry.Location = new System.Drawing.Point(27, 147);
-            this.tbEntry.Name = "tbEntry";
-            this.tbEntry.Size = new System.Drawing.Size(726, 20);
-            this.tbEntry.TabIndex = 4;
-            this.tbEntry.TargetString = "";
-            this.tbEntry.TextChanged += new System.EventHandler(this.tbEntry_TextChanged);
             // 
             // ProficiencyControl
             // 

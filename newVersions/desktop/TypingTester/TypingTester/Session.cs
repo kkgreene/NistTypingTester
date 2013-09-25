@@ -239,6 +239,7 @@ namespace TypingTester
             summaryLog = new StreamWriter(summaryLogFilename, false);
             summaryLog.AutoFlush = true;
             rawLog.WriteLine(TestEvent.LogHeader);
+            WriteSummaryHeader();
         }
 
         private void closeLogFiles()
@@ -282,12 +283,34 @@ namespace TypingTester
             this._summaryWritten = true;
         }
 
+        public override string ToString()
+        {
+            return string.Format("Session for Participant Id: {0}", this.ParticipantNumber);
+        }
+
+        private void WriteSummaryHeader()
+        { 
+            WriteToSummaryLog(string.Format("Participant number: {0}", ParticipantNumber));
+            WriteToSummaryLog(Options.Instance.GetSettings());
+            WriteToSummaryLog("Proficiency Strings");
+            foreach(string s in this.ProficiencyStrings)
+            {
+                WriteToSummaryLog(s);
+            }
+            WriteToSummaryLog("Entity Strings");
+            foreach(string s in this.EntityStrings)
+            {
+                WriteToSummaryLog(s);
+            }
+        }
+
         #region Logging methods
 
         internal void AddEvent(TestEvent te)
         {
             if (this.InSession)
             {
+                te.Interval = te.Time - this._sessionStart;
                 Log(te.ToString());
             }
         }

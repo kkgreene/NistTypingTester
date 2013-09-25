@@ -104,7 +104,7 @@ namespace TypingTester
         protected override void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);
-            TestEvent te = new TestEvent(Constants.Event.Input,
+            TestEvent te = new TestEvent(Constants.Event.KeyDown,
                                         Session.Instance.CurrentPhase,
                                         Session.Instance.CurrentSubPhase,
                                         string.Format("Key Down"));
@@ -117,7 +117,7 @@ namespace TypingTester
         protected override void OnKeyUp(KeyEventArgs e)
         {
             base.OnKeyUp(e);
-            TestEvent te = new TestEvent(Constants.Event.Input,
+            TestEvent te = new TestEvent(Constants.Event.KeyUp,
                                        Session.Instance.CurrentPhase,
                                        Session.Instance.CurrentSubPhase,
                                        string.Format("Key Up"));
@@ -130,7 +130,7 @@ namespace TypingTester
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
             base.OnKeyPress(e);
-            TestEvent te = new TestEvent(Constants.Event.Input,
+            TestEvent te = new TestEvent(Constants.Event.KeyPress,
                                          Session.Instance.CurrentPhase,
                                          Session.Instance.CurrentSubPhase,
                                          string.Format("{0}", this.Text));

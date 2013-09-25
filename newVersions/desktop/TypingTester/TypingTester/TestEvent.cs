@@ -13,7 +13,7 @@ namespace TypingTester
         public Constants.SubPhase SubPhase { get; set; }
         public DateTime Time { get; set; }
         public string Notes { get; set; }
-        public TimeSpan Interval {get; protected set;}
+        public TimeSpan Interval {get; set;}
         public string ParticipantNumber { get; set; }
         public int X { get; set; }
         public int Y { get; set; }

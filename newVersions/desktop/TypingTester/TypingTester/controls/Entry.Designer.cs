@@ -60,11 +60,12 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(230, 90);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(367, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(320, 13);
+            this.label3.Size = new System.Drawing.Size(46, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Please enter the string you have memorized in the space provided.";
+            this.label3.Text = "Entry";
             // 
             // tbEntry
             // 
@@ -96,6 +97,7 @@
             this.pbSession.Location = new System.Drawing.Point(22, 41);
             this.pbSession.Name = "pbSession";
             this.pbSession.Size = new System.Drawing.Size(205, 23);
+            this.pbSession.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.pbSession.TabIndex = 5;
             // 
             // pbEntry

@@ -17,7 +17,7 @@ namespace TypingTester
         public enum Event
         {
             Unknown, Input, PhaseBegin, PhaseEnd, SubPhaseChange, ProficiencyStringShown, EntityDisplayed,
-            ControlActivated, IncorrectValueEntered, CorrectValueEntered, MouseClick
+            ControlActivated, IncorrectValueEntered, CorrectValueEntered, MouseClick, KeyDown, KeyUp, KeyPress
         };
 
         
