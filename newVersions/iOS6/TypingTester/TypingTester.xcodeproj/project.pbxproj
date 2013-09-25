@@ -45,6 +45,13 @@
 		AD20940C17C3D34500B56CB7 /* ttThankYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD20940B17C3D34400B56CB7 /* ttThankYouViewController.m */; };
 		AD20940F17C3FBCD00B56CB7 /* ttApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = AD20940E17C3FBCD00B56CB7 /* ttApplication.m */; };
 		AD2537C017E7906500C1B0EE /* ttTextFieldWithName.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2537BF17E7906500C1B0EE /* ttTextFieldWithName.m */; };
+		AD32EB9F17EC904E00CDB3AA /* iOSIcon-29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = AD32EB9817EC904E00CDB3AA /* iOSIcon-29x29.png */; };
+		AD32EBA017EC904E00CDB3AA /* iOSIcon-40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = AD32EB9917EC904E00CDB3AA /* iOSIcon-40x40.png */; };
+		AD32EBA117EC904E00CDB3AA /* iOSIcon-58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = AD32EB9A17EC904E00CDB3AA /* iOSIcon-58x58.png */; };
+		AD32EBA217EC904E00CDB3AA /* iOSIcon-76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = AD32EB9B17EC904E00CDB3AA /* iOSIcon-76x76.png */; };
+		AD32EBA317EC904E00CDB3AA /* iOSIcon-80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = AD32EB9C17EC904E00CDB3AA /* iOSIcon-80x80.png */; };
+		AD32EBA417EC904E00CDB3AA /* iOSIcon-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = AD32EB9D17EC904E00CDB3AA /* iOSIcon-120x120.png */; };
+		AD32EBA517EC904E00CDB3AA /* iOSIcon-152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = AD32EB9E17EC904E00CDB3AA /* iOSIcon-152x152.png */; };
 		AD3A463617CBB440007256F4 /* ttRecallTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3A463517CBB440007256F4 /* ttRecallTableViewController.m */; };
 		AD4073FC17BBCBB3006E31CF /* ttProficiencyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4073FB17BBCBB3006E31CF /* ttProficiencyItem.m */; };
 		AD4073FF17BBCBC2006E31CF /* ttTestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4073FE17BBCBC2006E31CF /* ttTestEntity.m */; };
@@ -174,6 +181,13 @@
 		AD20940E17C3FBCD00B56CB7 /* ttApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttApplication.m; sourceTree = "<group>"; };
 		AD2537BE17E7906500C1B0EE /* ttTextFieldWithName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttTextFieldWithName.h; sourceTree = "<group>"; };
 		AD2537BF17E7906500C1B0EE /* ttTextFieldWithName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttTextFieldWithName.m; sourceTree = "<group>"; };
+		AD32EB9817EC904E00CDB3AA /* iOSIcon-29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOSIcon-29x29.png"; sourceTree = "<group>"; };
+		AD32EB9917EC904E00CDB3AA /* iOSIcon-40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOSIcon-40x40.png"; sourceTree = "<group>"; };
+		AD32EB9A17EC904E00CDB3AA /* iOSIcon-58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOSIcon-58x58.png"; sourceTree = "<group>"; };
+		AD32EB9B17EC904E00CDB3AA /* iOSIcon-76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOSIcon-76x76.png"; sourceTree = "<group>"; };
+		AD32EB9C17EC904E00CDB3AA /* iOSIcon-80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOSIcon-80x80.png"; sourceTree = "<group>"; };
+		AD32EB9D17EC904E00CDB3AA /* iOSIcon-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOSIcon-120x120.png"; sourceTree = "<group>"; };
+		AD32EB9E17EC904E00CDB3AA /* iOSIcon-152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOSIcon-152x152.png"; sourceTree = "<group>"; };
 		AD3A463417CBB43F007256F4 /* ttRecallTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttRecallTableViewController.h; sourceTree = "<group>"; };
 		AD3A463517CBB440007256F4 /* ttRecallTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttRecallTableViewController.m; sourceTree = "<group>"; };
 		AD4073FA17BBCBB3006E31CF /* ttProficiencyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttProficiencyItem.h; sourceTree = "<group>"; };
@@ -285,6 +299,13 @@
 		AD04765917A964B600657D08 = {
 			isa = PBXGroup;
 			children = (
+				AD32EB9817EC904E00CDB3AA /* iOSIcon-29x29.png */,
+				AD32EB9917EC904E00CDB3AA /* iOSIcon-40x40.png */,
+				AD32EB9A17EC904E00CDB3AA /* iOSIcon-58x58.png */,
+				AD32EB9B17EC904E00CDB3AA /* iOSIcon-76x76.png */,
+				AD32EB9C17EC904E00CDB3AA /* iOSIcon-80x80.png */,
+				AD32EB9D17EC904E00CDB3AA /* iOSIcon-120x120.png */,
+				AD32EB9E17EC904E00CDB3AA /* iOSIcon-152x152.png */,
 				ADECABCB17DE0D390069A5FD /* Default.png */,
 				ADECABC917DE0D1D0069A5FD /* Default@2x.png */,
 				ADECABC717DE0CE10069A5FD /* Default-568h@2x.png */,
@@ -582,6 +603,7 @@
 				AD2093EF17C3AC3400B56CB7 /* 433-x.png in Resources */,
 				AD2093F017C3AC3400B56CB7 /* 433-x@2x.png in Resources */,
 				AD2093F117C3AC3400B56CB7 /* 751-eye.png in Resources */,
+				AD32EBA317EC904E00CDB3AA /* iOSIcon-80x80.png in Resources */,
 				AD2093F217C3AC3400B56CB7 /* 751-eye@2x.png in Resources */,
 				AD2093F517C3AD1600B56CB7 /* 336-skip.png in Resources */,
 				AD2093F617C3AD1600B56CB7 /* 336-skip@2x.png in Resources */,
@@ -609,7 +631,9 @@
 				ADE0926917D8C51F0041B472 /* 751-eye-selected@2x.png in Resources */,
 				ADE0926A17D8C51F0041B472 /* 751-eye-white.png in Resources */,
 				ADE0926B17D8C51F0041B472 /* 751-eye-white@2x.png in Resources */,
+				AD32EBA017EC904E00CDB3AA /* iOSIcon-40x40.png in Resources */,
 				ADE0926C17D8C51F0041B472 /* 759-refresh-2-selected-white.png in Resources */,
+				AD32EBA417EC904E00CDB3AA /* iOSIcon-120x120.png in Resources */,
 				ADE0926D17D8C51F0041B472 /* 759-refresh-2-selected-white@2x.png in Resources */,
 				ADE0926E17D8C51F0041B472 /* 759-refresh-2-selected.png in Resources */,
 				ADE0926F17D8C51F0041B472 /* 759-refresh-2-selected@2x.png in Resources */,
@@ -620,8 +644,10 @@
 				ADE0927417D8C51F0041B472 /* 765-arrow-left-selected-white.png in Resources */,
 				ADE0927517D8C51F0041B472 /* 765-arrow-left-selected-white@2x.png in Resources */,
 				ADE0927617D8C51F0041B472 /* 765-arrow-left-selected.png in Resources */,
+				AD32EBA217EC904E00CDB3AA /* iOSIcon-76x76.png in Resources */,
 				ADE0927717D8C51F0041B472 /* 765-arrow-left-selected@2x.png in Resources */,
 				ADE0927817D8C51F0041B472 /* 766-arrow-right-selected-white.png in Resources */,
+				AD32EBA517EC904E00CDB3AA /* iOSIcon-152x152.png in Resources */,
 				ADE0927917D8C51F0041B472 /* 766-arrow-right-selected-white@2x.png in Resources */,
 				ADE0927A17D8C51F0041B472 /* 766-arrow-right-selected.png in Resources */,
 				ADE0927B17D8C51F0041B472 /* 766-arrow-right-selected@2x.png in Resources */,
@@ -632,6 +658,8 @@
 				ADE0928017D8C51F0041B472 /* 875-skull-white.png in Resources */,
 				ADE0928117D8C51F0041B472 /* 875-skull-white@2x.png in Resources */,
 				ADE0928217D8C51F0041B472 /* 875-skull.png in Resources */,
+				AD32EB9F17EC904E00CDB3AA /* iOSIcon-29x29.png in Resources */,
+				AD32EBA117EC904E00CDB3AA /* iOSIcon-58x58.png in Resources */,
 				ADE0928317D8C51F0041B472 /* 875-skull@2x.png in Resources */,
 				ADE0928617D904D40041B472 /* Pattern - Cloth.png in Resources */,
 				ADE0928717D904D40041B472 /* Pattern - Cloth@2x.png in Resources */,
@@ -784,7 +812,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingTester/TypingTester-Prefix.pch";
 				INFOPLIST_FILE = "TypingTester/TypingTester-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -796,7 +824,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingTester/TypingTester-Prefix.pch";
 				INFOPLIST_FILE = "TypingTester/TypingTester-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

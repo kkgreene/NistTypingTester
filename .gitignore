@@ -9,7 +9,6 @@
 *.[Oo]bj
 *.user
 *.aps
-*.pch
 *.vspscc
 *.vssscc
 *_i.c
@@ -155,3 +154,5 @@ xcuserdata
 # UNKNOWN: recommended by others, but I can't discover what these files are
 #
 # ...none. Everything is now explained.
+
+TypingTester.xccheckout
