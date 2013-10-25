@@ -78,6 +78,7 @@
             this.tbEntry.Size = new System.Drawing.Size(736, 20);
             this.tbEntry.TabIndex = 3;
             this.tbEntry.TargetString = "";
+            this.tbEntry.UseSystemPasswordChar = true;
             this.tbEntry.TextChanged += new System.EventHandler(this.tbEntry_TextChanged);
             // 
             // btnNext

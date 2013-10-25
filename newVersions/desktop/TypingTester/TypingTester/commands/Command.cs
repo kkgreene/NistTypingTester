@@ -14,7 +14,7 @@ namespace TypingTester.commands
         public abstract void undo();
         protected abstract void Dispose(bool disposing);
         
-        public void Dispose()
+        public virtual void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
