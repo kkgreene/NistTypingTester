@@ -34,15 +34,15 @@ namespace TypingTester.controls
         {
             Options o = Options.Instance;
             o.NumberOfEntities = Convert.ToInt32(spnNumberOfEntities.Value);
-            o.RepetitionPerEntity = Convert.ToInt32(spnNumberOfEntities.Value);
+            o.RepetitionPerEntity = Convert.ToInt32(spnRepetitions.Value);
             o.ForcedPracticeRounds = Convert.ToInt32(spnForcedPractice.Value);
             o.VerifyRounds = Convert.ToInt32(spnVerification.Value);
             o.RandomEntityOrder = cbRandomizeOrder.Checked;
             o.UseOrderSeed = cbUseOrderSeed.Checked;
-            o.OrderSeed = Convert.ToInt32(spnOrderSeed.Value);
+            o.OrderSeed = Convert.ToInt32(tbOrderSeed.Text);
             o.RandomEntitySelection = cbRandomizeSelection.Checked;
             o.UseSelectionSeed = cbUseSelectionSeed.Checked;
-            o.SelectionSeed = Convert.ToInt32(spnSelectionSeed.Value);
+            o.SelectionSeed = Convert.ToInt32(tbSelectionSeed.Text);
             o.UseGroupId = cbUseGroupFilter.Checked;
             o.GroupId = Convert.ToInt32(spnGroupId.Value);
             o.QuitString = tbQuitString.Text;
@@ -60,9 +60,9 @@ namespace TypingTester.controls
             spnNumberOfEntities.Value = o.NumberOfEntities;
             spnForcedPractice.Value = o.ForcedPracticeRounds;
             spnGroupId.Value = o.GroupId;
-            spnOrderSeed.Value = o.OrderSeed;
+            tbOrderSeed.Text = o.OrderSeed.ToString();
             spnRepetitions.Value = o.RepetitionPerEntity;
-            spnSelectionSeed.Value = o.SelectionSeed;
+            tbSelectionSeed.Text = o.SelectionSeed.ToString();
             spnVerification.Value = o.VerifyRounds;
             tbQuitString.Text = o.QuitString;
             tbSkipString.Text = o.SkipString;
@@ -76,32 +76,32 @@ namespace TypingTester.controls
             cbUseSelectionSeed.Checked = o.UseSelectionSeed;
 
             cbUseOrderSeed.Enabled = (o.RandomEntityOrder) ? true : false;
-            spnOrderSeed.Enabled = (o.RandomEntityOrder && o.UseOrderSeed) ? true : false;
+            tbOrderSeed.Enabled = (o.RandomEntityOrder && o.UseOrderSeed) ? true : false;
             cbUseSelectionSeed.Enabled = (o.RandomEntitySelection) ? true : false;
-            spnSelectionSeed.Enabled = (o.RandomEntitySelection && o.UseSelectionSeed) ? true : false;
+            tbSelectionSeed.Enabled = (o.RandomEntitySelection && o.UseSelectionSeed) ? true : false;
             spnGroupId.Enabled = (o.UseGroupId) ? true : false;
         }
 
         private void cbRandomizeOrder_CheckedChanged(object sender, EventArgs e)
         {
             cbUseOrderSeed.Enabled = (cbRandomizeOrder.Checked) ? true : false;
-            spnOrderSeed.Enabled = (cbRandomizeOrder.Checked && cbUseOrderSeed.Checked) ? true : false;
+            tbOrderSeed.Enabled = (cbRandomizeOrder.Checked && cbUseOrderSeed.Checked) ? true : false;
         }
 
         private void cbUseOrderSeed_CheckedChanged(object sender, EventArgs e)
         {
-            spnOrderSeed.Enabled = (cbRandomizeOrder.Checked && cbUseOrderSeed.Checked) ? true : false;
+            tbOrderSeed.Enabled = (cbRandomizeOrder.Checked && cbUseOrderSeed.Checked) ? true : false;
         }
 
         private void cbRandomizeSelection_CheckedChanged(object sender, EventArgs e)
         {
             cbUseSelectionSeed.Enabled = (cbRandomizeSelection.Checked) ? true : false;
-            spnSelectionSeed.Enabled = (cbRandomizeSelection.Checked && cbUseSelectionSeed.Checked) ? true : false;
+            tbSelectionSeed.Enabled = (cbRandomizeSelection.Checked && cbUseSelectionSeed.Checked) ? true : false;
         }
 
         private void cbUseSelectionSeed_CheckedChanged(object sender, EventArgs e)
         {
-            spnSelectionSeed.Enabled = (cbRandomizeSelection.Checked && cbUseSelectionSeed.Checked) ? true : false;
+            tbSelectionSeed.Enabled = (cbRandomizeSelection.Checked && cbUseSelectionSeed.Checked) ? true : false;
         }
 
         private void Settings_Load(object sender, EventArgs e)

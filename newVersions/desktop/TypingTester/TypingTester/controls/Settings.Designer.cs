@@ -53,15 +53,15 @@
             this.cbUseOrderSeed = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.spnOrderSeed = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.spnSelectionSeed = new System.Windows.Forms.NumericUpDown();
             this.cbRandomizeSelection = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbUseSelectionSeed = new System.Windows.Forms.CheckBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.tbSelectionSeed = new TypingTester.CueTextBox();
+            this.tbOrderSeed = new TypingTester.CueTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spnVerification)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spnForcedPractice)).BeginInit();
@@ -71,9 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spnGroupId)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spnOrderSeed)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spnSelectionSeed)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -343,7 +341,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.spnOrderSeed);
+            this.groupBox5.Controls.Add(this.tbOrderSeed);
             this.groupBox5.Controls.Add(this.cbRandomizeOrder);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.cbUseOrderSeed);
@@ -354,18 +352,10 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Entity Order";
             // 
-            // spnOrderSeed
-            // 
-            this.spnOrderSeed.Enabled = false;
-            this.spnOrderSeed.Location = new System.Drawing.Point(80, 60);
-            this.spnOrderSeed.Name = "spnOrderSeed";
-            this.spnOrderSeed.Size = new System.Drawing.Size(120, 20);
-            this.spnOrderSeed.TabIndex = 3;
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.spnSelectionSeed);
             this.groupBox2.Controls.Add(this.cbRandomizeSelection);
+            this.groupBox2.Controls.Add(this.tbSelectionSeed);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cbUseSelectionSeed);
             this.groupBox2.Location = new System.Drawing.Point(272, 164);
@@ -374,13 +364,6 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Entity Selection";
-            // 
-            // spnSelectionSeed
-            // 
-            this.spnSelectionSeed.Location = new System.Drawing.Point(80, 60);
-            this.spnSelectionSeed.Name = "spnSelectionSeed";
-            this.spnSelectionSeed.Size = new System.Drawing.Size(120, 20);
-            this.spnSelectionSeed.TabIndex = 3;
             // 
             // cbRandomizeSelection
             // 
@@ -444,6 +427,26 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // tbSelectionSeed
+            // 
+            this.tbSelectionSeed.Cue = "0";
+            this.tbSelectionSeed.Id = null;
+            this.tbSelectionSeed.Location = new System.Drawing.Point(80, 59);
+            this.tbSelectionSeed.Name = "tbSelectionSeed";
+            this.tbSelectionSeed.Size = new System.Drawing.Size(124, 20);
+            this.tbSelectionSeed.TabIndex = 9;
+            this.tbSelectionSeed.TargetString = "";
+            // 
+            // tbOrderSeed
+            // 
+            this.tbOrderSeed.Cue = "0";
+            this.tbOrderSeed.Id = null;
+            this.tbOrderSeed.Location = new System.Drawing.Point(80, 59);
+            this.tbOrderSeed.Name = "tbOrderSeed";
+            this.tbOrderSeed.Size = new System.Drawing.Size(124, 20);
+            this.tbOrderSeed.TabIndex = 10;
+            this.tbOrderSeed.TargetString = "";
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,10 +473,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spnOrderSeed)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spnSelectionSeed)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -512,7 +513,7 @@
         private System.Windows.Forms.NumericUpDown spnRepetitions;
         private System.Windows.Forms.NumericUpDown spnNumberOfEntities;
         private System.Windows.Forms.NumericUpDown spnGroupId;
-        private System.Windows.Forms.NumericUpDown spnOrderSeed;
-        private System.Windows.Forms.NumericUpDown spnSelectionSeed;
+        private CueTextBox tbOrderSeed;
+        private CueTextBox tbSelectionSeed;
     }
 }
