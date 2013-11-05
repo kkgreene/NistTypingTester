@@ -95,7 +95,7 @@ namespace TypingTester.controls
         private void UpdateUi()
         {
             lblEntityProgress.Text = string.Format("Round {0} of {1}", Session.Instance.CurrentVerifyRound, Options.Instance.VerifyRounds);
-            pbEntityProgress.Value = Session.Instance.CurrentVerifyRound;
+            pbEntityProgress.Value = Math.Min((Session.Instance.CurrentVerifyRound - 1), pbEntityProgress.Maximum);
         }
 
         public override void ExitControl()
