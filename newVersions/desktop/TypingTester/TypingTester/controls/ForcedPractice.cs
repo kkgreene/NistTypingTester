@@ -90,9 +90,17 @@ namespace TypingTester.controls
 
         private void UpdateUi()
         {
-            lblRound.Text = string.Format("Round {0} of {1}", Session.Instance.CurrentPracticeRound, Options.Instance.ForcedPracticeRounds);
-            pbRound.Value = Math.Min(Session.Instance.CurrentPracticeRound-1, pbRound.Maximum);
-
+            if (Session.Instance.CurrentPracticeRound > Options.Instance.ForcedPracticeRounds)
+            {
+                lblRound.Text = "Complete";
+                pbRound.Value = pbRound.Maximum;
+                btnNext.Enabled = true;
+            }
+            else
+            {
+                lblRound.Text = string.Format("Round {0} of {1}", Session.Instance.CurrentPracticeRound, Options.Instance.ForcedPracticeRounds);
+                pbRound.Value = Math.Min(Session.Instance.CurrentPracticeRound - 1, pbRound.Maximum);
+            }
         }
 
         private void ForcedPractice_Load(object sender, EventArgs e)
@@ -126,7 +134,7 @@ namespace TypingTester.controls
         {
             lblIncorrect.Visible = false;
             imgIncorrect.Visible = false;
-            if (tbEntry.Text.Length > 0)
+            if (tbEntry.Text.Length > 0 || (Session.Instance.CurrentPracticeRound > Options.Instance.ForcedPracticeRounds))
             {
                 btnNext.Enabled = true;
             }
