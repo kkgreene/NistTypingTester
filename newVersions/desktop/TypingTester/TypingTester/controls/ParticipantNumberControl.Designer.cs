@@ -59,7 +59,7 @@
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Cue = "Particpant Number";
+            this.textBox1.Cue = "Participant Number";
             this.textBox1.Id = null;
             this.textBox1.Location = new System.Drawing.Point(38, 245);
             this.textBox1.Name = "textBox1";
