@@ -270,7 +270,7 @@ namespace TypingTester
             this._timesInVerify = 0;
             this.CurrentEntryForEntity = 1;
             this.CurrentPracticeRound = 1;
-            this.CurrentVerifyRound = 0;
+            this.CurrentVerifyRound = 1;
             this.WorkAreaContents = string.Empty;
             _summaryWritten = false;
         }

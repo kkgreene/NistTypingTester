@@ -37,7 +37,9 @@ namespace TypingTester.controls
         private void UpdateUi()
         {
             lblEntry.Text = string.Format("Entry {0} of {1}", Session.Instance.CurrentEntryForEntity, Options.Instance.RepetitionPerEntity);
-            pbEntry.Value = Session.Instance.CurrentEntryForEntity;
+            pbEntry.Value = Math.Min((Session.Instance.CurrentEntryForEntity-1), pbEntry.Maximum);
+            lblSession.Text = string.Format("Entity {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length);
+            pbSession.Value = Math.Min(Session.Instance.CurrentEntity, pbSession.Maximum);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -80,9 +82,9 @@ namespace TypingTester.controls
             // increment the entry # and determine if another is needed or where to go
             Session.Instance.CurrentEntryForEntity++;
             tbEntry.Text = string.Empty;
-            if (Session.Instance.CurrentEntryForEntity >= Options.Instance.RepetitionPerEntity)
+            if (Session.Instance.CurrentEntryForEntity > Options.Instance.RepetitionPerEntity)
             {
-                if (Session.Instance.CurrentEntity >= Session.Instance.EntityStrings.Length)
+                if (Session.Instance.CurrentEntity + 1 >= Session.Instance.EntityStrings.Length)
                 {
                     executeCommand(@"Go To Recall");
                 }
