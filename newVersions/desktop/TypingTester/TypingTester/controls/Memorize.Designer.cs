@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblEntityProgress = new System.Windows.Forms.Label();
-            this.pbEntityProgress = new System.Windows.Forms.ProgressBar();
             this.lblPassword = new System.Windows.Forms.Label();
             this.tbWorkArea = new TypingTester.CueTextBox();
             this.btnNext = new System.Windows.Forms.Button();
@@ -39,20 +38,11 @@
             // 
             this.lblEntityProgress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblEntityProgress.AutoSize = true;
-            this.lblEntityProgress.Location = new System.Drawing.Point(358, 11);
+            this.lblEntityProgress.Location = new System.Drawing.Point(358, 15);
             this.lblEntityProgress.Name = "lblEntityProgress";
             this.lblEntityProgress.Size = new System.Drawing.Size(65, 13);
             this.lblEntityProgress.TabIndex = 0;
             this.lblEntityProgress.Text = "Entity # of #";
-            // 
-            // pbEntityProgress
-            // 
-            this.pbEntityProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbEntityProgress.Location = new System.Drawing.Point(21, 27);
-            this.pbEntityProgress.Name = "pbEntityProgress";
-            this.pbEntityProgress.Size = new System.Drawing.Size(738, 23);
-            this.pbEntityProgress.TabIndex = 1;
             // 
             // lblPassword
             // 
@@ -61,9 +51,9 @@
             this.lblPassword.BackColor = System.Drawing.Color.Moccasin;
             this.lblPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPassword.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(21, 92);
+            this.lblPassword.Location = new System.Drawing.Point(23, 57);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(738, 38);
+            this.lblPassword.Size = new System.Drawing.Size(726, 38);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Password";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -75,17 +65,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbWorkArea.Cue = "Work area ...";
             this.tbWorkArea.Id = null;
-            this.tbWorkArea.Location = new System.Drawing.Point(21, 133);
+            this.tbWorkArea.Location = new System.Drawing.Point(23, 116);
             this.tbWorkArea.Multiline = true;
             this.tbWorkArea.Name = "tbWorkArea";
-            this.tbWorkArea.Size = new System.Drawing.Size(738, 272);
+            this.tbWorkArea.Size = new System.Drawing.Size(726, 272);
             this.tbWorkArea.TabIndex = 4;
             this.tbWorkArea.TargetString = "";
             // 
             // btnNext
             // 
             this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnNext.Location = new System.Drawing.Point(353, 411);
+            this.btnNext.Location = new System.Drawing.Point(353, 394);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 5;
@@ -99,7 +89,6 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.tbWorkArea);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.pbEntityProgress);
             this.Controls.Add(this.lblEntityProgress);
             this.Name = "Memorize";
             this.Load += new System.EventHandler(this.Memorize_Load);
@@ -111,7 +100,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblEntityProgress;
-        private System.Windows.Forms.ProgressBar pbEntityProgress;
         private System.Windows.Forms.Label lblPassword;
         private CueTextBox tbWorkArea;
         private System.Windows.Forms.Button btnNext;

@@ -25,7 +25,6 @@ namespace TypingTester.controls
             string currentString = Session.Instance.ProficiencyStrings[currentProficiencyItem];
             lblProgress.Text = string.Format("Entry {0} of {1}", currentProficiencyItem + 1, totalProficiencyItems);
             lblProficiencyString.Text = currentString;
-            pbProgress.Value = currentProficiencyItem;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -60,8 +59,6 @@ namespace TypingTester.controls
         {
             UpdateDisplay();
             Session.Instance.CurrentPhase = Constants.Phase.Proficiency;
-            pbProgress.Maximum = 0;
-            pbProgress.Maximum = Session.Instance.ProficiencyStrings.Length;
         }
 
         private void tbEntry_TextChanged(object sender, EventArgs e)

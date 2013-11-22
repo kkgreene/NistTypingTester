@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Verify));
             this.lblSessionProgress = new System.Windows.Forms.Label();
             this.lblEntityProgress = new System.Windows.Forms.Label();
-            this.pbSessionProgress = new System.Windows.Forms.ProgressBar();
-            this.pbEntityProgress = new System.Windows.Forms.ProgressBar();
             this.label3 = new System.Windows.Forms.Label();
             this.tbEntry = new TypingTester.CueTextBox();
             this.btnNext = new System.Windows.Forms.Button();
@@ -49,7 +47,7 @@
             // lblSessionProgress
             // 
             this.lblSessionProgress.AutoSize = true;
-            this.lblSessionProgress.Location = new System.Drawing.Point(92, 25);
+            this.lblSessionProgress.Location = new System.Drawing.Point(20, 15);
             this.lblSessionProgress.Name = "lblSessionProgress";
             this.lblSessionProgress.Size = new System.Drawing.Size(65, 13);
             this.lblSessionProgress.TabIndex = 0;
@@ -59,26 +57,11 @@
             // 
             this.lblEntityProgress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEntityProgress.AutoSize = true;
-            this.lblEntityProgress.Location = new System.Drawing.Point(620, 25);
+            this.lblEntityProgress.Location = new System.Drawing.Point(695, 15);
             this.lblEntityProgress.Name = "lblEntityProgress";
             this.lblEntityProgress.Size = new System.Drawing.Size(63, 13);
             this.lblEntityProgress.TabIndex = 1;
             this.lblEntityProgress.Text = "Entry # of #";
-            // 
-            // pbSessionProgress
-            // 
-            this.pbSessionProgress.Location = new System.Drawing.Point(22, 41);
-            this.pbSessionProgress.Name = "pbSessionProgress";
-            this.pbSessionProgress.Size = new System.Drawing.Size(205, 23);
-            this.pbSessionProgress.TabIndex = 2;
-            // 
-            // pbEntityProgress
-            // 
-            this.pbEntityProgress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbEntityProgress.Location = new System.Drawing.Point(549, 41);
-            this.pbEntityProgress.Name = "pbEntityProgress";
-            this.pbEntityProgress.Size = new System.Drawing.Size(205, 23);
-            this.pbEntityProgress.TabIndex = 3;
             // 
             // label3
             // 
@@ -97,9 +80,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbEntry.Cue = "Enter string here";
             this.tbEntry.Id = null;
-            this.tbEntry.Location = new System.Drawing.Point(45, 118);
+            this.tbEntry.Location = new System.Drawing.Point(23, 118);
             this.tbEntry.Name = "tbEntry";
-            this.tbEntry.Size = new System.Drawing.Size(690, 20);
+            this.tbEntry.Size = new System.Drawing.Size(735, 20);
             this.tbEntry.TabIndex = 5;
             this.tbEntry.TargetString = "";
             this.tbEntry.UseSystemPasswordChar = true;
@@ -159,7 +142,7 @@
             this.btnQuit.AutoSize = true;
             this.btnQuit.ImageIndex = 0;
             this.btnQuit.ImageList = this.imageList1;
-            this.btnQuit.Location = new System.Drawing.Point(22, 470);
+            this.btnQuit.Location = new System.Drawing.Point(23, 470);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 34);
             this.btnQuit.TabIndex = 12;
@@ -182,7 +165,7 @@
             this.btnSkip.AutoSize = true;
             this.btnSkip.ImageIndex = 1;
             this.btnSkip.ImageList = this.imageList1;
-            this.btnSkip.Location = new System.Drawing.Point(103, 470);
+            this.btnSkip.Location = new System.Drawing.Point(104, 470);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(75, 34);
             this.btnSkip.TabIndex = 13;
@@ -203,8 +186,6 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.tbEntry);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pbEntityProgress);
-            this.Controls.Add(this.pbSessionProgress);
             this.Controls.Add(this.lblEntityProgress);
             this.Controls.Add(this.lblSessionProgress);
             this.Name = "Verify";
@@ -219,8 +200,6 @@
 
         private System.Windows.Forms.Label lblSessionProgress;
         private System.Windows.Forms.Label lblEntityProgress;
-        private System.Windows.Forms.ProgressBar pbSessionProgress;
-        private System.Windows.Forms.ProgressBar pbEntityProgress;
         private System.Windows.Forms.Label label3;
         private CueTextBox tbEntry;
         private System.Windows.Forms.Button btnNext;
