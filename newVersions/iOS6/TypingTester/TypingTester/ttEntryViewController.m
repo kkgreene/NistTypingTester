@@ -100,9 +100,7 @@
     int currentEntity = self.session.currentEntity;
     int currentEntry = self.session.currentEntryForEntity;
     int totalEntries = [[ttSettings Instance]entriesPerEntitiy];
-    self.sessionProgressBar.progress = (float)(currentEntity)/(float)(totalEntites);
     self.sessionProgressLabel.text = [NSString stringWithFormat:@"Entity %i of %i",currentEntity+1, totalEntites];
-    self.entityProgressBar.progress = (float)currentEntry/(float)totalEntries;
     self.entityProgressLabel.text = [NSString stringWithFormat:@"Entry %i of %i", currentEntry+1, totalEntries];
 }
 
