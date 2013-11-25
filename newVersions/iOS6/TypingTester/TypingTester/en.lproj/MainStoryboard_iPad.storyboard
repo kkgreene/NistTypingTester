@@ -54,6 +54,7 @@
                                     <constraint firstAttribute="width" constant="88" id="cBu-eb-wqH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="766-arrow-right.png"/>
                                 <state key="selected" image="766-arrow-right-selected.png"/>
                                 <state key="highlighted" image="766-arrow-right-selected.png"/>
@@ -66,6 +67,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="vJ8-mR-bF3"/>
                                 </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="740-gear.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
