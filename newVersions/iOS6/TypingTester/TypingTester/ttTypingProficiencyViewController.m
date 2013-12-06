@@ -60,7 +60,6 @@
     item = [self.session.proficiencyStrings objectAtIndex:currentString];
     self.phraseLabel1.text = item.text;
     self.progressLabel.text = [NSString stringWithFormat:@"Entry %i of %i", currentString+1, totalStrings];
-    self.progressBar.progress = (currentString + 0.0F)/(totalStrings+0.0F);
     if (self.entryField.text.length > 0)
     {
         self.doneButton.enabled = YES;

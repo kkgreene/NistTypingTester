@@ -93,13 +93,11 @@ namespace TypingTester.controls
             if (Session.Instance.CurrentPracticeRound > Options.Instance.ForcedPracticeRounds)
             {
                 lblRound.Text = "Complete";
-                pbRound.Value = pbRound.Maximum;
                 btnNext.Enabled = true;
             }
             else
             {
                 lblRound.Text = string.Format("Round {0} of {1}", Session.Instance.CurrentPracticeRound, Options.Instance.ForcedPracticeRounds);
-                pbRound.Value = Math.Min(Session.Instance.CurrentPracticeRound - 1, pbRound.Maximum);
             }
         }
 
@@ -113,11 +111,6 @@ namespace TypingTester.controls
             else lblEntity.Text = maskedString;
             tbEntry.TargetString = currentString;
             lblSessionProgress.Text = string.Format("Entity {0} of {1}", Session.Instance.CurrentEntity+1, Session.Instance.EntityStrings.Length);
-            pbSessionProgress.Minimum = 0;
-            pbSessionProgress.Maximum = Session.Instance.EntityStrings.Length;
-            pbSessionProgress.Value = Session.Instance.CurrentEntity;
-            pbRound.Minimum = 0;
-            pbRound.Maximum = Options.Instance.ForcedPracticeRounds;
             btnHide.Visible = Options.Instance.ShowHideButtonOnPractice;
             btnQuit.Visible = Options.Instance.ShowQuitButton;
             btnSkip.Visible = Options.Instance.ShowSkipButton;

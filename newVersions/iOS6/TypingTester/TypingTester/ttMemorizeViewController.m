@@ -89,7 +89,6 @@
     entity = [self.session.entities objectAtIndex:currentEntity];
     self.passwordLabel.text = entity.entityString;
     self.workArea.text = self.session.workAreaContents;
-    self.progressDisplay.progress = (float)(currentEntity)/(float)totalEntites;
     self.progressLabel.text = [NSString stringWithFormat:@"Entity %i of %i", currentEntity+1, totalEntites];
 }
 

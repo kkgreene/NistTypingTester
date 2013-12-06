@@ -40,9 +40,6 @@ namespace TypingTester.controls
             Session.Instance.CurrentSubPhase = Constants.SubPhase.FreePractice;
             lblPassword.Text = currentString;
             lblEntityProgress.Text = string.Format("Entity {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length);
-            pbEntityProgress.Minimum = 0;
-            pbEntityProgress.Maximum = Session.Instance.EntityStrings.Length;
-            pbEntityProgress.Value = Session.Instance.CurrentEntity;
         }
 
         public override void ExitControl()

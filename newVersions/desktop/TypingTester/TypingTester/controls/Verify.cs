@@ -84,18 +84,12 @@ namespace TypingTester.controls
             Session.Instance.CurrentSubPhase = Constants.SubPhase.Verify;
             tbEntry.TargetString = currentString;
             lblSessionProgress.Text = string.Format("Entity {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length);
-            pbSessionProgress.Minimum = 0;
-            pbSessionProgress.Maximum = Session.Instance.EntityStrings.Length;
-            pbSessionProgress.Value = Session.Instance.CurrentEntity;
-            pbEntityProgress.Minimum = 0;
-            pbEntityProgress.Maximum = Options.Instance.VerifyRounds;
             UpdateUi();
         }
 
         private void UpdateUi()
         {
             lblEntityProgress.Text = string.Format("Round {0} of {1}", Session.Instance.CurrentVerifyRound, Options.Instance.VerifyRounds);
-            pbEntityProgress.Value = Math.Min((Session.Instance.CurrentVerifyRound-1), pbEntityProgress.Maximum);
         }
 
         public override void ExitControl()

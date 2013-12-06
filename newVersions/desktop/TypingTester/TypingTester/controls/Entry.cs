@@ -25,21 +25,13 @@ namespace TypingTester.controls
             Session.Instance.CurrentPhase = Constants.Phase.Entry;
             Session.Instance.CurrentSubPhase = Constants.SubPhase.None;
             tbEntry.TargetString = currentString;
-            lblSession.Text = string.Format("Entity {0} of {1}", Session.Instance.CurrentEntity+1, Session.Instance.EntityStrings.Length);
-            pbSession.Minimum = 0;
-            pbSession.Maximum = Options.Instance.RepetitionPerEntity;
-            pbSession.Value = Session.Instance.CurrentEntryForEntity;
-            pbEntry.Minimum = 0;
-            pbEntry.Maximum = Options.Instance.RepetitionPerEntity;
             UpdateUi();
         }
 
         private void UpdateUi()
-        {
+        {            
             lblEntry.Text = string.Format("Entry {0} of {1}", Session.Instance.CurrentEntryForEntity, Options.Instance.RepetitionPerEntity);
-            pbEntry.Value = Math.Min((Session.Instance.CurrentEntryForEntity-1), pbEntry.Maximum);
             lblSession.Text = string.Format("Entity {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length);
-            pbSession.Value = Math.Min(Session.Instance.CurrentEntity, pbSession.Maximum);
         }
 
         private void btnNext_Click(object sender, EventArgs e)

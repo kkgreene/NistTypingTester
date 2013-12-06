@@ -13,8 +13,6 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *sessionProgressLabel;
 @property (nonatomic, weak) IBOutlet UILabel *entitiyProgressLabel;
-@property (nonatomic, weak) IBOutlet UIProgressView *sessionProgressBar;
-@property (nonatomic, weak) IBOutlet UIProgressView *entityProgressBar;
 @property (nonatomic, weak) IBOutlet UILabel *entity;
 @property (nonatomic, weak) IBOutlet UITextField *entryField;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;

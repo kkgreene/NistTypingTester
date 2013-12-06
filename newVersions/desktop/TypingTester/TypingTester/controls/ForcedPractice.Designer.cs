@@ -35,8 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbEntry = new TypingTester.CueTextBox();
             this.lblEntity = new System.Windows.Forms.Label();
-            this.pbSessionProgress = new System.Windows.Forms.ProgressBar();
-            this.pbRound = new System.Windows.Forms.ProgressBar();
             this.btnNext = new System.Windows.Forms.Button();
             this.imgIncorrect = new System.Windows.Forms.PictureBox();
             this.lblIncorrect = new System.Windows.Forms.Label();
@@ -51,7 +49,7 @@
             // lblSessionProgress
             // 
             this.lblSessionProgress.AutoSize = true;
-            this.lblSessionProgress.Location = new System.Drawing.Point(92, 25);
+            this.lblSessionProgress.Location = new System.Drawing.Point(20, 15);
             this.lblSessionProgress.Name = "lblSessionProgress";
             this.lblSessionProgress.Size = new System.Drawing.Size(65, 13);
             this.lblSessionProgress.TabIndex = 0;
@@ -61,7 +59,7 @@
             // 
             this.lblRound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRound.AutoSize = true;
-            this.lblRound.Location = new System.Drawing.Point(620, 25);
+            this.lblRound.Location = new System.Drawing.Point(695, 15);
             this.lblRound.Name = "lblRound";
             this.lblRound.Size = new System.Drawing.Size(71, 13);
             this.lblRound.TabIndex = 1;
@@ -84,9 +82,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbEntry.Cue = "Enter string here";
             this.tbEntry.Id = null;
-            this.tbEntry.Location = new System.Drawing.Point(22, 170);
+            this.tbEntry.Location = new System.Drawing.Point(23, 118);
             this.tbEntry.Name = "tbEntry";
-            this.tbEntry.Size = new System.Drawing.Size(737, 20);
+            this.tbEntry.Size = new System.Drawing.Size(743, 20);
             this.tbEntry.TabIndex = 3;
             this.tbEntry.TargetString = "";
             this.tbEntry.TextChanged += new System.EventHandler(this.tbEntry_TextChanged);
@@ -98,33 +96,18 @@
             this.lblEntity.BackColor = System.Drawing.Color.Moccasin;
             this.lblEntity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEntity.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntity.Location = new System.Drawing.Point(21, 117);
+            this.lblEntity.Location = new System.Drawing.Point(23, 57);
             this.lblEntity.Name = "lblEntity";
-            this.lblEntity.Size = new System.Drawing.Size(738, 38);
+            this.lblEntity.Size = new System.Drawing.Size(743, 38);
             this.lblEntity.TabIndex = 4;
             this.lblEntity.Text = "Password1234";
             this.lblEntity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbSessionProgress
-            // 
-            this.pbSessionProgress.Location = new System.Drawing.Point(22, 41);
-            this.pbSessionProgress.Name = "pbSessionProgress";
-            this.pbSessionProgress.Size = new System.Drawing.Size(205, 23);
-            this.pbSessionProgress.TabIndex = 5;
-            // 
-            // pbRound
-            // 
-            this.pbRound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbRound.Location = new System.Drawing.Point(549, 41);
-            this.pbRound.Name = "pbRound";
-            this.pbRound.Size = new System.Drawing.Size(205, 23);
-            this.pbRound.TabIndex = 6;
             // 
             // btnNext
             // 
             this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNext.Enabled = false;
-            this.btnNext.Location = new System.Drawing.Point(395, 196);
+            this.btnNext.Location = new System.Drawing.Point(386, 144);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 7;
@@ -136,7 +119,7 @@
             // 
             this.imgIncorrect.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.imgIncorrect.Image = ((System.Drawing.Image)(resources.GetObject("imgIncorrect.Image")));
-            this.imgIncorrect.Location = new System.Drawing.Point(338, 238);
+            this.imgIncorrect.Location = new System.Drawing.Point(329, 171);
             this.imgIncorrect.Name = "imgIncorrect";
             this.imgIncorrect.Size = new System.Drawing.Size(36, 36);
             this.imgIncorrect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -150,7 +133,7 @@
             this.lblIncorrect.AutoSize = true;
             this.lblIncorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIncorrect.ForeColor = System.Drawing.Color.Red;
-            this.lblIncorrect.Location = new System.Drawing.Point(380, 246);
+            this.lblIncorrect.Location = new System.Drawing.Point(371, 179);
             this.lblIncorrect.Name = "lblIncorrect";
             this.lblIncorrect.Size = new System.Drawing.Size(81, 20);
             this.lblIncorrect.TabIndex = 9;
@@ -170,7 +153,7 @@
             // btnBack
             // 
             this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnBack.Location = new System.Drawing.Point(310, 196);
+            this.btnBack.Location = new System.Drawing.Point(301, 144);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 10;
@@ -184,7 +167,7 @@
             this.btnHide.AutoSize = true;
             this.btnHide.ImageIndex = 0;
             this.btnHide.ImageList = this.imageList1;
-            this.btnHide.Location = new System.Drawing.Point(17, 449);
+            this.btnHide.Location = new System.Drawing.Point(23, 449);
             this.btnHide.Name = "btnHide";
             this.btnHide.Size = new System.Drawing.Size(97, 34);
             this.btnHide.TabIndex = 11;
@@ -200,7 +183,7 @@
             this.btnQuit.AutoSize = true;
             this.btnQuit.ImageIndex = 4;
             this.btnQuit.ImageList = this.imageList1;
-            this.btnQuit.Location = new System.Drawing.Point(120, 449);
+            this.btnQuit.Location = new System.Drawing.Point(126, 449);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 34);
             this.btnQuit.TabIndex = 12;
@@ -216,7 +199,7 @@
             this.btnSkip.AutoSize = true;
             this.btnSkip.ImageIndex = 2;
             this.btnSkip.ImageList = this.imageList1;
-            this.btnSkip.Location = new System.Drawing.Point(201, 449);
+            this.btnSkip.Location = new System.Drawing.Point(207, 449);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(75, 34);
             this.btnSkip.TabIndex = 13;
@@ -236,8 +219,6 @@
             this.Controls.Add(this.lblIncorrect);
             this.Controls.Add(this.imgIncorrect);
             this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.pbRound);
-            this.Controls.Add(this.pbSessionProgress);
             this.Controls.Add(this.lblEntity);
             this.Controls.Add(this.tbEntry);
             this.Controls.Add(this.label3);
@@ -258,8 +239,6 @@
         private System.Windows.Forms.Label label3;
         private CueTextBox tbEntry;
         private System.Windows.Forms.Label lblEntity;
-        private System.Windows.Forms.ProgressBar pbSessionProgress;
-        private System.Windows.Forms.ProgressBar pbRound;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.PictureBox imgIncorrect;
         private System.Windows.Forms.Label lblIncorrect;
