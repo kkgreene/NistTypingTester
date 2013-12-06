@@ -43,6 +43,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(743, 345);
             this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.TabStop = false;
             // 
             // button1
             // 
@@ -50,7 +51,7 @@
             this.button1.Location = new System.Drawing.Point(353, 399);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 0;
             this.button1.Text = "Next";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

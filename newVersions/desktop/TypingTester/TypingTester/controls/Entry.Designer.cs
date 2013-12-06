@@ -40,9 +40,9 @@
             this.lblSession.AutoSize = true;
             this.lblSession.Location = new System.Drawing.Point(20, 15);
             this.lblSession.Name = "lblSession";
-            this.lblSession.Size = new System.Drawing.Size(65, 13);
+            this.lblSession.Size = new System.Drawing.Size(85, 13);
             this.lblSession.TabIndex = 0;
-            this.lblSession.Text = "Entity # of #";
+            this.lblSession.Text = "Password # of #";
             // 
             // lblEntry
             // 
@@ -50,9 +50,9 @@
             this.lblEntry.AutoSize = true;
             this.lblEntry.Location = new System.Drawing.Point(695, 15);
             this.lblEntry.Name = "lblEntry";
-            this.lblEntry.Size = new System.Drawing.Size(63, 13);
+            this.lblEntry.Size = new System.Drawing.Size(71, 13);
             this.lblEntry.TabIndex = 1;
-            this.lblEntry.Text = "Entry # of #";
+            this.lblEntry.Text = "Round # of #";
             // 
             // label3
             // 
@@ -74,7 +74,7 @@
             this.tbEntry.Location = new System.Drawing.Point(23, 118);
             this.tbEntry.Name = "tbEntry";
             this.tbEntry.Size = new System.Drawing.Size(726, 20);
-            this.tbEntry.TabIndex = 3;
+            this.tbEntry.TabIndex = 0;
             this.tbEntry.TargetString = "";
             this.tbEntry.UseSystemPasswordChar = true;
             this.tbEntry.TextChanged += new System.EventHandler(this.tbEntry_TextChanged);
@@ -86,7 +86,7 @@
             this.btnNext.Location = new System.Drawing.Point(353, 148);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 4;
+            this.btnNext.TabIndex = 1;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);

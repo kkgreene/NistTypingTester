@@ -110,7 +110,7 @@ namespace TypingTester.controls
             if (hideString == false) lblEntity.Text = currentString;
             else lblEntity.Text = maskedString;
             tbEntry.TargetString = currentString;
-            lblSessionProgress.Text = string.Format("Entity {0} of {1}", Session.Instance.CurrentEntity+1, Session.Instance.EntityStrings.Length);
+            lblSessionProgress.Text = string.Format("Password {0} of {1}", Session.Instance.CurrentEntity+1, Session.Instance.EntityStrings.Length);
             btnHide.Visible = Options.Instance.ShowHideButtonOnPractice;
             btnQuit.Visible = Options.Instance.ShowQuitButton;
             btnSkip.Visible = Options.Instance.ShowSkipButton;

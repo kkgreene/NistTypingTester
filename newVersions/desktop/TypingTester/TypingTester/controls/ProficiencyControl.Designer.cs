@@ -55,7 +55,7 @@
             this.btnNext.Location = new System.Drawing.Point(353, 144);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 2;
+            this.btnNext.TabIndex = 1;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -69,7 +69,7 @@
             this.tbEntry.Location = new System.Drawing.Point(23, 118);
             this.tbEntry.Name = "tbEntry";
             this.tbEntry.Size = new System.Drawing.Size(726, 20);
-            this.tbEntry.TabIndex = 1;
+            this.tbEntry.TabIndex = 0;
             this.tbEntry.TargetString = "";
             this.tbEntry.TextChanged += new System.EventHandler(this.tbEntry_TextChanged);
             // 
@@ -77,11 +77,11 @@
             // 
             this.lblProgress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblProgress.AutoSize = true;
-            this.lblProgress.Location = new System.Drawing.Point(359, 15);
+            this.lblProgress.Location = new System.Drawing.Point(354, 15);
             this.lblProgress.Name = "lblProgress";
-            this.lblProgress.Size = new System.Drawing.Size(63, 13);
+            this.lblProgress.Size = new System.Drawing.Size(72, 13);
             this.lblProgress.TabIndex = 0;
-            this.lblProgress.Text = "Entry # of #";
+            this.lblProgress.Text = "Phrase # of #";
             // 
             // ProficiencyControl
             // 

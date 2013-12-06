@@ -48,7 +48,8 @@
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(743, 345);
-            this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.TabIndex = 2;
+            this.webBrowser1.TabStop = false;
             // 
             // label1
             // 
@@ -79,7 +80,7 @@
             this.btnBegin.Location = new System.Drawing.Point(393, 465);
             this.btnBegin.Name = "btnBegin";
             this.btnBegin.Size = new System.Drawing.Size(75, 23);
-            this.btnBegin.TabIndex = 3;
+            this.btnBegin.TabIndex = 1;
             this.btnBegin.Text = "Begin";
             this.btnBegin.UseVisualStyleBackColor = true;
             this.btnBegin.Click += new System.EventHandler(this.button1_Click);
@@ -90,7 +91,7 @@
             this.btnBack.Location = new System.Drawing.Point(312, 465);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 4;
+            this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.button2_Click);

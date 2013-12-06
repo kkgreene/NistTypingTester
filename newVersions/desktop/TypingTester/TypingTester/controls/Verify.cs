@@ -83,7 +83,7 @@ namespace TypingTester.controls
             Session.Instance.CurrentPhase = Constants.Phase.Memorize;
             Session.Instance.CurrentSubPhase = Constants.SubPhase.Verify;
             tbEntry.TargetString = currentString;
-            lblSessionProgress.Text = string.Format("Entity {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length);
+            lblSessionProgress.Text = string.Format("Password {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length);
             UpdateUi();
         }
 

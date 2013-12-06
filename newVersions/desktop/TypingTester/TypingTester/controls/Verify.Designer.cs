@@ -49,9 +49,9 @@
             this.lblSessionProgress.AutoSize = true;
             this.lblSessionProgress.Location = new System.Drawing.Point(20, 15);
             this.lblSessionProgress.Name = "lblSessionProgress";
-            this.lblSessionProgress.Size = new System.Drawing.Size(65, 13);
+            this.lblSessionProgress.Size = new System.Drawing.Size(85, 13);
             this.lblSessionProgress.TabIndex = 0;
-            this.lblSessionProgress.Text = "Entity # of #";
+            this.lblSessionProgress.Text = "Password # of #";
             // 
             // lblEntityProgress
             // 
@@ -59,9 +59,9 @@
             this.lblEntityProgress.AutoSize = true;
             this.lblEntityProgress.Location = new System.Drawing.Point(695, 15);
             this.lblEntityProgress.Name = "lblEntityProgress";
-            this.lblEntityProgress.Size = new System.Drawing.Size(63, 13);
+            this.lblEntityProgress.Size = new System.Drawing.Size(71, 13);
             this.lblEntityProgress.TabIndex = 1;
-            this.lblEntityProgress.Text = "Entry # of #";
+            this.lblEntityProgress.Text = "Round # of #";
             // 
             // label3
             // 

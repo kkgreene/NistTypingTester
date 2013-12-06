@@ -36,11 +36,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(184, 25);
+            this.label1.Location = new System.Drawing.Point(181, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(393, 13);
+            this.label1.Size = new System.Drawing.Size(418, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Please enter as many of the string as you remember in the spaces provided below.";
+            this.label1.Text = "Please enter as many of the passwords as you remember in the spaces provided belo" +
+    "w.";
             // 
             // flowLayoutPanel1
             // 
@@ -55,7 +56,7 @@
             this.btnNext.Location = new System.Drawing.Point(364, 438);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 2;
+            this.btnNext.TabIndex = 0;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);

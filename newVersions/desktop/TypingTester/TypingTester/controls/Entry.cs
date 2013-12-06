@@ -30,8 +30,8 @@ namespace TypingTester.controls
 
         private void UpdateUi()
         {            
-            lblEntry.Text = string.Format("Entry {0} of {1}", Session.Instance.CurrentEntryForEntity, Options.Instance.RepetitionPerEntity);
-            lblSession.Text = string.Format("Entity {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length);
+            lblEntry.Text = string.Format("Round {0} of {1}", Session.Instance.CurrentEntryForEntity, Options.Instance.RepetitionPerEntity);
+            lblSession.Text = string.Format("Password {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length);
         }
 
         private void btnNext_Click(object sender, EventArgs e)

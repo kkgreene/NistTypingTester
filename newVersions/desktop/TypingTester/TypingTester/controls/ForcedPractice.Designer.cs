@@ -51,9 +51,9 @@
             this.lblSessionProgress.AutoSize = true;
             this.lblSessionProgress.Location = new System.Drawing.Point(20, 15);
             this.lblSessionProgress.Name = "lblSessionProgress";
-            this.lblSessionProgress.Size = new System.Drawing.Size(65, 13);
+            this.lblSessionProgress.Size = new System.Drawing.Size(85, 13);
             this.lblSessionProgress.TabIndex = 0;
-            this.lblSessionProgress.Text = "Entity # of #";
+            this.lblSessionProgress.Text = "Password # of #";
             // 
             // lblRound
             // 
@@ -85,7 +85,7 @@
             this.tbEntry.Location = new System.Drawing.Point(23, 118);
             this.tbEntry.Name = "tbEntry";
             this.tbEntry.Size = new System.Drawing.Size(743, 20);
-            this.tbEntry.TabIndex = 3;
+            this.tbEntry.TabIndex = 0;
             this.tbEntry.TargetString = "";
             this.tbEntry.TextChanged += new System.EventHandler(this.tbEntry_TextChanged);
             // 
@@ -110,7 +110,7 @@
             this.btnNext.Location = new System.Drawing.Point(386, 144);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 7;
+            this.btnNext.TabIndex = 2;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -156,7 +156,7 @@
             this.btnBack.Location = new System.Drawing.Point(301, 144);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 10;
+            this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -170,7 +170,7 @@
             this.btnHide.Location = new System.Drawing.Point(23, 449);
             this.btnHide.Name = "btnHide";
             this.btnHide.Size = new System.Drawing.Size(97, 34);
-            this.btnHide.TabIndex = 11;
+            this.btnHide.TabIndex = 3;
             this.btnHide.Text = "Hide String";
             this.btnHide.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHide.UseVisualStyleBackColor = true;
@@ -186,7 +186,7 @@
             this.btnQuit.Location = new System.Drawing.Point(126, 449);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 34);
-            this.btnQuit.TabIndex = 12;
+            this.btnQuit.TabIndex = 4;
             this.btnQuit.Text = "Quit";
             this.btnQuit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -202,7 +202,7 @@
             this.btnSkip.Location = new System.Drawing.Point(207, 449);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(75, 34);
-            this.btnSkip.TabIndex = 13;
+            this.btnSkip.TabIndex = 5;
             this.btnSkip.Text = "Skip";
             this.btnSkip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSkip.UseVisualStyleBackColor = true;

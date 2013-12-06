@@ -23,7 +23,7 @@ namespace TypingTester.controls
             int currentProficiencyItem = Session.Instance.CurrentProficiencyString;
             int totalProficiencyItems = Session.Instance.ProficiencyStrings.Length;
             string currentString = Session.Instance.ProficiencyStrings[currentProficiencyItem];
-            lblProgress.Text = string.Format("Entry {0} of {1}", currentProficiencyItem + 1, totalProficiencyItems);
+            lblProgress.Text = string.Format("Phrase {0} of {1}", currentProficiencyItem + 1, totalProficiencyItems);
             lblProficiencyString.Text = currentString;
         }
 

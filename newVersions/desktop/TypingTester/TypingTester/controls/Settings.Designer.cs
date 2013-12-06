@@ -53,15 +53,15 @@
             this.cbUseOrderSeed = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tbOrderSeed = new TypingTester.CueTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbRandomizeSelection = new System.Windows.Forms.CheckBox();
+            this.tbSelectionSeed = new TypingTester.CueTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbUseSelectionSeed = new System.Windows.Forms.CheckBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.tbSelectionSeed = new TypingTester.CueTextBox();
-            this.tbOrderSeed = new TypingTester.CueTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spnVerification)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spnForcedPractice)).BeginInit();
@@ -101,7 +101,7 @@
             0});
             this.spnVerification.Name = "spnVerification";
             this.spnVerification.Size = new System.Drawing.Size(120, 20);
-            this.spnVerification.TabIndex = 10;
+            this.spnVerification.TabIndex = 3;
             this.spnVerification.Value = new decimal(new int[] {
             1,
             0,
@@ -113,7 +113,7 @@
             this.spnForcedPractice.Location = new System.Drawing.Point(153, 73);
             this.spnForcedPractice.Name = "spnForcedPractice";
             this.spnForcedPractice.Size = new System.Drawing.Size(120, 20);
-            this.spnForcedPractice.TabIndex = 9;
+            this.spnForcedPractice.TabIndex = 2;
             // 
             // spnRepetitions
             // 
@@ -125,7 +125,7 @@
             0});
             this.spnRepetitions.Name = "spnRepetitions";
             this.spnRepetitions.Size = new System.Drawing.Size(120, 20);
-            this.spnRepetitions.TabIndex = 8;
+            this.spnRepetitions.TabIndex = 1;
             this.spnRepetitions.Value = new decimal(new int[] {
             1,
             0,
@@ -142,7 +142,7 @@
             0});
             this.spnNumberOfEntities.Name = "spnNumberOfEntities";
             this.spnNumberOfEntities.Size = new System.Drawing.Size(120, 20);
-            this.spnNumberOfEntities.TabIndex = 7;
+            this.spnNumberOfEntities.TabIndex = 0;
             this.spnNumberOfEntities.Value = new decimal(new int[] {
             1,
             0,
@@ -170,20 +170,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 47);
+            this.label2.Location = new System.Drawing.Point(35, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.Size = new System.Drawing.Size(112, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Entries Per Entity";
+            this.label2.Text = "Rounds Per Password";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 18);
+            this.label1.Location = new System.Drawing.Point(37, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.Size = new System.Drawing.Size(110, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Number of Entities";
+            this.label1.Text = "Number of Passwords";
             // 
             // groupBox3
             // 
@@ -193,7 +193,7 @@
             this.groupBox3.Location = new System.Drawing.Point(18, 262);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 79);
-            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filtering";
             // 
@@ -235,7 +235,7 @@
             this.groupBox4.Location = new System.Drawing.Point(18, 347);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(743, 100);
-            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Misc";
             // 
@@ -246,7 +246,7 @@
             this.tbSkipString.Location = new System.Drawing.Point(80, 35);
             this.tbSkipString.Name = "tbSkipString";
             this.tbSkipString.Size = new System.Drawing.Size(612, 20);
-            this.tbSkipString.TabIndex = 6;
+            this.tbSkipString.TabIndex = 0;
             this.tbSkipString.TargetString = "";
             // 
             // tbQuitString
@@ -256,7 +256,7 @@
             this.tbQuitString.Location = new System.Drawing.Point(80, 13);
             this.tbQuitString.Name = "tbQuitString";
             this.tbQuitString.Size = new System.Drawing.Size(611, 20);
-            this.tbQuitString.TabIndex = 5;
+            this.tbQuitString.TabIndex = 6;
             this.tbQuitString.TargetString = "";
             // 
             // cbHideButton
@@ -265,7 +265,7 @@
             this.cbHideButton.Location = new System.Drawing.Point(520, 62);
             this.cbHideButton.Name = "cbHideButton";
             this.cbHideButton.Size = new System.Drawing.Size(171, 17);
-            this.cbHideButton.TabIndex = 4;
+            this.cbHideButton.TabIndex = 3;
             this.cbHideButton.Text = "Enable hide on forced practice";
             this.cbHideButton.UseVisualStyleBackColor = true;
             // 
@@ -275,7 +275,7 @@
             this.cbQuitButton.Location = new System.Drawing.Point(268, 62);
             this.cbQuitButton.Name = "cbQuitButton";
             this.cbQuitButton.Size = new System.Drawing.Size(109, 17);
-            this.cbQuitButton.TabIndex = 3;
+            this.cbQuitButton.TabIndex = 2;
             this.cbQuitButton.Text = "Show Quit Button";
             this.cbQuitButton.UseVisualStyleBackColor = true;
             // 
@@ -285,7 +285,7 @@
             this.cbSkipButton.Location = new System.Drawing.Point(14, 62);
             this.cbSkipButton.Name = "cbSkipButton";
             this.cbSkipButton.Size = new System.Drawing.Size(111, 17);
-            this.cbSkipButton.TabIndex = 2;
+            this.cbSkipButton.TabIndex = 1;
             this.cbSkipButton.Text = "Show Skip Button";
             this.cbSkipButton.UseVisualStyleBackColor = true;
             // 
@@ -348,9 +348,19 @@
             this.groupBox5.Location = new System.Drawing.Point(18, 164);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(210, 92);
-            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Entity Order";
+            // 
+            // tbOrderSeed
+            // 
+            this.tbOrderSeed.Cue = "0";
+            this.tbOrderSeed.Id = null;
+            this.tbOrderSeed.Location = new System.Drawing.Point(80, 59);
+            this.tbOrderSeed.Name = "tbOrderSeed";
+            this.tbOrderSeed.Size = new System.Drawing.Size(124, 20);
+            this.tbOrderSeed.TabIndex = 3;
+            this.tbOrderSeed.TargetString = "";
             // 
             // groupBox2
             // 
@@ -361,7 +371,7 @@
             this.groupBox2.Location = new System.Drawing.Point(272, 164);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(210, 92);
-            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Entity Selection";
             // 
@@ -375,6 +385,16 @@
             this.cbRandomizeSelection.Text = "Randomize";
             this.cbRandomizeSelection.UseVisualStyleBackColor = true;
             this.cbRandomizeSelection.CheckedChanged += new System.EventHandler(this.cbRandomizeSelection_CheckedChanged);
+            // 
+            // tbSelectionSeed
+            // 
+            this.tbSelectionSeed.Cue = "0";
+            this.tbSelectionSeed.Id = null;
+            this.tbSelectionSeed.Location = new System.Drawing.Point(80, 59);
+            this.tbSelectionSeed.Name = "tbSelectionSeed";
+            this.tbSelectionSeed.Size = new System.Drawing.Size(124, 20);
+            this.tbSelectionSeed.TabIndex = 3;
+            this.tbSelectionSeed.TargetString = "";
             // 
             // label7
             // 
@@ -402,7 +422,7 @@
             this.btnReset.Location = new System.Drawing.Point(272, 470);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 6;
+            this.btnReset.TabIndex = 5;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -412,7 +432,7 @@
             this.btnCancel.Location = new System.Drawing.Point(353, 470);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -422,30 +442,10 @@
             this.btnSave.Location = new System.Drawing.Point(434, 470);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 8;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // tbSelectionSeed
-            // 
-            this.tbSelectionSeed.Cue = "0";
-            this.tbSelectionSeed.Id = null;
-            this.tbSelectionSeed.Location = new System.Drawing.Point(80, 59);
-            this.tbSelectionSeed.Name = "tbSelectionSeed";
-            this.tbSelectionSeed.Size = new System.Drawing.Size(124, 20);
-            this.tbSelectionSeed.TabIndex = 9;
-            this.tbSelectionSeed.TargetString = "";
-            // 
-            // tbOrderSeed
-            // 
-            this.tbOrderSeed.Cue = "0";
-            this.tbOrderSeed.Id = null;
-            this.tbOrderSeed.Location = new System.Drawing.Point(80, 59);
-            this.tbOrderSeed.Name = "tbOrderSeed";
-            this.tbOrderSeed.Size = new System.Drawing.Size(124, 20);
-            this.tbOrderSeed.TabIndex = 10;
-            this.tbOrderSeed.TargetString = "";
             // 
             // Settings
             // 

@@ -51,7 +51,7 @@
             this.btnBegin.Location = new System.Drawing.Point(353, 271);
             this.btnBegin.Name = "btnBegin";
             this.btnBegin.Size = new System.Drawing.Size(75, 23);
-            this.btnBegin.TabIndex = 2;
+            this.btnBegin.TabIndex = 1;
             this.btnBegin.Text = "Begin";
             this.btnBegin.UseVisualStyleBackColor = true;
             this.btnBegin.Click += new System.EventHandler(this.btnBegin_Click);
@@ -64,7 +64,7 @@
             this.textBox1.Location = new System.Drawing.Point(27, 245);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(726, 20);
-            this.textBox1.TabIndex = 3;
+            this.textBox1.TabIndex = 0;
             this.textBox1.TargetString = "";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 

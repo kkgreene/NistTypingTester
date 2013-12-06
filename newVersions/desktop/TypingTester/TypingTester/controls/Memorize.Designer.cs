@@ -38,11 +38,11 @@
             // 
             this.lblEntityProgress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblEntityProgress.AutoSize = true;
-            this.lblEntityProgress.Location = new System.Drawing.Point(358, 15);
+            this.lblEntityProgress.Location = new System.Drawing.Point(348, 15);
             this.lblEntityProgress.Name = "lblEntityProgress";
-            this.lblEntityProgress.Size = new System.Drawing.Size(65, 13);
+            this.lblEntityProgress.Size = new System.Drawing.Size(85, 13);
             this.lblEntityProgress.TabIndex = 0;
-            this.lblEntityProgress.Text = "Entity # of #";
+            this.lblEntityProgress.Text = "Password # of #";
             // 
             // lblPassword
             // 
@@ -69,7 +69,7 @@
             this.tbWorkArea.Multiline = true;
             this.tbWorkArea.Name = "tbWorkArea";
             this.tbWorkArea.Size = new System.Drawing.Size(726, 272);
-            this.tbWorkArea.TabIndex = 4;
+            this.tbWorkArea.TabIndex = 0;
             this.tbWorkArea.TargetString = "";
             // 
             // btnNext
@@ -78,7 +78,7 @@
             this.btnNext.Location = new System.Drawing.Point(353, 394);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 5;
+            this.btnNext.TabIndex = 1;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
