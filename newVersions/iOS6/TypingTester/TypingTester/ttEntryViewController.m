@@ -100,8 +100,8 @@
     int currentEntity = self.session.currentEntity;
     int currentEntry = self.session.currentEntryForEntity;
     int totalEntries = [[ttSettings Instance]entriesPerEntitiy];
-    self.sessionProgressLabel.text = [NSString stringWithFormat:@"Entity %i of %i",currentEntity+1, totalEntites];
-    self.entityProgressLabel.text = [NSString stringWithFormat:@"Entry %i of %i", currentEntry+1, totalEntries];
+    self.sessionProgressLabel.text = [NSString stringWithFormat:@"Password %i of %i",currentEntity+1, totalEntites];
+    self.entityProgressLabel.text = [NSString stringWithFormat:@"Round %i of %i", currentEntry+1, totalEntries];
 }
 
 #pragma mark - IBAction
@@ -135,7 +135,7 @@
         ttEvent *event = [[ttEvent alloc]initWithEventType:CorrectValueEntered andPhase:Entry];
         event.targetString = entity.entityString;
         event.currentValue = self.entryField.text;
-        event.notes = [NSString stringWithFormat:@"Entry:%i for Entity:%i", self.session.currentEntity, self.session.currentEntryForEntity];
+        event.notes = [NSString stringWithFormat:@"Round:%i for Password:%i", self.session.currentEntity, self.session.currentEntryForEntity];
         [self.session addEvent:event];
     }
     else
@@ -143,7 +143,7 @@
         ttEvent *event = [[ttEvent alloc]initWithEventType:IncorrectValueEntered andPhase:Entry];
         event.targetString = entity.entityString;
         event.currentValue = self.entryField.text;
-        event.notes = [NSString stringWithFormat:@"Entry:%i for Entity:%i", self.session.currentEntity, self.session.currentEntryForEntity];
+        event.notes = [NSString stringWithFormat:@"Round:%i for Password:%i", self.session.currentEntity, self.session.currentEntryForEntity];
         [self.session addEvent:event];
     }
     self.session.currentEntryForEntity++;

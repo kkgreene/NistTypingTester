@@ -89,7 +89,7 @@
     entity = [self.session.entities objectAtIndex:currentEntity];
     self.passwordLabel.text = entity.entityString;
     self.workArea.text = self.session.workAreaContents;
-    self.progressLabel.text = [NSString stringWithFormat:@"Entity %i of %i", currentEntity+1, totalEntites];
+    self.progressLabel.text = [NSString stringWithFormat:@"Password %i of %i", currentEntity+1, totalEntites];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -12,5 +12,7 @@
 
 +(NSString*) documentsDirectory;
 +(bool) copySourceFile:(NSString*)source toDestination:(NSString*)destination shouldOverwrite:(BOOL)overwrite;
++(NSString*) stringForOrienatation:(UIInterfaceOrientation)orientation;
+
 
 @end

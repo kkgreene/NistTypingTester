@@ -14,6 +14,7 @@
 #import "ttSettings.h"
 #import "ttProficiencyItem.h"
 #import "ttInstructionsViewController.h"
+#import "ttUtilities.h"
 
 @interface ttTypingProficiencyViewController ()
 
@@ -53,13 +54,23 @@
     }
 }
 
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    // log a rotation
+    ttEvent *event = [[ttEvent alloc]initWithEventType:OrientationChange andPhase:Proficiency];
+    event.targetString = item.text;
+    event.notes = [NSString stringWithFormat:@"Did rotate from %@ to %@", [ttUtilities stringForOrienatation:fromInterfaceOrientation], [ttUtilities stringForOrienatation:self.interfaceOrientation]];
+    [self.session addEvent:event];
+}
+
 -(void) configureUI
 {
     int currentString = self.session.currentProficiencyString;
     int totalStrings = self.session.proficiencyStrings.count;
     item = [self.session.proficiencyStrings objectAtIndex:currentString];
     self.phraseLabel1.text = item.text;
-    self.progressLabel.text = [NSString stringWithFormat:@"Entry %i of %i", currentString+1, totalStrings];
+    self.progressLabel.text = [NSString stringWithFormat:@"Phrase %i of %i", currentString+1, totalStrings];
     if (self.entryField.text.length > 0)
     {
         self.doneButton.enabled = YES;

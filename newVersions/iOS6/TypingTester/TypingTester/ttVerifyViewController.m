@@ -160,8 +160,8 @@
     entity = [self.session.entities objectAtIndex:self.session.currentEntity];
     int currentEntity = self.session.currentEntity;
     int totalEntities = self.session.entities.count;
-    self.sessionProgressLabel.text = [NSString stringWithFormat:@"Entity %i of %i", currentEntity+1, totalEntities];
-    self.entityProgressLabel.text = [NSString stringWithFormat:@"Entry 1 of 1"];
+    self.sessionProgressLabel.text = [NSString stringWithFormat:@"Password %i of %i", currentEntity+1, totalEntities];
+    self.entityProgressLabel.text = [NSString stringWithFormat:@"Round 1 of 1"];
     // hide the incorrect icon and label
     self.incorrectImage.hidden = YES;
     self.incorrectText.hidden = YES;

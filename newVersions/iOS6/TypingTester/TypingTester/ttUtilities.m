@@ -37,4 +37,25 @@
     return YES;
 }
 
++(NSString*) stringForOrienatation:(UIInterfaceOrientation)orientation
+{
+    switch(orientation)
+    {
+        case UIInterfaceOrientationLandscapeLeft:
+            return @"Landscape Left";
+            
+        case UIInterfaceOrientationLandscapeRight:
+            return @"Landscape Right";
+            
+        case UIInterfaceOrientationPortrait:
+            return @"Portrait";
+            
+        case UIInterfaceOrientationPortraitUpsideDown:
+            return @"Portrait (Upside Down)";
+            
+        default:
+            return @"Unknown Orientation";
+    }
+}
+
 @end
