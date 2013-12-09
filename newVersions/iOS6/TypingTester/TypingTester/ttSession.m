@@ -259,8 +259,9 @@
 
 -(BOOL)initializeLogFiles
 {
-    NSString *rawFileName = [NSString stringWithFormat:@"%@-raw.txt",self.participant.participantNumber];
-    NSString *summaryFileName = [NSString stringWithFormat:@"%@-summary.txt", self.participant.participantNumber];
+    NSString *filenameBase = [NSString stringWithFormat:@"%@_%@", self.participant.participantNumber, [NSDate date]];
+    NSString *rawFileName = [NSString stringWithFormat:@"%@-raw.txt",filenameBase];
+    NSString *summaryFileName = [NSString stringWithFormat:@"%@-summary.txt", filenameBase];
     NSString *rawLogFile = [[ttUtilities documentsDirectory] stringByAppendingPathComponent:rawFileName];
     NSString *summaryLogFile = [[ttUtilities documentsDirectory] stringByAppendingPathComponent:summaryFileName];
     rawFileHandle = [self createLogfile:rawLogFile];
