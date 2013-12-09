@@ -116,12 +116,11 @@
 -(void) sessionDidStart
 {
     sessionStartTime = [NSDate date];
-    NSString *startString = [NSString stringWithFormat:@"Session Started:%@", sessionStartTime];
-    [self writeLineToSummaryLogFile:startString];
-    // TODO :: Write summary session information
+    [self writeLineToSummaryLogFile:[self getDeviceInformation]];
+    [self writeLineToSummaryLogFile:[settings getSettings]];
+    [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Session Started:%@", sessionStartTime]];
     [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Participant Id:%@", self.participant.participantNumber]];
     phaseStartTime = [NSDate date];
-    [self writeLineToSummaryLogFile:[settings getSettings]];
     // write out strings
     [self writeLineToSummaryLogFile:@"Entities for session:"];
     for(int i = 0; i < self.entities.count; i++)
@@ -226,6 +225,12 @@
     [self writeLineToSummaryLogFile:startString];
     [self closeLogFiles];
     return;
+}
+
+-(NSString*) getDeviceInformation
+{
+    UIDevice *device = [UIDevice currentDevice];
+    return [NSString stringWithFormat:@"Model:%@\nOS Version:%@\nDevice Name:%@\nSystem Name:%@\nDevice UUID(*):%@\n", device.model, device.systemVersion, device.name, device.systemName, device.identifierForVendor];
 }
 
 
