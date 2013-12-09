@@ -28,7 +28,6 @@
     int entityNumber;
     int numberOfRequiredPractices;
     ttTestEntity *e;
-    BOOL goingToVerify;
 }
 
 
@@ -41,7 +40,6 @@
         maskedString = @"*";
         settings = [ttSettings Instance];
         numberOfRequiredPractices = 1;
-        goingToVerify = NO;
     }
     return self;
 }
@@ -232,7 +230,7 @@
         {
             [self askGoToVerify];
         }
-        if (goingToVerify == NO)
+        if (![self.entryField.text isEqualToString:@""])
         {
             self.correctIndicator.hidden = NO;
             self.correctTextLable.hidden = NO;
@@ -314,7 +312,6 @@
     NSString *title= [alertView buttonTitleAtIndex:buttonIndex];
     if ([title isEqualToString:@"Yes"])
     {
-        goingToVerify = YES;
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
         event.notes = @"User elected to proceed to verify subphase.";
         [self.session addEvent:event];
@@ -322,7 +319,6 @@
     }
     else
     {
-        goingToVerify = NO;
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
         event.notes = @"User elected to stay in practice subphase.";
         [self.session addEvent:event];

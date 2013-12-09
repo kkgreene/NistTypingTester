@@ -25,7 +25,6 @@
 {
     ttTestEntity *entity;
     ttSettings *settings;
-    BOOL goingToEntry;
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
@@ -34,7 +33,6 @@
     if (self)
     {
         settings = [ttSettings Instance];
-        goingToEntry = NO;
     }
     return self;
 }
@@ -161,7 +159,7 @@
         {
             [self askGoToEntry];
         }
-        if (goingToEntry == NO)
+        if (![self.entryField.text isEqualToString:@""])
         {
             self.incorrectText.hidden = NO;
             self.incorrectImage.hidden = NO;
@@ -268,7 +266,6 @@
     NSString *title= [alertView buttonTitleAtIndex:buttonIndex];
     if ([title isEqualToString:@"Yes"])
     {
-        goingToEntry = YES;
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
         event.notes = @"User elected to proceed to enter subphase.";
         [self.session addEvent:event];
@@ -276,7 +273,6 @@
     }
     else
     {
-        goingToEntry = NO;
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
         event.notes = @"User elected to stay in verify subphase.";
         [self.session addEvent:event];
