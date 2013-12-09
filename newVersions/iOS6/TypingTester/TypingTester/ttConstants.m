@@ -24,6 +24,7 @@ NSString *const ttcFirstRunKey = @"FirstRun";
 NSString *const ttcEnableHideButtonOnPracticeScreenKey = @"EnableHideButtonOnPracticeScreen";
 NSString *const ttcProficiencyGroupKey = @"ProficiencyGroup";
 NSString *const ttcSkipStringKey =@"SkipString";
+NSString *const ttcVerifyRoundsKey = @"VerifyRounds";
 
 const int ttcStringsForTestDefaultValue = 10;
 const int ttcEntriesPerTestDefaultValue = 10;
@@ -32,6 +33,7 @@ const int ttcStringOrderSeedDefaultValue = 1;
 const int ttcStringSelectionSeedDefaultValue = 1;
 const int ttcSelectedGroupValue = 1;
 const int ttcProficiencyGroupValue = 1;
+const int ttcVerifyRoundsValue = 1;
 
 const bool ttcShowQuitButtonDefaultValue = NO;
 const bool ttcShowSkipButtonDefaultValue = NO;

@@ -34,6 +34,7 @@
 @property (nonatomic, assign) bool enableSkipButton;
 @property (nonatomic, assign) bool enableQuitButton;
 @property (nonatomic, assign) int  proficiencyGroup;
+@property (nonatomic, assign) int verifyRounds;
 
 @property (nonatomic, assign) unsigned int effectiveOrderSeed;
 @property (nonatomic, assign) unsigned int effectiveSelectionSeed;

@@ -26,6 +26,7 @@ FOUNDATION_EXPORT NSString *const ttcFirstRunKey;
 FOUNDATION_EXPORT NSString *const ttcEnableHideButtonOnPracticeScreenKey;
 FOUNDATION_EXPORT NSString *const ttcProficiencyGroupKey;
 FOUNDATION_EXPORT NSString *const ttcSkipStringKey;
+FOUNDATION_EXPORT NSString *const ttcVerifyRoundsKey;
 
 FOUNDATION_EXPORT const int ttcStringsForTestDefaultValue;
 FOUNDATION_EXPORT const int ttcEntriesPerTestDefaultValue;
@@ -34,6 +35,7 @@ FOUNDATION_EXPORT const int ttcStringOrderSeedDefaultValue;
 FOUNDATION_EXPORT const int ttcStringSelectionSeedDefaultValue;
 FOUNDATION_EXPORT const int ttcSelectedGroupValue;
 FOUNDATION_EXPORT const int ttcProficiencyGroupValue;
+FOUNDATION_EXPORT const int ttcVerifyRoundsValue;
 
 FOUNDATION_EXPORT const bool ttcShowQuitButtonDefaultValue;
 FOUNDATION_EXPORT const bool ttcShowSkipButtonDefaultValue;

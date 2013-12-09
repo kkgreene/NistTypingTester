@@ -43,6 +43,7 @@ static ttSettings *instance = nil;
     [string appendFormat:@"Entities:%i\n", self.entitiesPerSession];
     [string appendFormat:@"Entries Per Entity:%i\n", self.entriesPerEntitiy];
     [string appendFormat:@"Forced Practice Rounds:%i\n", self.forcedPracticeRounds];
+    [string appendFormat:@"Verify Rounds:%i\n", self.verifyRounds];
     [string appendFormat:@"Random String Order:%@\n", (self.randomStringOrder ? @"Yes":@"No")];
     [string appendFormat:@"Specified Seed:%@\n", (self.useRandomStringOrderSeed ? @"Yes":@"No")];
     [string appendFormat:@"String Order Seed:%i\n", self.effectiveOrderSeed];
@@ -78,7 +79,7 @@ static ttSettings *instance = nil;
     [defaults setValue:[NSNumber numberWithBool:ttcEnableHideButtonOnPracticeScreenValue] forKey:ttcEnableHideButtonOnPracticeScreenKey];
     [defaults setValue:[NSNumber numberWithInt:ttcProficiencyGroupValue] forKey:ttcProficiencyGroupKey];
     [defaults setValue:ttcSkipStringDefaultValue forKey:ttcSkipStringKey];
-    
+    [defaults setValue:[NSNumber numberWithInt:ttcVerifyRoundsValue] forKey:ttcVerifyRoundsKey];
     
     [[NSUserDefaults standardUserDefaults]registerDefaults:defaults];
 }
@@ -105,6 +106,7 @@ static ttSettings *instance = nil;
     [prefs setBool:ttcEnableHideButtonOnPracticeScreenValue forKey:ttcEnableHideButtonOnPracticeScreenKey];
     [prefs setInteger:ttcProficiencyGroupValue forKey:ttcProficiencyGroupKey];
     [prefs setValue:ttcSkipStringDefaultValue forKey:ttcSkipStringKey];
+    [prefs setInteger:ttcVerifyRoundsValue forKey:ttcVerifyRoundsKey];
 }
 
 #pragma mark Custom setter/getter pairs
@@ -300,7 +302,7 @@ static ttSettings *instance = nil;
 -(void) setProficiencyGroup:(int)proficiencyGroup
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setInteger:ttcProficiencyGroupValue forKey:ttcProficiencyGroupKey];
+    [prefs setInteger:proficiencyGroup forKey:ttcProficiencyGroupKey];
 }
 
 -(NSString*) skipString
@@ -313,6 +315,18 @@ static ttSettings *instance = nil;
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setObject:skipString forKey:ttcSkipStringKey];
+}
+
+-(int) verifyRounds
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    return [prefs integerForKey:ttcVerifyRoundsKey];
+}
+
+-(void) setVerifyRounds:(int)verifyRounds
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setInteger:verifyRounds forKey:ttcVerifyRoundsKey];
 }
 
 
