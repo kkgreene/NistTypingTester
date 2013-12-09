@@ -109,6 +109,7 @@
     timesInVerify = 0;
     self.CurrentPracticeRoundForEntity = 0;
     self.currentEntryForEntity = 0;
+    self.currentVerifyRoundForEntity = 0;
     self.workAreaContents = @"";
     [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Starting Entity: %i at %@", self.currentEntity, entityStart]];
 }

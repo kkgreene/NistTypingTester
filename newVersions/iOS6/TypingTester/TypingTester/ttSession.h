@@ -31,6 +31,7 @@
 @property (nonatomic, strong) NSArray *proficiencyStrings;
 @property (nonatomic, strong) NSArray *entities;
 @property (nonatomic, assign) int CurrentPracticeRoundForEntity;
+@property (nonatomic, assign) int currentVerifyRoundForEntity;
 
 @property (nonatomic, copy) NSString* workAreaContents;
 @property (nonatomic, assign) Phase currentPhase;

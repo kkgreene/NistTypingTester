@@ -28,6 +28,7 @@
     int entityNumber;
     int numberOfRequiredPractices;
     ttTestEntity *e;
+    BOOL goingToVerify;
 }
 
 
@@ -40,6 +41,7 @@
         maskedString = @"*";
         settings = [ttSettings Instance];
         numberOfRequiredPractices = 1;
+        goingToVerify = NO;
     }
     return self;
 }
@@ -58,6 +60,10 @@
 {
     [super viewDidAppear:animated];
     [self.session enteredSubPhase:ForcedPractice withNote:@"Entering Forced Practice SubPhase"];
+    if (settings.forcedPracticeRounds == 0)
+    {
+        [self performSegueWithIdentifier:@"Verify" sender:self];
+    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -159,7 +165,7 @@
 
 -(void) askGoToVerify
 {
-    UIAlertView *proceed = [[UIAlertView alloc]initWithTitle:@"Finish Practicing" message:@"Are you ready to proceed to the next step?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    UIAlertView *proceed = [[UIAlertView alloc]initWithTitle:@"Practice Complete" message:@"Are you ready to proceed to the Verify Task?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     [proceed show];
 }
 
@@ -222,11 +228,14 @@
         event.notes = [NSString stringWithFormat:@"Pratice Round: %i", self.session.CurrentPracticeRoundForEntity];
         event.targetString = e.entityString;
         event.currentValue = self.entryField.text;
-        self.correctIndicator.hidden = NO;
-        self.correctTextLable.hidden = NO;
         if (self.session.CurrentPracticeRoundForEntity >= settings.forcedPracticeRounds)
         {
             [self askGoToVerify];
+        }
+        if (goingToVerify == NO)
+        {
+            self.correctIndicator.hidden = NO;
+            self.correctTextLable.hidden = NO;
         }
     }
 }
@@ -305,6 +314,7 @@
     NSString *title= [alertView buttonTitleAtIndex:buttonIndex];
     if ([title isEqualToString:@"Yes"])
     {
+        goingToVerify = YES;
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
         event.notes = @"User elected to proceed to verify subphase.";
         [self.session addEvent:event];
@@ -312,6 +322,7 @@
     }
     else
     {
+        goingToVerify = NO;
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
         event.notes = @"User elected to stay in practice subphase.";
         [self.session addEvent:event];

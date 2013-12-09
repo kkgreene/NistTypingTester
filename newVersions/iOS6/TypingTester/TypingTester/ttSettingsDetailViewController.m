@@ -74,6 +74,7 @@
     self.randomStringSelectionSeedValue.enabled = (self.randomStringSelection.on && self.useSelectionSeed.on);
     self.randomStringOrderSeedValue.enabled = (self.randomStringOrder.on && self.useOrderSeed.on);
     self.groupId.enabled = self.useGroupId.on;
+    self.numberOfVerifyRounds.text = [NSString stringWithFormat:@"%i", settings.verifyRounds];
 }
 
 - (void) hideKeyboard
@@ -158,10 +159,6 @@
     {
         [self.delegate settingsDetailViewController:self didChangeNumberOfEntries:[self.numberOfEntities.text intValue]];
     }
-    else
-    {
-        
-    }
 }
 
 - (IBAction)numberOfRepetitionsChanged:(id)sender
@@ -180,6 +177,13 @@
     }
 }
 
+-(IBAction)numberOfVerifyRoundsChanged:(id)sender
+{
+    if ([self isStringNumeric:self.numberOfVerifyRounds.text])
+    {
+        [self.delegate settingsDetailViewController:self didChangeNumberOfVerifyRounds:[self.numberOfVerifyRounds.text intValue]];
+    }
+}
 
 - (IBAction)randomStringOrderChanged:(id)sender
 {

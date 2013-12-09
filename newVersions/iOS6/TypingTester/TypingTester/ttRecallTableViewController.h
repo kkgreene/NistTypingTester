@@ -15,5 +15,6 @@
 @property (nonatomic, weak) ttSession *session;
 
 -(void)hideKeyboard;
+-(NSString*) getStrings;
 
 @end

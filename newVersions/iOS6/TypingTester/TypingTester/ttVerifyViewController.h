@@ -10,7 +10,7 @@
 
 @class ttSession;
 
-@interface ttVerifyViewController : UIViewController <UITextFieldDelegate>
+@interface ttVerifyViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *sessionProgressLabel;
 @property (nonatomic, weak) IBOutlet UITextField *entryField;

@@ -70,7 +70,8 @@
     }
     else if ([segue.identifier isEqualToString:@"ThankYou"])
     {
-        
+        // get the entered text strings
+        // log them in the summary log
     }
 }
 

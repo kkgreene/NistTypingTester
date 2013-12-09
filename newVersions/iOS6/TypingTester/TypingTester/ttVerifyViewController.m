@@ -25,6 +25,7 @@
 {
     ttTestEntity *entity;
     ttSettings *settings;
+    BOOL goingToEntry;
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
@@ -33,6 +34,7 @@
     if (self)
     {
         settings = [ttSettings Instance];
+        goingToEntry = NO;
     }
     return self;
 }
@@ -57,6 +59,11 @@
 {
     [super viewDidAppear:animated];
     [self.session enteredSubPhase:Verify withNote:@"Entered Verify Phase"];
+    // try to skip when there are no verify rounds required
+    if (settings.verifyRounds <= 0)
+    {
+        [self performSegueWithIdentifier:@"Entry" sender:self];
+    }
 }
 
 -(void) viewWillDisappear:(BOOL)animated
@@ -120,7 +127,13 @@
         event.targetString = entity.entityString;
         event.currentValue = self.entryField.text;
         [self.session addEvent:event];
-        [self performSegueWithIdentifier:@"Entry" sender:self];
+        self.session.currentVerifyRoundForEntity++;
+        //[self performSegueWithIdentifier:@"Entry" sender:self];
+        if (self.session.currentVerifyRoundForEntity >= settings.verifyRounds)
+        {
+            [self askGoToEntry];
+        }
+        [self configureUI];
     }
     else if ([self.entryField.text isEqualToString:[ttSettings Instance].quitString])
     {
@@ -144,8 +157,15 @@
         event.targetString = entity.entityString;
         event.currentValue = self.entryField.text;
         [self.session addEvent:event];
-        self.incorrectText.hidden = NO;
-        self.incorrectImage.hidden = NO;
+        if (self.session.currentVerifyRoundForEntity >= settings.verifyRounds)
+        {
+            [self askGoToEntry];
+        }
+        if (goingToEntry == NO)
+        {
+            self.incorrectText.hidden = NO;
+            self.incorrectImage.hidden = NO;
+        }
     }
 }
 
@@ -161,7 +181,17 @@
     int currentEntity = self.session.currentEntity;
     int totalEntities = self.session.entities.count;
     self.sessionProgressLabel.text = [NSString stringWithFormat:@"Password %i of %i", currentEntity+1, totalEntities];
-    self.entityProgressLabel.text = [NSString stringWithFormat:@"Round 1 of 1"];
+    
+    if (self.session.currentVerifyRoundForEntity >= settings.verifyRounds)
+    {
+        self.entityProgressLabel.text = [NSString stringWithFormat:@"Complete"];
+        self.doneButton.enabled = YES;
+    }
+    else
+    {
+        self.entityProgressLabel.text = [NSString stringWithFormat:@"Round %i of %i", self.session.currentVerifyRoundForEntity+1, settings.verifyRounds];
+    }
+    self.entryField.text = @"";
     // hide the incorrect icon and label
     self.incorrectImage.hidden = YES;
     self.incorrectText.hidden = YES;
@@ -188,7 +218,7 @@
         inputEvent.notes = [NSString stringWithFormat:@"%@ entered", string];
     }
     [self.session addEvent:inputEvent];
-    if (newString.length > 0)
+    if (newString.length > 0 || self.session.currentVerifyRoundForEntity >= settings.verifyRounds)
     {
         self.doneButton.enabled = YES;
         self.doneButton_iPad.enabled = YES;
@@ -225,5 +255,33 @@
     textFieldLeft.notes = [NSString stringWithFormat:@"TextField No Longer Active"];
     [self.session addEvent:textFieldLeft];
 }
+
+-(void) askGoToEntry
+{
+    UIAlertView *proceed = [[UIAlertView alloc]initWithTitle:@"Verify Completed" message:@"Are you ready to proceed to the Enter Task?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    [proceed show];
+}
+
+#pragma mark - Alert View Delegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title= [alertView buttonTitleAtIndex:buttonIndex];
+    if ([title isEqualToString:@"Yes"])
+    {
+        goingToEntry = YES;
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
+        event.notes = @"User elected to proceed to enter subphase.";
+        [self.session addEvent:event];
+        [self performSegueWithIdentifier:@"Entry" sender:self];
+    }
+    else
+    {
+        goingToEntry = NO;
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
+        event.notes = @"User elected to stay in verify subphase.";
+        [self.session addEvent:event];
+    }
+}
+
 
 @end

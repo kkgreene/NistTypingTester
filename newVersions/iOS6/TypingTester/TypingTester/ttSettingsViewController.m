@@ -38,6 +38,7 @@
     bool firstRun;
     bool enableHideButtonOnPracticeScreen;
     bool enableSkipButton;
+    int verifyRounds;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -79,6 +80,7 @@
     useGroupId = settings.useGroupId;
     selectedGroup = settings.selectedGroup;
     enableHideButtonOnPracticeScreen = settings.enableHideButtonOnPracticeScreen;
+    verifyRounds = settings.verifyRounds;
     [self configureUI];
 }
 
@@ -133,6 +135,7 @@
     settings.selectedGroup = selectedGroup;
     settings.enableHideButtonOnPracticeScreen = enableHideButtonOnPracticeScreen;
     settings.skipString = skipString;
+    settings.verifyRounds = verifyRounds;
     [self.delegate SettingsViewControllerDidSave:self];
 }
 
@@ -225,6 +228,11 @@
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeEnableSkipButton:(BOOL)value
 {
     enableSkipButton = value;
+}
+
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeNumberOfVerifyRounds:(int)value
+{
+    verifyRounds = value;
 }
 
 

@@ -29,6 +29,8 @@
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeEnableHideOnPracticeScreen:(BOOL)value;
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeEnableSkipButton:(BOOL)value;
 
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeNumberOfVerifyRounds:(int)value;
+
 @end
 
 @interface ttSettingsDetailViewController : UITableViewController <UIAlertViewDelegate>
@@ -50,6 +52,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *skipString;
 @property (strong, nonatomic) IBOutlet UISwitch *enableHideOnPracticeScreen;
 @property (strong, nonatomic) IBOutlet UISwitch *enableSkipButton;
+@property (strong, nonatomic) IBOutlet UITextField *numberOfVerifyRounds;
+
 
 - (IBAction)numberOfEntitiesChanged:(id)sender;
 - (IBAction)numberOfRepetitionsChanged:(id)sender;
@@ -66,6 +70,7 @@
 - (IBAction)skipStringChanged:(id)sender;
 - (IBAction)enableHideOnPracticeScreenChanged:(id)sender;
 - (IBAction)enableSkipButtonChanged:(id)sender;
+- (IBAction)numberOfVerifyRoundsChanged:(id)sender;
 
 - (void) hideKeyboard;
 
