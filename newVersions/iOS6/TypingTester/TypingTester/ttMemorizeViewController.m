@@ -131,6 +131,7 @@
     }
     else if ([segue.identifier isEqualToString:@"MemorizeToEntry"])
     {
+        [self.session leftPhase:Memorize withNote:@"Leaving Memorize Phase"];
         ttEntryViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }

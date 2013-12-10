@@ -107,11 +107,13 @@
     }
     else if ([segue.identifier isEqualToString:@"PracticeToRecall"])
     {
+        [self.session leftPhase:Memorize withNote:@"Leaving Memorize Phase, skipping to recall"];
         ttRecallViewController* controller = segue.destinationViewController;
         controller.session = self.session;
     }
     else if ([segue.identifier isEqualToString:@"PracticeToEntry"])
     {
+        [self.session leftPhase:Memorize withNote:@"Leaving Memorize Phase"];
         ttEntryViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
@@ -194,7 +196,11 @@
 
 -(IBAction)skipButtonPressed
 {
-    // TODO :: add handling for skip button
+    ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
+    event.notes = [NSString stringWithFormat:@"Skip button pressed by user"];
+    [self.session addEvent:event];
+    [self.session nextEntity];
+    [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
 }
 
 -(IBAction)doneButtonPressed

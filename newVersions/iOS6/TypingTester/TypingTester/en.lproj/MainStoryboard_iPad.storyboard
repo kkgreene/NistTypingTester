@@ -1642,36 +1642,14 @@
     </scenes>
     <resources>
         <image name="433-x.png" width="18" height="18"/>
-        <image name="433-x.png" width="18" height="18"/>
-        <image name="740-gear-selected.png" width="28" height="28"/>
         <image name="740-gear-selected.png" width="28" height="28"/>
         <image name="740-gear.png" width="28" height="28"/>
         <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="759-refresh-2.png" width="28" height="28"/>
         <image name="765-arrow-left-selected.png" width="14" height="28"/>
-        <image name="765-arrow-left-selected.png" width="14" height="28"/>
-        <image name="765-arrow-left-selected.png" width="14" height="28"/>
-        <image name="765-arrow-left.png" width="14" height="28"/>
         <image name="765-arrow-left.png" width="14" height="28"/>
         <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
         <image name="766-arrow-right.png" width="14" height="28"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
