@@ -71,26 +71,25 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"BackToPractice"])
+    if ([segue.identifier isEqualToString:@"VerifyToPractice"])
     {
         ttPracticeViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
-    else if ([segue.identifier isEqualToString:@"Entry"])
+    else if ([segue.identifier isEqualToString:@"VerifyToEntry"])
     {
         [self.session leftPhase:Memorize withNote:@"Leaving Memorize Phase"];
         ttEntryViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
-    else if ([segue.identifier isEqualToString:@"SkipToRecall"])
+    else if ([segue.identifier isEqualToString:@"VerifyToRecall"])
     {
         [self.session leftPhase:Memorize withNote:@"Leaving Memorize Phase, skipping to recall phase"];
         ttRecallViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
-    else if ([segue.identifier isEqualToString:@"BackToMemorize"])
+    else if ([segue.identifier isEqualToString:@"VerifyToMemorize"])
     {
-        [self.session nextEntity];
         ttMemorizeViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
@@ -112,7 +111,14 @@
 #pragma -mark IBActions
 -(IBAction)back
 {
-    [self performSegueWithIdentifier:@"BackToPractice" sender:self];
+    if (settings.forcedPracticeRounds > 0)
+    {
+        [self performSegueWithIdentifier:@"VerifyToPractice" sender:self];
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"VerifyToMemorize" sender:self];
+    }
 }
 
 -(IBAction)done
@@ -126,7 +132,6 @@
         event.currentValue = self.entryField.text;
         [self.session addEvent:event];
         self.session.currentVerifyRoundForEntity++;
-        //[self performSegueWithIdentifier:@"Entry" sender:self];
         if (self.session.currentVerifyRoundForEntity >= settings.verifyRounds)
         {
             [self askGoToEntry];
@@ -139,7 +144,7 @@
         event.targetString = entity.entityString;
         event.notes = @"Quit phrase entered";
         [self.session addEvent:event];
-        [self performSegueWithIdentifier:@"SkipToRecall" sender:self];
+        [self performSegueWithIdentifier:@"VerifyToRecall" sender:self];
     }
     else if ([self.entryField.text isEqualToString:[ttSettings Instance].skipString])
     {
@@ -147,7 +152,8 @@
         event.targetString = entity.entityString;
         event.notes = @"Skip phrase entered";
         [self.session addEvent:event];
-        [self performSegueWithIdentifier:@"BackToMemorize" sender:self];
+        [self.session nextEntity];
+        [self performSegueWithIdentifier:@"VerifyToMemorize" sender:self];
     }
     else
     {
@@ -266,14 +272,14 @@
     NSString *title= [alertView buttonTitleAtIndex:buttonIndex];
     if ([title isEqualToString:@"Yes"])
     {
-        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
         event.notes = @"User elected to proceed to enter subphase.";
         [self.session addEvent:event];
-        [self performSegueWithIdentifier:@"Entry" sender:self];
+        [self performSegueWithIdentifier:@"VerifyToEntry" sender:self];
     }
     else
     {
-        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
         event.notes = @"User elected to stay in verify subphase.";
         [self.session addEvent:event];
     }

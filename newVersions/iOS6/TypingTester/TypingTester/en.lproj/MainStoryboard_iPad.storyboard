@@ -1007,7 +1007,7 @@
                                 <state key="normal" image="766-arrow-right.png"/>
                                 <state key="highlighted" image="766-arrow-right-selected.png"/>
                                 <connections>
-                                    <segue destination="nvh-9X-XZg" kind="modal" identifier="Practice" modalTransitionStyle="crossDissolve" id="04K-r5-l5Q"/>
+                                    <action selector="nextButtonPressed" destination="RH5-gu-dim" eventType="touchUpInside" id="a0M-NX-Eyv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1036,6 +1036,9 @@
                         <outlet property="passwordLabel" destination="niW-GP-Noi" id="L6W-Bq-VB7"/>
                         <outlet property="progressLabel" destination="SRb-nO-cwY" id="Ian-G7-sbh"/>
                         <outlet property="workArea" destination="Enb-Ut-L1B" id="Tmd-0H-mSA"/>
+                        <segue destination="KXG-VE-QnH" kind="modal" identifier="MemorizeToVerify" modalTransitionStyle="crossDissolve" id="hbU-FW-yMc"/>
+                        <segue destination="eqt-5t-k8q" kind="modal" identifier="MemorizeToEntry" modalTransitionStyle="crossDissolve" id="4VJ-ys-XWU"/>
+                        <segue destination="nvh-9X-XZg" kind="modal" identifier="MemorizeToPractice" modalTransitionStyle="crossDissolve" id="QN8-Q5-p5a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0JX-hI-IJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1145,7 +1148,7 @@
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="765-arrow-left-selected.png"/>
                                 <connections>
-                                    <segue destination="RH5-gu-dim" kind="modal" identifier="BackToMemorize" modalTransitionStyle="crossDissolve" id="NoB-kO-LYm"/>
+                                    <segue destination="RH5-gu-dim" kind="modal" identifier="PracticeToMemorize" modalTransitionStyle="crossDissolve" id="NoB-kO-LYm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewg-XE-Pbx">
@@ -1203,8 +1206,9 @@
                         <outlet property="sessionProgressLabel" destination="Id4-IE-5Yc" id="5cs-XK-bGu"/>
                         <outlet property="skipButton" destination="L8s-LW-ZPi" id="n7Z-pV-YJ2"/>
                         <outlet property="visibilityButton" destination="jkU-oO-TBd" id="asr-AD-xV2"/>
-                        <segue destination="KXG-VE-QnH" kind="modal" identifier="Verify" modalTransitionStyle="crossDissolve" id="dxL-9g-cS0"/>
-                        <segue destination="uqW-Go-H4F" kind="modal" identifier="SkipToRecall" modalTransitionStyle="crossDissolve" id="J9Y-oA-Wu7"/>
+                        <segue destination="KXG-VE-QnH" kind="modal" identifier="PracticeToVerify" modalTransitionStyle="crossDissolve" id="dxL-9g-cS0"/>
+                        <segue destination="uqW-Go-H4F" kind="modal" identifier="PracticeToRecall" modalTransitionStyle="crossDissolve" id="J9Y-oA-Wu7"/>
+                        <segue destination="eqt-5t-k8q" kind="modal" identifier="PracticeToEntry" modalTransitionStyle="crossDissolve" id="aWz-m7-FBA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGr-Fu-Oi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1334,10 +1338,10 @@
                         <outlet property="incorrectImage" destination="p9b-lg-InS" id="5LF-R1-omf"/>
                         <outlet property="incorrectText" destination="7Dk-d5-Vjk" id="CIN-wX-ZhJ"/>
                         <outlet property="sessionProgressLabel" destination="EcP-Kp-h3k" id="aCN-fL-N06"/>
-                        <segue destination="nvh-9X-XZg" kind="modal" identifier="BackToPractice" modalTransitionStyle="crossDissolve" id="qRJ-FI-xZJ"/>
-                        <segue destination="eqt-5t-k8q" kind="modal" identifier="Entry" modalTransitionStyle="crossDissolve" id="Git-re-EtZ"/>
-                        <segue destination="uqW-Go-H4F" kind="modal" identifier="SkipToRecall" modalTransitionStyle="crossDissolve" id="k1v-bL-JN8"/>
-                        <segue destination="RH5-gu-dim" kind="modal" identifier="BackToMemorize" modalTransitionStyle="crossDissolve" id="GZc-f3-HTk"/>
+                        <segue destination="nvh-9X-XZg" kind="modal" identifier="VerifyToPractice" modalTransitionStyle="crossDissolve" id="qRJ-FI-xZJ"/>
+                        <segue destination="eqt-5t-k8q" kind="modal" identifier="VerifyToEntry" modalTransitionStyle="crossDissolve" id="Git-re-EtZ"/>
+                        <segue destination="uqW-Go-H4F" kind="modal" identifier="VerifyToRecall" modalTransitionStyle="crossDissolve" id="k1v-bL-JN8"/>
+                        <segue destination="RH5-gu-dim" kind="modal" identifier="VerifyToMemorize" modalTransitionStyle="crossDissolve" id="GZc-f3-HTk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZB-ff-zdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1655,7 +1659,9 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="J9Y-oA-Wu7"/>
-        <segue reference="04K-r5-l5Q"/>
+        <segue reference="QN8-Q5-p5a"/>
         <segue reference="NoB-kO-LYm"/>
+        <segue reference="4VJ-ys-XWU"/>
+        <segue reference="hbU-FW-yMc"/>
     </inferredMetricsTieBreakers>
 </document>

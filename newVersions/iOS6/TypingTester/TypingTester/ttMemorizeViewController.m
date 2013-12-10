@@ -10,8 +10,11 @@
 
 #import "ttMemorizeViewController.h"
 #import "ttPracticeViewController.h"
+#import "ttVerifyViewController.h"
+#import "ttEntryViewController.h"
 #import "ttTestEntity.h"
 #import "ttSettings.h"
+
 
 @interface ttMemorizeViewController ()
 
@@ -82,6 +85,57 @@
     return UIInterfaceOrientationMaskAll;
 }
 
+-(IBAction)backgroundButtonPressed
+{
+    [self.view endEditing:YES];
+}
+
+-(IBAction)nextButtonPressed
+{
+    // do we have forced practice?  if so go there
+    if (settings.forcedPracticeRounds > 0)
+    {
+        [self performSegueWithIdentifier:@"MemorizeToPractice" sender:self];
+    }
+    else if (settings.verifyRounds > 0) // no forced practice?  do we need to verify?
+    {
+        [self performSegueWithIdentifier:@"MemorizeToVerify" sender:self];
+    }
+    else // no forced practice or verification, straight to entry
+    {
+        //[self performSegueWithIdentifier:@"MemorizeToEntry" sender:self];
+        [self askGoToEntry];
+    }
+}
+
+-(void) askGoToEntry
+{
+    UIAlertView *proceed = [[UIAlertView alloc]initWithTitle:@"Memorization Complete" message:@"Are you ready to proceed to the Enter task?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    [proceed show];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // store the work area contents
+    self.session.workAreaContents = self.workArea.text;
+    // pass of the session and any other information
+    if ([segue.identifier isEqualToString:@"MemorizeToPractice"])
+    {
+        ttPracticeViewController* controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
+    else if ([segue.identifier isEqualToString:@"MemorizeToVerify"])
+    {
+        ttVerifyViewController *controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
+    else if ([segue.identifier isEqualToString:@"MemorizeToEntry"])
+    {
+        ttEntryViewController *controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
+}
+
 -(void) configureUI
 {
     currentEntity = self.session.currentEntity;
@@ -92,20 +146,7 @@
     self.progressLabel.text = [NSString stringWithFormat:@"Password %i of %i", currentEntity+1, totalEntites];
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"Practice"])
-    {
-        ttPracticeViewController* controller = segue.destinationViewController;
-        controller.session = self.session;
-        self.session.workAreaContents = self.workArea.text; // store the work area contents
-    }
-}
 
--(IBAction)backgroundButtonPressed
-{
-    [self.view endEditing:YES];
-}
 
 #pragma -mark UITextViewDelegate methods
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
@@ -135,7 +176,24 @@
     return ret;
 }
 
-
-#pragma -mark touch events
+#pragma mark - Alert View Delegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title= [alertView buttonTitleAtIndex:buttonIndex];
+    if ([title isEqualToString:@"Yes"])
+    {
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:FreePractice];
+        event.notes = @"User elected to proceed to the entry subphase.";
+        [self.session addEvent:event];
+        [self performSegueWithIdentifier:@"MemorizeToEntry" sender:self];
+        
+    }
+    else
+    {
+        ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:FreePractice];
+        event.notes = @"User elected to stay in free practice subphase.";
+        [self.session addEvent:event];
+    }
+}
 
 @end

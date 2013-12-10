@@ -352,7 +352,7 @@
                                         <barButtonItem key="rightBarButtonItem" image="766-arrow-right-white.png" id="US8-4e-NmU">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="deW-OK-kEn" kind="modal" identifier="Practice" modalTransitionStyle="crossDissolve" id="XT7-r5-x1r"/>
+                                                <action selector="nextButtonPressed" destination="WZw-fl-GDW" id="cMv-Xy-cZ1"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -425,6 +425,9 @@
                         <outlet property="passwordLabel" destination="9NK-oY-JFw" id="XY1-fy-N64"/>
                         <outlet property="progressLabel" destination="rSA-Ff-jJi" id="Hxs-EP-7ve"/>
                         <outlet property="workArea" destination="yS7-pG-apN" id="hon-Cx-cGA"/>
+                        <segue destination="K8h-Oe-RAA" kind="modal" identifier="MemorizeToVerify" modalTransitionStyle="crossDissolve" id="1wy-QO-Rhj"/>
+                        <segue destination="ZNU-h0-iZz" kind="modal" identifier="MemorizeToEntry" modalTransitionStyle="crossDissolve" id="ZWE-py-qTt"/>
+                        <segue destination="deW-OK-kEn" kind="modal" identifier="MemorizeToPractice" modalTransitionStyle="crossDissolve" id="cpy-xf-KoV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5uc-2c-UCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -453,7 +456,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="765-arrow-left-white.png" id="t9n-VE-Wcm">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="WZw-fl-GDW" kind="modal" identifier="BackToMemorize" modalTransitionStyle="crossDissolve" id="xtU-2Z-szz"/>
+                                                <segue destination="WZw-fl-GDW" kind="modal" identifier="PracticeToMemorize" modalTransitionStyle="crossDissolve" id="xtU-2Z-szz"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" enabled="NO" image="766-arrow-right-white.png" id="tQC-uw-kvX">
@@ -589,8 +592,9 @@
                         <outlet property="sessionProgressLabel" destination="qW8-Kl-XqM" id="F96-bZ-bhW"/>
                         <outlet property="skipButton" destination="a1y-Eu-ovm" id="gQY-cy-KUp"/>
                         <outlet property="visibilityButton" destination="UXC-nO-CnE" id="sZQ-lW-bXQ"/>
-                        <segue destination="K8h-Oe-RAA" kind="modal" identifier="Verify" modalTransitionStyle="crossDissolve" id="HRy-nd-Ya3"/>
-                        <segue destination="Im5-cC-YRZ" kind="modal" identifier="SkipToRecall" modalTransitionStyle="crossDissolve" id="xMN-2O-T7u"/>
+                        <segue destination="K8h-Oe-RAA" kind="modal" identifier="PracticeToVerify" modalTransitionStyle="crossDissolve" id="HRy-nd-Ya3"/>
+                        <segue destination="Im5-cC-YRZ" kind="modal" identifier="PracticeToRecall" modalTransitionStyle="crossDissolve" id="xMN-2O-T7u"/>
+                        <segue destination="ZNU-h0-iZz" kind="modal" identifier="PracticeToEntry" modalTransitionStyle="crossDissolve" id="aUR-LT-xVf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwZ-th-ogl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -702,10 +706,10 @@
                         <outlet property="incorrectImage" destination="RHg-ez-krw" id="iaz-8O-Rvi"/>
                         <outlet property="incorrectText" destination="icK-X5-eTO" id="2AL-1C-3q5"/>
                         <outlet property="sessionProgressLabel" destination="DBF-VC-mYq" id="Op7-JP-PL3"/>
-                        <segue destination="ZNU-h0-iZz" kind="modal" identifier="Entry" modalTransitionStyle="crossDissolve" id="rgE-Di-oLL"/>
-                        <segue destination="deW-OK-kEn" kind="modal" identifier="BackToPractice" modalTransitionStyle="crossDissolve" id="zal-n7-ZfW"/>
-                        <segue destination="Im5-cC-YRZ" kind="modal" identifier="SkipToRecall" modalTransitionStyle="crossDissolve" id="esj-5w-h8l"/>
-                        <segue destination="WZw-fl-GDW" kind="modal" identifier="BackToMemorize" id="xhk-Fp-bM3"/>
+                        <segue destination="ZNU-h0-iZz" kind="modal" identifier="VerifyToEntry" modalTransitionStyle="crossDissolve" id="rgE-Di-oLL"/>
+                        <segue destination="deW-OK-kEn" kind="modal" identifier="VerifyToPractice" modalTransitionStyle="crossDissolve" id="zal-n7-ZfW"/>
+                        <segue destination="Im5-cC-YRZ" kind="modal" identifier="VerifyToRecall" modalTransitionStyle="crossDissolve" id="esj-5w-h8l"/>
+                        <segue destination="WZw-fl-GDW" kind="modal" identifier="VerifyToMemorize" modalTransitionStyle="crossDissolve" id="xhk-Fp-bM3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMC-0K-eTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1536,25 +1540,12 @@
     </scenes>
     <resources>
         <image name="433-x.png" width="18" height="18"/>
-        <image name="433-x.png" width="18" height="18"/>
         <image name="740-gear-white.png" width="28" height="28"/>
-        <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="759-refresh-2-selected.png" width="28" height="28"/>
-        <image name="759-refresh-2-selected.png" width="28" height="28"/>
         <image name="759-refresh-2.png" width="28" height="28"/>
         <image name="765-arrow-left-white.png" width="14" height="28"/>
-        <image name="765-arrow-left-white.png" width="14" height="28"/>
-        <image name="765-arrow-left-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
         <image name="766-arrow-right-white.png" width="14" height="28"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1563,8 +1554,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qlx-Cz-jfL"/>
+        <segue reference="rgE-Di-oLL"/>
+        <segue reference="HRy-nd-Ya3"/>
         <segue reference="zal-n7-ZfW"/>
+        <segue reference="qlx-Cz-jfL"/>
         <segue reference="1tr-Kl-y5m"/>
     </inferredMetricsTieBreakers>
 </document>

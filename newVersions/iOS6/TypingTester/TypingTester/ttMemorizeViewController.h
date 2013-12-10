@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ttSession.h"
 
-@interface ttMemorizeViewController : UIViewController <UITextViewDelegate>
+@interface ttMemorizeViewController : UIViewController <UITextViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *passwordLabel;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
@@ -20,5 +20,6 @@
 @property (nonatomic, weak) ttSession *session;
 
 -(IBAction)backgroundButtonPressed;
+-(IBAction)nextButtonPressed;
 
 @end
