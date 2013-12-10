@@ -147,7 +147,6 @@
 }
 
 
-
 #pragma -mark UITextViewDelegate methods
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
@@ -167,7 +166,17 @@
         inputEvent.notes = [NSString stringWithFormat:@"%@ entered", [self EscapeString:text]];
     }
     [self.session addEvent:inputEvent];
+    
     return YES;
+}
+
+-(void)textViewDidChange:(UITextView *)textView
+{
+    if (textView.text.length > 0)
+    {
+        NSRange bottom = NSMakeRange(textView.text.length -1, 1);
+        [textView scrollRangeToVisible:bottom];
+    }
 }
 
 -(NSString*)EscapeString:(NSString*)input
