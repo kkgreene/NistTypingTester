@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Tt View Controller - Start-->
@@ -1110,39 +1110,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cFG-W3-A2I">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cFG-W3-A2I" id="Paj-my-dhV">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="# of rounds per password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMt-P2-Ir8">
-                                                    <rect key="frame" x="20" y="11" width="197" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="10" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tb9-68-pq8">
-                                                    <rect key="frame" x="245" y="7" width="55" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="55" id="uE0-Vf-3mn"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
-                                                    <connections>
-                                                        <action selector="numberOfRepetitionsChanged:" destination="KqX-9V-hjO" eventType="editingDidEnd" id="hUw-nI-Mrk"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="tb9-68-pq8" secondAttribute="trailing" constant="20" id="SBg-pM-LuB"/>
-                                                <constraint firstItem="tb9-68-pq8" firstAttribute="top" secondItem="Paj-my-dhV" secondAttribute="top" constant="7" id="keH-1t-tcs"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="C1K-9L-aEm">
-                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C1K-9L-aEm" id="cNk-Yp-8Pr">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1173,7 +1142,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="7oA-JR-exV">
-                                        <rect key="frame" x="0.0" y="187" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7oA-JR-exV" id="qgX-3t-Sfx">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1200,6 +1169,37 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="sgb-gN-c17" secondAttribute="trailing" constant="20" id="GW9-kU-RPR"/>
                                                 <constraint firstItem="sgb-gN-c17" firstAttribute="top" secondItem="qgX-3t-Sfx" secondAttribute="top" constant="8" id="Uww-Dj-0qp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cFG-W3-A2I">
+                                        <rect key="frame" x="0.0" y="187" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cFG-W3-A2I" id="Paj-my-dhV">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="# of rounds per password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMt-P2-Ir8">
+                                                    <rect key="frame" x="20" y="11" width="197" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="10" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tb9-68-pq8">
+                                                    <rect key="frame" x="245" y="7" width="55" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="uE0-Vf-3mn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="numberOfRepetitionsChanged:" destination="KqX-9V-hjO" eventType="editingDidEnd" id="hUw-nI-Mrk"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="tb9-68-pq8" secondAttribute="trailing" constant="20" id="SBg-pM-LuB"/>
+                                                <constraint firstItem="tb9-68-pq8" firstAttribute="top" secondItem="Paj-my-dhV" secondAttribute="top" constant="7" id="keH-1t-tcs"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1536,12 +1536,25 @@
     </scenes>
     <resources>
         <image name="433-x.png" width="18" height="18"/>
+        <image name="433-x.png" width="18" height="18"/>
         <image name="740-gear-white.png" width="28" height="28"/>
+        <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="759-refresh-2-selected.png" width="28" height="28"/>
+        <image name="759-refresh-2-selected.png" width="28" height="28"/>
         <image name="759-refresh-2.png" width="28" height="28"/>
         <image name="765-arrow-left-white.png" width="14" height="28"/>
+        <image name="765-arrow-left-white.png" width="14" height="28"/>
+        <image name="765-arrow-left-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
         <image name="766-arrow-right-white.png" width="14" height="28"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
