@@ -22,6 +22,8 @@
 		AD047FC517A9910A00657D08 /* ttParticipant.m in Sources */ = {isa = PBXBuildFile; fileRef = AD047FC417A9910A00657D08 /* ttParticipant.m */; };
 		AD06B40917CFD60600C4348C /* 19-gear-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = AD06B40717CFD60500C4348C /* 19-gear-grey.png */; };
 		AD06B40A17CFD60600C4348C /* 19-gear-grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD06B40817CFD60600C4348C /* 19-gear-grey@2x.png */; };
+		AD1D4E0B1858B88600044EC0 /* ttHitBox.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1D4E0A1858B88600044EC0 /* ttHitBox.m */; };
+		AD1D4E0E1858BECE00044EC0 /* ttKeyHitDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1D4E0D1858BECE00044EC0 /* ttKeyHitDetector.m */; };
 		AD1EEABA17B40103008D98BC /* ttSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EEAB917B40103008D98BC /* ttSettings.m */; };
 		AD1EEABD17B40DF5008D98BC /* ttConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EEABC17B40DF5008D98BC /* ttConstants.m */; };
 		AD2093E617C3A2A500B56CB7 /* ttInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2093E517C3A2A500B56CB7 /* ttInstructionsViewController.m */; };
@@ -151,6 +153,10 @@
 		AD047FC417A9910A00657D08 /* ttParticipant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttParticipant.m; sourceTree = "<group>"; };
 		AD06B40717CFD60500C4348C /* 19-gear-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear-grey.png"; sourceTree = "<group>"; };
 		AD06B40817CFD60600C4348C /* 19-gear-grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear-grey@2x.png"; sourceTree = "<group>"; };
+		AD1D4E091858B88600044EC0 /* ttHitBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttHitBox.h; sourceTree = "<group>"; };
+		AD1D4E0A1858B88600044EC0 /* ttHitBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttHitBox.m; sourceTree = "<group>"; };
+		AD1D4E0C1858BECE00044EC0 /* ttKeyHitDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttKeyHitDetector.h; sourceTree = "<group>"; };
+		AD1D4E0D1858BECE00044EC0 /* ttKeyHitDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttKeyHitDetector.m; sourceTree = "<group>"; };
 		AD1EEAB817B40103008D98BC /* ttSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttSettings.h; sourceTree = "<group>"; };
 		AD1EEAB917B40103008D98BC /* ttSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttSettings.m; sourceTree = "<group>"; };
 		AD1EEABB17B40DF5008D98BC /* ttConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttConstants.h; sourceTree = "<group>"; };
@@ -530,6 +536,10 @@
 				ADB91FF417C275B000DCE303 /* ttInputData.m */,
 				ADB91FF617C2861600DCE303 /* ttFilter.h */,
 				ADB91FF717C2861600DCE303 /* ttFilter.m */,
+				AD1D4E091858B88600044EC0 /* ttHitBox.h */,
+				AD1D4E0A1858B88600044EC0 /* ttHitBox.m */,
+				AD1D4E0C1858BECE00044EC0 /* ttKeyHitDetector.h */,
+				AD1D4E0D1858BECE00044EC0 /* ttKeyHitDetector.m */,
 			);
 			name = dataModel;
 			sourceTree = "<group>";
@@ -683,6 +693,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD04767217A964B600657D08 /* main.m in Sources */,
+				AD1D4E0E1858BECE00044EC0 /* ttKeyHitDetector.m in Sources */,
 				AD04767617A964B600657D08 /* ttAppDelegate.m in Sources */,
 				AD04768517A964B600657D08 /* ttViewController.m in Sources */,
 				AD04769417A96F5A00657D08 /* ttSettingsViewController.m in Sources */,
@@ -703,6 +714,7 @@
 				C9E0977A17C3150F004DBD9F /* ttMemorizeViewController.m in Sources */,
 				AD2093E617C3A2A500B56CB7 /* ttInstructionsViewController.m in Sources */,
 				AD2093F917C3AD5500B56CB7 /* ttPracticeViewController.m in Sources */,
+				AD1D4E0B1858B88600044EC0 /* ttHitBox.m in Sources */,
 				AD20940C17C3D34500B56CB7 /* ttThankYouViewController.m in Sources */,
 				AD20940F17C3FBCD00B56CB7 /* ttApplication.m in Sources */,
 				C95BBBE617C50D5500F02F5F /* ttVerifyViewController.m in Sources */,

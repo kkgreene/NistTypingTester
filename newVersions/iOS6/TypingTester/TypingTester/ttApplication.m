@@ -10,6 +10,7 @@
 #import "ttConstants.h"
 #import "ttEvent.h"
 #import "ttSession.h"
+#import "ttKeyHitDetector.h"
 
 @implementation ttApplication
 {
@@ -43,27 +44,65 @@
                     // log event
                     event = [[ttEvent alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
                     event.point = touchPoint;
-                    event.notes = [NSString stringWithFormat:@"Shift Key Pressed at %.0f:%.0f", touchPoint.x, touchPoint.y];
+                    event.notes = [NSString stringWithFormat:@"Left Shift Key Pressed at %.0f:%.0f", touchPoint.x, touchPoint.y];
                     [self.session addEvent:event];
-                    //NSLog(@"Shift Key Pressed at %3f, %3f", touchPoint.x, touchPoint.y);
                     break;
+                    
+                case SpecialKeyShiftRight:
+                    // log event
+                    event = [[ttEvent alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+                    event.point = touchPoint;
+                    event.notes = [NSString stringWithFormat:@"Right Shift Key Pressed at %.0f:%.0f", touchPoint.x, touchPoint.y];
+                    [self.session addEvent:event];
+                    break;
+                    
                 
                 case SpecialKeyKeyboardChange:
                     // log event
                     event = [[ttEvent alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
                     event.point = touchPoint;
-                    event.notes = [NSString stringWithFormat:@"Keyboard Change Key Pressed at %.0f:%.0f", touchPoint.x, touchPoint.y];
+                    event.notes = [NSString stringWithFormat:@"Left Keyboard Change Key Pressed at %.0f:%.0f", touchPoint.x, touchPoint.y];
                     [self.session addEvent:event];
-                    //NSLog(@"Keyboard Change Key Pressed at %3f,%3f", touchPoint.x, touchPoint.y);
+                    break;
+                    
+                case SpecialKeyKeyboardChangeRight:
+                    // log event
+                    event = [[ttEvent alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+                    event.point = touchPoint;
+                    event.notes = [NSString stringWithFormat:@"Right Keyboard Change Key Pressed at %.0f:%.0f", touchPoint.x, touchPoint.y];
+                    [self.session addEvent:event];
+                    break;
+                    
+                case SpecialKeyDelete:
+                    // log event
+                    event = [[ttEvent alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+                    event.point = touchPoint;
+                    event.notes = [NSString stringWithFormat:@"Delete Key Pressed at %.0f:%.0f", touchPoint.x, touchPoint.y];
+                    [self.session addEvent:event];
+                    break;
+                    
+                case SpecialKeyReturn:
+                    // log event
+                    event = [[ttEvent alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+                    event.point = touchPoint;
+                    event.notes = [NSString stringWithFormat:@"Return Key Pressed at %.0f:%.0f", touchPoint.x, touchPoint.y];
+                    [self.session addEvent:event];
+                    break;
+                    
+                case SpecialKeyHideKeyboard:
+                    // log event
+                    event = [[ttEvent alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+                    event.point = touchPoint;
+                    event.notes = [NSString stringWithFormat:@"Hide Keyboard Key Pressed at %.0f:%.0f", touchPoint.x, touchPoint.y];
+                    [self.session addEvent:event];
                     break;
                 
-                case SpecialKeyUnknown:
+                case SpecialKeyNone:
                 default:
                     event = [[ttEvent alloc]initWithEventType:KeyboardTouch andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
                     event.point = touchPoint;
-                    event.notes = [NSString stringWithFormat:@"Touch event at %.0f:%.0f", touchPoint.x, touchPoint.y];
+                    event.notes = [NSString stringWithFormat:@"Keyboard Touch event at %.0f:%.0f", touchPoint.x, touchPoint.y];
                     [self.session addEvent:event];
-                    //NSLog(@"Unidentified key pressed at point %3f,%3f", touchPoint.x, touchPoint.y);
                     break;
             }
         }
@@ -72,7 +111,7 @@
             ttEvent *event;
             event = [[ttEvent alloc]initWithEventType:KeyboardTouch andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
             event.point = touchPoint;
-            event.notes = [NSString stringWithFormat:@"Touch event at %.0f:%.0f", touchPoint.x, touchPoint.y];
+            event.notes = [NSString stringWithFormat:@"Keyboard Touch event at %.0f:%.0f", touchPoint.x, touchPoint.y];
             [self.session addEvent:event];
         }
     }
@@ -81,88 +120,7 @@
 
 -(SpecialKey)getKeyPressedAtPoint:(CGPoint)point
 {
-    // this will try to figure out if a special key is pressed based on coordinates
-    CGRect shiftKeyHitbox;
-    CGRect switchKeyHitbox;
-    CGRect shiftKey2Hitbox = ttcHitBoxNull;
-    CGRect switchKey2Hitbox = ttcHitBoxNull;
-    // determine the current device family
-    // determine the current orientation
-    BOOL isLandscape = NO;
-    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication]statusBarOrientation]))
-    {
-        isLandscape = YES;
-    }
-    
-    NSString *iosVersion = [[UIDevice currentDevice]systemVersion];
-    
-    switch(UI_USER_INTERFACE_IDIOM())
-    {
-        case UIUserInterfaceIdiomPad: 
-            if ([iosVersion hasPrefix:@"6."]) // ios 6
-            {
-                if (isLandscape)
-                {
-                    shiftKeyHitbox = ttcHitboxShiftKeyIos6Landscape_iPad;
-                    switchKeyHitbox = ttcHitboxSwitchKeyIos6Landscape_iPad;
-                    shiftKey2Hitbox = ttcHitboxShiftKey2Ios6Landscape_iPad;
-                    switchKey2Hitbox = ttcHitboxSwitchKey2Ios6Landscape_iPad;
-                }
-                else
-                {
-                    shiftKeyHitbox = ttcHitboxShiftKeyIos6Portrait_iPad;
-                    switchKeyHitbox = ttcHitboxSwitchKeyIos6Portrait_iPad;
-                    shiftKey2Hitbox = ttcHitboxShiftKey2Ios6Portrait_iPad;
-                    switchKey2Hitbox = ttcHitboxSwitchKey2Ios6Portrait_iPad;
-                }
-            }
-            else if ([iosVersion hasPrefix:@"7."]) // ios 7
-            {
-                if (isLandscape)
-                {
-                    shiftKeyHitbox = ttcHitboxShiftKeyIos7Landscape_iPad;
-                    switchKeyHitbox = ttcHitboxSwitchKeyIos7Landscape_iPad;
-                }
-                else
-                {
-                    shiftKeyHitbox = ttcHitboxShiftKeyIos7Portrait_iPad;
-                    switchKeyHitbox = ttcHitboxSwitchKeyIos7Portrait_iPad;
-                }
-            }
-            break;
-            
-        case UIUserInterfaceIdiomPhone:
-            if ([iosVersion hasPrefix:@"6."]) // ios 6
-            {
-                if (isLandscape)
-                {
-                    shiftKeyHitbox = ttcHitboxShiftKeyIos6Landscape;
-                    switchKeyHitbox = ttcHitboxSwitchKeyIos6Landscape;
-                }
-                else
-                {
-                    shiftKeyHitbox = ttcHitboxShiftKeyIos6Portrait;
-                    switchKeyHitbox = ttcHitboxSwitchKeyIos6Portrait;
-                }
-            }
-            else if ([iosVersion hasPrefix:@"7."]) // ios 7
-            {
-                if (isLandscape)
-                {
-                    shiftKeyHitbox = ttcHitboxShiftKeyIos7Landscape;
-                    switchKeyHitbox = ttcHitboxSwitchKeyIos7Landscape;
-                }
-                else
-                {
-                    shiftKeyHitbox = ttcHitboxShiftKeyIos7Portrait;
-                    switchKeyHitbox = ttcHitboxSwitchKeyIos7Portrait;
-                }
-            }
-            break;
-    }
-    if (CGRectContainsPoint(shiftKeyHitbox, point) || CGRectContainsPoint(shiftKey2Hitbox, point)) return SpecialKeyShift;
-    if (CGRectContainsPoint(switchKeyHitbox, point) || CGRectContainsPoint(switchKey2Hitbox, point)) return SpecialKeyKeyboardChange;
-    return SpecialKeyUnknown;
+    return [[ttKeyHitDetector Instance]GetKeyAtPoint:point];
 }
 
 -(void)determineKeyboardStateAfterKeyPress:(SpecialKey)key
