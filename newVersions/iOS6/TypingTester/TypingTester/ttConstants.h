@@ -127,7 +127,12 @@ typedef enum
 {
     SpecialKeyUnknown,
     SpecialKeyShift,
-    SpecialKeyKeyboardChange
+    SpecialKeyShiftRight,
+    SpecialKeyKeyboardChange,
+    SpecialKeyKeyboardChangeRight,
+    SpecialKeyReturn,
+    SpecialKeyHideKeyboard,
+    SpecialKeyDelete
 } SpecialKey;
 
 typedef enum

@@ -85,4 +85,19 @@ CGRect const ttcHitboxShiftKey2Ios7Landscape_iPad = { {908,595}, {116,84} };
 CGRect const ttcHitboxSwitchKeyIos7Landscape_iPad = { {0,680}, {270,88} };
 CGRect const ttcHitboxSwitchKey2Ios7Landscape_iPad = { {816,680}, {116,88} };
 
+//NEW constants
+CGRect const ttcHitboxDeleteKeyIos7Portrait_iPad = { {696,760}, {69,69} };
+CGRect const ttcHitboxReturnKeyIos7Portrait_iPad = { {660,843}, {104,35} };
+CGRect const ttcHitboxKeyboardHideKeyIos7Portrait_iPad = { {700,960}, {55,55} };
+
+CGRect const ttcHitboxDeleteKeyIosLandscape_iPad = { {930,417}, {90,90} };
+CGRect const ttcHitboxReturnKeyIos7Landscape_iPad = { {870,510}, {150,70} };
+CGRect const ttcHitboxKeyboardHideKeyIos7Landscap_iPad = { {933, 680}, {87,88} };
+
+CGRect const ttcHitboxDeleteKeyIos7Portrait = { {0,0},{0,0} };
+CGRect const ttcHitboxDeleteKeyIos7Landscape = { {0,0},{0,0} };
+CGRect const ttcHitboxReturnKeyIos7Portrait  = { {0,0},{0,0} };
+CGRect const ttcHitboxDeleteKeyIos7Landscape = { {0,0},{0,0} };
+
+
 CGRect const ttcHitBoxNull = { {0,0},{0,0} };
