@@ -51,7 +51,7 @@ NSString *const ttcPhaseStringArray[] = {@"Unknown Phase", @"Proficiency Phase",
                                          @"Entry Phase", @"Recall Phase", @"Thank You Phase"};
 NSString *const ttcSubPhaseStringArray[] = {@"Unknown SubPhase", @"Free Practice", @"Forced Practice", @"Verify", @"Entity Change", @"None"};
 NSString *const ttcEventTypeStringArray[] = {@"Unknown Event", @"Input", @"Phase Begin", @"Phase End", @"Touch", @"Sub Phase Change",
-                                             @"Proficiency String Shown", @"Entity Displayed", @"Control Activated", @"Special Key Pressed",
+                                             @"Proficiency String Shown", @"Password Displayed", @"Control Activated", @"Special Key Pressed",
                                              @"Orientation Change", @"Keyboard Shown", @"Keyboard Hidden", @"Keyboard Touch", @"Incorrect Value Entered",
                                              @"Correct Value Entered"};
 NSString *const ttcSpecialKeyStringArray[] = {@"Unknown Key", @"Shift Key", @"Keyboard Change Key"};

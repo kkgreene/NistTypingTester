@@ -88,14 +88,14 @@
         [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Total Free Practice: %i views for %f (s)", timesInFreePractice, timeInFreePractice]];
         [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Total Forced Practice: %i views for %f (s)", timesInForcedPractice, timeInForcedPractice]];
         [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Total Verify: %i views for %f", timesInVerify, timeInVerify]];
-        [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Finishing Entity: %i at %@ in %f", self.currentEntity, entityStart, totalEntityTime]];
+        [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Finishing Password: %i at %@ in %f", self.currentEntity, entityStart, totalEntityTime]];
     }
     self.currentEntity++;
     [self startEntity];
     
     ttEvent *event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:Entry andSubPhase:EntityChange];
     ttTestEntity *entity = [self.entities objectAtIndex:self.currentEntity];
-    event.notes = [NSString stringWithFormat:@"Moving to Entity:%@", entity.entityString];
+    event.notes = [NSString stringWithFormat:@"Moving to Password:%@", entity.entityString];
 }
 
 -(void) startEntity
@@ -111,7 +111,7 @@
     self.currentEntryForEntity = 0;
     self.currentVerifyRoundForEntity = 0;
     self.workAreaContents = @"";
-    [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Starting Entity: %i at %@", self.currentEntity, entityStart]];
+    [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Starting Password: %i at %@", self.currentEntity, entityStart]];
 }
 
 -(void) sessionDidStart
@@ -123,13 +123,13 @@
     [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Participant Id:%@", self.participant.participantNumber]];
     phaseStartTime = [NSDate date];
     // write out strings
-    [self writeLineToSummaryLogFile:@"Entities for session:"];
+    [self writeLineToSummaryLogFile:@"Passwords for session:"];
     for(int i = 0; i < self.entities.count; i++)
     {
         ttTestEntity *entity = [self.entities objectAtIndex:i];
         [self writeLineToSummaryLogFile:entity.entityString];
     }
-    [self writeLineToSummaryLogFile:@"End entity list"];
+    [self writeLineToSummaryLogFile:@"End Password list"];
     return;
 }
 

@@ -40,8 +40,8 @@ static ttSettings *instance = nil;
 {
     NSMutableString *string = [[NSMutableString alloc]init];
     [string appendFormat:@"Settings:\n"];
-    [string appendFormat:@"Entities:%i\n", self.entitiesPerSession];
-    [string appendFormat:@"Entries Per Entity:%i\n", self.entriesPerEntitiy];
+    [string appendFormat:@"Password:%i\n", self.entitiesPerSession];
+    [string appendFormat:@"Rounds Per Password:%i\n", self.entriesPerEntitiy];
     [string appendFormat:@"Forced Practice Rounds:%i\n", self.forcedPracticeRounds];
     [string appendFormat:@"Verify Rounds:%i\n", self.verifyRounds];
     [string appendFormat:@"Random String Order:%@\n", (self.randomStringOrder ? @"Yes":@"No")];
