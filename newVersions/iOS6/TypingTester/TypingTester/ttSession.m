@@ -13,6 +13,7 @@
 #import "ttSettings.h"
 #import "ttInputData.h"
 #import "ttTestEntity.h"
+#import "ttUtilities.h"
 
 @implementation ttSession
 {
@@ -119,6 +120,7 @@
     sessionStartTime = [NSDate date];
     [self writeLineToSummaryLogFile:[self getDeviceInformation]];
     [self writeLineToSummaryLogFile:[settings getSettings]];
+    [self writeLineToRawLogFile:[NSString stringWithFormat:@"Initial orientation of device:%@", [ttUtilities stringForOrienatation:[UIApplication sharedApplication].statusBarOrientation]]];
     [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Session Started:%@", sessionStartTime]];
     [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Participant Id:%@", self.participant.participantNumber]];
     phaseStartTime = [NSDate date];

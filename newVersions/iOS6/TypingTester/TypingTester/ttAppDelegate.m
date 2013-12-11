@@ -23,6 +23,8 @@
         [ttSettings copyInitialFiles];
     }
     [self registerForKeyboardNotifications];
+    // turn off "shake to undo"
+    application.applicationSupportsShakeToEdit = NO;
     return YES;
 }
 							
