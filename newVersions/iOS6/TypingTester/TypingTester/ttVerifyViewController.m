@@ -16,6 +16,7 @@
 #import "ttRecallViewController.h"
 #import "ttSettings.h"
 #import "ttMemorizeViewController.h"
+#import "ttUtilities.h"
 
 @interface ttVerifyViewController ()
 
@@ -106,6 +107,15 @@
             return UIInterfaceOrientationMaskAllButUpsideDown;
     }
     return UIInterfaceOrientationMaskAll;
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    // log a rotation
+    ttEvent *event = [[ttEvent alloc]initWithEventType:OrientationChange andPhase:Memorize andSubPhase:Verify];
+    event.notes = [NSString stringWithFormat:@"Did rotate from %@ to %@", [ttUtilities stringForOrienatation:fromInterfaceOrientation], [ttUtilities stringForOrienatation:self.interfaceOrientation]];
+    [self.session addEvent:event];
 }
 
 #pragma -mark IBActions

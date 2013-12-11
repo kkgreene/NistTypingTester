@@ -10,6 +10,8 @@
 #import "ttRecallTableViewController.h"
 #import "ttSession.h"
 #import "ttSettings.h"
+#import "ttUtilities.h"
+#import "ttEvent.h"
 
 @interface ttRecallViewController ()
 
@@ -73,6 +75,15 @@
         // get the entered text strings
         // log them in the summary log
     }
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    // log a rotation
+    ttEvent *event = [[ttEvent alloc]initWithEventType:OrientationChange andPhase:Recall];
+    event.notes = [NSString stringWithFormat:@"Did rotate from %@ to %@", [ttUtilities stringForOrienatation:fromInterfaceOrientation], [ttUtilities stringForOrienatation:self.interfaceOrientation]];
+    [self.session addEvent:event];
 }
 
 -(NSUInteger)supportedInterfaceOrientations

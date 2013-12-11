@@ -11,6 +11,8 @@
 #import "ttMemorizeViewController.h"
 #import "ttLocalHtmlFile.h"
 #import "ttSettings.h"
+#import "ttEvent.h"
+#import "ttUtilities.h"
 
 @interface ttInstructionsViewController ()
 
@@ -73,6 +75,15 @@
             return UIInterfaceOrientationMaskAllButUpsideDown;
     }
     return UIInterfaceOrientationMaskAll;
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    // log a rotation
+    ttEvent *event = [[ttEvent alloc]initWithEventType:OrientationChange andPhase:UnknownPhase];
+    event.notes = [NSString stringWithFormat:@"Did rotate from %@ to %@", [ttUtilities stringForOrienatation:fromInterfaceOrientation], [ttUtilities stringForOrienatation:self.interfaceOrientation]];
+    [self.session addEvent:event];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
