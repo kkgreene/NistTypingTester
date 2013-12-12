@@ -898,8 +898,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Instructions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chu-rG-0uX">
-                                <rect key="frame" x="340" y="20" width="90" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Instructions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chu-rG-0uX">
+                                <rect key="frame" x="339" y="20" width="90" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -927,6 +927,7 @@
                             <constraint firstAttribute="trailing" secondItem="4j1-F5-C37" secondAttribute="trailing" constant="20" id="7Ve-P7-axi"/>
                             <constraint firstItem="ZBC-jQ-P2o" firstAttribute="top" secondItem="chu-rG-0uX" secondAttribute="bottom" constant="8" symbolic="YES" id="QOG-YJ-Jla"/>
                             <constraint firstItem="4j1-F5-C37" firstAttribute="top" secondItem="ZBC-jQ-P2o" secondAttribute="bottom" constant="8" symbolic="YES" id="SCy-bJ-n6l"/>
+                            <constraint firstAttribute="centerX" secondItem="chu-rG-0uX" secondAttribute="centerX" id="Uya-ol-1zE"/>
                             <constraint firstItem="chu-rG-0uX" firstAttribute="top" secondItem="Aob-th-dP5" secondAttribute="top" constant="20" symbolic="YES" id="b0i-ij-4DA"/>
                             <constraint firstAttribute="trailing" secondItem="ZBC-jQ-P2o" secondAttribute="trailing" constant="20" symbolic="YES" id="fem-gS-0l3"/>
                             <constraint firstItem="ZBC-jQ-P2o" firstAttribute="leading" secondItem="Aob-th-dP5" secondAttribute="leading" constant="20" symbolic="YES" id="vB1-i6-Mf0"/>
@@ -1610,8 +1611,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="728" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXX-Kp-D4V" customClass="ttTextFieldWithName">
-                                            <rect key="frame" x="20" y="7" width="728" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXX-Kp-D4V" customClass="ttTextFieldWithName">
+                                            <rect key="frame" x="20" y="7" width="688" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                         </textField>
