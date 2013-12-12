@@ -192,7 +192,8 @@
 
 -(NSString*)EscapeString:(NSString*)input
 {
-    NSString *ret = [input stringByReplacingOccurrencesOfString:@"\n" withString:@"{CR/LF}"];
+    NSString *ret = [input stringByReplacingOccurrencesOfString:@"\n" withString:@"{LF}"];
+    ret = [ret stringByReplacingOccurrencesOfString:@"\r" withString:@"{CR}"];
     return ret;
 }
 
