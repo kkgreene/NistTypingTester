@@ -63,7 +63,7 @@
             // 
             this.tbEntry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEntry.Cue = "Enter text here ...";
+            this.tbEntry.Cue = "Type here ...";
             this.tbEntry.Id = "ProficiencyBox";
             this.tbEntry.Location = new System.Drawing.Point(23, 118);
             this.tbEntry.Name = "tbEntry";

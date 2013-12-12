@@ -30,7 +30,7 @@ namespace TypingTester.controls
             Session.Instance.CurrentSubPhase = Constants.SubPhase.None;
             for (int i = 0; i < Session.Instance.EntityStrings.Length; i++ )
             {
-                CueTextBox ctb = new CueTextBox(string.Format("Field{0}", i), "Enter string ...", string.Empty);
+                CueTextBox ctb = new CueTextBox(string.Format("Field{0}", i), "Type here ...", string.Empty);
                 ctb.UseSystemPasswordChar = true;
                 ctb.Width = flowLayoutPanel1.Width - 20;
                 flowLayoutPanel1.Controls.Add(ctb);
