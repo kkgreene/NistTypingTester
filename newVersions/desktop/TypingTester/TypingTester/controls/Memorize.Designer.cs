@@ -53,6 +53,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbWorkArea.Cue = "Work area ...";
+            this.tbWorkArea.EscapeCurrentValue = true;
             this.tbWorkArea.Id = null;
             this.tbWorkArea.Location = new System.Drawing.Point(23, 116);
             this.tbWorkArea.Multiline = true;

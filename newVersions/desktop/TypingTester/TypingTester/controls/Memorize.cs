@@ -24,6 +24,7 @@ namespace TypingTester.controls
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, Constants.SubPhase.FreePractice,
                                                     @"Next button pressed"));
+            Session.Instance.WorkAreaContents = this.tbWorkArea.Text;
             if (Options.Instance.ForcedPracticeRounds == 0)
             {
                 executeCommand("Go To Verify");
@@ -41,6 +42,7 @@ namespace TypingTester.controls
             lblPassword.Text = currentString;
             SetHeaderText("Memorize");
             SetEntityProgressText(string.Format("Password {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length));
+            this.tbWorkArea.Text = Session.Instance.WorkAreaContents;
         }
 
         public override void ExitControl()

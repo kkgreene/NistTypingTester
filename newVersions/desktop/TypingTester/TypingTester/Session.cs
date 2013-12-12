@@ -229,11 +229,12 @@ namespace TypingTester
 
         private void initializeLogFiles()
         {
+            DateTime startingTime = DateTime.Now;
             string filepath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             filepath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"NIST_TypingTesterOutput");
             Directory.CreateDirectory(filepath);
-            string rawLogFilename = Path.Combine(filepath, string.Format("{0}-raw.txt", this.ParticipantNumber));
-            string summaryLogFilename = Path.Combine(filepath, string.Format("{0}-summary.txt", this.ParticipantNumber));
+            string rawLogFilename = Path.Combine(filepath, string.Format("{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}-raw.txt", this.ParticipantNumber, startingTime));
+            string summaryLogFilename = Path.Combine(filepath, string.Format("{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}-summary.txt", this.ParticipantNumber, startingTime));
             rawLog = new StreamWriter(rawLogFilename, false);
             rawLog.AutoFlush = true;
             summaryLog = new StreamWriter(summaryLogFilename, false);

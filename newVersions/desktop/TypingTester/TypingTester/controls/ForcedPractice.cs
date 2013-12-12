@@ -21,6 +21,7 @@ namespace TypingTester.controls
             addCommand(@"Go To Verify", new commands.CommandGoToScreen(reciever, Constants.Screen.Verify));
             addCommand(@"Go To Recall", new commands.CommandGoToScreen(reciever, Constants.Screen.Recall));
             addCommand(@"Next Entity", new commands.NextEntity(reciever));
+            addCommand(@"Go To Entry", new commands.CommandGoToScreen(reciever, Constants.Screen.Entry));
             //currentString = Session.Instance.EntityStrings[Session.Instance.CurrentEntity];
             
         }
@@ -80,10 +81,21 @@ namespace TypingTester.controls
         {
             if (Session.Instance.CurrentPracticeRound > Options.Instance.ForcedPracticeRounds)
             {
-                if (MessageBox.Show("Do you want to proceed to the next phase?", "Move on",
-                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (Options.Instance.VerifyRounds > 0)
                 {
-                    executeCommand(@"Go To Verify");
+                    if (MessageBox.Show("Do you want to proceed to the Verify task?", "Practice Completed",
+                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        executeCommand(@"Go To Verify");
+                    }
+                }
+                else
+                {
+                    if (MessageBox.Show("Do you want to proceed to the Enter task?", "Practice Completed",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        executeCommand(@"Go to Entry");
+                    }
                 }
             }
         }
