@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParticipantNumberControl));
             this.label1 = new System.Windows.Forms.Label();
             this.btnBegin = new System.Windows.Forms.Button();
             this.textBox1 = new TypingTester.CueTextBox();
@@ -49,13 +48,13 @@
             // 
             // btnBegin
             // 
-            this.btnBegin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBegin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnBegin.Enabled = false;
-            this.btnBegin.Image = ((System.Drawing.Image)(resources.GetObject("btnBegin.Image")));
-            this.btnBegin.Location = new System.Drawing.Point(691, 271);
+            this.btnBegin.Location = new System.Drawing.Point(353, 271);
             this.btnBegin.Name = "btnBegin";
             this.btnBegin.Size = new System.Drawing.Size(75, 23);
             this.btnBegin.TabIndex = 1;
+            this.btnBegin.Text = "Next";
             this.btnBegin.UseVisualStyleBackColor = true;
             this.btnBegin.Click += new System.EventHandler(this.btnBegin_Click);
             // 

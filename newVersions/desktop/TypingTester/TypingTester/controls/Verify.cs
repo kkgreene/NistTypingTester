@@ -137,5 +137,10 @@ namespace TypingTester.controls
             executeCommand(@"Skip Entity");
             return;
         }
+
+        private void imgIncorrect_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

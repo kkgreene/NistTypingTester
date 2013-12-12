@@ -58,23 +58,24 @@
             // 
             // btnNext
             // 
-            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNext.Enabled = false;
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.Location = new System.Drawing.Point(691, 144);
+            this.btnNext.Location = new System.Drawing.Point(393, 144);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 2;
+            this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(23, 144);
+            this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBack.Location = new System.Drawing.Point(312, 144);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 1;
+            this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -84,7 +85,7 @@
             this.lblIncorrect.AutoSize = true;
             this.lblIncorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIncorrect.ForeColor = System.Drawing.Color.Red;
-            this.lblIncorrect.Location = new System.Drawing.Point(380, 153);
+            this.lblIncorrect.Location = new System.Drawing.Point(371, 183);
             this.lblIncorrect.Name = "lblIncorrect";
             this.lblIncorrect.Size = new System.Drawing.Size(81, 20);
             this.lblIncorrect.TabIndex = 11;
@@ -95,13 +96,14 @@
             // 
             this.imgIncorrect.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.imgIncorrect.Image = ((System.Drawing.Image)(resources.GetObject("imgIncorrect.Image")));
-            this.imgIncorrect.Location = new System.Drawing.Point(338, 144);
+            this.imgIncorrect.Location = new System.Drawing.Point(329, 174);
             this.imgIncorrect.Name = "imgIncorrect";
             this.imgIncorrect.Size = new System.Drawing.Size(36, 36);
             this.imgIncorrect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.imgIncorrect.TabIndex = 10;
             this.imgIncorrect.TabStop = false;
             this.imgIncorrect.Visible = false;
+            this.imgIncorrect.Click += new System.EventHandler(this.imgIncorrect_Click);
             // 
             // btnQuit
             // 
