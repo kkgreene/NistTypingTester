@@ -971,7 +971,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Thank You" id="wVD-Yn-qts">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="bVd-gN-8c6">
+                                        <barButtonItem key="rightBarButtonItem" image="766-arrow-right.png" id="bVd-gN-8c6">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="done" destination="kdq-A0-SUg" id="flT-ID-b4s"/>
@@ -1547,6 +1547,7 @@
         <image name="759-refresh-2.png" width="28" height="28"/>
         <image name="765-arrow-left-white.png" width="14" height="28"/>
         <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
