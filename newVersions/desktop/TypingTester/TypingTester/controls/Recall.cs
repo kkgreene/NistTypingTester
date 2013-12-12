@@ -26,8 +26,8 @@ namespace TypingTester.controls
                     CueTextBox ctb = c as CueTextBox;
                     enteredValues.AppendFormat("{0}:{1}\n",ctb.Id, ctb.Text);
                 }
-                Session.Instance.WriteToSummaryLog(enteredValues.ToString());
             }
+            Session.Instance.WriteToSummaryLog(enteredValues.ToString());
             executeCommand(@"Go To Thank You");
         }
 
@@ -45,7 +45,7 @@ namespace TypingTester.controls
                 ctb.Width = flowLayoutPanel1.Width - 20;
                 flowLayoutPanel1.Controls.Add(ctb);
             }
-            
+
         }
     }
 }

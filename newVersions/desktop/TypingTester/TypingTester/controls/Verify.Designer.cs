@@ -46,35 +46,35 @@
             this.tbEntry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbEntry.Cue = "Type here ...";
+            this.tbEntry.EscapeCurrentValue = false;
             this.tbEntry.Id = null;
             this.tbEntry.Location = new System.Drawing.Point(23, 118);
             this.tbEntry.Name = "tbEntry";
-            this.tbEntry.Size = new System.Drawing.Size(735, 20);
-            this.tbEntry.TabIndex = 5;
+            this.tbEntry.Size = new System.Drawing.Size(743, 20);
+            this.tbEntry.TabIndex = 0;
             this.tbEntry.TargetString = "";
             this.tbEntry.UseSystemPasswordChar = true;
             this.tbEntry.TextChanged += new System.EventHandler(this.tbEntry_TextChanged);
             // 
             // btnNext
             // 
-            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNext.Enabled = false;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.Location = new System.Drawing.Point(393, 144);
+            this.btnNext.Location = new System.Drawing.Point(691, 144);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 6;
+            this.btnNext.TabIndex = 2;
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(312, 144);
+            this.btnBack.Location = new System.Drawing.Point(23, 144);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 7;
+            this.btnBack.TabIndex = 1;
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -84,7 +84,7 @@
             this.lblIncorrect.AutoSize = true;
             this.lblIncorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIncorrect.ForeColor = System.Drawing.Color.Red;
-            this.lblIncorrect.Location = new System.Drawing.Point(380, 199);
+            this.lblIncorrect.Location = new System.Drawing.Point(380, 153);
             this.lblIncorrect.Name = "lblIncorrect";
             this.lblIncorrect.Size = new System.Drawing.Size(81, 20);
             this.lblIncorrect.TabIndex = 11;
@@ -95,7 +95,7 @@
             // 
             this.imgIncorrect.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.imgIncorrect.Image = ((System.Drawing.Image)(resources.GetObject("imgIncorrect.Image")));
-            this.imgIncorrect.Location = new System.Drawing.Point(338, 183);
+            this.imgIncorrect.Location = new System.Drawing.Point(338, 144);
             this.imgIncorrect.Name = "imgIncorrect";
             this.imgIncorrect.Size = new System.Drawing.Size(36, 36);
             this.imgIncorrect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -112,7 +112,7 @@
             this.btnQuit.Location = new System.Drawing.Point(23, 470);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 34);
-            this.btnQuit.TabIndex = 12;
+            this.btnQuit.TabIndex = 3;
             this.btnQuit.Text = "Quit";
             this.btnQuit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -135,7 +135,7 @@
             this.btnSkip.Location = new System.Drawing.Point(104, 470);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(75, 34);
-            this.btnSkip.TabIndex = 13;
+            this.btnSkip.TabIndex = 4;
             this.btnSkip.Text = "Skip";
             this.btnSkip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSkip.UseVisualStyleBackColor = true;

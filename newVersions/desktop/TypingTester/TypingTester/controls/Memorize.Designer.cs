@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Memorize));
             this.lblPassword = new System.Windows.Forms.Label();
             this.tbWorkArea = new TypingTester.CueTextBox();
             this.btnNext = new System.Windows.Forms.Button();
@@ -42,7 +43,7 @@
             this.lblPassword.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(23, 57);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(726, 38);
+            this.lblPassword.Size = new System.Drawing.Size(743, 38);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Password";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -58,18 +59,18 @@
             this.tbWorkArea.Location = new System.Drawing.Point(23, 116);
             this.tbWorkArea.Multiline = true;
             this.tbWorkArea.Name = "tbWorkArea";
-            this.tbWorkArea.Size = new System.Drawing.Size(726, 272);
+            this.tbWorkArea.Size = new System.Drawing.Size(743, 352);
             this.tbWorkArea.TabIndex = 0;
             this.tbWorkArea.TargetString = "";
             // 
             // btnNext
             // 
-            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnNext.Location = new System.Drawing.Point(353, 394);
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.Location = new System.Drawing.Point(691, 474);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 1;
-            this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
