@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace TypingTester.controls
 {
-    public partial class Recall : TypingTester.controls.BaseControl
+    public partial class Recall : BaseControl
     {
         public Recall(BaseForm reciever)
         {
@@ -18,6 +18,16 @@ namespace TypingTester.controls
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            StringBuilder enteredValues = new StringBuilder("Recalled Values\n");
+            foreach (Control c in flowLayoutPanel1.Controls)
+            {
+                if (c is CueTextBox)
+                {
+                    CueTextBox ctb = c as CueTextBox;
+                    enteredValues.AppendFormat("{0}:{1}\n",ctb.Id, ctb.Text);
+                }
+                Session.Instance.WriteToSummaryLog(enteredValues.ToString());
+            }
             executeCommand(@"Go To Thank You");
         }
 

@@ -94,11 +94,6 @@
             // spnVerification
             // 
             this.spnVerification.Location = new System.Drawing.Point(153, 103);
-            this.spnVerification.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.spnVerification.Name = "spnVerification";
             this.spnVerification.Size = new System.Drawing.Size(120, 20);
             this.spnVerification.TabIndex = 3;
@@ -114,6 +109,11 @@
             this.spnForcedPractice.Name = "spnForcedPractice";
             this.spnForcedPractice.Size = new System.Drawing.Size(120, 20);
             this.spnForcedPractice.TabIndex = 2;
+            this.spnForcedPractice.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             // 
             // spnRepetitions
             // 
@@ -127,7 +127,7 @@
             this.spnRepetitions.Size = new System.Drawing.Size(120, 20);
             this.spnRepetitions.TabIndex = 1;
             this.spnRepetitions.Value = new decimal(new int[] {
-            1,
+            10,
             0,
             0,
             0});
@@ -144,7 +144,7 @@
             this.spnNumberOfEntities.Size = new System.Drawing.Size(120, 20);
             this.spnNumberOfEntities.TabIndex = 0;
             this.spnNumberOfEntities.Value = new decimal(new int[] {
-            1,
+            10,
             0,
             0,
             0});

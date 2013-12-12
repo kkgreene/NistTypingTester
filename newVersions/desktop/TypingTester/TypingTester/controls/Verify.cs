@@ -28,13 +28,13 @@ namespace TypingTester.controls
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, Constants.SubPhase.Verify,
                                                     @"Back button pressed"));
-            if (Options.Instance.ForcedPracticeRounds == 0)
+            if (Options.Instance.ForcedPracticeRounds > 0)
             {
-                executeCommand(@"Go To Memorize");
+                executeCommand(@"Go To Practice");
             }
             else
             {
-                executeCommand(@"Go To Practice");
+                executeCommand(@"Go To Memorize");
             }
         }
 

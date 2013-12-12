@@ -322,7 +322,7 @@ namespace TypingTester
             Console.WriteLine(text);
         }
 
-        private void WriteToSummaryLog(string text)
+        public void WriteToSummaryLog(string text)
         {
             summaryLog.WriteLine(text);
         }
