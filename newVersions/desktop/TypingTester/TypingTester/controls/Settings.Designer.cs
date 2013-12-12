@@ -242,21 +242,23 @@
             // tbSkipString
             // 
             this.tbSkipString.Cue = "SKIP THIS";
+            this.tbSkipString.EscapeCurrentValue = false;
             this.tbSkipString.Id = null;
             this.tbSkipString.Location = new System.Drawing.Point(80, 35);
             this.tbSkipString.Name = "tbSkipString";
             this.tbSkipString.Size = new System.Drawing.Size(612, 20);
-            this.tbSkipString.TabIndex = 0;
+            this.tbSkipString.TabIndex = 1;
             this.tbSkipString.TargetString = "";
             // 
             // tbQuitString
             // 
             this.tbQuitString.Cue = "I QUIT";
+            this.tbQuitString.EscapeCurrentValue = false;
             this.tbQuitString.Id = null;
             this.tbQuitString.Location = new System.Drawing.Point(80, 13);
             this.tbQuitString.Name = "tbQuitString";
             this.tbQuitString.Size = new System.Drawing.Size(611, 20);
-            this.tbQuitString.TabIndex = 6;
+            this.tbQuitString.TabIndex = 0;
             this.tbQuitString.TargetString = "";
             // 
             // cbHideButton
@@ -265,7 +267,7 @@
             this.cbHideButton.Location = new System.Drawing.Point(520, 62);
             this.cbHideButton.Name = "cbHideButton";
             this.cbHideButton.Size = new System.Drawing.Size(171, 17);
-            this.cbHideButton.TabIndex = 3;
+            this.cbHideButton.TabIndex = 4;
             this.cbHideButton.Text = "Enable hide on forced practice";
             this.cbHideButton.UseVisualStyleBackColor = true;
             // 
@@ -275,7 +277,7 @@
             this.cbQuitButton.Location = new System.Drawing.Point(268, 62);
             this.cbQuitButton.Name = "cbQuitButton";
             this.cbQuitButton.Size = new System.Drawing.Size(109, 17);
-            this.cbQuitButton.TabIndex = 2;
+            this.cbQuitButton.TabIndex = 3;
             this.cbQuitButton.Text = "Show Quit Button";
             this.cbQuitButton.UseVisualStyleBackColor = true;
             // 
@@ -285,7 +287,7 @@
             this.cbSkipButton.Location = new System.Drawing.Point(14, 62);
             this.cbSkipButton.Name = "cbSkipButton";
             this.cbSkipButton.Size = new System.Drawing.Size(111, 17);
-            this.cbSkipButton.TabIndex = 1;
+            this.cbSkipButton.TabIndex = 2;
             this.cbSkipButton.Text = "Show Skip Button";
             this.cbSkipButton.UseVisualStyleBackColor = true;
             // 
@@ -355,6 +357,7 @@
             // tbOrderSeed
             // 
             this.tbOrderSeed.Cue = "0";
+            this.tbOrderSeed.EscapeCurrentValue = false;
             this.tbOrderSeed.Id = null;
             this.tbOrderSeed.Location = new System.Drawing.Point(80, 59);
             this.tbOrderSeed.Name = "tbOrderSeed";
@@ -389,6 +392,7 @@
             // tbSelectionSeed
             // 
             this.tbSelectionSeed.Cue = "0";
+            this.tbSelectionSeed.EscapeCurrentValue = false;
             this.tbSelectionSeed.Id = null;
             this.tbSelectionSeed.Location = new System.Drawing.Point(80, 59);
             this.tbSelectionSeed.Name = "tbSelectionSeed";
@@ -419,30 +423,33 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(272, 470);
+            this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnReset.Location = new System.Drawing.Point(434, 470);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 5;
+            this.btnReset.TabIndex = 2;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCancel.Location = new System.Drawing.Point(353, 470);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 6;
+            this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(434, 470);
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSave.Location = new System.Drawing.Point(272, 470);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -460,6 +467,14 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Settings";
             this.Load += new System.EventHandler(this.Settings_Load);
+            this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.groupBox3, 0);
+            this.Controls.SetChildIndex(this.groupBox4, 0);
+            this.Controls.SetChildIndex(this.groupBox5, 0);
+            this.Controls.SetChildIndex(this.groupBox2, 0);
+            this.Controls.SetChildIndex(this.btnReset, 0);
+            this.Controls.SetChildIndex(this.btnCancel, 0);
+            this.Controls.SetChildIndex(this.btnSave, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spnVerification)).EndInit();
@@ -476,6 +491,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
