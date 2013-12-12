@@ -258,6 +258,21 @@
         default:
             break;
     }
+    // add subphase # to the notes
+    switch(event.subPhase)
+    {
+        case FreePractice:
+            event.notes = [NSString stringWithFormat:@"%@, Free Practice #:%i", event.notes, timesInFreePractice];
+            break;
+            
+        case ForcedPractice:
+            event.notes = [NSString stringWithFormat:@"%@, Forced Practice #:%i", event.notes, timesInForcedPractice];
+            break;
+            
+        case Verify:
+            event.notes = [NSString stringWithFormat:@"%@, Verify #:%i", event.notes, timesInVerify];
+            break;
+    }
     event.interval = [event.time timeIntervalSinceDate:sessionStartTime];
     event.participantNumber = self.participant.participantNumber;
     [self writeLineToRawLogFile:[event description]];
