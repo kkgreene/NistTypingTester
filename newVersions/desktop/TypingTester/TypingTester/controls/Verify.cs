@@ -80,16 +80,17 @@ namespace TypingTester.controls
 
         private void Verify_Load(object sender, EventArgs e)
         {
+            SetHeaderText("Verify");
             Session.Instance.CurrentPhase = Constants.Phase.Memorize;
             Session.Instance.CurrentSubPhase = Constants.SubPhase.Verify;
             tbEntry.TargetString = currentString;
-            lblSessionProgress.Text = string.Format("Password {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length);
+            SetEntityProgressText(string.Format("Password {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length));
             UpdateUi();
         }
 
         private void UpdateUi()
         {
-            lblEntityProgress.Text = string.Format("Round {0} of {1}", Session.Instance.CurrentVerifyRound, Options.Instance.VerifyRounds);
+            SetRoundProgressText(string.Format("Round {0} of {1}", Session.Instance.CurrentVerifyRound, Options.Instance.VerifyRounds));
         }
 
         public override void ExitControl()

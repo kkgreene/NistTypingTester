@@ -77,6 +77,10 @@
             this.Controls.Add(this.btnBegin);
             this.Controls.Add(this.label1);
             this.Name = "ParticipantNumberControl";
+            this.Load += new System.EventHandler(this.ParticipantNumberControl_Load);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.btnBegin, 0);
+            this.Controls.SetChildIndex(this.textBox1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

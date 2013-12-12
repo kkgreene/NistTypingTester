@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForcedPractice));
-            this.lblSessionProgress = new System.Windows.Forms.Label();
-            this.lblRound = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.tbEntry = new TypingTester.CueTextBox();
             this.lblEntity = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
@@ -45,36 +42,6 @@
             this.btnSkip = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgIncorrect)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblSessionProgress
-            // 
-            this.lblSessionProgress.AutoSize = true;
-            this.lblSessionProgress.Location = new System.Drawing.Point(20, 15);
-            this.lblSessionProgress.Name = "lblSessionProgress";
-            this.lblSessionProgress.Size = new System.Drawing.Size(85, 13);
-            this.lblSessionProgress.TabIndex = 0;
-            this.lblSessionProgress.Text = "Password # of #";
-            // 
-            // lblRound
-            // 
-            this.lblRound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRound.AutoSize = true;
-            this.lblRound.Location = new System.Drawing.Point(695, 15);
-            this.lblRound.Name = "lblRound";
-            this.lblRound.Size = new System.Drawing.Size(71, 13);
-            this.lblRound.TabIndex = 1;
-            this.lblRound.Text = "Round # of #";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(357, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Practice";
             // 
             // tbEntry
             // 
@@ -221,11 +188,17 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lblEntity);
             this.Controls.Add(this.tbEntry);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblRound);
-            this.Controls.Add(this.lblSessionProgress);
             this.Name = "ForcedPractice";
             this.Load += new System.EventHandler(this.ForcedPractice_Load);
+            this.Controls.SetChildIndex(this.tbEntry, 0);
+            this.Controls.SetChildIndex(this.lblEntity, 0);
+            this.Controls.SetChildIndex(this.btnNext, 0);
+            this.Controls.SetChildIndex(this.imgIncorrect, 0);
+            this.Controls.SetChildIndex(this.lblIncorrect, 0);
+            this.Controls.SetChildIndex(this.btnBack, 0);
+            this.Controls.SetChildIndex(this.btnHide, 0);
+            this.Controls.SetChildIndex(this.btnQuit, 0);
+            this.Controls.SetChildIndex(this.btnSkip, 0);
             ((System.ComponentModel.ISupportInitialize)(this.imgIncorrect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,9 +207,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblSessionProgress;
-        private System.Windows.Forms.Label lblRound;
-        private System.Windows.Forms.Label label3;
         private CueTextBox tbEntry;
         private System.Windows.Forms.Label lblEntity;
         private System.Windows.Forms.Button btnNext;

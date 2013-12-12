@@ -33,7 +33,6 @@
             this.lblParticipantNumber = new System.Windows.Forms.Label();
             this.btnBegin = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // webBrowser1
@@ -96,22 +95,10 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(349, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 29);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Ready";
-            // 
             // ReadyScreenControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnBegin);
             this.Controls.Add(this.lblParticipantNumber);
@@ -119,6 +106,11 @@
             this.Controls.Add(this.webBrowser1);
             this.Name = "ReadyScreenControl";
             this.Load += new System.EventHandler(this.ReadyScreenControl_Load);
+            this.Controls.SetChildIndex(this.webBrowser1, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.lblParticipantNumber, 0);
+            this.Controls.SetChildIndex(this.btnBegin, 0);
+            this.Controls.SetChildIndex(this.btnBack, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,6 +123,5 @@
         private System.Windows.Forms.Label lblParticipantNumber;
         private System.Windows.Forms.Button btnBegin;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label label2;
     }
 }

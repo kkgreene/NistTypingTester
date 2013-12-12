@@ -19,6 +19,9 @@ namespace TypingTester.controls
 
         private void Instructions_Load(object sender, EventArgs e)
         {
+            SetHeaderText("Instructions");
+            SetEntityProgressVisibility(false);
+            SetRoundProgresssVisibility(false);
             FileStream source = new FileStream(@".\documents\instructions.html", FileMode.Open, FileAccess.Read);
             webBrowser1.DocumentStream = source;
             Session.Instance.CurrentPhase = Constants.Phase.Instruction;

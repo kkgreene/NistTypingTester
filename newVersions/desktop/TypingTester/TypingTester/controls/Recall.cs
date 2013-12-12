@@ -23,6 +23,9 @@ namespace TypingTester.controls
 
         private void Recall_Load(object sender, EventArgs e)
         {
+            SetHeaderText("Recall");
+            SetEntityProgressVisibility(false);
+            SetRoundProgresssVisibility(false);
             Session.Instance.CurrentPhase = Constants.Phase.Recall;
             Session.Instance.CurrentSubPhase = Constants.SubPhase.None;
             for (int i = 0; i < Session.Instance.EntityStrings.Length; i++ )

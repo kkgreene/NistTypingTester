@@ -35,6 +35,9 @@ namespace TypingTester.controls
 
         private void ReadyScreenControl_Load(object sender, EventArgs e)
         {
+            SetHeaderText("Ready");
+            SetEntityProgressVisibility(false);
+            SetRoundProgresssVisibility(false);
             FileStream source = new FileStream(@".\documents\welcome.html", FileMode.Open, FileAccess.Read);
             webBrowser1.DocumentStream = source;
         }

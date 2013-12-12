@@ -28,21 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblEntityProgress = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.tbWorkArea = new TypingTester.CueTextBox();
             this.btnNext = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblEntityProgress
-            // 
-            this.lblEntityProgress.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblEntityProgress.AutoSize = true;
-            this.lblEntityProgress.Location = new System.Drawing.Point(348, 15);
-            this.lblEntityProgress.Name = "lblEntityProgress";
-            this.lblEntityProgress.Size = new System.Drawing.Size(85, 13);
-            this.lblEntityProgress.TabIndex = 0;
-            this.lblEntityProgress.Text = "Password # of #";
             // 
             // lblPassword
             // 
@@ -89,9 +78,11 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.tbWorkArea);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblEntityProgress);
             this.Name = "Memorize";
             this.Load += new System.EventHandler(this.Memorize_Load);
+            this.Controls.SetChildIndex(this.lblPassword, 0);
+            this.Controls.SetChildIndex(this.tbWorkArea, 0);
+            this.Controls.SetChildIndex(this.btnNext, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,7 +90,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblEntityProgress;
         private System.Windows.Forms.Label lblPassword;
         private CueTextBox tbWorkArea;
         private System.Windows.Forms.Button btnNext;

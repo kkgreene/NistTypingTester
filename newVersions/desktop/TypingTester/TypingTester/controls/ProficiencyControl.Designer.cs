@@ -31,7 +31,6 @@
             this.lblProficiencyString = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.tbEntry = new TypingTester.CueTextBox();
-            this.lblProgress = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblProficiencyString
@@ -73,25 +72,17 @@
             this.tbEntry.TargetString = "";
             this.tbEntry.TextChanged += new System.EventHandler(this.tbEntry_TextChanged);
             // 
-            // lblProgress
-            // 
-            this.lblProgress.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblProgress.AutoSize = true;
-            this.lblProgress.Location = new System.Drawing.Point(354, 15);
-            this.lblProgress.Name = "lblProgress";
-            this.lblProgress.Size = new System.Drawing.Size(72, 13);
-            this.lblProgress.TabIndex = 0;
-            this.lblProgress.Text = "Phrase # of #";
-            // 
             // ProficiencyControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.Controls.Add(this.lblProficiencyString);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.tbEntry);
-            this.Controls.Add(this.lblProgress);
             this.Name = "ProficiencyControl";
             this.Load += new System.EventHandler(this.ProficiencyControl_Load);
+            this.Controls.SetChildIndex(this.tbEntry, 0);
+            this.Controls.SetChildIndex(this.btnNext, 0);
+            this.Controls.SetChildIndex(this.lblProficiencyString, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,7 +90,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblProgress;
         private System.Windows.Forms.Label lblProficiencyString;
         private CueTextBox tbEntry;
         private System.Windows.Forms.Button btnNext;

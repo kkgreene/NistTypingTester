@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Verify));
-            this.lblSessionProgress = new System.Windows.Forms.Label();
-            this.lblEntityProgress = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.tbEntry = new TypingTester.CueTextBox();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -43,36 +40,6 @@
             this.btnSkip = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgIncorrect)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblSessionProgress
-            // 
-            this.lblSessionProgress.AutoSize = true;
-            this.lblSessionProgress.Location = new System.Drawing.Point(20, 15);
-            this.lblSessionProgress.Name = "lblSessionProgress";
-            this.lblSessionProgress.Size = new System.Drawing.Size(85, 13);
-            this.lblSessionProgress.TabIndex = 0;
-            this.lblSessionProgress.Text = "Password # of #";
-            // 
-            // lblEntityProgress
-            // 
-            this.lblEntityProgress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEntityProgress.AutoSize = true;
-            this.lblEntityProgress.Location = new System.Drawing.Point(695, 15);
-            this.lblEntityProgress.Name = "lblEntityProgress";
-            this.lblEntityProgress.Size = new System.Drawing.Size(71, 13);
-            this.lblEntityProgress.TabIndex = 1;
-            this.lblEntityProgress.Text = "Round # of #";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(366, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Verify";
             // 
             // tbEntry
             // 
@@ -185,11 +152,15 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.tbEntry);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblEntityProgress);
-            this.Controls.Add(this.lblSessionProgress);
             this.Name = "Verify";
             this.Load += new System.EventHandler(this.Verify_Load);
+            this.Controls.SetChildIndex(this.tbEntry, 0);
+            this.Controls.SetChildIndex(this.btnNext, 0);
+            this.Controls.SetChildIndex(this.btnBack, 0);
+            this.Controls.SetChildIndex(this.imgIncorrect, 0);
+            this.Controls.SetChildIndex(this.lblIncorrect, 0);
+            this.Controls.SetChildIndex(this.btnQuit, 0);
+            this.Controls.SetChildIndex(this.btnSkip, 0);
             ((System.ComponentModel.ISupportInitialize)(this.imgIncorrect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -198,9 +169,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblSessionProgress;
-        private System.Windows.Forms.Label lblEntityProgress;
-        private System.Windows.Forms.Label label3;
         private CueTextBox tbEntry;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnBack;

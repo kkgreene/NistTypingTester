@@ -36,7 +36,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(181, 25);
+            this.label1.Location = new System.Drawing.Point(182, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(418, 13);
             this.label1.TabIndex = 0;
@@ -69,6 +69,9 @@
             this.Controls.Add(this.label1);
             this.Name = "Recall";
             this.Load += new System.EventHandler(this.Recall_Load);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.btnNext, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
