@@ -104,7 +104,8 @@ typedef enum
     SpecialKeyKeyboardChangeRight,
     SpecialKeyReturn,
     SpecialKeyHideKeyboard,
-    SpecialKeyDelete
+    SpecialKeyDelete,
+    SpecialKeyUndo
 } SpecialKey;
 
 typedef enum

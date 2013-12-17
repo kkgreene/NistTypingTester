@@ -60,8 +60,9 @@
 // we override this so we can subsititute in known values for non displayinmg or special characters
 -(void)setEnteredCharacters:(NSString *)enteredCharacters
 {
-    //_enteredCharacters = [enteredCharacters stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    _enteredCharacters = [enteredCharacters stringByReplacingOccurrencesOfString:@" " withString:@"<space>"];
+    // utf 8 encode entered character
+    _enteredCharacters = [enteredCharacters stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    //_enteredCharacters = [enteredCharacters stringByReplacingOccurrencesOfString:@" " withString:@"<space>"];
 }
 
 @end

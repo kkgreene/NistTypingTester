@@ -96,6 +96,14 @@
                     event.notes = [NSString stringWithFormat:@"Hide Keyboard Key Pressed at %.0f:%.0f", touchPoint.x, touchPoint.y];
                     [self.session addEvent:event];
                     break;
+                    
+                case SpecialKeyUndo:
+                    // log event
+                    event = [[ttEvent alloc]initWithEventType:SpecialKeyPressed andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+                    event.point = touchPoint;
+                    event.notes = [NSString stringWithFormat:@"Undo/Redo Key Pressed at %.0f:%.0f", touchPoint.x, touchPoint.y];
+                    [self.session addEvent:event];
+                    break;
                 
                 case SpecialKeyNone:
                 default:

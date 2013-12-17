@@ -71,6 +71,7 @@ static ttKeyHitDetector *instance = nil;
         [iPadLandscapeHitboxes addObject:[[ttHitBox alloc]initWithRect:CGRectMake(930, 417, 90, 90) forKeyType:SpecialKeyDelete]];
         [iPadLandscapeHitboxes addObject:[[ttHitBox alloc]initWithRect:CGRectMake(870, 510, 150, 70) forKeyType:SpecialKeyReturn]];
         [iPadLandscapeHitboxes addObject:[[ttHitBox alloc]initWithRect:CGRectMake(933, 680, 87, 88) forKeyType:SpecialKeyHideKeyboard]];
+        [iPadLandscapeHitboxes addObject:[[ttHitBox alloc]initWithRect:CGRectMake(92, 594, 178, 83) forKeyType:SpecialKeyUndo]];
         
         iPadPortraitHitboxes = [[NSMutableArray alloc]initWithCapacity:7];
         [iPadPortraitHitboxes addObject:[[ttHitBox alloc]initWithRect:CGRectMake(0, 896, 66, 62) forKeyType:SpecialKeyShift]];
@@ -80,6 +81,7 @@ static ttKeyHitDetector *instance = nil;
         [iPadPortraitHitboxes addObject:[[ttHitBox alloc]initWithRect:CGRectMake(696, 760, 69, 69) forKeyType:SpecialKeyDelete]];
         [iPadPortraitHitboxes addObject:[[ttHitBox alloc]initWithRect:CGRectMake(660, 843, 104, 35) forKeyType:SpecialKeyReturn]];
         [iPadPortraitHitboxes addObject:[[ttHitBox alloc]initWithRect:CGRectMake(700, 960, 55, 55) forKeyType:SpecialKeyHideKeyboard]];
+        [iPadPortraitHitboxes addObject:[[ttHitBox alloc]initWithRect:CGRectMake(70, 895, 135, 61) forKeyType:SpecialKeyUndo]];
         
     }
     return self;
