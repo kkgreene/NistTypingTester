@@ -18,7 +18,7 @@
 
 @implementation ttRecallTableViewController
 {
-
+    NSMutableDictionary *enteredStrings;
 }
 
 -(id) initWithCoder:(NSCoder *)aDecoder
@@ -26,6 +26,7 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
+        enteredStrings = [[NSMutableDictionary alloc]initWithCapacity:self.session.entities.count];
     }
     return self;
 }
@@ -76,13 +77,25 @@
     static NSString *CellIdentifier = @"RecallCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     // Configure the cell...
+    NSString *fieldId = [NSString stringWithFormat:@"Field %i", indexPath.row];
     ttTextFieldWithName *field = (ttTextFieldWithName*)[cell viewWithTag:1000];
-    field.name = [NSString stringWithFormat:@"Field %i", indexPath.row];
+    field.name = fieldId;
     field.delegate = self;
+    [enteredStrings setObject:@"" forKey:fieldId];
     return cell;
 }
 
-
+-(NSString*) getStrings
+{
+    NSMutableString *returnString = [[NSMutableString alloc]init];
+    for(int i = 0; i < self.session.entities.count; i++)
+    {
+        NSString *fieldId = [NSString stringWithFormat:@"Field %i", i];
+        NSString *value = [enteredStrings objectForKey:fieldId];
+        [returnString appendFormat:@"%@ : %@\n", fieldId, value];
+    }
+    return [returnString copy];
+}
 #pragma mark - Table view delegate
 
 
@@ -107,6 +120,8 @@
         inputEvent.notes = [NSString stringWithFormat:@"%@ entered in %@", string, field.name];
     }
     [self.session addEvent:inputEvent];
+    
+    [enteredStrings setObject:newString forKey:[field.name copy]];
     return YES;
 }
 

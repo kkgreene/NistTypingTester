@@ -272,6 +272,9 @@
         case Verify:
             event.notes = [NSString stringWithFormat:@"%@, Verify #:%i", event.notes, timesInVerify];
             break;
+            
+        default:
+            break;
     }
     event.interval = [event.time timeIntervalSinceDate:sessionStartTime];
     event.participantNumber = self.participant.participantNumber;
