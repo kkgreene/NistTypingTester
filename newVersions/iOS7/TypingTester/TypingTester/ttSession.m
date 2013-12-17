@@ -262,18 +262,22 @@
     switch(event.subPhase)
     {
         case FreePractice:
+            event.subphaseVisitNumber = timesInFreePractice;
             event.notes = [NSString stringWithFormat:@"%@, Free Practice #:%i", event.notes, timesInFreePractice];
             break;
             
         case ForcedPractice:
+            event.subphaseVisitNumber = timesInForcedPractice;
             event.notes = [NSString stringWithFormat:@"%@, Forced Practice #:%i", event.notes, timesInForcedPractice];
             break;
             
         case Verify:
+            event.subphaseVisitNumber = timesInVerify;
             event.notes = [NSString stringWithFormat:@"%@, Verify #:%i", event.notes, timesInVerify];
             break;
             
         default:
+            event.subphaseVisitNumber = 1;
             break;
     }
     event.interval = [event.time timeIntervalSinceDate:sessionStartTime];
@@ -293,7 +297,7 @@
     rawFileHandle = [self createLogfile:rawLogFile];
     summaryFileHandle = [self createLogfile:summaryLogFile];
     // write the raw log file header
-    [self writeLineToRawLogFile:@"Time\tTime Since Session Start\tParticpant Id\tEvent\tPhase\tSubPhase\tTarget String\tX\tY\tLocation\tLength\tCharacters\tCurrent Value\tNotes"];
+    [self writeLineToRawLogFile:[ttEvent getHeaderLine]];
     if (rawFileHandle == nil || summaryFileHandle == nil) return NO;
     return YES;
 }

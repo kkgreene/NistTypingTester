@@ -25,6 +25,8 @@
 @property (nonatomic, copy) NSString *enteredCharacters;
 @property (nonatomic, copy) NSString *currentValue;
 @property (nonatomic, assign) CGPoint point;
+@property (nonatomic, assign) int currentRound;
+@property (nonatomic, assign) int subphaseVisitNumber;
 
 -(id)initWithEventType:(Event)event;
 -(id)initWithEventType:(Event)event andPhase:(Phase)phase;
@@ -32,5 +34,7 @@
 -(id)initWithEventType:(Event)event andPhase:(Phase)phase andSubPhase:(SubPhase)subPhase andTime:(NSDate*)date;
 
 -(BOOL)writeEventToLog:(NSFileHandle*)fileHandle;
+
++(NSString*)getHeaderLine;
 
 @end
