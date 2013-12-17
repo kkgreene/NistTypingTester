@@ -37,8 +37,7 @@
             // 
             this.lblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPassword.BackColor = System.Drawing.Color.Moccasin;
-            this.lblPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPassword.BackColor = System.Drawing.SystemColors.Control;
             this.lblPassword.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(23, 57);
             this.lblPassword.Name = "lblPassword";

@@ -37,8 +37,6 @@
             // 
             this.lblProficiencyString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblProficiencyString.BackColor = System.Drawing.Color.Moccasin;
-            this.lblProficiencyString.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblProficiencyString.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProficiencyString.Location = new System.Drawing.Point(23, 57);
             this.lblProficiencyString.Name = "lblProficiencyString";

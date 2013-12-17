@@ -61,8 +61,29 @@ namespace TypingTester
         private TimeSpan _timeInForcedPractice;
         private TimeSpan _timeInVerify;
         private int _timesInFreePractice;
+        public int TimesInFreePractice
+        {
+            get
+            {
+                return _timesInFreePractice;
+            }
+        }
         private int _timesInForcedPractice;
+        public int TimesInForcedPractice
+        {
+            get
+            {
+                return _timesInForcedPractice;
+            }
+        }
         private int _timesInVerify;
+        public int TimesInVerify
+        {
+            get
+            {
+                return _timesInVerify;
+            }
+        }
         private Constants.Phase _currentPhase = Constants.Phase.Unknown;
         private Constants.SubPhase _currentSubPhase = Constants.SubPhase.Unknown;
 

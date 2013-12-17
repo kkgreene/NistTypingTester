@@ -48,6 +48,7 @@
             // lblEntityProgressBase
             // 
             this.lblEntityProgressBase.AutoSize = true;
+            this.lblEntityProgressBase.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblEntityProgressBase.Location = new System.Drawing.Point(20, 35);
             this.lblEntityProgressBase.Name = "lblEntityProgressBase";
             this.lblEntityProgressBase.Size = new System.Drawing.Size(85, 13);
@@ -58,6 +59,7 @@
             // 
             this.lblRoundBase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRoundBase.AutoSize = true;
+            this.lblRoundBase.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblRoundBase.Location = new System.Drawing.Point(695, 35);
             this.lblRoundBase.Name = "lblRoundBase";
             this.lblRoundBase.Size = new System.Drawing.Size(71, 13);
