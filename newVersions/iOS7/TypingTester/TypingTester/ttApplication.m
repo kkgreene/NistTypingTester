@@ -15,12 +15,12 @@
 @implementation ttApplication
 {
     bool keyboardVisible;
-    KeyboardMode currentKeyboardMode;
 }
 
 
 -(void)sendEvent:(UIEvent *)event
 {
+    [super sendEvent:event];
     UITouch* lastTouch;
     
     // Check to see if this was  a touch event
@@ -35,7 +35,7 @@
         CGPoint touchPoint = [lastTouch locationInView:nil];
         
         // was the keyboard visible during the touch?
-        if (keyboardVisible)
+        if (keyboardVisible == true)
         {
             ttEvent *event;
             switch([self getKeyPressedAtPoint:touchPoint])
@@ -105,11 +105,12 @@
                     [self.session addEvent:event];
                     break;
                 
+                case SpecialKeyOffKeyboard:
                 case SpecialKeyNone:
                 default:
-                    event = [[ttEvent alloc]initWithEventType:KeyboardTouch andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+                    event = [[ttEvent alloc]initWithEventType:Touch andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
                     event.point = touchPoint;
-                    event.notes = [NSString stringWithFormat:@"Keyboard Touch event at %.0f:%.0f", touchPoint.x, touchPoint.y];
+                    event.notes = [NSString stringWithFormat:@"Touch event at %.0f:%.0f", touchPoint.x, touchPoint.y];
                     [self.session addEvent:event];
                     break;
             }
@@ -117,13 +118,13 @@
         else
         {
             ttEvent *event;
-            event = [[ttEvent alloc]initWithEventType:KeyboardTouch andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
+            event = [[ttEvent alloc]initWithEventType:Touch andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
             event.point = touchPoint;
-            event.notes = [NSString stringWithFormat:@"Keyboard Touch event at %.0f:%.0f", touchPoint.x, touchPoint.y];
+            event.notes = [NSString stringWithFormat:@"Touch event at %.0f:%.0f", touchPoint.x, touchPoint.y];
             [self.session addEvent:event];
         }
     }
-    [super sendEvent:event];
+    
 }
 
 -(SpecialKey)getKeyPressedAtPoint:(CGPoint)point
@@ -131,62 +132,25 @@
     return [[ttKeyHitDetector Instance]GetKeyAtPoint:point];
 }
 
--(void)determineKeyboardStateAfterKeyPress:(SpecialKey)key
-{
-    // this will try to keep track of the keyboard state
-    switch(currentKeyboardMode)
-    {
-        case Alphabetic:
-            if (key == SpecialKeyKeyboardChange)
-            {
-                currentKeyboardMode = Numeric;
-            }
-            break;
-            
-        case Numeric:
-            if (key == SpecialKeyShift)
-            {
-                currentKeyboardMode = Symbol;
-            }
-            else if (key == SpecialKeyKeyboardChange)
-            {
-                currentKeyboardMode = Alphabetic;
-            }
-            break;
-            
-        case Symbol:
-            if (key == SpecialKeyShift)
-            {
-                currentKeyboardMode = Numeric;
-            }
-            else if (key == SpecialKeyKeyboardChange)
-            {
-                currentKeyboardMode = Alphabetic;
-            }
-            break;
-            
-        default:
-            break;
-    }
-}
-
-
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification
 {
-    keyboardVisible = YES;
+    keyboardVisible = true;
     ttEvent *event = [[ttEvent alloc]initWithEventType:KeyboardShown andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
     event.notes = @"Keyboard shown";
     [self.session addEvent:event];
+    
 }
 
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasHidden:(NSNotification*)aNotification
 {
-    keyboardVisible = NO;
+    keyboardVisible = false;
     ttEvent *event = [[ttEvent alloc]initWithEventType:KeyboardHidden andPhase:self.session.currentPhase andSubPhase:self.session.currentSubPhase];
     event.notes = @"Keyboard hidden";
     [self.session addEvent:event];
 }
+
+
 
 @end

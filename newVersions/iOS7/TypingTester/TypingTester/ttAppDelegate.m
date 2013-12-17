@@ -55,6 +55,8 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+// TODO :: Move these out to a different observer besides the application
 - (void)registerForKeyboardNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:[UIApplication sharedApplication]

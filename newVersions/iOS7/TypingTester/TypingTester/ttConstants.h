@@ -95,6 +95,8 @@ typedef enum
     NoSubPhase
 }SubPhase;
 
+// defines special keys that can be pressed on the keyboard/detected
+// SpecialKeyOffKeyboard  defines the bounds off the displayed keyboard
 typedef enum
 {
     SpecialKeyNone,
@@ -105,7 +107,8 @@ typedef enum
     SpecialKeyReturn,
     SpecialKeyHideKeyboard,
     SpecialKeyDelete,
-    SpecialKeyUndo
+    SpecialKeyUndo,
+    SpecialKeyOffKeyboard
 } SpecialKey;
 
 typedef enum
