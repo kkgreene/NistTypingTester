@@ -925,11 +925,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwH-Bj-6tZ" customClass="ttTextFieldWithName">
-                                            <rect key="frame" x="20" y="8" width="246" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="246" id="rmx-Ja-TE3"/>
-                                            </constraints>
+                                        <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwH-Bj-6tZ" customClass="ttTextFieldWithName">
+                                            <rect key="frame" x="20" y="7" width="280" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             <connections>
@@ -937,12 +934,14 @@
                                             </connections>
                                         </textField>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fwH-Bj-6tZ" firstAttribute="top" secondItem="eEH-7m-dxv" secondAttribute="top" constant="7" id="73p-YE-5GA"/>
+                                        <constraint firstItem="fwH-Bj-6tZ" firstAttribute="leading" secondItem="eEH-7m-dxv" secondAttribute="leading" constant="20" id="HGW-py-ig9"/>
+                                        <constraint firstAttribute="trailing" secondItem="fwH-Bj-6tZ" secondAttribute="trailing" constant="20" id="brJ-qf-apI"/>
+                                        <constraint firstAttribute="bottom" secondItem="fwH-Bj-6tZ" secondAttribute="bottom" constant="7" id="uEl-aC-kiI"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="fwH-Bj-6tZ" firstAttribute="centerY" secondItem="O9d-fi-QBT" secondAttribute="centerY" id="F5F-ko-lrD"/>
-                                    <constraint firstItem="fwH-Bj-6tZ" firstAttribute="leading" secondItem="O9d-fi-QBT" secondAttribute="leading" constant="20" id="tY4-4h-DXZ"/>
-                                </constraints>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1540,25 +1539,12 @@
     </scenes>
     <resources>
         <image name="433-x.png" width="18" height="18"/>
-        <image name="433-x.png" width="18" height="18"/>
         <image name="740-gear-white.png" width="28" height="28"/>
-        <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="759-refresh-2-selected.png" width="28" height="28"/>
-        <image name="759-refresh-2-selected.png" width="28" height="28"/>
         <image name="759-refresh-2.png" width="28" height="28"/>
         <image name="765-arrow-left-white.png" width="14" height="28"/>
-        <image name="765-arrow-left-white.png" width="14" height="28"/>
-        <image name="765-arrow-left-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
         <image name="766-arrow-right-white.png" width="14" height="28"/>
         <image name="766-arrow-right.png" width="14" height="28"/>
     </resources>
