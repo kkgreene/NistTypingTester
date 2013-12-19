@@ -91,12 +91,13 @@
         [enteredStrings setObject:@"" forKey:fieldId];
         return cell;
     }
-    else // add a button to the last cell ...
+    else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)  // add a button to the last cell on iPad ...
     {
         static NSString *CellIdentifier = @"RecallDoneCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         return cell;
     }
+    return nil;
 }
 
 -(NSString*) getStrings

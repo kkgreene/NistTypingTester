@@ -211,7 +211,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9D-yy-5XD">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Typing Proficiency" id="305-pf-OaA">
+                                    <navigationItem title="Typing Phrases" id="305-pf-OaA">
                                         <barButtonItem key="rightBarButtonItem" enabled="NO" image="766-arrow-right-white.png" id="PnQ-pc-lgD">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
