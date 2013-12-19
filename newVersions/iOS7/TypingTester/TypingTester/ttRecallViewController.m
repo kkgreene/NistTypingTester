@@ -69,6 +69,7 @@
     {
         child = segue.destinationViewController;
         child.session = self.session;
+        child.delegate = self;
     }
     else if ([segue.identifier isEqualToString:@"ThankYou"])
     {
@@ -108,6 +109,11 @@
 -(IBAction)backgroundButtonPressed
 {
     [child hideKeyboard];
+}
+
+-(void)RecallTableViewController:(ttRecallTableViewController *)controller didFinishWithValues:(NSString *)values
+{
+    [self performSegueWithIdentifier:@"ThankYou" sender:self];
 }
 
 @end
