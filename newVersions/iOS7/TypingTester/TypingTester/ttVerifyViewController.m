@@ -204,6 +204,7 @@
     else
     {
         self.entityProgressLabel.text = [NSString stringWithFormat:@"Round %i of %i", self.session.currentVerifyRoundForEntity+1, settings.verifyRounds];
+        self.doneButton.enabled = NO;
     }
     self.entryField.text = @"";
     // hide the incorrect icon and label

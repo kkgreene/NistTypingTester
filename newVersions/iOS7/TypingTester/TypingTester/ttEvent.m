@@ -63,7 +63,8 @@
 -(void)setEnteredCharacters:(NSString *)enteredCharacters
 {
     // utf 8 encode entered character
-    _enteredCharacters = [enteredCharacters stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    //_enteredCharacters = [enteredCharacters stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    _enteredCharacters = [enteredCharacters stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"]];
     //_enteredCharacters = [enteredCharacters stringByReplacingOccurrencesOfString:@" " withString:@"<space>"];
 }
 
