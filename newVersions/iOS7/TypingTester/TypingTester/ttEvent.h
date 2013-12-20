@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ttConstants.h"
 
+@class ttSession;
 
 @interface ttEvent : NSObject
 
@@ -27,6 +28,7 @@
 @property (nonatomic, assign) CGPoint point;
 @property (nonatomic, assign) int currentRound;
 @property (nonatomic, assign) int subphaseVisitNumber;
+@property (nonatomic, weak) ttSession *session;
 
 -(id)initWithEventType:(Event)event;
 -(id)initWithEventType:(Event)event andPhase:(Phase)phase;

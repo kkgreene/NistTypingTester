@@ -32,6 +32,7 @@
     int timesInFreePractice;
     int timesInForcedPractice;
     int timesInVerify;
+    NSDateFormatter *dateFormatter;
 }
 
 -(id) init
@@ -57,6 +58,8 @@
         [self loadEntities];
         [self sessionDidStart];
         [[UIApplication sharedApplication] setValue:self forKey:@"session"];
+        dateFormatter = [[NSDateFormatter alloc]init];
+        [dateFormatter setDateFormat:@"MM-dd-yyyy HH:mm:ss"];
     }
     return self;
 }
@@ -244,6 +247,8 @@
 
 -(void) addEvent:(ttEvent *)event
 {
+    // set the event session
+    event.session = self;
     // any special event handling goes here
     NSString *line;
     switch (event.event)
@@ -292,7 +297,7 @@
 
 -(BOOL)initializeLogFiles
 {
-    NSString *filenameBase = [NSString stringWithFormat:@"%@_%@", self.participant.participantNumber, [NSDate date]];
+    NSString *filenameBase = [NSString stringWithFormat:@"%@_%@", self.participant.participantNumber, [self formatDate:sessionStartTime]];
     NSString *rawFileName = [NSString stringWithFormat:@"%@-raw.txt",filenameBase];
     NSString *summaryFileName = [NSString stringWithFormat:@"%@-summary.txt", filenameBase];
     NSString *rawLogFile = [[ttUtilities documentsDirectory] stringByAppendingPathComponent:rawFileName];
@@ -358,6 +363,11 @@
     }
     [fileManager createFileAtPath:logfileName contents:nil attributes:nil];
     return [NSFileHandle fileHandleForWritingAtPath:logfileName];
+}
+         
+-(NSString*) formatDate:(NSDate*)date
+{
+    return [dateFormatter stringFromDate:date];
 }
 
 @end

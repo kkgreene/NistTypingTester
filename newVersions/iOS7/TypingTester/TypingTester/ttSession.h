@@ -57,4 +57,6 @@
 -(void) writeLineToRawLogFile:(NSString*)string;
 -(void) writeLineToSummaryLogFile:(NSString*)string;
 
+-(NSString*) formatDate:(NSDate*)date;
+
 @end
