@@ -254,8 +254,8 @@ namespace TypingTester
             string filepath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             filepath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"NIST_TypingTesterOutput");
             Directory.CreateDirectory(filepath);
-            string rawLogFilename = Path.Combine(filepath, string.Format("{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}-raw.txt", this.ParticipantNumber, startingTime));
-            string summaryLogFilename = Path.Combine(filepath, string.Format("{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}-summary.txt", this.ParticipantNumber, startingTime));
+            string rawLogFilename = Path.Combine(filepath, string.Format("{0}-{1:yyyy-MM-dd_HH-mm-ss-tt}-raw.txt", this.ParticipantNumber, startingTime));
+            string summaryLogFilename = Path.Combine(filepath, string.Format("{0}-{1:yyyy-MM-dd_HH-mm-ss-tt}-summary.txt", this.ParticipantNumber, startingTime));
             rawLog = new StreamWriter(rawLogFilename, false);
             rawLog.AutoFlush = true;
             summaryLog = new StreamWriter(summaryLogFilename, false);
@@ -311,7 +311,10 @@ namespace TypingTester
         }
 
         private void WriteSummaryHeader()
-        { 
+        {
+            string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            string fullname = System.Reflection.Assembly.GetExecutingAssembly().GetName().FullName;
+            WriteToSummaryLog(version);
             WriteToSummaryLog(string.Format("Participant number: {0}", ParticipantNumber));
             WriteToSummaryLog(Options.Instance.GetSettings());
             WriteToSummaryLog("Proficiency Strings");
