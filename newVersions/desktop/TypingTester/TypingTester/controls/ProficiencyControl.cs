@@ -61,6 +61,7 @@ namespace TypingTester.controls
             SetHeaderText("Typing Phrases");
             SetRoundProgresssVisibility(false);
             UpdateDisplay();
+            btnNext.Focus();
         }
 
         private void tbEntry_TextChanged(object sender, EventArgs e)

@@ -65,7 +65,7 @@ namespace TypingTester.controls
                 Session.Instance.AddEvent(te);
                 Session.Instance.CurrentVerifyRound++;
             }
-            else
+            else if (!string.IsNullOrEmpty(tbEntry.Text))
             {
                 lblIncorrect.Visible = true;
                 imgIncorrect.Visible = true;
@@ -98,8 +98,17 @@ namespace TypingTester.controls
 
         private void UpdateUi()
         {
-            SetRoundProgressText(string.Format("Round {0} of {1}", Session.Instance.CurrentVerifyRound, Options.Instance.VerifyRounds));
             this.tbEntry.Text = string.Empty;
+            if (Session.Instance.CurrentVerifyRound > Options.Instance.VerifyRounds)
+            {
+                SetRoundProgressText("Complete");
+                btnNext.Enabled = true;
+            }
+            else
+            {
+                SetRoundProgressText(string.Format("Round {0} of {1}", Session.Instance.CurrentVerifyRound, Options.Instance.VerifyRounds));
+            }
+            
         }
 
         public override void ExitControl()

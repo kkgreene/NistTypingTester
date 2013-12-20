@@ -22,8 +22,6 @@ namespace TypingTester.controls
             addCommand(@"Go To Recall", new commands.CommandGoToScreen(reciever, Constants.Screen.Recall));
             addCommand(@"Next Entity", new commands.NextEntity(reciever));
             addCommand(@"Go To Entry", new commands.CommandGoToScreen(reciever, Constants.Screen.Entry));
-            //currentString = Session.Instance.EntityStrings[Session.Instance.CurrentEntity];
-            
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -64,7 +62,7 @@ namespace TypingTester.controls
                 this.executeCommand(@"Next Entity");
                 return;
             }
-            else
+            else if (!string.IsNullOrEmpty(tbEntry.Text))
             {
                 TestEvent te = new TestEvent(Constants.Event.IncorrectValueEntered, Constants.Phase.Memorize, Constants.SubPhase.ForcedPractice,
                                              "Incorrect value entered");
