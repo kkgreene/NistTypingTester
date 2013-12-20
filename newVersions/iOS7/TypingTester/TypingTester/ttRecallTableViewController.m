@@ -60,6 +60,11 @@
     [self.view endEditing:YES];
 }
 
+-(IBAction)done
+{
+    [self.delegate RecallTableViewController:self didFinishWithValues:[self getStrings]];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -69,20 +74,30 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.session.entities.count;
+    return self.session.entities.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"RecallCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    // Configure the cell...
-    NSString *fieldId = [NSString stringWithFormat:@"Field %i", indexPath.row];
-    ttTextFieldWithName *field = (ttTextFieldWithName*)[cell viewWithTag:1000];
-    field.name = fieldId;
-    field.delegate = self;
-    [enteredStrings setObject:@"" forKey:fieldId];
-    return cell;
+    if (indexPath.row < self.session.entities.count)
+    {
+        static NSString *CellIdentifier = @"RecallCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        // Configure the cell...
+        NSString *fieldId = [NSString stringWithFormat:@"Field %i", indexPath.row];
+        ttTextFieldWithName *field = (ttTextFieldWithName*)[cell viewWithTag:1000];
+        field.name = fieldId;
+        field.delegate = self;
+        [enteredStrings setObject:@"" forKey:fieldId];
+        return cell;
+    }
+    else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)  // add a button to the last cell on iPad ...
+    {
+        static NSString *CellIdentifier = @"RecallDoneCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        return cell;
+    }
+    return nil;
 }
 
 -(NSString*) getStrings
