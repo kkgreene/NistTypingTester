@@ -118,6 +118,11 @@
 -(IBAction)done
 {
     [self.view endEditing:YES];
+    // add event for done button
+    ttEvent *doneButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Entry andSubPhase:NoSubPhase];
+    doneButtonEvent.notes = @"Next button pressed";
+    [self.session addEvent:doneButtonEvent];
+
     // check for quit string entered
     if ([self.entryField.text isEqualToString:[ttSettings Instance].quitString])
     {

@@ -1068,6 +1068,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backgroundButtonPressed" destination="nvh-9X-XZg" eventType="touchUpInside" id="rP7-hw-VmU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Practice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G00-Mt-OHl">
                                 <rect key="frame" x="353" y="20" width="63" height="21"/>
@@ -1149,7 +1152,7 @@
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="765-arrow-left-selected.png"/>
                                 <connections>
-                                    <segue destination="RH5-gu-dim" kind="modal" identifier="PracticeToMemorize" modalTransitionStyle="crossDissolve" id="NoB-kO-LYm"/>
+                                    <action selector="backButtonPressed" destination="nvh-9X-XZg" eventType="touchUpInside" id="bG2-cL-Bbj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewg-XE-Pbx">
@@ -1210,6 +1213,7 @@
                         <segue destination="KXG-VE-QnH" kind="modal" identifier="PracticeToVerify" modalTransitionStyle="crossDissolve" id="dxL-9g-cS0"/>
                         <segue destination="uqW-Go-H4F" kind="modal" identifier="PracticeToRecall" modalTransitionStyle="crossDissolve" id="J9Y-oA-Wu7"/>
                         <segue destination="eqt-5t-k8q" kind="modal" identifier="PracticeToEntry" modalTransitionStyle="crossDissolve" id="aWz-m7-FBA"/>
+                        <segue destination="RH5-gu-dim" kind="modal" identifier="PracticeToMemorize" modalTransitionStyle="crossDissolve" id="YH5-v5-k0m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGr-Fu-Oi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1674,10 +1678,10 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="4VJ-ys-XWU"/>
-        <segue reference="Mr0-dF-HyJ"/>
-        <segue reference="QN8-Q5-p5a"/>
-        <segue reference="hbU-FW-yMc"/>
-        <segue reference="WfD-p6-NZe"/>
+        <segue reference="J9Y-oA-Wu7"/>
+        <segue reference="qRJ-FI-xZJ"/>
+        <segue reference="dxL-9g-cS0"/>
+        <segue reference="YH5-v5-k0m"/>
+        <segue reference="aWz-m7-FBA"/>
     </inferredMetricsTieBreakers>
 </document>

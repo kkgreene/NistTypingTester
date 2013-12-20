@@ -62,6 +62,9 @@
 
 -(IBAction)done
 {
+    ttEvent *doneButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
+    doneButtonEvent.notes = @"Next button pressed";
+    [self.session addEvent:doneButtonEvent];
     [self.delegate RecallTableViewController:self didFinishWithValues:[self getStrings]];
 }
 

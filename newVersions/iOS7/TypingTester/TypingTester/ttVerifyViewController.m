@@ -121,6 +121,10 @@
 #pragma -mark IBActions
 -(IBAction)back
 {
+    // add event for back button
+    ttEvent *backButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
+    backButtonEvent.notes = @"Back button pressed";
+    [self.session addEvent:backButtonEvent];
     if (settings.forcedPracticeRounds > 0)
     {
         [self performSegueWithIdentifier:@"VerifyToPractice" sender:self];
@@ -134,6 +138,10 @@
 -(IBAction)done
 {
     [self.view endEditing:YES];
+    // add event for done button
+    ttEvent *doneButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
+    doneButtonEvent.notes = @"Next button pressed";
+    [self.session addEvent:doneButtonEvent];
     ttTestEntity *currentEntity = [self.session.entities objectAtIndex:self.session.currentEntity];
     if ([self.entryField.text isEqualToString:currentEntity.entityString])
     {

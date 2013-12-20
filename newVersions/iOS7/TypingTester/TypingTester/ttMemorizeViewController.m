@@ -102,6 +102,9 @@
 
 -(IBAction)nextButtonPressed
 {
+    ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:FreePractice];
+    event.notes = @"Next button pressed";
+    [self.session addEvent:event];
     // do we have forced practice?  if so go there
     if (settings.forcedPracticeRounds > 0)
     {

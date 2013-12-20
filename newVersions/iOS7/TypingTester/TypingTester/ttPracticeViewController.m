@@ -213,10 +213,23 @@
     [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
 }
 
+-(IBAction)backButtonPressed
+{
+    // log back button press
+    ttEvent *backButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
+    backButtonEvent.notes = @"Back button pressed";
+    [self.session addEvent:backButtonEvent];
+    [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+}
+
 -(IBAction)doneButtonPressed
 {
     // resign any active controllers to dismiss the keyboard
     [self.view endEditing:YES];
+    // log next button press
+    ttEvent *doneButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
+    doneButtonEvent.notes = @"Next button pressed";
+    [self.session addEvent:doneButtonEvent];
     // check to see if the entered string matches the target string
     if([currentString isEqualToString:self.entryField.text])
     {
@@ -274,8 +287,6 @@
 {
     [self.view endEditing:YES];
 }
-
-#pragma -mark touch events
 
 #pragma -mark UITextFieldDelegate methods
 

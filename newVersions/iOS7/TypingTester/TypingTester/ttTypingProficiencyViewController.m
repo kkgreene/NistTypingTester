@@ -93,10 +93,9 @@
 -(IBAction)doneButtonPressed
 {
     [self.view endEditing:YES];
-    //self.entryField.keyboardType = UIKeyboardTypeDefault;
     // create an event indicating that the button was pressed
     ttEvent *donePressed = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Proficiency];
-    donePressed.notes = [NSString stringWithFormat:@"Done button pressed"];
+    donePressed.notes = [NSString stringWithFormat:@"Next button pressed"];
     [self.session addEvent:donePressed];
     ttEvent *valueCompare;
     if ([item.text isEqualToString:self.entryField.text])
@@ -171,22 +170,6 @@
     return UIInterfaceOrientationMaskAll;
 }
 
-#pragma mark - Touch Tracking
-/*
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    // get the touch coordinates
-    UITouch * touch = [touches anyObject];
-    CGPoint pos = [touch locationInView: [UIApplication sharedApplication].keyWindow];
-    // add the touch event to the log
-    ttEventTouch *touchEvent =  [[ttEventTouch alloc]initWithPoint:pos andPhase:Proficiency];
-    touchEvent.notes = [NSString stringWithFormat:@"Touch on Proficiency View: %.0f:%.0f", pos.x, pos.y];
-    touchEvent.targetString = item.text;
-    [self.session addEvent:touchEvent];
-    // resign first responder to hide the keyboard
-    //[self.entryField resignFirstResponder];
-}
-*/
 #pragma mark - UI Text Field Delegate
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string

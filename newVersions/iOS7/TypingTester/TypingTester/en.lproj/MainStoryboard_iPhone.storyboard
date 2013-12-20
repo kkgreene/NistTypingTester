@@ -456,7 +456,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="765-arrow-left-white.png" id="t9n-VE-Wcm">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="WZw-fl-GDW" kind="modal" identifier="PracticeToMemorize" modalTransitionStyle="crossDissolve" id="xtU-2Z-szz"/>
+                                                <action selector="backButtonPressed" destination="deW-OK-kEn" id="Q3G-t9-I94"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" enabled="NO" image="766-arrow-right-white.png" id="tQC-uw-kvX">
@@ -595,6 +595,7 @@
                         <segue destination="K8h-Oe-RAA" kind="modal" identifier="PracticeToVerify" modalTransitionStyle="crossDissolve" id="HRy-nd-Ya3"/>
                         <segue destination="Im5-cC-YRZ" kind="modal" identifier="PracticeToRecall" modalTransitionStyle="crossDissolve" id="xMN-2O-T7u"/>
                         <segue destination="ZNU-h0-iZz" kind="modal" identifier="PracticeToEntry" modalTransitionStyle="crossDissolve" id="aUR-LT-xVf"/>
+                        <segue destination="WZw-fl-GDW" kind="modal" identifier="PracticeToMemorize" modalTransitionStyle="crossDissolve" id="YXa-cl-3ov"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwZ-th-ogl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -842,7 +843,7 @@
                                     <navigationItem title="Recall" id="0rM-xi-weB">
                                         <barButtonItem key="rightBarButtonItem" image="766-arrow-right-white.png" id="4DB-I7-hcE">
                                             <connections>
-                                                <segue destination="kdq-A0-SUg" kind="modal" identifier="ThankYou" modalTransitionStyle="crossDissolve" id="Ft5-9B-9ar"/>
+                                                <action selector="done" destination="Im5-cC-YRZ" id="zNk-ve-AnZ"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -904,6 +905,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mxe-YM-tWb"/>
+                    <connections>
+                        <segue destination="kdq-A0-SUg" kind="modal" identifier="ThankYou" modalTransitionStyle="crossDissolve" id="4mQ-Lx-2sQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sqj-ay-Xtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -914,19 +918,19 @@
             <objects>
                 <tableViewController id="J52-iw-eNL" customClass="ttRecallTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LAj-iN-6J6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="293" height="388"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecallCell" id="O9d-fi-QBT">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="293" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O9d-fi-QBT" id="eEH-7m-dxv">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="293" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwH-Bj-6tZ" customClass="ttTextFieldWithName">
-                                            <rect key="frame" x="20" y="7" width="280" height="30"/>
+                                            <rect key="frame" x="20" y="7" width="253" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             <connections>
@@ -1557,7 +1561,7 @@
         <segue reference="zal-n7-ZfW"/>
         <segue reference="HRy-nd-Ya3"/>
         <segue reference="rgE-Di-oLL"/>
-        <segue reference="1tr-Kl-y5m"/>
-        <segue reference="qlx-Cz-jfL"/>
+        <segue reference="xhk-Fp-bM3"/>
+        <segue reference="esj-5w-h8l"/>
     </inferredMetricsTieBreakers>
 </document>

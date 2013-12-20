@@ -31,6 +31,7 @@
 -(IBAction)visibilityButtonPressed;
 -(IBAction)skipButtonPressed;
 -(IBAction)doneButtonPressed;
+-(IBAction)backButtonPressed;
 
 -(IBAction)backgroundButtonPressed;
 
