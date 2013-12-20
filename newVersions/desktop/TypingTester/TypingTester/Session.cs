@@ -312,9 +312,8 @@ namespace TypingTester
 
         private void WriteSummaryHeader()
         {
-            string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             string fullname = System.Reflection.Assembly.GetExecutingAssembly().GetName().FullName;
-            WriteToSummaryLog(version);
+            WriteToSummaryLog(fullname);
             WriteToSummaryLog(string.Format("Participant number: {0}", ParticipantNumber));
             WriteToSummaryLog(Options.Instance.GetSettings());
             WriteToSummaryLog("Proficiency Strings");
