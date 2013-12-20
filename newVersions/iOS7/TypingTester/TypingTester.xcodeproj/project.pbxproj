@@ -554,6 +554,7 @@
 				AD04765E17A964B600657D08 /* Sources */,
 				AD04765F17A964B600657D08 /* Frameworks */,
 				AD04766017A964B600657D08 /* Resources */,
+				C95E485D1863E33300209BA8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -686,6 +687,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C95E485D1863E33300209BA8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "agvtool bump";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AD04765E17A964B600657D08 /* Sources */ = {
@@ -821,11 +838,13 @@
 		AD04768917A964B600657D08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingTester/TypingTester-Prefix.pch";
 				INFOPLIST_FILE = "TypingTester/TypingTester-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -833,11 +852,13 @@
 		AD04768A17A964B600657D08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingTester/TypingTester-Prefix.pch";
 				INFOPLIST_FILE = "TypingTester/TypingTester-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -58,4 +58,13 @@
     }
 }
 
++(NSString*) getProgramVersion
+{
+    NSDictionary *infoDictionary = [[NSBundle mainBundle]infoDictionary];
+    NSString *name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+    NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    NSString *build = [infoDictionary objectForKey:@"CFBundleVersion"];
+    return [NSString stringWithFormat:@"%@ v%@ (build %@)", name, version, build];
+}
+
 @end

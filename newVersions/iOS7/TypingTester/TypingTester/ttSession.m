@@ -118,6 +118,7 @@
 -(void) sessionDidStart
 {
     sessionStartTime = [NSDate date];
+    [self writeLineToSummaryLogFile:[ttUtilities getProgramVersion]];
     [self writeLineToSummaryLogFile:[self getDeviceInformation]];
     [self writeLineToSummaryLogFile:[settings getSettings]];
     [self writeLineToRawLogFile:[NSString stringWithFormat:@"Initial orientation of device:%@", [ttUtilities stringForOrienatation:[UIApplication sharedApplication].statusBarOrientation]]];
@@ -134,6 +135,8 @@
     [self writeLineToSummaryLogFile:@"End Password list"];
     return;
 }
+
+
 
 -(void)enteredPhase:(Phase)phase withNote:(NSString*)note
 {
