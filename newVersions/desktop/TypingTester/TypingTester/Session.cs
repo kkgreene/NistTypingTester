@@ -348,6 +348,7 @@ namespace TypingTester
         public void WriteToSummaryLog(string text)
         {
             summaryLog.WriteLine(text);
+            Console.WriteLine(text);
         }
 
         #endregion
