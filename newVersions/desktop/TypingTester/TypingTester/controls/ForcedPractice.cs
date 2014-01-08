@@ -35,6 +35,7 @@ namespace TypingTester.controls
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, Constants.SubPhase.ForcedPractice,
                                                     @"Next button pressed"));
+            this.btnHidden.Focus();
             if (tbEntry.Text.Equals(currentString)) // did they get the string correct
             {
                 TestEvent te = new TestEvent(Constants.Event.CorrectValueEntered, Constants.Phase.Memorize, Constants.SubPhase.ForcedPractice,
@@ -125,6 +126,7 @@ namespace TypingTester.controls
             btnQuit.Visible = Options.Instance.ShowQuitButton;
             btnSkip.Visible = Options.Instance.ShowSkipButton;
             SetHeaderText("Practice");
+            btnHidden.Focus();
             UpdateUi();
         }
 

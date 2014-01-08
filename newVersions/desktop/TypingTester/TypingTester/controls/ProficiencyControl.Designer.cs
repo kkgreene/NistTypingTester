@@ -31,6 +31,7 @@
             this.lblProficiencyString = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.tbEntry = new TypingTester.CueTextBox();
+            this.btnHidden = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblProficiencyString
@@ -49,10 +50,10 @@
             // 
             this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNext.Enabled = false;
-            this.btnNext.Location = new System.Drawing.Point(353, 144);
+            this.btnNext.Location = new System.Drawing.Point(353, 168);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 0;
+            this.btnNext.TabIndex = 2;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -71,9 +72,20 @@
             this.tbEntry.TargetString = "";
             this.tbEntry.TextChanged += new System.EventHandler(this.tbEntry_TextChanged);
             // 
+            // btnHidden
+            // 
+            this.btnHidden.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnHidden.Location = new System.Drawing.Point(4, 474);
+            this.btnHidden.Name = "btnHidden";
+            this.btnHidden.Size = new System.Drawing.Size(1, 1);
+            this.btnHidden.TabIndex = 0;
+            this.btnHidden.Text = "button1";
+            this.btnHidden.UseVisualStyleBackColor = true;
+            // 
             // ProficiencyControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Controls.Add(this.btnHidden);
             this.Controls.Add(this.lblProficiencyString);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.tbEntry);
@@ -82,6 +94,7 @@
             this.Controls.SetChildIndex(this.tbEntry, 0);
             this.Controls.SetChildIndex(this.btnNext, 0);
             this.Controls.SetChildIndex(this.lblProficiencyString, 0);
+            this.Controls.SetChildIndex(this.btnHidden, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,5 +105,6 @@
         private System.Windows.Forms.Label lblProficiencyString;
         private CueTextBox tbEntry;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnHidden;
     }
 }

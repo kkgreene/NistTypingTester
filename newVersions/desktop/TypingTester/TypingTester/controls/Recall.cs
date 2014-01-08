@@ -43,6 +43,7 @@ namespace TypingTester.controls
                 CueTextBox ctb = new CueTextBox(string.Format("Field{0}", i), "Type here ...", string.Empty);
                 ctb.UseSystemPasswordChar = true;
                 ctb.Width = flowLayoutPanel1.Width - 20;
+                ctb.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
                 flowLayoutPanel1.Controls.Add(ctb);
             }
 

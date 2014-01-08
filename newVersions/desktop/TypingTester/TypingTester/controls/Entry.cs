@@ -26,6 +26,7 @@ namespace TypingTester.controls
             Session.Instance.CurrentSubPhase = Constants.SubPhase.None;
             tbEntry.TargetString = currentString;
             SetHeaderText("Enter");
+            this.btnHidden.Focus();
             UpdateUi();
         }
 
@@ -39,7 +40,7 @@ namespace TypingTester.controls
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Entry, Constants.SubPhase.None,
                                                     "Next button pressed"));
-
+            this.btnHidden.Focus();
             if (tbEntry.Text.Equals(Options.Instance.QuitString)) // check for quit phrase
             {
                 TestEvent te = new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Entry, Constants.SubPhase.None,

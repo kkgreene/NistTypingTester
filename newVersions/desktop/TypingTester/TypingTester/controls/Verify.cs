@@ -42,12 +42,14 @@ namespace TypingTester.controls
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, Constants.SubPhase.Verify,
                                                     @"Next button pressed"));
+            this.btnHidden.Focus();
             // check from quit and skip strings
             if (tbEntry.Text == Options.Instance.QuitString)
             {
                 Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, 
                                                         Constants.SubPhase.Verify, @"Quit string entered"));
                 executeCommand(@"Go to Recall");
+                this.tbEntry.Text = string.Empty;
                 return;
             }
             else if (tbEntry.Text == Options.Instance.SkipString)
@@ -55,6 +57,7 @@ namespace TypingTester.controls
                 Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize,
                                                         Constants.SubPhase.Verify, @"Skip string entered"));
                 executeCommand(@"Skip Entity");
+                this.tbEntry.Text = string.Empty;
                 return;
             }
             else if (tbEntry.Text.Equals(currentString))
@@ -64,11 +67,12 @@ namespace TypingTester.controls
                 te.TargetString = currentString;
                 Session.Instance.AddEvent(te);
                 Session.Instance.CurrentVerifyRound++;
+                this.tbEntry.Text = string.Empty;
             }
             else if (!string.IsNullOrEmpty(tbEntry.Text))
             {
-                lblIncorrect.Visible = true;
-                imgIncorrect.Visible = true;
+                this.lblIncorrect.Visible = true;
+                this.imgIncorrect.Visible = true;
             }
             PromptToMoveOn();
             UpdateUi();
@@ -93,12 +97,12 @@ namespace TypingTester.controls
             Session.Instance.CurrentSubPhase = Constants.SubPhase.Verify;
             tbEntry.TargetString = currentString;
             SetEntityProgressText(string.Format("Password {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length));
+            this.btnHidden.Focus();
             UpdateUi();
         }
 
         private void UpdateUi()
-        {
-            this.tbEntry.Text = string.Empty;
+        {            
             if (Session.Instance.CurrentVerifyRound > Options.Instance.VerifyRounds)
             {
                 SetRoundProgressText("Complete");
