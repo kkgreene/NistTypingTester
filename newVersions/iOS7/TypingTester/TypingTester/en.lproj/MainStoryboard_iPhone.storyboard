@@ -229,9 +229,10 @@
                                     <outlet property="delegate" destination="BJH-fS-opR" id="JCM-zk-xNn"/>
                                 </connections>
                             </textField>
-                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="The quick brown fox jumped over the lazy dogs" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="naP-ps-fJd">
+                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="The quick brown fox jumped over the lazy dogs" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="naP-ps-fJd">
                                 <rect key="frame" x="20" y="75" width="280" height="41"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="SHg-sn-tpi"/>
                                     <constraint firstAttribute="height" constant="41" id="YTy-AS-XQT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
@@ -250,8 +251,8 @@
                             <constraint firstItem="vE0-K7-NA0" firstAttribute="leading" secondItem="7BD-IR-KRQ" secondAttribute="leading" id="0mx-Qb-VCl"/>
                             <constraint firstAttribute="centerX" secondItem="Z9D-yy-5XD" secondAttribute="centerX" id="35P-Nm-FTq"/>
                             <constraint firstAttribute="trailing" secondItem="Z9D-yy-5XD" secondAttribute="trailing" id="5CS-9T-Ab8"/>
+                            <constraint firstAttribute="trailing" secondItem="naP-ps-fJd" secondAttribute="trailing" constant="20" id="E5C-U1-yVt"/>
                             <constraint firstAttribute="centerX" secondItem="vE0-K7-NA0" secondAttribute="centerX" id="EYI-Oi-VMe"/>
-                            <constraint firstAttribute="trailing" secondItem="naP-ps-fJd" secondAttribute="trailing" constant="20" symbolic="YES" id="EfN-aq-sjr"/>
                             <constraint firstAttribute="centerY" secondItem="vE0-K7-NA0" secondAttribute="centerY" id="HzX-ec-sut"/>
                             <constraint firstAttribute="centerX" secondItem="vDt-aN-WLS" secondAttribute="centerX" id="TAI-mH-NYf"/>
                             <constraint firstAttribute="trailing" secondItem="vE0-K7-NA0" secondAttribute="trailing" id="U0b-LE-hhX"/>
@@ -928,8 +929,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwH-Bj-6tZ" customClass="ttTextFieldWithName">
-                                            <rect key="frame" x="20" y="7" width="253" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwH-Bj-6tZ" customClass="ttTextFieldWithName">
+                                            <rect key="frame" x="20" y="7" width="280" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             <connections>
@@ -1542,12 +1543,25 @@
     </scenes>
     <resources>
         <image name="433-x.png" width="18" height="18"/>
+        <image name="433-x.png" width="18" height="18"/>
         <image name="740-gear-white.png" width="28" height="28"/>
+        <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="759-refresh-2-selected.png" width="28" height="28"/>
+        <image name="759-refresh-2-selected.png" width="28" height="28"/>
         <image name="759-refresh-2.png" width="28" height="28"/>
         <image name="765-arrow-left-white.png" width="14" height="28"/>
+        <image name="765-arrow-left-white.png" width="14" height="28"/>
+        <image name="765-arrow-left-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
+        <image name="766-arrow-right-white.png" width="14" height="28"/>
         <image name="766-arrow-right-white.png" width="14" height="28"/>
         <image name="766-arrow-right.png" width="14" height="28"/>
     </resources>
