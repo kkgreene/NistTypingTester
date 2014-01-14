@@ -222,7 +222,7 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q16-M2-MrU">
-                                <rect key="frame" x="20" y="124" width="280" height="30"/>
+                                <rect key="frame" x="20" y="123" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -230,11 +230,7 @@
                                 </connections>
                             </textField>
                             <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="The quick brown fox jumped over the lazy dogs" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="naP-ps-fJd">
-                                <rect key="frame" x="20" y="75" width="280" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="SHg-sn-tpi"/>
-                                    <constraint firstAttribute="height" constant="41" id="YTy-AS-XQT"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="75" width="280" height="40"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -264,6 +260,7 @@
                             <constraint firstItem="naP-ps-fJd" firstAttribute="top" secondItem="vDt-aN-WLS" secondAttribute="bottom" constant="8" id="dA1-yw-0W2"/>
                             <constraint firstAttribute="bottom" secondItem="vE0-K7-NA0" secondAttribute="bottom" id="eUJ-92-YXM"/>
                             <constraint firstItem="q16-M2-MrU" firstAttribute="leading" secondItem="7BD-IR-KRQ" secondAttribute="leading" constant="20" symbolic="YES" id="eZx-gk-MrE"/>
+                            <constraint firstItem="naP-ps-fJd" firstAttribute="leading" secondItem="7BD-IR-KRQ" secondAttribute="leading" constant="20" id="i6y-qz-VDh"/>
                             <constraint firstItem="vDt-aN-WLS" firstAttribute="top" secondItem="Z9D-yy-5XD" secondAttribute="bottom" constant="2" id="nto-Va-gF5"/>
                         </constraints>
                     </view>
@@ -1571,10 +1568,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xMN-2O-T7u"/>
-        <segue reference="zal-n7-ZfW"/>
-        <segue reference="HRy-nd-Ya3"/>
-        <segue reference="YXa-cl-3ov"/>
-        <segue reference="aUR-LT-xVf"/>
+        <segue reference="1tr-Kl-y5m"/>
+        <segue reference="ZWE-py-qTt"/>
+        <segue reference="qlx-Cz-jfL"/>
+        <segue reference="1wy-QO-Rhj"/>
+        <segue reference="cpy-xf-KoV"/>
     </inferredMetricsTieBreakers>
 </document>
