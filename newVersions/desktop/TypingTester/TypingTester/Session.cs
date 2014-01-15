@@ -280,21 +280,26 @@ namespace TypingTester
             }
         }
 
-        public void nextEntity()
+        public bool nextEntity()
         {
             if (!_summaryWritten) summarizeMemorizePhase();
-            this.CurrentEntity++;
-            this._timeInForcedPractice = TimeSpan.Zero;
-            this._timeInFreePractice = TimeSpan.Zero;
-            this._timeInVerify = TimeSpan.Zero;
-            this._timesInForcedPractice = 0;
-            this._timesInFreePractice = 0;
-            this._timesInVerify = 0;
-            this.CurrentEntryForEntity = 1;
-            this.CurrentPracticeRound = 1;
-            this.CurrentVerifyRound = 1;
-            this.WorkAreaContents = string.Empty;
-            _summaryWritten = false;
+            if (this.CurrentEntity + 1 < this.EntityStrings.Length)
+            {
+                this.CurrentEntity++;
+                this._timeInForcedPractice = TimeSpan.Zero;
+                this._timeInFreePractice = TimeSpan.Zero;
+                this._timeInVerify = TimeSpan.Zero;
+                this._timesInForcedPractice = 0;
+                this._timesInFreePractice = 0;
+                this._timesInVerify = 0;
+                this.CurrentEntryForEntity = 1;
+                this.CurrentPracticeRound = 1;
+                this.CurrentVerifyRound = 1;
+                this.WorkAreaContents = string.Empty;
+                _summaryWritten = false;
+                return true;
+            }
+            return false;
         }
 
         public void summarizeMemorizePhase()
