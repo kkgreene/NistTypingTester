@@ -77,11 +77,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.session.entities.count + 1;
+    // if on iPad add 1 more extra row for the button at the bottom
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        return self.session.entities.count + 1;
+    }
+    else
+    {
+        return self.session.entities.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // if we are on one of the rows for entity entry
     if (indexPath.row < self.session.entities.count)
     {
         static NSString *CellIdentifier = @"RecallCell";
@@ -94,11 +103,14 @@
         [enteredStrings setObject:@"" forKey:fieldId];
         return cell;
     }
-    else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)  // add a button to the last cell on iPad ...
+    else // otherwise
     {
-        static NSString *CellIdentifier = @"RecallDoneCell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        return cell;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) // add a button to the last cell on iPad ...
+        {
+            static NSString *CellIdentifier = @"RecallDoneCell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+            return cell;
+        }
     }
     return nil;
 }

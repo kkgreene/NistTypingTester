@@ -147,7 +147,7 @@
     else
     {
         self.doneButton.enabled = NO;
-        self.doneButton_iPad.enabled = YES;
+        self.doneButton_iPad.enabled = NO;
     }
     // configure optional button visibility
     self.visibilityButton.hidden = !settings.enableHideButtonOnPracticeScreen;

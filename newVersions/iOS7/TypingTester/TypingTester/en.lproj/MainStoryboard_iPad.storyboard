@@ -837,7 +837,7 @@
                                     <outlet property="delegate" destination="OAu-sL-wnb" id="TxH-G2-VsC"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fZ-x9-BX5">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fZ-x9-BX5">
                                 <rect key="frame" x="660" y="216" width="88" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="lOA-Lm-LTl"/>
@@ -1662,35 +1662,14 @@
     </scenes>
     <resources>
         <image name="433-x.png" width="18" height="18"/>
-        <image name="433-x.png" width="18" height="18"/>
-        <image name="740-gear-selected.png" width="28" height="28"/>
         <image name="740-gear-selected.png" width="28" height="28"/>
         <image name="740-gear.png" width="28" height="28"/>
         <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="759-refresh-2.png" width="28" height="28"/>
         <image name="765-arrow-left-selected.png" width="14" height="28"/>
-        <image name="765-arrow-left-selected.png" width="14" height="28"/>
-        <image name="765-arrow-left-selected.png" width="14" height="28"/>
-        <image name="765-arrow-left.png" width="14" height="28"/>
         <image name="765-arrow-left.png" width="14" height="28"/>
         <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
         <image name="766-arrow-right.png" width="14" height="28"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1702,7 +1681,7 @@
         <segue reference="J9Y-oA-Wu7"/>
         <segue reference="QN8-Q5-p5a"/>
         <segue reference="YH5-v5-k0m"/>
-        <segue reference="hbU-FW-yMc"/>
-        <segue reference="4VJ-ys-XWU"/>
+        <segue reference="dxL-9g-cS0"/>
+        <segue reference="aWz-m7-FBA"/>
     </inferredMetricsTieBreakers>
 </document>

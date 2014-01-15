@@ -49,6 +49,8 @@
         self.currentSubPhase = UnknownSubPhase;
         self.participant = [[ttParticipant alloc]initWithParticipantNumber:participantId];
         self.events = [[NSMutableArray alloc]init];
+        dateFormatter = [[NSDateFormatter alloc]init];
+        [dateFormatter setDateFormat:@"MM-dd-yyyy HH:mm:ss"];
         if ([self initializeLogFiles] == NO)
         {
             // TODO :: Add error handling
@@ -58,8 +60,6 @@
         [self loadEntities];
         [self sessionDidStart];
         [[UIApplication sharedApplication] setValue:self forKey:@"session"];
-        dateFormatter = [[NSDateFormatter alloc]init];
-        [dateFormatter setDateFormat:@"MM-dd-yyyy HH:mm:ss"];
     }
     return self;
 }
@@ -120,7 +120,7 @@
 
 -(void) sessionDidStart
 {
-    sessionStartTime = [NSDate date];
+    //sessionStartTime = [NSDate date];
     [self writeLineToSummaryLogFile:[ttUtilities getProgramVersion]];
     [self writeLineToSummaryLogFile:[self getDeviceInformation]];
     [self writeLineToSummaryLogFile:[settings getSettings]];
@@ -138,8 +138,6 @@
     [self writeLineToSummaryLogFile:@"End Password list"];
     return;
 }
-
-
 
 -(void)enteredPhase:(Phase)phase withNote:(NSString*)note
 {
@@ -297,6 +295,7 @@
 
 -(BOOL)initializeLogFiles
 {
+    sessionStartTime = [NSDate date];
     NSString *filenameBase = [NSString stringWithFormat:@"%@_%@", self.participant.participantNumber, [self formatDate:sessionStartTime]];
     NSString *rawFileName = [NSString stringWithFormat:@"%@-raw.txt",filenameBase];
     NSString *summaryFileName = [NSString stringWithFormat:@"%@-summary.txt", filenameBase];
