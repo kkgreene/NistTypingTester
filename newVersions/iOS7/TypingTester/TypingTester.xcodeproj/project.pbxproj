@@ -356,7 +356,6 @@
 				AD04767D17A964B600657D08 /* MainStoryboard_iPhone.storyboard */,
 				AD04769517A9856B00657D08 /* resources */,
 				AD04769117A96BC600657D08 /* iPhone */,
-				AD04769017A96BC000657D08 /* iPad */,
 				AD04768B17A9663C00657D08 /* images */,
 				AD04767417A964B600657D08 /* ttAppDelegate.h */,
 				AD04767517A964B600657D08 /* ttAppDelegate.m */,
@@ -450,13 +449,6 @@
 				ADB91FED17C2519500DCE303 /* 19-gear@2x.png */,
 			);
 			name = images;
-			sourceTree = "<group>";
-		};
-		AD04769017A96BC000657D08 /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
 			sourceTree = "<group>";
 		};
 		AD04769117A96BC600657D08 /* iPhone */ = {
@@ -838,7 +830,7 @@
 		AD04768917A964B600657D08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingTester/TypingTester-Prefix.pch";
 				INFOPLIST_FILE = "TypingTester/TypingTester-Info.plist";
@@ -852,7 +844,7 @@
 		AD04768A17A964B600657D08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingTester/TypingTester-Prefix.pch";
 				INFOPLIST_FILE = "TypingTester/TypingTester-Info.plist";
