@@ -83,7 +83,7 @@
 
 #pragma mark - Lifecycle Events
 
--(void) nextEntity
+-(BOOL) nextEntity
 {
     //did we have a previous entity started?
     if (entityStart != nil)
@@ -94,12 +94,23 @@
         [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Total Verify: %i views for %f", timesInVerify, timeInVerify]];
         [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Finishing Password: %i at %@ in %f", self.currentEntity, entityStart, totalEntityTime]];
     }
-    self.currentEntity++;
-    [self startEntity];
+    int currentE = self.currentEntity;
+    int eCount = self.entities.count;
+    //if (self.currentEntity < self.entities.count)
+    if (currentE + 1 < eCount)
+    {
+        self.currentEntity++;
+        [self startEntity];
     
-    ttEvent *event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:Entry andSubPhase:EntityChange];
-    ttTestEntity *entity = [self.entities objectAtIndex:self.currentEntity];
-    event.notes = [NSString stringWithFormat:@"Moving to Password:%@", entity.entityString];
+        ttEvent *event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:Entry andSubPhase:EntityChange];
+        ttTestEntity *entity = [self.entities objectAtIndex:self.currentEntity];
+        event.notes = [NSString stringWithFormat:@"Moving to Password:%@", entity.entityString];
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
 }
 
 -(void) startEntity

@@ -167,10 +167,19 @@
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
         event.targetString = entity.entityString;
-        event.notes = @"Skip phrase entered";
-        [self.session addEvent:event];
-        [self.session nextEntity];
-        [self performSegueWithIdentifier:@"VerifyToMemorize" sender:self];
+        if ([self.session nextEntity] == YES)
+        {
+            event.notes = @"User entered skip string, transitioning to next entity.";
+            [self.session addEvent:event];
+            [self performSegueWithIdentifier:@"VerifyToMemorize" sender:self];
+        }
+        else
+        {
+            event.notes = @"User entered skip string, last entity reached, moving to recall phase";
+            [self.session addEvent:event];
+            [self performSegueWithIdentifier:@"VerifyToRecall" sender:self];
+        }
+        
     }
     else
     {

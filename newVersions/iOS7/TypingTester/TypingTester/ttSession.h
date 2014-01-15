@@ -48,7 +48,7 @@
 -(void)enteredSubPhase:(SubPhase)subphase withNote:(NSString*)note;
 
 -(void)enteredProficiencyPhase;
--(void)nextEntity;
+-(BOOL)nextEntity;
 
 -(void)addEvent:(ttEvent*)event;
 

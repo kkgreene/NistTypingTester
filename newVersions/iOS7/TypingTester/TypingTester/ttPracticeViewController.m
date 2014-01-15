@@ -208,8 +208,14 @@
     ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
     event.notes = [NSString stringWithFormat:@"Skip button pressed by user"];
     [self.session addEvent:event];
-    [self.session nextEntity];
-    [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+    if ([self.session nextEntity] == YES)
+    {
+        [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"PracticeToRecall" sender:self];
+    }
 }
 
 -(IBAction)backButtonPressed
@@ -257,12 +263,20 @@
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
         event.targetString = e.entityString;
-        event.notes = @"User entered skip string, transitioning to next entity.";
-        [self.session addEvent:event];
         // move to the next entity
-        [self.session nextEntity];
-        // back to memorize
-        [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+        if ([self.session nextEntity] == YES)
+        {
+            event.notes = @"User entered skip string, transitioning to next entity.";
+            [self.session addEvent:event];
+            // back to memorize
+            [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+        }
+        else // cannot move to a next entity (end of entities) go to recall
+        {
+            event.notes = @"User entered skip string, last entity reached, moving to recall phase";
+            [self.session addEvent:event];
+            [self performSegueWithIdentifier:@"PracticeToRecall" sender:self];
+        }
     }
     else    // entry does not match practice string
     {
