@@ -11,6 +11,7 @@
 #import "ttSettings.h"
 #import "ttUtilities.h"
 #import "ttEvent.h"
+#import "ttThankYouViewController.h"
 
 @interface ttRecallViewController ()
 
@@ -59,7 +60,7 @@
     [super viewWillDisappear:animated];
     [self.session leftPhase:Recall withNote:@"Leaving Recall Phase"];
     // end the session
-    [self.session sessionDidFinish];
+    //[self.session sessionDidFinish];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -75,6 +76,8 @@
         // get the entered text strings, log them in the summary log
         [self.session writeLineToSummaryLogFile:@"Entered Recall Strings"];
         [self.session writeLineToSummaryLogFile:[child getStrings]];
+        ttThankYouViewController *controller = [segue destinationViewController];
+        controller.session = self.session;
     }
 }
 

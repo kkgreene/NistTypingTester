@@ -34,9 +34,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    ttEvent* event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:ThankYou];
-    [self.session addEvent:event];
-	// Do any additional setup after loading the view.
     ttLocalHtmlFile *file = [[ttLocalHtmlFile alloc]initWithFilenameBase:@"thankYou"];
     [self.webView loadData:file.data MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:file.url];
 }
@@ -48,6 +45,19 @@
     {
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
     }
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.session enteredPhase:ThankYou withNote:@"Entered Thank You Phase"];
+    // end the session
+    [self.session sessionDidFinish];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
 }
 
 -(NSUInteger)supportedInterfaceOrientations
