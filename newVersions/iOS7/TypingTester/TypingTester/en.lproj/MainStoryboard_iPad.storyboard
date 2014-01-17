@@ -1603,20 +1603,19 @@
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXX-Kp-D4V" customClass="ttTextFieldWithName">
+                                        <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXX-Kp-D4V" customClass="ttTextFieldWithName">
                                             <rect key="frame" x="20" y="7" width="728" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                         </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="FXX-Kp-D4V" secondAttribute="trailing" constant="20" id="C4H-OV-Acc"/>
-                                        <constraint firstItem="FXX-Kp-D4V" firstAttribute="leading" secondItem="LEk-aX-blw" secondAttribute="leading" constant="20" id="FhJ-a9-0IS"/>
+                                        <constraint firstAttribute="trailing" secondItem="FXX-Kp-D4V" secondAttribute="trailing" constant="20" id="LYu-iU-bjp"/>
+                                        <constraint firstItem="FXX-Kp-D4V" firstAttribute="leading" secondItem="LEk-aX-blw" secondAttribute="leading" constant="20" id="dsG-z8-yh2"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="FXX-Kp-D4V" firstAttribute="leading" secondItem="aIY-0Z-UQH" secondAttribute="leading" constant="20" id="X8u-EN-SEf"/>
                                     <constraint firstItem="FXX-Kp-D4V" firstAttribute="centerY" secondItem="aIY-0Z-UQH" secondAttribute="centerY" id="uBO-Uy-CMc"/>
                                 </constraints>
                             </tableViewCell>
