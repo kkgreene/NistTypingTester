@@ -26,6 +26,11 @@
     if (self)
     {
         enteredStrings = [[NSMutableDictionary alloc]initWithCapacity:self.session.entities.count];
+        // intialize the dictionary
+        for (int i = 0; i < self.session.entities.count;i++)
+        {
+            [enteredStrings setObject:@"" forKey:[NSString stringWithFormat:@"Field %i", i]];
+        }
     }
     return self;
 }
@@ -89,17 +94,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    static NSString *CellIdentifier = @"RecallCell";
     // if we are on one of the rows for entity entry
     if (indexPath.row < self.session.entities.count)
     {
-        static NSString *CellIdentifier = @"RecallCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         // Configure the cell...
         NSString *fieldId = [NSString stringWithFormat:@"Field %i", (int)indexPath.row];
         ttTextFieldWithName *field = (ttTextFieldWithName*)[cell viewWithTag:1000];
         field.name = fieldId;
+        //set delegate to nil so we don't collect events for any changes caused here
+        field.delegate = nil;
+        // see if the text should be different than what is currently displayed
+        if (![[enteredStrings objectForKey:fieldId] isEqualToString:field.text])
+        {
+            // set the text to whatever the current value is
+            field.text = [enteredStrings objectForKey:fieldId];
+        }
+        // set up the delegate so we can capture upcoming changes
         field.delegate = self;
-        [enteredStrings setObject:@"" forKey:fieldId];
         return cell;
     }
     else // otherwise
