@@ -21,8 +21,8 @@
 @property (nonatomic, assign) NSTimeInterval interval;
 @property (nonatomic, copy) NSString *targetString;
 @property (nonatomic, copy) NSString *participantNumber;
-@property (nonatomic, assign) int location;
-@property (nonatomic, assign) int length;
+@property (nonatomic, assign) NSInteger location;
+@property (nonatomic, assign) NSUInteger length;
 @property (nonatomic, copy) NSString *enteredCharacters;
 @property (nonatomic, copy) NSString *currentValue;
 @property (nonatomic, assign) CGPoint point;

@@ -95,7 +95,7 @@
         static NSString *CellIdentifier = @"RecallCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         // Configure the cell...
-        NSString *fieldId = [NSString stringWithFormat:@"Field %i", indexPath.row];
+        NSString *fieldId = [NSString stringWithFormat:@"Field %i", (int)indexPath.row];
         ttTextFieldWithName *field = (ttTextFieldWithName*)[cell viewWithTag:1000];
         field.name = fieldId;
         field.delegate = self;
