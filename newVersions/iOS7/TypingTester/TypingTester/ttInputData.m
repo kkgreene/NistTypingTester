@@ -133,6 +133,8 @@ static ttInputData *instance = nil;
         filtered = [NSMutableArray arrayWithArray:[self randomizeArray:filtered withRandomSeedValue:settings.effectiveSelectionSeed]];
     }
     
+    
+    
     for(int i = 0; i < settings.entitiesPerSession; i++)
     {
         [results addObject:[filtered objectAtIndex:i]];
