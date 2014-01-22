@@ -61,5 +61,45 @@
             <value>DCBA1234567890</value>
             <filter>14char</filter>
         </memorizationInput>
+        <memorizationInput itemId="11" date="2013-08-12" groupId="2">
+            <value>5c2&apos;Qe</value>
+            <filter>6char</filter>
+        </memorizationInput>
+        <memorizationInput itemId="12" date="2013-08-12"  groupId="2">
+            <value>m#o)fp^2aRf207</value>
+            <filter>8char</filter>
+        </memorizationInput>
+        <memorizationInput itemId="13" date="2013-08-12"  groupId="2">
+            <value>m3)61fHw</value>
+            <filter>10char</filter>
+        </memorizationInput>
+        <memorizationInput itemId="14" date="2013-08-12"  groupId="2">
+            <value>d51)u4;X3wrf</value>
+            <filter>12char</filter>
+        </memorizationInput>
+        <memorizationInput itemId="15" date="2013-08-12"  groupId="2">
+            <value>p4d46*3TxY</value>
+            <filter>14char</filter>
+        </memorizationInput>
+        <memorizationInput itemId="16" date="2013-08-12"  groupId="2">
+            <value>q80&lt;U/C2mv</value>
+            <filter>6char</filter>
+        </memorizationInput>
+        <memorizationInput itemId="17" date="2013-08-12"  groupId="2">
+            <value>6n04%Ei&apos;Hm3V</value>
+            <filter>8char</filter>
+        </memorizationInput>
+        <memorizationInput itemId="18" date="2013-08-12"  groupId="2">
+            <value>4i_55fQ$2Mnh30</value>
+            <filter>10char</filter>
+        </memorizationInput>
+        <memorizationInput itemId="19" date="2013-08-12"  groupId="2">
+            <value>3.bH1o</value>
+            <filter>12char</filter>
+        </memorizationInput>
+        <memorizationInput itemId="20" date="2013-08-12"  groupId="2">
+            <value>a7t?C2#</value>
+            <filter>14char</filter>
+        </memorizationInput>
     </memorizationInputs>
 </inputBundle>

@@ -3,7 +3,6 @@
 //  TypingTester
 //
 //  Created by Matthew Kerr on 8/13/13.
-//  Copyright (c) 2013 Matthew Kerr. All rights reserved.
 //
 
 #import "ttSession.h"
@@ -32,6 +31,7 @@
     int timesInFreePractice;
     int timesInForcedPractice;
     int timesInVerify;
+    NSDateFormatter *dateFormatter;
 }
 
 -(id) init
@@ -48,6 +48,8 @@
         self.currentSubPhase = UnknownSubPhase;
         self.participant = [[ttParticipant alloc]initWithParticipantNumber:participantId];
         self.events = [[NSMutableArray alloc]init];
+        dateFormatter = [[NSDateFormatter alloc]init];
+        [dateFormatter setDateFormat:@"MM-dd-yyyy HH:mm:ss"];
         if ([self initializeLogFiles] == NO)
         {
             // TODO :: Add error handling
@@ -80,7 +82,7 @@
 
 #pragma mark - Lifecycle Events
 
--(void) nextEntity
+-(BOOL) nextEntity
 {
     //did we have a previous entity started?
     if (entityStart != nil)
@@ -91,12 +93,23 @@
         [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Total Verify: %i views for %f", timesInVerify, timeInVerify]];
         [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Finishing Password: %i at %@ in %f", self.currentEntity, entityStart, totalEntityTime]];
     }
-    self.currentEntity++;
-    [self startEntity];
+    int currentE = self.currentEntity;
+    int eCount = self.entities.count;
+    //if (self.currentEntity < self.entities.count)
+    if (currentE + 1 < eCount)
+    {
+        self.currentEntity++;
+        [self startEntity];
     
-    ttEvent *event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:Entry andSubPhase:EntityChange];
-    ttTestEntity *entity = [self.entities objectAtIndex:self.currentEntity];
-    event.notes = [NSString stringWithFormat:@"Moving to Password:%@", entity.entityString];
+        ttEvent *event = [[ttEvent alloc]initWithEventType:SubPhaseChange andPhase:Entry andSubPhase:EntityChange];
+        ttTestEntity *entity = [self.entities objectAtIndex:self.currentEntity];
+        event.notes = [NSString stringWithFormat:@"Moving to Password:%@", entity.entityString];
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
 }
 
 -(void) startEntity
@@ -117,7 +130,8 @@
 
 -(void) sessionDidStart
 {
-    sessionStartTime = [NSDate date];
+    //sessionStartTime = [NSDate date];
+    [self writeLineToSummaryLogFile:[ttUtilities getProgramVersion]];
     [self writeLineToSummaryLogFile:[self getDeviceInformation]];
     [self writeLineToSummaryLogFile:[settings getSettings]];
     [self writeLineToRawLogFile:[NSString stringWithFormat:@"Initial orientation of device:%@", [ttUtilities stringForOrienatation:[UIApplication sharedApplication].statusBarOrientation]]];
@@ -241,6 +255,8 @@
 
 -(void) addEvent:(ttEvent *)event
 {
+    // set the event session
+    event.session = self;
     // any special event handling goes here
     NSString *line;
     switch (event.event)
@@ -289,7 +305,8 @@
 
 -(BOOL)initializeLogFiles
 {
-    NSString *filenameBase = [NSString stringWithFormat:@"%@_%@", self.participant.participantNumber, [NSDate date]];
+    sessionStartTime = [NSDate date];
+    NSString *filenameBase = [NSString stringWithFormat:@"%@_%@", self.participant.participantNumber, [self formatDate:sessionStartTime]];
     NSString *rawFileName = [NSString stringWithFormat:@"%@-raw.txt",filenameBase];
     NSString *summaryFileName = [NSString stringWithFormat:@"%@-summary.txt", filenameBase];
     NSString *rawLogFile = [[ttUtilities documentsDirectory] stringByAppendingPathComponent:rawFileName];
@@ -355,6 +372,11 @@
     }
     [fileManager createFileAtPath:logfileName contents:nil attributes:nil];
     return [NSFileHandle fileHandleForWritingAtPath:logfileName];
+}
+         
+-(NSString*) formatDate:(NSDate*)date
+{
+    return [dateFormatter stringFromDate:date];
 }
 
 @end

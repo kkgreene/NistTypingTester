@@ -3,12 +3,12 @@
 //  TypingTester
 //
 //  Created by Matthew Kerr on 8/15/13.
-//  Copyright (c) 2013 Matthew Kerr. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "ttConstants.h"
 
+@class ttSession;
 
 @interface ttEvent : NSObject
 
@@ -20,13 +20,14 @@
 @property (nonatomic, assign) NSTimeInterval interval;
 @property (nonatomic, copy) NSString *targetString;
 @property (nonatomic, copy) NSString *participantNumber;
-@property (nonatomic, assign) int location;
-@property (nonatomic, assign) int length;
+@property (nonatomic, assign) NSInteger location;
+@property (nonatomic, assign) NSUInteger length;
 @property (nonatomic, copy) NSString *enteredCharacters;
 @property (nonatomic, copy) NSString *currentValue;
 @property (nonatomic, assign) CGPoint point;
 @property (nonatomic, assign) int currentRound;
 @property (nonatomic, assign) int subphaseVisitNumber;
+@property (nonatomic, weak) ttSession *session;
 
 -(id)initWithEventType:(Event)event;
 -(id)initWithEventType:(Event)event andPhase:(Phase)phase;

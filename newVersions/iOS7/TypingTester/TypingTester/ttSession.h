@@ -3,7 +3,6 @@
 //  TypingTester
 //
 //  Created by Matthew Kerr on 8/13/13.
-//  Copyright (c) 2013 Matthew Kerr. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -48,7 +47,7 @@
 -(void)enteredSubPhase:(SubPhase)subphase withNote:(NSString*)note;
 
 -(void)enteredProficiencyPhase;
--(void)nextEntity;
+-(BOOL)nextEntity;
 
 -(void)addEvent:(ttEvent*)event;
 
@@ -56,5 +55,7 @@
 -(void)closeLogFiles;
 -(void) writeLineToRawLogFile:(NSString*)string;
 -(void) writeLineToSummaryLogFile:(NSString*)string;
+
+-(NSString*) formatDate:(NSDate*)date;
 
 @end

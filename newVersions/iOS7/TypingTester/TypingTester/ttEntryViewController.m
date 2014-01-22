@@ -3,7 +3,6 @@
 //  TypingTester
 //
 //  Created by Matthew Kerr on 8/21/13.
-//  Copyright (c) 2013 Matthew Kerr. All rights reserved.
 //
 
 #import "ttEntryViewController.h"
@@ -73,7 +72,7 @@
     }
     else if ([segue.identifier isEqualToString:@"MemorizeNextEntity"])
     {
-        [self.session nextEntity];
+        //[self.session nextEntity];
         ttMemorizeViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
@@ -118,6 +117,11 @@
 -(IBAction)done
 {
     [self.view endEditing:YES];
+    // add event for done button
+    ttEvent *doneButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Entry andSubPhase:NoSubPhase];
+    doneButtonEvent.notes = @"Next button pressed";
+    [self.session addEvent:doneButtonEvent];
+
     // check for quit string entered
     if ([self.entryField.text isEqualToString:[ttSettings Instance].quitString])
     {
@@ -132,11 +136,20 @@
     else if ([self.entryField.text isEqualToString:[ttSettings Instance].skipString])
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Entry andSubPhase:NoSubPhase];
-        event.notes = @"Skip string entered";
         event.targetString = entity.entityString;
-        [self.session addEvent:event];
-        // if so go to recall
-        [self performSegueWithIdentifier:@"MemorizeNextEntity" sender:self];
+        if ([self.session nextEntity] == YES)
+        {
+            event.notes = @"User entered skip string, transitioning to next entity.";
+            [self.session addEvent:event];
+            [self performSegueWithIdentifier:@"MemorizeNextEntity" sender:self];
+        }
+        else
+        {
+            event.notes = @"User entered skip string, last entity reached, moving to recall phase";
+            [self.session addEvent:event];
+            [self performSegueWithIdentifier:@"Recall" sender:self];
+        }
+        
         return;
     }
     // check for correct/incorrect entry
@@ -168,23 +181,31 @@
         self.doneButton_iPad.enabled = NO;
         [self configureUI];
     }
-    else
+    else  // entered string the required number of times
     {
-        // yes
-        // have we entered the required number of entities?
-        int currentEntity = self.session.currentEntity + 1;
-        int totalEntites = self.session.entities.count;
-        // have we entered X number of strings?
-        if (currentEntity >= totalEntites)
+        if ([self.session nextEntity] == YES)
         {
-            // if so go to recall
-            [self performSegueWithIdentifier:@"Recall" sender:self];
+            [self performSegueWithIdentifier:@"MemorizeNextEntity" sender:self];
         }
         else
         {
-            // no so move on to next entity
-            [self performSegueWithIdentifier:@"MemorizeNextEntity" sender:self];
+            [self performSegueWithIdentifier:@"Recall" sender:self];
         }
+        // yes
+        // have we entered the required number of entities?
+        //int currentEntity = self.session.currentEntity + 1;
+        //int totalEntites = self.session.entities.count;
+        // have we entered X number of strings?
+        //if (currentEntity >= totalEntites)
+        //{
+            // if so go to recall
+        //    [self performSegueWithIdentifier:@"Recall" sender:self];
+        //}
+        //else
+        //{
+            // no so move on to next entity
+         //   [self performSegueWithIdentifier:@"MemorizeNextEntity" sender:self];
+        //}
     }
 }
 
