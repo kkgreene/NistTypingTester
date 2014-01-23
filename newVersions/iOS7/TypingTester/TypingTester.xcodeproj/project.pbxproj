@@ -830,7 +830,7 @@
 		AD04768917A964B600657D08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 85;
+				CURRENT_PROJECT_VERSION = 88;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingTester/TypingTester-Prefix.pch";
 				INFOPLIST_FILE = "TypingTester/TypingTester-Info.plist";
@@ -844,7 +844,7 @@
 		AD04768A17A964B600657D08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 85;
+				CURRENT_PROJECT_VERSION = 88;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingTester/TypingTester-Prefix.pch";
 				INFOPLIST_FILE = "TypingTester/TypingTester-Info.plist";

@@ -13,6 +13,7 @@
 #import "ttInputData.h"
 #import "ttTestEntity.h"
 #import "ttUtilities.h"
+#import "ttSettings.h"
 
 @implementation ttSession
 {
@@ -138,6 +139,11 @@
     [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Session Started:%@", sessionStartTime]];
     [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Participant Id:%@", self.participant.participantNumber]];
     phaseStartTime = [NSDate date];
+    // write error message for entity error lines
+    if ([ttInputData Instance].entityNumberError == YES)
+    {
+        [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Settings Error: %i passwords specified in settings, only %i passwords found matching specified criteria.", settings.entitiesPerSession, self.entities.count]];
+    }
     // write out strings
     [self writeLineToSummaryLogFile:@"Passwords for session:"];
     for(int i = 0; i < self.entities.count; i++)
