@@ -137,7 +137,7 @@
             this.btnHide.Location = new System.Drawing.Point(23, 449);
             this.btnHide.Name = "btnHide";
             this.btnHide.Size = new System.Drawing.Size(97, 34);
-            this.btnHide.TabIndex = 3;
+            this.btnHide.TabIndex = 4;
             this.btnHide.Text = "Hide String";
             this.btnHide.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHide.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             this.btnQuit.Location = new System.Drawing.Point(126, 449);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 34);
-            this.btnQuit.TabIndex = 4;
+            this.btnQuit.TabIndex = 5;
             this.btnQuit.Text = "Quit";
             this.btnQuit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -169,7 +169,7 @@
             this.btnSkip.Location = new System.Drawing.Point(207, 449);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(75, 34);
-            this.btnSkip.TabIndex = 5;
+            this.btnSkip.TabIndex = 6;
             this.btnSkip.Text = "Skip";
             this.btnSkip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSkip.UseVisualStyleBackColor = true;

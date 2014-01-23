@@ -22,8 +22,11 @@ namespace TypingTester
         public string[] ProficiencyStrings { get; protected set; }
         public string[] EntityStrings { get; protected set; }
 
+        public bool EntityNumberError { get; protected set; }
+
         public InputFile(string filename)
         {
+            this.EntityNumberError = false;
             Random rand = new Random();
             XElement root = XElement.Load(filename);
             // load proficiency strings
@@ -75,8 +78,14 @@ namespace TypingTester
             }
 
             // cut the list down to the specified size
-            entities = entities.GetRange(0, Options.Instance.NumberOfEntities);
-
+            if (entities.Count < Options.Instance.NumberOfEntities)
+            {
+                this.EntityNumberError = true;
+            }
+            else
+            {
+                entities = entities.GetRange(0, Options.Instance.NumberOfEntities);
+            }
             // randomize order of the remaining strings
             if (Options.Instance.RandomEntityOrder)
             {

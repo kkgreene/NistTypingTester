@@ -36,6 +36,8 @@ namespace TypingTester
         private List<string> _proficiencyStrings = new List<string>();
         private List<string> _entityStrings = new List<string>();
 
+        private bool _entityStringNumberError = false;
+
         public string[] ProficiencyStrings
         {
             get
@@ -229,6 +231,7 @@ namespace TypingTester
         private void loadData()
         {
             InputFile input = new InputFile(@".\documents\inputStrings.xml");
+            this._entityStringNumberError = input.EntityNumberError;
             this._proficiencyStrings = new List<string>(input.ProficiencyStrings);
             this._entityStrings = new List<string>(input.EntityStrings);
         }
@@ -321,6 +324,10 @@ namespace TypingTester
             WriteToSummaryLog(fullname);
             WriteToSummaryLog(string.Format("Participant number: {0}", ParticipantNumber));
             WriteToSummaryLog(Options.Instance.GetSettings());
+            if (this._entityStringNumberError)
+            {
+                WriteToSummaryLog(string.Format("Settings Error: {0} passwords specified in settings, only {1} passwords found matching specified criteria.", Options.Instance.NumberOfEntities, this._entityStrings.Count));
+            }
             WriteToSummaryLog("Proficiency Strings");
             foreach(string s in this.ProficiencyStrings)
             {
