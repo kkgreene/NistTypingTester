@@ -19,6 +19,7 @@ NSString *const ttcUseRandomStringOrderSeedKey = @"UseRandomStringOrderSeed";
 NSString *const ttcUseRandomStringSelectionSeedKey = @"UseRandomStringSelectionSeed";
 NSString *const ttcSelectedFiltersKey = @"SelectedFilters";
 NSString *const ttcSelectedGroupKey = @"SelectedGroup";
+NSString *const ttcUseGroupFilterKey = @"UseGroupFilter";
 NSString *const ttcFirstRunKey = @"FirstRun";
 NSString *const ttcEnableHideButtonOnPracticeScreenKey = @"EnableHideButtonOnPracticeScreen";
 NSString *const ttcProficiencyGroupKey = @"ProficiencyGroup";
@@ -41,6 +42,7 @@ const bool ttcRandomStringSelectionDefaultValue = NO;
 const bool ttcUseRandomStringOrderSeedDefaultValue = NO;
 const bool ttcUseRandomStringSelectionSeedDefaultValue = NO;
 const bool ttcEnableHideButtonOnPracticeScreenValue = NO;
+const bool ttcUseGroupFilterDefaultValue = NO;
 
 NSString *const ttcQuitStringDefaultValue = @"I QUIT";
 NSString *const ttcSkipStringDefaultValue = @"SKIP THIS";

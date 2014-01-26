@@ -138,6 +138,8 @@
 
 -(void)SettingsViewControllerDidSave:(ttSettingsViewController *)controller
 {
+    // force saving of defaults when settings return with a saved value
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self dismissViewControllerAnimated:YES completion:nil];
     [inputData loadDataFile:nil];
 }

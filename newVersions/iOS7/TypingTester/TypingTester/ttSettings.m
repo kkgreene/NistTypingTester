@@ -49,7 +49,7 @@ static ttSettings *instance = nil;
     [string appendFormat:@"Random String Selection:%@\n", (self.randomStringSelection ? @"Yes":@"No")];
     [string appendFormat:@"Specified Seed:%@\n", (self.useRandomStringSelectionSeed ? @"Yes":@"No")];
     [string appendFormat:@"String Selection Seed:%i\n", self.effectiveSelectionSeed];
-    [string appendFormat:@"Specified Group Id:%@\n", (self.useGroupId ? @"Yes":@"No")];
+    [string appendFormat:@"Use Group Id:%@\n", (self.useGroupId ? @"Yes":@"No")];
     [string appendFormat:@"Group Id:%i\n", self.selectedGroup];
     return string;
 }
@@ -74,6 +74,7 @@ static ttSettings *instance = nil;
     [defaults setValue:[NSNumber numberWithBool:ttcUseRandomStringOrderSeedDefaultValue] forKey:ttcUseRandomStringOrderSeedKey];
     [defaults setValue:[NSNumber numberWithBool:ttcUseRandomStringSelectionSeedDefaultValue] forKey:ttcUseRandomStringSelectionSeedKey];
     [defaults setValue:[NSNumber numberWithInt:ttcSelectedGroupValue] forKey:ttcSelectedGroupKey];
+    [defaults setValue:[NSNumber numberWithBool:ttcUseGroupFilterDefaultValue] forKey:ttcUseGroupFilterKey];
     [defaults setValue:[[NSArray alloc]init] forKey:ttcSelectedFiltersKey];
     [defaults setValue:[NSNumber numberWithBool:ttcEnableHideButtonOnPracticeScreenValue] forKey:ttcEnableHideButtonOnPracticeScreenKey];
     [defaults setValue:[NSNumber numberWithInt:ttcProficiencyGroupValue] forKey:ttcProficiencyGroupKey];
@@ -106,6 +107,7 @@ static ttSettings *instance = nil;
     [prefs setInteger:ttcProficiencyGroupValue forKey:ttcProficiencyGroupKey];
     [prefs setValue:ttcSkipStringDefaultValue forKey:ttcSkipStringKey];
     [prefs setInteger:ttcVerifyRoundsValue forKey:ttcVerifyRoundsKey];
+    [prefs setBool:ttcUseGroupFilterDefaultValue forKey:ttcUseGroupFilterKey];
 }
 
 #pragma mark Custom setter/getter pairs
@@ -265,6 +267,18 @@ static ttSettings *instance = nil;
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:SelectedGroup forKey:ttcSelectedGroupKey];
+}
+
+-(bool) useGroupId
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    return [prefs boolForKey:ttcUseGroupFilterKey];
+}
+
+- (void)setUseGroupId:(bool)useGroupIdValue
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setBool:useGroupIdValue forKey:ttcUseGroupFilterKey];
 }
 
 -(bool) firstRun
