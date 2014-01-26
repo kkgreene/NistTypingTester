@@ -133,14 +133,16 @@ static ttInputData *instance = nil;
         filtered = [NSMutableArray arrayWithArray:[self randomizeArray:filtered withRandomSeedValue:settings.effectiveSelectionSeed]];
     }
     
+    int iEntitiesToUse = settings.entitiesPerSession;
     // check for more required entities than available
     if (settings.entitiesPerSession > filtered.count)
     {
         self.entityNumberError = YES;
+        iEntitiesToUse = filtered.count;
     }
     
     //for(int i = 0; i < settings.entitiesPerSession; i++)
-    for(int i = 0; i < filtered.count; i++)
+    for(int i = 0; i < iEntitiesToUse; i++)
     {
         [results addObject:[filtered objectAtIndex:i]];
     }
