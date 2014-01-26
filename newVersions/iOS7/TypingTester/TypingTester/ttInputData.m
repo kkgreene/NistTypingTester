@@ -47,8 +47,9 @@ static ttInputData *instance = nil;
     filterBuilder = [[NSMutableArray alloc]init];
     proficiencyBuilder = [[NSMutableArray alloc]init];
     entityBuilder = [[NSMutableArray alloc]init];
+    self.entityNumberError = false;
+    self.entityFilterError = false;
 }
-
 
 -(void)loadDataFile:(NSString *)filepath
 {
@@ -74,7 +75,6 @@ static ttInputData *instance = nil;
     proficiencyBuilder = nil;
     entityBuilder = nil;
 }
-
 
 -(NSArray*) getPhrasesForGroupId:(int)groupId
 {
@@ -117,6 +117,12 @@ static ttInputData *instance = nil;
     {
         ttTestEntity *entity = [self.entities objectAtIndex:current];
         if ([self doesEntityPassFilters:entity]) [filtered addObject:entity];
+    }
+    // no entiites matched the filters
+    if (filtered.count <= 0)
+    {
+        self.entityFilterError = YES;
+        [filtered addObjectsFromArray:self.entities];
     }
     
     // Are we randomly selecting from the available strings?

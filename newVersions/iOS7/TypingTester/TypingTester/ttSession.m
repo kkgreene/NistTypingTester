@@ -144,6 +144,11 @@
     {
         [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Settings Error: %i passwords specified in settings, only %i passwords found matching specified criteria.", settings.entitiesPerSession, self.entities.count]];
     }
+    // check for filter errors
+    if ([ttInputData Instance].entityFilterError == YES)
+    {
+        [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Settings Error: No passwords found matching specified filters, using all passwords as source pool."]];
+    }
     // write out strings
     [self writeLineToSummaryLogFile:@"Passwords for session:"];
     for(int i = 0; i < self.entities.count; i++)
