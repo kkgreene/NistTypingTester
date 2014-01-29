@@ -33,6 +33,7 @@
     int timesInForcedPractice;
     int timesInVerify;
     NSDateFormatter *dateFormatter;
+    NSDateFormatter *fileDateFormatter;
 }
 
 -(id) init
@@ -51,6 +52,8 @@
         self.events = [[NSMutableArray alloc]init];
         dateFormatter = [[NSDateFormatter alloc]init];
         [dateFormatter setDateFormat:@"MM-dd-yyyy HH:mm:ss"];
+        fileDateFormatter = [[NSDateFormatter alloc]init];
+        [fileDateFormatter setDateFormat:@"MM-dd-yyyy_HH_mm_ss"];
         if ([self initializeLogFiles] == NO)
         {
             // TODO :: Add error handling
@@ -317,7 +320,8 @@
 -(BOOL)initializeLogFiles
 {
     sessionStartTime = [NSDate date];
-    NSString *filenameBase = [NSString stringWithFormat:@"%@_%@", self.participant.participantNumber, [self formatDate:sessionStartTime]];
+
+    NSString *filenameBase = [NSString stringWithFormat:@"%@_%@", self.participant.participantNumber, [fileDateFormatter stringFromDate:sessionStartTime]];
     NSString *rawFileName = [NSString stringWithFormat:@"%@-raw.txt",filenameBase];
     NSString *summaryFileName = [NSString stringWithFormat:@"%@-summary.txt", filenameBase];
     NSString *rawLogFile = [[ttUtilities documentsDirectory] stringByAppendingPathComponent:rawFileName];
