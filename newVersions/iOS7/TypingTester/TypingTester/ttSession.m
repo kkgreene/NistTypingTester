@@ -53,7 +53,7 @@
         dateFormatter = [[NSDateFormatter alloc]init];
         [dateFormatter setDateFormat:@"MM-dd-yyyy HH:mm:ss"];
         fileDateFormatter = [[NSDateFormatter alloc]init];
-        [fileDateFormatter setDateFormat:@"MM-dd-yyyy_HH_mm_ss"];
+        [fileDateFormatter setDateFormat:@"yyyy-MM-dd_HH_mm"];
         if ([self initializeLogFiles] == NO)
         {
             // TODO :: Add error handling
@@ -320,8 +320,23 @@
 -(BOOL)initializeLogFiles
 {
     sessionStartTime = [NSDate date];
+    NSString *deviceString;
+    switch(UI_USER_INTERFACE_IDIOM())
+    {
+        case UIUserInterfaceIdiomPad:
+            deviceString = [NSString stringWithFormat:@"iPad"];
+            break;
+            
+        case UIUserInterfaceIdiomPhone:
+            deviceString = [NSString stringWithFormat:@"iPhone"];
+            break;
+            
+        default:
+            deviceString = [NSString stringWithFormat:@"iOS_Device"];
+            break;
+    }
 
-    NSString *filenameBase = [NSString stringWithFormat:@"%@_%@", self.participant.participantNumber, [fileDateFormatter stringFromDate:sessionStartTime]];
+    NSString *filenameBase = [NSString stringWithFormat:@"%@_%@_%@", self.participant.participantNumber, [fileDateFormatter stringFromDate:sessionStartTime], deviceString];
     NSString *rawFileName = [NSString stringWithFormat:@"%@-raw.txt",filenameBase];
     NSString *summaryFileName = [NSString stringWithFormat:@"%@-summary.txt", filenameBase];
     NSString *rawLogFile = [[ttUtilities documentsDirectory] stringByAppendingPathComponent:rawFileName];
