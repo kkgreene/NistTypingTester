@@ -23,10 +23,12 @@ namespace TypingTester
         public string[] EntityStrings { get; protected set; }
 
         public bool EntityNumberError { get; protected set; }
+        public bool EntityFilterError { get; protected set; }
 
         public InputFile(string filename)
         {
             this.EntityNumberError = false;
+            this.EntityFilterError = false;
             Random rand = new Random();
             XElement root = XElement.Load(filename);
             // load proficiency strings
@@ -58,6 +60,14 @@ namespace TypingTester
                                  where (string)el.Attribute("groupId") == groupId.ToString() 
                                  orderby (int)el.Attribute("itemId")
                                  select el;
+            }
+            // check for no matched filters
+            if (entityElements.Count() == 0)
+            {
+                entityElements = from el in root.Descendants("memorizationInput")
+                                 orderby (int)el.Attribute("itemId")
+                                 select el;
+                this.EntityFilterError = true;
             }
             // get the initial list of filtered and ordered entities
             List<string> entities = new List<string>();

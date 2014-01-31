@@ -222,6 +222,7 @@
             this.cbUseGroupFilter.TabIndex = 0;
             this.cbUseGroupFilter.Text = "Filter By Group ID";
             this.cbUseGroupFilter.UseVisualStyleBackColor = true;
+            this.cbUseGroupFilter.CheckedChanged += new System.EventHandler(this.cbUseGroupFilter_CheckedChanged);
             // 
             // groupBox4
             // 

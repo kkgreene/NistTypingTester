@@ -112,6 +112,11 @@ namespace TypingTester.controls
             ConfigureUi();
         }
 
+        private void cbUseGroupFilter_CheckedChanged(object sender, EventArgs e)
+        {
+            spnGroupId.Enabled = (cbUseGroupFilter.Checked);
+        }
+
 
 
 
