@@ -1557,7 +1557,7 @@
                                 <state key="normal" image="766-arrow-right.png"/>
                                 <state key="highlighted" image="766-arrow-right-selected.png"/>
                                 <connections>
-                                    <segue destination="2Y8-b0-2MP" kind="unwind" unwindAction="reset:" id="QB4-Rk-vMU"/>
+                                    <action selector="done" destination="e0C-UY-9yp" eventType="touchUpInside" id="2Mk-MW-ZWa"/>
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5Z-Gd-njJ">
@@ -1579,7 +1579,7 @@
                     </view>
                     <connections>
                         <outlet property="webView" destination="M5Z-Gd-njJ" id="4xX-MM-zLy"/>
-                        <segue destination="2" kind="modal" identifier="BackToStart" modalTransitionStyle="crossDissolve" id="rrr-4K-3v8"/>
+                        <segue destination="2Y8-b0-2MP" kind="unwind" identifier="BackToStart" unwindAction="reset:" id="xA3-xf-BxV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XmG-lm-ZUW" userLabel="First Responder" sceneMemberID="firstResponder"/>

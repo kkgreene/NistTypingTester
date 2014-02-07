@@ -932,19 +932,19 @@
             <objects>
                 <tableViewController id="J52-iw-eNL" customClass="ttRecallTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LAj-iN-6J6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="293" height="388"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecallCell" id="O9d-fi-QBT">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="293" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O9d-fi-QBT" id="eEH-7m-dxv">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="293" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwH-Bj-6tZ" customClass="ttTextFieldWithName">
-                                            <rect key="frame" x="20" y="7" width="280" height="30"/>
+                                            <rect key="frame" x="20" y="7" width="253" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             <connections>
@@ -994,7 +994,7 @@
                                         <barButtonItem key="rightBarButtonItem" image="766-arrow-right.png" id="bVd-gN-8c6">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="amI-9M-28n" kind="unwind" unwindAction="reset:" id="q6R-is-fwt"/>
+                                                <action selector="done" destination="kdq-A0-SUg" id="gtb-E5-tRE"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1018,7 +1018,7 @@
                     </view>
                     <connections>
                         <outlet property="webView" destination="RnI-uU-xaE" id="dyf-h3-I9A"/>
-                        <segue destination="2" kind="modal" identifier="BackToStart" modalTransitionStyle="crossDissolve" id="ElD-II-aS9"/>
+                        <segue destination="amI-9M-28n" kind="unwind" identifier="BackToStart" unwindAction="reset:" id="yeh-bf-bcD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXE-JS-GoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
