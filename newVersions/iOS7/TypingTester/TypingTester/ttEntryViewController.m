@@ -66,9 +66,8 @@
         ttRecallViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
-    else if ([segue.identifier isEqualToString:@"MemorizeNextEntity"])
+    else if ([segue.identifier isEqualToString:@"unwindToMemorizeSegue"])
     {
-        //[self.session nextEntity];
         ttMemorizeViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
@@ -181,27 +180,12 @@
     {
         if ([self.session nextEntity] == YES)
         {
-            [self performSegueWithIdentifier:@"MemorizeNextEntity" sender:self];
+            [self performSegueWithIdentifier:@"unwindToMemorizeSegue" sender:self];
         }
         else
         {
             [self performSegueWithIdentifier:@"Recall" sender:self];
         }
-        // yes
-        // have we entered the required number of entities?
-        //int currentEntity = self.session.currentEntity + 1;
-        //int totalEntites = self.session.entities.count;
-        // have we entered X number of strings?
-        //if (currentEntity >= totalEntites)
-        //{
-            // if so go to recall
-        //    [self performSegueWithIdentifier:@"Recall" sender:self];
-        //}
-        //else
-        //{
-            // no so move on to next entity
-         //   [self performSegueWithIdentifier:@"MemorizeNextEntity" sender:self];
-        //}
     }
 }
 
@@ -265,10 +249,5 @@
     [self.session addEvent:textFieldLeft];
 }
 
-
--(BOOL)canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender
-{
-    return NO;
-}
 
 @end

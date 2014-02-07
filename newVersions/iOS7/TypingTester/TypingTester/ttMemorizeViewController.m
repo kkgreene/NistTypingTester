@@ -216,9 +216,11 @@
 }
 
 
--(BOOL)canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender
+#pragma mark - Unwind Segue
+-(IBAction)unwindToMemorize:(UIStoryboardSegue *)segue
 {
-    return NO;
+    [self configureUI];
 }
+
 
 @end

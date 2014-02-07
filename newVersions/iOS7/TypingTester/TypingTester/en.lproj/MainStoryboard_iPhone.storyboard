@@ -815,10 +815,11 @@
                         <outlet property="entryField" destination="rcS-MQ-IWX" id="f6w-3S-MBf"/>
                         <outlet property="sessionProgressLabel" destination="cR2-sT-g5i" id="Ok2-xv-P1J"/>
                         <segue destination="Im5-cC-YRZ" kind="modal" identifier="Recall" modalTransitionStyle="crossDissolve" id="qlx-Cz-jfL"/>
-                        <segue destination="WZw-fl-GDW" kind="modal" identifier="MemorizeNextEntity" modalTransitionStyle="crossDissolve" id="1tr-Kl-y5m"/>
+                        <segue destination="R3D-NG-QuA" kind="unwind" identifier="unwindToMemorizeSegue" unwindAction="unwindToMemorize:" id="ipk-u6-Qgj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jt-ub-mbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="R3D-NG-QuA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2978" y="1986"/>
         </scene>
@@ -1564,25 +1565,12 @@
     </scenes>
     <resources>
         <image name="433-x.png" width="18" height="18"/>
-        <image name="433-x.png" width="18" height="18"/>
         <image name="740-gear-white.png" width="28" height="28"/>
-        <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="759-refresh-2-selected.png" width="28" height="28"/>
-        <image name="759-refresh-2-selected.png" width="28" height="28"/>
         <image name="759-refresh-2.png" width="28" height="28"/>
         <image name="765-arrow-left-white.png" width="14" height="28"/>
-        <image name="765-arrow-left-white.png" width="14" height="28"/>
-        <image name="765-arrow-left-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
-        <image name="766-arrow-right-white.png" width="14" height="28"/>
         <image name="766-arrow-right-white.png" width="14" height="28"/>
         <image name="766-arrow-right.png" width="14" height="28"/>
     </resources>
@@ -1592,10 +1580,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="esj-5w-h8l"/>
-        <segue reference="1wy-QO-Rhj"/>
         <segue reference="xhk-Fp-bM3"/>
+        <segue reference="1wy-QO-Rhj"/>
         <segue reference="zal-n7-ZfW"/>
         <segue reference="rgE-Di-oLL"/>
+        <segue reference="qlx-Cz-jfL"/>
     </inferredMetricsTieBreakers>
 </document>
