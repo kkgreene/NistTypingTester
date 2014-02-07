@@ -37,16 +37,13 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (settings.showBackgroundPattern)
-    {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
-    }
-    [self.participantNumber becomeFirstResponder];
+    //[self.participantNumber becomeFirstResponder];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self.participantNumber becomeFirstResponder];
     [inputData loadDataFile:nil];
 }
 
@@ -143,5 +140,12 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     [inputData loadDataFile:nil];
 }
+
+#pragma mark - Unwind Segue
+-(IBAction)reset:(UIStoryboardSegue *)segue
+{
+    self.participantNumber.text = @"";
+}
+
 
 @end

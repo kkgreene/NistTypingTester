@@ -30,7 +30,7 @@ static ttSettings *instance = nil;
     self = [super init];
     if (self)
     {
-        _showBackgroundPattern = false;
+        
     }
     return self;
 }

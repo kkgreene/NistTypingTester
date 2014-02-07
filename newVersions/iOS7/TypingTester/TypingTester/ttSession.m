@@ -67,11 +67,6 @@
     return self;
 }
 
--(void)dealloc
-{
-    [self sessionDidFinish];
-}
-
 -(void) loadEntities
 {
     self.entities = [[ttInputData Instance]getEntities];
@@ -366,7 +361,7 @@
     }
     @catch (NSException *exception)
     {
-        NSLog(@"Error writing data to the log file");
+        NSLog(@"Error writing data to the raw log file");
     }
     @finally
     {
@@ -384,7 +379,7 @@
     }
     @catch (NSException *exception)
     {
-        NSLog(@"Error writing data to the log file");
+        NSLog(@"Error writing data to the summary log file");
     }
     @finally
     {

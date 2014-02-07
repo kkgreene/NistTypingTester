@@ -45,10 +45,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (settings.showBackgroundPattern)
-    {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
-    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -267,6 +263,12 @@
     ttEvent *textFieldLeft= [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Entry andSubPhase:NoSubPhase];
     textFieldLeft.notes = [NSString stringWithFormat:@"TextField No Longer Active"];
     [self.session addEvent:textFieldLeft];
+}
+
+
+-(BOOL)canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender
+{
+    return NO;
 }
 
 @end

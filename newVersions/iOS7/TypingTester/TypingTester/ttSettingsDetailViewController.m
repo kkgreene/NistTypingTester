@@ -265,4 +265,10 @@
 {
     [self.delegate settingsDetailViewController:self didChangeEnableSkipButton:self.enableSkipButton.on];
 }
+
+
+-(BOOL)canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender
+{
+    return NO;
+}
 @end

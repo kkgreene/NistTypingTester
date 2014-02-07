@@ -43,10 +43,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (settings.showBackgroundPattern)
-    {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
-    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -120,6 +116,12 @@
 -(void)RecallTableViewController:(ttRecallTableViewController *)controller didFinishWithValues:(NSString *)values
 {
     [self performSegueWithIdentifier:@"ThankYou" sender:self];
+}
+
+
+-(BOOL)canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender
+{
+    return NO;
 }
 
 @end
