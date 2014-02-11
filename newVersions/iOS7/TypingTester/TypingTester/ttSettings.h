@@ -35,6 +35,8 @@
 @property (nonatomic, assign) int  proficiencyGroup;
 @property (nonatomic, assign) int verifyRounds;
 
+@property (nonatomic, assign) bool disableFreePractice;
+
 @property (nonatomic, assign) unsigned int effectiveOrderSeed;
 @property (nonatomic, assign) unsigned int effectiveSelectionSeed;
 

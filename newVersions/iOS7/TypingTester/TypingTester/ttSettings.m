@@ -80,7 +80,7 @@ static ttSettings *instance = nil;
     [defaults setValue:[NSNumber numberWithInt:ttcProficiencyGroupValue] forKey:ttcProficiencyGroupKey];
     [defaults setValue:ttcSkipStringDefaultValue forKey:ttcSkipStringKey];
     [defaults setValue:[NSNumber numberWithInt:ttcVerifyRoundsValue] forKey:ttcVerifyRoundsKey];
-    
+    [defaults setValue:[NSNumber numberWithBool:ttcDisableFreePracticeDefaultValue] forKey:ttcDisableFreePracticeKey];
     [[NSUserDefaults standardUserDefaults]registerDefaults:defaults];
 }
 
@@ -108,6 +108,7 @@ static ttSettings *instance = nil;
     [prefs setValue:ttcSkipStringDefaultValue forKey:ttcSkipStringKey];
     [prefs setInteger:ttcVerifyRoundsValue forKey:ttcVerifyRoundsKey];
     [prefs setBool:ttcUseGroupFilterDefaultValue forKey:ttcUseGroupFilterKey];
+    [prefs setBool:ttcDisableFreePracticeDefaultValue forKey:ttcDisableFreePracticeKey];
 }
 
 #pragma mark Custom setter/getter pairs
@@ -340,6 +341,18 @@ static ttSettings *instance = nil;
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:verifyRounds forKey:ttcVerifyRoundsKey];
+}
+
+-(bool) disableFreePractice
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    return [prefs boolForKey:ttcDisableFreePracticeKey];
+}
+
+-(void) setDisableFreePractice:(bool)disableFreePractice
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setBool:ttcDisableFreePracticeDefaultValue forKey:ttcDisableFreePracticeKey];
 }
 
 
