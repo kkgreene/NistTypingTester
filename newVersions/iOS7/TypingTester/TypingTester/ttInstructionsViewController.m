@@ -8,6 +8,7 @@
 #import "ttInstructionsViewController.h"
 #import "ttUtilities.h"
 #import "ttMemorizeViewController.h"
+#import "ttPracticeViewController.h"
 #import "ttLocalHtmlFile.h"
 #import "ttSettings.h"
 #import "ttEvent.h"
@@ -83,11 +84,29 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"Memorize"])
+    if ([segue.identifier isEqualToString:@"InstructionsToForcedPractice"])
+    {
+        ttPracticeViewController *controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
+    else if ([segue.identifier isEqualToString:@"InstructionsToFreePractice"])
     {
         ttMemorizeViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
+}
+
+-(IBAction)nextScreen
+{
+    if (settings.disableFreePractice == YES)
+    {
+        [self performSegueWithIdentifier:@"InstructionsToForcedPractice" sender:self];
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"InstructionsToFreePractice" sender:self];
+    }
+    
 }
 
 

@@ -307,7 +307,7 @@
                                         <barButtonItem key="rightBarButtonItem" image="766-arrow-right-white.png" id="YfK-Ek-xAD">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="WZw-fl-GDW" kind="modal" identifier="Memorize" modalTransitionStyle="crossDissolve" id="pJv-oy-ZtS"/>
+                                                <action selector="nextScreen" destination="4SL-73-uaa" id="F9h-SD-d27"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -332,6 +332,8 @@
                     </view>
                     <connections>
                         <outlet property="webView" destination="FsN-I3-ol5" id="fr1-6D-Cel"/>
+                        <segue destination="WZw-fl-GDW" kind="modal" identifier="InstructionsToFreePractice" modalTransitionStyle="crossDissolve" id="fJy-jf-S10"/>
+                        <segue destination="deW-OK-kEn" kind="modal" identifier="InstructionsToForcedPractice" modalTransitionStyle="crossDissolve" id="QkP-er-Rgq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aic-I6-h8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -597,6 +599,7 @@
                         <outlet property="entitiyProgressLabel" destination="ytz-um-9hD" id="ypv-iF-Ew1"/>
                         <outlet property="entity" destination="rYF-Dt-I1K" id="TCo-Al-86s"/>
                         <outlet property="entryField" destination="FAo-Vg-wq1" id="U9Q-mh-nrS"/>
+                        <outlet property="navigationBar" destination="Vnx-Ga-UZ6" id="q2W-zQ-b35"/>
                         <outlet property="sessionProgressLabel" destination="qW8-Kl-XqM" id="F96-bZ-bhW"/>
                         <outlet property="skipButton" destination="a1y-Eu-ovm" id="gQY-cy-KUp"/>
                         <outlet property="visibilityButton" destination="UXC-nO-CnE" id="sZQ-lW-bXQ"/>
@@ -1583,7 +1586,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="HRy-nd-Ya3"/>
-        <segue reference="rgE-Di-oLL"/>
-        <segue reference="esj-5w-h8l"/>
+        <segue reference="QkP-er-Rgq"/>
+        <segue reference="aUR-LT-xVf"/>
+        <segue reference="xMN-2O-T7u"/>
     </inferredMetricsTieBreakers>
 </document>

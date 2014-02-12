@@ -22,6 +22,7 @@
 @property (nonatomic, weak) IBOutlet UIButton *skipButton;
 @property (nonatomic, weak) IBOutlet UIImageView *correctIndicator;
 @property (nonatomic, weak) IBOutlet UILabel *correctTextLable;
+@property (nonatomic, weak) IBOutlet UINavigationBar *navigationBar;
 
 
 @property (nonatomic, weak) ttSession *session;

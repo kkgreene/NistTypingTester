@@ -144,6 +144,10 @@
         self.doneButton.enabled = NO;
         self.doneButton_iPad.enabled = NO;
     }
+    // back button visibility
+    self.backButton_iPad.hidden = settings.disableFreePractice;
+    self.backButton.enabled = !settings.disableFreePractice;
+    
     // configure optional button visibility
     self.visibilityButton.hidden = !settings.enableHideButtonOnPracticeScreen;
     self.skipButton.hidden = !settings.showSkipButton;
@@ -391,7 +395,7 @@
 #pragma mark - Unwind Segue
 -(IBAction)unwindToForcedPractice:(UIStoryboardSegue *)segue
 {
-   
+    [self configureUI];
 }
 
 

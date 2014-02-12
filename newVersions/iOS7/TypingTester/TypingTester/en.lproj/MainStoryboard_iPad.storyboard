@@ -917,7 +917,7 @@
                                 <state key="normal" image="766-arrow-right.png"/>
                                 <state key="highlighted" image="766-arrow-right-selected.png"/>
                                 <connections>
-                                    <segue destination="RH5-gu-dim" kind="modal" identifier="Memorize" modalTransitionStyle="crossDissolve" id="yEP-gY-KIJ"/>
+                                    <action selector="nextScreen" destination="tvl-pp-lDd" eventType="touchUpInside" id="cZX-HU-Q0g"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -935,6 +935,8 @@
                     </view>
                     <connections>
                         <outlet property="webView" destination="ZBC-jQ-P2o" id="iIF-Zk-IbB"/>
+                        <segue destination="nvh-9X-XZg" kind="modal" identifier="InstructionsToForcedPractice" modalTransitionStyle="crossDissolve" id="IuK-Do-XKa"/>
+                        <segue destination="RH5-gu-dim" kind="modal" identifier="InstructionsToFreePractice" modalTransitionStyle="crossDissolve" id="Y0l-1h-Z2L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdn-dL-9h5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1665,35 +1667,14 @@
     </scenes>
     <resources>
         <image name="433-x.png" width="18" height="18"/>
-        <image name="433-x.png" width="18" height="18"/>
-        <image name="740-gear-selected.png" width="28" height="28"/>
         <image name="740-gear-selected.png" width="28" height="28"/>
         <image name="740-gear.png" width="28" height="28"/>
         <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="759-refresh-2.png" width="28" height="28"/>
         <image name="765-arrow-left-selected.png" width="14" height="28"/>
-        <image name="765-arrow-left-selected.png" width="14" height="28"/>
-        <image name="765-arrow-left-selected.png" width="14" height="28"/>
-        <image name="765-arrow-left.png" width="14" height="28"/>
         <image name="765-arrow-left.png" width="14" height="28"/>
         <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right-selected.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
-        <image name="766-arrow-right.png" width="14" height="28"/>
         <image name="766-arrow-right.png" width="14" height="28"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1703,6 +1684,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="J9Y-oA-Wu7"/>
+        <segue reference="IuK-Do-XKa"/>
         <segue reference="dxL-9g-cS0"/>
         <segue reference="aWz-m7-FBA"/>
     </inferredMetricsTieBreakers>
