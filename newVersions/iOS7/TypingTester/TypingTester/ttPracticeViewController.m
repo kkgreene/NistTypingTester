@@ -100,7 +100,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"PracticeToMemorize"])
+    if ([segue.identifier isEqualToString:@"unwindToMemorizeSegue"])
     {
         ttMemorizeViewController* controller = segue.destinationViewController;
         controller.session = self.session;
@@ -206,7 +206,7 @@
     [self.session addEvent:event];
     if ([self.session nextEntity] == YES)
     {
-        [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+        [self performSegueWithIdentifier:@"unwindToMemorizeSegue" sender:self];
     }
     else
     {
@@ -220,7 +220,7 @@
     ttEvent *backButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
     backButtonEvent.notes = @"Back button pressed";
     [self.session addEvent:backButtonEvent];
-    [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+    [self performSegueWithIdentifier:@"unwindToMemorizeSegue" sender:self];
 }
 
 -(IBAction)doneButtonPressed
@@ -265,7 +265,7 @@
             event.notes = @"User entered skip string, transitioning to next entity.";
             [self.session addEvent:event];
             // back to memorize
-            [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+            [self performSegueWithIdentifier:@"unwindToMemorizeSegue" sender:self];
         }
         else // cannot move to a next entity (end of entities) go to recall
         {

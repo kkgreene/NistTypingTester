@@ -1213,10 +1213,11 @@
                         <segue destination="KXG-VE-QnH" kind="modal" identifier="PracticeToVerify" modalTransitionStyle="crossDissolve" id="dxL-9g-cS0"/>
                         <segue destination="uqW-Go-H4F" kind="modal" identifier="PracticeToRecall" modalTransitionStyle="crossDissolve" id="J9Y-oA-Wu7"/>
                         <segue destination="eqt-5t-k8q" kind="modal" identifier="PracticeToEntry" modalTransitionStyle="crossDissolve" id="aWz-m7-FBA"/>
-                        <segue destination="RH5-gu-dim" kind="modal" identifier="PracticeToMemorize" modalTransitionStyle="crossDissolve" id="YH5-v5-k0m"/>
+                        <segue destination="na0-vT-svj" kind="unwind" identifier="unwindToMemorizeSegue" unwindAction="unwindToMemorize:" id="0XI-gf-ghN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGr-Fu-Oi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="na0-vT-svj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2564" y="1793"/>
         </scene>
@@ -1343,13 +1344,14 @@
                         <outlet property="incorrectImage" destination="p9b-lg-InS" id="5LF-R1-omf"/>
                         <outlet property="incorrectText" destination="7Dk-d5-Vjk" id="CIN-wX-ZhJ"/>
                         <outlet property="sessionProgressLabel" destination="EcP-Kp-h3k" id="aCN-fL-N06"/>
-                        <segue destination="nvh-9X-XZg" kind="modal" identifier="VerifyToPractice" modalTransitionStyle="crossDissolve" id="qRJ-FI-xZJ"/>
                         <segue destination="eqt-5t-k8q" kind="modal" identifier="VerifyToEntry" modalTransitionStyle="crossDissolve" id="Git-re-EtZ"/>
                         <segue destination="uqW-Go-H4F" kind="modal" identifier="VerifyToRecall" modalTransitionStyle="crossDissolve" id="k1v-bL-JN8"/>
-                        <segue destination="RH5-gu-dim" kind="modal" identifier="VerifyToMemorize" modalTransitionStyle="crossDissolve" id="GZc-f3-HTk"/>
+                        <segue destination="lkz-vc-9c4" kind="unwind" identifier="unwindToMemorizeSegue" unwindAction="unwindToMemorize:" id="tcI-lT-x1y"/>
+                        <segue destination="lkz-vc-9c4" kind="unwind" identifier="unwindToForcedPracticeSegue" unwindAction="unwindToForcedPractice:" id="Lif-OF-htJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZB-ff-zdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lkz-vc-9c4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2592" y="3168"/>
         </scene>
@@ -1605,8 +1607,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="728" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXX-Kp-D4V" customClass="ttTextFieldWithName">
-                                            <rect key="frame" x="20" y="7" width="728" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXX-Kp-D4V" customClass="ttTextFieldWithName">
+                                            <rect key="frame" x="20" y="7" width="688" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                         </textField>
@@ -1628,8 +1630,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="728" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSw-rV-MPA">
-                                            <rect key="frame" x="660" y="8" width="88" height="28"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSw-rV-MPA">
+                                            <rect key="frame" x="620" y="8" width="88" height="28"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="88" id="3UT-Ce-gzZ"/>
@@ -1663,14 +1665,35 @@
     </scenes>
     <resources>
         <image name="433-x.png" width="18" height="18"/>
+        <image name="433-x.png" width="18" height="18"/>
+        <image name="740-gear-selected.png" width="28" height="28"/>
         <image name="740-gear-selected.png" width="28" height="28"/>
         <image name="740-gear.png" width="28" height="28"/>
         <image name="751-eye-selected.png" width="28" height="15"/>
         <image name="751-eye.png" width="28" height="15"/>
         <image name="759-refresh-2.png" width="28" height="28"/>
         <image name="765-arrow-left-selected.png" width="14" height="28"/>
+        <image name="765-arrow-left-selected.png" width="14" height="28"/>
+        <image name="765-arrow-left-selected.png" width="14" height="28"/>
+        <image name="765-arrow-left.png" width="14" height="28"/>
         <image name="765-arrow-left.png" width="14" height="28"/>
         <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right-selected.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
+        <image name="766-arrow-right.png" width="14" height="28"/>
         <image name="766-arrow-right.png" width="14" height="28"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1679,10 +1702,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="yEP-gY-KIJ"/>
-        <segue reference="QN8-Q5-p5a"/>
+        <segue reference="J9Y-oA-Wu7"/>
         <segue reference="dxL-9g-cS0"/>
         <segue reference="aWz-m7-FBA"/>
-        <segue reference="WfD-p6-NZe"/>
     </inferredMetricsTieBreakers>
 </document>

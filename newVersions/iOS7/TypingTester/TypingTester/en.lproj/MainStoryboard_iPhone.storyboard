@@ -603,10 +603,11 @@
                         <segue destination="K8h-Oe-RAA" kind="modal" identifier="PracticeToVerify" modalTransitionStyle="crossDissolve" id="HRy-nd-Ya3"/>
                         <segue destination="Im5-cC-YRZ" kind="modal" identifier="PracticeToRecall" modalTransitionStyle="crossDissolve" id="xMN-2O-T7u"/>
                         <segue destination="ZNU-h0-iZz" kind="modal" identifier="PracticeToEntry" modalTransitionStyle="crossDissolve" id="aUR-LT-xVf"/>
-                        <segue destination="WZw-fl-GDW" kind="modal" identifier="PracticeToMemorize" modalTransitionStyle="crossDissolve" id="YXa-cl-3ov"/>
+                        <segue destination="qKz-tQ-yfu" kind="unwind" identifier="unwindToMemorizeSegue" unwindAction="unwindToMemorize:" id="8vE-5X-BfK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwZ-th-ogl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qKz-tQ-yfu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2278" y="1306"/>
         </scene>
@@ -719,12 +720,13 @@
                         <outlet property="incorrectText" destination="icK-X5-eTO" id="2AL-1C-3q5"/>
                         <outlet property="sessionProgressLabel" destination="DBF-VC-mYq" id="Op7-JP-PL3"/>
                         <segue destination="ZNU-h0-iZz" kind="modal" identifier="VerifyToEntry" modalTransitionStyle="crossDissolve" id="rgE-Di-oLL"/>
-                        <segue destination="deW-OK-kEn" kind="modal" identifier="VerifyToPractice" modalTransitionStyle="crossDissolve" id="zal-n7-ZfW"/>
                         <segue destination="Im5-cC-YRZ" kind="modal" identifier="VerifyToRecall" modalTransitionStyle="crossDissolve" id="esj-5w-h8l"/>
-                        <segue destination="WZw-fl-GDW" kind="modal" identifier="VerifyToMemorize" modalTransitionStyle="crossDissolve" id="xhk-Fp-bM3"/>
+                        <segue destination="lsd-wD-iyD" kind="unwind" identifier="unwindToForcedPracticeSegue" unwindAction="unwindToForcedPractice:" id="aUw-Yr-y6n"/>
+                        <segue destination="lsd-wD-iyD" kind="unwind" identifier="unwindToMemorizeSegue" unwindAction="unwindToMemorize:" id="4Ux-tP-5Yn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMC-0K-eTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lsd-wD-iyD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2286" y="2110"/>
         </scene>
@@ -1580,10 +1582,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xhk-Fp-bM3"/>
-        <segue reference="1wy-QO-Rhj"/>
-        <segue reference="zal-n7-ZfW"/>
+        <segue reference="HRy-nd-Ya3"/>
         <segue reference="rgE-Di-oLL"/>
-        <segue reference="qlx-Cz-jfL"/>
+        <segue reference="esj-5w-h8l"/>
     </inferredMetricsTieBreakers>
 </document>
