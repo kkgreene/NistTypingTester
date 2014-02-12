@@ -74,6 +74,8 @@
     self.randomStringOrderSeedValue.enabled = (self.randomStringOrder.on && self.useOrderSeed.on);
     self.groupId.enabled = self.useGroupId.on;
     self.numberOfVerifyRounds.text = [NSString stringWithFormat:@"%i", settings.verifyRounds];
+    self.disableFreePractice.on = settings.disableFreePractice;
+    self.disableFreePracticeTextField.on = settings.disableFreePracticeTextField;
 }
 
 - (void) hideKeyboard
@@ -266,5 +268,14 @@
     [self.delegate settingsDetailViewController:self didChangeEnableSkipButton:self.enableSkipButton.on];
 }
 
+- (IBAction)disableFreePracticeChanged:(id)sender
+{
+    [self.delegate settingsDetailViewController:self didChangeFreePracticeDisabled:self.disableFreePractice.on];
+}
+
+- (IBAction)disableFreePracticeTextFieldChanged:(id)sender
+{
+    [self.delegate settingsDetailViewController:self didChangeFreePracticeTextFieldDisabled:self.disableFreePracticeTextField.on];
+}
 
 @end

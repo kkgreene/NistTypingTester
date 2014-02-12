@@ -153,7 +153,7 @@
     self.passwordLabel.text = entity.entityString;
     self.workArea.text = self.session.workAreaContents;
     self.progressLabel.text = [NSString stringWithFormat:@"Password %i of %i", currentEntity+1, totalEntites];
-    self.workArea.hidden = settings.disableFreePractice;
+    self.workArea.hidden = settings.disableFreePracticeTextField;
 }
 
 

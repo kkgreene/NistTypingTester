@@ -28,6 +28,7 @@ FOUNDATION_EXPORT NSString *const ttcProficiencyGroupKey;
 FOUNDATION_EXPORT NSString *const ttcSkipStringKey;
 FOUNDATION_EXPORT NSString *const ttcVerifyRoundsKey;
 FOUNDATION_EXPORT NSString *const ttcDisableFreePracticeKey;
+FOUNDATION_EXPORT NSString *const ttcDisableFreePracticeTextFieldKey;
 
 FOUNDATION_EXPORT const int ttcStringsForTestDefaultValue;
 FOUNDATION_EXPORT const int ttcEntriesPerTestDefaultValue;
@@ -47,6 +48,7 @@ FOUNDATION_EXPORT const bool ttcUseRandomStringSelectionSeedDefaultValue;
 FOUNDATION_EXPORT const bool ttcEnableHideButtonOnPracticeScreenValue;
 FOUNDATION_EXPORT const bool ttcUseGroupFilterDefaultValue;
 FOUNDATION_EXPORT const bool ttcDisableFreePracticeDefaultValue;
+FOUNDATION_EXPORT const bool ttcDisableFreePracticeTextFieldValue;
 
 FOUNDATION_EXPORT NSString *const ttcQuitStringDefaultValue;
 FOUNDATION_EXPORT NSString *const ttcSkipStringDefaultValue;

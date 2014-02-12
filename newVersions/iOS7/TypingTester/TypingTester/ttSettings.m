@@ -51,6 +51,8 @@ static ttSettings *instance = nil;
     [string appendFormat:@"String Selection Seed:%i\n", self.effectiveSelectionSeed];
     [string appendFormat:@"Use Group Id:%@\n", (self.useGroupId ? @"Yes":@"No")];
     [string appendFormat:@"Group Id:%i\n", self.selectedGroup];
+    [string appendFormat:@"Disabled Free Practice:%@\n", (self.disableFreePractice ? @"Yes":@"No")];
+    [string appendFormat:@"Disable Free Practice Text Field:%@\n", (self.disableFreePracticeTextField ? @"Yes":@"No")];
     return string;
 }
 
@@ -81,6 +83,7 @@ static ttSettings *instance = nil;
     [defaults setValue:ttcSkipStringDefaultValue forKey:ttcSkipStringKey];
     [defaults setValue:[NSNumber numberWithInt:ttcVerifyRoundsValue] forKey:ttcVerifyRoundsKey];
     [defaults setValue:[NSNumber numberWithBool:ttcDisableFreePracticeDefaultValue] forKey:ttcDisableFreePracticeKey];
+    [defaults setValue:[NSNumber numberWithBool:ttcDisableFreePracticeTextFieldValue] forKey:ttcDisableFreePracticeTextFieldKey];
     [[NSUserDefaults standardUserDefaults]registerDefaults:defaults];
 }
 
@@ -109,6 +112,7 @@ static ttSettings *instance = nil;
     [prefs setInteger:ttcVerifyRoundsValue forKey:ttcVerifyRoundsKey];
     [prefs setBool:ttcUseGroupFilterDefaultValue forKey:ttcUseGroupFilterKey];
     [prefs setBool:ttcDisableFreePracticeDefaultValue forKey:ttcDisableFreePracticeKey];
+    [prefs setBool:ttcDisableFreePracticeTextFieldValue forKey:ttcDisableFreePracticeTextFieldKey];
 }
 
 #pragma mark Custom setter/getter pairs
@@ -353,6 +357,18 @@ static ttSettings *instance = nil;
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setBool:ttcDisableFreePracticeDefaultValue forKey:ttcDisableFreePracticeKey];
+}
+
+-(bool) disableFreePracticeTextField
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    return [prefs boolForKey:ttcDisableFreePracticeTextFieldKey];
+}
+
+-(void) setDisableFreePracticeTextField:(bool)disableFreePracticeTextField
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setBool:ttcDisableFreePracticeTextFieldValue forKey:ttcDisableFreePracticeTextFieldKey];
 }
 
 

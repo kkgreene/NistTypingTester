@@ -38,6 +38,9 @@
     bool enableHideButtonOnPracticeScreen;
     bool enableSkipButton;
     int verifyRounds;
+    
+    bool disableFreePractice;
+    bool disableFreePracticeTextField;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -76,6 +79,8 @@
     selectedGroup = settings.selectedGroup;
     enableHideButtonOnPracticeScreen = settings.enableHideButtonOnPracticeScreen;
     verifyRounds = settings.verifyRounds;
+    disableFreePractice = settings.disableFreePractice;
+    disableFreePracticeTextField = settings.disableFreePracticeTextField;
     [self configureUI];
 }
 
@@ -131,6 +136,8 @@
     settings.enableHideButtonOnPracticeScreen = enableHideButtonOnPracticeScreen;
     settings.skipString = skipString;
     settings.verifyRounds = verifyRounds;
+    settings.disableFreePractice = disableFreePractice;
+    settings.disableFreePracticeTextField = disableFreePracticeTextField;
     [self.delegate SettingsViewControllerDidSave:self];
 }
 
@@ -228,6 +235,16 @@
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeNumberOfVerifyRounds:(int)value
 {
     verifyRounds = value;
+}
+
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeFreePracticeDisabled:(BOOL)value
+{
+    disableFreePractice = value;
+}
+
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeFreePracticeTextFieldDisabled:(BOOL)value
+{
+    disableFreePracticeTextField = value;
 }
 
 
