@@ -84,6 +84,8 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    // check to see if we are on the first entity
+    if (self.session.currentEntity == -1) [self.session nextEntity];
     if ([segue.identifier isEqualToString:@"InstructionsToForcedPractice"])
     {
         ttPracticeViewController *controller = segue.destinationViewController;

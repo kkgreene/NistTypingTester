@@ -46,7 +46,7 @@
     self.workArea.layer.borderWidth = 1.0f;
     self.workArea.layer.borderColor = [[UIColor grayColor]CGColor];
     // check to see if we are on the first entity
-    if (self.session.currentEntity == -1) [self.session nextEntity];
+    //if (self.session.currentEntity == -1) [self.session nextEntity];
     [self configureUI];
 }
 

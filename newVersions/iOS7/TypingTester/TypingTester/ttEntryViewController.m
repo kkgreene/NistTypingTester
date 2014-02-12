@@ -11,6 +11,7 @@
 #import "ttEvent.h"
 #import "ttRecallViewController.h"
 #import "ttMemorizeViewController.h"
+#import "ttPracticeViewController.h"
 #import "ttTestEntity.h"
 #import "ttSettings.h"
 #import "ttUtilities.h"
@@ -71,6 +72,11 @@
         ttMemorizeViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
+    else if ([segue.identifier isEqualToString:@"unwindToForcedPracticeSegue"])
+    {
+        ttPracticeViewController *controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
 }
 
 -(NSUInteger)supportedInterfaceOrientations
@@ -128,7 +134,7 @@
         [self performSegueWithIdentifier:@"Recall" sender:self];
         return;
     }
-    else if ([self.entryField.text isEqualToString:[ttSettings Instance].skipString])
+    else if ([self.entryField.text isEqualToString:[ttSettings Instance].skipString])  // check for skip string
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Entry andSubPhase:NoSubPhase];
         event.targetString = entity.entityString;
@@ -180,7 +186,14 @@
     {
         if ([self.session nextEntity] == YES)
         {
-            [self performSegueWithIdentifier:@"unwindToMemorizeSegue" sender:self];
+            if (settings.disableFreePractice == NO)
+            {
+                [self performSegueWithIdentifier:@"unwindToMemorizeSegue" sender:self];
+            }
+            else
+            {
+                [self performSegueWithIdentifier:@"unwindToForcedPracticeSegue" sender:self];
+            }
         }
         else
         {
