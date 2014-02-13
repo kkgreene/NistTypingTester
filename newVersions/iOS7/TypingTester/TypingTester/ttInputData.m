@@ -3,7 +3,6 @@
 //  TypingTester
 //
 //  Created by Matthew Kerr on 8/19/13.
-//  Copyright (c) 2013 Matthew Kerr. All rights reserved.
 //
 
 #import "ttInputData.h"
@@ -134,7 +133,14 @@ static ttInputData *instance = nil;
         filtered = [NSMutableArray arrayWithArray:[self randomizeArray:filtered withRandomSeedValue:settings.effectiveSelectionSeed]];
     }
     
-    for(int i = 0; i < settings.entitiesPerSession; i++)
+    // check for more required entities than available
+    if (settings.entitiesPerSession > filtered.count)
+    {
+        self.entityNumberError = YES;
+    }
+    
+    //for(int i = 0; i < settings.entitiesPerSession; i++)
+    for(int i = 0; i < filtered.count; i++)
     {
         [results addObject:[filtered objectAtIndex:i]];
     }

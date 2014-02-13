@@ -3,7 +3,6 @@
 //  TypingTester
 //
 //  Created by Matthew Kerr on 8/26/13.
-//  Copyright (c) 2013 Matthew Kerr. All rights reserved.
 //
 
 #import "ttRecallTableViewController.h"
@@ -27,6 +26,11 @@
     if (self)
     {
         enteredStrings = [[NSMutableDictionary alloc]initWithCapacity:self.session.entities.count];
+        // intialize the dictionary
+        for (int i = 0; i < self.session.entities.count;i++)
+        {
+            [enteredStrings setObject:@"" forKey:[NSString stringWithFormat:@"Field %i", i]];
+        }
     }
     return self;
 }
@@ -62,6 +66,9 @@
 
 -(IBAction)done
 {
+    ttEvent *doneButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
+    doneButtonEvent.notes = @"Next button pressed";
+    [self.session addEvent:doneButtonEvent];
     [self.delegate RecallTableViewController:self didFinishWithValues:[self getStrings]];
 }
 
@@ -74,28 +81,48 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.session.entities.count + 1;
+    // if on iPad add 1 more extra row for the button at the bottom
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        return self.session.entities.count + 1;
+    }
+    else
+    {
+        return self.session.entities.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    static NSString *CellIdentifier = @"RecallCell";
+    // if we are on one of the rows for entity entry
     if (indexPath.row < self.session.entities.count)
     {
-        static NSString *CellIdentifier = @"RecallCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         // Configure the cell...
-        NSString *fieldId = [NSString stringWithFormat:@"Field %i", indexPath.row];
+        NSString *fieldId = [NSString stringWithFormat:@"Field %i", (int)indexPath.row];
         ttTextFieldWithName *field = (ttTextFieldWithName*)[cell viewWithTag:1000];
         field.name = fieldId;
+        //set delegate to nil so we don't collect events for any changes caused here
+        field.delegate = nil;
+        // see if the text should be different than what is currently displayed
+        if (![[enteredStrings objectForKey:fieldId] isEqualToString:field.text])
+        {
+            // set the text to whatever the current value is
+            field.text = [enteredStrings objectForKey:fieldId];
+        }
+        // set up the delegate so we can capture upcoming changes
         field.delegate = self;
-        [enteredStrings setObject:@"" forKey:fieldId];
         return cell;
     }
-    else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)  // add a button to the last cell on iPad ...
+    else // otherwise
     {
-        static NSString *CellIdentifier = @"RecallDoneCell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        return cell;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) // add a button to the last cell on iPad ...
+        {
+            static NSString *CellIdentifier = @"RecallDoneCell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+            return cell;
+        }
     }
     return nil;
 }

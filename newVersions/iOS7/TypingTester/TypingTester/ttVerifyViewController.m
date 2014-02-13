@@ -3,7 +3,6 @@
 //  TypingTester
 //
 //  Created by Matthew Kerr on 8/21/13.
-//  Copyright (c) 2013 Matthew Kerr. All rights reserved.
 //
 
 #import "ttVerifyViewController.h"
@@ -121,6 +120,10 @@
 #pragma -mark IBActions
 -(IBAction)back
 {
+    // add event for back button
+    ttEvent *backButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
+    backButtonEvent.notes = @"Back button pressed";
+    [self.session addEvent:backButtonEvent];
     if (settings.forcedPracticeRounds > 0)
     {
         [self performSegueWithIdentifier:@"VerifyToPractice" sender:self];
@@ -134,6 +137,10 @@
 -(IBAction)done
 {
     [self.view endEditing:YES];
+    // add event for done button
+    ttEvent *doneButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
+    doneButtonEvent.notes = @"Next button pressed";
+    [self.session addEvent:doneButtonEvent];
     ttTestEntity *currentEntity = [self.session.entities objectAtIndex:self.session.currentEntity];
     if ([self.entryField.text isEqualToString:currentEntity.entityString])
     {
@@ -160,10 +167,19 @@
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
         event.targetString = entity.entityString;
-        event.notes = @"Skip phrase entered";
-        [self.session addEvent:event];
-        [self.session nextEntity];
-        [self performSegueWithIdentifier:@"VerifyToMemorize" sender:self];
+        if ([self.session nextEntity] == YES)
+        {
+            event.notes = @"User entered skip string, transitioning to next entity.";
+            [self.session addEvent:event];
+            [self performSegueWithIdentifier:@"VerifyToMemorize" sender:self];
+        }
+        else
+        {
+            event.notes = @"User entered skip string, last entity reached, moving to recall phase";
+            [self.session addEvent:event];
+            [self performSegueWithIdentifier:@"VerifyToRecall" sender:self];
+        }
+        
     }
     else
     {
@@ -204,6 +220,7 @@
     else
     {
         self.entityProgressLabel.text = [NSString stringWithFormat:@"Round %i of %i", self.session.currentVerifyRoundForEntity+1, settings.verifyRounds];
+        self.doneButton.enabled = NO;
     }
     self.entryField.text = @"";
     // hide the incorrect icon and label

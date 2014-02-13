@@ -3,7 +3,6 @@
 //  TypingTester
 //
 //  Created by Matthew Kerr on 8/7/13.
-//  Copyright (c) 2013 Matthew Kerr. All rights reserved.
 //
 
 #import "ttUtilities.h"
@@ -56,6 +55,15 @@
         default:
             return @"Unknown Orientation";
     }
+}
+
++(NSString*) getProgramVersion
+{
+    NSDictionary *infoDictionary = [[NSBundle mainBundle]infoDictionary];
+    NSString *name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+    NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    NSString *build = [infoDictionary objectForKey:@"CFBundleVersion"];
+    return [NSString stringWithFormat:@"%@ v%@ (build %@)", name, version, build];
 }
 
 @end

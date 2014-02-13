@@ -3,7 +3,6 @@
 //  TypingTester
 //
 //  Created by Matthew Kerr on 8/20/13.
-//  Copyright (c) 2013 Matthew Kerr. All rights reserved.
 //
 
 #import "ttPracticeViewController.h"
@@ -147,7 +146,7 @@
     else
     {
         self.doneButton.enabled = NO;
-        self.doneButton_iPad.enabled = YES;
+        self.doneButton_iPad.enabled = NO;
     }
     // configure optional button visibility
     self.visibilityButton.hidden = !settings.enableHideButtonOnPracticeScreen;
@@ -209,7 +208,22 @@
     ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
     event.notes = [NSString stringWithFormat:@"Skip button pressed by user"];
     [self.session addEvent:event];
-    [self.session nextEntity];
+    if ([self.session nextEntity] == YES)
+    {
+        [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"PracticeToRecall" sender:self];
+    }
+}
+
+-(IBAction)backButtonPressed
+{
+    // log back button press
+    ttEvent *backButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
+    backButtonEvent.notes = @"Back button pressed";
+    [self.session addEvent:backButtonEvent];
     [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
 }
 
@@ -217,6 +231,10 @@
 {
     // resign any active controllers to dismiss the keyboard
     [self.view endEditing:YES];
+    // log next button press
+    ttEvent *doneButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
+    doneButtonEvent.notes = @"Next button pressed";
+    [self.session addEvent:doneButtonEvent];
     // check to see if the entered string matches the target string
     if([currentString isEqualToString:self.entryField.text])
     {
@@ -245,12 +263,20 @@
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
         event.targetString = e.entityString;
-        event.notes = @"User entered skip string, transitioning to next entity.";
-        [self.session addEvent:event];
         // move to the next entity
-        [self.session nextEntity];
-        // back to memorize
-        [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+        if ([self.session nextEntity] == YES)
+        {
+            event.notes = @"User entered skip string, transitioning to next entity.";
+            [self.session addEvent:event];
+            // back to memorize
+            [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+        }
+        else // cannot move to a next entity (end of entities) go to recall
+        {
+            event.notes = @"User entered skip string, last entity reached, moving to recall phase";
+            [self.session addEvent:event];
+            [self performSegueWithIdentifier:@"PracticeToRecall" sender:self];
+        }
     }
     else    // entry does not match practice string
     {
@@ -274,8 +300,6 @@
 {
     [self.view endEditing:YES];
 }
-
-#pragma -mark touch events
 
 #pragma -mark UITextFieldDelegate methods
 

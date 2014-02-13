@@ -3,7 +3,6 @@
 //  TypingTester
 //
 //  Created by Matthew Kerr on 8/21/13.
-//  Copyright (c) 2013 Matthew Kerr. All rights reserved.
 //
 
 #import "ttRecallViewController.h"
@@ -12,6 +11,7 @@
 #import "ttSettings.h"
 #import "ttUtilities.h"
 #import "ttEvent.h"
+#import "ttThankYouViewController.h"
 
 @interface ttRecallViewController ()
 
@@ -60,7 +60,7 @@
     [super viewWillDisappear:animated];
     [self.session leftPhase:Recall withNote:@"Leaving Recall Phase"];
     // end the session
-    [self.session sessionDidFinish];
+    //[self.session sessionDidFinish];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -76,6 +76,8 @@
         // get the entered text strings, log them in the summary log
         [self.session writeLineToSummaryLogFile:@"Entered Recall Strings"];
         [self.session writeLineToSummaryLogFile:[child getStrings]];
+        ttThankYouViewController *controller = [segue destinationViewController];
+        controller.session = self.session;
     }
 }
 
@@ -103,7 +105,11 @@
 
 -(IBAction)done
 {
-
+    // add event for done button
+    ttEvent *doneButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
+    doneButtonEvent.notes = @"Next button pressed";
+    [self.session addEvent:doneButtonEvent];
+    [self performSegueWithIdentifier:@"ThankYou" sender:self];
 }
 
 -(IBAction)backgroundButtonPressed
