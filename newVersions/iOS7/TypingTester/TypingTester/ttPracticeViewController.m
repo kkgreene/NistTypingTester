@@ -145,8 +145,12 @@
         self.doneButton_iPad.enabled = NO;
     }
     // back button visibility
-    self.backButton_iPad.hidden = settings.disableFreePractice;
-    self.backButton.enabled = !settings.disableFreePractice;
+    if (settings.disableFreePractice == YES)
+    {
+        self.backButton_iPad.hidden = YES;
+        self.backButton.enabled = NO;
+        self.backButton.image = nil;
+    }
     
     // configure optional button visibility
     self.visibilityButton.hidden = !settings.enableHideButtonOnPracticeScreen;
