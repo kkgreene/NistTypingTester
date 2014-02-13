@@ -1098,8 +1098,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="60U-oC-8rf" kind="unwind" identifier="SaveSettings" unwindAction="saveSettings:" id="KI6-Xb-2YT"/>
+                        <segue destination="60U-oC-8rf" kind="unwind" identifier="CancelSettings" unwindAction="cancelSettings:" id="6kz-cm-pzq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4D0-FA-FvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="60U-oC-8rf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1486" y="-449"/>
         </scene>

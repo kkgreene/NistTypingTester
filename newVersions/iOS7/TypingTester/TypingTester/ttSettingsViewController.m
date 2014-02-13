@@ -110,12 +110,59 @@
 
 -(IBAction)cancel:(id)sender
 {
-    [self.delegate SettingViewControllerDidCancel:self];
+    [self executeSegueWithIdentifier:@"CancelSettings" sender:self];
 }
 
 -(IBAction)save:(id)sender
 {
     [child hideKeyboard];
+    [self executeSegueWithIdentifier:@"SaveSettings" sender:self];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"SettingDetails"])
+    {
+        child = segue.destinationViewController;
+        child.delegate = self;
+    }
+    else if ([segue.identifier isEqualToString:@"SaveSettings"])
+    {
+        [self saveSettings];
+    }
+}
+
+-(void)executeSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([self shouldPerformSegueWithIdentifier:identifier sender:sender] == YES)
+    {
+        [self performSegueWithIdentifier:identifier sender:sender];
+    }
+}
+
+-( BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    // check validity of saved settings
+    if ([identifier isEqualToString:@"SaveSettings"])
+    {
+        if (disableFreePractice == NO || forcedPracticeRounds > 0)
+        {
+            return YES;
+        }
+        
+        [[[UIAlertView alloc] initWithTitle:nil
+                              message:@"Forced Practice rounds must be > 0 when Free Practice is disabled"
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
+        return NO;
+    }
+    // default is to allow the segue
+    return YES;
+}
+
+-(void) saveSettings
+{
     settings.entitiesPerSession = stringsPerSession;
     settings.entriesPerEntitiy = entriesPerString;
     settings.forcedPracticeRounds = forcedPracticeRounds;
@@ -135,16 +182,8 @@
     settings.verifyRounds = verifyRounds;
     settings.disableFreePractice = disableFreePractice;
     settings.disableFreePracticeTextField = disableFreePracticeTextField;
-    [self.delegate SettingsViewControllerDidSave:self];
-}
-
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"SettingDetails"])
-    {
-        child = segue.destinationViewController;
-        child.delegate = self;
-    }
+    // force saving of defaults when settings return with a saved value
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - Settings Detail View Controller Delegate
