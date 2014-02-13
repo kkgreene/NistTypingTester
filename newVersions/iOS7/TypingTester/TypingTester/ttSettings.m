@@ -356,7 +356,7 @@ static ttSettings *instance = nil;
 -(void) setDisableFreePractice:(bool)disableFreePractice
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setBool:ttcDisableFreePracticeDefaultValue forKey:ttcDisableFreePracticeKey];
+    [prefs setBool:disableFreePractice forKey:ttcDisableFreePracticeKey];
 }
 
 -(bool) disableFreePracticeTextField
@@ -368,7 +368,7 @@ static ttSettings *instance = nil;
 -(void) setDisableFreePracticeTextField:(bool)disableFreePracticeTextField
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setBool:ttcDisableFreePracticeTextFieldValue forKey:ttcDisableFreePracticeTextFieldKey];
+    [prefs setBool:disableFreePracticeTextField forKey:ttcDisableFreePracticeTextFieldKey];
 }
 
 

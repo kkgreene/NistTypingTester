@@ -38,7 +38,6 @@
     bool enableHideButtonOnPracticeScreen;
     bool enableSkipButton;
     int verifyRounds;
-    
     bool disableFreePractice;
     bool disableFreePracticeTextField;
 }
@@ -116,9 +115,7 @@
 
 -(IBAction)save:(id)sender
 {
-    // TODO :: See if there is a better way to do this...
     [child hideKeyboard];
-    // TODO::Add code to save the settings
     settings.entitiesPerSession = stringsPerSession;
     settings.entriesPerEntitiy = entriesPerString;
     settings.forcedPracticeRounds = forcedPracticeRounds;
