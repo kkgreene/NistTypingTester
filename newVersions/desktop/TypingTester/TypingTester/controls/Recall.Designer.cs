@@ -56,6 +56,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(744, 358);
             this.flowLayoutPanel1.TabIndex = 1;
+            this.flowLayoutPanel1.Resize += new System.EventHandler(this.flowLayoutPanel1_Resize);
             // 
             // btnNext
             // 
