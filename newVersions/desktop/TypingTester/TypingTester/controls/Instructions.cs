@@ -15,13 +15,22 @@ namespace TypingTester.controls
         {
             InitializeComponent();
             addCommand(@"Go To Memorize", new commands.CommandGoToScreen(reciever, Constants.Screen.Memorize));
+            addCommand(@"Go To Forced Practice", new commands.CommandGoToScreen(reciever, Constants.Screen.ForcedPractice));
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Instruction, 
                                                     Constants.SubPhase.None, @"Next button pressed"));
-            executeCommand(@"Go To Memorize");
+            if (Options.Instance.disableFreePractice)
+            {
+                executeCommand(@"Go To Forced Practice");
+            }
+            else
+            { 
+                executeCommand(@"Go To Memorize");
+            }
+            
         }
 
         private void Instructions_Load_1(object sender, EventArgs e)

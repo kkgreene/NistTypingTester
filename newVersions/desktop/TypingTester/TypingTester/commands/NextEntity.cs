@@ -32,7 +32,14 @@ namespace TypingTester.commands
             CommandGoToScreen cmd;
             if (Session.Instance.nextEntity())
             {
-                cmd = new CommandGoToScreen(_reciever, Constants.Screen.Memorize);
+                if (Options.Instance.disableFreePractice == false)
+                {
+                    cmd = new CommandGoToScreen(_reciever, Constants.Screen.Memorize);
+                }
+                else
+                {
+                    cmd = new CommandGoToScreen(_reciever, Constants.Screen.ForcedPractice);
+                }
             }
             else
             {

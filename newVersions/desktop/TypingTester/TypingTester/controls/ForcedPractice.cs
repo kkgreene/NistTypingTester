@@ -126,6 +126,10 @@ namespace TypingTester.controls
             btnQuit.Visible = Options.Instance.ShowQuitButton;
             btnSkip.Visible = Options.Instance.ShowSkipButton;
             SetHeaderText("Practice");
+            if (Options.Instance.disableFreePractice == true)
+            {
+                this.btnBack.Visible = false;
+            }
             btnHidden.Focus();
             UpdateUi();
         }
