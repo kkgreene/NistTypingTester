@@ -20,18 +20,10 @@
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError* error;
-    if (overwrite == YES)
+    if (overwrite == YES) [fileManager removeItemAtPath:destination error:&error];
+    if (![fileManager fileExistsAtPath:destination])
     {
-        // TODO :: Add error checking
-        [fileManager removeItemAtPath:destination error:&error];
-        [fileManager copyItemAtPath:source toPath:destination error:&error];
-    }
-    else
-    {
-        if (![fileManager fileExistsAtPath:destination])
-        {
-            [fileManager copyItemAtPath:source toPath:destination error:&error];
-        }
+        if ([ fileManager fileExistsAtPath:source]) [fileManager copyItemAtPath:source toPath:destination error:&error];
     }
     return YES;
 }

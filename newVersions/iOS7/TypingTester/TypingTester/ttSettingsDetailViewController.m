@@ -148,7 +148,7 @@
     }
     else if ([title isEqualToString:@"Revert"])
     {
-        [ttSettings resetInitialFiles];
+        [ttSettings copyInitialFilesShouldOverwrite:YES];
         [self.delegate settingsDetailViewControllerDidResetToDefault];
     }
 }

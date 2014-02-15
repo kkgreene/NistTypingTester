@@ -19,7 +19,7 @@
     if (settings.firstRun == YES)
     {
         settings.firstRun = NO;
-        [ttSettings copyInitialFiles];
+        [ttSettings copyInitialFilesShouldOverwrite:NO];
     }
     [self registerForKeyboardNotifications];
     // turn off "shake to undo"

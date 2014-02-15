@@ -45,8 +45,7 @@
 -(void) registerDefaults;
 -(void) resetToDefaults;
 
-+(void) copyInitialFiles;
-+(void) resetInitialFiles;
++(void) copyInitialFilesShouldOverwrite:(BOOL)overwrite;
 
 -(NSString*)getSettings;
 

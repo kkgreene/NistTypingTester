@@ -126,6 +126,13 @@
 		C95BBBE617C50D5500F02F5F /* ttVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBE517C50D5500F02F5F /* ttVerifyViewController.m */; };
 		C95BBBE917C50D6C00F02F5F /* ttEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBE817C50D6C00F02F5F /* ttEntryViewController.m */; };
 		C95BBBEC17C50DB100F02F5F /* ttRecallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBBEB17C50DB100F02F5F /* ttRecallViewController.m */; };
+		C9A2EA7318AEE6DA006E617D /* instructionsHeader.fhtm in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA7218AEE6DA006E617D /* instructionsHeader.fhtm */; };
+		C9A2EA7518AEE6FD006E617D /* instructionsFreePractice.fhtm in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA7418AEE6FD006E617D /* instructionsFreePractice.fhtm */; };
+		C9A2EA7718AEE70C006E617D /* instructionsForcedPractice.fhtm in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA7618AEE70C006E617D /* instructionsForcedPractice.fhtm */; };
+		C9A2EA7918AEE71C006E617D /* instructionsVerify.fhtm in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA7818AEE71C006E617D /* instructionsVerify.fhtm */; };
+		C9A2EA7B18AEE730006E617D /* instructionsEntry.fhtm in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA7A18AEE730006E617D /* instructionsEntry.fhtm */; };
+		C9A2EA7D18AEE742006E617D /* instructionsEntry-iPad.fhtm in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA7C18AEE742006E617D /* instructionsEntry-iPad.fhtm */; };
+		C9A2EA7F18AEE75B006E617D /* instructionsFooter.fhtm in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA7E18AEE75B006E617D /* instructionsFooter.fhtm */; };
 		C9E0977A17C3150F004DBD9F /* ttMemorizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E0977917C3150F004DBD9F /* ttMemorizeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -284,6 +291,13 @@
 		C95BBBE817C50D6C00F02F5F /* ttEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttEntryViewController.m; sourceTree = "<group>"; };
 		C95BBBEA17C50DB100F02F5F /* ttRecallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttRecallViewController.h; sourceTree = "<group>"; };
 		C95BBBEB17C50DB100F02F5F /* ttRecallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttRecallViewController.m; sourceTree = "<group>"; };
+		C9A2EA7218AEE6DA006E617D /* instructionsHeader.fhtm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instructionsHeader.fhtm; sourceTree = "<group>"; };
+		C9A2EA7418AEE6FD006E617D /* instructionsFreePractice.fhtm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instructionsFreePractice.fhtm; sourceTree = "<group>"; };
+		C9A2EA7618AEE70C006E617D /* instructionsForcedPractice.fhtm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instructionsForcedPractice.fhtm; sourceTree = "<group>"; };
+		C9A2EA7818AEE71C006E617D /* instructionsVerify.fhtm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instructionsVerify.fhtm; sourceTree = "<group>"; };
+		C9A2EA7A18AEE730006E617D /* instructionsEntry.fhtm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instructionsEntry.fhtm; sourceTree = "<group>"; };
+		C9A2EA7C18AEE742006E617D /* instructionsEntry-iPad.fhtm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "instructionsEntry-iPad.fhtm"; sourceTree = "<group>"; };
+		C9A2EA7E18AEE75B006E617D /* instructionsFooter.fhtm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instructionsFooter.fhtm; sourceTree = "<group>"; };
 		C9E0977817C3150F004DBD9F /* ttMemorizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ttMemorizeViewController.h; sourceTree = "<group>"; };
 		C9E0977917C3150F004DBD9F /* ttMemorizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ttMemorizeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -492,6 +506,13 @@
 				AD6E13D417B92FE30034DA27 /* instructions-iPad.html */,
 				AD6E13D617B92FF40034DA27 /* thankYou.html */,
 				AD6E13D817B930030034DA27 /* inputStrings.xml */,
+				C9A2EA7218AEE6DA006E617D /* instructionsHeader.fhtm */,
+				C9A2EA7418AEE6FD006E617D /* instructionsFreePractice.fhtm */,
+				C9A2EA7618AEE70C006E617D /* instructionsForcedPractice.fhtm */,
+				C9A2EA7818AEE71C006E617D /* instructionsVerify.fhtm */,
+				C9A2EA7A18AEE730006E617D /* instructionsEntry.fhtm */,
+				C9A2EA7C18AEE742006E617D /* instructionsEntry-iPad.fhtm */,
+				C9A2EA7E18AEE75B006E617D /* instructionsFooter.fhtm */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -628,8 +649,11 @@
 				ADE0925E17D8C51F0041B472 /* 740-gear-selected-white.png in Resources */,
 				ADE0925F17D8C51F0041B472 /* 740-gear-selected-white@2x.png in Resources */,
 				ADE0926017D8C51F0041B472 /* 740-gear-selected.png in Resources */,
+				C9A2EA7918AEE71C006E617D /* instructionsVerify.fhtm in Resources */,
 				ADE0926117D8C51F0041B472 /* 740-gear-selected@2x.png in Resources */,
 				ADE0926217D8C51F0041B472 /* 740-gear-white.png in Resources */,
+				C9A2EA7F18AEE75B006E617D /* instructionsFooter.fhtm in Resources */,
+				C9A2EA7518AEE6FD006E617D /* instructionsFreePractice.fhtm in Resources */,
 				ADE0926317D8C51F0041B472 /* 740-gear-white@2x.png in Resources */,
 				ADE0926417D8C51F0041B472 /* 740-gear.png in Resources */,
 				ADE0926517D8C51F0041B472 /* 740-gear@2x.png in Resources */,
@@ -639,11 +663,14 @@
 				ADE0926917D8C51F0041B472 /* 751-eye-selected@2x.png in Resources */,
 				ADE0926A17D8C51F0041B472 /* 751-eye-white.png in Resources */,
 				ADE0926B17D8C51F0041B472 /* 751-eye-white@2x.png in Resources */,
+				C9A2EA7718AEE70C006E617D /* instructionsForcedPractice.fhtm in Resources */,
 				AD32EBA017EC904E00CDB3AA /* iOSIcon-40x40.png in Resources */,
 				ADE0926C17D8C51F0041B472 /* 759-refresh-2-selected-white.png in Resources */,
+				C9A2EA7D18AEE742006E617D /* instructionsEntry-iPad.fhtm in Resources */,
 				AD32EBA417EC904E00CDB3AA /* iOSIcon-120x120.png in Resources */,
 				ADE0926D17D8C51F0041B472 /* 759-refresh-2-selected-white@2x.png in Resources */,
 				ADE0926E17D8C51F0041B472 /* 759-refresh-2-selected.png in Resources */,
+				C9A2EA7318AEE6DA006E617D /* instructionsHeader.fhtm in Resources */,
 				ADE0926F17D8C51F0041B472 /* 759-refresh-2-selected@2x.png in Resources */,
 				ADE0927017D8C51F0041B472 /* 759-refresh-2-white.png in Resources */,
 				ADE0927117D8C51F0041B472 /* 759-refresh-2-white@2x.png in Resources */,
@@ -671,6 +698,7 @@
 				ADE0928317D8C51F0041B472 /* 875-skull@2x.png in Resources */,
 				ADE0928617D904D40041B472 /* Pattern - Cloth.png in Resources */,
 				ADE0928717D904D40041B472 /* Pattern - Cloth@2x.png in Resources */,
+				C9A2EA7B18AEE730006E617D /* instructionsEntry.fhtm in Resources */,
 				ADECABB817DE0B7A0069A5FD /* iOSIcon1-57x57.png in Resources */,
 				ADECABBA17DE0B870069A5FD /* iOSIcon1-114x114.png in Resources */,
 				ADECABBC17DE0B970069A5FD /* iOSIcon1-72x72.png in Resources */,
@@ -836,7 +864,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 184;
+				CURRENT_PROJECT_VERSION = 189;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingTester/TypingTester-Prefix.pch";
 				INFOPLIST_FILE = "TypingTester/TypingTester-Info.plist";
@@ -851,7 +879,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 184;
+				CURRENT_PROJECT_VERSION = 189;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingTester/TypingTester-Prefix.pch";
 				INFOPLIST_FILE = "TypingTester/TypingTester-Info.plist";

@@ -374,13 +374,30 @@ static ttSettings *instance = nil;
 
 #pragma mark setup functions
 
-+(void) copyInitialFiles
++(void) copyInitialFilesShouldOverwrite:(BOOL)overwrite
 {
-    [self copyToDocumentsResourceFileNamed:@"welcome" ofType:@"html" toFileName:@"welcome.html" shouldOverwrite:NO];
-    [self copyToDocumentsResourceFileNamed:@"instructions" ofType:@"html" toFileName:@"instructions.html" shouldOverwrite:NO];
-    [self copyToDocumentsResourceFileNamed:@"instructions-iPad" ofType:@"html" toFileName:@"instructions-iPad.html" shouldOverwrite:NO];
-    [self copyToDocumentsResourceFileNamed:@"thankYou" ofType:@"html" toFileName:@"thankYou.html" shouldOverwrite:NO];
-    [self copyToDocumentsResourceFileNamed:@"inputStrings" ofType:@"xml" toFileName:@"inputStrings.xml" shouldOverwrite:NO];
+    [self copyToDocumentsResourceFileNamed:@"welcome" ofType:@"html" toFileName:@"welcome.html" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"welcome-iPad" ofType:@"html" toFileName:@"welcome-iPad.html" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructions" ofType:@"html" toFileName:@"instructions.html" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructions-iPad" ofType:@"html" toFileName:@"instructions-iPad.html" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"thankYou" ofType:@"html" toFileName:@"thankYou.html" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"thankYou-iPad" ofType:@"html" toFileName:@"thankYou-iPad.html" shouldOverwrite:overwrite];
+    
+    [self copyToDocumentsResourceFileNamed:@"instructionsHeader" ofType:@"fhtm" toFileName:@"instructionsHeader.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsFreePractice" ofType:@"fhtm" toFileName:@"instructionsFreePractice.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsForcedPractice" ofType:@"fhtm" toFileName:@"instructionsForcedPractice.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsVerify" ofType:@"fhtm" toFileName:@"instructionsVerify.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsEntry" ofType:@"fhtm" toFileName:@"instructionsEntry.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsFooter" ofType:@"fhtm" toFileName:@"instructionsFooter.fhtm" shouldOverwrite:overwrite];
+    
+    [self copyToDocumentsResourceFileNamed:@"instructionsHeader-iPad" ofType:@"fhtm" toFileName:@"instructionsHeader-iPad.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsFreePractice-iPad" ofType:@"fhtm" toFileName:@"instructionsFreePractice-iPad.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsForcedPractice-iPad" ofType:@"fhtm" toFileName:@"instructionsForcedPractice-iPad.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsVerify-iPad" ofType:@"fhtm" toFileName:@"instructionsVerify-iPad.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsEntry-iPad" ofType:@"fhtm" toFileName:@"instructionsEntry-iPad.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsFooter-iPad" ofType:@"fhtm" toFileName:@"instructionsFooter-iPad.fhtm" shouldOverwrite:overwrite];
+    
+    [self copyToDocumentsResourceFileNamed:@"inputStrings" ofType:@"xml" toFileName:@"inputStrings.xml" shouldOverwrite:overwrite];
 }
 
 +(void) copyToDocumentsResourceFileNamed:(NSString*)sourceName ofType:(NSString*)type toFileName:(NSString*)destinationName shouldOverwrite:(BOOL)overwrite
@@ -388,18 +405,10 @@ static ttSettings *instance = nil;
     NSString *documentsDirectory = [ttUtilities documentsDirectory];
     NSString *destinationFile = [documentsDirectory stringByAppendingPathComponent:destinationName];
     NSString *sourceFile = [[NSBundle mainBundle] pathForResource:sourceName ofType:type];
-    [ttUtilities copySourceFile:sourceFile toDestination:destinationFile shouldOverwrite:overwrite];
+    if (sourceFile != nil)
+    {
+        [ttUtilities copySourceFile:sourceFile toDestination:destinationFile shouldOverwrite:overwrite];
+    }
 }
-
-+(void) resetInitialFiles
-{
-    [self copyToDocumentsResourceFileNamed:@"welcome" ofType:@"html" toFileName:@"welcome.html" shouldOverwrite:YES];
-    [self copyToDocumentsResourceFileNamed:@"instructions" ofType:@"html" toFileName:@"instructions.html" shouldOverwrite:YES];
-    [self copyToDocumentsResourceFileNamed:@"instructions-iPad" ofType:@"html" toFileName:@"instructions-iPad.html" shouldOverwrite:YES];
-    [self copyToDocumentsResourceFileNamed:@"thankYou" ofType:@"html" toFileName:@"thankYou.html" shouldOverwrite:YES];
-    [self copyToDocumentsResourceFileNamed:@"inputStrings" ofType:@"xml" toFileName:@"inputStrings.xml" shouldOverwrite:YES];
-}
-
-
 
 @end
