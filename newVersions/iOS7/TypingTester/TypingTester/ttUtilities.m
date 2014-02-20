@@ -58,4 +58,16 @@
     return [NSString stringWithFormat:@"%@ v%@ (build %@)", name, version, build];
 }
 
++(int) numberOfLogFilesOnDevice
+{
+    int count = 0;
+    NSArray *files = [[NSFileManager defaultManager]  contentsOfDirectoryAtPath:[ttUtilities documentsDirectory] error:nil];
+    for (NSString *string in files)
+    {
+        if ([[string pathExtension]isEqualToString:@"txt"]) count++;
+    }
+    return count/2;
+    
+}
+
 @end

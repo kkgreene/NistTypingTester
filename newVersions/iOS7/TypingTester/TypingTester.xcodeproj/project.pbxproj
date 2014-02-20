@@ -590,6 +590,11 @@
 				TargetAttributes = {
 					AD04766117A964B600657D08 = {
 						DevelopmentTeam = ZVHUMWB3SJ;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -864,7 +869,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 189;
+				CURRENT_PROJECT_VERSION = 192;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingTester/TypingTester-Prefix.pch";
 				INFOPLIST_FILE = "TypingTester/TypingTester-Info.plist";
@@ -879,7 +884,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 189;
+				CURRENT_PROJECT_VERSION = 192;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingTester/TypingTester-Prefix.pch";
 				INFOPLIST_FILE = "TypingTester/TypingTester-Info.plist";
