@@ -106,6 +106,9 @@ namespace TypingTester.controls
 
         private void Settings_Load(object sender, EventArgs e)
         {
+            setHeaderVisibility(false);
+            SetRoundProgresssVisibility(false);
+            SetEntityProgressVisibility(false);
             ConfigureUi();
         }
 

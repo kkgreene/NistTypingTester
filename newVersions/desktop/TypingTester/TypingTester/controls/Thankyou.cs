@@ -19,6 +19,9 @@ namespace TypingTester.controls
 
         private void Thankyou_Load(object sender, EventArgs e)
         {
+            SetHeaderText("Thank You");
+            SetEntityProgressVisibility(false);
+            SetRoundProgresssVisibility(false);
             FileStream source = new FileStream(@".\documents\thankYou.html", FileMode.Open, FileAccess.Read);
             webBrowser1.DocumentStream = source;
             Session.Instance.CurrentPhase = Constants.Phase.ThankYou;

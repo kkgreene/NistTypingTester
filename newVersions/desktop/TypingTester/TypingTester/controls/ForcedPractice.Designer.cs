@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForcedPractice));
-            this.lblSessionProgress = new System.Windows.Forms.Label();
-            this.lblRound = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.tbEntry = new TypingTester.CueTextBox();
             this.lblEntity = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
@@ -46,46 +43,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgIncorrect)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblSessionProgress
-            // 
-            this.lblSessionProgress.AutoSize = true;
-            this.lblSessionProgress.Location = new System.Drawing.Point(20, 15);
-            this.lblSessionProgress.Name = "lblSessionProgress";
-            this.lblSessionProgress.Size = new System.Drawing.Size(65, 13);
-            this.lblSessionProgress.TabIndex = 0;
-            this.lblSessionProgress.Text = "Entity # of #";
-            // 
-            // lblRound
-            // 
-            this.lblRound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRound.AutoSize = true;
-            this.lblRound.Location = new System.Drawing.Point(695, 15);
-            this.lblRound.Name = "lblRound";
-            this.lblRound.Size = new System.Drawing.Size(71, 13);
-            this.lblRound.TabIndex = 1;
-            this.lblRound.Text = "Round # of #";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(357, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Practice";
-            // 
             // tbEntry
             // 
             this.tbEntry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEntry.Cue = "Enter string here";
+            this.tbEntry.Cue = "Type here ...";
+            this.tbEntry.EscapeCurrentValue = false;
             this.tbEntry.Id = null;
             this.tbEntry.Location = new System.Drawing.Point(23, 118);
             this.tbEntry.Name = "tbEntry";
             this.tbEntry.Size = new System.Drawing.Size(743, 20);
-            this.tbEntry.TabIndex = 3;
+            this.tbEntry.TabIndex = 0;
             this.tbEntry.TargetString = "";
             this.tbEntry.TextChanged += new System.EventHandler(this.tbEntry_TextChanged);
             // 
@@ -93,8 +61,6 @@
             // 
             this.lblEntity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEntity.BackColor = System.Drawing.Color.Moccasin;
-            this.lblEntity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEntity.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEntity.Location = new System.Drawing.Point(23, 57);
             this.lblEntity.Name = "lblEntity";
@@ -107,10 +73,10 @@
             // 
             this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNext.Enabled = false;
-            this.btnNext.Location = new System.Drawing.Point(386, 144);
+            this.btnNext.Location = new System.Drawing.Point(393, 144);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 7;
+            this.btnNext.TabIndex = 2;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -119,7 +85,7 @@
             // 
             this.imgIncorrect.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.imgIncorrect.Image = ((System.Drawing.Image)(resources.GetObject("imgIncorrect.Image")));
-            this.imgIncorrect.Location = new System.Drawing.Point(329, 171);
+            this.imgIncorrect.Location = new System.Drawing.Point(329, 179);
             this.imgIncorrect.Name = "imgIncorrect";
             this.imgIncorrect.Size = new System.Drawing.Size(36, 36);
             this.imgIncorrect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -133,7 +99,7 @@
             this.lblIncorrect.AutoSize = true;
             this.lblIncorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIncorrect.ForeColor = System.Drawing.Color.Red;
-            this.lblIncorrect.Location = new System.Drawing.Point(371, 179);
+            this.lblIncorrect.Location = new System.Drawing.Point(371, 189);
             this.lblIncorrect.Name = "lblIncorrect";
             this.lblIncorrect.Size = new System.Drawing.Size(81, 20);
             this.lblIncorrect.TabIndex = 9;
@@ -153,10 +119,10 @@
             // btnBack
             // 
             this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnBack.Location = new System.Drawing.Point(301, 144);
+            this.btnBack.Location = new System.Drawing.Point(312, 144);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 10;
+            this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -170,7 +136,7 @@
             this.btnHide.Location = new System.Drawing.Point(23, 449);
             this.btnHide.Name = "btnHide";
             this.btnHide.Size = new System.Drawing.Size(97, 34);
-            this.btnHide.TabIndex = 11;
+            this.btnHide.TabIndex = 3;
             this.btnHide.Text = "Hide String";
             this.btnHide.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHide.UseVisualStyleBackColor = true;
@@ -186,7 +152,7 @@
             this.btnQuit.Location = new System.Drawing.Point(126, 449);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 34);
-            this.btnQuit.TabIndex = 12;
+            this.btnQuit.TabIndex = 4;
             this.btnQuit.Text = "Quit";
             this.btnQuit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -202,7 +168,7 @@
             this.btnSkip.Location = new System.Drawing.Point(207, 449);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(75, 34);
-            this.btnSkip.TabIndex = 13;
+            this.btnSkip.TabIndex = 5;
             this.btnSkip.Text = "Skip";
             this.btnSkip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSkip.UseVisualStyleBackColor = true;
@@ -221,11 +187,17 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lblEntity);
             this.Controls.Add(this.tbEntry);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblRound);
-            this.Controls.Add(this.lblSessionProgress);
             this.Name = "ForcedPractice";
             this.Load += new System.EventHandler(this.ForcedPractice_Load);
+            this.Controls.SetChildIndex(this.tbEntry, 0);
+            this.Controls.SetChildIndex(this.lblEntity, 0);
+            this.Controls.SetChildIndex(this.btnNext, 0);
+            this.Controls.SetChildIndex(this.imgIncorrect, 0);
+            this.Controls.SetChildIndex(this.lblIncorrect, 0);
+            this.Controls.SetChildIndex(this.btnBack, 0);
+            this.Controls.SetChildIndex(this.btnHide, 0);
+            this.Controls.SetChildIndex(this.btnQuit, 0);
+            this.Controls.SetChildIndex(this.btnSkip, 0);
             ((System.ComponentModel.ISupportInitialize)(this.imgIncorrect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,9 +206,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblSessionProgress;
-        private System.Windows.Forms.Label lblRound;
-        private System.Windows.Forms.Label label3;
         private CueTextBox tbEntry;
         private System.Windows.Forms.Label lblEntity;
         private System.Windows.Forms.Button btnNext;

@@ -25,6 +25,13 @@ namespace TypingTester
             set { mCue = value; updateCue(); }
         }
 
+        private bool mEscapeCurrentValue;
+        public bool EscapeCurrentValue
+        {
+            get { return mEscapeCurrentValue; }
+            set { mEscapeCurrentValue = value; }
+        }
+
         private string mTargetString = string.Empty;
         public string TargetString
         {
@@ -133,10 +140,21 @@ namespace TypingTester
             TestEvent te = new TestEvent(Constants.Event.KeyPress,
                                          Session.Instance.CurrentPhase,
                                          Session.Instance.CurrentSubPhase,
-                                         string.Format("{0}", this.Text));
+                                         string.Format("{0}", EscapeString(this.Text)));
             te.TargetString = this.TargetString;
-            te.Key = e.KeyChar.ToString();
+            te.Key = this.EscapeString(e.KeyChar.ToString());
             Session.Instance.AddEvent(te);
+        }
+
+        private string EscapeString(string original)
+        {
+            string retVal = original;
+            if (this.EscapeCurrentValue == true)
+            {
+                retVal = retVal.Replace("\n", @"{LF}");
+                retVal = retVal.Replace("\r", @"{CR}");
+            }
+            return retVal;
         }
     }
 }

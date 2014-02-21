@@ -17,6 +17,7 @@ namespace TypingTester.controls
             InitializeComponent();
             addCommand(@"Go To Practice", new commands.CommandGoToScreen(reciever, Constants.Screen.ForcedPractice));
             addCommand(@"Go To Verify", new commands.CommandGoToScreen(reciever, Constants.Screen.Verify));
+            addCommand(@"Go To Entry", new commands.CommandGoToScreen(reciever, Constants.Screen.Entry));
             currentString = Session.Instance.EntityStrings[Session.Instance.CurrentEntity];
         }
 
@@ -24,13 +25,30 @@ namespace TypingTester.controls
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, Constants.SubPhase.FreePractice,
                                                     @"Next button pressed"));
-            if (Options.Instance.ForcedPracticeRounds == 0)
+            Session.Instance.WorkAreaContents = this.tbWorkArea.Text;
+            if (Options.Instance.ForcedPracticeRounds > 0)
             {
-                executeCommand("Go To Verify");
+                executeCommand("Go To Practice");
+            }
+            else if (Options.Instance.VerifyRounds > 0)
+            {
+                executeCommand(@"Go To Verify");
             }
             else
             {
-                executeCommand(@"Go To Practice");
+                PromptToMoveToEntry();
+            }
+        }
+
+        private void PromptToMoveToEntry()
+        {
+            if (Session.Instance.CurrentVerifyRound > Options.Instance.VerifyRounds)
+            {
+                if (MessageBox.Show("Do you want to proceed to the Enter task?", "Memorize Completed",
+                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    executeCommand(@"Go To Entry");
+                }
             }
         }
 
@@ -39,7 +57,9 @@ namespace TypingTester.controls
             Session.Instance.CurrentPhase = Constants.Phase.Memorize;
             Session.Instance.CurrentSubPhase = Constants.SubPhase.FreePractice;
             lblPassword.Text = currentString;
-            lblEntityProgress.Text = string.Format("Entity {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length);
+            SetHeaderText("Memorize");
+            SetEntityProgressText(string.Format("Password {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length));
+            this.tbWorkArea.Text = Session.Instance.WorkAreaContents;
         }
 
         public override void ExitControl()

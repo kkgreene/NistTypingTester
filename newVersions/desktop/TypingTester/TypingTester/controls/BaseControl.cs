@@ -54,6 +54,38 @@ namespace TypingTester.controls
             base.OnMouseClick(e);
         }
 
+        protected void SetHeaderText(string text)
+        {
+            this.lblHeaderBase.Text = text;
+        }
+
+        protected void setHeaderVisibility(bool visible)
+        {
+            this.lblHeaderBase.Visible = visible;
+        }
+
+        protected void SetEntityProgressText(string text)
+        {
+            this.lblEntityProgressBase.Text = text;
+        }
+
+        protected void SetEntityProgressVisibility(bool visible)
+        {
+            this.lblEntityProgressBase.Visible = visible;
+        }
+
+        protected void SetRoundProgressText(string text)
+        {
+            this.lblRoundBase.Text = text;
+        }
+
+        protected void SetRoundProgresssVisibility(bool visible)
+        {
+            this.lblRoundBase.Visible = visible;
+        }
+
+
+
 
     }
 }

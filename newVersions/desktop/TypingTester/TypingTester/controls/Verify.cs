@@ -28,13 +28,13 @@ namespace TypingTester.controls
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, Constants.SubPhase.Verify,
                                                     @"Back button pressed"));
-            if (Options.Instance.ForcedPracticeRounds == 0)
+            if (Options.Instance.ForcedPracticeRounds > 0)
             {
-                executeCommand(@"Go To Memorize");
+                executeCommand(@"Go To Practice");
             }
             else
             {
-                executeCommand(@"Go To Practice");
+                executeCommand(@"Go To Memorize");
             }
         }
 
@@ -64,32 +64,42 @@ namespace TypingTester.controls
                 te.TargetString = currentString;
                 Session.Instance.AddEvent(te);
                 Session.Instance.CurrentVerifyRound++;
-                if (Session.Instance.CurrentVerifyRound >= Options.Instance.VerifyRounds)
-                {
-                    executeCommand(@"Go To Entry");
-                    return;
-                }
             }
             else
             {
                 lblIncorrect.Visible = true;
                 imgIncorrect.Visible = true;
             }
+            PromptToMoveOn();
             UpdateUi();
+        }
+
+        private void PromptToMoveOn()
+        {
+            if (Session.Instance.CurrentVerifyRound > Options.Instance.VerifyRounds)
+            {
+                if (MessageBox.Show("Do you want to proceed to the Enter task?", "Verify Completed",
+                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    executeCommand(@"Go To Entry");
+                }
+            }
         }
 
         private void Verify_Load(object sender, EventArgs e)
         {
+            SetHeaderText("Verify");
             Session.Instance.CurrentPhase = Constants.Phase.Memorize;
             Session.Instance.CurrentSubPhase = Constants.SubPhase.Verify;
             tbEntry.TargetString = currentString;
-            lblSessionProgress.Text = string.Format("Entity {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length);
+            SetEntityProgressText(string.Format("Password {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length));
             UpdateUi();
         }
 
         private void UpdateUi()
         {
-            lblEntityProgress.Text = string.Format("Round {0} of {1}", Session.Instance.CurrentVerifyRound, Options.Instance.VerifyRounds);
+            SetRoundProgressText(string.Format("Round {0} of {1}", Session.Instance.CurrentVerifyRound, Options.Instance.VerifyRounds));
+            this.tbEntry.Text = string.Empty;
         }
 
         public override void ExitControl()
@@ -126,6 +136,11 @@ namespace TypingTester.controls
                                                         Constants.SubPhase.Verify, @"Skip button pressed"));
             executeCommand(@"Skip Entity");
             return;
+        }
+
+        private void imgIncorrect_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

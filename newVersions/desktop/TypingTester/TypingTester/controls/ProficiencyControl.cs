@@ -23,7 +23,7 @@ namespace TypingTester.controls
             int currentProficiencyItem = Session.Instance.CurrentProficiencyString;
             int totalProficiencyItems = Session.Instance.ProficiencyStrings.Length;
             string currentString = Session.Instance.ProficiencyStrings[currentProficiencyItem];
-            lblProgress.Text = string.Format("Entry {0} of {1}", currentProficiencyItem + 1, totalProficiencyItems);
+            SetEntityProgressText(string.Format("Phrase {0} of {1}", currentProficiencyItem + 1, totalProficiencyItems));
             lblProficiencyString.Text = currentString;
         }
 
@@ -57,8 +57,10 @@ namespace TypingTester.controls
 
         private void ProficiencyControl_Load(object sender, EventArgs e)
         {
-            UpdateDisplay();
             Session.Instance.CurrentPhase = Constants.Phase.Proficiency;
+            SetHeaderText("Typing Phrases");
+            SetRoundProgresssVisibility(false);
+            UpdateDisplay();
         }
 
         private void tbEntry_TextChanged(object sender, EventArgs e)

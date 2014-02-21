@@ -46,5 +46,12 @@ namespace TypingTester.controls
                 btnBegin.Enabled = false;
             }
         }
+
+        private void ParticipantNumberControl_Load(object sender, EventArgs e)
+        {
+            setHeaderVisibility(false);
+            SetEntityProgressVisibility(false);
+            SetRoundProgresssVisibility(false);
+        }
     }
 }

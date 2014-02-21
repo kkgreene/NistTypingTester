@@ -61,8 +61,29 @@ namespace TypingTester
         private TimeSpan _timeInForcedPractice;
         private TimeSpan _timeInVerify;
         private int _timesInFreePractice;
+        public int TimesInFreePractice
+        {
+            get
+            {
+                return _timesInFreePractice;
+            }
+        }
         private int _timesInForcedPractice;
+        public int TimesInForcedPractice
+        {
+            get
+            {
+                return _timesInForcedPractice;
+            }
+        }
         private int _timesInVerify;
+        public int TimesInVerify
+        {
+            get
+            {
+                return _timesInVerify;
+            }
+        }
         private Constants.Phase _currentPhase = Constants.Phase.Unknown;
         private Constants.SubPhase _currentSubPhase = Constants.SubPhase.Unknown;
 
@@ -229,11 +250,12 @@ namespace TypingTester
 
         private void initializeLogFiles()
         {
+            DateTime startingTime = DateTime.Now;
             string filepath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             filepath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"NIST_TypingTesterOutput");
             Directory.CreateDirectory(filepath);
-            string rawLogFilename = Path.Combine(filepath, string.Format("{0}-raw.txt", this.ParticipantNumber));
-            string summaryLogFilename = Path.Combine(filepath, string.Format("{0}-summary.txt", this.ParticipantNumber));
+            string rawLogFilename = Path.Combine(filepath, string.Format("{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}-raw.txt", this.ParticipantNumber, startingTime));
+            string summaryLogFilename = Path.Combine(filepath, string.Format("{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}-summary.txt", this.ParticipantNumber, startingTime));
             rawLog = new StreamWriter(rawLogFilename, false);
             rawLog.AutoFlush = true;
             summaryLog = new StreamWriter(summaryLogFilename, false);
@@ -321,7 +343,7 @@ namespace TypingTester
             Console.WriteLine(text);
         }
 
-        private void WriteToSummaryLog(string text)
+        public void WriteToSummaryLog(string text)
         {
             summaryLog.WriteLine(text);
         }

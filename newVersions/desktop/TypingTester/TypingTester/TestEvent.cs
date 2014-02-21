@@ -23,12 +23,13 @@ namespace TypingTester
         public bool Ctrl { get; set; }
         public bool Shift { get; set; }
         public string TargetString { get; set; }
+        public int subphaseRepetitionNumber { get; set; }
 
         public static string LogHeader
         {
             get
             {
-                return "Time\tTime Since Session Start\tParticipant Number\tEvent\tPhase\tSubPhase\tTarget String\tX\tY\tKey\tCurrent Value\tNotes";
+                return "Time\tTime Since Session Start\tParticipant Number\tEvent\tPhase\tSubPhase\tSubphase Visit\tTarget String\tX\tY\tKey\tCurrent Value\tNotes";
             }
         }
 
@@ -45,12 +46,30 @@ namespace TypingTester
             this.Ctrl = false;
             this.Shift = false;
             this.TargetString = string.Empty;
+            switch(this.SubPhase)
+            {
+                case Constants.SubPhase.FreePractice:
+                    this.subphaseRepetitionNumber = Session.Instance.TimesInFreePractice;
+                    break;
+
+                case Constants.SubPhase.ForcedPractice:
+                    this.subphaseRepetitionNumber = Session.Instance.TimesInForcedPractice;
+                    break;
+
+                case Constants.SubPhase.Verify:
+                    this.subphaseRepetitionNumber = Session.Instance.TimesInVerify;
+                    break;
+
+                default:
+                    this.subphaseRepetitionNumber = 0;
+                    break;
+            }
         }
 
         public override string ToString()
         {
-            return string.Format("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}", this.Time, this.Interval, this.ParticipantNumber,
-                this.EventType, this.Phase, this.SubPhase, this.TargetString, this.X, this.Y, this.Key, this.Notes);
+            return string.Format("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\t{11}", this.Time, this.Interval, this.ParticipantNumber,
+                this.EventType, this.Phase, this.SubPhase, this.subphaseRepetitionNumber, this.TargetString, this.X, this.Y, this.Key, this.Notes);
         }
 
         
