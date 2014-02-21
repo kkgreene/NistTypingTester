@@ -42,10 +42,37 @@ namespace TypingTester.controls
             {
                 CueTextBox ctb = new CueTextBox(string.Format("Field{0}", i), "Type here ...", string.Empty);
                 ctb.UseSystemPasswordChar = true;
-                ctb.Width = flowLayoutPanel1.Width - 20;
+                ctb.Width = flowLayoutPanel1.Width - 50;
+                ctb.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right;
                 flowLayoutPanel1.Controls.Add(ctb);
             }
 
         }
+
+        private void flowLayoutPanel1_Resize(object sender, EventArgs e)
+        {
+            foreach (Control c in flowLayoutPanel1.Controls)
+            {
+                if (c is CueTextBox)
+                {
+                    CueTextBox ctb = c as CueTextBox;
+                    ctb.Width = flowLayoutPanel1.Width - 60;
+
+                }
+            }
+        }
+
+        /*private void flowLayoutPanel1_SizeChanged(object sender, EventArgs e)
+        {
+            foreach (Control c in flowLayoutPanel1.Controls)
+            {
+                if (c is CueTextBox)
+                {
+                    CueTextBox ctb = c as CueTextBox;
+                    ctb.Width = flowLayoutPanel1.Width - 60;
+                    
+                }
+            }
+        }*/
     }
 }

@@ -29,9 +29,23 @@ namespace TypingTester.commands
 
         public override void execute()
         {
-            //Session.Instance.CurrentEntity++;
-            Session.Instance.nextEntity();
-            CommandGoToScreen cmd = new CommandGoToScreen(_reciever, Constants.Screen.Memorize);
+            CommandGoToScreen cmd;
+            if (Session.Instance.nextEntity())
+            {
+                if (Options.Instance.disableFreePractice == false)
+                {
+                    cmd = new CommandGoToScreen(_reciever, Constants.Screen.Memorize);
+                }
+                else
+                {
+                    cmd = new CommandGoToScreen(_reciever, Constants.Screen.ForcedPractice);
+                }
+            }
+            else
+            {
+                cmd = new CommandGoToScreen(_reciever, Constants.Screen.Recall);
+            }
+            //CommandGoToScreen cmd = new CommandGoToScreen(_reciever, Constants.Screen.Memorize);
             cmd.execute();
         }
 

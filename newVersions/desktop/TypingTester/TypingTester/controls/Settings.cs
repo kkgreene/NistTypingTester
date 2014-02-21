@@ -32,6 +32,7 @@ namespace TypingTester.controls
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (!this.validateOptions()) return;
             Options o = Options.Instance;
             o.NumberOfEntities = Convert.ToInt32(spnNumberOfEntities.Value);
             o.RepetitionPerEntity = Convert.ToInt32(spnRepetitions.Value);
@@ -50,8 +51,20 @@ namespace TypingTester.controls
             o.ShowHideButtonOnPractice = cbHideButton.Checked;
             o.ShowQuitButton = cbQuitButton.Checked;
             o.ShowSkipButton = cbSkipButton.Checked;
+            o.disableFreePractice = cbDisableFreePractice.Checked;
+            o.disableFreePracticeTextBox = cbDisableFPTextBox.Checked;
             o.save();
             executeCommand(@"Go To ParticipantNumber");
+        }
+
+        private bool validateOptions()
+        {
+            if (this.cbDisableFreePractice.Checked && (Convert.ToInt32(spnForcedPractice.Value) <= 0))
+            {
+                MessageBox.Show("Forced practice rounds must be > 0 when Free Practice is disabled.", "Invalid Options", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
 
         private void ConfigureUi()
@@ -80,6 +93,9 @@ namespace TypingTester.controls
             cbUseSelectionSeed.Enabled = (o.RandomEntitySelection) ? true : false;
             tbSelectionSeed.Enabled = (o.RandomEntitySelection && o.UseSelectionSeed) ? true : false;
             spnGroupId.Enabled = (o.UseGroupId) ? true : false;
+
+            cbDisableFreePractice.Checked = o.disableFreePractice;
+            cbDisableFPTextBox.Checked = o.disableFreePracticeTextBox;
         }
 
         private void cbRandomizeOrder_CheckedChanged(object sender, EventArgs e)
@@ -110,6 +126,11 @@ namespace TypingTester.controls
             SetRoundProgresssVisibility(false);
             SetEntityProgressVisibility(false);
             ConfigureUi();
+        }
+
+        private void cbUseGroupFilter_CheckedChanged(object sender, EventArgs e)
+        {
+            spnGroupId.Enabled = (cbUseGroupFilter.Checked);
         }
 
 

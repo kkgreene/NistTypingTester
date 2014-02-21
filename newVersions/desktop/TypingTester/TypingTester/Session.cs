@@ -36,6 +36,9 @@ namespace TypingTester
         private List<string> _proficiencyStrings = new List<string>();
         private List<string> _entityStrings = new List<string>();
 
+        private bool _entityStringNumberError = false;
+        private bool _entityFilterError = false;
+
         public string[] ProficiencyStrings
         {
             get
@@ -224,11 +227,15 @@ namespace TypingTester
             this._timesInFreePractice = 0;
             this._timesInVerify = 0;
             this._summaryWritten = false;
+            this._entityFilterError = false;
+            this._entityStringNumberError = false;
         }
 
         private void loadData()
         {
             InputFile input = new InputFile(@".\documents\inputStrings.xml");
+            this._entityStringNumberError = input.EntityNumberError;
+            this._entityFilterError = input.EntityFilterError;
             this._proficiencyStrings = new List<string>(input.ProficiencyStrings);
             this._entityStrings = new List<string>(input.EntityStrings);
         }
@@ -254,8 +261,8 @@ namespace TypingTester
             string filepath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             filepath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"NIST_TypingTesterOutput");
             Directory.CreateDirectory(filepath);
-            string rawLogFilename = Path.Combine(filepath, string.Format("{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}-raw.txt", this.ParticipantNumber, startingTime));
-            string summaryLogFilename = Path.Combine(filepath, string.Format("{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}-summary.txt", this.ParticipantNumber, startingTime));
+            string rawLogFilename = Path.Combine(filepath, string.Format("{0}-{1:yyyy-MM-dd_HH-mm-ss-tt}-desktop-raw.txt", this.ParticipantNumber, startingTime));
+            string summaryLogFilename = Path.Combine(filepath, string.Format("{0}-{1:yyyy-MM-dd_HH-mm-ss-tt}-desktop-summary.txt", this.ParticipantNumber, startingTime));
             rawLog = new StreamWriter(rawLogFilename, false);
             rawLog.AutoFlush = true;
             summaryLog = new StreamWriter(summaryLogFilename, false);
@@ -280,21 +287,26 @@ namespace TypingTester
             }
         }
 
-        public void nextEntity()
+        public bool nextEntity()
         {
             if (!_summaryWritten) summarizeMemorizePhase();
-            this.CurrentEntity++;
-            this._timeInForcedPractice = TimeSpan.Zero;
-            this._timeInFreePractice = TimeSpan.Zero;
-            this._timeInVerify = TimeSpan.Zero;
-            this._timesInForcedPractice = 0;
-            this._timesInFreePractice = 0;
-            this._timesInVerify = 0;
-            this.CurrentEntryForEntity = 1;
-            this.CurrentPracticeRound = 1;
-            this.CurrentVerifyRound = 1;
-            this.WorkAreaContents = string.Empty;
-            _summaryWritten = false;
+            if (this.CurrentEntity + 1 < this.EntityStrings.Length)
+            {
+                this.CurrentEntity++;
+                this._timeInForcedPractice = TimeSpan.Zero;
+                this._timeInFreePractice = TimeSpan.Zero;
+                this._timeInVerify = TimeSpan.Zero;
+                this._timesInForcedPractice = 0;
+                this._timesInFreePractice = 0;
+                this._timesInVerify = 0;
+                this.CurrentEntryForEntity = 1;
+                this.CurrentPracticeRound = 1;
+                this.CurrentVerifyRound = 1;
+                this.WorkAreaContents = string.Empty;
+                _summaryWritten = false;
+                return true;
+            }
+            return false;
         }
 
         public void summarizeMemorizePhase()
@@ -311,9 +323,19 @@ namespace TypingTester
         }
 
         private void WriteSummaryHeader()
-        { 
+        {
+            string fullname = System.Reflection.Assembly.GetExecutingAssembly().GetName().FullName;
+            WriteToSummaryLog(fullname);
             WriteToSummaryLog(string.Format("Participant number: {0}", ParticipantNumber));
             WriteToSummaryLog(Options.Instance.GetSettings());
+            if (this._entityStringNumberError)
+            {
+                WriteToSummaryLog(string.Format("Settings Error: {0} passwords specified in settings, only {1} passwords found matching specified criteria.", Options.Instance.NumberOfEntities, this._entityStrings.Count));
+            }
+            if (this._entityFilterError)
+            {
+                WriteToSummaryLog(string.Format("Settings Error: No passwords found matching specified filters, using all passwords as source pool.", Options.Instance.NumberOfEntities, this._entityStrings.Count));
+            }
             WriteToSummaryLog("Proficiency Strings");
             foreach(string s in this.ProficiencyStrings)
             {
@@ -346,6 +368,7 @@ namespace TypingTester
         public void WriteToSummaryLog(string text)
         {
             summaryLog.WriteLine(text);
+            Console.WriteLine(text);
         }
 
         #endregion

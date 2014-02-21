@@ -31,6 +31,7 @@ namespace TypingTester.controls
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Proficiency,
                                       Constants.SubPhase.None, @"Next button pressed"));
+            this.btnHidden.Focus();
             if (tbEntry.Text.Equals(lblProficiencyString.Text))
             {
                 TestEvent evt = new TestEvent(Constants.Event.CorrectValueEntered, Constants.Phase.Proficiency,
@@ -60,6 +61,7 @@ namespace TypingTester.controls
             Session.Instance.CurrentPhase = Constants.Phase.Proficiency;
             SetHeaderText("Typing Phrases");
             SetRoundProgresssVisibility(false);
+            this.btnHidden.Focus();
             UpdateDisplay();
         }
 

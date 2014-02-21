@@ -30,6 +30,8 @@ namespace TypingTester
         public bool ShowSkipButton { get; set; }
         public bool ShowQuitButton { get; set; }
         public bool ShowHideButtonOnPractice { get; set; }
+        public bool disableFreePractice { get; set; }
+        public bool disableFreePracticeTextBox { get; set; }
 
 
         private Options()
@@ -64,6 +66,8 @@ namespace TypingTester
             this.ShowHideButtonOnPractice = false;
             this.ShowQuitButton = false;
             this.ShowSkipButton = false;
+            this.disableFreePractice = false;
+            this.disableFreePracticeTextBox = false;
         }
 
         public void ResetToDefault()
@@ -93,6 +97,8 @@ namespace TypingTester
             this.ShowSkipButton = (bool)(from el in root.Descendants(OptionTags.showSkipButton) select el).First();
             this.ShowQuitButton = (bool)(from el in root.Descendants(OptionTags.showQuitButton) select el).First();
             this.ShowHideButtonOnPractice = (bool)(from el in root.Descendants(OptionTags.showHideButton) select el).First();
+            this.disableFreePractice = (bool)(from el in root.Descendants(OptionTags.disableFreePractice) select el).First();
+            this.disableFreePracticeTextBox = (bool)(from el in root.Descendants(OptionTags.disableFreePracticeTextBox) select el).First();
         }
 
         public void save()
@@ -116,6 +122,8 @@ namespace TypingTester
             root.Add(new XElement(OptionTags.showSkipButton, this.ShowSkipButton));
             root.Add(new XElement(OptionTags.showQuitButton, this.ShowQuitButton));
             root.Add(new XElement(OptionTags.showHideButton, this.ShowHideButtonOnPractice));
+            root.Add(new XElement(OptionTags.disableFreePractice, this.disableFreePractice));
+            root.Add(new XElement(OptionTags.disableFreePracticeTextBox, this.disableFreePracticeTextBox));
             doc.Add(root);
             doc.Save(_filename);
         }

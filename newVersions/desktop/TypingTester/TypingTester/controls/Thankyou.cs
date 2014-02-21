@@ -23,9 +23,9 @@ namespace TypingTester.controls
             SetEntityProgressVisibility(false);
             SetRoundProgresssVisibility(false);
             FileStream source = new FileStream(@".\documents\thankYou.html", FileMode.Open, FileAccess.Read);
-            webBrowser1.DocumentStream = source;
             Session.Instance.CurrentPhase = Constants.Phase.ThankYou;
             Session.Instance.CurrentSubPhase = Constants.SubPhase.Unknown;
+            webBrowser1.DocumentStream = source;
         }
 
         private void button1_Click(object sender, EventArgs e)

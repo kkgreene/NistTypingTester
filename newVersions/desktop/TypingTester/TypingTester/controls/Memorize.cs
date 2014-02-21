@@ -59,7 +59,12 @@ namespace TypingTester.controls
             lblPassword.Text = currentString;
             SetHeaderText("Memorize");
             SetEntityProgressText(string.Format("Password {0} of {1}", Session.Instance.CurrentEntity + 1, Session.Instance.EntityStrings.Length));
+            SetRoundProgresssVisibility(false);
             this.tbWorkArea.Text = Session.Instance.WorkAreaContents;
+            if (Options.Instance.disableFreePracticeTextBox == true)
+            {
+                this.tbWorkArea.Visible = false;
+            }
         }
 
         public override void ExitControl()
