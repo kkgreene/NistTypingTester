@@ -73,11 +73,12 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Location = new System.Drawing.Point(196, 47);
+            this.label2.Location = new System.Drawing.Point(189, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(372, 13);
+            this.label2.Size = new System.Drawing.Size(403, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "When you are finished please press the \'>\' button at the bottom of the screen.";
+            this.label2.Text = "When you are finished please press the \'Next\' button at the bottom of the screen." +
+    "";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Recall

@@ -82,7 +82,7 @@
             this.tsbOptions.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbOptions.Name = "tsbOptions";
             this.tsbOptions.Size = new System.Drawing.Size(23, 22);
-            this.tsbOptions.Text = "toolStripButton1";
+            this.tsbOptions.Text = "Options";
             this.tsbOptions.Click += new System.EventHandler(this.tsbOptions_Click);
             // 
             // mainPanel
