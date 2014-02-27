@@ -43,10 +43,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    //ttLocalHtmlFile *file = [[ttLocalHtmlFile alloc]initWithFilenameBase:@"instructions"];
-    //[self.webView loadData:file.data MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:file.url];
-    NSString *htmlContent = [self loadInstructionsHtml];
-    [self.webView loadHTMLString:htmlContent baseURL:nil];
+    [self loadInstructionsHtml];
+    ttLocalHtmlFile *file = [[ttLocalHtmlFile alloc]initWithFilenameBase:@"temp"];
+    [self.webView loadData:file.data MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:file.url];
+    //NSString *htmlContent = [self loadInstructionsHtml];
+    //[self.webView loadHTMLString:htmlContent baseURL:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -113,7 +114,7 @@
     
 }
 
-- (NSString*) loadInstructionsHtml
+- (void) loadInstructionsHtml
 {
     NSString *headerText;
     NSString *freePracticeText;
@@ -140,8 +141,24 @@
     if ([entryText length] > 0) [output appendFormat:@"%@", entryText];
     if ([footerText length] > 0) [output appendFormat:@"%@", footerText];
     [output appendFormat:@"</body></html>"];
-    return [output copy];
+    [self writeTempFile:output];
+    return;
+}
+
+-(void) writeTempFile:(NSString*)data
+{
+    NSString *tempFile = [[ttUtilities documentsDirectory] stringByAppendingPathComponent:@"temp.html"];
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSError* error;
+    if ([fileManager fileExistsAtPath:tempFile])
+    {
+        [fileManager removeItemAtPath:tempFile error:&error];
+    }
+    [fileManager createFileAtPath:tempFile contents:nil attributes:nil];
     
+	NSFileHandle *tempHandle = [NSFileHandle fileHandleForWritingAtPath:tempFile];
+	
+	[tempHandle writeData:[data dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
 - (NSString*)loadInstructionFileFragmentNamed:(NSString*)filenameBase
