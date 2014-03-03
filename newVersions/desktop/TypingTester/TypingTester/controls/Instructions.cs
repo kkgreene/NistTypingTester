@@ -38,11 +38,30 @@ namespace TypingTester.controls
             SetHeaderText("Instructions");
             SetEntityProgressVisibility(false);
             SetRoundProgresssVisibility(false);
-            //FileStream source = new FileStream(@".\documents\instructions.html", FileMode.Open, FileAccess.Read);
-            //webBrowser1.DocumentStream = source;
-            webBrowser1.DocumentText = LoadHtml();
+            string tempFile = this.SaveTempHtml();
+            FileStream source = new FileStream(tempFile, FileMode.Open, FileAccess.Read);
+            webBrowser1.DocumentStream = source;
+            //webBrowser1.DocumentText = LoadHtml();
             Session.Instance.CurrentPhase = Constants.Phase.Instruction;
             Session.Instance.CurrentSubPhase = Constants.SubPhase.Unknown;
+        }
+
+        private string SaveTempHtml()
+        {
+            string htmlCode = this.LoadHtml();
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            
+            string filepath = Path.Combine(appDataPath, @"NistTypingTester");
+            Directory.CreateDirectory(filepath);
+            // fill in the correct appdata path instead of realtive paths
+            htmlCode = htmlCode.Replace(@".\", string.Format(@"{0}\", filepath));
+
+            string file = Path.Combine(filepath, @"temp.html");
+            StreamWriter tempFile = new StreamWriter(file);
+            tempFile.WriteLine(htmlCode);
+            tempFile.Flush();
+            tempFile.Close();
+            return file;
         }
 
         private string LoadHtml()

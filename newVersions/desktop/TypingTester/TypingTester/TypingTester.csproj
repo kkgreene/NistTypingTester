@@ -217,6 +217,7 @@
     </EmbeddedResource>
     <None Include="documents\instructionsEntry.fhtm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="documents\instructionsFooter.fhtm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
