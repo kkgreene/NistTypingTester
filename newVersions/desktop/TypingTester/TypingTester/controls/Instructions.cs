@@ -49,12 +49,13 @@ namespace TypingTester.controls
         private string SaveTempHtml()
         {
             string htmlCode = this.LoadHtml();
-            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string myDocPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string filepath = Path.Combine(appDataPath, @"NistTypingTester");
+            string imgPath = Path.Combine(myDocPath, @"NTTImages");
             Directory.CreateDirectory(filepath);
             // fill in the correct appdata path instead of realtive paths
-            htmlCode = htmlCode.Replace(@".\", string.Format(@"{0}\", filepath));
+            htmlCode = htmlCode.Replace(@".\", string.Format(@"{0}\", imgPath));
 
             string file = Path.Combine(filepath, @"temp.html");
             StreamWriter tempFile = new StreamWriter(file);
