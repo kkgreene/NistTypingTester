@@ -22,8 +22,13 @@ namespace TypingTester
         public string[] ProficiencyStrings { get; protected set; }
         public string[] EntityStrings { get; protected set; }
 
+        public bool EntityNumberError { get; protected set; }
+        public bool EntityFilterError { get; protected set; }
+
         public InputFile(string filename)
         {
+            this.EntityNumberError = false;
+            this.EntityFilterError = false;
             Random rand = new Random();
             XElement root = XElement.Load(filename);
             // load proficiency strings
@@ -56,6 +61,14 @@ namespace TypingTester
                                  orderby (int)el.Attribute("itemId")
                                  select el;
             }
+            // check for no matched filters
+            if (entityElements.Count() == 0)
+            {
+                entityElements = from el in root.Descendants("memorizationInput")
+                                 orderby (int)el.Attribute("itemId")
+                                 select el;
+                this.EntityFilterError = true;
+            }
             // get the initial list of filtered and ordered entities
             List<string> entities = new List<string>();
             foreach (XElement element in entityElements)
@@ -75,8 +88,14 @@ namespace TypingTester
             }
 
             // cut the list down to the specified size
-            entities = entities.GetRange(0, Options.Instance.NumberOfEntities);
-
+            if (entities.Count < Options.Instance.NumberOfEntities)
+            {
+                this.EntityNumberError = true;
+            }
+            else
+            {
+                entities = entities.GetRange(0, Options.Instance.NumberOfEntities);
+            }
             // randomize order of the remaining strings
             if (Options.Instance.RandomEntityOrder)
             {

@@ -17,4 +17,6 @@
   <showSkipButton>false</showSkipButton>
   <showQuitButton>false</showQuitButton>
   <showHideButton>false</showHideButton>
+  <disableFreePractice>false</disableFreePractice>
+  <disableFreePracticeTextBox>false</disableFreePracticeTextBox>
 </options>

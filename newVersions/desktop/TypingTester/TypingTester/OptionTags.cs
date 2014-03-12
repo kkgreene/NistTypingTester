@@ -25,5 +25,7 @@ namespace TypingTester
         public static string showSkipButton= "showSkipButton";
         public static string showQuitButton= "showQuitButton";
         public static string showHideButton = "showHideButton";
+        public static string disableFreePractice = "disableFreePractice";
+        public static string disableFreePracticeTextBox = "disableFreePracticeTextBox";
     };
 }

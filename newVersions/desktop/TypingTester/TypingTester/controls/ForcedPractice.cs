@@ -22,8 +22,6 @@ namespace TypingTester.controls
             addCommand(@"Go To Recall", new commands.CommandGoToScreen(reciever, Constants.Screen.Recall));
             addCommand(@"Next Entity", new commands.NextEntity(reciever));
             addCommand(@"Go To Entry", new commands.CommandGoToScreen(reciever, Constants.Screen.Entry));
-            //currentString = Session.Instance.EntityStrings[Session.Instance.CurrentEntity];
-            
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -37,6 +35,7 @@ namespace TypingTester.controls
         {
             Session.Instance.AddEvent(new TestEvent(Constants.Event.ControlActivated, Constants.Phase.Memorize, Constants.SubPhase.ForcedPractice,
                                                     @"Next button pressed"));
+            this.btnHidden.Focus();
             if (tbEntry.Text.Equals(currentString)) // did they get the string correct
             {
                 TestEvent te = new TestEvent(Constants.Event.CorrectValueEntered, Constants.Phase.Memorize, Constants.SubPhase.ForcedPractice,
@@ -64,7 +63,7 @@ namespace TypingTester.controls
                 this.executeCommand(@"Next Entity");
                 return;
             }
-            else
+            else if (!string.IsNullOrEmpty(tbEntry.Text))
             {
                 TestEvent te = new TestEvent(Constants.Event.IncorrectValueEntered, Constants.Phase.Memorize, Constants.SubPhase.ForcedPractice,
                                              "Incorrect value entered");
@@ -127,6 +126,11 @@ namespace TypingTester.controls
             btnQuit.Visible = Options.Instance.ShowQuitButton;
             btnSkip.Visible = Options.Instance.ShowSkipButton;
             SetHeaderText("Practice");
+            if (Options.Instance.disableFreePractice == true)
+            {
+                this.btnBack.Visible = false;
+            }
+            btnHidden.Focus();
             UpdateUi();
         }
 
