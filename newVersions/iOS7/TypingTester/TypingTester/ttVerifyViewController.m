@@ -47,10 +47,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (settings.showBackgroundPattern)
-    {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
-    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -71,26 +67,26 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"VerifyToPractice"])
+    if ([segue.identifier isEqualToString:@"VerifyToEntry"])
+    {
+        [self.session leftPhase:Memorize withNote:@"Leaving Memorize Phase"];
+        ttEntryViewController *controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
+    else if ([segue.identifier isEqualToString:@"unwindToForcedPracticeSegue"])
     {
         ttPracticeViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
-    else if ([segue.identifier isEqualToString:@"VerifyToEntry"])
+    else if ([segue.identifier isEqualToString:@"unwindToMemorizeSegue"])
     {
-        [self.session leftPhase:Memorize withNote:@"Leaving Memorize Phase"];
-        ttEntryViewController *controller = segue.destinationViewController;
+        ttMemorizeViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
     else if ([segue.identifier isEqualToString:@"VerifyToRecall"])
     {
         [self.session leftPhase:Memorize withNote:@"Leaving Memorize Phase, skipping to recall phase"];
         ttRecallViewController *controller = segue.destinationViewController;
-        controller.session = self.session;
-    }
-    else if ([segue.identifier isEqualToString:@"VerifyToMemorize"])
-    {
-        ttMemorizeViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
 }
@@ -126,11 +122,11 @@
     [self.session addEvent:backButtonEvent];
     if (settings.forcedPracticeRounds > 0)
     {
-        [self performSegueWithIdentifier:@"VerifyToPractice" sender:self];
+        [self performSegueWithIdentifier:@"unwindToForcedPracticeSegue" sender:self];
     }
     else
     {
-        [self performSegueWithIdentifier:@"VerifyToMemorize" sender:self];
+        [self performSegueWithIdentifier:@"unwindToMemorizeSegue" sender:self];
     }
 }
 
@@ -171,7 +167,7 @@
         {
             event.notes = @"User entered skip string, transitioning to next entity.";
             [self.session addEvent:event];
-            [self performSegueWithIdentifier:@"VerifyToMemorize" sender:self];
+            [self performSegueWithIdentifier:@"UnwindToMemorizeSegue" sender:self];
         }
         else
         {
@@ -311,6 +307,7 @@
         [self.session addEvent:event];
     }
 }
+
 
 
 @end

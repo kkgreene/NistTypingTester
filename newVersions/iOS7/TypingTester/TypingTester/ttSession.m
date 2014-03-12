@@ -33,6 +33,7 @@
     int timesInForcedPractice;
     int timesInVerify;
     NSDateFormatter *dateFormatter;
+    NSDateFormatter *fileDateFormatter;
 }
 
 -(id) init
@@ -51,6 +52,8 @@
         self.events = [[NSMutableArray alloc]init];
         dateFormatter = [[NSDateFormatter alloc]init];
         [dateFormatter setDateFormat:@"MM-dd-yyyy HH:mm:ss"];
+        fileDateFormatter = [[NSDateFormatter alloc]init];
+        [fileDateFormatter setDateFormat:@"yyyy-MM-dd_HH_mm"];
         if ([self initializeLogFiles] == NO)
         {
             // TODO :: Add error handling
@@ -62,11 +65,6 @@
         [[UIApplication sharedApplication] setValue:self forKey:@"session"];
     }
     return self;
-}
-
--(void)dealloc
-{
-    [self sessionDidFinish];
 }
 
 -(void) loadEntities
@@ -143,6 +141,11 @@
     if ([ttInputData Instance].entityNumberError == YES)
     {
         [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Settings Error: %i passwords specified in settings, only %i passwords found matching specified criteria.", settings.entitiesPerSession, self.entities.count]];
+    }
+    // check for filter errors
+    if ([ttInputData Instance].entityFilterError == YES)
+    {
+        [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Settings Error: No passwords found matching specified filters, using all passwords as source pool."]];
     }
     // write out strings
     [self writeLineToSummaryLogFile:@"Passwords for session:"];
@@ -312,7 +315,23 @@
 -(BOOL)initializeLogFiles
 {
     sessionStartTime = [NSDate date];
-    NSString *filenameBase = [NSString stringWithFormat:@"%@_%@", self.participant.participantNumber, [self formatDate:sessionStartTime]];
+    NSString *deviceString;
+    switch(UI_USER_INTERFACE_IDIOM())
+    {
+        case UIUserInterfaceIdiomPad:
+            deviceString = [NSString stringWithFormat:@"iPad"];
+            break;
+            
+        case UIUserInterfaceIdiomPhone:
+            deviceString = [NSString stringWithFormat:@"iPhone"];
+            break;
+            
+        default:
+            deviceString = [NSString stringWithFormat:@"iOS_Device"];
+            break;
+    }
+
+    NSString *filenameBase = [NSString stringWithFormat:@"%@_%@_%@", self.participant.participantNumber, [fileDateFormatter stringFromDate:sessionStartTime], deviceString];
     NSString *rawFileName = [NSString stringWithFormat:@"%@-raw.txt",filenameBase];
     NSString *summaryFileName = [NSString stringWithFormat:@"%@-summary.txt", filenameBase];
     NSString *rawLogFile = [[ttUtilities documentsDirectory] stringByAppendingPathComponent:rawFileName];
@@ -342,7 +361,7 @@
     }
     @catch (NSException *exception)
     {
-        NSLog(@"Error writing data to the log file");
+        NSLog(@"Error writing data to the raw log file");
     }
     @finally
     {
@@ -360,7 +379,7 @@
     }
     @catch (NSException *exception)
     {
-        NSLog(@"Error writing data to the log file");
+        NSLog(@"Error writing data to the summary log file");
     }
     @finally
     {

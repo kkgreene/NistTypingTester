@@ -11,6 +11,7 @@
 #import "ttEvent.h"
 #import "ttRecallViewController.h"
 #import "ttMemorizeViewController.h"
+#import "ttPracticeViewController.h"
 #import "ttTestEntity.h"
 #import "ttSettings.h"
 #import "ttUtilities.h"
@@ -45,10 +46,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (settings.showBackgroundPattern)
-    {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
-    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -70,10 +67,14 @@
         ttRecallViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
-    else if ([segue.identifier isEqualToString:@"MemorizeNextEntity"])
+    else if ([segue.identifier isEqualToString:@"unwindToMemorizeSegue"])
     {
-        //[self.session nextEntity];
         ttMemorizeViewController *controller = segue.destinationViewController;
+        controller.session = self.session;
+    }
+    else if ([segue.identifier isEqualToString:@"unwindToForcedPracticeSegue"])
+    {
+        ttPracticeViewController *controller = segue.destinationViewController;
         controller.session = self.session;
     }
 }
@@ -133,7 +134,7 @@
         [self performSegueWithIdentifier:@"Recall" sender:self];
         return;
     }
-    else if ([self.entryField.text isEqualToString:[ttSettings Instance].skipString])
+    else if ([self.entryField.text isEqualToString:[ttSettings Instance].skipString])  // check for skip string
     {
         ttEvent *event = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Entry andSubPhase:NoSubPhase];
         event.targetString = entity.entityString;
@@ -185,27 +186,19 @@
     {
         if ([self.session nextEntity] == YES)
         {
-            [self performSegueWithIdentifier:@"MemorizeNextEntity" sender:self];
+            if (settings.disableFreePractice == NO)
+            {
+                [self performSegueWithIdentifier:@"unwindToMemorizeSegue" sender:self];
+            }
+            else
+            {
+                [self performSegueWithIdentifier:@"unwindToForcedPracticeSegue" sender:self];
+            }
         }
         else
         {
             [self performSegueWithIdentifier:@"Recall" sender:self];
         }
-        // yes
-        // have we entered the required number of entities?
-        //int currentEntity = self.session.currentEntity + 1;
-        //int totalEntites = self.session.entities.count;
-        // have we entered X number of strings?
-        //if (currentEntity >= totalEntites)
-        //{
-            // if so go to recall
-        //    [self performSegueWithIdentifier:@"Recall" sender:self];
-        //}
-        //else
-        //{
-            // no so move on to next entity
-         //   [self performSegueWithIdentifier:@"MemorizeNextEntity" sender:self];
-        //}
     }
 }
 
@@ -268,5 +261,6 @@
     textFieldLeft.notes = [NSString stringWithFormat:@"TextField No Longer Active"];
     [self.session addEvent:textFieldLeft];
 }
+
 
 @end

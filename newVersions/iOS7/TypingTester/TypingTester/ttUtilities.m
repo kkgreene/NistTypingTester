@@ -20,18 +20,10 @@
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError* error;
-    if (overwrite == YES)
+    if (overwrite == YES) [fileManager removeItemAtPath:destination error:&error];
+    if (![fileManager fileExistsAtPath:destination])
     {
-        // TODO :: Add error checking
-        [fileManager removeItemAtPath:destination error:&error];
-        [fileManager copyItemAtPath:source toPath:destination error:&error];
-    }
-    else
-    {
-        if (![fileManager fileExistsAtPath:destination])
-        {
-            [fileManager copyItemAtPath:source toPath:destination error:&error];
-        }
+        if ([ fileManager fileExistsAtPath:source]) [fileManager copyItemAtPath:source toPath:destination error:&error];
     }
     return YES;
 }
@@ -64,6 +56,18 @@
     NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
     NSString *build = [infoDictionary objectForKey:@"CFBundleVersion"];
     return [NSString stringWithFormat:@"%@ v%@ (build %@)", name, version, build];
+}
+
++(int) numberOfLogFilesOnDevice
+{
+    int count = 0;
+    NSArray *files = [[NSFileManager defaultManager]  contentsOfDirectoryAtPath:[ttUtilities documentsDirectory] error:nil];
+    for (NSString *string in files)
+    {
+        if ([[string pathExtension]isEqualToString:@"txt"]) count++;
+    }
+    return count/2;
+    
 }
 
 @end

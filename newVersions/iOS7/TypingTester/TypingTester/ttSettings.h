@@ -34,11 +34,10 @@
 @property (nonatomic, assign) bool enableQuitButton;
 @property (nonatomic, assign) int  proficiencyGroup;
 @property (nonatomic, assign) int verifyRounds;
-
+@property (nonatomic, assign) bool disableFreePractice;
+@property (nonatomic, assign) bool disableFreePracticeTextField;
 @property (nonatomic, assign) unsigned int effectiveOrderSeed;
 @property (nonatomic, assign) unsigned int effectiveSelectionSeed;
-
-@property (nonatomic, assign) bool showBackgroundPattern;
 
 
 +(ttSettings*) Instance;
@@ -46,8 +45,7 @@
 -(void) registerDefaults;
 -(void) resetToDefaults;
 
-+(void) copyInitialFiles;
-+(void) resetInitialFiles;
++(void) copyInitialFilesShouldOverwrite:(BOOL)overwrite;
 
 -(NSString*)getSettings;
 

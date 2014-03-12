@@ -47,8 +47,9 @@ static ttInputData *instance = nil;
     filterBuilder = [[NSMutableArray alloc]init];
     proficiencyBuilder = [[NSMutableArray alloc]init];
     entityBuilder = [[NSMutableArray alloc]init];
+    self.entityNumberError = false;
+    self.entityFilterError = false;
 }
-
 
 -(void)loadDataFile:(NSString *)filepath
 {
@@ -74,7 +75,6 @@ static ttInputData *instance = nil;
     proficiencyBuilder = nil;
     entityBuilder = nil;
 }
-
 
 -(NSArray*) getPhrasesForGroupId:(int)groupId
 {
@@ -118,6 +118,12 @@ static ttInputData *instance = nil;
         ttTestEntity *entity = [self.entities objectAtIndex:current];
         if ([self doesEntityPassFilters:entity]) [filtered addObject:entity];
     }
+    // no entiites matched the filters
+    if (filtered.count <= 0)
+    {
+        self.entityFilterError = YES;
+        [filtered addObjectsFromArray:self.entities];
+    }
     
     // Are we randomly selecting from the available strings?
     if (settings.randomStringSelection == YES)
@@ -133,14 +139,16 @@ static ttInputData *instance = nil;
         filtered = [NSMutableArray arrayWithArray:[self randomizeArray:filtered withRandomSeedValue:settings.effectiveSelectionSeed]];
     }
     
+    int iEntitiesToUse = settings.entitiesPerSession;
     // check for more required entities than available
     if (settings.entitiesPerSession > filtered.count)
     {
         self.entityNumberError = YES;
+        iEntitiesToUse = filtered.count;
     }
     
     //for(int i = 0; i < settings.entitiesPerSession; i++)
-    for(int i = 0; i < filtered.count; i++)
+    for(int i = 0; i < iEntitiesToUse; i++)
     {
         [results addObject:[filtered objectAtIndex:i]];
     }

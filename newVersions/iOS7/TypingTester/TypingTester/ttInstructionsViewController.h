@@ -13,4 +13,7 @@
 @property (nonatomic, weak) IBOutlet UIWebView *webView;
 @property (nonatomic, weak) ttSession *session;
 
+-(IBAction)nextScreen;
+
+
 @end

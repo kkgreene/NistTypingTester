@@ -35,10 +35,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (settings.showBackgroundPattern)
-    {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
-    }
 }
 
 - (void)viewDidLoad
@@ -78,5 +74,6 @@
 {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 @end

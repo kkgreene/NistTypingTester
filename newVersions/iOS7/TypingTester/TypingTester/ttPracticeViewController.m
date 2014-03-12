@@ -25,8 +25,8 @@
     BOOL maskEntityDisplay;
     ttSettings *settings;
     int practiceStringNumber;
-    int totalEntities;
-    int entityNumber;
+    //int totalEntities;
+    //int entityNumber;
     int numberOfRequiredPractices;
     ttTestEntity *e;
 }
@@ -49,8 +49,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    totalEntities = self.session.entities.count;
-    entityNumber = self.session.currentEntity;
+    
     numberOfRequiredPractices = settings.forcedPracticeRounds;
     [self configureUI];
 }
@@ -58,11 +57,10 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    // if free practice is disabled we need to log that we have entered the memorize phase
+    if (settings.disableFreePractice == YES) [self.session enteredPhase:Memorize withNote:@"Entering Memorize Phase"];
+    // log that we are entering the forced practice phase
     [self.session enteredSubPhase:ForcedPractice withNote:@"Entering Forced Practice SubPhase"];
-    if (settings.forcedPracticeRounds == 0)
-    {
-        [self performSegueWithIdentifier:@"Verify" sender:self];
-    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -73,10 +71,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (settings.showBackgroundPattern)
-    {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
-    }
 }
 
 -(NSUInteger)supportedInterfaceOrientations
@@ -104,7 +98,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"PracticeToMemorize"])
+    if ([segue.identifier isEqualToString:@"unwindToMemorizeSegue"])
     {
         ttMemorizeViewController* controller = segue.destinationViewController;
         controller.session = self.session;
@@ -132,8 +126,10 @@
 
 -(void)configureUI
 {
+    //totalEntities = self.session.entities.count;
+    //entityNumber = self.session.currentEntity;
     // display the string
-    e = [self.session.entities objectAtIndex:entityNumber];
+    e = [self.session.entities objectAtIndex:self.session.currentEntity];
     currentString = e.entityString;
     // configure the display of the text
     [self configureEntityDisplay];
@@ -148,12 +144,20 @@
         self.doneButton.enabled = NO;
         self.doneButton_iPad.enabled = NO;
     }
+    // back button visibility
+    if (settings.disableFreePractice == YES)
+    {
+        self.backButton_iPad.hidden = YES;
+        self.backButton.enabled = NO;
+        self.backButton.image = nil;
+    }
+    
     // configure optional button visibility
     self.visibilityButton.hidden = !settings.enableHideButtonOnPracticeScreen;
     self.skipButton.hidden = !settings.showSkipButton;
     // update the progress labels
     practiceStringNumber = self.session.CurrentPracticeRoundForEntity;
-    self.sessionProgressLabel.text = [NSString stringWithFormat:@"Password %i of %i",entityNumber+1,totalEntities];
+    self.sessionProgressLabel.text = [NSString stringWithFormat:@"Password %i of %i",self.session.currentEntity+1,self.session.entities.count];
     
     if (self.session.CurrentPracticeRoundForEntity < settings.forcedPracticeRounds)
     {
@@ -210,7 +214,8 @@
     [self.session addEvent:event];
     if ([self.session nextEntity] == YES)
     {
-        [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+        // TODO
+        [self performSegueWithIdentifier:@"unwindToMemorizeSegue" sender:self];
     }
     else
     {
@@ -224,7 +229,7 @@
     ttEvent *backButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:ForcedPractice];
     backButtonEvent.notes = @"Back button pressed";
     [self.session addEvent:backButtonEvent];
-    [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+    [self performSegueWithIdentifier:@"unwindToMemorizeSegue" sender:self];
 }
 
 -(IBAction)doneButtonPressed
@@ -268,8 +273,15 @@
         {
             event.notes = @"User entered skip string, transitioning to next entity.";
             [self.session addEvent:event];
-            // back to memorize
-            [self performSegueWithIdentifier:@"PracticeToMemorize" sender:self];
+            // is free practice disabled?
+            if (settings.disableFreePractice == YES)
+            {
+                [self setupForNextEntityDueToSkip];
+            }
+            else
+            {
+                [self performSegueWithIdentifier:@"unwindToMemorizeSegue" sender:self];
+            }
         }
         else // cannot move to a next entity (end of entities) go to recall
         {
@@ -299,6 +311,16 @@
 -(IBAction)backgroundButtonPressed
 {
     [self.view endEditing:YES];
+}
+
+-(void) setupForNextEntityDueToSkip
+{
+    self.entryField.text = @"";
+    // if free practice is disabled we need to log that we have entered the memorize phase
+    if (settings.disableFreePractice == YES) [self.session enteredPhase:Memorize withNote:@"Entering Memorize Phase"];
+    // log that we are entering the forced practice phase
+    [self.session enteredSubPhase:ForcedPractice withNote:@"Entering Forced Practice SubPhase"];
+    [self configureUI];
 }
 
 #pragma -mark UITextFieldDelegate methods
@@ -389,6 +411,13 @@
         event.notes = @"User elected to stay in practice subphase.";
         [self.session addEvent:event];
     }
+}
+
+
+#pragma mark - Unwind Segue
+-(IBAction)unwindToForcedPractice:(UIStoryboardSegue *)segue
+{
+    [self configureUI];
 }
 
 

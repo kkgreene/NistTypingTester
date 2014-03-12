@@ -19,11 +19,14 @@ NSString *const ttcUseRandomStringOrderSeedKey = @"UseRandomStringOrderSeed";
 NSString *const ttcUseRandomStringSelectionSeedKey = @"UseRandomStringSelectionSeed";
 NSString *const ttcSelectedFiltersKey = @"SelectedFilters";
 NSString *const ttcSelectedGroupKey = @"SelectedGroup";
+NSString *const ttcUseGroupFilterKey = @"UseGroupFilter";
 NSString *const ttcFirstRunKey = @"FirstRun";
 NSString *const ttcEnableHideButtonOnPracticeScreenKey = @"EnableHideButtonOnPracticeScreen";
 NSString *const ttcProficiencyGroupKey = @"ProficiencyGroup";
 NSString *const ttcSkipStringKey =@"SkipString";
 NSString *const ttcVerifyRoundsKey = @"VerifyRounds";
+NSString *const ttcDisableFreePracticeKey = @"DisableFreePractice";
+NSString *const ttcDisableFreePracticeTextFieldKey = @"DisableFreePracticeTextField";
 
 const int ttcStringsForTestDefaultValue = 10;
 const int ttcEntriesPerTestDefaultValue = 10;
@@ -41,6 +44,9 @@ const bool ttcRandomStringSelectionDefaultValue = NO;
 const bool ttcUseRandomStringOrderSeedDefaultValue = NO;
 const bool ttcUseRandomStringSelectionSeedDefaultValue = NO;
 const bool ttcEnableHideButtonOnPracticeScreenValue = NO;
+const bool ttcUseGroupFilterDefaultValue = NO;
+const bool ttcDisableFreePracticeDefaultValue = NO;
+const bool ttcDisableFreePracticeTextFieldValue = NO;
 
 NSString *const ttcQuitStringDefaultValue = @"I QUIT";
 NSString *const ttcSkipStringDefaultValue = @"SKIP THIS";

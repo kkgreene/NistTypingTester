@@ -27,8 +27,9 @@
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeSkipString:(NSString*)value;
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeEnableHideOnPracticeScreen:(BOOL)value;
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeEnableSkipButton:(BOOL)value;
-
 -(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeNumberOfVerifyRounds:(int)value;
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeFreePracticeDisabled:(BOOL)value;
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeFreePracticeTextFieldDisabled:(BOOL)value;
 
 @end
 
@@ -52,6 +53,8 @@
 @property (strong, nonatomic) IBOutlet UISwitch *enableHideOnPracticeScreen;
 @property (strong, nonatomic) IBOutlet UISwitch *enableSkipButton;
 @property (strong, nonatomic) IBOutlet UITextField *numberOfVerifyRounds;
+@property (strong, nonatomic) IBOutlet UISwitch *disableFreePractice;
+@property (strong, nonatomic) IBOutlet UISwitch *disableFreePracticeTextField;
 
 
 - (IBAction)numberOfEntitiesChanged:(id)sender;
@@ -70,6 +73,8 @@
 - (IBAction)enableHideOnPracticeScreenChanged:(id)sender;
 - (IBAction)enableSkipButtonChanged:(id)sender;
 - (IBAction)numberOfVerifyRoundsChanged:(id)sender;
+- (IBAction)disableFreePracticeChanged:(id)sender;
+- (IBAction)disableFreePracticeTextFieldChanged:(id)sender;
 
 - (void) hideKeyboard;
 

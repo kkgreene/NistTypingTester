@@ -30,7 +30,7 @@ static ttSettings *instance = nil;
     self = [super init];
     if (self)
     {
-        _showBackgroundPattern = false;
+        
     }
     return self;
 }
@@ -49,8 +49,10 @@ static ttSettings *instance = nil;
     [string appendFormat:@"Random String Selection:%@\n", (self.randomStringSelection ? @"Yes":@"No")];
     [string appendFormat:@"Specified Seed:%@\n", (self.useRandomStringSelectionSeed ? @"Yes":@"No")];
     [string appendFormat:@"String Selection Seed:%i\n", self.effectiveSelectionSeed];
-    [string appendFormat:@"Specified Group Id:%@\n", (self.useGroupId ? @"Yes":@"No")];
+    [string appendFormat:@"Use Group Id:%@\n", (self.useGroupId ? @"Yes":@"No")];
     [string appendFormat:@"Group Id:%i\n", self.selectedGroup];
+    [string appendFormat:@"Disabled Free Practice:%@\n", (self.disableFreePractice ? @"Yes":@"No")];
+    [string appendFormat:@"Disable Free Practice Text Field:%@\n", (self.disableFreePracticeTextField ? @"Yes":@"No")];
     return string;
 }
 
@@ -74,12 +76,14 @@ static ttSettings *instance = nil;
     [defaults setValue:[NSNumber numberWithBool:ttcUseRandomStringOrderSeedDefaultValue] forKey:ttcUseRandomStringOrderSeedKey];
     [defaults setValue:[NSNumber numberWithBool:ttcUseRandomStringSelectionSeedDefaultValue] forKey:ttcUseRandomStringSelectionSeedKey];
     [defaults setValue:[NSNumber numberWithInt:ttcSelectedGroupValue] forKey:ttcSelectedGroupKey];
+    [defaults setValue:[NSNumber numberWithBool:ttcUseGroupFilterDefaultValue] forKey:ttcUseGroupFilterKey];
     [defaults setValue:[[NSArray alloc]init] forKey:ttcSelectedFiltersKey];
     [defaults setValue:[NSNumber numberWithBool:ttcEnableHideButtonOnPracticeScreenValue] forKey:ttcEnableHideButtonOnPracticeScreenKey];
     [defaults setValue:[NSNumber numberWithInt:ttcProficiencyGroupValue] forKey:ttcProficiencyGroupKey];
     [defaults setValue:ttcSkipStringDefaultValue forKey:ttcSkipStringKey];
     [defaults setValue:[NSNumber numberWithInt:ttcVerifyRoundsValue] forKey:ttcVerifyRoundsKey];
-    
+    [defaults setValue:[NSNumber numberWithBool:ttcDisableFreePracticeDefaultValue] forKey:ttcDisableFreePracticeKey];
+    [defaults setValue:[NSNumber numberWithBool:ttcDisableFreePracticeTextFieldValue] forKey:ttcDisableFreePracticeTextFieldKey];
     [[NSUserDefaults standardUserDefaults]registerDefaults:defaults];
 }
 
@@ -106,6 +110,9 @@ static ttSettings *instance = nil;
     [prefs setInteger:ttcProficiencyGroupValue forKey:ttcProficiencyGroupKey];
     [prefs setValue:ttcSkipStringDefaultValue forKey:ttcSkipStringKey];
     [prefs setInteger:ttcVerifyRoundsValue forKey:ttcVerifyRoundsKey];
+    [prefs setBool:ttcUseGroupFilterDefaultValue forKey:ttcUseGroupFilterKey];
+    [prefs setBool:ttcDisableFreePracticeDefaultValue forKey:ttcDisableFreePracticeKey];
+    [prefs setBool:ttcDisableFreePracticeTextFieldValue forKey:ttcDisableFreePracticeTextFieldKey];
 }
 
 #pragma mark Custom setter/getter pairs
@@ -267,6 +274,18 @@ static ttSettings *instance = nil;
     [prefs setInteger:SelectedGroup forKey:ttcSelectedGroupKey];
 }
 
+-(bool) useGroupId
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    return [prefs boolForKey:ttcUseGroupFilterKey];
+}
+
+- (void)setUseGroupId:(bool)useGroupIdValue
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setBool:useGroupIdValue forKey:ttcUseGroupFilterKey];
+}
+
 -(bool) firstRun
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
@@ -328,16 +347,57 @@ static ttSettings *instance = nil;
     [prefs setInteger:verifyRounds forKey:ttcVerifyRoundsKey];
 }
 
+-(bool) disableFreePractice
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    return [prefs boolForKey:ttcDisableFreePracticeKey];
+}
+
+-(void) setDisableFreePractice:(bool)disableFreePractice
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setBool:disableFreePractice forKey:ttcDisableFreePracticeKey];
+}
+
+-(bool) disableFreePracticeTextField
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    return [prefs boolForKey:ttcDisableFreePracticeTextFieldKey];
+}
+
+-(void) setDisableFreePracticeTextField:(bool)disableFreePracticeTextField
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setBool:disableFreePracticeTextField forKey:ttcDisableFreePracticeTextFieldKey];
+}
+
 
 #pragma mark setup functions
 
-+(void) copyInitialFiles
++(void) copyInitialFilesShouldOverwrite:(BOOL)overwrite
 {
-    [self copyToDocumentsResourceFileNamed:@"welcome" ofType:@"html" toFileName:@"welcome.html" shouldOverwrite:NO];
-    [self copyToDocumentsResourceFileNamed:@"instructions" ofType:@"html" toFileName:@"instructions.html" shouldOverwrite:NO];
-    [self copyToDocumentsResourceFileNamed:@"instructions-iPad" ofType:@"html" toFileName:@"instructions-iPad.html" shouldOverwrite:NO];
-    [self copyToDocumentsResourceFileNamed:@"thankYou" ofType:@"html" toFileName:@"thankYou.html" shouldOverwrite:NO];
-    [self copyToDocumentsResourceFileNamed:@"inputStrings" ofType:@"xml" toFileName:@"inputStrings.xml" shouldOverwrite:NO];
+    [self copyToDocumentsResourceFileNamed:@"welcome" ofType:@"html" toFileName:@"welcome.html" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"welcome-iPad" ofType:@"html" toFileName:@"welcome-iPad.html" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructions" ofType:@"html" toFileName:@"instructions.html" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructions-iPad" ofType:@"html" toFileName:@"instructions-iPad.html" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"thankYou" ofType:@"html" toFileName:@"thankYou.html" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"thankYou-iPad" ofType:@"html" toFileName:@"thankYou-iPad.html" shouldOverwrite:overwrite];
+    
+    [self copyToDocumentsResourceFileNamed:@"instructionsHeader" ofType:@"fhtm" toFileName:@"instructionsHeader.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsFreePractice" ofType:@"fhtm" toFileName:@"instructionsFreePractice.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsForcedPractice" ofType:@"fhtm" toFileName:@"instructionsForcedPractice.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsVerify" ofType:@"fhtm" toFileName:@"instructionsVerify.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsEntry" ofType:@"fhtm" toFileName:@"instructionsEntry.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsFooter" ofType:@"fhtm" toFileName:@"instructionsFooter.fhtm" shouldOverwrite:overwrite];
+    
+    [self copyToDocumentsResourceFileNamed:@"instructionsHeader-iPad" ofType:@"fhtm" toFileName:@"instructionsHeader-iPad.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsFreePractice-iPad" ofType:@"fhtm" toFileName:@"instructionsFreePractice-iPad.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsForcedPractice-iPad" ofType:@"fhtm" toFileName:@"instructionsForcedPractice-iPad.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsVerify-iPad" ofType:@"fhtm" toFileName:@"instructionsVerify-iPad.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsEntry-iPad" ofType:@"fhtm" toFileName:@"instructionsEntry-iPad.fhtm" shouldOverwrite:overwrite];
+    [self copyToDocumentsResourceFileNamed:@"instructionsFooter-iPad" ofType:@"fhtm" toFileName:@"instructionsFooter-iPad.fhtm" shouldOverwrite:overwrite];
+    
+    [self copyToDocumentsResourceFileNamed:@"inputStrings" ofType:@"xml" toFileName:@"inputStrings.xml" shouldOverwrite:overwrite];
 }
 
 +(void) copyToDocumentsResourceFileNamed:(NSString*)sourceName ofType:(NSString*)type toFileName:(NSString*)destinationName shouldOverwrite:(BOOL)overwrite
@@ -345,18 +405,10 @@ static ttSettings *instance = nil;
     NSString *documentsDirectory = [ttUtilities documentsDirectory];
     NSString *destinationFile = [documentsDirectory stringByAppendingPathComponent:destinationName];
     NSString *sourceFile = [[NSBundle mainBundle] pathForResource:sourceName ofType:type];
-    [ttUtilities copySourceFile:sourceFile toDestination:destinationFile shouldOverwrite:overwrite];
+    if (sourceFile != nil)
+    {
+        [ttUtilities copySourceFile:sourceFile toDestination:destinationFile shouldOverwrite:overwrite];
+    }
 }
-
-+(void) resetInitialFiles
-{
-    [self copyToDocumentsResourceFileNamed:@"welcome" ofType:@"html" toFileName:@"welcome.html" shouldOverwrite:YES];
-    [self copyToDocumentsResourceFileNamed:@"instructions" ofType:@"html" toFileName:@"instructions.html" shouldOverwrite:YES];
-    [self copyToDocumentsResourceFileNamed:@"instructions-iPad" ofType:@"html" toFileName:@"instructions-iPad.html" shouldOverwrite:YES];
-    [self copyToDocumentsResourceFileNamed:@"thankYou" ofType:@"html" toFileName:@"thankYou.html" shouldOverwrite:YES];
-    [self copyToDocumentsResourceFileNamed:@"inputStrings" ofType:@"xml" toFileName:@"inputStrings.xml" shouldOverwrite:YES];
-}
-
-
 
 @end

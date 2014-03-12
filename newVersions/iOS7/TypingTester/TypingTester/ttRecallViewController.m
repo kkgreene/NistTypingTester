@@ -43,10 +43,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (settings.showBackgroundPattern)
-    {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
-    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -121,5 +117,7 @@
 {
     [self performSegueWithIdentifier:@"ThankYou" sender:self];
 }
+
+
 
 @end
