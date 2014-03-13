@@ -18,26 +18,26 @@
     
     ttSettingsDetailViewController* child;
 
-    int stringsPerSession;
-    int entriesPerString;
-    int forcedPracticeRounds;
+    NSUInteger stringsPerSession;
+    NSUInteger entriesPerString;
+    NSUInteger forcedPracticeRounds;
     bool showQuitButton;
     bool showSkipButton;
     bool randomStringOrder;
     bool randomStringSelection;
-    int stringOrderKey;
-    int stringSelectionKey;
+    NSUInteger stringOrderKey;
+    NSUInteger stringSelectionKey;
     bool useRandomStringOrderSeed;
     bool useRandomStringSelectionSeed;
     NSString *quitString;
     NSString *skipString;
     bool useGroupId;
-    int selectedGroup;
+    NSUInteger selectedGroup;
     NSArray *selectedFilters;
     bool firstRun;
     bool enableHideButtonOnPracticeScreen;
     bool enableSkipButton;
-    int verifyRounds;
+    NSUInteger verifyRounds;
     bool disableFreePractice;
     bool disableFreePracticeTextField;
 }

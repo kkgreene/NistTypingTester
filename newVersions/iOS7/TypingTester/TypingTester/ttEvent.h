@@ -25,8 +25,8 @@
 @property (nonatomic, copy) NSString *enteredCharacters;
 @property (nonatomic, copy) NSString *currentValue;
 @property (nonatomic, assign) CGPoint point;
-@property (nonatomic, assign) int currentRound;
-@property (nonatomic, assign) int subphaseVisitNumber;
+@property (nonatomic, assign) NSUInteger currentRound;
+@property (nonatomic, assign) NSUInteger subphaseVisitNumber;
 @property (nonatomic, weak) ttSession *session;
 
 -(id)initWithEventType:(Event)event;

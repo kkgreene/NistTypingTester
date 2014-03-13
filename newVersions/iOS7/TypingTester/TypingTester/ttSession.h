@@ -24,13 +24,13 @@
 @property (nonatomic, strong) ttParticipant *participant;
 @property (nonatomic, strong) NSMutableArray* events;
 
-@property (nonatomic, assign) int currentProficiencyString;
-@property (nonatomic, assign) int currentEntity;
-@property (nonatomic, assign) int currentEntryForEntity;
+@property (nonatomic, assign) NSUInteger currentProficiencyString;
+@property (nonatomic, assign) NSUInteger currentEntity;
+@property (nonatomic, assign) NSUInteger currentEntryForEntity;
 @property (nonatomic, strong) NSArray *proficiencyStrings;
 @property (nonatomic, strong) NSArray *entities;
-@property (nonatomic, assign) int CurrentPracticeRoundForEntity;
-@property (nonatomic, assign) int currentVerifyRoundForEntity;
+@property (nonatomic, assign) NSUInteger CurrentPracticeRoundForEntity;
+@property (nonatomic, assign) NSUInteger currentVerifyRoundForEntity;
 
 @property (nonatomic, copy) NSString* workAreaContents;
 @property (nonatomic, assign) Phase currentPhase;

@@ -39,18 +39,18 @@ static ttSettings *instance = nil;
 {
     NSMutableString *string = [[NSMutableString alloc]init];
     [string appendFormat:@"Settings:\n"];
-    [string appendFormat:@"Password:%i\n", self.entitiesPerSession];
-    [string appendFormat:@"Rounds Per Password:%i\n", self.entriesPerEntitiy];
-    [string appendFormat:@"Forced Practice Rounds:%i\n", self.forcedPracticeRounds];
-    [string appendFormat:@"Verify Rounds:%i\n", self.verifyRounds];
+    [string appendFormat:@"Password:%lu\n", (unsigned long)self.entitiesPerSession];
+    [string appendFormat:@"Rounds Per Password:%lu\n", (unsigned long)self.entriesPerEntitiy];
+    [string appendFormat:@"Forced Practice Rounds:%lu\n", (unsigned long)self.forcedPracticeRounds];
+    [string appendFormat:@"Verify Rounds:%lu\n", (unsigned long)self.verifyRounds];
     [string appendFormat:@"Random String Order:%@\n", (self.randomStringOrder ? @"Yes":@"No")];
     [string appendFormat:@"Specified Seed:%@\n", (self.useRandomStringOrderSeed ? @"Yes":@"No")];
-    [string appendFormat:@"String Order Seed:%i\n", self.effectiveOrderSeed];
+    [string appendFormat:@"String Order Seed:%lu\n", (unsigned long)self.effectiveOrderSeed];
     [string appendFormat:@"Random String Selection:%@\n", (self.randomStringSelection ? @"Yes":@"No")];
     [string appendFormat:@"Specified Seed:%@\n", (self.useRandomStringSelectionSeed ? @"Yes":@"No")];
-    [string appendFormat:@"String Selection Seed:%i\n", self.effectiveSelectionSeed];
+    [string appendFormat:@"String Selection Seed:%lu\n", (unsigned long)self.effectiveSelectionSeed];
     [string appendFormat:@"Use Group Id:%@\n", (self.useGroupId ? @"Yes":@"No")];
-    [string appendFormat:@"Group Id:%i\n", self.selectedGroup];
+    [string appendFormat:@"Group Id:%lu\n", (unsigned long)self.selectedGroup];
     [string appendFormat:@"Disabled Free Practice:%@\n", (self.disableFreePractice ? @"Yes":@"No")];
     [string appendFormat:@"Disable Free Practice Text Field:%@\n", (self.disableFreePracticeTextField ? @"Yes":@"No")];
     return string;
@@ -63,25 +63,25 @@ static ttSettings *instance = nil;
 {
     NSMutableDictionary *defaults = [[NSMutableDictionary alloc]init];
     [defaults setValue:[NSNumber numberWithBool:YES] forKey:ttcFirstRunKey];
-    [defaults setValue:[NSNumber numberWithInt:ttcStringsForTestDefaultValue] forKey:ttcStringsForTestKey];
-    [defaults setValue:[NSNumber numberWithInt:ttcEntriesPerTestDefaultValue] forKey:ttcEntriesPerTestKey];
-    [defaults setValue:[NSNumber numberWithInt:ttcForcedPracticeRoundsDefaultValue] forKey:ttcForcedPracticeRoundsKey];
+    [defaults setValue:[NSNumber numberWithUnsignedInteger:ttcStringsForTestDefaultValue] forKey:ttcStringsForTestKey];
+    [defaults setValue:[NSNumber numberWithUnsignedInteger:ttcEntriesPerTestDefaultValue] forKey:ttcEntriesPerTestKey];
+    [defaults setValue:[NSNumber numberWithUnsignedInteger:ttcForcedPracticeRoundsDefaultValue] forKey:ttcForcedPracticeRoundsKey];
     [defaults setValue:[NSNumber numberWithBool:ttcShowQuitButtonDefaultValue] forKey:ttcShowQuitButtonKey];
     [defaults setValue:[NSNumber numberWithBool:ttcShowSkipButtonDefaultValue] forKey:ttcShowSkipButtonKey];
     [defaults setValue:[NSNumber numberWithBool:ttcRandomStringOrderDefaultValue] forKey:ttcRandomStringOrderKey];
     [defaults setValue:[NSNumber numberWithBool:ttcRandomStringSelectionDefaultValue] forKey:ttcRandomStringSelectionKey];
     [defaults setValue:ttcQuitStringDefaultValue forKey:ttcQuitStringKey];
-    [defaults setValue:[NSNumber numberWithInt:ttcStringOrderSeedDefaultValue] forKey:ttcStringOrderSeedKey];
-    [defaults setValue:[NSNumber numberWithInt:ttcStringSelectionSeedDefaultValue] forKey:ttcStringSelectionSeedKey];
+    [defaults setValue:[NSNumber numberWithUnsignedInteger:ttcStringOrderSeedDefaultValue] forKey:ttcStringOrderSeedKey];
+    [defaults setValue:[NSNumber numberWithUnsignedInteger:ttcStringSelectionSeedDefaultValue] forKey:ttcStringSelectionSeedKey];
     [defaults setValue:[NSNumber numberWithBool:ttcUseRandomStringOrderSeedDefaultValue] forKey:ttcUseRandomStringOrderSeedKey];
     [defaults setValue:[NSNumber numberWithBool:ttcUseRandomStringSelectionSeedDefaultValue] forKey:ttcUseRandomStringSelectionSeedKey];
-    [defaults setValue:[NSNumber numberWithInt:ttcSelectedGroupValue] forKey:ttcSelectedGroupKey];
+    [defaults setValue:[NSNumber numberWithUnsignedInteger:ttcSelectedGroupValue] forKey:ttcSelectedGroupKey];
     [defaults setValue:[NSNumber numberWithBool:ttcUseGroupFilterDefaultValue] forKey:ttcUseGroupFilterKey];
     [defaults setValue:[[NSArray alloc]init] forKey:ttcSelectedFiltersKey];
     [defaults setValue:[NSNumber numberWithBool:ttcEnableHideButtonOnPracticeScreenValue] forKey:ttcEnableHideButtonOnPracticeScreenKey];
-    [defaults setValue:[NSNumber numberWithInt:ttcProficiencyGroupValue] forKey:ttcProficiencyGroupKey];
+    [defaults setValue:[NSNumber numberWithUnsignedInteger:ttcProficiencyGroupValue] forKey:ttcProficiencyGroupKey];
     [defaults setValue:ttcSkipStringDefaultValue forKey:ttcSkipStringKey];
-    [defaults setValue:[NSNumber numberWithInt:ttcVerifyRoundsValue] forKey:ttcVerifyRoundsKey];
+    [defaults setValue:[NSNumber numberWithUnsignedInteger:ttcVerifyRoundsValue] forKey:ttcVerifyRoundsKey];
     [defaults setValue:[NSNumber numberWithBool:ttcDisableFreePracticeDefaultValue] forKey:ttcDisableFreePracticeKey];
     [defaults setValue:[NSNumber numberWithBool:ttcDisableFreePracticeTextFieldValue] forKey:ttcDisableFreePracticeTextFieldKey];
     [[NSUserDefaults standardUserDefaults]registerDefaults:defaults];
@@ -117,37 +117,37 @@ static ttSettings *instance = nil;
 
 #pragma mark Custom setter/getter pairs
 
--(int) entitiesPerSession
+-(NSUInteger) entitiesPerSession
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcStringsForTestKey];
 }
 
--(void) setEntitiesPerSession:(int)StringsPerSession
+-(void) setEntitiesPerSession:(NSUInteger)StringsPerSession
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:StringsPerSession forKey:ttcStringsForTestKey];
 }
 
--(int) entriesPerEntitiy
+-(NSUInteger) entriesPerEntitiy
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcEntriesPerTestKey];
 }
 
--(void) setEntriesPerEntitiy:(int)EntriesPerString
+-(void) setEntriesPerEntitiy:(NSUInteger)EntriesPerString
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:EntriesPerString forKey:ttcEntriesPerTestKey];
 }
 
--(int) forcedPracticeRounds
+-(NSUInteger) forcedPracticeRounds
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcForcedPracticeRoundsKey];
 }
 
--(void) setForcedPracticeRounds:(int)ForcedPracticeRounds
+-(void) setForcedPracticeRounds:(NSUInteger)ForcedPracticeRounds
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:ForcedPracticeRounds forKey:ttcForcedPracticeRoundsKey];
@@ -201,25 +201,25 @@ static ttSettings *instance = nil;
     [prefs setBool:RandomStringSelection forKey:ttcRandomStringSelectionKey];
 }
 
--(int) stringOrderSeed
+-(NSUInteger) stringOrderSeed
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcStringOrderSeedKey];
 }
 
--(void) setStringOrderSeed:(int)StringOrderKey
+-(void) setStringOrderSeed:(NSUInteger)StringOrderKey
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:StringOrderKey forKey:ttcStringOrderSeedKey];
 }
 
--(int) stringSelectionSeed
+-(NSUInteger) stringSelectionSeed
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcStringSelectionSeedKey];
 }
 
--(void) setStringSelectionSeed:(int)StringSelectionKey
+-(void) setStringSelectionSeed:(NSUInteger)StringSelectionKey
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:StringSelectionKey forKey:ttcStringSelectionSeedKey];
@@ -262,13 +262,13 @@ static ttSettings *instance = nil;
     [prefs setObject:QuitString forKey:ttcQuitStringKey];
 }
 
--(int) selectedGroup
+-(NSUInteger) selectedGroup
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcSelectedGroupKey];
 }
 
--(void) setSelectedGroup:(int)SelectedGroup
+-(void) setSelectedGroup:(NSUInteger)SelectedGroup
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:SelectedGroup forKey:ttcSelectedGroupKey];
@@ -311,13 +311,13 @@ static ttSettings *instance = nil;
 }
 
 
--(int) proficiencyGroup
+-(NSUInteger) proficiencyGroup
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcProficiencyGroupKey];
 }
 
--(void) setProficiencyGroup:(int)proficiencyGroup
+-(void) setProficiencyGroup:(NSUInteger)proficiencyGroup
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:proficiencyGroup forKey:ttcProficiencyGroupKey];
@@ -335,13 +335,13 @@ static ttSettings *instance = nil;
     [prefs setObject:skipString forKey:ttcSkipStringKey];
 }
 
--(int) verifyRounds
+-(NSUInteger) verifyRounds
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     return [prefs integerForKey:ttcVerifyRoundsKey];
 }
 
--(void) setVerifyRounds:(int)verifyRounds
+-(void) setVerifyRounds:(NSUInteger)verifyRounds
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:verifyRounds forKey:ttcVerifyRoundsKey];

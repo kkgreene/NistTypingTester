@@ -38,7 +38,7 @@
 
 -(NSString*)description
 {
-    return [NSString stringWithFormat:@"ItemId:%i GroupId:%i Value:%@", self.itemId, self.groupId, self.text];
+    return [NSString stringWithFormat:@"ItemId:%lu GroupId:%lu Value:%@", (unsigned long)self.itemId, (unsigned long)self.groupId, self.text];
 }
 
 

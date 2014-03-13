@@ -11,8 +11,8 @@
 @interface ttTestEntity : ttXmlParserDelegate
 
 @property (nonatomic, copy) NSString *entityString;
-@property (nonatomic, assign) int groupId;
-@property (nonatomic, assign) int itemId;
+@property (nonatomic, assign) NSUInteger groupId;
+@property (nonatomic, assign) NSUInteger itemId;
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, strong) NSMutableArray *filterValues;
 

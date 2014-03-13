@@ -90,10 +90,10 @@
         [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Total Free Practice: %i views for %f (s)", timesInFreePractice, timeInFreePractice]];
         [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Total Forced Practice: %i views for %f (s)", timesInForcedPractice, timeInForcedPractice]];
         [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Total Verify: %i views for %f", timesInVerify, timeInVerify]];
-        [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Finishing Password: %i at %@ in %f", self.currentEntity, entityStart, totalEntityTime]];
+        [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Finishing Password: %lu at %@ in %f", (unsigned long)self.currentEntity, entityStart, totalEntityTime]];
     }
-    int currentE = self.currentEntity;
-    int eCount = self.entities.count;
+    NSUInteger currentE = self.currentEntity;
+    NSUInteger eCount = self.entities.count;
     //if (self.currentEntity < self.entities.count)
     if (currentE + 1 < eCount)
     {
@@ -124,7 +124,7 @@
     self.currentEntryForEntity = 0;
     self.currentVerifyRoundForEntity = 0;
     self.workAreaContents = @"";
-    [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Starting Password: %i at %@", self.currentEntity, entityStart]];
+    [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Starting Password: %lu at %@", (unsigned long)self.currentEntity, entityStart]];
 }
 
 -(void) sessionDidStart
@@ -140,7 +140,7 @@
     // write error message for entity error lines
     if ([ttInputData Instance].entityNumberError == YES)
     {
-        [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Settings Error: %i passwords specified in settings, only %i passwords found matching specified criteria.", settings.entitiesPerSession, self.entities.count]];
+        [self writeLineToSummaryLogFile:[NSString stringWithFormat:@"Settings Error: %lu passwords specified in settings, only %lu passwords found matching specified criteria.", (unsigned long)settings.entitiesPerSession, (unsigned long)self.entities.count]];
     }
     // check for filter errors
     if ([ttInputData Instance].entityFilterError == YES)

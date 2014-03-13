@@ -22,6 +22,6 @@
 -(void) loadDataFile:(NSString*)filepath;
 -(void) clearData;
 
--(NSArray*) getPhrasesForGroupId:(int)groupId;
+-(NSArray*) getPhrasesForGroupId:(NSUInteger)groupId;
 -(NSArray*) getEntities;
 @end

@@ -28,14 +28,14 @@ NSString *const ttcVerifyRoundsKey = @"VerifyRounds";
 NSString *const ttcDisableFreePracticeKey = @"DisableFreePractice";
 NSString *const ttcDisableFreePracticeTextFieldKey = @"DisableFreePracticeTextField";
 
-const int ttcStringsForTestDefaultValue = 10;
-const int ttcEntriesPerTestDefaultValue = 10;
-const int ttcForcedPracticeRoundsDefaultValue = 3;
-const int ttcStringOrderSeedDefaultValue = 1;
-const int ttcStringSelectionSeedDefaultValue = 1;
-const int ttcSelectedGroupValue = 1;
-const int ttcProficiencyGroupValue = 1;
-const int ttcVerifyRoundsValue = 1;
+const NSUInteger ttcStringsForTestDefaultValue = 10;
+const NSUInteger ttcEntriesPerTestDefaultValue = 10;
+const NSUInteger ttcForcedPracticeRoundsDefaultValue = 3;
+const NSUInteger ttcStringOrderSeedDefaultValue = 1;
+const NSUInteger ttcStringSelectionSeedDefaultValue = 1;
+const NSUInteger ttcSelectedGroupValue = 1;
+const NSUInteger ttcProficiencyGroupValue = 1;
+const NSUInteger ttcVerifyRoundsValue = 1;
 
 const bool ttcShowQuitButtonDefaultValue = NO;
 const bool ttcShowSkipButtonDefaultValue = NO;

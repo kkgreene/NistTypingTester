@@ -30,14 +30,14 @@ FOUNDATION_EXPORT NSString *const ttcVerifyRoundsKey;
 FOUNDATION_EXPORT NSString *const ttcDisableFreePracticeKey;
 FOUNDATION_EXPORT NSString *const ttcDisableFreePracticeTextFieldKey;
 
-FOUNDATION_EXPORT const int ttcStringsForTestDefaultValue;
-FOUNDATION_EXPORT const int ttcEntriesPerTestDefaultValue;
-FOUNDATION_EXPORT const int ttcForcedPracticeRoundsDefaultValue;
-FOUNDATION_EXPORT const int ttcStringOrderSeedDefaultValue;
-FOUNDATION_EXPORT const int ttcStringSelectionSeedDefaultValue;
-FOUNDATION_EXPORT const int ttcSelectedGroupValue;
-FOUNDATION_EXPORT const int ttcProficiencyGroupValue;
-FOUNDATION_EXPORT const int ttcVerifyRoundsValue;
+FOUNDATION_EXPORT const NSUInteger ttcStringsForTestDefaultValue;
+FOUNDATION_EXPORT const NSUInteger ttcEntriesPerTestDefaultValue;
+FOUNDATION_EXPORT const NSUInteger ttcForcedPracticeRoundsDefaultValue;
+FOUNDATION_EXPORT const NSUInteger ttcStringOrderSeedDefaultValue;
+FOUNDATION_EXPORT const NSUInteger ttcStringSelectionSeedDefaultValue;
+FOUNDATION_EXPORT const NSUInteger ttcSelectedGroupValue;
+FOUNDATION_EXPORT const NSUInteger ttcProficiencyGroupValue;
+FOUNDATION_EXPORT const NSUInteger ttcVerifyRoundsValue;
 
 FOUNDATION_EXPORT const bool ttcShowQuitButtonDefaultValue;
 FOUNDATION_EXPORT const bool ttcShowSkipButtonDefaultValue;

@@ -76,7 +76,7 @@ static ttInputData *instance = nil;
     entityBuilder = nil;
 }
 
--(NSArray*) getPhrasesForGroupId:(int)groupId
+-(NSArray*) getPhrasesForGroupId:(NSUInteger)groupId
 {
     NSMutableArray *results = [[NSMutableArray alloc]init];
     for(int i = 0; i < self.proficiencyItems.count; i++)
@@ -90,7 +90,7 @@ static ttInputData *instance = nil;
     return [[NSArray alloc]initWithArray:results];
 }
 
--(NSArray*) randomizeArray:(NSArray*)input withRandomSeedValue:(unsigned int)seed
+-(NSArray*) randomizeArray:(NSArray*)input withRandomSeedValue:(NSUInteger)seed
 {
     NSMutableArray *base = [[NSMutableArray alloc]initWithArray:input];
     NSMutableArray *result = [[NSMutableArray alloc]initWithCapacity:base.count];
@@ -99,7 +99,7 @@ static ttInputData *instance = nil;
     // randomize the array
     while(base.count > 0)
     {
-        unsigned int value = [self randomWithMinValue:0 andMaxValue:base.count];
+        NSUInteger value = [self randomWithMinValue:0 andMaxValue:base.count];
         [result addObject:[base objectAtIndex:value]];
         [base removeObjectAtIndex:value];
     }
@@ -113,7 +113,7 @@ static ttInputData *instance = nil;
     NSMutableArray *filtered = [[NSMutableArray alloc]init];
     
     // step through the array and apply the filters
-    for (int current = 0; current < self.entities.count; current++)
+    for (NSUInteger current = 0; current < self.entities.count; current++)
     {
         ttTestEntity *entity = [self.entities objectAtIndex:current];
         if ([self doesEntityPassFilters:entity]) [filtered addObject:entity];
@@ -139,7 +139,7 @@ static ttInputData *instance = nil;
         filtered = [NSMutableArray arrayWithArray:[self randomizeArray:filtered withRandomSeedValue:settings.effectiveSelectionSeed]];
     }
     
-    int iEntitiesToUse = settings.entitiesPerSession;
+    NSUInteger iEntitiesToUse = settings.entitiesPerSession;
     // check for more required entities than available
     if (settings.entitiesPerSession > filtered.count)
     {
@@ -180,12 +180,12 @@ static ttInputData *instance = nil;
 }
 
 /* Would like a semi-open interval [min, max) */
--(unsigned int) randomWithMinValue:(unsigned int)min andMaxValue:(unsigned int) max
+-(NSUInteger) randomWithMinValue:(NSUInteger)min andMaxValue:(NSUInteger) max
 {
-    int base_random = random(); /* in [0, RAND_MAX] */
+    NSUInteger base_random = random(); /* in [0, RAND_MAX] */
     if (RAND_MAX == base_random) return [self randomWithMinValue:min andMaxValue:max];
     /* now guaranteed to be in [0, RAND_MAX) */
-    int range       = max - min,
+    NSUInteger range       = max - min,
     remainder   = RAND_MAX % range,
     bucket      = RAND_MAX / range;
     /* There are range buckets, plus one smaller interval

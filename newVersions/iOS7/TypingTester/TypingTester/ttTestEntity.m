@@ -24,7 +24,7 @@
 
 -(BOOL)hasFilterValue:(NSString*)value
 {
-    for (int i = 0; i < self.filterValues.count; i++)
+    for (NSUInteger i = 0; i < self.filterValues.count; i++)
     {
         if ([value isEqualToString:[self.filterValues objectAtIndex:i]]) return YES;
     }

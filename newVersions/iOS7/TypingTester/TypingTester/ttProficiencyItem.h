@@ -10,8 +10,8 @@
 
 @interface ttProficiencyItem : ttXmlParserDelegate
 
-@property (nonatomic, assign) int groupId;
-@property (nonatomic, assign) int itemId;
+@property (nonatomic, assign) NSUInteger groupId;
+@property (nonatomic, assign) NSUInteger itemId;
 
 
 @end

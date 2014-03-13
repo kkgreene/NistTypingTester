@@ -59,7 +59,7 @@
     NSString *phase = ttcPhaseStringArray[self.phase];
     NSString *subphase = ttcSubPhaseStringArray[self.subPhase];
     
-    return [NSString stringWithFormat:@"%@\t%f\t%@\t%@\t%@\t%@\t%i\t%@\t%.0f\t%.0f\t%i\t%i\t%@\t%@\t%@", [self.session formatDate:self.time], self.interval/1000, self.participantNumber, eventType, phase, subphase, self.subphaseVisitNumber, self.targetString, self.point.x, self.point.y, self.location, self.length, self.enteredCharacters, self.currentValue,self.notes];
+    return [NSString stringWithFormat:@"%@\t%f\t%@\t%@\t%@\t%@\t%lu\t%@\t%.0f\t%.0f\t%lu\t%lu\t%@\t%@\t%@", [self.session formatDate:self.time], self.interval/1000, self.participantNumber, eventType, phase, subphase, (unsigned long)self.subphaseVisitNumber, self.targetString, self.point.x, self.point.y, (long)self.location, (unsigned long)self.length, self.enteredCharacters, self.currentValue,self.notes];
 }
 
 // we override this so we can subsititute in known values for non displayinmg or special characters
