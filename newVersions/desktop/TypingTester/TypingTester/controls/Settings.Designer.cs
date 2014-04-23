@@ -62,6 +62,10 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cbDisableFreePractice = new System.Windows.Forms.CheckBox();
+            this.cbDisableFPTextBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spnVerification)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spnForcedPractice)).BeginInit();
@@ -76,6 +80,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbDisableFPTextBox);
+            this.groupBox1.Controls.Add(this.cbDisableFreePractice);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.spnVerification);
             this.groupBox1.Controls.Add(this.spnForcedPractice);
             this.groupBox1.Controls.Add(this.spnRepetitions);
@@ -84,19 +92,19 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(18, 15);
+            this.groupBox1.Location = new System.Drawing.Point(18, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(283, 143);
+            this.groupBox1.Size = new System.Drawing.Size(303, 176);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quantities";
             // 
             // spnVerification
             // 
-            this.spnVerification.Location = new System.Drawing.Point(153, 103);
+            this.spnVerification.Location = new System.Drawing.Point(170, 140);
             this.spnVerification.Name = "spnVerification";
             this.spnVerification.Size = new System.Drawing.Size(120, 20);
-            this.spnVerification.TabIndex = 3;
+            this.spnVerification.TabIndex = 5;
             this.spnVerification.Value = new decimal(new int[] {
             1,
             0,
@@ -105,10 +113,10 @@
             // 
             // spnForcedPractice
             // 
-            this.spnForcedPractice.Location = new System.Drawing.Point(153, 73);
+            this.spnForcedPractice.Location = new System.Drawing.Point(170, 114);
             this.spnForcedPractice.Name = "spnForcedPractice";
             this.spnForcedPractice.Size = new System.Drawing.Size(120, 20);
-            this.spnForcedPractice.TabIndex = 2;
+            this.spnForcedPractice.TabIndex = 4;
             this.spnForcedPractice.Value = new decimal(new int[] {
             3,
             0,
@@ -117,7 +125,7 @@
             // 
             // spnRepetitions
             // 
-            this.spnRepetitions.Location = new System.Drawing.Point(153, 45);
+            this.spnRepetitions.Location = new System.Drawing.Point(170, 88);
             this.spnRepetitions.Minimum = new decimal(new int[] {
             1,
             0,
@@ -125,7 +133,7 @@
             0});
             this.spnRepetitions.Name = "spnRepetitions";
             this.spnRepetitions.Size = new System.Drawing.Size(120, 20);
-            this.spnRepetitions.TabIndex = 1;
+            this.spnRepetitions.TabIndex = 3;
             this.spnRepetitions.Value = new decimal(new int[] {
             10,
             0,
@@ -134,7 +142,7 @@
             // 
             // spnNumberOfEntities
             // 
-            this.spnNumberOfEntities.Location = new System.Drawing.Point(153, 16);
+            this.spnNumberOfEntities.Location = new System.Drawing.Point(170, 16);
             this.spnNumberOfEntities.Minimum = new decimal(new int[] {
             1,
             0,
@@ -152,7 +160,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 105);
+            this.label4.Location = new System.Drawing.Point(65, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 13);
             this.label4.TabIndex = 3;
@@ -161,7 +169,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 75);
+            this.label3.Location = new System.Drawing.Point(42, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 13);
             this.label3.TabIndex = 2;
@@ -170,7 +178,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 47);
+            this.label2.Location = new System.Drawing.Point(52, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 13);
             this.label2.TabIndex = 1;
@@ -179,7 +187,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 18);
+            this.label1.Location = new System.Drawing.Point(54, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 13);
             this.label1.TabIndex = 0;
@@ -190,7 +198,7 @@
             this.groupBox3.Controls.Add(this.spnGroupId);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.cbUseGroupFilter);
-            this.groupBox3.Location = new System.Drawing.Point(18, 262);
+            this.groupBox3.Location = new System.Drawing.Point(510, 248);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 79);
             this.groupBox3.TabIndex = 3;
@@ -202,7 +210,7 @@
             this.spnGroupId.Location = new System.Drawing.Point(69, 37);
             this.spnGroupId.Name = "spnGroupId";
             this.spnGroupId.Size = new System.Drawing.Size(120, 20);
-            this.spnGroupId.TabIndex = 2;
+            this.spnGroupId.TabIndex = 1;
             // 
             // label5
             // 
@@ -222,6 +230,7 @@
             this.cbUseGroupFilter.TabIndex = 0;
             this.cbUseGroupFilter.Text = "Filter By Group ID";
             this.cbUseGroupFilter.UseVisualStyleBackColor = true;
+            this.cbUseGroupFilter.CheckedChanged += new System.EventHandler(this.cbUseGroupFilter_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -347,7 +356,7 @@
             this.groupBox5.Controls.Add(this.cbRandomizeOrder);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.cbUseOrderSeed);
-            this.groupBox5.Location = new System.Drawing.Point(18, 164);
+            this.groupBox5.Location = new System.Drawing.Point(18, 248);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(210, 92);
             this.groupBox5.TabIndex = 1;
@@ -362,7 +371,7 @@
             this.tbOrderSeed.Location = new System.Drawing.Point(80, 59);
             this.tbOrderSeed.Name = "tbOrderSeed";
             this.tbOrderSeed.Size = new System.Drawing.Size(124, 20);
-            this.tbOrderSeed.TabIndex = 3;
+            this.tbOrderSeed.TabIndex = 2;
             this.tbOrderSeed.TargetString = "";
             // 
             // groupBox2
@@ -371,7 +380,7 @@
             this.groupBox2.Controls.Add(this.tbSelectionSeed);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cbUseSelectionSeed);
-            this.groupBox2.Location = new System.Drawing.Point(272, 164);
+            this.groupBox2.Location = new System.Drawing.Point(272, 248);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(210, 92);
             this.groupBox2.TabIndex = 2;
@@ -397,7 +406,7 @@
             this.tbSelectionSeed.Location = new System.Drawing.Point(80, 59);
             this.tbSelectionSeed.Name = "tbSelectionSeed";
             this.tbSelectionSeed.Size = new System.Drawing.Size(124, 20);
-            this.tbSelectionSeed.TabIndex = 3;
+            this.tbSelectionSeed.TabIndex = 2;
             this.tbSelectionSeed.TargetString = "";
             // 
             // label7
@@ -427,7 +436,7 @@
             this.btnReset.Location = new System.Drawing.Point(434, 470);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 2;
+            this.btnReset.TabIndex = 7;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -438,7 +447,7 @@
             this.btnCancel.Location = new System.Drawing.Point(353, 470);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -449,10 +458,46 @@
             this.btnSave.Location = new System.Drawing.Point(272, 470);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(54, 42);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(108, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Disable Free Practice";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(11, 65);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(153, 13);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Disable Free Practice Text Box";
+            // 
+            // cbDisableFreePractice
+            // 
+            this.cbDisableFreePractice.AutoSize = true;
+            this.cbDisableFreePractice.Location = new System.Drawing.Point(170, 42);
+            this.cbDisableFreePractice.Name = "cbDisableFreePractice";
+            this.cbDisableFreePractice.Size = new System.Drawing.Size(15, 14);
+            this.cbDisableFreePractice.TabIndex = 1;
+            this.cbDisableFreePractice.UseVisualStyleBackColor = true;
+            // 
+            // cbDisableFPTextBox
+            // 
+            this.cbDisableFPTextBox.AutoSize = true;
+            this.cbDisableFPTextBox.Location = new System.Drawing.Point(170, 65);
+            this.cbDisableFPTextBox.Name = "cbDisableFPTextBox";
+            this.cbDisableFPTextBox.Size = new System.Drawing.Size(15, 14);
+            this.cbDisableFPTextBox.TabIndex = 2;
+            this.cbDisableFPTextBox.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
@@ -531,5 +576,9 @@
         private System.Windows.Forms.NumericUpDown spnGroupId;
         private CueTextBox tbOrderSeed;
         private CueTextBox tbSelectionSeed;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox cbDisableFPTextBox;
+        private System.Windows.Forms.CheckBox cbDisableFreePractice;
     }
 }

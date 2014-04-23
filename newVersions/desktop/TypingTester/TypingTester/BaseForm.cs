@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TypingTester.controls;
+using System.Runtime.InteropServices;
 
 namespace TypingTester
 {
     public partial class BaseForm : Form
     {
+        [DllImport("Kernel32.dll")]
+        static extern Boolean AllocConsole();
+
+
         private UserControl currentControl;
         private Constants.Screen _currentScreen = Constants.Screen.Unknown;
         private string participantNumber;
@@ -51,6 +56,20 @@ namespace TypingTester
             // load the options file
             Options.Instance.load();
             GoToScreen(Constants.Screen.StartScreen);
+
+
+            string[] args = Environment.GetCommandLineArgs();
+            foreach (string arg in args)
+            {
+                if (arg == "/d")
+                {
+                    if (!AllocConsole())
+                    {
+                        MessageBox.Show("Failed to initialize console", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            
         }
 
         private void GoToScreen(Constants.Screen screen)

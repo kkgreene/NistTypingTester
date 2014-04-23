@@ -38,7 +38,6 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(182, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(418, 13);
@@ -57,6 +56,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(744, 358);
             this.flowLayoutPanel1.TabIndex = 1;
+            this.flowLayoutPanel1.Resize += new System.EventHandler(this.flowLayoutPanel1_Resize);
             // 
             // btnNext
             // 
@@ -73,7 +73,6 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(196, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(372, 13);
