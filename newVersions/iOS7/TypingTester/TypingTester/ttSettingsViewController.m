@@ -38,6 +38,8 @@
     bool enableHideButtonOnPracticeScreen;
     bool enableSkipButton;
     int verifyRounds;
+    bool disableFreePractice;
+    bool disableFreePracticeTextField;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -53,10 +55,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (settings.showBackgroundPattern)
-    {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
-    }
 }
 
 - (void)viewDidLoad
@@ -80,6 +78,8 @@
     selectedGroup = settings.selectedGroup;
     enableHideButtonOnPracticeScreen = settings.enableHideButtonOnPracticeScreen;
     verifyRounds = settings.verifyRounds;
+    disableFreePractice = settings.disableFreePractice;
+    disableFreePracticeTextField = settings.disableFreePracticeTextField;
     [self configureUI];
 }
 
@@ -110,14 +110,59 @@
 
 -(IBAction)cancel:(id)sender
 {
-    [self.delegate SettingViewControllerDidCancel:self];
+    [self executeSegueWithIdentifier:@"CancelSettings" sender:self];
 }
 
 -(IBAction)save:(id)sender
 {
-    // TODO :: See if there is a better way to do this...
     [child hideKeyboard];
-    // TODO::Add code to save the settings
+    [self executeSegueWithIdentifier:@"SaveSettings" sender:self];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"SettingDetails"])
+    {
+        child = segue.destinationViewController;
+        child.delegate = self;
+    }
+    else if ([segue.identifier isEqualToString:@"SaveSettings"])
+    {
+        [self saveSettings];
+    }
+}
+
+-(void)executeSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([self shouldPerformSegueWithIdentifier:identifier sender:sender] == YES)
+    {
+        [self performSegueWithIdentifier:identifier sender:sender];
+    }
+}
+
+-( BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    // check validity of saved settings
+    if ([identifier isEqualToString:@"SaveSettings"])
+    {
+        if (disableFreePractice == NO || forcedPracticeRounds > 0)
+        {
+            return YES;
+        }
+        
+        [[[UIAlertView alloc] initWithTitle:nil
+                              message:@"Forced Practice rounds must be > 0 when Free Practice is disabled"
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
+        return NO;
+    }
+    // default is to allow the segue
+    return YES;
+}
+
+-(void) saveSettings
+{
     settings.entitiesPerSession = stringsPerSession;
     settings.entriesPerEntitiy = entriesPerString;
     settings.forcedPracticeRounds = forcedPracticeRounds;
@@ -135,16 +180,10 @@
     settings.enableHideButtonOnPracticeScreen = enableHideButtonOnPracticeScreen;
     settings.skipString = skipString;
     settings.verifyRounds = verifyRounds;
-    [self.delegate SettingsViewControllerDidSave:self];
-}
-
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"SettingDetails"])
-    {
-        child = segue.destinationViewController;
-        child.delegate = self;
-    }
+    settings.disableFreePractice = disableFreePractice;
+    settings.disableFreePracticeTextField = disableFreePracticeTextField;
+    // force saving of defaults when settings return with a saved value
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - Settings Detail View Controller Delegate
@@ -234,6 +273,15 @@
     verifyRounds = value;
 }
 
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeFreePracticeDisabled:(BOOL)value
+{
+    disableFreePractice = value;
+}
+
+-(void)settingsDetailViewController:(ttSettingsDetailViewController *)controller didChangeFreePracticeTextFieldDisabled:(BOOL)value
+{
+    disableFreePracticeTextField = value;
+}
 
 
 @end

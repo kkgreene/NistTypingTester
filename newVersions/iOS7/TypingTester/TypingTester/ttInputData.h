@@ -14,6 +14,7 @@
 @property (atomic, strong) NSArray *proficiencyItems;
 @property (atomic, strong) NSArray *entities;
 @property (atomic, assign) BOOL entityNumberError;
+@property (atomic, assign) BOOL entityFilterError;
 
 
 +(ttInputData*) Instance;

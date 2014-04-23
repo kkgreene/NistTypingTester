@@ -73,7 +73,7 @@
 
 +(NSString*)getHeaderLine
 {
-    return @"Time\tTime Since Session Start\tParticpant Id\tEvent\tPhase\tSubPhase\tSubphase Visit\tTarget String\tX\tY\tLocation\tLength\tCharacters\tCurrent Value\tNotes";
+    return @"Time\tTime Since Session Start\tParticipant ID\tEvent\tPhase\tSubPhase\tSubphase Visit\tTarget String\tX\tY\tLocation\tLength\tCharacters\tCurrent Value\tNotes";
 }
 
 @end

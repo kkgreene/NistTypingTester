@@ -10,15 +10,15 @@
     </filters>
     <proficiencyInputs>
         <proficiencyInput itemId="1" groupId="1">the winner of the race</proficiencyInput>
-        <proficiencyInput itemId="2" groupId="1">we better investigate this</proficiencyInput>
-        <proficiencyInput itemId="3" groupId="1">my bike has a flat tire</proficiencyInput>
-        <proficiencyInput itemId="4" groupId="1">where can my little dog be</proficiencyInput>
-        <proficiencyInput itemId="5" groupId="1">this camera takes nice photographs</proficiencyInput>
-        <proficiencyInput itemId="6" groupId="1">two or three cups of coffee</proficiencyInput>
-        <proficiencyInput itemId="7" groupId="1">dinosaurs have been extinct for ages</proficiencyInput>
-        <proficiencyInput itemId="8" groupId="1">a problem with the engine</proficiencyInput>
-        <proficiencyInput itemId="9" groupId="1">the laser printer is jammed</proficiencyInput>
-        <proficiencyInput itemId="10" groupId="1">consequences of a wrong turn</proficiencyInput>
+        <proficiencyInputx itemId="2" groupId="1">we better investigate this</proficiencyInputx>
+        <proficiencyInputx itemId="3" groupId="1">my bike has a flat tire</proficiencyInputx>
+        <proficiencyInputx itemId="4" groupId="1">where can my little dog be</proficiencyInputx>
+        <proficiencyInputx itemId="5" groupId="1">this camera takes nice photographs</proficiencyInputx>
+        <proficiencyInputx itemId="6" groupId="1">two or three cups of coffee</proficiencyInputx>
+        <proficiencyInputx itemId="7" groupId="1">dinosaurs have been extinct for ages</proficiencyInputx>
+        <proficiencyInputx itemId="8" groupId="1">a problem with the engine</proficiencyInputx>
+        <proficiencyInputx itemId="9" groupId="1">the laser printer is jammed</proficiencyInputx>
+        <proficiencyInputx itemId="10" groupId="1">consequences of a wrong turn</proficiencyInputx>
     </proficiencyInputs>
     <memorizationInputs>
         <memorizationInput itemId="1" date="2013-08-12" groupId="1">

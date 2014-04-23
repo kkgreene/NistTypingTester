@@ -47,10 +47,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (settings.showBackgroundPattern)
-    {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
-    }
 }
 
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
@@ -222,5 +218,7 @@
     textFieldLeft.notes = [NSString stringWithFormat:@"TextField No Longer Active"];
     [self.session addEvent:textFieldLeft];
 }
+
+
 
 @end

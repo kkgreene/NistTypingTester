@@ -46,7 +46,7 @@
     self.workArea.layer.borderWidth = 1.0f;
     self.workArea.layer.borderColor = [[UIColor grayColor]CGColor];
     // check to see if we are on the first entity
-    if (self.session.currentEntity == -1) [self.session nextEntity];
+    //if (self.session.currentEntity == -1) [self.session nextEntity];
     [self configureUI];
 }
 
@@ -66,10 +66,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (settings.showBackgroundPattern)
-    {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Cloth.png"]];
-    }
 }
 
 -(NSUInteger)supportedInterfaceOrientations
@@ -157,6 +153,7 @@
     self.passwordLabel.text = entity.entityString;
     self.workArea.text = self.session.workAreaContents;
     self.progressLabel.text = [NSString stringWithFormat:@"Password %i of %i", currentEntity+1, totalEntites];
+    self.workArea.hidden = settings.disableFreePracticeTextField;
 }
 
 
@@ -218,5 +215,13 @@
         [self.session addEvent:event];
     }
 }
+
+
+#pragma mark - Unwind Segue
+-(IBAction)unwindToMemorize:(UIStoryboardSegue *)segue
+{
+    [self configureUI];
+}
+
 
 @end
