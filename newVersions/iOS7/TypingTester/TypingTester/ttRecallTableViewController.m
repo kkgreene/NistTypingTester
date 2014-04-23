@@ -59,6 +59,11 @@
     return UIInterfaceOrientationMaskAll;
 }
 
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self.tableView reloadData];
+}
+
 -(void) hideKeyboard
 {
     [self.view endEditing:YES];
@@ -76,11 +81,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    // we are faking a first section so the footer of section 0 will contain instructions ....
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    // we are faking a first section so the footer of section 0 will contain instructions ....
+    if (section == 0) return 0;
     // if on iPad add 1 more extra row for the button at the bottom
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
@@ -94,6 +102,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 0) return nil;
     static NSString *CellIdentifier = @"RecallCell";
     // if we are on one of the rows for entity entry
     if (indexPath.row < self.session.entities.count)
@@ -139,6 +148,56 @@
     return [returnString copy];
 }
 #pragma mark - Table view delegate
+
+-(CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section == 1) return 0;
+    CGSize labelSize = [self getSizeForLabel:[self getHeaderLabel]];
+    return labelSize.height;
+}
+
+-(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (section == 1) return nil;
+    
+    UILabel* headerLabel = [self getHeaderLabel];
+    CGSize labelSize = [self getSizeForLabel:headerLabel];
+    CGRect headerFrame = CGRectMake(0.0, 0.0, labelSize.width, labelSize.height);
+    headerLabel.frame = headerFrame;
+    
+    UIView* headerView = [[UIView alloc]initWithFrame:headerFrame];
+    [headerView addSubview:headerLabel];
+    
+    return headerView;
+}
+
+-(UILabel*) getHeaderLabel
+{
+    NSString *instructions;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        instructions = @"Please enter as many of the passwords as you remember in the fields below.  When you are finished press the > button at the bottom of the screen.";
+    }
+    else
+    {
+        instructions = @"Please enter as many of the passwords as you remember in the fields below.  When you are finished press the > button in the upper right corner.";
+    }
+    UILabel *headerLabel = [[UILabel alloc]init];
+    headerLabel.numberOfLines = 0;
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.textColor = [UIColor blackColor];
+    headerLabel.font = [UIFont systemFontOfSize:16.0];
+    headerLabel.text = instructions;
+    headerLabel.textAlignment = NSTextAlignmentLeft;
+    return headerLabel;
+}
+
+-(CGSize) getSizeForLabel:(UILabel*)label
+{
+    CGSize maxSize = CGSizeMake(self.tableView.frame.size.width - 16.0, CGFLOAT_MAX);
+    return [label sizeThatFits:maxSize];
+}
+
 
 
 #pragma mark - UITextFieldDelegate

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -1553,20 +1553,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please enter as many of the passwords as you remember in the fields below.  When you" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCW-MC-NNm">
-                                <rect key="frame" x="48" y="49" width="673" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="have finished please press the '>' button at the bottom of the screen." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COe-vu-O55">
-                                <rect key="frame" x="120" y="78" width="529" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3Q-Tv-Em5">
-                                <rect key="frame" x="20" y="107" width="728" height="897"/>
+                                <rect key="frame" x="20" y="49" width="728" height="955"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="tAy-5z-gMJ" kind="embed" identifier="RecallTableView" id="7RA-3f-nib"/>
@@ -1575,19 +1563,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uCW-MC-NNm" firstAttribute="top" secondItem="9t5-8r-dAa" secondAttribute="bottom" constant="8" symbolic="YES" id="6CJ-3Q-Ln9"/>
-                            <constraint firstItem="COe-vu-O55" firstAttribute="top" secondItem="uCW-MC-NNm" secondAttribute="bottom" constant="8" symbolic="YES" id="Hj5-vk-2aD"/>
                             <constraint firstItem="vJn-Ia-aRu" firstAttribute="leading" secondItem="43B-ae-ggm" secondAttribute="leading" id="KW9-tB-Uex"/>
                             <constraint firstItem="vJn-Ia-aRu" firstAttribute="top" secondItem="43B-ae-ggm" secondAttribute="top" id="OpY-hr-hzO"/>
-                            <constraint firstItem="uCW-MC-NNm" firstAttribute="centerX" secondItem="9t5-8r-dAa" secondAttribute="centerX" id="PeX-6w-d1w"/>
-                            <constraint firstItem="i3Q-Tv-Em5" firstAttribute="top" secondItem="COe-vu-O55" secondAttribute="bottom" constant="8" symbolic="YES" id="ZP3-V8-AKA"/>
                             <constraint firstItem="vJn-Ia-aRu" firstAttribute="trailing" secondItem="43B-ae-ggm" secondAttribute="trailing" id="cSq-W2-f8j"/>
                             <constraint firstAttribute="trailing" secondItem="i3Q-Tv-Em5" secondAttribute="trailing" constant="20" id="cdQ-MM-3V2"/>
-                            <constraint firstItem="COe-vu-O55" firstAttribute="centerX" secondItem="uCW-MC-NNm" secondAttribute="centerX" id="epO-ZR-1n9"/>
                             <constraint firstItem="hj2-DT-YWC" firstAttribute="top" secondItem="i3Q-Tv-Em5" secondAttribute="bottom" constant="20" id="hUb-NN-SRk"/>
                             <constraint firstAttribute="centerX" secondItem="9t5-8r-dAa" secondAttribute="centerX" id="kJD-Xr-0j2"/>
                             <constraint firstItem="i3Q-Tv-Em5" firstAttribute="leading" secondItem="43B-ae-ggm" secondAttribute="leading" constant="20" id="lTx-Vh-VOn"/>
                             <constraint firstItem="vJn-Ia-aRu" firstAttribute="bottom" secondItem="43B-ae-ggm" secondAttribute="bottom" id="qfJ-Ci-8H5"/>
+                            <constraint firstItem="i3Q-Tv-Em5" firstAttribute="top" secondItem="9t5-8r-dAa" secondAttribute="bottom" constant="8" id="rew-L8-HSc"/>
                             <constraint firstItem="9t5-8r-dAa" firstAttribute="top" secondItem="43B-ae-ggm" secondAttribute="top" constant="20" symbolic="YES" id="vc4-t3-AtB"/>
                         </constraints>
                     </view>
@@ -1661,7 +1645,7 @@
             <objects>
                 <tableViewController id="tAy-5z-gMJ" customClass="ttRecallTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eFe-lu-sak">
-                        <rect key="frame" x="0.0" y="0.0" width="728" height="897"/>
+                        <rect key="frame" x="0.0" y="0.0" width="728" height="955"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
