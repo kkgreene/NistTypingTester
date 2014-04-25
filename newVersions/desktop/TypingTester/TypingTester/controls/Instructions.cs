@@ -77,12 +77,12 @@ namespace TypingTester.controls
             string Footer = string.Empty;
 
             sb.AppendFormat(@"<html><head></head><body>");
-            Header = File.ReadAllText(@".\documents\instructionsHeader.fhtm");
-            if (!opt.disableFreePractice) FreePractice = File.ReadAllText(@".\documents\instructionsFreePractice.fhtm");
-            if (opt.ForcedPracticeRounds > 0) ForcedPractice = File.ReadAllText(@".\documents\instructionsForcedPractice.fhtm");
-            if (opt.VerifyRounds > 0) Verify = File.ReadAllText(@".\documents\instructionsVerify.fhtm");
-            Entry = File.ReadAllText(@".\documents\instructionsEntry.fhtm");
-            Footer = File.ReadAllText(@".\documents\instructionsFooter.fhtm");
+            Header = this.loadFileContents(@".\documents\instructionsHeader.fhtm");
+            if (!opt.disableFreePractice) FreePractice = this.loadFileContents(@".\documents\instructionsFreePractice.fhtm");
+            if (opt.ForcedPracticeRounds > 0) ForcedPractice = this.loadFileContents(@".\documents\instructionsForcedPractice.fhtm");
+            if (opt.VerifyRounds > 0) Verify = this.loadFileContents(@".\documents\instructionsVerify.fhtm");
+            Entry = this.loadFileContents(@".\documents\instructionsEntry.fhtm");
+            Footer = this.loadFileContents(@".\documents\instructionsFooter.fhtm");
 
             if (!string.IsNullOrEmpty(Header)) sb.Append(Header);
             if (!string.IsNullOrEmpty(FreePractice)) sb.Append(FreePractice);
@@ -94,6 +94,16 @@ namespace TypingTester.controls
             sb.AppendFormat(@"</body></html>");
 
             return sb.ToString();
+        }
+
+        private string loadFileContents(string filename)
+        {
+            string retString = string.Empty;
+            if (File.Exists(filename))
+            {
+                retString = File.ReadAllText(filename);
+            }
+            return retString;
         }
     }
 }
