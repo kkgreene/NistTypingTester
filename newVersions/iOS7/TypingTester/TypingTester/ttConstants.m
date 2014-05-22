@@ -49,7 +49,7 @@ const bool ttcDisableFreePracticeDefaultValue = NO;
 const bool ttcDisableFreePracticeTextFieldValue = NO;
 
 NSString *const ttcQuitStringDefaultValue = @"I QUIT";
-NSString *const ttcSkipStringDefaultValue = @"SKIP THIS";
+NSString *const ttcSkipStringDefaultValue = @"I SKIP";
 
 
 NSString *const ttcPhaseStringArray[] = {@"Unknown Phase", @"Proficiency Phase", @"Introduction Phase", @"Memorize Phase",

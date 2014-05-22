@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inputBundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="file:///C:\Users\matt.kerr\development\NistTypingTester\Documents\mockups\dataFormat\typingInputFile.xsd">
+    xsi:noNamespaceSchemaLocation="file:./typingInputFile.xsd">
     <filters>
         <filterItem filterId="6char">6 Character</filterItem>
         <filterItem filterId="8char">8 Character</filterItem>
@@ -10,15 +10,15 @@
     </filters>
     <proficiencyInputs>
         <proficiencyInput itemId="1" groupId="1">the winner of the race</proficiencyInput>
-        <proficiencyInputx itemId="2" groupId="1">we better investigate this</proficiencyInputx>
-        <proficiencyInputx itemId="3" groupId="1">my bike has a flat tire</proficiencyInputx>
-        <proficiencyInputx itemId="4" groupId="1">where can my little dog be</proficiencyInputx>
-        <proficiencyInputx itemId="5" groupId="1">this camera takes nice photographs</proficiencyInputx>
-        <proficiencyInputx itemId="6" groupId="1">two or three cups of coffee</proficiencyInputx>
-        <proficiencyInputx itemId="7" groupId="1">dinosaurs have been extinct for ages</proficiencyInputx>
-        <proficiencyInputx itemId="8" groupId="1">a problem with the engine</proficiencyInputx>
-        <proficiencyInputx itemId="9" groupId="1">the laser printer is jammed</proficiencyInputx>
-        <proficiencyInputx itemId="10" groupId="1">consequences of a wrong turn</proficiencyInputx>
+        <proficiencyInput itemId="2" groupId="1">we better investigate this</proficiencyInput>
+        <proficiencyInput itemId="3" groupId="1">my bike has a flat tire</proficiencyInput>
+        <proficiencyInput itemId="4" groupId="1">where can my little dog be</proficiencyInput>
+        <proficiencyInput itemId="5" groupId="1">this camera takes nice photographs</proficiencyInput>
+        <proficiencyInput itemId="6" groupId="1">two or three cups of coffee</proficiencyInput>
+        <proficiencyInput itemId="7" groupId="1">dinosaurs have been extinct for ages</proficiencyInput>
+        <proficiencyInput itemId="8" groupId="1">a problem with the engine</proficiencyInput>
+        <proficiencyInput itemId="9" groupId="1">the laser printer is jammed</proficiencyInput>
+        <proficiencyInput itemId="10" groupId="1">consequences of a wrong turn</proficiencyInput>
     </proficiencyInputs>
     <memorizationInputs>
         <memorizationInput itemId="1" date="2013-08-12" groupId="1">
@@ -29,77 +29,21 @@
             <value>ABCD1234</value>
             <filter>8char</filter>
         </memorizationInput>
-        <memorizationInput itemId="2" date="2013-08-12"  groupId="1">
-            <value>ABCD123456</value>
-            <filter>10char</filter>
-        </memorizationInput>
-        <memorizationInput itemId="4" date="2013-08-12"  groupId="1">
-            <value>ABCD12345678</value>
-            <filter>12char</filter>
-        </memorizationInput>
-        <memorizationInput itemId="5" date="2013-08-12"  groupId="1">
-            <value>ABCD1234567890</value>
-            <filter>14char</filter>
-        </memorizationInput>
-        <memorizationInput itemId="6" date="2013-08-12"  groupId="1">
-            <value>DCBA12</value>
-            <filter>6char</filter>
-        </memorizationInput>
-        <memorizationInput itemId="7" date="2013-08-12"  groupId="1">
-            <value>DCBA1234</value>
-            <filter>8char</filter>
-        </memorizationInput>
-        <memorizationInput itemId="8" date="2013-08-12"  groupId="1">
-            <value>DCBA123456</value>
-            <filter>10char</filter>
-        </memorizationInput>
-        <memorizationInput itemId="9" date="2013-08-12"  groupId="1">
-            <value>DCBA12345678</value>
-            <filter>12char</filter>
-        </memorizationInput>
-        <memorizationInput itemId="10" date="2013-08-12"  groupId="1">
-            <value>DCBA1234567890</value>
-            <filter>14char</filter>
-        </memorizationInput>
-        <memorizationInput itemId="11" date="2013-08-12" groupId="2">
-            <value>5c2&apos;Qe</value>
-            <filter>6char</filter>
-        </memorizationInput>
-        <memorizationInput itemId="12" date="2013-08-12"  groupId="2">
-            <value>m#o)fp^2aRf207</value>
-            <filter>8char</filter>
-        </memorizationInput>
-        <memorizationInput itemId="13" date="2013-08-12"  groupId="2">
-            <value>m3)61fHw</value>
-            <filter>10char</filter>
-        </memorizationInput>
-        <memorizationInput itemId="14" date="2013-08-12"  groupId="2">
-            <value>d51)u4;X3wrf</value>
-            <filter>12char</filter>
-        </memorizationInput>
-        <memorizationInput itemId="15" date="2013-08-12"  groupId="2">
-            <value>p4d46*3TxY</value>
-            <filter>14char</filter>
-        </memorizationInput>
         <memorizationInput itemId="16" date="2013-08-12"  groupId="2">
             <value>q80&lt;U/C2mv</value>
             <filter>6char</filter>
         </memorizationInput>
-        <memorizationInput itemId="17" date="2013-08-12"  groupId="2">
-            <value>6n04%Ei&apos;Hm3V</value>
+        <memorizationInput itemId="13" date="2013-08-12"  groupId="2">
+            <value>Rmofpaf2207#)^</value>
             <filter>8char</filter>
         </memorizationInput>
-        <memorizationInput itemId="18" date="2013-08-12"  groupId="2">
-            <value>4i_55fQ$2Mnh30</value>
-            <filter>10char</filter>
+         <memorizationInput itemId="2" date="2013-08-12" groupId="3">
+            <value>p4d46*3TxY</value>
+            <filter>6char</filter>
         </memorizationInput>
-        <memorizationInput itemId="19" date="2013-08-12"  groupId="2">
-            <value>3.bH1o</value>
-            <filter>12char</filter>
-        </memorizationInput>
-        <memorizationInput itemId="20" date="2013-08-12"  groupId="2">
-            <value>a7t?C2#</value>
-            <filter>14char</filter>
+        <memorizationInput itemId="4" date="2013-08-12"  groupId="3">
+            <value>QMifnh455230_$</value>
+            <filter>8char</filter>
         </memorizationInput>
     </memorizationInputs>
 </inputBundle>
