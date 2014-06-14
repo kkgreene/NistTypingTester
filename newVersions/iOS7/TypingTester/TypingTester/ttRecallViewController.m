@@ -102,8 +102,8 @@
 -(IBAction)done
 {
     // add event for done button
-    ttEvent *doneButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Memorize andSubPhase:Verify];
-    doneButtonEvent.notes = @"Next button pressed";
+    ttEvent *doneButtonEvent = [[ttEvent alloc]initWithEventType:ControlActivated andPhase:Recall andSubPhase:NoSubPhase];
+    doneButtonEvent.notes = @"Done button pressed";
     [self.session addEvent:doneButtonEvent];
     [self performSegueWithIdentifier:@"ThankYou" sender:self];
 }
